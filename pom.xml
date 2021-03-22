@@ -31,6 +31,7 @@
         <api-boot-dependencies.version>2.3.3.RELEASE</api-boot-dependencies.version>
         <yue-library-dependencies.version>j8.2.3.0</yue-library-dependencies.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <aliyun-spring-boot-dependencies.version>1.0.0</aliyun-spring-boot-dependencies.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -62,6 +63,13 @@
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>aliyun-spring-boot-dependencies</artifactId>
+                <version>${aliyun-spring-boot-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
