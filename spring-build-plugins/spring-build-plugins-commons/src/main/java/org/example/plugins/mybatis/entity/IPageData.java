@@ -1,11 +1,12 @@
-package org.example.plugins.commons.repository.entity;
+package org.example.plugins.mybatis.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.plugins.commons.entity.BaseEntity;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class IPageData<T> extends BaseEntity{
+public class IPageData<T> extends BaseEntity {
     private Iterable<T> data;
     private Long page;
     private Long size;

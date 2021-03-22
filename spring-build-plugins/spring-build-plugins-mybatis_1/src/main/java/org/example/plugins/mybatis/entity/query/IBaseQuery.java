@@ -3,7 +3,7 @@ package org.example.plugins.mybatis.entity.query;
 import com.gitee.denger.mybatis.example.ext.annotation.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.plugins.commons.repository.entity.BaseEntity;
+import org.example.plugins.commons.entity.BaseEntity;
 
 import java.util.Date;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.example.plugins.commons.repository.entity;
+package org.example.plugins.commons.entity;
 
 import cn.hutool.core.bean.BeanUtil;
 import lombok.Data;
