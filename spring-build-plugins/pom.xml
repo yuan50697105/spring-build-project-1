@@ -16,6 +16,7 @@
         <module>spring-build-plugins-mybatis_2</module>
         <module>spring-build-plugins-commons</module>
         <module>spring-build-plugins-oss-aliyun</module>
+        <module>spring-build-plugins-oss-tencent</module>
     </modules>
 
     <dependencyManagement>

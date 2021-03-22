@@ -93,6 +93,11 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool-all.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.qcloud</groupId>
+                <artifactId>cos_api</artifactId>
+                <version>${cos_api.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <properties>
@@ -107,5 +112,6 @@
         <jsqlparser.version>4.0</jsqlparser.version>
         <mybatis-plus-batch-spring-boot-starter.version>1.1</mybatis-plus-batch-spring-boot-starter.version>
         <hutool-all.version>5.5.9</hutool-all.version>
+        <cos_api.version>5.6.37</cos_api.version>
     </properties>
 </project>
