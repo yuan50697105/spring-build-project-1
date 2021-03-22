@@ -4,11 +4,9 @@ import com.baomidou.mybatisplus.annotation.FieldStrategy;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
-import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.plugins.commons.entity.BaseEntity;
+import org.example.plugins.commons.repository.entity.BaseEntity;
 import tk.mybatis.mapper.annotation.LogicDelete;
 import tk.mybatis.mapper.annotation.Version;
 

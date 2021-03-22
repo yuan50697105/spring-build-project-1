@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.pagehelper.PageInfo;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
-import org.example.plugins.commons.entity.IPageData;
+import org.example.plugins.commons.repository.entity.IPageData;
 
 /**
  * @author yuane

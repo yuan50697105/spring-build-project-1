@@ -2,7 +2,7 @@ package org.example.plugins.mybatis.entity.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.plugins.commons.entity.BaseEntity;
+import org.example.plugins.commons.repository.entity.BaseEntity;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;

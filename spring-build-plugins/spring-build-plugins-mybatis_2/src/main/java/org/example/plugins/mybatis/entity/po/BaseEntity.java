@@ -18,7 +18,7 @@ import java.util.Date;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public abstract class BaseEntity extends org.example.plugins.commons.entity.BaseEntity {
+public abstract class BaseEntity extends org.example.plugins.commons.repository.entity.BaseEntity {
     @Id
     @TableId
     private Long id;
