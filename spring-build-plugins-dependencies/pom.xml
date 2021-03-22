@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-dependencies</artifactId>
+    <artifactId>spring-build-plugins-dependencies</artifactId>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>

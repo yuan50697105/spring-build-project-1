@@ -9,16 +9,22 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-plugins</artifactId>
+    <artifactId>spring-build-modules</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-build-plugins-mybatis_1</module>
-        <module>spring-build-plugins-mybatis_2</module>
-        <module>spring-build-plugins-commons</module>
+        <module>spring-build-modules-commons</module>
+        <module>spring-build-modules-repository-mysql_1</module>
+        <module>spring-build-modules-repository-mysql_2</module>
     </modules>
-
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>spring-build-modules-dependencies</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>spring-build-plugins-dependencies</artifactId>
@@ -28,5 +34,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 </project>

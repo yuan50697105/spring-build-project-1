@@ -9,14 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-plugins</artifactId>
+    <artifactId>spring-build-modules-dependencies</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>spring-build-plugins-mybatis_1</module>
-        <module>spring-build-plugins-mybatis_2</module>
-        <module>spring-build-plugins-commons</module>
-    </modules>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -28,5 +22,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 </project>
