@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-build-plugins</artifactId>
+        <groupId>org.example</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-build-plugins-mybatis_2</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>spring-build-plugins-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fangjinuo.sqlhelper</groupId>
+            <artifactId>sqlhelper-mybatisplus-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fangjinuo.sqlhelper</groupId>
+            <artifactId>sqlhelper-tkmapper-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fangjinuo.sqlhelper</groupId>
+            <artifactId>sqlhelper-mybatis-over-pagehelper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gitee.denger</groupId>
+            <artifactId>mybatis-example-ext</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.beyondlov1</groupId>
+            <artifactId>mybatis-plus-batch-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
