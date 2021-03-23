@@ -7,5 +7,5 @@ import org.example.plugins.mybatis.entity.po.IBaseEntity;
 /**
  * @author yuane
  */
-public interface IBaseDao<T extends IBaseEntity, Q extends MybatisExample<E>, E> extends IService<T> {
+public interface IBaseDao<T, Q extends MybatisExample<E>,E> extends IService<T> {
 }
