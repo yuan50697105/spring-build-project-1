@@ -17,6 +17,7 @@
         <module>spring-build-plugins-commons</module>
         <module>spring-build-plugins-oss-aliyun</module>
         <module>spring-build-plugins-oss-tencent</module>
+        <module>spring-build-plugins-oss-minio</module>
     </modules>
 
     <dependencyManagement>
