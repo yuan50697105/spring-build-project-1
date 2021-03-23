@@ -11,6 +11,9 @@
 
     <artifactId>spring-build-domains</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-build-domains-commons</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
