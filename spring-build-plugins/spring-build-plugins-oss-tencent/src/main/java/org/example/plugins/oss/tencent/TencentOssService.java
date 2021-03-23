@@ -1,9 +1,9 @@
-package org.example.plugins.oss.aliyun;
+package org.example.plugins.oss.tencent;
 
 import java.io.File;
 import java.io.InputStream;
 
-public interface AliyunOssService {
+public interface TencentOssService {
     void upload(String bucketName, String key, File file);
 
     InputStream download(String bucketName, String key);
