@@ -29,6 +29,21 @@
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>spring-build-plugins-oss-aliyun</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>spring-build-plugins-oss-tencent</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>spring-build-plugins-oss-minio</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
                 <groupId>io.github.beyondlov1</groupId>
                 <artifactId>mybatis-plus-batch-spring-boot-starter</artifactId>
                 <version>${mybatis-plus-batch-spring-boot-starter.version}</version>
