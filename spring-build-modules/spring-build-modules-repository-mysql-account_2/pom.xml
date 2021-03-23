@@ -9,13 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-modules-repository-mysql_1</artifactId>
+    <artifactId>spring-build-modules-repository-mysql-account_2</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>spring-build-modules-repository-mysql-account_1</artifactId>
-        </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
@@ -26,11 +22,12 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>spring-build-plugins-mybatis_1</artifactId>
+            <artifactId>spring-build-plugins-mybatis_2</artifactId>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
     </dependencies>
+
 </project>
