@@ -1,8 +1,5 @@
 package org.example.plugins.mybatis.repository;
 
-import com.gitee.denger.mybatis.example.ext.MybatisExample;
-import org.example.plugins.mybatis.entity.po.IBaseEntity;
-
 import java.util.List;
 
 /**

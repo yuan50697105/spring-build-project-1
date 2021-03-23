@@ -1,7 +1,10 @@
 package org.example.modules.repository.mysql.entity.vo;
 
 import cn.hutool.core.util.ObjectUtil;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.example.plugins.mybatis.entity.vo.IBaseVo;
 
 import javax.validation.constraints.NotBlank;
