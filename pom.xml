@@ -51,6 +51,8 @@
                 <groupId>ai.ylyue</groupId>
                 <artifactId>yue-library-dependencies</artifactId>
                 <version>${yue-library-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
