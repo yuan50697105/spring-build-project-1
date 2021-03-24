@@ -15,8 +15,6 @@
         <module>spring-build-domains</module>
         <module>spring-build-domains-dependencies</module>
         <module>spring-build-applications</module>
-        <module>spring-build-entrances</module>
-        <module>spring-build-entrances-dependencies</module>
         <module>spring-build-applications-dependencies</module>
         <module>spring-build-launchers</module>
     </modules>
