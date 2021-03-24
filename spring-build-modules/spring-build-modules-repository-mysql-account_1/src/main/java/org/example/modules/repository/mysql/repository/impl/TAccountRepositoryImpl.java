@@ -12,6 +12,7 @@ import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class TAccountRepositoryImpl extends IBaseRepositoryImpl<TAccountVo, TAcc
 
     @Override
     @Transactional
-    public void save(TAccountVo tAccountVo) {
+    public void save(@Validated TAccountVo tAccountVo) {
         TUser user = userBuilder.generateUser(tAccountVo.getAccount());
         userDao.save(user);
         List<Long> roleIds = roleDao.getRoleIdListByIds(tAccountVo.getRoleIds());
