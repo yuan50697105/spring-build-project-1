@@ -11,4 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Component
 @Transactional
 public class TUserDaoImpl extends TkBaseDaoImpl<TUser, TUserQuery, TUserMapper> implements TUserDao {
+    @Override
+    public boolean existByUsername(String username) {
+        return baseMapper.selectOneCountByUsername(username);
+    }
 }

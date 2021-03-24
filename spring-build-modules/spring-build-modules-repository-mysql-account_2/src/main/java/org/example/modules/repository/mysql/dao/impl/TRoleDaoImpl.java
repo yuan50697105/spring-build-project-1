@@ -19,4 +19,9 @@ public class TRoleDaoImpl extends TkBaseDaoImpl<TRole, TRoleQuery, TRoleMapper> 
     public List<Long> getRoleIdListByIds(List<Long> roleIds) {
         return lambdaQuery().in(IBaseEntity::getId, roleIds).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
     }
+
+    @Override
+    public List<Long> getRoleIdListByNames(List<String> roleNames) {
+        return lambdaQuery().in(TRole::getName,roleNames).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
+    }
 }
