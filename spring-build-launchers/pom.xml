@@ -12,8 +12,10 @@
     <artifactId>spring-build-launchers</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-build-launchers-war-admin_1</module>
         <module>spring-build-launchers-admin_1</module>
+        <module>spring-build-launchers-admin_2</module>
+        <module>spring-build-launchers-war-admin_1</module>
+        <module>spring-build-launchers-war-admin_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
