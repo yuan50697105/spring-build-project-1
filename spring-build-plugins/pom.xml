@@ -18,6 +18,8 @@
         <module>spring-build-plugins-oss-aliyun</module>
         <module>spring-build-plugins-oss-tencent</module>
         <module>spring-build-plugins-oss-minio</module>
+        <module>spring-build-plugins-message-rocketmq</module>
+        <module>spring-build-plugins-message-kafka</module>
     </modules>
 
     <dependencyManagement>
