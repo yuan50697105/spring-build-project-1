@@ -5,5 +5,5 @@ import org.example.plugins.mybatis.dao.TkBaseDao;
 import org.example.plugins.mybatis.mapper.IBaseMapper;
 import tk.mybatis.mapper.entity.Example;
 
-public class TkBaseDaoImpl<T, Q extends MybatisExampleForTk<T, Example>, M extends IBaseMapper<T>> extends IBaseDaoImpl<T, Q, Example, M> implements TkBaseDao<T,Q> {
+public class TkBaseDaoImpl<T, Q extends MybatisExampleForTk<T, Example>, M extends IBaseMapper<T>> extends IBaseDaoImpl<T, Q, Example, M> implements TkBaseDao<T, Q> {
 }

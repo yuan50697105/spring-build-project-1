@@ -14,7 +14,7 @@ import org.example.plugins.mybatis.entity.IPageData;
 @Value
 public class IPageResult<T> extends IPageData<T> {
     public IPageResult(IPage<T> iPage) {
-        super(iPage.getRecords(),iPage.getCurrent(),iPage.getSize(),iPage.getPages(),iPage.getTotal());
+        super(iPage.getRecords(), iPage.getCurrent(), iPage.getSize(), iPage.getPages(), iPage.getTotal());
     }
 
     public IPageResult(PageInfo<T> pageInfo) {

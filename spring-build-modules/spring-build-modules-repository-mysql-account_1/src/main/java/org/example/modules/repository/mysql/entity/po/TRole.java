@@ -16,10 +16,9 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TRole extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * name
      */
     private String name;
-
-    private static final long serialVersionUID = 1L;
 }

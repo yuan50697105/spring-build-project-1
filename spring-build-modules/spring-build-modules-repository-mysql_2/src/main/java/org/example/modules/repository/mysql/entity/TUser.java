@@ -16,25 +16,21 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TUser extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * username
      */
     private String username;
-
     /**
      * password
      */
     private String password;
-
     /**
      * name
      */
     private String name;
-
     /**
      * enabled
      */
     private Integer enabled;
-
-    private static final long serialVersionUID = 1L;
 }

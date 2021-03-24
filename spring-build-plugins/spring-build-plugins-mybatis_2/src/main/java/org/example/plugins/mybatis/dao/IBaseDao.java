@@ -6,5 +6,5 @@ import com.gitee.denger.mybatis.example.ext.MybatisExample;
 /**
  * @author yuane
  */
-public interface IBaseDao<T, Q extends MybatisExample<E>,E> extends IService<T> {
+public interface IBaseDao<T, Q extends MybatisExample<E>, E> extends IService<T> {
 }

@@ -4,7 +4,6 @@ import cn.hutool.core.util.ObjectUtil;
 import org.example.plugins.message.produce.KafkaProduce;
 import org.example.plugins.message.produce.StringObjectKafkaTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
 
 import java.util.ArrayList;
 import java.util.Arrays;
