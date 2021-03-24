@@ -30,6 +30,7 @@
         <yue-library.version>j8.2.3.0</yue-library.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <aliyun-spring-boot-dependencies.version>1.0.0</aliyun-spring-boot-dependencies.version>
+        <clickhouse-jdbc.version>0.2.6</clickhouse-jdbc.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -89,6 +90,11 @@
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
                 <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ru.yandex.clickhouse</groupId>
+                <artifactId>clickhouse-jdbc</artifactId>
+                <version>${clickhouse-jdbc.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

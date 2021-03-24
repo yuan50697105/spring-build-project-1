@@ -18,6 +18,14 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
+            <artifactId>spring-build-modules-repository-mysql_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>spring-build-modules-repository-clickhouse_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
             <artifactId>spring-build-domains-service-account_2</artifactId>
         </dependency>
         <dependency>
