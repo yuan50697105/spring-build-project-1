@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.domains.configuration.AccountServiceConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.domains.AccountServiceConfiguration

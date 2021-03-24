@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-domains-service_2</artifactId>
+    <artifactId>spring-build-domains-service-customer-info_2</artifactId>
 
     <dependencies>
         <dependency>
@@ -18,11 +18,7 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>spring-build-domains-service-account_2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>spring-build-domains-service-customer-info_2</artifactId>
+            <artifactId>spring-build-modules-repository-mysql-customer-info_2</artifactId>
         </dependency>
     </dependencies>
 

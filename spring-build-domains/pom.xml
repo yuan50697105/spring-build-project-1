@@ -17,6 +17,8 @@
         <module>spring-build-domains-service-account_2</module>
         <module>spring-build-domains-service_1</module>
         <module>spring-build-domains-service_2</module>
+        <module>spring-build-domains-service-customer-info_1</module>
+        <module>spring-build-domains-service-customer-info_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
