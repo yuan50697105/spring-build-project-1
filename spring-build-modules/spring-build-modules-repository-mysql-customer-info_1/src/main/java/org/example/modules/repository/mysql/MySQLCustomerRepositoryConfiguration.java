@@ -1,4 +1,4 @@
-package org.example.modules.repository.mysql.configuration;
+package org.example.modules.repository.mysql;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -8,5 +8,5 @@ import tk.mybatis.spring.annotation.MapperScan;
 @ComponentScan
 @MapperScan(basePackages = {"org.example.modules.repository.mysql.mapper"})
 @org.mybatis.spring.annotation.MapperScan(basePackages = {"org.example.modules.repository.mysql.mapper"})
-public class MySQLAccountRepositoryConfiguration {
+public class MySQLCustomerRepositoryConfiguration {
 }

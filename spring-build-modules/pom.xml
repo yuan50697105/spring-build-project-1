@@ -17,6 +17,8 @@
         <module>spring-build-modules-repository-mysql_2</module>
         <module>spring-build-modules-repository-mysql-account_1</module>
         <module>spring-build-modules-repository-mysql-account_2</module>
+        <module>spring-build-modules-repository-mysql-customer-info_1</module>
+        <module>spring-build-modules-repository-mysql-customer-info_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

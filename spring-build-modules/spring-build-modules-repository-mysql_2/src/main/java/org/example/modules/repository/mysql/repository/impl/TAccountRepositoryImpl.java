@@ -4,7 +4,7 @@ import org.example.modules.repository.mysql.builder.UserBuilder;
 import org.example.modules.repository.mysql.dao.TRoleDao;
 import org.example.modules.repository.mysql.dao.TUserDao;
 import org.example.modules.repository.mysql.dao.TUserRoleDao;
-import org.example.modules.repository.mysql.entity.TUser;
+import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.query.TAccountQuery;
 import org.example.modules.repository.mysql.entity.vo.TAccountVo;
 import org.example.modules.repository.mysql.repository.TAccountRepository;

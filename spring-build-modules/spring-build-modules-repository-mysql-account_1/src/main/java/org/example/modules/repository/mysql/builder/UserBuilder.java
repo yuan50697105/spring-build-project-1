@@ -1,7 +1,7 @@
 package org.example.modules.repository.mysql.builder;
 
-import org.example.modules.repository.mysql.entity.TUser;
-import org.example.modules.repository.mysql.entity.TUserRole;
+import org.example.modules.repository.mysql.entity.po.TUser;
+import org.example.modules.repository.mysql.entity.po.TUserRole;
 import org.example.modules.repository.mysql.entity.vo.TAccountVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

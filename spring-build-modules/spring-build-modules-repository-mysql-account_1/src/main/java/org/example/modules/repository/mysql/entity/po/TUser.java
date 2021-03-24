@@ -1,4 +1,4 @@
-package org.example.modules.repository.mysql.entity;
+package org.example.modules.repository.mysql.entity.po;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,22 +9,32 @@ import org.example.plugins.mybatis.entity.po.IBaseEntity;
 import java.io.Serializable;
 
 /**
- * t_user_role
+ * t_user
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TUserRole extends IBaseEntity implements Serializable {
+public class TUser extends IBaseEntity implements Serializable {
     /**
-     * userId
+     * username
      */
-    private Long userId;
+    private String username;
 
     /**
-     * roleId
+     * password
      */
-    private Long roleId;
+    private String password;
+
+    /**
+     * name
+     */
+    private String name;
+
+    /**
+     * enabled
+     */
+    private Integer enabled;
 
     private static final long serialVersionUID = 1L;
 }

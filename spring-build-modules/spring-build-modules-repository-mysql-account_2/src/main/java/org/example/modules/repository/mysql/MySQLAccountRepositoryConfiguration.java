@@ -1,4 +1,4 @@
-package org.example.modules.repository.mysql.configuration;
+package org.example.modules.repository.mysql;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

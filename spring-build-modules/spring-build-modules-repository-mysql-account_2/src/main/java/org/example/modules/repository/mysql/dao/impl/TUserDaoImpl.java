@@ -1,7 +1,7 @@
 package org.example.modules.repository.mysql.dao.impl;
 
 import org.example.modules.repository.mysql.dao.TUserDao;
-import org.example.modules.repository.mysql.entity.TUser;
+import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.query.TUserQuery;
 import org.example.modules.repository.mysql.mapper.TUserMapper;
 import org.example.plugins.mybatis.dao.impl.TkBaseDaoImpl;
