@@ -2,7 +2,7 @@ package org.example.modules.repository.mysql.builder;
 
 import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.po.TUserRole;
-import org.example.modules.repository.mysql.entity.vo.TAccountVo;
+import org.example.modules.repository.mysql.entity.vo.AccountVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
@@ -20,7 +20,7 @@ public interface UserBuilder {
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)
-    TUser generateUser(TAccountVo.AccountInfo account);
+    TUser generateUser(AccountVo.AccountInfo account);
 
     default List<TUserRole> generateUserRoles(Long userId, List<Long> roleIds) {
         ArrayList<TUserRole> tUserRoles = new ArrayList<>(roleIds.size());

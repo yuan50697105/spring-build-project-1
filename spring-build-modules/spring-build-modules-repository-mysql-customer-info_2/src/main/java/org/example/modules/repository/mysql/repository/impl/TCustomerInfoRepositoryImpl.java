@@ -4,7 +4,7 @@ import org.example.modules.repository.mysql.builder.CustomerInfoBuilder;
 import org.example.modules.repository.mysql.dao.TCustomerInfoDao;
 import org.example.modules.repository.mysql.entity.po.TCustomerInfo;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
-import org.example.modules.repository.mysql.repository.TCustomerInfoRespository;
+import org.example.modules.repository.mysql.repository.TCustomerInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class TCustomerInfoRespositoryImpl implements TCustomerInfoRespository {
+public class TCustomerInfoRepositoryImpl implements TCustomerInfoRepository {
     @Autowired
     private CustomerInfoBuilder customerInfoBuilder;
     @Autowired

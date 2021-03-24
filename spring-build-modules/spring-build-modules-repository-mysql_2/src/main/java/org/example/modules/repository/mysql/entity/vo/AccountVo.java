@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TAccountVo extends IBaseVo {
+public class AccountVo extends IBaseVo {
     @NotEmpty(groups = {Update.class})
     private Long id;
     @NotEmpty

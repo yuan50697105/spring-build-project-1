@@ -6,7 +6,7 @@ import org.example.modules.repository.mysql.dao.TUserDao;
 import org.example.modules.repository.mysql.dao.TUserRoleDao;
 import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.query.TAccountQuery;
-import org.example.modules.repository.mysql.entity.vo.TAccountVo;
+import org.example.modules.repository.mysql.entity.vo.AccountVo;
 import org.example.modules.repository.mysql.repository.TAccountRepository;
 import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class TAccountRepositoryImpl extends IBaseRepositoryImpl<TAccountVo, TAccountVo, TAccountQuery> implements TAccountRepository {
+public class TAccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, AccountVo, TAccountQuery> implements TAccountRepository {
     @Autowired
     private UserBuilder userBuilder;
     @Autowired
@@ -29,15 +29,15 @@ public class TAccountRepositoryImpl extends IBaseRepositoryImpl<TAccountVo, TAcc
 
     @Override
     @Transactional
-    public void save(TAccountVo tAccountVo) {
-        TUser user = userBuilder.generateUser(tAccountVo.getAccount());
+    public void save(AccountVo accountVo) {
+        TUser user = userBuilder.generateUser(accountVo.getAccount());
         userDao.save(user);
-        List<Long> roleIds = roleDao.getRoleIdListByIds(tAccountVo.getRoleIds());
+        List<Long> roleIds = roleDao.getRoleIdListByIds(accountVo.getRoleIds());
         userRoleDao.saveBatch(userBuilder.generateUserRoles(user.getId(), roleIds));
     }
 
     @Override
-    public void update(TAccountVo tAccountVo) {
+    public void update(AccountVo accountVo) {
 
     }
 

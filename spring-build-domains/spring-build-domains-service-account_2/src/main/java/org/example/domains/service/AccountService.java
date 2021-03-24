@@ -1,7 +1,7 @@
 package org.example.domains.service;
 
-import org.example.modules.repository.mysql.entity.vo.TAccountVo;
+import org.example.modules.repository.mysql.entity.vo.AccountVo;
 
 public interface AccountService {
-    void save(TAccountVo accountVo);
+    void save(AccountVo accountVo);
 }
