@@ -22,12 +22,12 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <spring-boot-dependencies.version>2.3.9.RELEASE</spring-boot-dependencies.version>
-        <spring-cloud-dependencies.version>Hoxton.SR10</spring-cloud-dependencies.version>
-        <spring-cloud-alibaba-dependencies.version>2.2.5.RELEASE</spring-cloud-alibaba-dependencies.version>
-        <spring-cloud-huawei-dependencies.version>1.5.1-Hoxton</spring-cloud-huawei-dependencies.version>
-        <api-boot-dependencies.version>2.3.3.RELEASE</api-boot-dependencies.version>
-        <yue-library-dependencies.version>j8.2.3.0</yue-library-dependencies.version>
+        <spring-boot.version>2.3.9.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-huawei.version>1.5.1-Hoxton</spring-cloud-huawei.version>
+        <api-boot.version>2.3.3.RELEASE</api-boot.version>
+        <yue-library.version>j8.2.3.0</yue-library.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <aliyun-spring-boot-dependencies.version>1.0.0</aliyun-spring-boot-dependencies.version>
     </properties>
@@ -36,33 +36,33 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot-dependencies.version}</version>
+                <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.minbox.framework</groupId>
                 <artifactId>api-boot-dependencies</artifactId>
-                <version>${api-boot-dependencies.version}</version>
+                <version>${api-boot.version}</version>
             </dependency>
             <dependency>
                 <groupId>ai.ylyue</groupId>
                 <artifactId>yue-library-dependencies</artifactId>
-                <version>${yue-library-dependencies.version}</version>
+                <version>${yue-library.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud-dependencies.version}</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -76,7 +76,7 @@
             <dependency>
                 <groupId>com.huaweicloud</groupId>
                 <artifactId>spring-cloud-huawei-dependencies</artifactId>
-                <version>${spring-cloud-huawei-dependencies.version}</version>
+                <version>${spring-cloud-huawei.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

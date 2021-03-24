@@ -9,13 +9,19 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-launchers-admin_1</artifactId>
-
+    <artifactId>spring-build-launchers-war-admin_1</artifactId>
+    <packaging>war</packaging>
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>spring-build-applications-admin_1</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
+
 
 </project>
