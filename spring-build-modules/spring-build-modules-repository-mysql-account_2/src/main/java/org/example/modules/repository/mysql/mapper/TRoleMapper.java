@@ -9,4 +9,5 @@ import org.springframework.stereotype.Component;
 @Mapper
 public interface TRoleMapper extends IBaseMapper<TRole> {
 
+    boolean existByRoleName(String roleName);
 }

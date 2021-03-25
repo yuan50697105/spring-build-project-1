@@ -9,5 +9,7 @@ import java.util.List;
 
 public interface TRoleDao extends TkBaseDao<TRole, TRoleQuery> {
 
+    boolean existByRoleName(String roleName);
+
     List<Long> getRoleIdListByIdsOrNames(List<Long> roleIds, List<String> roleNames);
 }

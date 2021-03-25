@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface TPermissionDao extends TkBaseDao<TPermission, TPermissionQuery> {
     List<Long> getPermisionIdsByPermissionIdsOrPermissionNames(List<Long> permissionIds, List<String> permissionNames);
+
 }

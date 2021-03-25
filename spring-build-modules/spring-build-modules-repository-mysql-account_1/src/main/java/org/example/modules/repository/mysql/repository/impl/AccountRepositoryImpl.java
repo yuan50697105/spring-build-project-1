@@ -7,10 +7,11 @@ import org.example.modules.repository.mysql.dao.TUserDao;
 import org.example.modules.repository.mysql.dao.TUserRoleDao;
 import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.query.AccountQuery;
+import org.example.modules.repository.mysql.entity.query.TUserQuery;
 import org.example.modules.repository.mysql.entity.vo.AccountDetailVo;
 import org.example.modules.repository.mysql.entity.vo.AccountFormVo;
 import org.example.modules.repository.mysql.entity.vo.AccountVo;
-import org.example.modules.repository.mysql.helper.TAccountHelper;
+import org.example.modules.repository.mysql.helper.AccountHelper;
 import org.example.modules.repository.mysql.repository.AccountRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
@@ -23,7 +24,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Repository
@@ -39,7 +42,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accoun
     @Autowired
     private TUserRoleDao userRoleDao;
     @Autowired
-    private TAccountHelper accountHelper;
+    private AccountHelper accountHelper;
 
     @Override
     @Transactional
@@ -61,21 +64,28 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accoun
             @CachePut(key = "#accountFormVo.id"),
             @CachePut(key = "#accountFormVo.user.username")
     })
-    public void update(AccountFormVo accountFormVo) {
-
+    public void update(@Validated AccountFormVo accountFormVo) {
+        update(accountFormVo.getId(),accountFormVo);
     }
 
     @Override
-    public void update(Long id, AccountFormVo formVo) {
-        TUser user = userDao.getById(id);
-        accountBuilder.copyUser(formVo.getUser(), user);
-        userDao.updateById(user);
-        accountHelper.handleUserRoleUpdate(id, formVo.getRoleIds(), formVo.getRoleNames());
+    @Caching(put = {
+            @CachePut(key = "#accountFormVo.id"),
+            @CachePut(key = "#accountFormVo.user.username")
+    })
+    public void update(@NotEmpty Long id, @Validated AccountFormVo formVo) {
+        Optional<TUser> optional = userDao.getByIdOpt(id);
+        if (optional.isPresent()) {
+            TUser tUser = optional.get();
+            accountBuilder.copyUser(formVo.getUser(), tUser);
+            userDao.updateById(tUser);
+            accountHelper.handleUserRoleUpdate(id, formVo.getRoleIds(), formVo.getRoleNames());
+        }
     }
 
     @Override
     @Transactional
-    @CacheEvict(key = "ids.iterator()")
+    @CacheEvict(key = "ids")
     public void delete(List<Long> ids) {
         ids = CollUtil.emptyIfNull(ids).stream().distinct().collect(Collectors.toList());
         userDao.removeByIds(ids);
@@ -86,8 +96,6 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accoun
     @Caching(cacheable = {
             @Cacheable(key = "#result.id"),
             @Cacheable(key = "#result.user.username"),
-            @Cacheable(key = "#result.id+'_'+#result.user.name"),
-            @Cacheable(key = "#result.user.username+'_'+#result.user.name"),
     })
     public AccountDetailVo getById(Long id) {
         AccountDetailVo accountDetailVo = new AccountDetailVo();
@@ -98,18 +106,40 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accoun
     }
 
     @Override
+    @Caching(cacheable = {
+            @Cacheable(key = "accountQuery.id"),
+            @Cacheable(key = "accountQuery.username")
+    })
     public IPageData<AccountVo> queryPage(AccountQuery accountQuery) {
-        return accountBuilder.generateAccountVoPage(userDao.queryPage(accountBuilder.generateUserQuery(accountQuery)));
+        TUserQuery userQuery = getUserQuery(accountQuery);
+        IPageData<TUser> data = userDao.queryPage(userQuery);
+        return accountBuilder.generateAccountVoPage(data);
     }
 
     @Override
+    @Caching(cacheable = {
+            @Cacheable(key = "accountQuery.id"),
+            @Cacheable(key = "accountQuery.username")
+    })
     public Iterable<AccountVo> queryList(AccountQuery accountQuery) {
-        return null;
+        TUserQuery userQuery = getUserQuery(accountQuery);
+        List<TUser> tUsers = userDao.queryList(userQuery);
+        return accountBuilder.generateAccountVoList(tUsers);
     }
 
     @Override
+    @Caching(cacheable = {
+            @Cacheable(key = "accountQuery.id"),
+            @Cacheable(key = "accountQuery.username")
+    })
     public AccountVo queryOne(AccountQuery accountQuery) {
-        return null;
+        TUserQuery query = getUserQuery(accountQuery);
+        TUser tUser = userDao.queryOne(query);
+        return accountBuilder.generateAccountVo(tUser);
+    }
+
+    private TUserQuery getUserQuery(AccountQuery accountQuery) {
+        return accountBuilder.generateUserQuery(accountQuery);
     }
 
 

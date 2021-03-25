@@ -11,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -21,6 +22,10 @@ public class RoleFormVo extends IBaseVo {
     private RoleInfo role;
     @NotEmpty(groups = {Save.class})
     private Set<PermissionInfo> permissions;
+
+    public String getRoleName() {
+        return Optional.ofNullable(role).map(RoleInfo::getName).orElse(null);
+    }
 
 
     @Data

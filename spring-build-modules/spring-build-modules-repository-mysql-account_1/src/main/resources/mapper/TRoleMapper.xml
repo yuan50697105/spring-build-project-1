@@ -20,4 +20,11 @@
         id, create_id, update_id, create_user, update_user, create_date, update_date, version,
         is_delete, `name`
     </sql>
+
+    <select id="existByRoleName" resultType="boolean">
+        select count(*)
+        from t_role
+        where name = #{roleName,jdbcType=VARCHAR}
+        limit 1
+    </select>
 </mapper>

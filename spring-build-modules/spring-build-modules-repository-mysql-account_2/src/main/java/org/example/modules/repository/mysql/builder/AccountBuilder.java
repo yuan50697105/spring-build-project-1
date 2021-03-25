@@ -15,6 +15,7 @@ import org.mapstruct.MappingTarget;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Mapper(componentModel = "spring")
@@ -57,6 +58,7 @@ public interface AccountBuilder {
 
     IPageData<AccountVo> generateAccountVoPage(IPageData<TUser> data);
 
+    @Mapping(target = "versions", ignore = true)
     AccountVo generateAccountVo(TUser user);
 
     @Mapping(target = "version", ignore = true)
@@ -69,4 +71,6 @@ public interface AccountBuilder {
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)
     void copyUser(AccountFormVo.UserInfo user, @MappingTarget TUser tUser);
+
+    List<AccountVo> generateAccountVoList(List<TUser> tUsers);
 }

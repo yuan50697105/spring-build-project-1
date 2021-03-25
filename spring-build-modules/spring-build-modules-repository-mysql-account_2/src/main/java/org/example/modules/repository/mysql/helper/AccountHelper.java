@@ -16,7 +16,7 @@ import java.util.List;
 
 @Component
 @Transactional
-public class TAccountHelper {
+public class AccountHelper {
     @Autowired
     private AccountBuilder accountBuilder;
     @Autowired

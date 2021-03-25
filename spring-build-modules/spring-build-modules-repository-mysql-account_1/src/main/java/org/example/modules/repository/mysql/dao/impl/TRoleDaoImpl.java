@@ -19,6 +19,11 @@ import java.util.stream.Collectors;
 public class TRoleDaoImpl extends TkBaseDaoImpl<TRole, TRoleQuery, TRoleMapper> implements TRoleDao {
 
     @Override
+    public boolean existByRoleName(String roleName) {
+        return baseMapper.existByRoleName(roleName);
+    }
+
+    @Override
     public List<Long> getRoleIdListByIdsOrNames(List<Long> roleIds, List<String> roleNames) {
         return lambdaQuery().and(wrapper -> {
             wrapper.or().in(ObjectUtil.isNotEmpty(roleIds), IBaseEntity::getId, roleIds);
