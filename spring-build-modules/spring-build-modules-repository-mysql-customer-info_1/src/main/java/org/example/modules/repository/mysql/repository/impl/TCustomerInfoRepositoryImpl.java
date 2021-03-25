@@ -35,6 +35,11 @@ public class TCustomerInfoRepositoryImpl implements TCustomerInfoRepository {
     }
 
     @Override
+    public void update(Long id, CustomerInfoVo formVo) {
+
+    }
+
+    @Override
     public void delete(List<Long> ids) {
         customerInfoDao.removeByIds(ids);
     }

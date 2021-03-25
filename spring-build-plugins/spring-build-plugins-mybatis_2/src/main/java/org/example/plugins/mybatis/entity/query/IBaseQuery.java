@@ -1,7 +1,6 @@
 package org.example.plugins.mybatis.entity.query;
 
 import cn.hutool.core.util.ObjectUtil;
-import com.gitee.denger.mybatis.example.ext.MybatisExample;
 import com.gitee.denger.mybatis.example.ext.annotation.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,7 +12,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public abstract class IBaseQuery<E> extends BaseEntity implements MybatisExample<E>{
+public class IBaseQuery extends BaseEntity {
     private Integer page;
     private Integer size;
     private String order = "createDate";

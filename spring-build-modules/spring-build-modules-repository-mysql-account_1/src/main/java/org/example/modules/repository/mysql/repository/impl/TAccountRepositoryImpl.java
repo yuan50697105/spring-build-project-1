@@ -74,6 +74,11 @@ public class TAccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accou
     }
 
     @Override
+    public void update(Long id, AccountFormVo formVo) {
+
+    }
+
+    @Override
     @Transactional
     @CacheEvict(key = "ids.iterator()")
     public void delete(List<Long> ids) {

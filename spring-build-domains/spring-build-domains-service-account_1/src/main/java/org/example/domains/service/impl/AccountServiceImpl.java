@@ -21,4 +21,9 @@ public class AccountServiceImpl implements AccountService {
         accountRepository.save(accountFormVo);
     }
 
+    @Override
+    public void update(Long id, AccountFormVo formVo) {
+        accountRepository.update(id, formVo);
+    }
+
 }

@@ -11,7 +11,7 @@ import com.github.pagehelper.PageInfo;
 import org.example.plugins.mybatis.dao.IBaseDao;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.entity.OrderTypeEnum;
-import org.example.plugins.mybatis.entity.query.IBaseQuery;
+import org.example.plugins.mybatis.entity.query.EBaseQuery;
 import org.example.plugins.mybatis.entity.result.IPageResult;
 import org.example.plugins.mybatis.mapper.IBaseMapper;
 
@@ -21,7 +21,7 @@ import java.util.Optional;
 /**
  * @author yuane
  */
-public abstract class IBaseDaoImpl<T, Q extends IBaseQuery<E>, E, M extends IBaseMapper<T>> extends ServiceImpl<M, T> implements IBaseDao<T, Q, E> {
+public abstract class IBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBaseMapper<T>> extends ServiceImpl<M, T> implements IBaseDao<T, Q, E> {
     @Override
     public Optional<T> getByIdOpt(Long id) {
         return Optional.ofNullable(getById(id));
