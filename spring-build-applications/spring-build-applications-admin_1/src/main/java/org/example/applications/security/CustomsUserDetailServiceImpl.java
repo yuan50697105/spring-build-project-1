@@ -7,6 +7,7 @@ import org.example.plugins.security.CustomsUserDetailService;
 import org.example.plugins.security.CustomsUserDetails;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class CustomsUserDetailServiceImpl implements CustomsUserDetailService {
     private final AccountRepository accountRepository;
+    private final PasswordEncoder passwordEncoder;
     @Override
     public UserDetails updatePassword(UserDetails user, String newPassword) {
         return null;

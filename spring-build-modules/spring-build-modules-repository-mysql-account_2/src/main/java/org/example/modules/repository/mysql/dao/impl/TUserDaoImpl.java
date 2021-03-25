@@ -10,12 +10,19 @@ import org.example.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Component
 @Transactional
 public class TUserDaoImpl extends TkBaseDaoImpl<TUser, TUserQuery, TUserMapper> implements TUserDao {
     @Override
     public boolean existByUsername(String username) {
         return baseMapper.selectOneCountByUsername(username);
+    }
+
+    @Override
+    public Optional<TUser> getByUsernameOpt(String username) {
+        return Optional.empty();
     }
 
     @Override

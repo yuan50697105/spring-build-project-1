@@ -18,4 +18,9 @@ public class CustomsUserDetailServiceImpl implements CustomsUserDetailService {
     public UserDetails updatePassword(UserDetails user, String newPassword) {
         return null;
     }
+
+    @Override
+    public CustomsUserDetails loadUserById(Long id) {
+        return null;
+    }
 }
