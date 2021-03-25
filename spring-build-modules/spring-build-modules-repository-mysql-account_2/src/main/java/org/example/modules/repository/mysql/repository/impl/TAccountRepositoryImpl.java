@@ -9,10 +9,13 @@ import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.query.TAccountQuery;
 import org.example.modules.repository.mysql.entity.vo.AccountVo;
 import org.example.modules.repository.mysql.helper.TAccountHelper;
-import org.example.modules.repository.mysql.validator.TAccountValidator;
 import org.example.modules.repository.mysql.repository.TAccountRepository;
+import org.example.modules.repository.mysql.validator.TAccountValidator;
 import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
@@ -21,6 +24,7 @@ import java.util.List;
 
 @Repository
 @Transactional
+@Cacheable(cacheNames = {"accounts", "users"})
 public class TAccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, AccountVo, TAccountQuery> implements TAccountRepository {
     @Autowired
     private UserBuilder userBuilder;
@@ -37,6 +41,7 @@ public class TAccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accou
 
     @Override
     @Transactional
+    @CachePut
     public void save(@Validated AccountVo accountVo) {
         accountValidator.validate(accountVo);
         TUser user = userBuilder.generateUser(accountVo.getAccount());
@@ -50,11 +55,13 @@ public class TAccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accou
     }
 
     @Override
+    @CachePut
     public void update(AccountVo accountVo) {
 
     }
 
     @Override
+    @CacheEvict
     public void delete(List<Long> ids) {
 
     }
