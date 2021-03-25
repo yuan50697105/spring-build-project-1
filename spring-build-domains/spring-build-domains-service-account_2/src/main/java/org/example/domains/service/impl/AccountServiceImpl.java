@@ -3,7 +3,7 @@ package org.example.domains.service.impl;
 import org.example.domains.builder.AccountBuilder;
 import org.example.domains.service.AccountService;
 import org.example.modules.repository.mysql.entity.vo.AccountFormVo;
-import org.example.modules.repository.mysql.repository.TAccountRepository;
+import org.example.modules.repository.mysql.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class AccountServiceImpl implements AccountService {
     @Autowired
-    private TAccountRepository accountRepository;
+    private AccountRepository accountRepository;
     @Autowired
     private AccountBuilder accountBuilder;
 

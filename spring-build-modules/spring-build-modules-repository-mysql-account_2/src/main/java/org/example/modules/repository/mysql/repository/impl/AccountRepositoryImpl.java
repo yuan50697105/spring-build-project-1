@@ -11,7 +11,7 @@ import org.example.modules.repository.mysql.entity.vo.AccountDetailVo;
 import org.example.modules.repository.mysql.entity.vo.AccountFormVo;
 import org.example.modules.repository.mysql.entity.vo.AccountVo;
 import org.example.modules.repository.mysql.helper.TAccountHelper;
-import org.example.modules.repository.mysql.repository.TAccountRepository;
+import org.example.modules.repository.mysql.repository.AccountRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 @Repository
 @Transactional
 @Cacheable(cacheNames = {"accounts", "users"},sync = true)
-public class TAccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, AccountFormVo, AccountDetailVo, AccountQuery> implements TAccountRepository {
+public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, AccountFormVo, AccountDetailVo, AccountQuery> implements AccountRepository {
     @Autowired
     private AccountBuilder accountBuilder;
     @Autowired

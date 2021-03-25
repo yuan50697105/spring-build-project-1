@@ -7,7 +7,7 @@ import org.example.plugins.mybatis.entity.query.TkBaseQuery;
 import org.example.plugins.mybatis.mapper.IBaseMapper;
 import tk.mybatis.mapper.entity.Example;
 
-public abstract class TkBaseDaoImpl<T, Q extends TkBaseQuery<T>, M extends IBaseMapper<T>> extends IBaseDaoImpl<T, Q, Example, M> implements TkBaseDao<T, Q> {
+public abstract class TkBaseDaoImpl<T, Q extends TkBaseQuery<T>, M extends IBaseMapper<T>> extends EBaseDaoImpl<T, Q, Example, M> implements TkBaseDao<T, Q> {
     @Override
     protected Example exampleAddOrder(Q query, Example example) {
         example = super.exampleAddOrder(query, example);

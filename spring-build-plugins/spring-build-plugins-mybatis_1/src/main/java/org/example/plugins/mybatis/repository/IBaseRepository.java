@@ -2,6 +2,7 @@ package org.example.plugins.mybatis.repository;
 
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.entity.query.EBaseQuery;
+import org.example.plugins.mybatis.entity.query.IBaseQuery;
 
 import java.util.Iterator;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.Optional;
 /**
  * @author yuane
  */
-public interface IBaseRepository<T, V, D, Q extends EBaseQuery> {
+public interface IBaseRepository<T, V, D, Q extends IBaseQuery> {
 
     void save(V v);
 

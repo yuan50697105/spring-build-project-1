@@ -1,5 +1,6 @@
 package org.example.plugins.mybatis.dao.impl;
 
+import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -8,7 +9,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.example.plugins.mybatis.dao.IBaseDao;
+import org.example.plugins.mybatis.dao.EBaseDao;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.entity.OrderTypeEnum;
 import org.example.plugins.mybatis.entity.query.EBaseQuery;
@@ -21,7 +22,7 @@ import java.util.Optional;
 /**
  * @author yuane
  */
-public abstract class IBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBaseMapper<T>> extends ServiceImpl<M, T> implements IBaseDao<T, Q, E> {
+public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBaseMapper<T>> extends ServiceImpl<M, T> implements EBaseDao<T, Q, E> {
     @Override
     public Optional<T> getByIdOpt(Long id) {
         return Optional.ofNullable(getById(id));
@@ -119,6 +120,9 @@ public abstract class IBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
         }
     }
 
+    public boolean isNotEmpty(Object object) {
+        return ObjectUtil.isNotEmpty(object);
+    }
     protected abstract Wrapper<T> queryWrapper(Q q);
 
     protected <T> IPageData<E> pageData(PageInfo<E> pageInfo) {
