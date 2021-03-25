@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TAccountVo extends IBaseVo {
+public class AccountVo extends IBaseVo {
     @NotEmpty(groups = {Update.class})
     private Long id;
     @NotEmpty
@@ -28,15 +28,15 @@ public class TAccountVo extends IBaseVo {
     @ApiModelProperty("角色信息")
     private Set<RoleInfo> roles;
 
-    public TAccountVo() {
+    public AccountVo() {
     }
 
-    public TAccountVo(@NotEmpty AccountInfo account, @NotEmpty Set<RoleInfo> roles) {
+    public AccountVo(@NotEmpty AccountInfo account, @NotEmpty Set<RoleInfo> roles) {
         this.account = account;
         this.roles = roles;
     }
 
-    public TAccountVo(@NotEmpty(groups = {Update.class}) Long id, @NotEmpty AccountInfo account, @NotEmpty Set<RoleInfo> roles) {
+    public AccountVo(@NotEmpty(groups = {Update.class}) Long id, @NotEmpty AccountInfo account, @NotEmpty Set<RoleInfo> roles) {
         this.id = id;
         this.account = account;
         this.roles = roles;
