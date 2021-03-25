@@ -23,6 +23,7 @@
         <module>spring-build-plugins-web</module>
         <module>spring-build-plugins-security-jwt</module>
         <module>spring-build-plugins-security-session-redis</module>
+        <module>spring-build-plugins-security</module>
     </modules>
 
     <dependencyManagement>
