@@ -6,4 +6,6 @@ public interface AccountService {
     void save(AccountFormVo accountFormVo);
 
     void update(Long id, AccountFormVo formVo);
+
+    void update(AccountFormVo formVo);
 }

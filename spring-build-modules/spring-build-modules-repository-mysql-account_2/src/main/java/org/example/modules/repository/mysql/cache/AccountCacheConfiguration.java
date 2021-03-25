@@ -21,11 +21,12 @@ import org.springframework.data.redis.serializer.RedisSerializationContext;
 @EnableConfigurationProperties(AccountCacheProperties.class)
 @AutoConfigureAfter(RedisAutoConfiguration.class)
 public class AccountCacheConfiguration {
+    public static final String ACCOUNT_CACHE_MANAGER = "accountCacheManager";
     @Autowired
     private AccountCacheProperties properties;
 
-    @Bean
-    public RedisCacheManager accountCacheCacheManager(RedisConnectionFactory redisConnectionFactory) {
+    @Bean(ACCOUNT_CACHE_MANAGER)
+    public RedisCacheManager accountCacheManager(RedisConnectionFactory redisConnectionFactory) {
         RedisCacheConfiguration cacheConfiguration =
                 RedisCacheConfiguration.defaultCacheConfig()
                         .entryTtl(properties.getEntryTtl())   // 设置缓存过期时间为一天

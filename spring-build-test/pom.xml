@@ -12,7 +12,8 @@
     <artifactId>spring-build-test</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-build-test-admin</module>
+        <module>spring-build-test-admin_1</module>
+        <module>spring-build-test-admin_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

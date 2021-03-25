@@ -2,6 +2,7 @@ package org.example.modules.repository.mysql.repository.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import org.example.modules.repository.mysql.builder.AccountBuilder;
+import org.example.modules.repository.mysql.cache.AccountCacheConfiguration;
 import org.example.modules.repository.mysql.dao.TRoleDao;
 import org.example.modules.repository.mysql.dao.TUserDao;
 import org.example.modules.repository.mysql.dao.TUserRoleDao;
@@ -31,7 +32,7 @@ import java.util.stream.Collectors;
 
 @Repository
 @Transactional
-@Cacheable(cacheNames = {"accounts", "users"},sync = true)
+@Cacheable(cacheNames = {"accounts", "users"},sync = true,cacheManager = AccountCacheConfiguration.ACCOUNT_CACHE_MANAGER)
 public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, AccountFormVo, AccountDetailVo, AccountQuery> implements AccountRepository {
     @Autowired
     private AccountBuilder accountBuilder;
@@ -70,8 +71,8 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accoun
 
     @Override
     @Caching(put = {
-            @CachePut(key = "#accountFormVo.id"),
-            @CachePut(key = "#accountFormVo.user.username")
+            @CachePut(key = "#id"),
+            @CachePut(key = "#formVo.user.username")
     })
     public void update(@NotEmpty Long id, @Validated AccountFormVo formVo) {
         Optional<TUser> optional = userDao.getByIdOpt(id);
@@ -85,7 +86,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accoun
 
     @Override
     @Transactional
-    @CacheEvict(key = "ids")
+    @CacheEvict(key = "#ids")
     public void delete(List<Long> ids) {
         ids = CollUtil.emptyIfNull(ids).stream().distinct().collect(Collectors.toList());
         userDao.removeByIds(ids);
@@ -162,6 +163,10 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accoun
     }
 
     @Override
+    @Caching(cacheable = {
+            @Cacheable(key = "#result.get().id"),
+            @Cacheable(key = "#result.get().user.username")
+    })
     public Optional<AccountDetailVo> getByUsernameOpt(String username) {
         return Optional.empty();
     }
