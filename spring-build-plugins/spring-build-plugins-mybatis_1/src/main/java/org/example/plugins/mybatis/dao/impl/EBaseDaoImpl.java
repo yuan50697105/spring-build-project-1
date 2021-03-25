@@ -24,7 +24,7 @@ import java.util.Optional;
  */
 public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBaseMapper<T>> extends ServiceImpl<M, T> implements EBaseDao<T, Q, E> {
     @Override
-    public org.example.modules.repository.mysql.entity.po.TUser getByIdOpt(Long id) {
+    public Optional<T> getByIdOpt(Long id) {
         return Optional.ofNullable(getById(id));
     }
 
