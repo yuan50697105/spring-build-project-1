@@ -142,5 +142,27 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accoun
         return accountBuilder.generateUserQuery(accountQuery);
     }
 
+    @Override
+    @Caching(cacheable = {
+            @Cacheable(key = "#result.id"),
+            @Cacheable(key = "#result.user.username")
+    })
+    public AccountDetailVo getByUsername(String username) {
+        Optional<TUser> optional = userDao.getByUsernameOpt(username);
+        if (optional.isPresent()) {
+            AccountDetailVo accountDetailVo = new AccountDetailVo();
+            TUser tUser = optional.get();
+            accountDetailVo.setId(tUser.getId());
+            accountDetailVo.setUser(accountBuilder.generateUserInfo(tUser));
+            accountDetailVo.setRoles(accountBuilder.generateUserRoleInfos(userRoleDao.getRolesByUsername(username)));
+            return accountDetailVo;
+        } else {
+            return null;
+        }
+    }
 
+    @Override
+    public Optional<AccountDetailVo> getByUsernameOpt(String username) {
+        return Optional.empty();
+    }
 }

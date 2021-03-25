@@ -21,8 +21,6 @@
         <module>spring-build-plugins-message-rocketmq</module>
         <module>spring-build-plugins-message-kafka</module>
         <module>spring-build-plugins-web</module>
-        <module>spring-build-plugins-security-jwt</module>
-        <module>spring-build-plugins-security-session-redis</module>
         <module>spring-build-plugins-security</module>
     </modules>
 

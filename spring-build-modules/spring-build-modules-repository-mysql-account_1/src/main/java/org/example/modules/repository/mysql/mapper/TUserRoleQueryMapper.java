@@ -9,4 +9,6 @@ import java.util.List;
 public interface TUserRoleQueryMapper {
 
     List<TRole> getRoleListByUserId(Long userId);
+
+    List<TRole> getRolesByUsername(String username);
 }

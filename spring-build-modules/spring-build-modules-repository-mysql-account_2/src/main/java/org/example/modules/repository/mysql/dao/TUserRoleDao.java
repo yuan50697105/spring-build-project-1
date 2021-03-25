@@ -3,6 +3,7 @@ package org.example.modules.repository.mysql.dao;
 import org.example.modules.repository.mysql.entity.po.TRole;
 import org.example.modules.repository.mysql.entity.po.TUserRole;
 import org.example.modules.repository.mysql.entity.query.TUserRoleQuery;
+import org.example.modules.repository.mysql.entity.vo.AccountDetailVo;
 import org.example.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface TUserRoleDao extends TkBaseDao<TUserRole, TUserRoleQuery> {
     List<TRole> getRolesByUserId(Long userId);
 
     List<Long> getRoleIdsByUserId(Long id);
+
+    List<TRole> getRolesByUsername(String username);
 }

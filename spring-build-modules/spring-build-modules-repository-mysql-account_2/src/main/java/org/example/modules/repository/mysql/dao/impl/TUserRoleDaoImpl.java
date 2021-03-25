@@ -41,6 +41,11 @@ public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, T
     }
 
     @Override
+    public List<TRole> getRolesByUsername(String username) {
+        return userRoleQueryMapper.getRolesByUsername(username);
+    }
+
+    @Override
     protected Wrapper<TUserRole> queryWrapper(TUserRoleQuery tUserRoleQuery) {
         return null;
     }
