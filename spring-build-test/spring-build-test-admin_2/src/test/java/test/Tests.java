@@ -14,7 +14,10 @@ public class Tests {
     @Test
     void test() {
 //        PasswordEncoder passwordEncoder = SpringUtils.getBean(PasswordEncoder.class);
-        String encode = passwordEncoder.encode("{bcrypt}yuanenzhi");
+        String yuanenzhi = "yuanenzhi";
+        String encode = passwordEncoder.encode("{bcrypt}" + yuanenzhi);
+        System.out.println("encode = " + encode);
+        encode = passwordEncoder.encode("{ldap}" + yuanenzhi);
         System.out.println("encode = " + encode);
     }
 }
