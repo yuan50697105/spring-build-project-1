@@ -1,5 +1,6 @@
 package org.example.modules.repository.mysql.dao.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import org.example.modules.repository.mysql.dao.TCustomerInfoDao;
 import org.example.modules.repository.mysql.entity.po.TCustomerInfo;
 import org.example.modules.repository.mysql.entity.query.TCustomerInfoQuery;
@@ -11,4 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Component
 @Transactional
 public class TCustomerInfoDaoImpl extends TkBaseDaoImpl<TCustomerInfo, TCustomerInfoQuery, TCustomerInfoMapper> implements TCustomerInfoDao {
+    @Override
+    protected Wrapper<TCustomerInfo> queryWrapper(TCustomerInfoQuery tCustomerInfoQuery) {
+        return null;
+    }
 }

@@ -4,16 +4,21 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.plugins.commons.entity.BaseEntity;
 
+import java.util.List;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class IPageData<T> extends BaseEntity {
-    private Iterable<T> data;
+    private List<T> data;
     private Long page;
     private Long size;
     private Long totalPages;
     private Long totalRowNum;
 
-    public IPageData(Iterable<T> data, Long page, Long size, Long totalPage, Long totalRowNum) {
+//    public IPageData() {
+//    }
+
+    public IPageData(List<T> data, Long page, Long size, Long totalPage, Long totalRowNum) {
         this.data = data;
         this.page = page;
         this.size = size;
@@ -21,7 +26,7 @@ public class IPageData<T> extends BaseEntity {
         this.totalRowNum = totalRowNum;
     }
 
-    public IPageData(Iterable<T> data, Integer page, Integer size, Integer totalPage, Integer totalRowNum) {
+    protected IPageData(List<T> data, Integer page, Integer size, Integer totalPage, Integer totalRowNum) {
         this.data = data;
         this.page = Long.valueOf(page);
         this.size = Long.valueOf(size);
@@ -29,7 +34,7 @@ public class IPageData<T> extends BaseEntity {
         this.totalRowNum = Long.valueOf(totalRowNum);
     }
 
-    public IPageData(Iterable<T> data, Integer page, Integer size, Long totalPage, Long totalRowNum) {
+    protected IPageData(List<T> data, Integer page, Integer size, Long totalPage, Long totalRowNum) {
         this.data = data;
         this.page = Long.valueOf(page);
         this.size = Long.valueOf(size);
@@ -37,7 +42,7 @@ public class IPageData<T> extends BaseEntity {
         this.totalRowNum = totalRowNum;
     }
 
-    public IPageData(Iterable<T> data, Integer page, Integer size, Integer totalPages, Long totalRowNum) {
+    protected IPageData(List<T> data, Integer page, Integer size, Integer totalPages, Long totalRowNum) {
         this.data = data;
         this.page = Long.valueOf(page);
         this.size = Long.valueOf(size);

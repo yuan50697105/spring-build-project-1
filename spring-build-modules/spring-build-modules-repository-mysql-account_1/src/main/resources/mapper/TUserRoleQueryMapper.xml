@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.example.modules.repository.mysql.mapper.TUserRoleQueryMapper">
+    <select id="getRoleListByUserId" resultMap="org.example.modules.repository.mysql.mapper.TRoleMapper.BaseResultMap">
+        select
+        <include refid="org.example.modules.repository.mysql.mapper.TRoleMapper.Base_Column_List">
+        </include>
+        from t_role
+        where id in (
+                select role_id
+                from t_user_role
+                where user_id = #{userId,jdbcType=BIGINT}
+                )
+    </select>
+</mapper>

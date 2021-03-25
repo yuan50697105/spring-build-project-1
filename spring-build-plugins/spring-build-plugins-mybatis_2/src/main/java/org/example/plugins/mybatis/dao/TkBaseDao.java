@@ -1,7 +1,7 @@
 package org.example.plugins.mybatis.dao;
 
-import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
+import org.example.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 
-public interface TkBaseDao<T, Q extends MybatisExampleForTk<T, Example>> extends IBaseDao<T, Q, Example> {
+public interface TkBaseDao<T, Q extends TkBaseQuery<T>> extends IBaseDao<T, Q, Example> {
 }
