@@ -121,7 +121,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accoun
             @Cacheable(key = "accountQuery.id"),
             @Cacheable(key = "accountQuery.username")
     })
-    public Iterable<AccountVo> queryList(AccountQuery accountQuery) {
+    public List<AccountVo> queryList(AccountQuery accountQuery) {
         TUserQuery userQuery = getUserQuery(accountQuery);
         List<TUser> tUsers = userDao.queryList(userQuery);
         return accountBuilder.generateAccountVoList(tUsers);

@@ -1,7 +1,6 @@
 package org.example.plugins.mybatis.repository;
 
 import org.example.plugins.mybatis.entity.IPageData;
-import org.example.plugins.mybatis.entity.query.EBaseQuery;
 import org.example.plugins.mybatis.entity.query.IBaseQuery;
 
 import java.util.Iterator;
@@ -29,7 +28,7 @@ public interface IBaseRepository<T, V, D, Q extends IBaseQuery> {
 
     IPageData<T> queryPage(Q q);
 
-    Iterable<T> queryList(Q q);
+    List<T> queryList(Q q);
 
     T queryOne(Q q);
 
@@ -37,19 +36,14 @@ public interface IBaseRepository<T, V, D, Q extends IBaseQuery> {
         return Optional.ofNullable(queryOne(q));
     }
 
-    default Iterable<T> queryTop(Q q, int size) {
+    default List<T> queryTop(Q q, int size) {
         q.setPage(1);
         q.setSize(size);
         return queryPage(q).getData();
     }
 
     default T queryFirst(Q q) {
-        Iterator<T> iterator = queryTop(q, 1).iterator();
-        if (iterator.hasNext()) {
-            return iterator.next();
-        } else {
-            return null;
-        }
+        return queryTop(q, 1).stream().findFirst().orElse(null);
     }
 
     default Optional<T> queryFirstOpt(Q q) {

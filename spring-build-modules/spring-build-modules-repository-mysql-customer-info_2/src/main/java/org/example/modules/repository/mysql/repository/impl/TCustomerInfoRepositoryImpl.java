@@ -55,7 +55,7 @@ public class TCustomerInfoRepositoryImpl implements TCustomerInfoRepository {
     }
 
     @Override
-    public Iterable<CustomerInfoVo> queryList(CustomerInfoQuery customerInfoQuery) {
+    public List<CustomerInfoVo> queryList(CustomerInfoQuery customerInfoQuery) {
         return null;
     }
 

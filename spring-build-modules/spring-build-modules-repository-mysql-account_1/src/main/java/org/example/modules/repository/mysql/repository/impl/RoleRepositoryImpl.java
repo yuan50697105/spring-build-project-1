@@ -77,7 +77,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleVo, RoleFormVo, 
     }
 
     @Override
-    public Iterable<RoleVo> queryList(RoleQuery roleQuery) {
+    public List<RoleVo> queryList(RoleQuery roleQuery) {
         return null;
     }
 
