@@ -26,4 +26,10 @@ public class AccountController {
         return R.success();
     }
 
+    @PutMapping
+    public Result<?> update2(@Validated @RequestBody AccountFormVo formVo) {
+        accountService.update(formVo);
+        return R.success();
+    }
+
 }

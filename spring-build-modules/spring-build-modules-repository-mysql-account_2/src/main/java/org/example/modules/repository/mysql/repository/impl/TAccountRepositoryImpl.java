@@ -1,8 +1,7 @@
 package org.example.modules.repository.mysql.repository.impl;
 
 import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.util.ObjectUtil;
-import org.example.modules.repository.mysql.builder.UserBuilder;
+import org.example.modules.repository.mysql.builder.AccountBuilder;
 import org.example.modules.repository.mysql.dao.TRoleDao;
 import org.example.modules.repository.mysql.dao.TUserDao;
 import org.example.modules.repository.mysql.dao.TUserRoleDao;
@@ -13,7 +12,6 @@ import org.example.modules.repository.mysql.entity.vo.AccountFormVo;
 import org.example.modules.repository.mysql.entity.vo.AccountVo;
 import org.example.modules.repository.mysql.helper.TAccountHelper;
 import org.example.modules.repository.mysql.repository.TAccountRepository;
-import org.example.modules.repository.mysql.validator.TAccountValidator;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,15 +31,13 @@ import java.util.stream.Collectors;
 @Cacheable(cacheNames = {"accounts", "users"},sync = true)
 public class TAccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, AccountFormVo, AccountDetailVo, AccountQuery> implements TAccountRepository {
     @Autowired
-    private UserBuilder userBuilder;
+    private AccountBuilder accountBuilder;
     @Autowired
     private TUserDao userDao;
     @Autowired
     private TRoleDao roleDao;
     @Autowired
     private TUserRoleDao userRoleDao;
-    @Autowired
-    private TAccountValidator accountValidator;
     @Autowired
     private TAccountHelper accountHelper;
 
@@ -52,15 +48,11 @@ public class TAccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accou
             @CachePut(key = "#accountFormVo.user.username")
     })
     public void save(@Validated AccountFormVo accountFormVo) {
-        accountValidator.validate(accountFormVo);
-        TUser user = userBuilder.generateUser(accountFormVo.getUser());
+        accountHelper.validate(accountFormVo);
+        TUser user = accountBuilder.generateUser(accountFormVo.getUser());
         userDao.save(user);
-        if (ObjectUtil.isAllEmpty(accountFormVo.getRoleIds(), accountFormVo.getRoleNames())) {
-            throw new RuntimeException("角色信息错误");
-        } else {
-            List<Long> roleIds = accountHelper.getRoleIdList(accountFormVo);
-            userRoleDao.saveBatch(userBuilder.generateUserRoles(user.getId(), roleIds));
-        }
+        List<Long> roleIds = roleDao.getRoleIdListByIdsOrNames(accountFormVo.getRoleIds(), accountFormVo.getRoleNames());
+        userRoleDao.saveBatch(accountBuilder.generateUserRoles(user.getId(), roleIds));
     }
 
     @Override
@@ -75,7 +67,10 @@ public class TAccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accou
 
     @Override
     public void update(Long id, AccountFormVo formVo) {
-
+        TUser user = userDao.getById(id);
+        accountBuilder.copyUser(formVo.getUser(), user);
+        userDao.updateById(user);
+        accountHelper.handleUserRoleUpdate(id, formVo.getRoleIds(), formVo.getRoleNames());
     }
 
     @Override
@@ -97,14 +92,14 @@ public class TAccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accou
     public AccountDetailVo getById(Long id) {
         AccountDetailVo accountDetailVo = new AccountDetailVo();
         accountDetailVo.setId(id);
-        accountDetailVo.setUser(userBuilder.generateUserInfo(userDao.getById(id)));
-        accountDetailVo.setRoles(userBuilder.generateUserRoleInfos(userRoleDao.getListByUserId(id)));
+        accountDetailVo.setUser(accountBuilder.generateUserInfo(userDao.getById(id)));
+        accountDetailVo.setRoles(accountBuilder.generateUserRoleInfos(userRoleDao.getRolesByUserId(id)));
         return accountDetailVo;
     }
 
     @Override
     public IPageData<AccountVo> queryPage(AccountQuery accountQuery) {
-        return userBuilder.generateAccountVoPage(userDao.queryPage(userBuilder.generateUserQuery(accountQuery)));
+        return accountBuilder.generateAccountVoPage(userDao.queryPage(accountBuilder.generateUserQuery(accountQuery)));
     }
 
     @Override

@@ -1,5 +1,6 @@
 package org.example.modules.repository.mysql.dao.impl;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import org.example.modules.repository.mysql.dao.TRoleDao;
 import org.example.modules.repository.mysql.entity.po.TRole;
@@ -16,14 +17,13 @@ import java.util.stream.Collectors;
 @Component
 @Transactional
 public class TRoleDaoImpl extends TkBaseDaoImpl<TRole, TRoleQuery, TRoleMapper> implements TRoleDao {
-    @Override
-    public List<Long> getRoleIdListByIds(List<Long> roleIds) {
-        return lambdaQuery().in(IBaseEntity::getId, roleIds).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
-    }
 
     @Override
-    public List<Long> getRoleIdListByNames(List<String> roleNames) {
-        return lambdaQuery().in(TRole::getName,roleNames).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
+    public List<Long> getRoleIdListByIdsOrNames(List<Long> roleIds, List<String> roleNames) {
+        return lambdaQuery().and(wrapper -> {
+            wrapper.or().in(ObjectUtil.isNotEmpty(roleIds), IBaseEntity::getId, roleIds);
+            wrapper.or().in(ObjectUtil.isNotEmpty(roleNames), TRole::getName, roleNames);
+        }).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
     }
 
     @Override

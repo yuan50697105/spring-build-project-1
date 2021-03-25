@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 @Transactional
@@ -25,8 +26,18 @@ public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, T
     }
 
     @Override
-    public List<TRole> getListByUserId(Long userId) {
+    public boolean removeByRoleIdsAndUserId(List<Long> userRoleIds, Long id) {
+        return lambdaUpdate().eq(TUserRole::getUserId,id).in(TUserRole::getRoleId,userRoleIds).remove();
+    }
+
+    @Override
+    public List<TRole> getRolesByUserId(Long userId) {
         return userRoleQueryMapper.getRoleListByUserId(userId);
+    }
+
+    @Override
+    public List<Long> getRoleIdsByUserId(Long id) {
+        return lambdaQuery().eq(TUserRole::getUserId,id).select(TUserRole::getRoleId).list().stream().map(TUserRole::getRoleId).distinct().collect(Collectors.toList());
     }
 
     @Override

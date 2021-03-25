@@ -10,5 +10,9 @@ import java.util.List;
 public interface TUserRoleDao extends TkBaseDao<TUserRole, TUserRoleQuery> {
     boolean removeByUserIds(List<Long> userIds);
 
-    List<TRole> getListByUserId(Long userId);
+    boolean removeByRoleIdsAndUserId(List<Long> userRoleIds, Long id);
+
+    List<TRole> getRolesByUserId(Long userId);
+
+    List<Long> getRoleIdsByUserId(Long id);
 }

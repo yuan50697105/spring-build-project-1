@@ -8,7 +8,6 @@ import java.util.Collection;
 import java.util.List;
 
 public interface TRoleDao extends TkBaseDao<TRole, TRoleQuery> {
-    List<Long> getRoleIdListByIds(List<Long> roleIds);
 
-    List<Long> getRoleIdListByNames(List<String> roleNames);
+    List<Long> getRoleIdListByIdsOrNames(List<Long> roleIds, List<String> roleNames);
 }
