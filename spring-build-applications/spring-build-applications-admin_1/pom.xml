@@ -26,8 +26,7 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>spring-build-plugins-security-session-redis</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <artifactId>spring-build-plugins-security</artifactId>
         </dependency>
     </dependencies>
 
