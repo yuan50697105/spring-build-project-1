@@ -2,6 +2,7 @@ package test;
 
 import cn.hutool.core.io.IoUtil;
 import cn.hutool.crypto.SecureUtil;
+import cn.hutool.crypto.digest.MD5;
 import lombok.extern.slf4j.Slf4j;
 import org.example.AdminTestApplication;
 import org.junit.jupiter.api.Test;
@@ -11,25 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.io.*;
 
-@SpringBootTest(classes = AdminTestApplication.class)
 @Slf4j
-public class Tests {
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    @Test
-    void test() throws FileNotFoundException {
-//        PasswordEncoder passwordEncoder = SpringUtils.getBean(PasswordEncoder.class);
-        String yuanenzhi = "yuanenzhi";
-        String encode = passwordEncoder.encode("{bcrypt}" + yuanenzhi);
-        System.out.println("encode = " + encode);
-        encode = passwordEncoder.encode("{ldap}" + yuanenzhi);
-        System.out.println("encode = " + encode);
-        encode = passwordEncoder.encode("yuanenzhi");
-        System.out.println("encode = " + encode);
-//        String md5 = SecureUtil.md5(yuanenzhi);
-
-    }
+public class Tests2 {
 
     @Test
     void t2() throws FileNotFoundException {
@@ -40,11 +24,22 @@ public class Tests {
     }
 
     private void extracted(String s) throws FileNotFoundException {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(new File(s)));
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(s));
+        FileInputStream fileInputStream = new FileInputStream(s);
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        IoUtil.copy(bufferedInputStream, byteArrayOutputStream);
+        IoUtil.copy(fileInputStream, byteArrayOutputStream);
+        FileInputStream fileInputStream1 = new FileInputStream(s);
+        ByteArrayOutputStream byteArrayOutputStream1 = new ByteArrayOutputStream();
         byte[] bytes = byteArrayOutputStream.toByteArray();
-        String md51 = SecureUtil.md5(bufferedInputStream);
-        log.info("md51 = " + md51);
+        IoUtil.copy(fileInputStream1, byteArrayOutputStream1);
+        byte[] bytes1 = byteArrayOutputStream1.toByteArray();
+        MD5 md5 = MD5.create();
+        String hex16 = md5.digestHex16(fileInputStream);
+        log.info("hex16 = " + hex16);
+        String hex161 = md5.digestHex16(bytes);
+        log.info("hex161 = " + hex161);
+        String hex162 = md5.digestHex16(bytes1);
+        log.info("hex162 = " + hex162);
+
     }
 }
