@@ -8,7 +8,6 @@ import org.example.modules.repository.mysql.entity.vo.CustomerContractFormVo;
 import org.example.modules.repository.mysql.entity.result.CustomerContractResult;
 import org.example.modules.repository.mysql.entity.po.TCustomerContract;
 import org.example.modules.repository.mysql.entity.query.CustomerContractQuery;
-import org.example.modules.repository.mysql.entity.vo.CustomerContractVo;
 import org.example.modules.repository.mysql.repository.CustomerContractRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
@@ -82,12 +81,5 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
         TCustomerContractQuery contractQuery = customerContractBuilder.createCustomerContractQuery(customerContractQuery);
         TCustomerContract contract = customerContractDao.queryOne(contractQuery);
         return customerContractBuilder.createCustomerContractVo(contract);
-    }
-
-    @Override
-    public Long saveWithId(CustomerContractVo contract) {
-        TCustomerContract customerContract = customerContractBuilder.createCustomerContract(contract);
-        customerContractDao.save(customerContract);
-        return customerContract.getId();
     }
 }

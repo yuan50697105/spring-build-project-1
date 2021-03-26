@@ -71,11 +71,4 @@ public class CustomerInfoRepositoryImpl implements CustomerInfoRepository {
     public CustomerInfoResult queryOne(CustomerInfoQuery customerInfoQuery) {
         return null;
     }
-
-    @Override
-    public Long saveWithId(CustomerInfoVo customer) {
-        TCustomerInfo customerInfo = customerInfoBuilder.generateCustomer(customer);
-        customerInfoDao.save(customerInfo);
-        return customerInfo.getId();
-    }
 }
