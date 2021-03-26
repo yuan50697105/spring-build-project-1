@@ -5,6 +5,7 @@ import org.example.modules.repository.mysql.dao.TCustomerInfoDao;
 import org.example.modules.repository.mysql.entity.po.TCustomerInfo;
 import org.example.modules.repository.mysql.entity.query.CustomerInfoQuery;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoFormVo;
+import org.example.modules.repository.mysql.entity.result.CustomerInfoResult;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
 import org.example.modules.repository.mysql.repository.CustomerInfoRepository;
 import org.example.plugins.mybatis.entity.IPageData;
@@ -37,7 +38,7 @@ public class CustomerInfoRepositoryImpl implements CustomerInfoRepository {
     @Override
     public void update(CustomerInfoFormVo customerInfoFormVo) {
         TCustomerInfo tCustomerInfo = customerInfoDao.getById(customerInfoFormVo.getId());
-        CustomerInfoFormVo.CustomerInfo customer = customerInfoFormVo.getCustomer();
+        CustomerInfoVo customer = customerInfoFormVo.getCustomer();
         customerInfoBuilder.copyCustomer(customer, tCustomerInfo);
     }
 
@@ -52,22 +53,22 @@ public class CustomerInfoRepositoryImpl implements CustomerInfoRepository {
     }
 
     @Override
-    public CustomerInfoVo getById(Long id) {
+    public CustomerInfoResult getById(Long id) {
         return null;
     }
 
     @Override
-    public IPageData<CustomerInfoVo> queryPage(CustomerInfoQuery customerInfoQuery) {
+    public IPageData<CustomerInfoResult> queryPage(CustomerInfoQuery customerInfoQuery) {
         return null;
     }
 
     @Override
-    public List<CustomerInfoVo> queryList(CustomerInfoQuery customerInfoQuery) {
+    public List<CustomerInfoResult> queryList(CustomerInfoQuery customerInfoQuery) {
         return null;
     }
 
     @Override
-    public CustomerInfoVo queryOne(CustomerInfoQuery customerInfoQuery) {
+    public CustomerInfoResult queryOne(CustomerInfoQuery customerInfoQuery) {
         return null;
     }
 }

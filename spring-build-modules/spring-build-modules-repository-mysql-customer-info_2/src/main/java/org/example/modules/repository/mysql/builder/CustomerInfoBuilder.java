@@ -1,7 +1,7 @@
 package org.example.modules.repository.mysql.builder;
 
 import org.example.modules.repository.mysql.entity.po.TCustomerInfo;
-import org.example.modules.repository.mysql.entity.vo.CustomerInfoFormVo;
+import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
@@ -17,7 +17,7 @@ public interface CustomerInfoBuilder {
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)
-    TCustomerInfo generateCustomer(CustomerInfoFormVo.CustomerInfo customer);
+    TCustomerInfo generateCustomer(CustomerInfoVo customer);
 
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "updateUser", ignore = true)
@@ -28,5 +28,5 @@ public interface CustomerInfoBuilder {
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)
-    void copyCustomer(CustomerInfoFormVo.CustomerInfo customer, @MappingTarget TCustomerInfo tCustomerInfo);
+    void copyCustomer(CustomerInfoVo customer, @MappingTarget TCustomerInfo tCustomerInfo);
 }

@@ -1,14 +1,15 @@
 package org.example.modules.repository.mysql.entity.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import org.example.plugins.mybatis.entity.vo.IBaseVo;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
-public class CustomerInfoVo extends IBaseVo {
+@NoArgsConstructor
+@AllArgsConstructor
+public class CustomerInfoVo {
     /**
      * 客户编号
      */

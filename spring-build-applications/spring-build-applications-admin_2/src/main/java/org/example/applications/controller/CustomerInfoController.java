@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import org.example.domains.service.CustomerInfoService;
 import org.example.modules.repository.mysql.entity.query.CustomerInfoQuery;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoFormVo;
-import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
+import org.example.modules.repository.mysql.entity.result.CustomerInfoResult;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -20,13 +20,13 @@ public class CustomerInfoController {
     private final CustomerInfoService customerInfoService;
 
     @GetMapping
-    public Result<List<CustomerInfoVo>> page(CustomerInfoQuery query) {
-        IPageData<CustomerInfoVo> data = customerInfoService.page(query);
+    public Result<List<CustomerInfoResult>> page(CustomerInfoQuery query) {
+        IPageData<CustomerInfoResult> data = customerInfoService.page(query);
         return R.success(data.getTotalRowNum(), data.getData());
     }
 
     @GetMapping("list")
-    public Result<List<CustomerInfoVo>> list(CustomerInfoQuery query) {
+    public Result<List<CustomerInfoResult>> list(CustomerInfoQuery query) {
         return R.success(customerInfoService.list(query));
     }
 
@@ -50,7 +50,7 @@ public class CustomerInfoController {
     }
 
     @GetMapping("{id}")
-    public Result<CustomerInfoVo> get(@PathVariable Long id) {
+    public Result<CustomerInfoResult> get(@PathVariable Long id) {
         return R.success(customerInfoService.get(id));
     }
 }

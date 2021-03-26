@@ -1,7 +1,7 @@
 package org.example.domains.service;
 
-import org.example.modules.repository.mysql.entity.vo.CustomerContractVo;
+import org.example.modules.repository.mysql.entity.vo.CustomerContractFormVo;
 
 public interface CustomerContractService {
-    void save(CustomerContractVo customerContractVo);
+    void save(CustomerContractFormVo customerContractResult);
 }

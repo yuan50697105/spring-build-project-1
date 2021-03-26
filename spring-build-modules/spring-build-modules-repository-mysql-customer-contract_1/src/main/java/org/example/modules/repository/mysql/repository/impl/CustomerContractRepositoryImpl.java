@@ -4,7 +4,8 @@ import lombok.AllArgsConstructor;
 import org.example.modules.repository.mysql.builder.CustomerContractBuilder;
 import org.example.modules.repository.mysql.dao.TCustomerContractDao;
 import org.example.modules.repository.mysql.entity.query.TCustomerContractQuery;
-import org.example.modules.repository.mysql.entity.vo.CustomerContractVo;
+import org.example.modules.repository.mysql.entity.vo.CustomerContractFormVo;
+import org.example.modules.repository.mysql.entity.result.CustomerContractResult;
 import org.example.modules.repository.mysql.entity.po.TCustomerContract;
 import org.example.modules.repository.mysql.entity.query.CustomerContractQuery;
 import org.example.modules.repository.mysql.repository.CustomerContractRepository;
@@ -19,33 +20,33 @@ import java.util.Optional;
 @Repository
 @Transactional
 @AllArgsConstructor
-public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<CustomerContractVo, CustomerContractVo, CustomerContractVo, CustomerContractQuery> implements CustomerContractRepository {
+public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<CustomerContractResult, CustomerContractFormVo, CustomerContractResult, CustomerContractQuery> implements CustomerContractRepository {
     private final CustomerContractBuilder customerContractBuilder;
     private final TCustomerContractDao customerContractDao;
 
     @Override
-    public void save(CustomerContractVo customerContractVo) {
+    public void save(CustomerContractFormVo customerContractVo) {
         saveWithId(customerContractVo);
     }
 
     @Override
-    public Long saveWithId(CustomerContractVo customerContractVo) {
-        TCustomerContract contract = customerContractBuilder.createCustomerContract(customerContractVo);
+    public Long saveWithId(CustomerContractFormVo customerContractVo) {
+        TCustomerContract contract = customerContractBuilder.createCustomerContract(customerContractVo.getContract());
         customerContractDao.save(contract);
         return contract.getId();
     }
 
     @Override
-    public void update(CustomerContractVo customerContractVo) {
+    public void update(CustomerContractFormVo customerContractVo) {
         update(customerContractVo.getId(), customerContractVo);
     }
 
     @Override
-    public void update(Long id, CustomerContractVo formVo) {
+    public void update(Long id, CustomerContractFormVo formVo) {
         Optional<TCustomerContract> optional = customerContractDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TCustomerContract customerContract = optional.get();
-            customerContractBuilder.copy(formVo, customerContract);
+            customerContractBuilder.copy(formVo.getContract(), customerContract);
             customerContractDao.updateById(customerContract);
         }
     }
@@ -56,27 +57,27 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
     }
 
     @Override
-    public CustomerContractVo getById(Long id) {
+    public CustomerContractResult getById(Long id) {
         TCustomerContract customerContract = customerContractDao.getById(id);
         return customerContractBuilder.createCustomerContractVo(customerContract);
     }
 
     @Override
-    public IPageData<CustomerContractVo> queryPage(CustomerContractQuery customerContractQuery) {
+    public IPageData<CustomerContractResult> queryPage(CustomerContractQuery customerContractQuery) {
         TCustomerContractQuery contractQuery = customerContractBuilder.createCustomerContractQuery(customerContractQuery);
         IPageData<TCustomerContract> data = customerContractDao.queryPage(contractQuery);
         return customerContractBuilder.createCustomerContractVos(data);
     }
 
     @Override
-    public List<CustomerContractVo> queryList(CustomerContractQuery customerContractQuery) {
+    public List<CustomerContractResult> queryList(CustomerContractQuery customerContractQuery) {
         TCustomerContractQuery contractQuery = customerContractBuilder.createCustomerContractQuery(customerContractQuery);
         List<TCustomerContract> contracts = customerContractDao.queryList(contractQuery);
         return customerContractBuilder.createCustomerContractVos(contracts);
     }
 
     @Override
-    public CustomerContractVo queryOne(CustomerContractQuery customerContractQuery) {
+    public CustomerContractResult queryOne(CustomerContractQuery customerContractQuery) {
         TCustomerContractQuery contractQuery = customerContractBuilder.createCustomerContractQuery(customerContractQuery);
         TCustomerContract contract = customerContractDao.queryOne(contractQuery);
         return customerContractBuilder.createCustomerContractVo(contract);

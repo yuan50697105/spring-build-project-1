@@ -4,7 +4,7 @@ import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
 import org.example.domains.service.CustomerContractService;
-import org.example.modules.repository.mysql.entity.vo.CustomerContractVo;
+import org.example.modules.repository.mysql.entity.vo.CustomerContractFormVo;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,8 +18,8 @@ public class CustomerContractController {
     private final CustomerContractService customerContractService;
 
     @PostMapping
-    public Result<?> save(@RequestBody @Validated CustomerContractVo customerContractVo) {
-        customerContractService.save(customerContractVo);
+    public Result<?> save(@RequestBody @Validated CustomerContractFormVo customerContractResult) {
+        customerContractService.save(customerContractResult);
         return R.success();
     }
 }

@@ -2,15 +2,15 @@ package org.example.domains.service;
 
 import org.example.modules.repository.mysql.entity.query.CustomerInfoQuery;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoFormVo;
-import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
+import org.example.modules.repository.mysql.entity.result.CustomerInfoResult;
 import org.example.plugins.mybatis.entity.IPageData;
 
 import java.util.List;
 
 public interface CustomerInfoService {
-    IPageData<CustomerInfoVo> page(CustomerInfoQuery query);
+    IPageData<CustomerInfoResult> page(CustomerInfoQuery query);
 
-    List<CustomerInfoVo> list(CustomerInfoQuery query);
+    List<CustomerInfoResult> list(CustomerInfoQuery query);
 
     void save(CustomerInfoFormVo customerInfoFormVo);
 
@@ -18,5 +18,5 @@ public interface CustomerInfoService {
 
     void update2(CustomerInfoFormVo customerInfoFormVo);
 
-    CustomerInfoVo get(Long id);
+    CustomerInfoResult get(Long id);
 }
