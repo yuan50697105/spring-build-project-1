@@ -34,12 +34,12 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
     }
 
     @Override
-    public void update1(Long id, CustomerInfoFormVo customerInfoFormVo) {
+    public void update(Long id, CustomerInfoFormVo customerInfoFormVo) {
         customerInfoRepository.update(id, customerInfoFormVo);
     }
 
     @Override
-    public void update2(CustomerInfoFormVo customerInfoFormVo) {
+    public void update(CustomerInfoFormVo customerInfoFormVo) {
         customerInfoRepository.update(customerInfoFormVo);
     }
 

@@ -38,14 +38,14 @@ public class CustomerInfoController {
     }
 
     @PutMapping("{id}")
-    public Result<?> update1(@PathVariable Long id, @RequestBody @Validated CustomerInfoFormVo customerInfoFormVo) {
-        customerInfoService.update1(id, customerInfoFormVo);
+    public Result<?> update(@PathVariable Long id, @RequestBody @Validated CustomerInfoFormVo customerInfoFormVo) {
+        customerInfoService.update(id, customerInfoFormVo);
         return R.success();
     }
 
     @PutMapping
-    public Result<?> update2(@RequestBody @Validated CustomerInfoFormVo customerInfoFormVo) {
-        customerInfoService.update2(customerInfoFormVo);
+    public Result<?> update(@RequestBody @Validated CustomerInfoFormVo customerInfoFormVo) {
+        customerInfoService.update(customerInfoFormVo);
         return R.success();
     }
 

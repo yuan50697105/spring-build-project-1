@@ -14,9 +14,9 @@ public interface CustomerInfoService {
 
     void save(CustomerInfoFormVo customerInfoFormVo);
 
-    void update1(Long id, CustomerInfoFormVo customerInfoFormVo);
+    void update(Long id, CustomerInfoFormVo customerInfoFormVo);
 
-    void update2(CustomerInfoFormVo customerInfoFormVo);
+    void update(CustomerInfoFormVo customerInfoFormVo);
 
     CustomerInfoResult get(Long id);
 }
