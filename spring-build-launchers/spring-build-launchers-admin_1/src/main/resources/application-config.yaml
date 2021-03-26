@@ -5,10 +5,6 @@ spring:
     password: Root@123
     url: jdbc:mysql://rm-2zel2q0w4x1t6sn77ko.mysql.rds.aliyuncs.com:3306/spring_demo
   cache:
-    account:
-      entry-ttl: 1h
-    role:
-      entry-ttl: 1h
     type: redis
     redis:
       key-prefix: cache
@@ -16,7 +12,6 @@ spring:
   redis:
     host: 8.140.177.12
     password: root
-#mybatis-plus:
-#  mapper-locations: classpath*:mappers/*.xml
-#mybatis:
-#  mapper-locations: ${mybatis-plus.mapper-locations}
+  jackson:
+    date-format: yyyy-MM-dd
+    locale: zh_CN

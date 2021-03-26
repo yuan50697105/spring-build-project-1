@@ -1,7 +1,6 @@
 package org.example.modules.repository.mysql.repository.impl;
 
 import org.example.modules.repository.mysql.builder.RoleBuilder;
-import org.example.modules.repository.mysql.cache.CacheConfiguration;
 import org.example.modules.repository.mysql.dao.TPermissionDao;
 import org.example.modules.repository.mysql.dao.TRoleDao;
 import org.example.modules.repository.mysql.dao.TRolePermissionDao;
@@ -16,7 +15,10 @@ import org.example.modules.repository.mysql.repository.RoleRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.*;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
@@ -27,7 +29,7 @@ import java.util.Optional;
 
 @Repository
 @Transactional
-@Cacheable(cacheNames = {"roles"},sync = true, cacheManager = CacheConfiguration.ROLE_CACHE_MANAGER)
+@Cacheable(cacheNames = {"roles"}, sync = true)
 public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleVo, RoleFormVo, RoleDetailVo, RoleQuery> implements RoleRepository {
     @Autowired
     private RoleBuilder roleBuilder;

@@ -1,9 +1,9 @@
-package org.example.domains;
+package org.example.applications;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan
-public class AccountServiceConfiguration {
+public class AdminAutoConfiguration {
 }

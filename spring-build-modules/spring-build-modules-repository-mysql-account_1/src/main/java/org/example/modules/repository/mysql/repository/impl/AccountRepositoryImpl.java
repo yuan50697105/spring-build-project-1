@@ -2,7 +2,6 @@ package org.example.modules.repository.mysql.repository.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import org.example.modules.repository.mysql.builder.AccountBuilder;
-import org.example.modules.repository.mysql.cache.CacheConfiguration;
 import org.example.modules.repository.mysql.dao.TRoleDao;
 import org.example.modules.repository.mysql.dao.TUserDao;
 import org.example.modules.repository.mysql.dao.TUserRoleDao;
@@ -32,7 +31,7 @@ import java.util.stream.Collectors;
 
 @Repository
 @Transactional
-@Cacheable(cacheNames = {"accounts", "users"},sync = true,cacheManager = CacheConfiguration.ACCOUNT_CACHE_MANAGER)
+@Cacheable(cacheNames = {"accounts", "users"}, sync = true)
 public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, AccountFormVo, AccountDetailVo, AccountQuery> implements AccountRepository {
     @Autowired
     private AccountBuilder accountBuilder;

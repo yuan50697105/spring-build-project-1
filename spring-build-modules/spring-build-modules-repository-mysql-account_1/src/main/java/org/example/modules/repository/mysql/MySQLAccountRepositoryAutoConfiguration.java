@@ -2,11 +2,12 @@ package org.example.modules.repository.mysql;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @Configuration
-@ComponentScan
+@ComponentScan(basePackages = {"org.example.modules.repository.mysql"})
 @MapperScan(basePackages = {"org.example.modules.repository.mysql.mapper"})
 //@org.mybatis.spring.annotation.MapperScan(basePackages = {"org.example.modules.repository.mysql.mapper"})
-public class MySQLCustomerRepositoryConfiguration {
+public class MySQLAccountRepositoryAutoConfiguration {
 }
