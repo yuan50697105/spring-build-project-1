@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-modules-repository-mysql-contract_2</artifactId>
+    <artifactId>spring-build-modules-repository-mysql-customer-contract_2</artifactId>
 
     <dependencies>
         <dependency>
