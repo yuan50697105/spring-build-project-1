@@ -8,12 +8,17 @@ import org.example.plugins.mybatis.entity.vo.IBaseVo;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import java.util.Optional;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class CustomerInfoVo extends IBaseVo {
     @NotEmpty
     private CustomerInfo customer;
+
+    public String getCustomerCode() {
+        return Optional.ofNullable(customer).map(CustomerInfo::getCode).orElse(null);
+    }
 
     @Data
     @NoArgsConstructor
