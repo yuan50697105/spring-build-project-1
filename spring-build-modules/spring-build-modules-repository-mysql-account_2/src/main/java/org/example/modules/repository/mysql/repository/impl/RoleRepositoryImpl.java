@@ -27,7 +27,7 @@ import java.util.Optional;
 
 @Repository
 @Transactional
-@CacheConfig(cacheNames = {"roles"}, cacheManager = CacheConfiguration.ROLE_CACHE_MANAGER)
+@Cacheable(cacheNames = {"roles"},sync = true, cacheManager = CacheConfiguration.ROLE_CACHE_MANAGER)
 public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleVo, RoleFormVo, RoleDetailVo, RoleQuery> implements RoleRepository {
     @Autowired
     private RoleBuilder roleBuilder;

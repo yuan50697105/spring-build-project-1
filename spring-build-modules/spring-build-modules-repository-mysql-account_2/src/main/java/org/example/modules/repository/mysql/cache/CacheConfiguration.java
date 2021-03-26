@@ -22,6 +22,7 @@ public class CacheConfiguration {
     public static final String ROLE_CACHE_MANAGER = "roleCacheManager";
     @Autowired
     private AccountCacheProperties accountCacheProperties;
+    @Autowired
     private RoleCacheProperties roleCacheProperties;
     @Bean(ACCOUNT_CACHE_MANAGER)
     public RedisCacheManager accountCacheManager(RedisConnectionFactory redisConnectionFactory) {
