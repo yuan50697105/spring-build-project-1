@@ -24,4 +24,8 @@ public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
     T queryOne(Q query);
 
     Optional<T> queryOneOpt(Q query);
+
+    boolean updateAllById(T t);
+
+    boolean updateSelectiveById(T t);
 }

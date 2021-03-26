@@ -15,6 +15,7 @@ import org.example.plugins.mybatis.entity.OrderTypeEnum;
 import org.example.plugins.mybatis.entity.query.EBaseQuery;
 import org.example.plugins.mybatis.entity.result.IPageResult;
 import org.example.plugins.mybatis.mapper.IBaseMapper;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -118,6 +119,18 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
         } else {
             return wrapper;
         }
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public boolean updateAllById(T t) {
+        return retBool(baseMapper.updateByPrimaryKey(t));
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public boolean updateSelectiveById(T t) {
+        return retBool(baseMapper.updateByPrimaryKeySelective(t));
     }
 
     public boolean isNotEmpty(Object object) {

@@ -23,10 +23,12 @@ public class TCustomerInfo extends IBaseEntity implements Serializable {
     private String code;
     /**
      * 客户类型
+     * 0 个人，1 私营企业，2 国应企业，3 行政部门
      */
     private String type;
     /**
      * 客户名称
      */
     private String name;
+
 }
