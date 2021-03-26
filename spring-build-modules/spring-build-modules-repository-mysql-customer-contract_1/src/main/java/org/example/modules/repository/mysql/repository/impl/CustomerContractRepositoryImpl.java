@@ -25,8 +25,14 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
 
     @Override
     public void save(CustomerContractVo customerContractVo) {
+        saveWithId(customerContractVo);
+    }
+
+    @Override
+    public Long saveWithId(CustomerContractVo customerContractVo) {
         TCustomerContract contract = customerContractBuilder.createCustomerContract(customerContractVo);
         customerContractDao.save(contract);
+        return contract.getId();
     }
 
     @Override

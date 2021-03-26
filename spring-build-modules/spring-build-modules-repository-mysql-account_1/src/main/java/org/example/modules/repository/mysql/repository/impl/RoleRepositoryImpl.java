@@ -46,11 +46,21 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleVo, RoleFormVo, 
             @CachePut(key = "roleFormVo.roleName")
     })
     public void save(@Validated RoleFormVo roleFormVo) {
+        saveWithId(roleFormVo);
+    }
+
+    @Override
+    @Caching(put = {
+            @CachePut(key = "roleFormVo.id"),
+            @CachePut(key = "roleFormVo.roleName")
+    })
+    public Long saveWithId(RoleFormVo roleFormVo) {
         roleHelper.validate(roleFormVo);
         TRole role = roleBuilder.createRole(roleFormVo.getRole());
         roleDao.save(role);
         List<Long> existPermissionIds = permissionDao.getPermisionIdsByPermissionIdsOrPermissionNames(roleFormVo.getPermissionIds(), roleFormVo.getPermissionNames());
         rolePermissionDao.saveBatch(roleBuilder.createRolePermissions(role.getId(), existPermissionIds));
+        return role.getId();
     }
 
     @Override

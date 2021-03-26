@@ -3,7 +3,6 @@ package org.example.plugins.mybatis.repository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.entity.query.IBaseQuery;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,6 +12,8 @@ import java.util.Optional;
 public interface IBaseRepository<T, V, D, Q extends IBaseQuery> {
 
     void save(V v);
+
+    Long saveWithId(V v);
 
     void update(V v);
 

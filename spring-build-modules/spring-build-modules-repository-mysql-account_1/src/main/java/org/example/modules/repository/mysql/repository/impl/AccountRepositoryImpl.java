@@ -52,11 +52,22 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountVo, Accoun
             @CachePut(key = "#accountFormVo.user.username")
     })
     public void save(@Validated AccountFormVo accountFormVo) {
+        saveWithId(accountFormVo);
+    }
+
+    @Override
+    @Transactional
+    @Caching(put = {
+            @CachePut(key = "#accountFormVo.id"),
+            @CachePut(key = "#accountFormVo.user.username")
+    })
+    public Long saveWithId(AccountFormVo accountFormVo) {
         accountHelper.validate(accountFormVo);
         TUser user = accountBuilder.generateUser(accountFormVo.getUser());
         userDao.save(user);
         List<Long> roleIds = roleDao.getRoleIdListByIdsOrNames(accountFormVo.getRoleIds(), accountFormVo.getRoleNames());
         userRoleDao.saveBatch(accountBuilder.generateUserRoles(user.getId(), roleIds));
+        return user.getId();
     }
 
     @Override

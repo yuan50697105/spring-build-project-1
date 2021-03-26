@@ -23,8 +23,14 @@ public class CustomerInfoRepositoryImpl implements CustomerInfoRepository {
 
     @Override
     public void save(CustomerInfoVo customerInfoVo) {
+        saveWithId(customerInfoVo);
+    }
+
+    @Override
+    public Long saveWithId(CustomerInfoVo customerInfoVo) {
         TCustomerInfo customerInfo = customerInfoBuilder.generateCustomer(customerInfoVo.getCustomer());
         customerInfoDao.save(customerInfo);
+        return customerInfo.getId();
     }
 
     @Override

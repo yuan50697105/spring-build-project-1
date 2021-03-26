@@ -15,7 +15,6 @@ import org.mapstruct.MappingTarget;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 @Mapper(componentModel = "spring")
@@ -69,6 +68,7 @@ public interface RoleBuilder {
 
     List<RoleVo> createRoleVos(List<TRole> roles);
 
+    @Mapping(target = "version", ignore = true)
     RoleVo createRoleVo(TRole role);
 
     IPageData<RoleVo> createRoleVos(IPageData<TRole> roles);
