@@ -1,8 +1,14 @@
 package org.example.modules.repository.mysql.builder;
 
+import org.example.modules.repository.mysql.entity.po.TPermission;
 import org.example.modules.repository.mysql.entity.po.TRole;
 import org.example.modules.repository.mysql.entity.po.TRolePermission;
+import org.example.modules.repository.mysql.entity.query.RoleQuery;
+import org.example.modules.repository.mysql.entity.query.TRoleQuery;
+import org.example.modules.repository.mysql.entity.vo.RoleDetailVo;
 import org.example.modules.repository.mysql.entity.vo.RoleFormVo;
+import org.example.modules.repository.mysql.entity.vo.RoleVo;
+import org.example.plugins.mybatis.entity.IPageData;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
@@ -10,6 +16,7 @@ import org.mapstruct.MappingTarget;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Mapper(componentModel = "spring")
 public interface RoleBuilder {
@@ -53,4 +60,17 @@ public interface RoleBuilder {
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)
     void copyRole(RoleFormVo.RoleInfo role, @MappingTarget TRole tRole);
+
+    RoleDetailVo.RoleInfo createRoleInfo(TRole tRole);
+
+    Set<RoleDetailVo.PermissionInfo> createRolePermissionsInfo(List<TPermission> permissions);
+
+    TRoleQuery createQuery(RoleQuery roleQuery);
+
+    List<RoleVo> createRoleVos(List<TRole> roles);
+
+    @Mapping(target = "versions", ignore = true)
+    RoleVo createRoleVo(TRole role);
+
+    IPageData<RoleVo> createRoleVos(IPageData<TRole> roles);
 }

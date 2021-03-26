@@ -1,5 +1,6 @@
 package org.example.modules.repository.mysql.dao;
 
+import org.example.modules.repository.mysql.entity.po.TPermission;
 import org.example.modules.repository.mysql.entity.po.TRolePermission;
 import org.example.modules.repository.mysql.entity.query.TRolePermissionQuery;
 import org.example.plugins.mybatis.dao.TkBaseDao;
@@ -12,4 +13,6 @@ public interface TRolePermissionDao extends TkBaseDao<TRolePermission, TRolePerm
     boolean removeByPermissionIdsAndRoleId(List<Long> permissionIds, Long roleId);
 
     boolean removeByRoleIds(List<Long> roleIds);
+
+    List<TPermission> getRolePermissionsByRoleId(Long id);
 }

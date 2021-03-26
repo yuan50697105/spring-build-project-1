@@ -8,6 +8,7 @@ import java.time.Duration;
 @Data
 @ConfigurationProperties(prefix = "spring.cache.account")
 public class AccountCacheProperties {
+
     private Duration entryTtl;
 
     public Duration getEntryTtl() {

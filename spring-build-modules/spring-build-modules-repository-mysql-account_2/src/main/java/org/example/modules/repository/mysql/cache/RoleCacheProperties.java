@@ -6,8 +6,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import java.time.Duration;
 
 @Data
-@ConfigurationProperties(prefix = "spring.cache.account")
-public class AccountCacheProperties {
+@ConfigurationProperties(prefix = "spring.cache.role")
+public class RoleCacheProperties {
 
     private Duration entryTtl;
 

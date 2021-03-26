@@ -7,6 +7,12 @@ spring:
   cache:
     account:
       entry-ttl: 1h
+    role:
+      entry-ttl: 1h
+    type: redis
+    redis:
+      key-prefix: cache
+      time-to-live: 10s
   redis:
     host: 8.140.177.12
     password: root

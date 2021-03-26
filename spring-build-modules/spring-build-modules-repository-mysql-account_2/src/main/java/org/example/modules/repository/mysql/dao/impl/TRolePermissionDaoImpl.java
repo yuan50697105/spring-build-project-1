@@ -1,10 +1,13 @@
 package org.example.modules.repository.mysql.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import lombok.AllArgsConstructor;
 import org.example.modules.repository.mysql.dao.TRolePermissionDao;
+import org.example.modules.repository.mysql.entity.po.TPermission;
 import org.example.modules.repository.mysql.entity.po.TRolePermission;
 import org.example.modules.repository.mysql.entity.query.TRolePermissionQuery;
 import org.example.modules.repository.mysql.mapper.TRolePermissionMapper;
+import org.example.modules.repository.mysql.mapper.TRolePermissionQueryMapper;
 import org.example.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +17,9 @@ import java.util.stream.Collectors;
 
 @Component
 @Transactional
+@AllArgsConstructor
 public class TRolePermissionDaoImpl extends TkBaseDaoImpl<TRolePermission, TRolePermissionQuery, TRolePermissionMapper> implements TRolePermissionDao {
+    private final TRolePermissionQueryMapper rolePermissionQueryMapper;
     @Override
     protected Wrapper<TRolePermission> queryWrapper(TRolePermissionQuery tRolePermissionQuery) {
         return null;
@@ -33,5 +38,10 @@ public class TRolePermissionDaoImpl extends TkBaseDaoImpl<TRolePermission, TRole
     @Override
     public boolean removeByRoleIds(List<Long> roleIds) {
         return lambdaUpdate().in(TRolePermission::getRoleId, roleIds).remove();
+    }
+
+    @Override
+    public List<TPermission> getRolePermissionsByRoleId(Long id) {
+        return rolePermissionQueryMapper.getRolePermissionsByRoleId(id);
     }
 }
