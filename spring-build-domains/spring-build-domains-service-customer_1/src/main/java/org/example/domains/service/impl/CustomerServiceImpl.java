@@ -1,8 +1,8 @@
 package org.example.domains.service.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.domains.entity.vo.CustomerDetailsVo;
-import org.example.domains.entity.vo.CustomerVo;
+import org.example.domains.entity.CustomerDetailsResult;
+import org.example.domains.entity.CustomerFormVo;
 import org.example.domains.service.CustomerService;
 import org.example.modules.repository.mysql.entity.vo.CustomerContractFormVo;
 import org.example.modules.repository.mysql.entity.vo.CustomerContractVo;
@@ -23,7 +23,7 @@ public class CustomerServiceImpl implements CustomerService {
     private final CustomerContractRepository customerContractRepository;
 
     @Override
-    public void save(CustomerVo vo) {
+    public void save(CustomerFormVo vo) {
         CustomerInfoFormVo customer = vo.getCustomer();
         Long customerId = customerInfoRepository.saveWithId(customer);
         Optional<CustomerInfoResult> optional = customerInfoRepository.getByIdOpt(customerId);
@@ -38,7 +38,10 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerDetailsVo get(Long id) {
-        return null;
+    public CustomerDetailsResult get(Long id) {
+        CustomerDetailsResult customerDetailsResult = new CustomerDetailsResult();
+        customerDetailsResult.setCustomer(customerInfoRepository.getById(id));
+        customerDetailsResult.setContracts(customerContractRepository.getListByCustomerId(id));
+        return customerDetailsResult;
     }
 }

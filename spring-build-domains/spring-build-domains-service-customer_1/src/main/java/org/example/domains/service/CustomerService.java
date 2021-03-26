@@ -1,10 +1,10 @@
 package org.example.domains.service;
 
-import org.example.domains.entity.vo.CustomerDetailsVo;
-import org.example.domains.entity.vo.CustomerVo;
+import org.example.domains.entity.CustomerDetailsResult;
+import org.example.domains.entity.CustomerFormVo;
 
 public interface CustomerService {
-    void save(CustomerVo vo);
+    void save(CustomerFormVo vo);
 
-    CustomerDetailsVo get(Long id);
+    CustomerDetailsResult get(Long id);
 }

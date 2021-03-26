@@ -82,4 +82,10 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
         TCustomerContract contract = customerContractDao.queryOne(contractQuery);
         return customerContractBuilder.createCustomerContractVo(contract);
     }
+
+    @Override
+    public List<CustomerContractResult> getListByCustomerId(Long id) {
+
+        return customerContractBuilder.createCustomerContractVos(customerContractDao.queryListByCustomerId(id));
+    }
 }

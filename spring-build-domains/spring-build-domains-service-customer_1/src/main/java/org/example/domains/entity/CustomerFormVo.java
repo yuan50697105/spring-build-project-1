@@ -1,4 +1,4 @@
-package org.example.domains.entity.vo;
+package org.example.domains.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,7 +8,7 @@ import org.example.plugins.mybatis.entity.vo.IBaseVo;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CustomerVo extends IBaseVo {
+public class CustomerFormVo extends IBaseVo {
     private CustomerInfoFormVo customer;
     private CustomerContractFormVo contract;
 }
