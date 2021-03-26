@@ -30,7 +30,15 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
+            <artifactId>spring-build-domains-service-customer_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
             <artifactId>spring-build-domains-service-customer-info_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>spring-build-domains-service-customer-contract_2</artifactId>
         </dependency>
     </dependencies>
 
