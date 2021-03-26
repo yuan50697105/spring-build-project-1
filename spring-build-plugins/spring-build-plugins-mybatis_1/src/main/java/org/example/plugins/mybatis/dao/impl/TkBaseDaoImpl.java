@@ -1,6 +1,7 @@
 package org.example.plugins.mybatis.dao.impl;
 
 import cn.hutool.core.util.StrUtil;
+import org.example.plugins.commons.entity.query.BaseQuery;
 import org.example.plugins.mybatis.dao.TkBaseDao;
 import org.example.plugins.mybatis.entity.OrderTypeEnum;
 import org.example.plugins.mybatis.entity.query.TkBaseQuery;
@@ -13,7 +14,7 @@ public abstract class TkBaseDaoImpl<T, Q extends TkBaseQuery<T>, M extends IBase
         example = super.exampleAddOrder(query, example);
         String order = query.getOrder();
         order = StrUtil.toUnderlineCase(order);
-        OrderTypeEnum orderType = query.getOrderType();
+        BaseQuery.OrderTypeEnum orderType = query.getOrderType();
         if (orderType.equals(OrderTypeEnum.DESC)) {
             example.setOrderByClause(order + " desc");
         } else {

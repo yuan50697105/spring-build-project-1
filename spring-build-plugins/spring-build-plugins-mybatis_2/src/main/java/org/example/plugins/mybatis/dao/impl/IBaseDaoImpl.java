@@ -8,9 +8,10 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.example.plugins.commons.entity.BaseEntity;
+import org.example.plugins.commons.entity.query.BaseQuery;
 import org.example.plugins.mybatis.dao.IBaseDao;
 import org.example.plugins.mybatis.entity.IPageData;
-import org.example.plugins.mybatis.entity.OrderTypeEnum;
 import org.example.plugins.mybatis.entity.query.EBaseQuery;
 import org.example.plugins.mybatis.entity.result.IPageResult;
 import org.example.plugins.mybatis.mapper.IBaseMapper;
@@ -107,8 +108,8 @@ public abstract class IBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
         if (wrapper instanceof QueryWrapper) {
             String order = query.getOrder();
             order = StrUtil.toUnderlineCase(order);
-            OrderTypeEnum orderType = query.getOrderType();
-            if (orderType.equals(OrderTypeEnum.DESC)) {
+            BaseQuery.OrderTypeEnum orderType = query.getOrderType();
+            if (orderType.equals(BaseQuery.OrderTypeEnum.DESC)) {
                 ((QueryWrapper<T>) wrapper).orderByDesc(order);
             } else {
                 ((QueryWrapper<T>) wrapper).orderByAsc(order);
