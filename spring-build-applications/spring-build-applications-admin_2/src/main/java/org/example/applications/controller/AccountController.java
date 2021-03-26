@@ -21,13 +21,13 @@ public class AccountController {
     }
 
     @PutMapping("{id}")
-    public Result<?> update1(@PathVariable Long id, @Validated @RequestBody AccountFormVo formVo) {
+    public Result<?> update(@PathVariable Long id, @Validated @RequestBody AccountFormVo formVo) {
         accountService.update(id, formVo);
         return R.success();
     }
 
     @PutMapping
-    public Result<?> update2(@Validated @RequestBody AccountFormVo formVo) {
+    public Result<?> update(@Validated @RequestBody AccountFormVo formVo) {
         accountService.update(formVo);
         return R.success();
     }
