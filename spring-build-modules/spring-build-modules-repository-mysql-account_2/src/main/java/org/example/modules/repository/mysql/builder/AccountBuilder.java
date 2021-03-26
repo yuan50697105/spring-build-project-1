@@ -57,7 +57,6 @@ public interface AccountBuilder {
 
     IPageData<AccountVo> generateAccountVoPage(IPageData<TUser> data);
 
-    @Mapping(target = "versions", ignore = true)
     AccountVo generateAccountVo(TUser user);
 
     @Mapping(target = "version", ignore = true)

@@ -69,7 +69,6 @@ public interface RoleBuilder {
 
     List<RoleVo> createRoleVos(List<TRole> roles);
 
-    @Mapping(target = "versions", ignore = true)
     RoleVo createRoleVo(TRole role);
 
     IPageData<RoleVo> createRoleVos(IPageData<TRole> roles);
