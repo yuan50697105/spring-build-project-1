@@ -4,6 +4,7 @@ import org.example.modules.repository.mysql.builder.CustomerInfoBuilder;
 import org.example.modules.repository.mysql.dao.TCustomerInfoDao;
 import org.example.modules.repository.mysql.entity.po.TCustomerInfo;
 import org.example.modules.repository.mysql.entity.query.CustomerInfoQuery;
+import org.example.modules.repository.mysql.entity.vo.CustomerInfoFormVo;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
 import org.example.modules.repository.mysql.repository.CustomerInfoRepository;
 import org.example.plugins.mybatis.entity.IPageData;
@@ -22,26 +23,26 @@ public class CustomerInfoRepositoryImpl implements CustomerInfoRepository {
     private TCustomerInfoDao customerInfoDao;
 
     @Override
-    public void save(CustomerInfoVo customerInfoVo) {
-        saveWithId(customerInfoVo);
+    public void save(CustomerInfoFormVo customerInfoFormVo) {
+        saveWithId(customerInfoFormVo);
     }
 
     @Override
-    public Long saveWithId(CustomerInfoVo customerInfoVo) {
-        TCustomerInfo customerInfo = customerInfoBuilder.generateCustomer(customerInfoVo.getCustomer());
+    public Long saveWithId(CustomerInfoFormVo customerInfoFormVo) {
+        TCustomerInfo customerInfo = customerInfoBuilder.generateCustomer(customerInfoFormVo.getCustomer());
         customerInfoDao.save(customerInfo);
         return customerInfo.getId();
     }
 
     @Override
-    public void update(CustomerInfoVo customerInfoVo) {
-        TCustomerInfo tCustomerInfo = customerInfoDao.getById(customerInfoVo.getId());
-        CustomerInfoVo.CustomerInfo customer = customerInfoVo.getCustomer();
+    public void update(CustomerInfoFormVo customerInfoFormVo) {
+        TCustomerInfo tCustomerInfo = customerInfoDao.getById(customerInfoFormVo.getId());
+        CustomerInfoFormVo.CustomerInfo customer = customerInfoFormVo.getCustomer();
         customerInfoBuilder.copyCustomer(customer, tCustomerInfo);
     }
 
     @Override
-    public void update(Long id, CustomerInfoVo formVo) {
+    public void update(Long id, CustomerInfoFormVo formVo) {
 
     }
 
