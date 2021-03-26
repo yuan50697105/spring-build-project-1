@@ -5,7 +5,7 @@ import org.example.modules.repository.mysql.dao.TCustomerInfoDao;
 import org.example.modules.repository.mysql.entity.po.TCustomerInfo;
 import org.example.modules.repository.mysql.entity.query.CustomerInfoQuery;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
-import org.example.modules.repository.mysql.repository.TCustomerInfoRepository;
+import org.example.modules.repository.mysql.repository.CustomerInfoRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class TCustomerInfoRepositoryImpl implements TCustomerInfoRepository {
+public class CustomerInfoRepositoryImpl implements CustomerInfoRepository {
     @Autowired
     private CustomerInfoBuilder customerInfoBuilder;
     @Autowired
