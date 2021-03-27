@@ -10,7 +10,5 @@ import java.util.Optional;
 public interface TUserDao extends TkBaseDao<TUser, TUserQuery> {
     boolean existByUsername(String username);
 
-    IPageData<TUser> queryPage(TUserQuery userQuery);
-
     Optional<TUser> getByUsernameOpt(String username);
 }

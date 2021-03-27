@@ -8,22 +8,21 @@ import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public interface CustomerInfoBuilder {
-    @Mapping(target = "version", ignore = true)
     @Mapping(target = "updateUser", ignore = true)
     @Mapping(target = "updateId", ignore = true)
     @Mapping(target = "updateDate", ignore = true)
-    @Mapping(target = "isDelete", ignore = true)
+
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)
     TCustomerInfo generateCustomer(CustomerInfoVo customer);
 
-    @Mapping(target = "version", ignore = true)
+
     @Mapping(target = "updateUser", ignore = true)
     @Mapping(target = "updateId", ignore = true)
     @Mapping(target = "updateDate", ignore = true)
-    @Mapping(target = "isDelete", ignore = true)
+
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)

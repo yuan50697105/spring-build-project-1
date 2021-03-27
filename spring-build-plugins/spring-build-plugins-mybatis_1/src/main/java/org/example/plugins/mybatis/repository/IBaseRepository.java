@@ -1,5 +1,6 @@
 package org.example.plugins.mybatis.repository;
 
+import org.example.plugins.commons.entity.query.BaseQuery;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.entity.query.IBaseQuery;
 
@@ -9,7 +10,7 @@ import java.util.Optional;
 /**
  * @author yuane
  */
-public interface IBaseRepository<T, V, D, Q extends IBaseQuery> {
+public interface IBaseRepository<T, V, D, Q extends BaseQuery> {
 
     void save(V v);
 

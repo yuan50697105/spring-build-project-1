@@ -108,15 +108,16 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
 
     protected Wrapper<T> wrapperAddOrder(Q query, Wrapper<T> wrapper) {
         if (wrapper instanceof QueryWrapper) {
+            QueryWrapper<T> queryWrapper = (QueryWrapper<T>) wrapper;
             String order = query.getOrder();
             order = StrUtil.toUnderlineCase(order);
             BaseQuery.OrderTypeEnum orderType = query.getOrderType();
-            if (orderType.equals(OrderTypeEnum.DESC)) {
-                ((QueryWrapper<T>) wrapper).orderByDesc(order);
+            if (orderType.equals(BaseQuery.OrderTypeEnum.DESC)) {
+                queryWrapper.orderByDesc(order);
             } else {
-                ((QueryWrapper<T>) wrapper).orderByAsc(order);
+                queryWrapper.orderByAsc(order);
             }
-            return wrapper;
+            return queryWrapper;
         } else {
             return wrapper;
         }

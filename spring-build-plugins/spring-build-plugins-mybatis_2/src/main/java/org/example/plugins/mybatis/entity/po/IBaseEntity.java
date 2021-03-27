@@ -31,10 +31,10 @@ public abstract class IBaseEntity extends BaseEntity {
     @Column(updatable = false)
     private Date createDate = new Date();
     private Date updateDate = new Date();
-    @Version
-    @com.baomidou.mybatisplus.annotation.Version
-    private Integer version;
-    @LogicDelete
-    @TableLogic
-    private Integer isDelete;
+//    @Version
+//    @com.baomidou.mybatisplus.annotation.Version
+//    private Integer version;
+//    @LogicDelete
+//    @TableLogic
+//    private Integer isDelete;
 }

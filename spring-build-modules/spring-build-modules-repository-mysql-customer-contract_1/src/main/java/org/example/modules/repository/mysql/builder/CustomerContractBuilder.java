@@ -17,7 +17,7 @@ public interface CustomerContractBuilder {
     @Mapping(target = "updateUser", ignore = true)
     @Mapping(target = "updateId", ignore = true)
     @Mapping(target = "updateDate", ignore = true)
-    @Mapping(target = "isDelete", ignore = true)
+
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)
@@ -26,7 +26,7 @@ public interface CustomerContractBuilder {
     @Mapping(target = "updateUser", ignore = true)
     @Mapping(target = "updateId", ignore = true)
     @Mapping(target = "updateDate", ignore = true)
-    @Mapping(target = "isDelete", ignore = true)
+
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)

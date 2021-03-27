@@ -1,14 +1,12 @@
 package org.example.modules.repository.mysql.entity.query;
 
-import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
-import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.plugins.mybatis.entity.query.IBaseQuery;
+import org.example.plugins.commons.entity.query.BaseQuery;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CustomerContractQuery extends IBaseQuery {
+public class CustomerContractQuery extends BaseQuery {
     private static final long serialVersionUID = 1L;
     /**
      * customerId

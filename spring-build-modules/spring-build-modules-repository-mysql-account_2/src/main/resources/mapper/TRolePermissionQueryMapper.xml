@@ -9,4 +9,14 @@
         from t_permission where id in (select permission_id from t_role_permission where role_id =
         #{id,jdbcType=BIGINT})
     </select>
+
+    <select id="getRolePermissionsByRoleIds" resultMap="org.example.modules.repository.mysql.mapper.TPermissionMapper.BaseResultMap">
+        select
+        <include refid="org.example.modules.repository.mysql.mapper.TPermissionMapper.Base_Column_List">
+        </include>
+        from t_permission where id in (select permission_id from t_role_permission where role_id in
+        <foreach collection="roleIds" item="roleId" open="(" close=")" separator=",">
+            #{roleId,jdbcType=BIGINT}
+        </foreach>
+    </select>
 </mapper>

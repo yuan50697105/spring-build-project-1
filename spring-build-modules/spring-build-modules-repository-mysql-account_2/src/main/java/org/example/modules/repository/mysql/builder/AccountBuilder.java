@@ -1,10 +1,12 @@
 package org.example.modules.repository.mysql.builder;
 
+import org.example.modules.repository.mysql.entity.po.TPermission;
 import org.example.modules.repository.mysql.entity.po.TRole;
 import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.po.TUserRole;
 import org.example.modules.repository.mysql.entity.query.AccountQuery;
 import org.example.modules.repository.mysql.entity.query.TUserQuery;
+import org.example.modules.repository.mysql.entity.result.PermissionResult;
 import org.example.modules.repository.mysql.entity.result.RoleInfoResult;
 import org.example.modules.repository.mysql.entity.result.UserInfoResult;
 import org.example.modules.repository.mysql.entity.vo.AccountFormVo;
@@ -20,11 +22,11 @@ import java.util.Set;
 
 @Mapper(componentModel = "spring")
 public interface AccountBuilder {
-    @Mapping(target = "version", ignore = true)
+
     @Mapping(target = "updateUser", ignore = true)
     @Mapping(target = "updateId", ignore = true)
     @Mapping(target = "updateDate", ignore = true)
-    @Mapping(target = "isDelete", ignore = true)
+
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
@@ -39,11 +41,11 @@ public interface AccountBuilder {
         return tUserRoles;
     }
 
-    @Mapping(target = "version", ignore = true)
+
     @Mapping(target = "updateUser", ignore = true)
     @Mapping(target = "updateId", ignore = true)
     @Mapping(target = "updateDate", ignore = true)
-    @Mapping(target = "isDelete", ignore = true)
+
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
@@ -58,14 +60,14 @@ public interface AccountBuilder {
 
     IPageData<AccountResult> generateAccountVoPage(IPageData<TUser> data);
 
-    @Mapping(target = "version", ignore = true)
+
     AccountResult generateAccountVo(TUser user);
 
-    @Mapping(target = "version", ignore = true)
+
     @Mapping(target = "updateUser", ignore = true)
     @Mapping(target = "updateId", ignore = true)
     @Mapping(target = "updateDate", ignore = true)
-    @Mapping(target = "isDelete", ignore = true)
+
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
@@ -73,4 +75,6 @@ public interface AccountBuilder {
     void copyUser(AccountFormVo.UserInfo user, @MappingTarget TUser tUser);
 
     List<AccountResult> generateAccountVoList(List<TUser> tUsers);
+
+    Set<PermissionResult> generateUserPermissionInfos(List<TPermission> permissions);
 }

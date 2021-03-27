@@ -15,4 +15,6 @@ public interface TRolePermissionDao extends TkBaseDao<TRolePermission, TRolePerm
     boolean removeByRoleIds(List<Long> roleIds);
 
     List<TPermission> getRolePermissionsByRoleId(Long id);
+
+    List<TPermission> getRolePermissionsByRoleIds(List<Long> roleIds);
 }

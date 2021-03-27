@@ -19,11 +19,11 @@ import java.util.Set;
 
 @Mapper(componentModel = "spring")
 public interface RoleBuilder {
-    @Mapping(target = "version", ignore = true)
+
     @Mapping(target = "updateUser", ignore = true)
     @Mapping(target = "updateId", ignore = true)
     @Mapping(target = "updateDate", ignore = true)
-    @Mapping(target = "isDelete", ignore = true)
+
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
@@ -38,22 +38,22 @@ public interface RoleBuilder {
         return rolePermissions;
     }
 
-    @Mapping(target = "version", ignore = true)
+
     @Mapping(target = "updateUser", ignore = true)
     @Mapping(target = "updateId", ignore = true)
     @Mapping(target = "updateDate", ignore = true)
-    @Mapping(target = "isDelete", ignore = true)
+
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)
     TRolePermission createRolePermission(Long roleId, Long permissionId);
 
-    @Mapping(target = "version", ignore = true)
+
     @Mapping(target = "updateUser", ignore = true)
     @Mapping(target = "updateId", ignore = true)
     @Mapping(target = "updateDate", ignore = true)
-    @Mapping(target = "isDelete", ignore = true)
+
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
@@ -68,7 +68,7 @@ public interface RoleBuilder {
 
     List<RoleResult> createRoleVos(List<TRole> roles);
 
-    @Mapping(target = "version", ignore = true)
+
     RoleResult createRoleVo(TRole role);
 
     IPageData<RoleResult> createRoleVos(IPageData<TRole> roles);

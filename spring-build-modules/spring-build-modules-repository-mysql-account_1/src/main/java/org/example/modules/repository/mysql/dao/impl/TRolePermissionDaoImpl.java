@@ -44,4 +44,10 @@ public class TRolePermissionDaoImpl extends TkBaseDaoImpl<TRolePermission, TRole
     public List<TPermission> getRolePermissionsByRoleId(Long id) {
         return rolePermissionQueryMapper.getRolePermissionsByRoleId(id);
     }
+
+    @Override
+    public List<TPermission> getRolePermissionsByRoleIds(List<Long> roleIds) {
+        return rolePermissionQueryMapper.getRolePermissionsByRoleIds(roleIds);
+    }
+
 }

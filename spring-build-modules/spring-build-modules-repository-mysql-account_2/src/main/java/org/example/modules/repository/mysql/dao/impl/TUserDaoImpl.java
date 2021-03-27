@@ -1,12 +1,12 @@
 package org.example.modules.repository.mysql.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.example.modules.repository.mysql.dao.TUserDao;
 import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.query.TUserQuery;
 import org.example.modules.repository.mysql.mapper.TUserMapper;
 import org.example.plugins.mybatis.dao.impl.TkBaseDaoImpl;
-import org.example.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +27,6 @@ public class TUserDaoImpl extends TkBaseDaoImpl<TUser, TUserQuery, TUserMapper> 
 
     @Override
     protected Wrapper<TUser> queryWrapper(TUserQuery tUserQuery) {
-        return null;
+        return Wrappers.<TUser>lambdaQuery().likeRight(isNotEmpty(tUserQuery.getUsername()), TUser::getUsername, tUserQuery.getUsername());
     }
 }

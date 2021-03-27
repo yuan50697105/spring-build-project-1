@@ -18,9 +18,7 @@ import java.util.stream.Collectors;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class RoleFormVo extends IBaseVo {
-    @NotEmpty(groups = {Save.class})
     private RoleInfo role;
-    @NotEmpty(groups = {Save.class})
     private Set<PermissionInfo> permissions;
 
     public String getRoleName() {

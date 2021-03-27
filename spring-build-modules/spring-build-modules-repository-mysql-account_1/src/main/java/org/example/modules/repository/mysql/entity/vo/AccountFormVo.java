@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 public class AccountFormVo extends IBaseVo {
     @NotEmpty(groups = {Update.class})
     private Long id;
-    @NotEmpty
     @ApiModelProperty("账号信息")
     private AccountFormVo.UserInfo user;
     @NotEmpty
