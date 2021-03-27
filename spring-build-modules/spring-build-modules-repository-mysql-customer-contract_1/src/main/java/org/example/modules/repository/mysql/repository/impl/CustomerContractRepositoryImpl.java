@@ -31,7 +31,6 @@ import java.util.Optional;
 public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<CustomerContractResult, CustomerContractFormVo, CustomerContractResult, CustomerContractQuery> implements CustomerContractRepository {
     private final CustomerContractBuilder customerContractBuilder;
     private final TCustomerContractDao customerContractDao;
-    private final MinioClient minioClient;
 
     @Override
     public void save(CustomerContractFormVo customerContractVo) {
