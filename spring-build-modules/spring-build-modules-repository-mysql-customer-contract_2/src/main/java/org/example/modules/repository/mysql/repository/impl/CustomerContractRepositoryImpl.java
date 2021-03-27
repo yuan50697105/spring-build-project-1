@@ -8,6 +8,7 @@ import org.example.modules.repository.mysql.entity.vo.CustomerContractFormVo;
 import org.example.modules.repository.mysql.entity.result.CustomerContractResult;
 import org.example.modules.repository.mysql.entity.po.TCustomerContract;
 import org.example.modules.repository.mysql.entity.query.CustomerContractQuery;
+import org.example.modules.repository.mysql.entity.vo.CustomerContractVo;
 import org.example.modules.repository.mysql.repository.CustomerContractRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
@@ -30,10 +31,21 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
     }
 
     @Override
-    public Long saveWithId(CustomerContractFormVo customerContractVo) {
-        TCustomerContract contract = customerContractBuilder.createCustomerContract(customerContractVo.getContract());
+    public void save(CustomerContractVo contractVo) {
+        saveWithId(contractVo);
+    }
+
+    @Override
+    public Long saveWithId(CustomerContractVo contractVo) {
+        TCustomerContract contract = customerContractBuilder.createCustomerContract(contractVo);
         customerContractDao.save(contract);
         return contract.getId();
+    }
+
+    @Override
+    public Long saveWithId(CustomerContractFormVo customerContractVo) {
+        CustomerContractVo contract1 = customerContractVo.getContract();
+        return saveWithId(contract1);
     }
 
     @Override
@@ -85,7 +97,6 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
 
     @Override
     public List<CustomerContractResult> getListByCustomerId(Long id) {
-
         return customerContractBuilder.createCustomerContractVos(customerContractDao.queryListByCustomerId(id));
     }
 }

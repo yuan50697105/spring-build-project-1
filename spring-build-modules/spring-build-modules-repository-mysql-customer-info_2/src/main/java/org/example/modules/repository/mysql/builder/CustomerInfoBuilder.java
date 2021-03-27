@@ -8,7 +8,6 @@ import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public interface CustomerInfoBuilder {
-
     @Mapping(target = "updateUser", ignore = true)
     @Mapping(target = "updateId", ignore = true)
     @Mapping(target = "updateDate", ignore = true)

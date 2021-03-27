@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import org.example.domains.entity.CustomerDetailsResult;
 import org.example.domains.entity.CustomerFormVo;
 import org.example.domains.service.CustomerService;
-import org.example.modules.repository.mysql.entity.vo.CustomerContractFormVo;
 import org.example.modules.repository.mysql.entity.vo.CustomerContractVo;
-import org.example.modules.repository.mysql.entity.vo.CustomerInfoFormVo;
 import org.example.modules.repository.mysql.entity.result.CustomerInfoResult;
+import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
 import org.example.modules.repository.mysql.repository.CustomerContractRepository;
 import org.example.modules.repository.mysql.repository.CustomerInfoRepository;
 import org.springframework.stereotype.Service;
@@ -24,16 +23,15 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void save(CustomerFormVo vo) {
-        CustomerInfoFormVo customer = vo.getCustomer();
+        CustomerInfoVo customer = vo.getCustomer();
         Long customerId = customerInfoRepository.saveWithId(customer);
         Optional<CustomerInfoResult> optional = customerInfoRepository.getByIdOpt(customerId);
         if (optional.isPresent()) {
             CustomerInfoResult customerInfoResult = optional.get();
-            CustomerContractFormVo voContract = vo.getContract();
-            CustomerContractVo contract = voContract.getContract();
+            CustomerContractVo contract = vo.getContract();
             contract.setCustomerId(customerInfoResult.getId());
             contract.setCustomerCode(customerInfoResult.getCode());
-            customerContractRepository.saveWithId(voContract);
+            customerContractRepository.saveWithId(contract);
         }
     }
 

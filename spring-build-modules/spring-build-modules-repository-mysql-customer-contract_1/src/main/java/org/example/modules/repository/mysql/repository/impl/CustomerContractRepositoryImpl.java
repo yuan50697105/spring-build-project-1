@@ -1,5 +1,9 @@
 package org.example.modules.repository.mysql.repository.impl;
 
+import io.minio.MinioClient;
+import io.minio.PutObjectArgs;
+import io.minio.UploadObjectArgs;
+import io.minio.errors.*;
 import lombok.AllArgsConstructor;
 import org.example.modules.repository.mysql.builder.CustomerContractBuilder;
 import org.example.modules.repository.mysql.dao.TCustomerContractDao;
@@ -8,12 +12,16 @@ import org.example.modules.repository.mysql.entity.vo.CustomerContractFormVo;
 import org.example.modules.repository.mysql.entity.result.CustomerContractResult;
 import org.example.modules.repository.mysql.entity.po.TCustomerContract;
 import org.example.modules.repository.mysql.entity.query.CustomerContractQuery;
+import org.example.modules.repository.mysql.entity.vo.CustomerContractVo;
 import org.example.modules.repository.mysql.repository.CustomerContractRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +31,7 @@ import java.util.Optional;
 public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<CustomerContractResult, CustomerContractFormVo, CustomerContractResult, CustomerContractQuery> implements CustomerContractRepository {
     private final CustomerContractBuilder customerContractBuilder;
     private final TCustomerContractDao customerContractDao;
+    private final MinioClient minioClient;
 
     @Override
     public void save(CustomerContractFormVo customerContractVo) {
@@ -30,10 +39,21 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
     }
 
     @Override
-    public Long saveWithId(CustomerContractFormVo customerContractVo) {
-        TCustomerContract contract = customerContractBuilder.createCustomerContract(customerContractVo.getContract());
+    public void save(CustomerContractVo contractVo) {
+        saveWithId(contractVo);
+    }
+
+    @Override
+    public Long saveWithId(CustomerContractVo contractVo) {
+        TCustomerContract contract = customerContractBuilder.createCustomerContract(contractVo);
         customerContractDao.save(contract);
         return contract.getId();
+    }
+
+    @Override
+    public Long saveWithId(CustomerContractFormVo customerContractVo) {
+        CustomerContractVo contract1 = customerContractVo.getContract();
+        return saveWithId(contract1);
     }
 
     @Override
@@ -85,7 +105,6 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
 
     @Override
     public List<CustomerContractResult> getListByCustomerId(Long id) {
-
         return customerContractBuilder.createCustomerContractVos(customerContractDao.queryListByCustomerId(id));
     }
 }
