@@ -5,9 +5,10 @@ import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.po.TUserRole;
 import org.example.modules.repository.mysql.entity.query.AccountQuery;
 import org.example.modules.repository.mysql.entity.query.TUserQuery;
-import org.example.modules.repository.mysql.entity.vo.AccountDetailVo;
+import org.example.modules.repository.mysql.entity.result.RoleInfoResult;
+import org.example.modules.repository.mysql.entity.result.UserInfoResult;
 import org.example.modules.repository.mysql.entity.vo.AccountFormVo;
-import org.example.modules.repository.mysql.entity.vo.AccountVo;
+import org.example.modules.repository.mysql.entity.result.AccountResult;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -48,13 +49,13 @@ public interface UserBuilder {
     @Mapping(target = "createDate", ignore = true)
     TUserRole generateUserRole(Long userId, Long roleId);
 
-    AccountDetailVo.UserInfo generateUserInfo(TUser user);
+    UserInfoResult generateUserInfo(TUser user);
 
-    Set<AccountDetailVo.RoleInfo> generateUserRoleInfos(List<TRole> listByUserId);
+    Set<RoleInfoResult> generateUserRoleInfos(List<TRole> listByUserId);
 
     TUserQuery generateUserQuery(AccountQuery accountQuery);
 
-    IPageData<AccountVo> generateAccountVoPage(IPageData<TUser> data);
+    IPageData<AccountResult> generateAccountVoPage(IPageData<TUser> data);
 
-    AccountVo generateAccountVo(TUser user);
+    AccountResult generateAccountVo(TUser user);
 }

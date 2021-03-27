@@ -1,4 +1,4 @@
-package org.example.modules.repository.mysql.entity.vo;
+package org.example.modules.repository.mysql.entity.result;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -15,7 +15,7 @@ import java.util.Set;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class RoleDetailVo extends IBaseVo {
+public class RoleDetailResult extends IBaseVo {
     private RoleInfo role;
     private Set<PermissionInfo> permissions;
 

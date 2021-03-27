@@ -7,9 +7,9 @@ import org.example.modules.repository.mysql.dao.TRolePermissionDao;
 import org.example.modules.repository.mysql.entity.po.TRole;
 import org.example.modules.repository.mysql.entity.query.RoleQuery;
 import org.example.modules.repository.mysql.entity.query.TRoleQuery;
-import org.example.modules.repository.mysql.entity.vo.RoleDetailVo;
+import org.example.modules.repository.mysql.entity.result.RoleDetailResult;
 import org.example.modules.repository.mysql.entity.vo.RoleFormVo;
-import org.example.modules.repository.mysql.entity.vo.RoleVo;
+import org.example.modules.repository.mysql.entity.result.RoleResult;
 import org.example.modules.repository.mysql.helper.RoleHelper;
 import org.example.modules.repository.mysql.repository.RoleRepository;
 import org.example.plugins.mybatis.entity.IPageData;
@@ -30,7 +30,7 @@ import java.util.Optional;
 @Repository
 @Transactional
 @Cacheable(cacheNames = {"roles"}, sync = true)
-public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleVo, RoleFormVo, RoleDetailVo, RoleQuery> implements RoleRepository {
+public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleResult, RoleFormVo, RoleDetailResult, RoleQuery> implements RoleRepository {
     @Autowired
     private RoleBuilder roleBuilder;
     @Autowired
@@ -100,15 +100,15 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleVo, RoleFormVo, 
             @Cacheable(key = "id"),
             @Cacheable(key = "result.role.name", unless = "result.role.name != null ")
     })
-    public RoleDetailVo getById(Long id) {
+    public RoleDetailResult getById(Long id) {
         Optional<TRole> optional = roleDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TRole tRole = optional.get();
-            RoleDetailVo roleDetailVo = new RoleDetailVo();
-            roleDetailVo.setId(tRole.getId());
-            roleDetailVo.setRole(roleBuilder.createRoleInfo(tRole));
-            roleDetailVo.setPermissions(roleBuilder.createRolePermissionsInfo(rolePermissionDao.getRolePermissionsByRoleId(id)));
-            return roleDetailVo;
+            RoleDetailResult roleDetailResult = new RoleDetailResult();
+            roleDetailResult.setId(tRole.getId());
+            roleDetailResult.setRole(roleBuilder.createRoleInfo(tRole));
+            roleDetailResult.setPermissions(roleBuilder.createRolePermissionsInfo(rolePermissionDao.getRolePermissionsByRoleId(id)));
+            return roleDetailResult;
         } else {
             return null;
         }
@@ -119,7 +119,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleVo, RoleFormVo, 
             @Cacheable(key = "roleQuery.id"),
             @Cacheable(key = "roleQuery.name", unless = "roleQuery.name != null ")
     })
-    public IPageData<RoleVo> queryPage(RoleQuery roleQuery) {
+    public IPageData<RoleResult> queryPage(RoleQuery roleQuery) {
         TRoleQuery query = roleBuilder.createQuery(roleQuery);
         IPageData<TRole> roles = roleDao.queryPage(query);
         return roleBuilder.createRoleVos(roles);
@@ -130,7 +130,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleVo, RoleFormVo, 
             @Cacheable(key = "roleQuery.id"),
             @Cacheable(key = "roleQuery.name", unless = "roleQuery.name != null ")
     })
-    public List<RoleVo> queryList(RoleQuery roleQuery) {
+    public List<RoleResult> queryList(RoleQuery roleQuery) {
         TRoleQuery query = roleBuilder.createQuery(roleQuery);
         List<TRole> roles = roleDao.queryList(query);
         return roleBuilder.createRoleVos(roles);
@@ -141,7 +141,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleVo, RoleFormVo, 
             @Cacheable(key = "roleQuery.id"),
             @Cacheable(key = "roleQuery.name", unless = "roleQuery.name != null ")
     })
-    public RoleVo queryOne(RoleQuery roleQuery) {
+    public RoleResult queryOne(RoleQuery roleQuery) {
         TRoleQuery query = roleBuilder.createQuery(roleQuery);
         TRole role = roleDao.queryOne(query);
         return roleBuilder.createRoleVo(role);
