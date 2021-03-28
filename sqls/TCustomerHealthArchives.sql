@@ -1,6 +1,6 @@
--- auto Generated on 2021-03-26
--- DROP TABLE IF EXISTS t_customer_contract;
-CREATE TABLE t_customer_contract(
+-- auto Generated on 2021-03-28
+-- DROP TABLE IF EXISTS t_customer_health_archives;
+CREATE TABLE t_customer_health_archives(
 	id BIGINT (15) NOT NULL AUTO_INCREMENT COMMENT 'id',
 	create_id BIGINT (15) DEFAULT -1 COMMENT 'createId',
 	update_id BIGINT (15) DEFAULT -1 COMMENT 'updateId',
@@ -8,11 +8,10 @@ CREATE TABLE t_customer_contract(
 	update_user VARCHAR (50) DEFAULT '' COMMENT 'updateUser',
 	create_date DATETIME DEFAULT '1000-01-01 00:00:00' COMMENT 'createDate',
 	update_date DATETIME DEFAULT '1000-01-01 00:00:00' COMMENT 'updateDate',
-	version INT (11) DEFAULT -1 COMMENT 'version',
-	is_delete INT (11) DEFAULT -1 COMMENT 'isDelete',
 	customer_id BIGINT (15) DEFAULT -1 COMMENT 'customerId',
 	customer_code VARCHAR (50) DEFAULT '' COMMENT 'customerCode',
-	contract_name VARCHAR (50) DEFAULT '' COMMENT 'contractName',
-	contract_path VARCHAR (50) DEFAULT '' COMMENT 'contractPath',
+	customer_name VARCHAR (50) DEFAULT '' COMMENT 'customerName',
+	conclusion VARCHAR (50) DEFAULT '' COMMENT '结论',
+	emergency VARCHAR (50) DEFAULT '' COMMENT '紧急异常',
 	PRIMARY KEY (id)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 't_customer_contract';
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 't_customer_health_archives';
