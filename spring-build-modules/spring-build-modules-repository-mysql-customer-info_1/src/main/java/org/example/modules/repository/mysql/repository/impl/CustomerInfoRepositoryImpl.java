@@ -49,10 +49,7 @@ public class CustomerInfoRepositoryImpl implements CustomerInfoRepository {
         TCustomerInfo tCustomerInfo = customerInfoDao.getById(customerInfoFormVo.getId());
         CustomerInfoVo customer = customerInfoFormVo.getCustomer();
         customerInfoBuilder.copyCustomer(customer, tCustomerInfo);
-    }
-
-    private void update(Long id, CustomerInfoFormVo formVo) {
-
+        customerInfoDao.updateById(tCustomerInfo);
     }
 
     @Override

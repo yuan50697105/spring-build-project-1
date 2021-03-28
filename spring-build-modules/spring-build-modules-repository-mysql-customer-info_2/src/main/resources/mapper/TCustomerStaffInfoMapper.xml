@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.modules.repository.mysql.mapper.TCustomerStaffInfoMapper">
+  <resultMap id="BaseResultMap" type="org.example.modules.repository.mysql.entity.po.TCustomerStaffInfo">
+    <!--@mbg.generated-->
+    <!--@Table t_customer_staff_info-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_id" jdbcType="BIGINT" property="createId" />
+    <result column="update_id" jdbcType="BIGINT" property="updateId" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="customer_id" jdbcType="BIGINT" property="customerId" />
+    <result column="customer_code" jdbcType="VARCHAR" property="customerCode" />
+    <result column="staff_name" jdbcType="VARCHAR" property="staffName" />
+    <result column="id_card_no" jdbcType="VARCHAR" property="idCardNo" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="marriage" jdbcType="INTEGER" property="marriage" />
+    <result column="bear" jdbcType="INTEGER" property="bear" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, create_id, update_id, create_user, update_user, create_date, update_date, customer_id, 
+    customer_code, staff_name, id_card_no, phone, age, sex, marriage, bear
+  </sql>
+</mapper>
