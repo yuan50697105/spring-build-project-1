@@ -51,8 +51,7 @@ public class CustomerInfoRepositoryImpl implements CustomerInfoRepository {
         customerInfoBuilder.copyCustomer(customer, tCustomerInfo);
     }
 
-    @Override
-    public void update(Long id, CustomerInfoFormVo formVo) {
+    private void update(Long id, CustomerInfoFormVo formVo) {
 
     }
 

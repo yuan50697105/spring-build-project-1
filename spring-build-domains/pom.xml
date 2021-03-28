@@ -23,6 +23,8 @@
         <module>spring-build-domains-service-customer_2</module>
         <module>spring-build-domains-service-customer-contract_1</module>
         <module>spring-build-domains-service-customer-contract_2</module>
+        <module>spring-build-domains-service-customer-archives_1</module>
+        <module>spring-build-domains-service-customer-archives_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

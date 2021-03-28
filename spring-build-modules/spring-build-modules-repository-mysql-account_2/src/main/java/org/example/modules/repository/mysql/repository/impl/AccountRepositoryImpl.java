@@ -63,8 +63,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountResult, Ac
         update(accountFormVo.getId(),accountFormVo);
     }
 
-    @Override
-    public void update(@NotEmpty Long id, @Validated AccountFormVo formVo) {
+    private void update(@NotEmpty Long id, @Validated AccountFormVo formVo) {
         Optional<TUser> optional = userDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TUser tUser = optional.get();

@@ -10,6 +10,7 @@ import java.util.Optional;
 /**
  * @author yuane
  */
+@SuppressWarnings("UnusedReturnValue")
 public interface IBaseRepository<T, V, D, Q extends BaseQuery> {
 
     void save(V v);
@@ -17,8 +18,6 @@ public interface IBaseRepository<T, V, D, Q extends BaseQuery> {
     Long saveWithId(V v);
 
     void update(V v);
-
-    void update(Long id, V formVo);
 
     void delete(List<Long> ids);
 

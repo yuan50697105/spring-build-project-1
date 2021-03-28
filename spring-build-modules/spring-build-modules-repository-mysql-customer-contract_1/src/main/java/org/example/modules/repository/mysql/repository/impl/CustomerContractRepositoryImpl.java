@@ -1,9 +1,5 @@
 package org.example.modules.repository.mysql.repository.impl;
 
-import io.minio.MinioClient;
-import io.minio.PutObjectArgs;
-import io.minio.UploadObjectArgs;
-import io.minio.errors.*;
 import lombok.AllArgsConstructor;
 import org.example.modules.repository.mysql.builder.CustomerContractBuilder;
 import org.example.modules.repository.mysql.dao.TCustomerContractDao;
@@ -19,9 +15,6 @@ import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,8 +53,7 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
         update(customerContractVo.getId(), customerContractVo);
     }
 
-    @Override
-    public void update(Long id, CustomerContractFormVo formVo) {
+    private void update(Long id, CustomerContractFormVo formVo) {
         Optional<TCustomerContract> optional = customerContractDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TCustomerContract customerContract = optional.get();

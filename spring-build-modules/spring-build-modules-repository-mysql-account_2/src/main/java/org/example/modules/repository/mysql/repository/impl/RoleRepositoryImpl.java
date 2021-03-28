@@ -74,12 +74,11 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleResult, RoleForm
         update(roleFormVo.getId(), roleFormVo);
     }
 
-    @Override
     @Caching(put = {
             @CachePut(key = "id"),
             @CachePut(key = "formVo.roleName")
     })
-    public void update(@NotEmpty Long id, @Validated RoleFormVo formVo) {
+    private void update(@NotEmpty Long id, @Validated RoleFormVo formVo) {
         Optional<TRole> optional = roleDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TRole tRole = optional.get();

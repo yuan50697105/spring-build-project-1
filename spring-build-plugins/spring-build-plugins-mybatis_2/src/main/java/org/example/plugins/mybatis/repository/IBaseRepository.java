@@ -18,8 +18,6 @@ public interface IBaseRepository<T, V, D, Q extends BaseQuery> {
 
     void update(V v);
 
-    void update(Long id, V formVo);
-
     void delete(List<Long> ids);
 
     D getById(Long id);

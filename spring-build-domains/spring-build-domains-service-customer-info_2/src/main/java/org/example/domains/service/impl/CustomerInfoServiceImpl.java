@@ -35,7 +35,8 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
 
     @Override
     public void update(Long id, CustomerInfoFormVo customerInfoFormVo) {
-        customerInfoRepository.update(id, customerInfoFormVo);
+        customerInfoFormVo.setId(id);
+        customerInfoRepository.update(customerInfoFormVo);
     }
 
     @Override

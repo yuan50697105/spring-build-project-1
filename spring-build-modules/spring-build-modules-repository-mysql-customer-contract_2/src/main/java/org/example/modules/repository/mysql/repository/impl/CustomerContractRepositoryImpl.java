@@ -53,8 +53,7 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
         update(customerContractVo.getId(), customerContractVo);
     }
 
-    @Override
-    public void update(Long id, CustomerContractFormVo formVo) {
+    private void update(Long id, CustomerContractFormVo formVo) {
         Optional<TCustomerContract> optional = customerContractDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TCustomerContract customerContract = optional.get();
