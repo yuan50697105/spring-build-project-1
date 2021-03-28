@@ -44,7 +44,10 @@
             <groupId>org.example</groupId>
             <artifactId>spring-build-domains-service-customer-archives_1</artifactId>
         </dependency>
-        spring-build-domains-service-customer-group_1
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>spring-build-domains-service-customer-group_1</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
