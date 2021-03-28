@@ -1,10 +1,16 @@
 package org.example.modules.repository.mysql.builder;
 
 import org.example.modules.repository.mysql.entity.po.TCustomerInfo;
+import org.example.modules.repository.mysql.entity.query.CustomerInfoQuery;
+import org.example.modules.repository.mysql.entity.query.TCustomerInfoQuery;
+import org.example.modules.repository.mysql.entity.result.CustomerInfoResult;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
+import org.example.plugins.mybatis.entity.IPageData;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
+
+import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface CustomerInfoBuilder {
@@ -28,4 +34,13 @@ public interface CustomerInfoBuilder {
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)
     void copyCustomer(CustomerInfoVo customer, @MappingTarget TCustomerInfo tCustomerInfo);
+
+    @Mapping(target = "version", ignore = true)
+    CustomerInfoResult generateCustomerResult(TCustomerInfo customerInfo);
+
+    TCustomerInfoQuery generateCustomerQuery(CustomerInfoQuery customerInfoQuery);
+
+    List<CustomerInfoResult> generateCustomerResult(List<TCustomerInfo> customerInfo);
+
+    IPageData<CustomerInfoResult> generateCustomerResult(IPageData<TCustomerInfo> customerInfo);
 }

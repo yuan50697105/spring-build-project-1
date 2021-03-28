@@ -4,6 +4,7 @@ import org.example.modules.repository.mysql.builder.CustomerInfoBuilder;
 import org.example.modules.repository.mysql.dao.TCustomerInfoDao;
 import org.example.modules.repository.mysql.entity.po.TCustomerInfo;
 import org.example.modules.repository.mysql.entity.query.CustomerInfoQuery;
+import org.example.modules.repository.mysql.entity.query.TCustomerInfoQuery;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoFormVo;
 import org.example.modules.repository.mysql.entity.result.CustomerInfoResult;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
@@ -59,21 +60,28 @@ public class CustomerInfoRepositoryImpl implements CustomerInfoRepository {
 
     @Override
     public CustomerInfoResult getById(Long id) {
-        return null;
-    }
-
-    @Override
-    public IPageData<CustomerInfoResult> queryPage(CustomerInfoQuery customerInfoQuery) {
-        return null;
-    }
-
-    @Override
-    public List<CustomerInfoResult> queryList(CustomerInfoQuery customerInfoQuery) {
-        return null;
+        TCustomerInfo customerInfo = customerInfoDao.getById(id);
+        return customerInfoBuilder.generateCustomerResult(customerInfo);
     }
 
     @Override
     public CustomerInfoResult queryOne(CustomerInfoQuery customerInfoQuery) {
-        return null;
+        TCustomerInfoQuery query = customerInfoBuilder.generateCustomerQuery(customerInfoQuery);
+        TCustomerInfo customerInfo = customerInfoDao.queryOne(query);
+        return customerInfoBuilder.generateCustomerResult(customerInfo);
+    }
+
+    @Override
+    public List<CustomerInfoResult> queryList(CustomerInfoQuery customerInfoQuery) {
+        TCustomerInfoQuery query = customerInfoBuilder.generateCustomerQuery(customerInfoQuery);
+        List<TCustomerInfo> customerInfo = customerInfoDao.queryList(query);
+        return customerInfoBuilder.generateCustomerResult(customerInfo);
+    }
+
+    @Override
+    public IPageData<CustomerInfoResult> queryPage(CustomerInfoQuery customerInfoQuery) {
+        TCustomerInfoQuery query = customerInfoBuilder.generateCustomerQuery(customerInfoQuery);
+        IPageData<TCustomerInfo> customerInfo = customerInfoDao.queryPage(query);
+        return customerInfoBuilder.generateCustomerResult(customerInfo);
     }
 }
