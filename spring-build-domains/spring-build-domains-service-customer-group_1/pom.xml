@@ -9,20 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-domains-service-customer_1</artifactId>
+    <artifactId>spring-build-domains-service-customer-group_1</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>spring-build-domains-service-customer-info_1</artifactId>
+            <artifactId>spring-build-domains-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>spring-build-domains-service-customer-contract_1</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>spring-build-domains-service-customer-group_1</artifactId>
+            <artifactId>spring-build-modules-repository-mysql-customer-group_1</artifactId>
         </dependency>
     </dependencies>
 
