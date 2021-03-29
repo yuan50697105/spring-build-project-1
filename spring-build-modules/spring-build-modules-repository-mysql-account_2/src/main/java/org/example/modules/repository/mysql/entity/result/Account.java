@@ -1,17 +1,13 @@
 package org.example.modules.repository.mysql.entity.result;
 
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.plugins.mybatis.entity.vo.IBaseVo;
 
-import java.util.List;
-
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class RoleResult extends IBaseVo {
-    @ApiModelProperty("角色名称")
+public class Account extends IBaseVo {
+    private String username;
     private String name;
-    private List<PermissionResult> permissions;
-
+    private Integer enabled;
 }

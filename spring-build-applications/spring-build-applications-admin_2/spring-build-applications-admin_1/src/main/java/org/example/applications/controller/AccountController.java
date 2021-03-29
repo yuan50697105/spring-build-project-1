@@ -5,8 +5,8 @@ import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
 import org.example.domains.service.AccountService;
 import org.example.modules.repository.mysql.entity.query.AccountQuery;
-import org.example.modules.repository.mysql.entity.result.AccountDetailResult;
-import org.example.modules.repository.mysql.entity.result.AccountResult;
+import org.example.modules.repository.mysql.entity.result.AccountDetails;
+import org.example.modules.repository.mysql.entity.result.Account;
 import org.example.modules.repository.mysql.entity.vo.AccountFormVo;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.springframework.validation.annotation.Validated;
@@ -21,8 +21,8 @@ public class AccountController {
     private final AccountService accountService;
 
     @GetMapping
-    public Result<List<AccountResult>> page(AccountQuery query) {
-        IPageData<AccountResult> data = accountService.page(query);
+    public Result<List<Account>> page(AccountQuery query) {
+        IPageData<Account> data = accountService.page(query);
         return R.success(data.getTotalRowNum(), data.getData());
     }
 
@@ -45,7 +45,7 @@ public class AccountController {
     }
 
     @GetMapping("{id}")
-    public Result<AccountDetailResult> get(@PathVariable Long id) {
+    public Result<AccountDetails> get(@PathVariable Long id) {
         return R.success(accountService.get(id));
     }
 

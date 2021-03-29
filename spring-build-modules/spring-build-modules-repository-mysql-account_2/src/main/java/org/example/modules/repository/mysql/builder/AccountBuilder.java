@@ -6,11 +6,11 @@ import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.po.TUserRole;
 import org.example.modules.repository.mysql.entity.query.AccountQuery;
 import org.example.modules.repository.mysql.entity.query.TUserQuery;
-import org.example.modules.repository.mysql.entity.result.PermissionResult;
-import org.example.modules.repository.mysql.entity.result.RoleInfoResult;
-import org.example.modules.repository.mysql.entity.result.UserInfoResult;
+import org.example.modules.repository.mysql.entity.result.Permission;
+import org.example.modules.repository.mysql.entity.result.Role;
+import org.example.modules.repository.mysql.entity.result.User;
 import org.example.modules.repository.mysql.entity.vo.AccountFormVo;
-import org.example.modules.repository.mysql.entity.result.AccountResult;
+import org.example.modules.repository.mysql.entity.result.Account;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -52,16 +52,16 @@ public interface AccountBuilder {
     @Mapping(target = "createDate", ignore = true)
     TUserRole generateUserRole(Long userId, Long roleId);
 
-    UserInfoResult generateUserInfo(TUser user);
+    User generateUserInfo(TUser user);
 
-    Set<RoleInfoResult> generateUserRoleInfos(List<TRole> listByUserId);
+    Set<Role> generateUserRoleInfos(List<TRole> listByUserId);
 
     TUserQuery generateUserQuery(AccountQuery accountQuery);
 
-    IPageData<AccountResult> generateAccountVoPage(IPageData<TUser> data);
+    IPageData<Account> generateAccountVoPage(IPageData<TUser> data);
 
 
-    AccountResult generateAccountVo(TUser user);
+    Account generateAccountVo(TUser user);
 
 
     @Mapping(target = "updateUser", ignore = true)
@@ -74,7 +74,7 @@ public interface AccountBuilder {
     @Mapping(target = "createDate", ignore = true)
     void copyUser(AccountFormVo.UserInfo user, @MappingTarget TUser tUser);
 
-    List<AccountResult> generateAccountVoList(List<TUser> tUsers);
+    List<Account> generateAccountVoList(List<TUser> tUsers);
 
-    Set<PermissionResult> generateUserPermissionInfos(List<TPermission> permissions);
+    Set<Permission> generateUserPermissionInfos(List<TPermission> permissions);
 }

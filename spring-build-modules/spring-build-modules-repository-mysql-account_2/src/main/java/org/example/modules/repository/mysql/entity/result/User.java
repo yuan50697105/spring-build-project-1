@@ -11,7 +11,7 @@ import org.example.plugins.mybatis.entity.vo.IBaseVo;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserInfoResult extends IBaseVo {
+public class User extends IBaseVo {
     @ApiModelProperty("账号")
     private String username;
     @ApiModelProperty("姓名")

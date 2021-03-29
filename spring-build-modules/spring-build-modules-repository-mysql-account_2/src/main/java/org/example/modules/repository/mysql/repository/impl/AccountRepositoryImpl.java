@@ -7,10 +7,10 @@ import org.example.modules.repository.mysql.dao.*;
 import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.query.AccountQuery;
 import org.example.modules.repository.mysql.entity.query.TUserQuery;
-import org.example.modules.repository.mysql.entity.result.AccountDetailResult;
-import org.example.modules.repository.mysql.entity.result.AccountResult;
-import org.example.modules.repository.mysql.entity.result.RoleInfoResult;
-import org.example.modules.repository.mysql.entity.result.UserInfoResult;
+import org.example.modules.repository.mysql.entity.result.AccountDetails;
+import org.example.modules.repository.mysql.entity.result.Account;
+import org.example.modules.repository.mysql.entity.result.Role;
+import org.example.modules.repository.mysql.entity.result.User;
 import org.example.modules.repository.mysql.entity.vo.AccountFormVo;
 import org.example.modules.repository.mysql.helper.AccountHelper;
 import org.example.modules.repository.mysql.repository.AccountRepository;
@@ -31,13 +31,12 @@ import java.util.stream.Collectors;
 @Transactional
 @AllArgsConstructor
 @CacheConfig(cacheNames = {"accounts", "users"})
-public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountResult, AccountFormVo, AccountDetailResult, AccountQuery> implements AccountRepository {
+public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountFormVo, AccountDetails, AccountQuery> implements AccountRepository {
     private final AccountBuilder accountBuilder;
     private final AccountHelper accountHelper;
     private final TUserDao userDao;
     private final TRoleDao roleDao;
     private final TUserRoleDao userRoleDao;
-    private final TRolePermissionDao rolePermissionDao;
     private final TUserPermissionDao userPermissionDao;
 
     @Override
@@ -86,33 +85,33 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountResult, Ac
     @Caching(cacheable = {
             @Cacheable(key = "#id"),
     })
-    public AccountDetailResult getById(Long id) {
-        AccountDetailResult accountDetailResult = new AccountDetailResult();
-        accountDetailResult.setId(id);
-        UserInfoResult user = accountBuilder.generateUserInfo(userDao.getById(id));
-        accountDetailResult.setUser(user);
-        Set<RoleInfoResult> roles = accountBuilder.generateUserRoleInfos(userRoleDao.getRolesByUserId(id));
-        accountDetailResult.setRoles(roles);
-        accountDetailResult.setPermissions(accountBuilder.generateUserPermissionInfos(userPermissionDao.getPermissionsByUserId(id)));
-        return accountDetailResult;
+    public AccountDetails getById(Long id) {
+        AccountDetails accountDetails = new AccountDetails();
+        accountDetails.setId(id);
+        User user = accountBuilder.generateUserInfo(userDao.getById(id));
+        accountDetails.setUser(user);
+        Set<Role> roles = accountBuilder.generateUserRoleInfos(userRoleDao.getRolesByUserId(id));
+        accountDetails.setRoles(roles);
+        accountDetails.setPermissions(accountBuilder.generateUserPermissionInfos(userPermissionDao.getPermissionsByUserId(id)));
+        return accountDetails;
     }
 
     @Override
-    public IPageData<AccountResult> queryPage(AccountQuery accountQuery) {
+    public IPageData<Account> queryPage(AccountQuery accountQuery) {
         TUserQuery userQuery = getUserQuery(accountQuery);
         IPageData<TUser> data = userDao.queryPage(userQuery);
         return accountBuilder.generateAccountVoPage(data);
     }
 
     @Override
-    public List<AccountResult> queryList(AccountQuery accountQuery) {
+    public List<Account> queryList(AccountQuery accountQuery) {
         TUserQuery userQuery = getUserQuery(accountQuery);
         List<TUser> tUsers = userDao.queryList(userQuery);
         return accountBuilder.generateAccountVoList(tUsers);
     }
 
     @Override
-    public AccountResult queryOne(AccountQuery accountQuery) {
+    public Account queryOne(AccountQuery accountQuery) {
         TUserQuery query = getUserQuery(accountQuery);
         TUser tUser = userDao.queryOne(query);
         return accountBuilder.generateAccountVo(tUser);
@@ -126,15 +125,15 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountResult, Ac
     @Caching(cacheable = {
             @Cacheable(key = "#username")
     })
-    public AccountDetailResult getByUsername(String username) {
+    public AccountDetails getByUsername(String username) {
         Optional<TUser> optional = userDao.getByUsernameOpt(username);
         if (optional.isPresent()) {
-            AccountDetailResult accountDetailResult = new AccountDetailResult();
+            AccountDetails accountDetails = new AccountDetails();
             TUser tUser = optional.get();
-            accountDetailResult.setId(tUser.getId());
-            accountDetailResult.setUser(accountBuilder.generateUserInfo(tUser));
-            accountDetailResult.setRoles(accountBuilder.generateUserRoleInfos(userRoleDao.getRolesByUsername(username)));
-            return accountDetailResult;
+            accountDetails.setId(tUser.getId());
+            accountDetails.setUser(accountBuilder.generateUserInfo(tUser));
+            accountDetails.setRoles(accountBuilder.generateUserRoleInfos(userRoleDao.getRolesByUsername(username)));
+            return accountDetails;
         } else {
             return null;
         }
@@ -144,7 +143,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<AccountResult, Ac
     @Caching(cacheable = {
             @Cacheable(key = "#username"),
     })
-    public Optional<AccountDetailResult> getByUsernameOpt(String username) {
+    public Optional<AccountDetails> getByUsernameOpt(String username) {
         return Optional.empty();
     }
 }

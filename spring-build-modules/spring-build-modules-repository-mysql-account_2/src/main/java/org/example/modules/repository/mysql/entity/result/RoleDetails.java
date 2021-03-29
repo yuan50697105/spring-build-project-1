@@ -8,14 +8,15 @@ import org.example.plugins.mybatis.entity.vo.IBaseVo;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import java.io.Serializable;
 import java.util.Set;
 
 /**
  * @author yuane
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
-public class RoleDetailResult extends IBaseVo {
+public class RoleDetails implements Serializable {
+    private Long id;
     private RoleInfo role;
     private Set<PermissionInfo> permissions;
 
@@ -23,6 +24,7 @@ public class RoleDetailResult extends IBaseVo {
     @Data
     @ApiModel("角色信息")
     public static class RoleInfo {
+        private Long id;
         @ApiModelProperty("角色名称")
         private String name;
     }

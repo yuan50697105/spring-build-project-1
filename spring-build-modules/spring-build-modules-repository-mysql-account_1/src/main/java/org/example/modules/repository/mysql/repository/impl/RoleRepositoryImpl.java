@@ -7,9 +7,9 @@ import org.example.modules.repository.mysql.dao.TRolePermissionDao;
 import org.example.modules.repository.mysql.entity.po.TRole;
 import org.example.modules.repository.mysql.entity.query.RoleQuery;
 import org.example.modules.repository.mysql.entity.query.TRoleQuery;
-import org.example.modules.repository.mysql.entity.result.RoleDetailResult;
+import org.example.modules.repository.mysql.entity.result.Role;
+import org.example.modules.repository.mysql.entity.result.RoleDetails;
 import org.example.modules.repository.mysql.entity.vo.RoleFormVo;
-import org.example.modules.repository.mysql.entity.result.RoleResult;
 import org.example.modules.repository.mysql.helper.RoleHelper;
 import org.example.modules.repository.mysql.repository.RoleRepository;
 import org.example.plugins.mybatis.entity.IPageData;
@@ -23,14 +23,13 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.NotEmpty;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
 @Transactional
 @Cacheable(cacheNames = {"roles"}, sync = true)
-public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleResult, RoleFormVo, RoleDetailResult, RoleQuery> implements RoleRepository {
+public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, RoleDetails, RoleQuery> implements RoleRepository {
     @Autowired
     private RoleBuilder roleBuilder;
     @Autowired
@@ -67,28 +66,21 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleResult, RoleForm
 
     @Override
     @Caching(put = {
-            @CachePut(key = "roleFormVo.id"),
-            @CachePut(key = "roleFormVo.roleName")
-    })
-    public void update(@Validated RoleFormVo roleFormVo) {
-        update(roleFormVo.getId(), roleFormVo);
-    }
-
-    @Caching(put = {
-            @CachePut(key = "id"),
+            @CachePut(key = "formVo.id"),
             @CachePut(key = "formVo.roleName")
     })
-    private void update(@NotEmpty Long id, @Validated RoleFormVo formVo) {
-        Optional<TRole> optional = roleDao.getByIdOpt(id);
+    public void update(@Validated RoleFormVo formVo) {
+        Optional<TRole> optional = roleDao.getByIdOpt(formVo.getId());
         if (optional.isPresent()) {
             TRole tRole = optional.get();
             roleBuilder.copyRole(formVo.getRole(), tRole);
             roleHelper.handleRolePermissionUpdate(tRole.getId(), formVo.getPermissionIds(), formVo.getPermissionNames());
         }
+        ;
     }
 
     @Override
-    @CacheEvict(key = "ids")
+    @CacheEvict(key = "#ids")
     public void delete(List<Long> ids) {
         roleDao.removeByIds(ids);
         rolePermissionDao.removeByRoleIds(ids);
@@ -99,15 +91,15 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleResult, RoleForm
             @Cacheable(key = "id"),
             @Cacheable(key = "result.role.name", unless = "result.role.name != null ")
     })
-    public RoleDetailResult getById(Long id) {
+    public RoleDetails getById(Long id) {
         Optional<TRole> optional = roleDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TRole tRole = optional.get();
-            RoleDetailResult roleDetailResult = new RoleDetailResult();
-            roleDetailResult.setId(tRole.getId());
-            roleDetailResult.setRole(roleBuilder.createRoleInfo(tRole));
-            roleDetailResult.setPermissions(roleBuilder.createRolePermissionsInfo(rolePermissionDao.getRolePermissionsByRoleId(id)));
-            return roleDetailResult;
+            RoleDetails roleDetails = new RoleDetails();
+            roleDetails.setId(tRole.getId());
+            roleDetails.setRole(roleBuilder.createRoleInfo(tRole));
+            roleDetails.setPermissions(roleBuilder.createRolePermissionsInfo(rolePermissionDao.getRolePermissionsByRoleId(id)));
+            return roleDetails;
         } else {
             return null;
         }
@@ -118,7 +110,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleResult, RoleForm
             @Cacheable(key = "roleQuery.id"),
             @Cacheable(key = "roleQuery.name", unless = "roleQuery.name != null ")
     })
-    public IPageData<RoleResult> queryPage(RoleQuery roleQuery) {
+    public IPageData<Role> queryPage(RoleQuery roleQuery) {
         TRoleQuery query = roleBuilder.createQuery(roleQuery);
         IPageData<TRole> roles = roleDao.queryPage(query);
         return roleBuilder.createRoleVos(roles);
@@ -129,7 +121,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleResult, RoleForm
             @Cacheable(key = "roleQuery.id"),
             @Cacheable(key = "roleQuery.name", unless = "roleQuery.name != null ")
     })
-    public List<RoleResult> queryList(RoleQuery roleQuery) {
+    public List<Role> queryList(RoleQuery roleQuery) {
         TRoleQuery query = roleBuilder.createQuery(roleQuery);
         List<TRole> roles = roleDao.queryList(query);
         return roleBuilder.createRoleVos(roles);
@@ -140,7 +132,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<RoleResult, RoleForm
             @Cacheable(key = "roleQuery.id"),
             @Cacheable(key = "roleQuery.name", unless = "roleQuery.name != null ")
     })
-    public RoleResult queryOne(RoleQuery roleQuery) {
+    public Role queryOne(RoleQuery roleQuery) {
         TRoleQuery query = roleBuilder.createQuery(roleQuery);
         TRole role = roleDao.queryOne(query);
         return roleBuilder.createRoleVo(role);
