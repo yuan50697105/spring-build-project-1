@@ -9,7 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-modules-repository-mysql-customer_1</artifactId>
+    <artifactId>spring-build-modules-repository-mysql-group_1</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>

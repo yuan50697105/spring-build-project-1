@@ -87,42 +87,42 @@
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>spring-build-modules-repository-mysql-customer-contract_1</artifactId>
+                <artifactId>spring-build-modules-repository-mysql-contract_1</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>spring-build-modules-repository-mysql-customer-contract_2</artifactId>
+                <artifactId>spring-build-modules-repository-mysql-contract_2</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>spring-build-modules-repository-mysql-customer-archives_1</artifactId>
+                <artifactId>spring-build-modules-repository-mysql-archives_1</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>spring-build-modules-repository-mysql-customer-archives_2</artifactId>
+                <artifactId>spring-build-modules-repository-mysql-archives_2</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>spring-build-modules-repository-mysql-customer-group_1</artifactId>
+                <artifactId>spring-build-modules-repository-mysql-group_1</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>spring-build-modules-repository-mysql-customer-group_2</artifactId>
+                <artifactId>spring-build-modules-repository-mysql-group_2</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>spring-build-modules-repository-mysql-customer-patient_1</artifactId>
+                <artifactId>spring-build-modules-repository-mysql-patient_1</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>spring-build-modules-repository-mysql-customer-patient_2</artifactId>
+                <artifactId>spring-build-modules-repository-mysql-patient_2</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
         </dependencies>

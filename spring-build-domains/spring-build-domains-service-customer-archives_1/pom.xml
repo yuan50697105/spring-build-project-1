@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>spring-build-modules-repository-mysql-customer-archives_1</artifactId>
+            <artifactId>spring-build-modules-repository-mysql-archives_1</artifactId>
         </dependency>
     </dependencies>
 

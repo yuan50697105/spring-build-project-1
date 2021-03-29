@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>spring-build-modules-repository-mysql-customer-group_2</artifactId>
+            <artifactId>spring-build-modules-repository-mysql-group_2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
