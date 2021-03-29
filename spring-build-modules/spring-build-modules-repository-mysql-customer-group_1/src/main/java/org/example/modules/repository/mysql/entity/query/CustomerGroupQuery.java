@@ -6,5 +6,5 @@ import org.example.plugins.commons.entity.query.BaseQuery;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CustomerGroupInfoQuery extends BaseQuery {
+public class CustomerGroupQuery extends BaseQuery {
 }
