@@ -13,6 +13,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.example</groupId>
             <artifactId>spring-build-modules-commons</artifactId>
         </dependency>
@@ -29,20 +33,20 @@
             <artifactId>knife4j-annotations</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.example</groupId>
             <artifactId>spring-build-modules-repository-mysql-account_2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>spring-build-modules-repository-mysql-customer-info_2</artifactId>
+            <artifactId>spring-build-modules-repository-mysql-customer_2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>spring-build-modules-repository-mysql-customer-contract_2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>spring-build-modules-repository-mysql-customer-archives_2</artifactId>
+            <artifactId>spring-build-modules-repository-mysql-order_2</artifactId>
         </dependency>
     </dependencies>
 
