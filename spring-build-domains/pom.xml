@@ -17,16 +17,14 @@
         <module>spring-build-domains-service-account_2</module>
         <module>spring-build-domains-service_1</module>
         <module>spring-build-domains-service_2</module>
-        <module>spring-build-domains-service-customer-info_1</module>
-        <module>spring-build-domains-service-customer-info_2</module>
         <module>spring-build-domains-service-customer_1</module>
         <module>spring-build-domains-service-customer_2</module>
-        <module>spring-build-domains-service-customer-contract_1</module>
-        <module>spring-build-domains-service-customer-contract_2</module>
-        <module>spring-build-domains-service-customer-archives_1</module>
-        <module>spring-build-domains-service-customer-archives_2</module>
-        <module>spring-build-domains-service-customer-group_1</module>
-        <module>spring-build-domains-service-customer-group_2</module>
+        <module>spring-build-domains-service-contract_1</module>
+        <module>spring-build-domains-service-contract_2</module>
+        <module>spring-build-domains-service-archives_1</module>
+        <module>spring-build-domains-service-archives_2</module>
+        <module>spring-build-domains-service-group_1</module>
+        <module>spring-build-domains-service-group_2</module>
         <module>spring-build-domains-service-payment_1</module>
         <module>spring-build-domains-service-payment_2</module>
     </modules>

@@ -46,6 +46,22 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
+            <artifactId>spring-build-modules-repository-mysql-archives_1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>spring-build-modules-repository-mysql-contract_1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>spring-build-modules-repository-mysql-group_1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>spring-build-modules-repository-mysql-patient_1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
             <artifactId>spring-build-modules-repository-mysql-order_1</artifactId>
         </dependency>
     </dependencies>

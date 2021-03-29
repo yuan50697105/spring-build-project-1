@@ -26,7 +26,7 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>spring-build-domains-service-customer_1</artifactId>
+            <artifactId>spring-build-domains-service_1</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
