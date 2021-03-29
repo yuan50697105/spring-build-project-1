@@ -3,7 +3,7 @@ package org.example.domains.service.impl;
 import org.example.domains.service.CustomerInfoService;
 import org.example.modules.repository.mysql.entity.query.CustomerInfoQuery;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoFormVo;
-import org.example.modules.repository.mysql.entity.result.CustomerInfoResult;
+import org.example.modules.repository.mysql.entity.result.CustomerInfo;
 import org.example.modules.repository.mysql.repository.CustomerInfoRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +19,12 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
     private CustomerInfoRepository customerInfoRepository;
 
     @Override
-    public IPageData<CustomerInfoResult> page(CustomerInfoQuery query) {
+    public IPageData<CustomerInfo> page(CustomerInfoQuery query) {
         return customerInfoRepository.queryPage(query);
     }
 
     @Override
-    public List<CustomerInfoResult> list(CustomerInfoQuery query) {
+    public List<CustomerInfo> list(CustomerInfoQuery query) {
         return customerInfoRepository.queryList(query);
     }
 
@@ -45,7 +45,7 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
     }
 
     @Override
-    public CustomerInfoResult get(Long id) {
+    public CustomerInfo get(Long id) {
         return customerInfoRepository.getById(id);
     }
 }

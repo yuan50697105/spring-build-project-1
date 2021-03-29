@@ -3,7 +3,7 @@ package org.example.modules.repository.mysql.builder;
 import org.example.modules.repository.mysql.entity.po.TCustomerContract;
 import org.example.modules.repository.mysql.entity.query.CustomerContractQuery;
 import org.example.modules.repository.mysql.entity.query.TCustomerContractQuery;
-import org.example.modules.repository.mysql.entity.result.CustomerContractResult;
+import org.example.modules.repository.mysql.entity.result.CustomerContract;
 import org.example.modules.repository.mysql.entity.vo.CustomerContractVo;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.mapstruct.Mapper;
@@ -32,11 +32,11 @@ public interface CustomerContractBuilder {
     @Mapping(target = "createDate", ignore = true)
     void copy(CustomerContractVo formVo, @MappingTarget TCustomerContract customerContract);
 
-    CustomerContractResult createCustomerContractVo(TCustomerContract customerContract);
+    CustomerContract createCustomerContractVo(TCustomerContract customerContract);
 
     TCustomerContractQuery createCustomerContractQuery(CustomerContractQuery customerContractQuery);
 
-    List<CustomerContractResult> createCustomerContractVos(List<TCustomerContract> contracts);
+    List<CustomerContract> createCustomerContractVos(List<TCustomerContract> contracts);
 
-    IPageData<CustomerContractResult> createCustomerContractVos(IPageData<TCustomerContract> data);
+    IPageData<CustomerContract> createCustomerContractVos(IPageData<TCustomerContract> data);
 }

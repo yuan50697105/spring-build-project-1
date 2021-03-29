@@ -6,7 +6,7 @@ import org.example.plugins.mybatis.entity.vo.IBaseVo;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CustomerContractResult extends IBaseVo {
+public class CustomerContract extends IBaseVo {
 
     /**
      * customerId

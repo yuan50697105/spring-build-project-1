@@ -5,7 +5,7 @@ import org.example.domains.entity.CustomerDetailsResult;
 import org.example.domains.entity.CustomerFormVo;
 import org.example.domains.service.CustomerService;
 import org.example.modules.repository.mysql.entity.vo.CustomerContractVo;
-import org.example.modules.repository.mysql.entity.result.CustomerInfoResult;
+import org.example.modules.repository.mysql.entity.result.CustomerInfo;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
 import org.example.modules.repository.mysql.repository.CustomerContractRepository;
 import org.example.modules.repository.mysql.repository.CustomerInfoRepository;
@@ -25,12 +25,12 @@ public class CustomerServiceImpl implements CustomerService {
     public void save(CustomerFormVo vo) {
         CustomerInfoVo customer = vo.getCustomer();
         Long customerId = customerInfoRepository.saveWithId(customer);
-        Optional<CustomerInfoResult> optional = customerInfoRepository.getByIdOpt(customerId);
+        Optional<CustomerInfo> optional = customerInfoRepository.getByIdOpt(customerId);
         if (optional.isPresent()) {
-            CustomerInfoResult customerInfoResult = optional.get();
+            CustomerInfo customerInfo = optional.get();
             CustomerContractVo contract = vo.getContract();
-            contract.setCustomerId(customerInfoResult.getId());
-            contract.setCustomerCode(customerInfoResult.getCode());
+            contract.setCustomerId(customerInfo.getId());
+            contract.setCustomerCode(customerInfo.getCode());
             customerContractRepository.saveWithId(contract);
         }
     }

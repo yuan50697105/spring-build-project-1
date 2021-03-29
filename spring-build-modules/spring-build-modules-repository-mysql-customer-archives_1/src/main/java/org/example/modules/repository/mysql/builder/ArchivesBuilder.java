@@ -3,8 +3,8 @@ package org.example.modules.repository.mysql.builder;
 import org.example.modules.repository.mysql.entity.po.TCustomerHealthArchives;
 import org.example.modules.repository.mysql.entity.query.CustomerHealthArchivesQuery;
 import org.example.modules.repository.mysql.entity.query.TCustomerHealthArchivesQuery;
-import org.example.modules.repository.mysql.entity.result.CustomerHealthArchivesResult;
-import org.example.modules.repository.mysql.entity.vo.ArchivesVo;
+import org.example.modules.repository.mysql.entity.result.CustomerHealthArchives;
+import org.example.modules.repository.mysql.entity.vo.HealthArchivesVo;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -20,15 +20,15 @@ public interface ArchivesBuilder {
     @Mapping(target = "createUser", ignore = true)
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)
-    TCustomerHealthArchives createHealthArchives(ArchivesVo archives);
+    TCustomerHealthArchives createHealthArchives(HealthArchivesVo archives);
 
-    void copyHealthArchiver(ArchivesVo archives, @MappingTarget TCustomerHealthArchives healthArchives);
+    void copyHealthArchiver(HealthArchivesVo archives, @MappingTarget TCustomerHealthArchives healthArchives);
 
-    CustomerHealthArchivesResult createHealthArchives(TCustomerHealthArchives healthArchives);
+    CustomerHealthArchives createHealthArchives(TCustomerHealthArchives healthArchives);
 
     TCustomerHealthArchivesQuery createHealthArchivesQuery(CustomerHealthArchivesQuery customerHealthArchivesQuery);
 
-    List<CustomerHealthArchivesResult> createHealthArchives(List<TCustomerHealthArchives> healthArchives);
+    List<CustomerHealthArchives> createHealthArchives(List<TCustomerHealthArchives> healthArchives);
 
-    IPageData<CustomerHealthArchivesResult> createHealthArchives(IPageData<TCustomerHealthArchives> healthArchives);
+    IPageData<CustomerHealthArchives> createHealthArchives(IPageData<TCustomerHealthArchives> healthArchives);
 }

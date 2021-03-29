@@ -8,7 +8,7 @@ import org.example.plugins.mybatis.entity.vo.IBaseVo;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class ArchivesVo extends IBaseVo {
+public class HealthArchivesVo extends IBaseVo {
 
     private static final long serialVersionUID = 1L;
     /**

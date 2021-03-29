@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CustomerInfoResult extends IBaseVo {
+public class CustomerInfo extends IBaseVo {
     /**
      * 客户编号
      */

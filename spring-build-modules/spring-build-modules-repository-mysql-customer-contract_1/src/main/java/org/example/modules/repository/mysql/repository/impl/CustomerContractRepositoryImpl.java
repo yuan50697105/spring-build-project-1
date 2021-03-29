@@ -5,7 +5,7 @@ import org.example.modules.repository.mysql.builder.CustomerContractBuilder;
 import org.example.modules.repository.mysql.dao.TCustomerContractDao;
 import org.example.modules.repository.mysql.entity.query.TCustomerContractQuery;
 import org.example.modules.repository.mysql.entity.vo.CustomerContractFormVo;
-import org.example.modules.repository.mysql.entity.result.CustomerContractResult;
+import org.example.modules.repository.mysql.entity.result.CustomerContract;
 import org.example.modules.repository.mysql.entity.po.TCustomerContract;
 import org.example.modules.repository.mysql.entity.query.CustomerContractQuery;
 import org.example.modules.repository.mysql.entity.vo.CustomerContractVo;
@@ -21,7 +21,7 @@ import java.util.Optional;
 @Repository
 @Transactional
 @AllArgsConstructor
-public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<CustomerContractResult, CustomerContractFormVo, CustomerContractResult, CustomerContractQuery> implements CustomerContractRepository {
+public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<CustomerContract, CustomerContractFormVo, CustomerContract, CustomerContractQuery> implements CustomerContractRepository {
     private final CustomerContractBuilder customerContractBuilder;
     private final TCustomerContractDao customerContractDao;
 
@@ -68,34 +68,34 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
     }
 
     @Override
-    public CustomerContractResult getById(Long id) {
+    public CustomerContract getById(Long id) {
         TCustomerContract customerContract = customerContractDao.getById(id);
         return customerContractBuilder.createCustomerContractVo(customerContract);
     }
 
     @Override
-    public IPageData<CustomerContractResult> queryPage(CustomerContractQuery customerContractQuery) {
+    public IPageData<CustomerContract> queryPage(CustomerContractQuery customerContractQuery) {
         TCustomerContractQuery contractQuery = customerContractBuilder.createCustomerContractQuery(customerContractQuery);
         IPageData<TCustomerContract> data = customerContractDao.queryPage(contractQuery);
         return customerContractBuilder.createCustomerContractVos(data);
     }
 
     @Override
-    public List<CustomerContractResult> queryList(CustomerContractQuery customerContractQuery) {
+    public List<CustomerContract> queryList(CustomerContractQuery customerContractQuery) {
         TCustomerContractQuery contractQuery = customerContractBuilder.createCustomerContractQuery(customerContractQuery);
         List<TCustomerContract> contracts = customerContractDao.queryList(contractQuery);
         return customerContractBuilder.createCustomerContractVos(contracts);
     }
 
     @Override
-    public CustomerContractResult queryOne(CustomerContractQuery customerContractQuery) {
+    public CustomerContract queryOne(CustomerContractQuery customerContractQuery) {
         TCustomerContractQuery contractQuery = customerContractBuilder.createCustomerContractQuery(customerContractQuery);
         TCustomerContract contract = customerContractDao.queryOne(contractQuery);
         return customerContractBuilder.createCustomerContractVo(contract);
     }
 
     @Override
-    public List<CustomerContractResult> getListByCustomerId(Long id) {
+    public List<CustomerContract> getListByCustomerId(Long id) {
         return customerContractBuilder.createCustomerContractVos(customerContractDao.queryListByCustomerId(id));
     }
 }

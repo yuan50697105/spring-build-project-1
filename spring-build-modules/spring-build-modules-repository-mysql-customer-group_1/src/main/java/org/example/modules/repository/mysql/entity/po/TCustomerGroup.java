@@ -26,25 +26,5 @@ public class TCustomerGroup extends IBaseEntity implements Serializable {
     */
     private String name;
 
-    /**
-    * type
-    */
-    private String type;
-
-    /**
-    * phone
-    */
-    private String phone;
-
-    /**
-    * principal
-    */
-    private String principal;
-
-    /**
-    * principalPhone
-    */
-    private String principalPhone;
-
     private static final long serialVersionUID = 1L;
 }

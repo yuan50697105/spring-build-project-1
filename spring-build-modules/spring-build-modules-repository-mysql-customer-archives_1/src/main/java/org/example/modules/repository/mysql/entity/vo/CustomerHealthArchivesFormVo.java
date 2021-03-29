@@ -7,5 +7,5 @@ import org.example.plugins.mybatis.entity.vo.IBaseVo;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class CustomerHealthArchivesFormVo extends IBaseVo {
-    private ArchivesVo archives;
+    private HealthArchivesVo archives;
 }

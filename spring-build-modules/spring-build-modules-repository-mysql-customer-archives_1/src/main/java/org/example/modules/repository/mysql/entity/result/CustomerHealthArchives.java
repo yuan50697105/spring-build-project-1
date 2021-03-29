@@ -6,5 +6,5 @@ import org.example.modules.repository.mysql.entity.po.TCustomerHealthArchives;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CustomerHealthArchivesResult extends TCustomerHealthArchives {
+public class CustomerHealthArchives extends TCustomerHealthArchives {
 }
