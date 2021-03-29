@@ -175,6 +175,36 @@
                 <artifactId>p6spy-spring-boot-starter</artifactId>
                 <version>${p6spy-spring-boot-starter.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>wx-java-miniapp-spring-boot-starter</artifactId>
+                <version>${wx-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>wx-java-pay-spring-boot-starter</artifactId>
+                <version>${wx-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>wx-java-open-spring-boot-starter</artifactId>
+                <version>${wx-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>wx-java-mp-spring-boot-starter</artifactId>
+                <version>${wx-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>wx-java-qidian-spring-boot-starter</artifactId>
+                <version>${wx-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.felord</groupId>
+                <artifactId>payment-spring-boot-starter</artifactId>
+                <version>${payment-spring-boot-starter.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <properties>
@@ -198,5 +228,7 @@
         <knife4j-dependencies.version>3.0.2</knife4j-dependencies.version>
         <clickhouse-jdbc.version>0.3.0</clickhouse-jdbc.version>
         <p6spy-spring-boot-starter.version>1.6.4</p6spy-spring-boot-starter.version>
+        <wx-java.version>4.0.5.B</wx-java.version>
+        <payment-spring-boot-starter.version>1.0.7.RELEASE</payment-spring-boot-starter.version>
     </properties>
 </project>

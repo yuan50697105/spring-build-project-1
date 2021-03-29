@@ -22,6 +22,8 @@
         <module>spring-build-plugins-message-kafka</module>
         <module>spring-build-plugins-web</module>
         <module>spring-build-plugins-security</module>
+        <module>spring-build-plugins-wx</module>
+        <module>spring-build-plugins-payment</module>
     </modules>
 
     <dependencyManagement>
