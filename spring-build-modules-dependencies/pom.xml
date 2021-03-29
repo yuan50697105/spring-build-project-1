@@ -57,6 +57,26 @@
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
+                <artifactId>spring-build-modules-repository-mysql-customer_2</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>spring-build-modules-repository-mysql-customer_1</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>spring-build-modules-repository-mysql-order_1</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>spring-build-modules-repository-mysql-order_2</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
                 <artifactId>spring-build-modules-repository-mysql-customer-info_1</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
@@ -97,12 +117,12 @@
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>spring-build-modules-repository-mysql-order_1</artifactId>
+                <artifactId>spring-build-modules-repository-mysql-customer-patient_1</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>spring-build-modules-repository-mysql-order_2</artifactId>
+                <artifactId>spring-build-modules-repository-mysql-customer-patient_2</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
         </dependencies>
