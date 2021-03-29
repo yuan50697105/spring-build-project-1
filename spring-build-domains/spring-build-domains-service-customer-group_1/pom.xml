@@ -18,6 +18,10 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
+            <artifactId>spring-build-modules-repository-mysql-customer-group_1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
             <artifactId>spring-build-domains-service-customer-info_1</artifactId>
         </dependency>
     </dependencies>
