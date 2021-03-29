@@ -16,5 +16,21 @@
         <groupId>org.example</groupId>
         <artifactId>spring-build-modules-repository-mysql-customer-info_2</artifactId>
     </dependency>
+    <dependency>
+        <groupId>org.example</groupId>
+        <artifactId>spring-build-modules-commons</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.example</groupId>
+        <artifactId>spring-build-plugins-mybatis_2</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.github.xiaoymin</groupId>
+        <artifactId>knife4j-annotations</artifactId>
+    </dependency>
 </dependencies>
 </project>
