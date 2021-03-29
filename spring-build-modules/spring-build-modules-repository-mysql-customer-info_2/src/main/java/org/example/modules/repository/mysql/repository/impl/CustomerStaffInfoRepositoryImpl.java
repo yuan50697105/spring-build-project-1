@@ -10,13 +10,13 @@ import org.example.modules.repository.mysql.entity.po.TCustomerStaffInfo;
 import org.example.modules.repository.mysql.entity.po.VCustomerGroupInfo;
 import org.example.modules.repository.mysql.entity.query.CustomerGroupInfoQuery;
 import org.example.modules.repository.mysql.entity.query.VCustomerGroupInfoQuery;
-import org.example.modules.repository.mysql.entity.result.CustomerGroupInfoDetailsResult;
-import org.example.modules.repository.mysql.entity.result.CustomerGroupInfoResult;
-import org.example.modules.repository.mysql.entity.vo.CustomerGroupInfoFormVo;
+import org.example.modules.repository.mysql.entity.result.CustomerStaffInfoDetailsResult;
+import org.example.modules.repository.mysql.entity.result.CustomerStaffInfoResult;
+import org.example.modules.repository.mysql.entity.vo.CustomerStaffInfoFormVo;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
 import org.example.modules.repository.mysql.entity.vo.StaffInfoVo;
 import org.example.modules.repository.mysql.helper.CustomerGroupInfoHelper;
-import org.example.modules.repository.mysql.repository.CustomerGroupInfoRepository;
+import org.example.modules.repository.mysql.repository.CustomerStaffInfoRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class CustomerGroupInfoRepositoryImpl implements CustomerGroupInfoRepository {
+public class CustomerStaffInfoRepositoryImpl implements CustomerStaffInfoRepository {
     private final TCustomerInfoDao customerInfoDao;
     private final TCustomerStaffInfoDao customerStaffInfoDao;
     private final VCustomerGroupInfoDao customerGroupInfoDao;
@@ -36,16 +36,16 @@ public class CustomerGroupInfoRepositoryImpl implements CustomerGroupInfoReposit
     private final CustomerGroupInfoHelper customerGroupInfoHelper;
 
     @Override
-    public void save(CustomerGroupInfoFormVo customerGroupInfoFormVo) {
-        saveWithId(customerGroupInfoFormVo);
+    public void save(CustomerStaffInfoFormVo customerStaffInfoFormVo) {
+        saveWithId(customerStaffInfoFormVo);
     }
 
     @Override
-    public Long saveWithId(CustomerGroupInfoFormVo customerGroupInfoFormVo) {
-        CustomerInfoVo customer = customerGroupInfoFormVo.getCustomer();
+    public Long saveWithId(CustomerStaffInfoFormVo customerStaffInfoFormVo) {
+        CustomerInfoVo customer = customerStaffInfoFormVo.getCustomer();
         TCustomerInfo customerInfo = customerGroupInfoBuilder.createCustomer(customer);
         customerInfoDao.save(customerInfo);
-        List<StaffInfoVo> staffs = customerGroupInfoFormVo.getStaffs();
+        List<StaffInfoVo> staffs = customerStaffInfoFormVo.getStaffs();
         List<TCustomerStaffInfo> staffInfos = customerGroupInfoBuilder.createStaffs(staffs);
         staffInfos = staffInfos.stream().peek(staffInfo -> {
             staffInfo.setCustomerId(customer.getId());
@@ -56,13 +56,13 @@ public class CustomerGroupInfoRepositoryImpl implements CustomerGroupInfoReposit
     }
 
     @Override
-    public void update(CustomerGroupInfoFormVo customerGroupInfoFormVo) {
-        Optional<TCustomerInfo> optional = customerInfoDao.getByIdOpt(customerGroupInfoFormVo.getId());
+    public void update(CustomerStaffInfoFormVo customerStaffInfoFormVo) {
+        Optional<TCustomerInfo> optional = customerInfoDao.getByIdOpt(customerStaffInfoFormVo.getId());
         if (optional.isPresent()) {
             TCustomerInfo customerInfo = optional.get();
-            customerGroupInfoBuilder.copyCustomer(customerGroupInfoFormVo.getCustomer(), customerInfo);
+            customerGroupInfoBuilder.copyCustomer(customerStaffInfoFormVo.getCustomer(), customerInfo);
             customerInfoDao.updateById(customerInfo);
-            customerGroupInfoHelper.handleStaffCrud(customerGroupInfoFormVo);
+            customerGroupInfoHelper.handleStaffCrud(customerStaffInfoFormVo);
         }
     }
 
@@ -73,30 +73,30 @@ public class CustomerGroupInfoRepositoryImpl implements CustomerGroupInfoReposit
     }
 
     @Override
-    public CustomerGroupInfoDetailsResult getById(Long id) {
-        CustomerGroupInfoDetailsResult customerGroupInfoDetailsResult = new CustomerGroupInfoDetailsResult();
+    public CustomerStaffInfoDetailsResult getById(Long id) {
+        CustomerStaffInfoDetailsResult customerStaffInfoDetailsResult = new CustomerStaffInfoDetailsResult();
         TCustomerInfo customerInfo = customerInfoDao.getById(id);
-        customerGroupInfoDetailsResult.setCustomer(customerGroupInfoBuilder.createCustomer(customerInfo));
-        customerGroupInfoDetailsResult.setStaffs(customerGroupInfoBuilder.createCustomerStaffs(customerStaffInfoDao.getByCustomerId(id)));
-        return customerGroupInfoDetailsResult;
+        customerStaffInfoDetailsResult.setCustomer(customerGroupInfoBuilder.createCustomer(customerInfo));
+        customerStaffInfoDetailsResult.setStaffs(customerGroupInfoBuilder.createCustomerStaffs(customerStaffInfoDao.getByCustomerId(id)));
+        return customerStaffInfoDetailsResult;
     }
 
     @Override
-    public CustomerGroupInfoResult queryOne(CustomerGroupInfoQuery customerGroupInfoQuery) {
+    public CustomerStaffInfoResult queryOne(CustomerGroupInfoQuery customerGroupInfoQuery) {
         VCustomerGroupInfoQuery query = getQuery(customerGroupInfoQuery);
         VCustomerGroupInfo customerGroupInfo = customerGroupInfoDao.queryOne(query);
         return customerGroupInfoBuilder.createCustomerGroupInfo(customerGroupInfo);
     }
 
     @Override
-    public List<CustomerGroupInfoResult> queryList(CustomerGroupInfoQuery customerGroupInfoQuery) {
+    public List<CustomerStaffInfoResult> queryList(CustomerGroupInfoQuery customerGroupInfoQuery) {
         VCustomerGroupInfoQuery query = getQuery(customerGroupInfoQuery);
         List<VCustomerGroupInfo> customerGroupInfo = customerGroupInfoDao.queryList(query);
         return customerGroupInfoBuilder.createCustomerGroupInfo(customerGroupInfo);
     }
 
     @Override
-    public IPageData<CustomerGroupInfoResult> queryPage(CustomerGroupInfoQuery customerGroupInfoQuery) {
+    public IPageData<CustomerStaffInfoResult> queryPage(CustomerGroupInfoQuery customerGroupInfoQuery) {
         VCustomerGroupInfoQuery query = getQuery(customerGroupInfoQuery);
         IPageData<VCustomerGroupInfo> customerGroupInfo = customerGroupInfoDao.queryPage(query);
         return customerGroupInfoBuilder.createCustomerGroupInfo(customerGroupInfo);

@@ -8,7 +8,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CustomerGroupInfoFormVo extends IBaseVo {
+public class CustomerStaffInfoFormVo extends IBaseVo {
     private CustomerInfoVo customer;
     private List<StaffInfoVo> staffs;
 }

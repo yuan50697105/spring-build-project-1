@@ -6,7 +6,7 @@ import org.example.plugins.mybatis.entity.vo.IBaseVo;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CustomerGroupInfoResult extends IBaseVo {
+public class CustomerStaffInfoResult extends IBaseVo {
 
     private Long customerId;
 

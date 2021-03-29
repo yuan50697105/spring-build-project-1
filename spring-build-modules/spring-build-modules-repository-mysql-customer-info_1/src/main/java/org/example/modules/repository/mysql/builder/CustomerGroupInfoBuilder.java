@@ -5,8 +5,7 @@ import org.example.modules.repository.mysql.entity.po.TCustomerStaffInfo;
 import org.example.modules.repository.mysql.entity.po.VCustomerGroupInfo;
 import org.example.modules.repository.mysql.entity.query.CustomerGroupInfoQuery;
 import org.example.modules.repository.mysql.entity.query.VCustomerGroupInfoQuery;
-import org.example.modules.repository.mysql.entity.result.CustomerGroupInfoDetailsResult;
-import org.example.modules.repository.mysql.entity.result.CustomerGroupInfoResult;
+import org.example.modules.repository.mysql.entity.result.CustomerStaffInfoResult;
 import org.example.modules.repository.mysql.entity.result.CustomerInfoResult;
 import org.example.modules.repository.mysql.entity.result.StaffInfoResult;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
@@ -16,7 +15,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
-import java.util.Collection;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
@@ -39,7 +37,7 @@ public interface CustomerGroupInfoBuilder {
     @Mapping(target = "createDate", ignore = true)
     void copyCustomer(CustomerInfoVo customer, @MappingTarget TCustomerInfo customerInfo);
 
-    CustomerGroupInfoResult createCustomerGroupInfo(VCustomerGroupInfo customerGroupInfo);
+    CustomerStaffInfoResult createCustomerGroupInfo(VCustomerGroupInfo customerGroupInfo);
 
     CustomerInfoResult createCustomer(TCustomerInfo customerInfo);
 
@@ -47,7 +45,7 @@ public interface CustomerGroupInfoBuilder {
 
     VCustomerGroupInfoQuery createQuery(CustomerGroupInfoQuery customerGroupInfoQuery);
 
-    List<CustomerGroupInfoResult> createCustomerGroupInfo(List<VCustomerGroupInfo> customerGroupInfo);
+    List<CustomerStaffInfoResult> createCustomerGroupInfo(List<VCustomerGroupInfo> customerGroupInfo);
 
-    IPageData<CustomerGroupInfoResult> createCustomerGroupInfo(IPageData<VCustomerGroupInfo> customerGroupInfo);
+    IPageData<CustomerStaffInfoResult> createCustomerGroupInfo(IPageData<VCustomerGroupInfo> customerGroupInfo);
 }
