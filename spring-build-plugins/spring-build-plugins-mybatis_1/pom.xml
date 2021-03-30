@@ -37,14 +37,6 @@
             <artifactId>mybatis-plus-batch-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.chris2018998</groupId>
-            <artifactId>beecp-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
