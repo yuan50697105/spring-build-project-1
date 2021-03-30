@@ -205,6 +205,16 @@
                 <artifactId>payment-spring-boot-starter</artifactId>
                 <version>${payment-spring-boot-starter.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.chris2018998</groupId>
+                <artifactId>beecp-spring-boot-starter</artifactId>
+                <version>${beecp-spring-boot-starter.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <properties>
@@ -230,5 +240,7 @@
         <p6spy-spring-boot-starter.version>1.6.4</p6spy-spring-boot-starter.version>
         <wx-java.version>4.0.5.B</wx-java.version>
         <payment-spring-boot-starter.version>1.0.7.RELEASE</payment-spring-boot-starter.version>
+        <druid-spring-boot-starter.version>1.2.5</druid-spring-boot-starter.version>
+        <beecp-spring-boot-starter.version>1.5.2</beecp-spring-boot-starter.version>
     </properties>
 </project>
