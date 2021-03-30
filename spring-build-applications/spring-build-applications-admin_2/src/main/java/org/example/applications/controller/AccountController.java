@@ -12,6 +12,7 @@ import org.example.plugins.mybatis.entity.IPageData;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -44,6 +45,17 @@ public class AccountController {
         return R.success();
     }
 
+    @DeleteMapping
+    public Result<?> delete(List<Long> ids) {
+        accountService.delete(ids);
+        return R.success();
+    }
+
+    @DeleteMapping("{id}")
+    public Result<?> delete(@PathVariable Long id) {
+        accountService.delete(Collections.singletonList(id));
+        return R.success();
+    }
     @GetMapping("{id}")
     public Result<AccountDetails> get(@PathVariable Long id) {
         return R.success(accountService.get(id));

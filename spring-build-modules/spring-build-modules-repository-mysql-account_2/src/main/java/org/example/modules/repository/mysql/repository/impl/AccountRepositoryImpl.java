@@ -59,16 +59,13 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
     @Override
     @Transactional
     public void update(@Validated AccountFormVo accountFormVo) {
-        update(accountFormVo.getId(),accountFormVo);
-    }
-
-    private void update(@NotEmpty Long id, @Validated AccountFormVo formVo) {
+        @NotEmpty Long id = accountFormVo.getId();
         Optional<TUser> optional = userDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TUser tUser = optional.get();
-            accountBuilder.copyUser(formVo.getUser(), tUser);
+            accountBuilder.copyUser(accountFormVo.getUser(), tUser);
             userDao.updateById(tUser);
-            accountHelper.handleUserRoleUpdate(id, formVo.getRoleIds(), formVo.getRoleNames());
+            accountHelper.handleUserRoleUpdate(id, accountFormVo.getRoleIds(), accountFormVo.getRoleNames());
         }
     }
 

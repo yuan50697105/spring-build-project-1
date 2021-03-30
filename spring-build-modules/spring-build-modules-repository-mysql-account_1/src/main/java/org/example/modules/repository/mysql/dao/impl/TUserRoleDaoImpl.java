@@ -8,6 +8,7 @@ import org.example.modules.repository.mysql.entity.query.TUserRoleQuery;
 import org.example.modules.repository.mysql.mapper.TUserRoleMapper;
 import org.example.modules.repository.mysql.mapper.TUserRoleQueryMapper;
 import org.example.plugins.mybatis.dao.impl.TkBaseDaoImpl;
+import org.example.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,12 +23,15 @@ public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, T
     private TUserRoleQueryMapper userRoleQueryMapper;
     @Override
     public boolean removeByUserIds(List<Long> userIds) {
-        return lambdaUpdate().in(TUserRole::getUserId,userIds).remove();
+        List<Long> ids = lambdaQuery().in(TUserRole::getUserId, userIds).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
+        return removeByIds(ids);
     }
 
     @Override
     public boolean removeByRoleIdsAndUserId(List<Long> userRoleIds, Long id) {
-        return lambdaUpdate().eq(TUserRole::getUserId,id).in(TUserRole::getRoleId,userRoleIds).remove();
+        List<Long> ids = lambdaQuery().eq(TUserRole::getUserId, id).in(TUserRole::getRoleId, userRoleIds).select(IBaseEntity::getId).list()
+                .stream().map(IBaseEntity::getId).collect(Collectors.toList());
+        return removeByIds(ids);
     }
 
     @Override

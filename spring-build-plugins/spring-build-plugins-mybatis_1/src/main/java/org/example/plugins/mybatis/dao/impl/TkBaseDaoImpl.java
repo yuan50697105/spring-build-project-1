@@ -15,7 +15,7 @@ public abstract class TkBaseDaoImpl<T, Q extends TkBaseQuery<T>, M extends IBase
         String order = query.getOrder();
         order = StrUtil.toUnderlineCase(order);
         BaseQuery.OrderTypeEnum orderType = query.getOrderType();
-        if (orderType.equals(OrderTypeEnum.DESC)) {
+        if (orderType.equals(BaseQuery.OrderTypeEnum.DESC)) {
             example.setOrderByClause(order + " desc");
         } else {
             example.setOrderByClause(order + " asc");
