@@ -9,4 +9,5 @@ import org.example.plugins.mybatis.entity.vo.IBaseVo;
 @Data
 public class CustomerDetailsResult extends IBaseVo {
     private CustomerInfo customer;
+
 }

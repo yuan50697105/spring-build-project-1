@@ -19,15 +19,20 @@ import java.util.List;
 public class CustomerInfoController {
     private final CustomerInfoService customerInfoService;
 
-    @GetMapping
+    @GetMapping({"","query"})
     public Result<List<CustomerInfo>> page(CustomerInfoQuery query) {
         IPageData<CustomerInfo> data = customerInfoService.page(query);
         return R.success(data.getTotalRowNum(), data.getData());
     }
 
-    @GetMapping("list")
+    @GetMapping({"list","query/list"})
     public Result<List<CustomerInfo>> list(CustomerInfoQuery query) {
         return R.success(customerInfoService.list(query));
+    }
+
+    @GetMapping({"one","query/one"})
+    public Result<CustomerInfo> one(CustomerInfoQuery query) {
+        return R.success(customerInfoService.one(query));
     }
 
 

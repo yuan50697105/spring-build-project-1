@@ -12,6 +12,8 @@ public interface CustomerInfoService {
 
     List<CustomerInfo> list(CustomerInfoQuery query);
 
+    CustomerInfo one(CustomerInfoQuery query);
+
     void save(CustomerInfoFormVo customerInfoFormVo);
 
     void update(Long id, CustomerInfoFormVo customerInfoFormVo);
