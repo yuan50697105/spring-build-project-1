@@ -225,6 +225,11 @@
                 <artifactId>beecp-spring-boot-starter</artifactId>
                 <version>${beecp-spring-boot-starter.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.javen205</groupId>
+                <artifactId>IJPay-All</artifactId>
+                <version>${IJPay-All.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <properties>
@@ -252,5 +257,6 @@
         <payment-spring-boot-starter.version>1.0.7.RELEASE</payment-spring-boot-starter.version>
         <druid-spring-boot-starter.version>1.2.5</druid-spring-boot-starter.version>
         <beecp-spring-boot-starter.version>1.5.2</beecp-spring-boot-starter.version>
+        <IJPay-All.version>2.7.3</IJPay-All.version>
     </properties>
 </project>
