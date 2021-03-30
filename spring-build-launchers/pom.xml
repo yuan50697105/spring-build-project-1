@@ -18,6 +18,8 @@
         <module>spring-build-launchers-war-admin_2</module>
         <module>spring-build-launchers-jetty-admin_1</module>
         <module>spring-build-launchers-jetty-admin_2</module>
+        <module>spring-build-launchers-undertow-admin_1</module>
+        <module>spring-build-launchers-undertow-admin_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
