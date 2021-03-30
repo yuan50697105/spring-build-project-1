@@ -230,6 +230,12 @@
                 <artifactId>IJPay-All</artifactId>
                 <version>${IJPay-All.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.javen205</groupId>
+                <artifactId>IJPay-AliPay</artifactId>
+                <version>${IJPay-All.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
     <properties>

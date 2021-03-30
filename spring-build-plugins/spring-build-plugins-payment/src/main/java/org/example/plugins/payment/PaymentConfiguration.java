@@ -1,20 +1,30 @@
-package org.example.plugins.payment.alipay.configuration;
+package org.example.plugins.payment;
 
 import com.ijpay.alipay.AliPayApiConfig;
 import com.ijpay.alipay.AliPayApiConfigKit;
-import org.example.plugins.payment.alipay.properties.AlipayProperties;
+import lombok.SneakyThrows;
+import org.example.plugins.payment.properties.AlipayProperties;
+import org.example.plugins.payment.service.alipay.AlipayService;
+import org.example.plugins.payment.service.alipay.impl.AlipayServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnSingleCandidate;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableConfigurationProperties(AlipayProperties.class)
-public class AlipayConfiguration {
+public class PaymentConfiguration {
     @Autowired
     private AlipayProperties alipayProperties;
 
+    @SneakyThrows
     @Bean
+    @ConditionalOnSingleCandidate
+    @ConditionalOnProperty(prefix = AlipayProperties.PAYMENT_ALIPAY, name = "enabled", havingValue = "true")
     public AliPayApiConfig aliPayApiConfig() {
         AliPayApiConfig aliPayApiConfig;
         try {
@@ -37,5 +47,12 @@ public class AlipayConfiguration {
 
         }
         return aliPayApiConfig;
+    }
+
+    @Bean
+    @ConditionalOnSingleCandidate
+    @ConditionalOnProperty(prefix = AlipayProperties.PAYMENT_ALIPAY, name = "enabled", havingValue = "true")
+    public AlipayService alipayService(AliPayApiConfig aliPayApiConfig) {
+        return new AlipayServiceImpl(alipayProperties, aliPayApiConfig);
     }
 }
