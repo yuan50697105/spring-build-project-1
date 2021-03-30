@@ -28,4 +28,12 @@ public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
     boolean updateAllById(T t);
 
     boolean updateSelectiveById(T t);
+
+    boolean updateNotNullColumnsBatchById(List<T> listForUpdate);
+
+    boolean updateSetColumnsBatchById(List<T> list);
+
+    boolean insertNotNullColumnsBatch(List<T> list);
+
+    boolean insertSetColumnsBatch(List<T> list);
 }

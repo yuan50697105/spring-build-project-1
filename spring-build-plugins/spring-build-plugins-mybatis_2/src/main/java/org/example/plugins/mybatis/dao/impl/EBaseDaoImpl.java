@@ -12,11 +12,9 @@ import com.github.pagehelper.PageInfo;
 import org.example.plugins.commons.entity.query.BaseQuery;
 import org.example.plugins.mybatis.dao.EBaseDao;
 import org.example.plugins.mybatis.entity.IPageData;
-import org.example.plugins.mybatis.entity.OrderTypeEnum;
 import org.example.plugins.mybatis.entity.query.EBaseQuery;
 import org.example.plugins.mybatis.entity.result.IPageResult;
 import org.example.plugins.mybatis.mapper.IBaseMapper;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -108,15 +106,16 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
 
     protected Wrapper<T> wrapperAddOrder(Q query, Wrapper<T> wrapper) {
         if (wrapper instanceof QueryWrapper) {
+            QueryWrapper<T> queryWrapper = (QueryWrapper<T>) wrapper;
             String order = query.getOrder();
             order = StrUtil.toUnderlineCase(order);
             BaseQuery.OrderTypeEnum orderType = query.getOrderType();
-            if (orderType.equals(OrderTypeEnum.DESC)) {
-                ((QueryWrapper<T>) wrapper).orderByDesc(order);
+            if (orderType.equals(BaseQuery.OrderTypeEnum.DESC)) {
+                queryWrapper.orderByDesc(order);
             } else {
-                ((QueryWrapper<T>) wrapper).orderByAsc(order);
+                queryWrapper.orderByAsc(order);
             }
-            return wrapper;
+            return queryWrapper;
         } else {
             return wrapper;
         }
@@ -134,16 +133,37 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
         return retBool(baseMapper.updateByPrimaryKeySelective(t));
     }
 
+    @Override
+    public boolean updateNotNullColumnsBatchById(List<T> listForUpdate) {
+        return retBool(baseMapper.updateNotNullColumnsBatchById(listForUpdate));
+    }
+
+    @Override
+    public boolean updateSetColumnsBatchById(List<T> list) {
+        return retBool(baseMapper.updateSetColumnsBatchById(list));
+    }
+
+    @Override
+    public boolean insertNotNullColumnsBatch(List<T> list) {
+        return retBool(baseMapper.insertNotNullColumnsBatch(list));
+    }
+
+    @Override
+    public boolean insertSetColumnsBatch(List<T> list) {
+        return retBool(baseMapper.insertSetColumnsBatch(list));
+    }
+
     public boolean isNotEmpty(Object object) {
         return ObjectUtil.isNotEmpty(object);
     }
+
     protected abstract Wrapper<T> queryWrapper(Q q);
 
-    protected <T> IPageData<E> pageData(PageInfo<E> pageInfo) {
+    protected <T> IPageData<T> pageData(PageInfo<T> pageInfo) {
         return new IPageResult<>(pageInfo);
     }
 
-    protected <T> IPageData<E> pageData(IPage<E> iPage) {
+    protected <T> IPageData<T> pageData(IPage<T> iPage) {
         return new IPageResult<>(iPage);
     }
 }

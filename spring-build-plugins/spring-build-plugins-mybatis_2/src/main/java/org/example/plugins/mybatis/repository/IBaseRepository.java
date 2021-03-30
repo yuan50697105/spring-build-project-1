@@ -10,6 +10,7 @@ import java.util.Optional;
 /**
  * @author yuane
  */
+@SuppressWarnings("UnusedReturnValue")
 public interface IBaseRepository<T, V, D, Q extends BaseQuery> {
 
     void save(V v);
