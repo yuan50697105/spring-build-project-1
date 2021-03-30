@@ -9,12 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-launchers-undertow-admin_2</artifactId>
+    <artifactId>spring-build-launchers-undertow-admin_1</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>spring-build-launchers-admin_2</artifactId>
+            <artifactId>spring-build-launchers-admin_1</artifactId>
             <version>1.0-SNAPSHOT</version>
             <exclusions>
                 <exclusion>

@@ -67,7 +67,7 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope>
+                    <keepDependenciesWithProvidedScope>true</keepDependenciesWithProvidedScope>
                     <createDependencyReducedPom>true</createDependencyReducedPom>
                     <!--                    <createSourcesJar>true</createSourcesJar>-->
                     <filters>
@@ -123,14 +123,6 @@
                 <version>3.3.1</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.1.2</version>
-                <configuration>
-                    <excludeScope>provided</excludeScope>
                 </configuration>
             </plugin>
         </plugins>

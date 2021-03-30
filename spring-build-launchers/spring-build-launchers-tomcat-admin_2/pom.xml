@@ -32,7 +32,7 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope>
+                    <keepDependenciesWithProvidedScope>true</keepDependenciesWithProvidedScope>
                     <createDependencyReducedPom>true</createDependencyReducedPom>
                     <!--                    <createSourcesJar>true</createSourcesJar>-->
                     <filters>
