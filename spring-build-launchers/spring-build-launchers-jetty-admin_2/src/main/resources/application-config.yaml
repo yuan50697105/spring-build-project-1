@@ -1,20 +1,3 @@
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: yuanenzhi
-    password: Root@123
-    url: jdbc:mysql://rm-2zel2q0w4x1t6sn77ko.mysql.rds.aliyuncs.com:3306/spring_demo
-  cache:
-    type: redis
-    redis:
-      key-prefix: cache
-      time-to-live: 10m
-  redis:
-    host: 8.140.177.12
-    password: root
-  jackson:
-    date-format: yyyy-MM-dd
-    locale: zh_CN
-logging:
-  level:
-    web: debug
+  profiles:
+    active: commons
