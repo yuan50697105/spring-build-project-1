@@ -27,6 +27,8 @@
         <module>spring-build-domains-service-group_2</module>
         <module>spring-build-domains-service-payment_1</module>
         <module>spring-build-domains-service-payment_2</module>
+        <module>spring-build-domains-service-patient_1</module>
+        <module>spring-build-domains-service-patient_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
