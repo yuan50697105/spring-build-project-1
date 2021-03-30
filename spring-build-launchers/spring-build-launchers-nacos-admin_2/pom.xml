@@ -9,18 +9,23 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-launchers-apollo-admin_1</artifactId>
+    <artifactId>spring-build-launchers-nacos-admin_2</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>spring-build-launchers-admin_1</artifactId>
+            <artifactId>spring-build-launchers-admin_2</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.ctrip.framework.apollo</groupId>
-            <artifactId>apollo-client</artifactId>
-            <version>1.8.0</version>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-config-spring-boot-actuator</artifactId>
+            <version>0.2.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-config-spring-boot-starter</artifactId>
+            <version>0.2.7</version>
         </dependency>
     </dependencies>
     <build>
@@ -105,4 +110,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

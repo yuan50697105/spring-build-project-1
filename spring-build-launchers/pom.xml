@@ -22,8 +22,8 @@
         <module>spring-build-launchers-undertow-admin_2</module>
         <module>spring-build-launchers-tomcat-admin_1</module>
         <module>spring-build-launchers-tomcat-admin_2</module>
-        <module>spring-build-launchers-apollo-admin_1</module>
-        <module>spring-build-launchers-apollo-admin_2</module>
+        <module>spring-build-launchers-nacos-admin_1</module>
+        <module>spring-build-launchers-nacos-admin_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
