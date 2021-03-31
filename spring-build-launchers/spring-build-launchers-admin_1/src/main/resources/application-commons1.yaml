@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://8.140.177.12:3315/spring-demo?useUnicode=true&characterEncoding=utf-8
+  cache:
+    type: redis
+    redis:
+      key-prefix: cache
+      time-to-live: 10m
+  redis:
+    host: 8.140.177.12
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd
+    locale: zh_CN
+logging:
+  level:
+    web: debug

@@ -65,7 +65,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
             TUser tUser = optional.get();
             accountBuilder.copyUser(accountFormVo.getUser(), tUser);
             userDao.updateById(tUser);
-            accountHelper.handleUserRoleUpdate(id, accountFormVo.getRoleIds(), accountFormVo.getRoleNames());
+//            accountHelper.handleUserRoleUpdate(id, accountFormVo.getRoleIds(), accountFormVo.getRoleNames());
         }
     }
 

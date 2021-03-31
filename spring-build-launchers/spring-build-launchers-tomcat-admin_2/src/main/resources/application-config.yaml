@@ -1,3 +1,10 @@
 spring:
   profiles:
-    include: commons
+    include: commons1
+server:
+  servlet:
+    encoding:
+      force-response: true
+      force-request: true
+      force: true
+      charset: UTF-8
