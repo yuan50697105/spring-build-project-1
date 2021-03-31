@@ -235,7 +235,31 @@
                 <artifactId>IJPay-AliPay</artifactId>
                 <version>${IJPay-All.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-config-spring-boot-actuator</artifactId>
+                <version>${nacos-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-config-spring-boot-starter</artifactId>
+                <version>${nacos-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-discovery-spring-boot-actuator</artifactId>
+                <version>${nacos-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-discovery-spring-boot-starter</artifactId>
+                <version>${nacos-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-client</artifactId>
+                <version>${apollo-client.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <properties>
@@ -264,5 +288,7 @@
         <druid-spring-boot-starter.version>1.2.5</druid-spring-boot-starter.version>
         <beecp-spring-boot-starter.version>1.5.2</beecp-spring-boot-starter.version>
         <IJPay-All.version>2.7.3</IJPay-All.version>
+        <nacos-spring.version>0.2.7</nacos-spring.version>
+        <apollo-client.version>1.8.0</apollo-client.version>
     </properties>
 </project>
