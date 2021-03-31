@@ -1,6 +1,7 @@
 package org.example;
 
 import cn.hutool.extra.spring.EnableSpringUtil;
+import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,6 +19,7 @@ import java.util.Arrays;
 @EnableSwagger2WebMvc
 @EnableSpringUtil
 @SpringBootApplication(scanBasePackages = {"org.example"})
+@EnableApolloConfig
 public class Application {
     @Autowired
     private ApplicationContext context;
