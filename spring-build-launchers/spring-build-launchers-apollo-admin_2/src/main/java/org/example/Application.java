@@ -29,16 +29,6 @@ public class Application {
     }
 
 
-    @Bean
-    public CommandLineRunner runner() {
-        return args -> {
-            String[] beanDefinitionNames = context.getBeanNamesForAnnotation(Controller.class);
-            ArrayList<String> strings = new ArrayList<>(Arrays.asList(beanDefinitionNames));
-            for (String string : strings) {
-                System.out.println("beanName = " + string);
-            }
 
-        };
-    }
 
 }
