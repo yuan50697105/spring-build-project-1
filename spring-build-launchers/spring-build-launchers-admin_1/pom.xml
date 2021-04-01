@@ -47,7 +47,7 @@
                     <createDependencyReducedPom>true</createDependencyReducedPom>
                     <filters>
                         <filter>
-                            <artifact>*:*</artifact>
+                            <artifact>${project.groupId}:*</artifact>
                             <excludes>
                                 <exclude>META-INF/*.SF</exclude>
                                 <exclude>META-INF/*.DSA</exclude>
