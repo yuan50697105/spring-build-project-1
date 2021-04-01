@@ -61,7 +61,6 @@ public interface RoleBuilder {
     @Mapping(target = "createDate", ignore = true)
     void copyRole(RoleFormVo.RoleInfo role, @MappingTarget TRole tRole);
 
-
     Set<Permission> createRolePermissionsInfo(List<TPermission> permissions);
 
     TRoleQuery createQuery(RoleQuery roleQuery);

@@ -3,12 +3,15 @@ package org.example.modules.repository.mysql.repository.impl;
 import cn.hutool.core.collection.CollUtil;
 import lombok.AllArgsConstructor;
 import org.example.modules.repository.mysql.builder.AccountBuilder;
-import org.example.modules.repository.mysql.dao.*;
+import org.example.modules.repository.mysql.dao.TRoleDao;
+import org.example.modules.repository.mysql.dao.TUserDao;
+import org.example.modules.repository.mysql.dao.TUserPermissionDao;
+import org.example.modules.repository.mysql.dao.TUserRoleDao;
 import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.query.AccountQuery;
 import org.example.modules.repository.mysql.entity.query.TUserQuery;
-import org.example.modules.repository.mysql.entity.result.AccountDetails;
 import org.example.modules.repository.mysql.entity.result.Account;
+import org.example.modules.repository.mysql.entity.result.AccountDetails;
 import org.example.modules.repository.mysql.entity.result.Role;
 import org.example.modules.repository.mysql.entity.result.User;
 import org.example.modules.repository.mysql.entity.vo.AccountFormVo;
@@ -16,28 +19,39 @@ import org.example.modules.repository.mysql.helper.AccountHelper;
 import org.example.modules.repository.mysql.repository.AccountRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
-import org.springframework.cache.annotation.*;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotEmpty;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static cn.hutool.core.util.ObjectUtil.isNotEmpty;
+
 @Repository
 @Transactional
 @AllArgsConstructor
-@CacheConfig(cacheNames = {"accounts", "users"})
+@CacheConfig(cacheNames = {AccountRepositoryImpl.ACCOUNTS, AccountRepositoryImpl.USERS})
 public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountFormVo, AccountDetails, AccountQuery> implements AccountRepository {
+    public static final String ACCOUNTS = "accounts";
+    public static final String USERS = "users";
     private final AccountBuilder accountBuilder;
     private final AccountHelper accountHelper;
     private final TUserDao userDao;
     private final TRoleDao roleDao;
     private final TUserRoleDao userRoleDao;
     private final TUserPermissionDao userPermissionDao;
+    private final CacheManager cacheManager;
 
     @Override
     @Transactional
@@ -141,6 +155,27 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
             @Cacheable(key = "#username"),
     })
     public Optional<AccountDetails> getByUsernameOpt(String username) {
-        return Optional.empty();
+        return Optional.ofNullable(getByUsername(username));
+    }
+
+    private void putCache(Long id, String username, String name) {
+        Cache accounts = cacheManager.getCache(ACCOUNTS);
+        Cache users = cacheManager.getCache(USERS);
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("id", id);
+        map.put("username", username);
+        map.put("name", name);
+        if (isNotEmpty(id)) {
+            accounts.put(id, map);
+            users.put(id, map);
+        }
+        if (isNotEmpty(username)) {
+            accounts.put(username, map);
+            users.put(username, map);
+        }
+        if (isNotEmpty(name)) {
+            accounts.put(name,map);
+            users.put(name, map);
+        }
     }
 }
