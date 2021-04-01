@@ -1,4 +1,4 @@
-package org.example.plugins.mybatis.entity.vo;
+package org.example.plugins.commons.entity.vo;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.StringSerializer;

@@ -4,11 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.plugins.mybatis.entity.po.IBaseEntity;
-import org.example.plugins.mybatis.entity.vo.IBaseVo;
+import org.example.plugins.commons.entity.vo.IBaseVo;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 /**
  * t_order_info

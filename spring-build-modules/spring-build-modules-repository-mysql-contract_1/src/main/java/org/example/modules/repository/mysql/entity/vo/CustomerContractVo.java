@@ -2,7 +2,7 @@ package org.example.modules.repository.mysql.entity.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.plugins.mybatis.entity.vo.IBaseVo;
+import org.example.plugins.commons.entity.vo.IBaseVo;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
