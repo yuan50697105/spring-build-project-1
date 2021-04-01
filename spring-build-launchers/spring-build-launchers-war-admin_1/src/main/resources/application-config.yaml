@@ -1,6 +1,6 @@
 spring:
   profiles:
-    include: commons1
+    include: commons
 server:
   servlet:
     encoding:
