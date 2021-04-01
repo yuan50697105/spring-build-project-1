@@ -1,7 +1,7 @@
 package org.example.modules.repository.mysql.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.modules.repository.mysql.builder.CustomerContractBuilder;
+import builder.CustomerContractBuilder;
 import org.example.modules.repository.mysql.dao.TCustomerContractDao;
 import org.example.modules.repository.mysql.entity.query.TCustomerContractQuery;
 import org.example.modules.repository.mysql.entity.vo.CustomerContractFormVo;

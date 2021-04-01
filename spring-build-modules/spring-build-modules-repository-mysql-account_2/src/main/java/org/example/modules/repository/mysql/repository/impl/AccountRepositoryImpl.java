@@ -2,7 +2,7 @@ package org.example.modules.repository.mysql.repository.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import lombok.AllArgsConstructor;
-import org.example.modules.repository.mysql.builder.AccountBuilder;
+import builder.AccountBuilder;
 import org.example.modules.repository.mysql.dao.*;
 import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.query.AccountQuery;

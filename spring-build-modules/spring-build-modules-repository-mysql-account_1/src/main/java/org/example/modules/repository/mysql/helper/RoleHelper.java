@@ -2,8 +2,8 @@ package org.example.modules.repository.mysql.helper;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.exceptions.ValidateException;
-import org.example.modules.repository.mysql.builder.AccountBuilder;
-import org.example.modules.repository.mysql.builder.RoleBuilder;
+import builder.AccountBuilder;
+import builder.RoleBuilder;
 import org.example.modules.repository.mysql.dao.*;
 import org.example.modules.repository.mysql.entity.vo.RoleFormVo;
 import org.springframework.beans.factory.annotation.Autowired;

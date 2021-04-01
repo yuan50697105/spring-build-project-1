@@ -2,7 +2,7 @@ package org.example.modules.repository.mysql.helper;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.exceptions.ValidateException;
-import org.example.modules.repository.mysql.builder.AccountBuilder;
+import builder.AccountBuilder;
 import org.example.modules.repository.mysql.dao.TRoleDao;
 import org.example.modules.repository.mysql.dao.TUserDao;
 import org.example.modules.repository.mysql.dao.TUserRoleDao;

@@ -1,7 +1,7 @@
 package org.example.modules.repository.mysql.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.modules.repository.mysql.builder.ArchivesBuilder;
+import builder.ArchivesBuilder;
 import org.example.modules.repository.mysql.dao.TCustomerHealthArchivesDao;
 import org.example.modules.repository.mysql.entity.po.TCustomerHealthArchives;
 import org.example.modules.repository.mysql.entity.query.CustomerHealthArchivesQuery;
