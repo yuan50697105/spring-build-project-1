@@ -1,6 +1,6 @@
 package org.example.modules.repository.mysql.repository.impl;
 
-import builder.RoleBuilder;
+import org.example.modules.repository.mysql.builder.RoleBuilder;
 import org.example.modules.repository.mysql.dao.TPermissionDao;
 import org.example.modules.repository.mysql.dao.TRoleDao;
 import org.example.modules.repository.mysql.dao.TRolePermissionDao;

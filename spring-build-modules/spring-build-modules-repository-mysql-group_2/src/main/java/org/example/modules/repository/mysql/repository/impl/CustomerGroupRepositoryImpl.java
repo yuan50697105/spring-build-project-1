@@ -1,7 +1,7 @@
 package org.example.modules.repository.mysql.repository.impl;
 
 import lombok.AllArgsConstructor;
-import builder.CustomerGroupBuilder;
+import org.example.modules.repository.mysql.builder.CustomerGroupBuilder;
 import org.example.modules.repository.mysql.dao.TCustomerGroupDao;
 import org.example.modules.repository.mysql.entity.po.TCustomerGroup;
 import org.example.modules.repository.mysql.entity.query.CustomerGroupQuery;

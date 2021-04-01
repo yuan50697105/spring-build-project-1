@@ -1,6 +1,6 @@
 package org.example.modules.repository.mysql.repository.impl;
 
-import builder.CustomerInfoBuilder;
+import org.example.modules.repository.mysql.builder.CustomerInfoBuilder;
 import org.example.modules.repository.mysql.dao.TCustomerInfoDao;
 import org.example.modules.repository.mysql.entity.po.TCustomerInfo;
 import org.example.modules.repository.mysql.entity.query.CustomerInfoQuery;

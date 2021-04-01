@@ -15,13 +15,8 @@ public class IBaseVo extends BaseEntity {
     @JsonSerialize(using = StringSerializer.class)
     private Long id;
     private Long version;
+    private String requestId;
 
-    public void setVersion(Integer version) {
-        this.version = Long.valueOf(version);
-    }
-
-    public interface Save {
-    }
 
     public interface Update {
     }

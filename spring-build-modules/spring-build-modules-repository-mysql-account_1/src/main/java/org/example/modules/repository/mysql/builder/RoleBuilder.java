@@ -1,4 +1,4 @@
-package builder;
+package org.example.modules.repository.mysql.builder;
 
 import org.example.modules.repository.mysql.entity.po.TPermission;
 import org.example.modules.repository.mysql.entity.po.TRole;
@@ -66,10 +66,10 @@ public interface RoleBuilder {
 
     TRoleQuery createQuery(RoleQuery roleQuery);
 
-    List<Role> createRoleVos(List<TRole> roles);
+    List<org.example.modules.repository.mysql.entity.result.Role> createRoleVos(List<TRole> roles);
 
 
     Role createRoleVo(TRole role);
 
-    IPageData<Role> createRoleVos(IPageData<TRole> roles);
+    IPageData<org.example.modules.repository.mysql.entity.result.Role> createRoleVos(IPageData<TRole> roles);
 }

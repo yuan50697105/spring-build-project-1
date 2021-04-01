@@ -1,4 +1,4 @@
-package builder;
+package org.example.modules.repository.mysql.builder;
 
 import org.example.modules.repository.mysql.entity.po.TCustomerContract;
 import org.example.modules.repository.mysql.entity.query.CustomerContractQuery;
