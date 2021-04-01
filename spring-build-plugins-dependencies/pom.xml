@@ -260,6 +260,11 @@
                 <artifactId>apollo-client</artifactId>
                 <version>${apollo-client.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson-spring-boot-starter.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <properties>
@@ -290,5 +295,6 @@
         <IJPay-All.version>2.7.3</IJPay-All.version>
         <nacos-spring.version>0.2.7</nacos-spring.version>
         <apollo-client.version>1.8.0</apollo-client.version>
+        <redisson-spring-boot-starter.version>3.15.1</redisson-spring-boot-starter.version>
     </properties>
 </project>
