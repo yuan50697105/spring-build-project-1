@@ -1,6 +1,8 @@
 spring:
   profiles:
+#    include: docker2
     include: commons
+#    include: docker
 server:
   servlet:
     encoding:

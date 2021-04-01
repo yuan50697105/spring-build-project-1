@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${SPRING_DATASOURCE_USERNAME:yuanenzhi}
+    password: ${SPRING_DATASOURCE_PASSWORD:Root@123}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://rm-2zel2q0w4x1t6sn77ko.mysql.rds.aliyuncs.com:3306/spring_demo}
+  cache:
+    type: redis
+    redis:
+      key-prefix: cache
+      time-to-live: 10m
+  redis:
+    host: ${SPRING_REDIS_HOST:8.140.177.12}
+    password: ${SPRING_REDIS_PASSWORD:root}
+    port: ${SPRING_REDIS_PORT:6379}
+  jackson:
+    date-format: yyyy-MM-dd
+    locale: zh_CN
+logging:
+  level:
+    web: debug
