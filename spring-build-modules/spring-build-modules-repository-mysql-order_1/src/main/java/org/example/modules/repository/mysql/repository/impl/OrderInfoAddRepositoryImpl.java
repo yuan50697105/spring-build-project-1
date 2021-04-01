@@ -2,10 +2,15 @@ package org.example.modules.repository.mysql.repository.impl;
 
 import org.example.modules.repository.mysql.builder.OrderInfoBuider;
 import org.example.modules.repository.mysql.dao.TOrderInfoDao;
+import org.example.modules.repository.mysql.entity.query.OrderInfoQuery;
+import org.example.modules.repository.mysql.entity.result.OrderInfo;
 import org.example.modules.repository.mysql.entity.vo.OrderAddFormVo;
 import org.example.modules.repository.mysql.repository.OrderInfoAddRepository;
+import org.example.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Repository
 @Transactional
@@ -27,5 +32,23 @@ public class OrderInfoAddRepositoryImpl extends OrderInfoRepositoryImpl<OrderAdd
     @Override
     public void update(OrderAddFormVo orderAddFormVo) {
 
+    }
+
+    @Override
+    public IPageData<OrderInfo> queryPage(OrderInfoQuery orderInfoQuery) {
+        throw new RuntimeException();
+//        return super.queryPage(orderInfoQuery);
+    }
+
+    @Override
+    public List<OrderInfo> queryList(OrderInfoQuery orderInfoQuery) {
+        throw new RuntimeException();
+//        return super.queryList(orderInfoQuery);
+    }
+
+    @Override
+    public OrderInfo queryOne(OrderInfoQuery orderInfoQuery) {
+        throw new RuntimeException();
+//        return super.queryOne(orderInfoQuery);
     }
 }

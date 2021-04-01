@@ -1,10 +1,9 @@
 package org.example.domains.message.provider.impl;
 
-import cn.hutool.json.JSON;
 import cn.hutool.json.JSONUtil;
 import lombok.AllArgsConstructor;
 import org.example.domains.message.provider.OrderMessageProvider;
-import org.example.modules.repository.mysql.entity.vo.OrderInfoVo;
+import org.example.modules.repository.mysql.entity.vo.OrderAddFormVo;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
@@ -24,7 +23,7 @@ public class OrderMessageProviderImpl implements OrderMessageProvider, ConfirmCa
     private final RabbitTemplate rabbitTemplate;
 
     @Override
-    public void addOrder(OrderInfoVo orderInfoVo) {
+    public void addOrder(OrderAddFormVo orderInfoVo) {
         String jsonStr = JSONUtil.toJsonStr(orderInfoVo);
         byte[] bytes = jsonStr.getBytes(StandardCharsets.UTF_8);
         MessageProperties messageProperties = new MessageProperties();
