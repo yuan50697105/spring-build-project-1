@@ -26,7 +26,7 @@ public class OrderConsumer {
     public void cancelOrder(Message message, Channel channel) throws IOException, InterruptedException {
         String json = new String(message.getBody(), StandardCharsets.UTF_8);
         OrderFormVo orderFormVo = JSONUtil.toBean(json, OrderFormVo.class);
-        String orderNo = orderFormVo.getOrderNo();
+        String orderNo = orderFormVo.getOrderAddVo().getOrderNo();
         RLock lock = redisson.getLock("lock_" + orderNo);
         RLock redLock = redisson.getRedLock(lock);
         if (redLock.tryLock()) {
