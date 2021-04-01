@@ -5,6 +5,7 @@ import org.example.modules.repository.mysql.entity.po.TRole;
 import org.example.modules.repository.mysql.entity.po.TRolePermission;
 import org.example.modules.repository.mysql.entity.query.RoleQuery;
 import org.example.modules.repository.mysql.entity.query.TRoleQuery;
+import org.example.modules.repository.mysql.entity.result.Permission;
 import org.example.modules.repository.mysql.entity.result.Role;
 import org.example.modules.repository.mysql.entity.result.RoleDetails;
 import org.example.modules.repository.mysql.entity.vo.RoleFormVo;
@@ -60,16 +61,15 @@ public interface RoleBuilder {
     @Mapping(target = "createDate", ignore = true)
     void copyRole(RoleFormVo.RoleInfo role, @MappingTarget TRole tRole);
 
-    RoleDetails.RoleInfo createRoleInfo(TRole tRole);
 
-    Set<RoleDetails.PermissionInfo> createRolePermissionsInfo(List<TPermission> permissions);
+    Set<Permission> createRolePermissionsInfo(List<TPermission> permissions);
 
     TRoleQuery createQuery(RoleQuery roleQuery);
 
-    List<Role> createRoleVos(List<TRole> roles);
+    List<Role> createRole(List<TRole> roles);
 
 
-    Role createRoleVo(TRole role);
+    Role createRole(TRole role);
 
-    IPageData<Role> createRoleVos(IPageData<TRole> roles);
+    IPageData<Role> createRole(IPageData<TRole> roles);
 }

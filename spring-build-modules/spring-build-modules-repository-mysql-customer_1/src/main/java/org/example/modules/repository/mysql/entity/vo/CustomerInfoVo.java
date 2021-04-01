@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.plugins.commons.entity.vo.IBaseVo;
+import org.example.plugins.mybatis.entity.po.IBaseEntity;
 
 import javax.validation.constraints.NotBlank;
 
@@ -12,7 +13,7 @@ import javax.validation.constraints.NotBlank;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CustomerInfoVo extends IBaseVo {
+public class CustomerInfoVo extends IBaseEntity {
     /**
      * 客户编号
      */

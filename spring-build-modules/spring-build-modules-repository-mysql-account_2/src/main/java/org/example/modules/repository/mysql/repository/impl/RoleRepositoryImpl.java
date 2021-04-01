@@ -97,7 +97,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, Ro
             TRole tRole = optional.get();
             RoleDetails roleDetails = new RoleDetails();
             roleDetails.setId(tRole.getId());
-            roleDetails.setRole(roleBuilder.createRoleInfo(tRole));
+            roleDetails.setRole(roleBuilder.createRole(tRole));
             roleDetails.setPermissions(roleBuilder.createRolePermissionsInfo(rolePermissionDao.getRolePermissionsByRoleId(id)));
             return roleDetails;
         } else {
@@ -113,7 +113,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, Ro
     public IPageData<Role> queryPage(RoleQuery roleQuery) {
         TRoleQuery query = roleBuilder.createQuery(roleQuery);
         IPageData<TRole> roles = roleDao.queryPage(query);
-        return roleBuilder.createRoleVos(roles);
+        return roleBuilder.createRole(roles);
     }
 
     @Override
@@ -124,7 +124,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, Ro
     public List<Role> queryList(RoleQuery roleQuery) {
         TRoleQuery query = roleBuilder.createQuery(roleQuery);
         List<TRole> roles = roleDao.queryList(query);
-        return roleBuilder.createRoleVos(roles);
+        return roleBuilder.createRole(roles);
     }
 
     @Override
@@ -135,6 +135,6 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, Ro
     public Role queryOne(RoleQuery roleQuery) {
         TRoleQuery query = roleBuilder.createQuery(roleQuery);
         TRole role = roleDao.queryOne(query);
-        return roleBuilder.createRoleVo(role);
+        return roleBuilder.createRole(role);
     }
 }

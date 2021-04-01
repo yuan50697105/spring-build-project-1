@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.modules.repository.mysql.dao.TCustomerHealthArchivesDao;
 import org.example.modules.repository.mysql.entity.po.TCustomerHealthArchives;
-import org.example.plugins.mybatis.entity.vo.IBaseVo;
+import org.example.plugins.commons.entity.vo.IBaseVo;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
