@@ -3,10 +3,13 @@ package org.example.modules.repository.mysql.entity.result;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.plugins.commons.entity.vo.IBaseVo;
+import org.example.plugins.mybatis.entity.po.IBaseEntity;
+
+import java.io.Serializable;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class Account extends IBaseVo {
+public class Account extends IBaseEntity implements Serializable {
     private String username;
     private String name;
     private Integer enabled;
