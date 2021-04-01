@@ -1,7 +1,7 @@
 package org.example.domains.message.provider;
 
-import org.example.modules.repository.mysql.entity.vo.OrderAddFormVo;
+import org.example.modules.repository.mysql.entity.vo.OrderFormVo;
 
 public interface OrderMessageProvider {
-    void addOrder(OrderAddFormVo orderInfoVo);
+    void addOrder(OrderFormVo orderInfoVo);
 }

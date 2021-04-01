@@ -1,9 +1,8 @@
 package org.example.domains.message.provider.impl;
 
 import cn.hutool.json.JSONUtil;
-import lombok.AllArgsConstructor;
 import org.example.domains.message.provider.OrderMessageProvider;
-import org.example.modules.repository.mysql.entity.vo.OrderAddFormVo;
+import org.example.modules.repository.mysql.entity.vo.OrderFormVo;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
@@ -18,12 +17,17 @@ import java.util.UUID;
 
 @Service
 @Transactional
-@AllArgsConstructor
 public class OrderMessageProviderImpl implements OrderMessageProvider, ConfirmCallback, ReturnCallback {
     private final RabbitTemplate rabbitTemplate;
 
+    public OrderMessageProviderImpl(RabbitTemplate rabbitTemplate) {
+        this.rabbitTemplate = rabbitTemplate;
+        this.rabbitTemplate.setReturnCallback(this);
+        this.rabbitTemplate.setConfirmCallback(this);
+    }
+
     @Override
-    public void addOrder(OrderAddFormVo orderInfoVo) {
+    public void addOrder(OrderFormVo orderInfoVo) {
         String jsonStr = JSONUtil.toJsonStr(orderInfoVo);
         byte[] bytes = jsonStr.getBytes(StandardCharsets.UTF_8);
         MessageProperties messageProperties = new MessageProperties();

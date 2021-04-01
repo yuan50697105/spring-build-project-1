@@ -1,7 +1,7 @@
 package org.example.domains.service;
 
-import org.example.modules.repository.mysql.entity.vo.OrderAddFormVo;
+import org.example.modules.repository.mysql.entity.vo.OrderFormVo;
 
 public interface OrderService {
-    void addOrder(OrderAddFormVo formVo);
+    void addOrder(OrderFormVo formVo);
 }

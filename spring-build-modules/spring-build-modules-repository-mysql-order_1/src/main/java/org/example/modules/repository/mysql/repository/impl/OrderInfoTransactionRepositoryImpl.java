@@ -4,8 +4,8 @@ import org.example.modules.repository.mysql.builder.OrderInfoBuider;
 import org.example.modules.repository.mysql.dao.TOrderInfoDao;
 import org.example.modules.repository.mysql.entity.query.OrderInfoQuery;
 import org.example.modules.repository.mysql.entity.result.OrderInfo;
-import org.example.modules.repository.mysql.entity.vo.OrderAddFormVo;
-import org.example.modules.repository.mysql.repository.OrderInfoAddRepository;
+import org.example.modules.repository.mysql.entity.vo.OrderFormVo;
+import org.example.modules.repository.mysql.repository.OrderInfoTransactionRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,23 +14,23 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class OrderInfoAddRepositoryImpl extends OrderInfoRepositoryImpl<OrderAddFormVo> implements OrderInfoAddRepository {
-    public OrderInfoAddRepositoryImpl(TOrderInfoDao orderInfoDao, OrderInfoBuider orderInfoBuider) {
+public class OrderInfoTransactionRepositoryImpl extends OrderInfoRepositoryImpl<OrderFormVo> implements OrderInfoTransactionRepository {
+    public OrderInfoTransactionRepositoryImpl(TOrderInfoDao orderInfoDao, OrderInfoBuider orderInfoBuider) {
         super(orderInfoDao, orderInfoBuider);
     }
 
     @Override
-    public void save(OrderAddFormVo orderAddFormVo) {
+    public void save(OrderFormVo orderFormVo) {
 
     }
 
     @Override
-    public Long saveWithId(OrderAddFormVo orderAddFormVo) {
+    public Long saveWithId(OrderFormVo orderFormVo) {
         return null;
     }
 
     @Override
-    public void update(OrderAddFormVo orderAddFormVo) {
+    public void update(OrderFormVo orderFormVo) {
 
     }
 
