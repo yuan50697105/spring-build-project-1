@@ -29,6 +29,10 @@
         <module>spring-build-domains-service-payment_2</module>
         <module>spring-build-domains-service-patient_1</module>
         <module>spring-build-domains-service-patient_2</module>
+        <module>spring-build-domains-service-order-delay_1</module>
+        <module>spring-build-domains-service-order_1</module>
+        <module>spring-build-domains-service-order-delay_2</module>
+        <module>spring-build-domains-service-order_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
