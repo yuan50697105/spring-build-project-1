@@ -1,5 +1,5 @@
--- auto Generated on 2021-04-01
--- DROP TABLE IF EXISTS t_order_info;
+-- auto Generated on 2021-04-02
+# DROP TABLE IF EXISTS t_order_info;
 CREATE TABLE t_order_info(
 	id BIGINT (15) NOT NULL AUTO_INCREMENT COMMENT 'id',
 	create_id BIGINT (15) DEFAULT -1 COMMENT 'createId',
@@ -13,5 +13,6 @@ CREATE TABLE t_order_info(
 	customer_name VARCHAR (50) DEFAULT '' COMMENT 'customerName',
 	total_price DECIMAL (13,4) DEFAULT -1 COMMENT 'totalPrice',
 	`type` INT (11) DEFAULT -1 COMMENT 'type',
+	`status` char (5) DEFAULT '' COMMENT 'status',
 	PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 't_order_info';

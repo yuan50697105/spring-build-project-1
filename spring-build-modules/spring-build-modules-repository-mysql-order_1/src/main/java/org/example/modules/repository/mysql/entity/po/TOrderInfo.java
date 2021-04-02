@@ -50,5 +50,11 @@ public class TOrderInfo extends IBaseEntity implements Serializable {
     @ApiModelProperty(value = "type")
     private Integer type;
 
+    /**
+     * status
+     */
+    @ApiModelProperty(value = "status")
+    private String status;
+
     private static final long serialVersionUID = 1L;
 }
