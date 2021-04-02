@@ -7,9 +7,11 @@ import org.example.modules.repository.mysql.entity.po.TUser;
 import org.example.modules.repository.mysql.entity.query.TUserQuery;
 import org.example.modules.repository.mysql.mapper.TUserMapper;
 import org.example.plugins.mybatis.dao.impl.TkBaseDaoImpl;
+import org.example.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -22,7 +24,12 @@ public class TUserDaoImpl extends TkBaseDaoImpl<TUser, TUserQuery, TUserMapper> 
 
     @Override
     public Optional<TUser> getByUsernameOpt(String username) {
-        return Optional.empty();
+        return lambdaQuery().eq(TUser::getUsername,username).oneOpt();
+    }
+
+    @Override
+    public void updateStatus(List<Long> ids, int status) {
+        lambdaUpdate().in(IBaseEntity::getId, ids).set(TUser::getEnabled, status).update();
     }
 
     @Override

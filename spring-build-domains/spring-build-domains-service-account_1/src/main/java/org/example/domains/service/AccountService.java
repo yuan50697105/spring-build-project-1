@@ -17,6 +17,10 @@ public interface AccountService {
 
     void delete(List<Long> ids);
 
+    void updateEnabled(List<Long> ids);
+
+    void updateDisable(List<Long> singletonList);
+
     AccountDetails get(Long id);
 
     IPageData<Account> page(AccountQuery query);

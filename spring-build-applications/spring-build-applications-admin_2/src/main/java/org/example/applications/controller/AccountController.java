@@ -56,9 +56,34 @@ public class AccountController {
         accountService.delete(Collections.singletonList(id));
         return R.success();
     }
+
     @GetMapping("{id}")
     public Result<AccountDetails> get(@PathVariable Long id) {
         return R.success(accountService.get(id));
     }
+
+    @PutMapping("{id}/enabled")
+    public Result<?> updateEnabled(@PathVariable Long id) {
+        accountService.updateEnabled(Collections.singletonList(id));
+        return R.success();
+    }
+
+    @PutMapping("enabled")
+    public Result<?> updateEnabled(List<Long> ids) {
+        accountService.updateEnabled(ids);
+        return R.success();
+    }
+
+    @PutMapping("{id}/disabled")
+    public Result<?> updateDisable(@PathVariable Long id) {
+        accountService.updateDisable(Collections.singletonList(id));
+        return R.success();
+    }
+    @PutMapping("disabled")
+    public Result<?> updateDisable(List<Long> ids) {
+        accountService.updateDisable(ids);
+        return R.success();
+    }
+
 
 }

@@ -158,6 +158,11 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
         return Optional.ofNullable(getByUsername(username));
     }
 
+    @Override
+    public void updateStatus(List<Long> ids, int status) {
+        userDao.updateStatus(ids, status);
+    }
+
     private void putCache(Long id, String username, String name) {
         Cache accounts = cacheManager.getCache(ACCOUNTS);
         Cache users = cacheManager.getCache(USERS);
