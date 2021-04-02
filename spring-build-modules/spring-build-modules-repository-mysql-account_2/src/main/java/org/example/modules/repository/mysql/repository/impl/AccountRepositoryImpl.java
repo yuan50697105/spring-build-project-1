@@ -41,7 +41,7 @@ import static cn.hutool.core.util.ObjectUtil.isNotEmpty;
 @Repository
 @Transactional
 @AllArgsConstructor
-@CacheConfig(cacheNames = {AccountRepositoryImpl.ACCOUNTS, AccountRepositoryImpl.USERS})
+@CacheConfig(cacheNames = {AccountRepositoryImpl.ACCOUNTS})
 public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountFormVo, AccountDetails, AccountQuery> implements AccountRepository {
     public static final String ACCOUNTS = "accounts";
     public static final String USERS = "users";
@@ -104,6 +104,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
         Set<Role> roles = accountBuilder.generateUserRoleInfos(userRoleDao.getRolesByUserId(id));
         accountDetails.setRoles(roles);
         accountDetails.setPermissions(accountBuilder.generateUserPermissionInfos(userPermissionDao.getPermissionsByUserId(id)));
+        putUserCache(id, accountDetails.getUsername(), accountDetails.getName());
         return accountDetails;
     }
 
@@ -111,6 +112,9 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
     public IPageData<Account> queryPage(AccountQuery accountQuery) {
         TUserQuery userQuery = getUserQuery(accountQuery);
         IPageData<TUser> data = userDao.queryPage(userQuery);
+        for (TUser datum : data.getData()) {
+            putUserCache(datum.getId(), datum.getUsername(), datum.getName());
+        }
         return accountBuilder.generateAccountVoPage(data);
     }
 
@@ -118,6 +122,9 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
     public List<Account> queryList(AccountQuery accountQuery) {
         TUserQuery userQuery = getUserQuery(accountQuery);
         List<TUser> tUsers = userDao.queryList(userQuery);
+        for (TUser tUser : tUsers) {
+            putUserCache(tUser.getId(), tUser.getUsername(), tUser.getName());
+        }
         return accountBuilder.generateAccountVoList(tUsers);
     }
 
@@ -125,6 +132,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
     public Account queryOne(AccountQuery accountQuery) {
         TUserQuery query = getUserQuery(accountQuery);
         TUser tUser = userDao.queryOne(query);
+        putUserCache(tUser.getId(), tUser.getUsername(), tUser.getName());
         return accountBuilder.generateAccountVo(tUser);
     }
 
@@ -144,6 +152,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
             accountDetails.setId(tUser.getId());
             accountDetails.setUser(accountBuilder.generateUserInfo(tUser));
             accountDetails.setRoles(accountBuilder.generateUserRoleInfos(userRoleDao.getRolesByUsername(username)));
+            putUserCache(accountDetails.getId(),accountDetails.getUsername(),accountDetails.getName());
             return accountDetails;
         } else {
             return null;
@@ -165,22 +174,23 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
 
     private void putCache(Long id, String username, String name) {
         Cache accounts = cacheManager.getCache(ACCOUNTS);
-        Cache users = cacheManager.getCache(USERS);
-        HashMap<String, Object> map = new HashMap<>();
+        HashMap<String, Object> map = new HashMap<>(3);
         map.put("id", id);
         map.put("username", username);
         map.put("name", name);
-        if (isNotEmpty(id)) {
-            accounts.put(id, map);
-            users.put(id, map);
-        }
-        if (isNotEmpty(username)) {
-            accounts.put(username, map);
-            users.put(username, map);
-        }
-        if (isNotEmpty(name)) {
-            accounts.put(name,map);
-            users.put(name, map);
-        }
+        accounts.put(id, map);
+        accounts.put(username, map);
+        accounts.put(name, map);
+    }
+
+    private void putUserCache(Long id, String username, String name) {
+        Cache users = cacheManager.getCache(USERS);
+        HashMap<String, Object> map = new HashMap<>(3);
+        map.put("id", id);
+        map.put("username", username);
+        map.put("name", name);
+        users.put(id, map);
+        users.put(username, map);
+        users.put(name, map);
     }
 }
