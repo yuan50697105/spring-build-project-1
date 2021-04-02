@@ -5,6 +5,7 @@ import org.example.modules.repository.mysql.dao.TOrderInfoDao;
 import org.example.modules.repository.mysql.entity.query.OrderInfoQuery;
 import org.example.modules.repository.mysql.entity.result.OrderInfo;
 import org.example.modules.repository.mysql.entity.vo.OrderFormVo;
+import org.example.modules.repository.mysql.helper.OrderInfoHelper;
 import org.example.modules.repository.mysql.repository.OrderInfoTransactionRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Repository;
@@ -15,13 +16,21 @@ import java.util.List;
 @Repository
 @Transactional
 public class OrderInfoTransactionRepositoryImpl extends OrderInfoRepositoryImpl<OrderFormVo> implements OrderInfoTransactionRepository {
-    public OrderInfoTransactionRepositoryImpl(TOrderInfoDao orderInfoDao, OrderInfoBuider orderInfoBuider) {
+
+    private final OrderInfoHelper orderInfoHelper;
+
+    public OrderInfoTransactionRepositoryImpl(TOrderInfoDao orderInfoDao, OrderInfoBuider orderInfoBuider, OrderInfoHelper orderInfoHelper) {
         super(orderInfoDao, orderInfoBuider);
+        this.orderInfoHelper = orderInfoHelper;
     }
 
     @Override
     public void save(OrderFormVo orderFormVo) {
-
+        switch (orderFormVo.getOperating()) {
+            case ADD:
+                orderInfoHelper.saveAddOrder(orderFormVo);
+                break;
+        }
     }
 
     @Override
@@ -51,4 +60,5 @@ public class OrderInfoTransactionRepositoryImpl extends OrderInfoRepositoryImpl<
         throw new RuntimeException();
 //        return super.queryOne(orderInfoQuery);
     }
+
 }
