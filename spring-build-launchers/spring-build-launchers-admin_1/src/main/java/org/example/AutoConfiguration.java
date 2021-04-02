@@ -14,6 +14,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableCaching
 @EnableSpringUtil
 @ComponentScan
-@EnableAspectJAutoProxy(proxyTargetClass = true, exposeProxy = true)
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 public class AutoConfiguration {
 }

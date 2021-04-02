@@ -1,6 +1,8 @@
 package org.example.modules.repository.mysql.entity.query;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
+import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -28,25 +30,29 @@ public class TOrderItemQuery extends TkBaseQuery<TOrderItem> implements Serializ
      * 订单ID
      */
     @ApiModelProperty(value = "订单ID")
+    @AndEqualTo
     private Long orderId;
 
     /**
      * 订单号
      */
     @ApiModelProperty(value = "订单号")
+    @AndLike
     private String orderNo;
 
     /**
      * 客户ID
      */
     @ApiModelProperty(value = "客户ID")
+    @AndEqualTo
     private Long customerId;
 
     /**
      * 订单类型
      */
     @ApiModelProperty(value = "订单类型")
-    private Integer orderType;
+    @AndEqualTo(property = "orderType")
+    private Integer orderType1;
 
     /**
      * 收费项目ID

@@ -7,7 +7,6 @@ spring:
   cache:
     type: redis
     redis:
-      key-prefix: cache
       time-to-live: 10m
   redis:
     host: 8.140.177.12
