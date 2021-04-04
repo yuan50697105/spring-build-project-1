@@ -1,8 +1,8 @@
 package org.example.modules.repository.mysql.builder;
 
-import org.example.modules.repository.mysql.entity.po.TCustomerInfo;
+import org.example.modules.repository.mysql.table.po.TCustomerInfo;
 import org.example.modules.repository.mysql.entity.query.CustomerInfoQuery;
-import org.example.modules.repository.mysql.entity.query.TCustomerInfoQuery;
+import org.example.modules.repository.mysql.table.query.TCustomerInfoQuery;
 import org.example.modules.repository.mysql.entity.result.CustomerInfo;
 import org.example.modules.repository.mysql.entity.vo.CustomerInfoVo;
 import org.example.plugins.mybatis.entity.IPageData;

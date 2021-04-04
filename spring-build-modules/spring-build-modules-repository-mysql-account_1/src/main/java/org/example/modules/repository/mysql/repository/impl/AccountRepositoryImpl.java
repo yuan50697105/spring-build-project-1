@@ -7,9 +7,9 @@ import org.example.modules.repository.mysql.dao.TRoleDao;
 import org.example.modules.repository.mysql.dao.TUserDao;
 import org.example.modules.repository.mysql.dao.TUserPermissionDao;
 import org.example.modules.repository.mysql.dao.TUserRoleDao;
-import org.example.modules.repository.mysql.entity.po.TUser;
+import org.example.modules.repository.mysql.table.po.TUser;
 import org.example.modules.repository.mysql.entity.query.AccountQuery;
-import org.example.modules.repository.mysql.entity.query.TUserQuery;
+import org.example.modules.repository.mysql.table.query.TUserQuery;
 import org.example.modules.repository.mysql.entity.result.Account;
 import org.example.modules.repository.mysql.entity.result.AccountDetails;
 import org.example.modules.repository.mysql.entity.result.Role;
@@ -35,8 +35,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import static cn.hutool.core.util.ObjectUtil.isNotEmpty;
 
 @Repository
 @Transactional

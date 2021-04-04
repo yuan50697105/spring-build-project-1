@@ -3,8 +3,7 @@ package org.example.modules.repository.mysql.entity.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.modules.repository.mysql.entity.po.TOrderItem;
-import org.example.modules.repository.mysql.entity.result.OrderItem;
+import org.example.modules.repository.mysql.table.po.TOrderItem;
 
 import javax.validation.constraints.NotEmpty;
 

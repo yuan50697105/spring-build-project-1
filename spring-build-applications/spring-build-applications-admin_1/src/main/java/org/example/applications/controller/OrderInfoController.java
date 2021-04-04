@@ -2,7 +2,6 @@ package org.example.applications.controller;
 
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
-import cn.hutool.db.sql.Order;
 import org.example.domains.service.OrderService;
 import org.example.modules.repository.mysql.entity.vo.OrderFormVo;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,10 +1,9 @@
 package org.example.modules.repository.mysql.dao.impl;
 
-import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import org.example.modules.repository.mysql.dao.TPermissionDao;
-import org.example.modules.repository.mysql.entity.po.TPermission;
-import org.example.modules.repository.mysql.entity.query.TPermissionQuery;
+import org.example.modules.repository.mysql.table.po.TPermission;
+import org.example.modules.repository.mysql.table.query.TPermissionQuery;
 import org.example.modules.repository.mysql.mapper.TPermissionMapper;
 import org.example.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.example.plugins.mybatis.entity.po.IBaseEntity;

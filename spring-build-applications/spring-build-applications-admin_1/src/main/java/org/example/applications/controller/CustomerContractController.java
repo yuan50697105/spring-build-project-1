@@ -5,7 +5,6 @@ import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
 import org.example.domains.service.CustomerContractService;
 import org.example.modules.repository.mysql.entity.query.CustomerContractQuery;
-import org.example.modules.repository.mysql.entity.query.CustomerInfoQuery;
 import org.example.modules.repository.mysql.entity.result.CustomerContract;
 import org.example.modules.repository.mysql.entity.vo.CustomerContractFormVo;
 import org.example.plugins.mybatis.entity.IPageData;

@@ -2,7 +2,7 @@ package org.example.modules.repository.mysql.entity.result;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.modules.repository.mysql.entity.po.TOrderItem;
+import org.example.modules.repository.mysql.table.po.TOrderItem;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

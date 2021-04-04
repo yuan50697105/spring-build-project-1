@@ -8,7 +8,7 @@ import cn.hutool.crypto.asymmetric.RSA;
 import cn.hutool.crypto.symmetric.AES;
 import cn.hutool.crypto.symmetric.SymmetricAlgorithm;
 import cn.hutool.json.JSONUtil;
-import org.example.modules.repository.mysql.entity.po.TUser;
+import org.example.modules.repository.mysql.table.po.TUser;
 import org.example.plugins.commons.entity.DataDTO;
 import org.example.plugins.commons.utils.RSAAESUtils;
 import org.example.plugins.commons.utils.RSADESUtils;

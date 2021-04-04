@@ -1,9 +1,7 @@
 package org.example.modules.repository.mysql.cache;
 
-import cn.hutool.core.util.HashUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.crypto.SecureUtil;
-import cn.hutool.crypto.digest.MD5;
 import cn.hutool.json.JSONUtil;
 import lombok.AllArgsConstructor;
 import org.example.modules.repository.mysql.entity.query.AccountQuery;

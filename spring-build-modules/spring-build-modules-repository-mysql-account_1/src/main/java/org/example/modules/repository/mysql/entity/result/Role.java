@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.modules.repository.mysql.entity.po.TRole;
+import org.example.modules.repository.mysql.table.po.TRole;
 
 import java.io.Serializable;
 

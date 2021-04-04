@@ -2,7 +2,6 @@ package org.example.modules.repository.mysql.entity.vo;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import lombok.Getter;
 
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;

@@ -3,15 +3,14 @@ package org.example.modules.repository.mysql.repository.impl;
 import lombok.AllArgsConstructor;
 import org.example.modules.repository.mysql.builder.OrderInfoBuider;
 import org.example.modules.repository.mysql.dao.TOrderInfoDao;
-import org.example.modules.repository.mysql.entity.po.TOrderInfo;
+import org.example.modules.repository.mysql.table.po.TOrderInfo;
 import org.example.modules.repository.mysql.entity.query.OrderInfoQuery;
-import org.example.modules.repository.mysql.entity.query.TOrderInfoQuery;
+import org.example.modules.repository.mysql.table.query.TOrderInfoQuery;
 import org.example.modules.repository.mysql.entity.result.OrderInfo;
 import org.example.modules.repository.mysql.entity.result.OrderInfoDetails;
 import org.example.modules.repository.mysql.repository.OrderInfoRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

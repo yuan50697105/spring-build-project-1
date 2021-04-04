@@ -1,11 +1,11 @@
 package org.example.modules.repository.mysql.builder;
 
-import org.example.modules.repository.mysql.entity.po.TPermission;
-import org.example.modules.repository.mysql.entity.po.TRole;
-import org.example.modules.repository.mysql.entity.po.TUser;
-import org.example.modules.repository.mysql.entity.po.TUserRole;
+import org.example.modules.repository.mysql.table.po.TPermission;
+import org.example.modules.repository.mysql.table.po.TRole;
+import org.example.modules.repository.mysql.table.po.TUser;
+import org.example.modules.repository.mysql.table.po.TUserRole;
 import org.example.modules.repository.mysql.entity.query.AccountQuery;
-import org.example.modules.repository.mysql.entity.query.TUserQuery;
+import org.example.modules.repository.mysql.table.query.TUserQuery;
 import org.example.modules.repository.mysql.entity.result.Permission;
 import org.example.modules.repository.mysql.entity.result.Role;
 import org.example.modules.repository.mysql.entity.result.User;
