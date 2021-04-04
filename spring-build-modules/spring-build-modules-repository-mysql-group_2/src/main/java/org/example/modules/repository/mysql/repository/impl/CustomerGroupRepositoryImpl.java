@@ -5,7 +5,7 @@ import org.example.modules.repository.mysql.builder.CustomerGroupBuilder;
 import org.example.modules.repository.mysql.dao.TCustomerGroupDao;
 import org.example.modules.repository.mysql.table.po.TCustomerGroup;
 import org.example.modules.repository.mysql.entity.query.CustomerGroupQuery;
-import org.example.modules.repository.mysql.entity.query.TCustomerGroupQuery;
+import org.example.modules.repository.mysql.table.query.TCustomerGroupQuery;
 import org.example.modules.repository.mysql.entity.result.CustomerGroup;
 import org.example.modules.repository.mysql.entity.vo.CustomerGroupVo;
 import org.example.modules.repository.mysql.repository.CustomerGroupRepository;
