@@ -17,6 +17,8 @@
         <module>spring-build-infrastructures-mysql_2</module>
         <module>spring-build-infrastructures-mongodb</module>
         <module>spring-build-infrastructures-elasticsearch</module>
+        <module>spring-build-infrastructures-clickhouse_1</module>
+        <module>spring-build-infrastructures-clickhouse_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-infrastructures-mysql_2</artifactId>
+    <artifactId>spring-build-infrastructures-clickhouse_2</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
@@ -20,9 +20,10 @@
             <artifactId>spring-build-plugins-mybatis_2</artifactId>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>ru.yandex.clickhouse</groupId>
+            <artifactId>clickhouse-jdbc</artifactId>
             <scope>runtime</scope>
         </dependency>
     </dependencies>
+
 </project>
