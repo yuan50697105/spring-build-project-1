@@ -15,28 +15,10 @@
         <module>spring-build-modules-commons</module>
         <module>spring-build-modules-repository-mysql_1</module>
         <module>spring-build-modules-repository-mysql_2</module>
-        <module>spring-build-modules-repository-mysql-account_1</module>
-        <module>spring-build-modules-repository-mysql-account_2</module>
-        <module>spring-build-modules-repository-mysql-order_1</module>
-        <module>spring-build-modules-repository-mysql-order_2</module>
-        <module>spring-build-modules-repository-mysql-contract_1</module>
-        <module>spring-build-modules-repository-mysql-contract_2</module>
-        <module>spring-build-modules-repository-mysql-archives_1</module>
-        <module>spring-build-modules-repository-mysql-archives_2</module>
-        <module>spring-build-modules-repository-mysql-group_1</module>
-        <module>spring-build-modules-repository-mysql-group_2</module>
-        <module>spring-build-modules-repository-clickhouse_1</module>
-        <module>spring-build-modules-repository-clickhouse_2</module>
-        <module>spring-build-modules-repository-mysql-patient_1</module>
-        <module>spring-build-modules-repository-mysql-patient_2</module>
-        <module>spring-build-modules-repository-mysql-customer_1</module>
-        <module>spring-build-modules-repository-mysql-customer_2</module>
-        <module>spring-build-modules-repository-mysql-meal_1</module>
-        <module>spring-build-modules-repository-mysql-meal_2</module>
-        <module>spring-build-modules-repository-mysql-item_1</module>
-        <module>spring-build-modules-repository-mysql-item_2</module>
         <module>spring-build-modules-repository-mysqls_1</module>
         <module>spring-build-modules-repository-mysqls_2</module>
+        <module>spring-build-modules-repository-clickhouse_1</module>
+        <module>spring-build-modules-repository-clickhouse_2</module>
         <module>spring-build-modules-repository-clickhouses_1</module>
         <module>spring-build-modules-repository-clickhouses_2</module>
     </modules>
