@@ -41,6 +41,16 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    public void updateEnabled(List<Long> ids) {
+        accountRepository.updateStatus(ids, 1);
+    }
+
+    @Override
+    public void updateDisable(List<Long> ids) {
+        accountRepository.updateStatus(ids, 0);
+    }
+
+    @Override
     public AccountDetails get(Long id) {
         return accountRepository.getById(id);
     }

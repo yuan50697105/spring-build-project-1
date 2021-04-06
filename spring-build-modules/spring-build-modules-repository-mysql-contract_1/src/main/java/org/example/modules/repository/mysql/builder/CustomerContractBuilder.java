@@ -1,8 +1,8 @@
 package org.example.modules.repository.mysql.builder;
 
-import org.example.modules.repository.mysql.entity.po.TCustomerContract;
+import org.example.modules.repository.mysql.table.po.TCustomerContract;
 import org.example.modules.repository.mysql.entity.query.CustomerContractQuery;
-import org.example.modules.repository.mysql.entity.query.TCustomerContractQuery;
+import org.example.modules.repository.mysql.table.query.TCustomerContractQuery;
 import org.example.modules.repository.mysql.entity.result.CustomerContract;
 import org.example.modules.repository.mysql.entity.vo.CustomerContractVo;
 import org.example.plugins.mybatis.entity.IPageData;

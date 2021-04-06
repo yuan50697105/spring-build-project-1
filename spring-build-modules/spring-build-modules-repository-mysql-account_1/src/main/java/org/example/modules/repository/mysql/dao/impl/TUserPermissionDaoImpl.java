@@ -2,7 +2,7 @@ package org.example.modules.repository.mysql.dao.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.modules.repository.mysql.dao.TUserPermissionDao;
-import org.example.modules.repository.mysql.entity.po.TPermission;
+import org.example.modules.repository.mysql.table.po.TPermission;
 import org.example.modules.repository.mysql.mapper.TUserPermissionMapper;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

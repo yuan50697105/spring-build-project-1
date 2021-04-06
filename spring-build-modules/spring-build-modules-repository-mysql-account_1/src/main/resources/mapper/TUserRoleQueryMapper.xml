@@ -13,7 +13,7 @@
                 )
     </select>
 
-    <select id="getRolesByUsername" resultType="org.example.modules.repository.mysql.entity.po.TRole">
+    <select id="getRolesByUsername" resultType="org.example.modules.repository.mysql.table.po.TRole">
         select
         <include refid="org.example.modules.repository.mysql.mapper.TRoleMapper.Base_Column_List">
         </include>

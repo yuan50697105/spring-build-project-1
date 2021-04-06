@@ -7,13 +7,12 @@ spring:
   cache:
     type: redis
     redis:
-      key-prefix: cache
       time-to-live: 10m
   redis:
     host: 8.140.177.12
     password: root
   jackson:
-    date-format: yyyy-MM-dd
+    date-format: yyyy-MM-dd HH:mm:ss
     locale: zh_CN
 logging:
   level:

@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.modules.repository.mysql.dao.TPermissionDao;
-import org.example.modules.repository.mysql.entity.po.TPermission;
+import org.example.modules.repository.mysql.table.po.TPermission;
 
 import java.io.Serializable;
 

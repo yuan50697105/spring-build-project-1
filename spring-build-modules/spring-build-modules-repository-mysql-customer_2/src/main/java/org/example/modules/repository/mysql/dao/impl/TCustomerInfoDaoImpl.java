@@ -2,8 +2,8 @@ package org.example.modules.repository.mysql.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import org.example.modules.repository.mysql.dao.TCustomerInfoDao;
-import org.example.modules.repository.mysql.entity.po.TCustomerInfo;
-import org.example.modules.repository.mysql.entity.query.TCustomerInfoQuery;
+import org.example.modules.repository.mysql.table.po.TCustomerInfo;
+import org.example.modules.repository.mysql.table.query.TCustomerInfoQuery;
 import org.example.modules.repository.mysql.mapper.TCustomerInfoMapper;
 import org.example.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Component;

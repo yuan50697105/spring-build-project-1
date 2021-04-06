@@ -2,9 +2,9 @@ package org.example.modules.repository.mysql.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import org.example.modules.repository.mysql.dao.TUserRoleDao;
-import org.example.modules.repository.mysql.entity.po.TRole;
-import org.example.modules.repository.mysql.entity.po.TUserRole;
-import org.example.modules.repository.mysql.entity.query.TUserRoleQuery;
+import org.example.modules.repository.mysql.table.po.TRole;
+import org.example.modules.repository.mysql.table.po.TUserRole;
+import org.example.modules.repository.mysql.table.query.TUserRoleQuery;
 import org.example.modules.repository.mysql.mapper.TUserRoleMapper;
 import org.example.modules.repository.mysql.mapper.TUserRoleQueryMapper;
 import org.example.plugins.mybatis.dao.impl.TkBaseDaoImpl;

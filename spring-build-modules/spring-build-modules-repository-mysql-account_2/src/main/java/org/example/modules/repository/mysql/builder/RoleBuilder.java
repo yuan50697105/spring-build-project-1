@@ -1,13 +1,12 @@
 package org.example.modules.repository.mysql.builder;
 
-import org.example.modules.repository.mysql.entity.po.TPermission;
-import org.example.modules.repository.mysql.entity.po.TRole;
-import org.example.modules.repository.mysql.entity.po.TRolePermission;
+import org.example.modules.repository.mysql.table.po.TPermission;
+import org.example.modules.repository.mysql.table.po.TRole;
+import org.example.modules.repository.mysql.table.po.TRolePermission;
 import org.example.modules.repository.mysql.entity.query.RoleQuery;
-import org.example.modules.repository.mysql.entity.query.TRoleQuery;
+import org.example.modules.repository.mysql.table.query.TRoleQuery;
 import org.example.modules.repository.mysql.entity.result.Permission;
 import org.example.modules.repository.mysql.entity.result.Role;
-import org.example.modules.repository.mysql.entity.result.RoleDetails;
 import org.example.modules.repository.mysql.entity.vo.RoleFormVo;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.mapstruct.Mapper;
@@ -60,7 +59,6 @@ public interface RoleBuilder {
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)
     void copyRole(RoleFormVo.RoleInfo role, @MappingTarget TRole tRole);
-
 
     Set<Permission> createRolePermissionsInfo(List<TPermission> permissions);
 

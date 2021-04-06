@@ -1,8 +1,8 @@
 package org.example.modules.repository.mysql.dao;
 
-import org.example.modules.repository.mysql.entity.po.TPermission;
-import org.example.modules.repository.mysql.entity.po.TRolePermission;
-import org.example.modules.repository.mysql.entity.query.TRolePermissionQuery;
+import org.example.modules.repository.mysql.table.po.TPermission;
+import org.example.modules.repository.mysql.table.po.TRolePermission;
+import org.example.modules.repository.mysql.table.query.TRolePermissionQuery;
 import org.example.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;

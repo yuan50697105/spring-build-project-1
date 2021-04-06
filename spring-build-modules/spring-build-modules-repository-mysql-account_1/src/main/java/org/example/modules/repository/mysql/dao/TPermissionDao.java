@@ -1,7 +1,7 @@
 package org.example.modules.repository.mysql.dao;
 
-import org.example.modules.repository.mysql.entity.po.TPermission;
-import org.example.modules.repository.mysql.entity.query.TPermissionQuery;
+import org.example.modules.repository.mysql.table.po.TPermission;
+import org.example.modules.repository.mysql.table.query.TPermissionQuery;
 import org.example.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;

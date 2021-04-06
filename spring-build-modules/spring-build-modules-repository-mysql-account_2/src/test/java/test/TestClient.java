@@ -1,7 +1,7 @@
 package test;
 
 
-import org.example.modules.repository.mysql.entity.po.TUser;
+import org.example.modules.repository.mysql.table.po.TUser;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

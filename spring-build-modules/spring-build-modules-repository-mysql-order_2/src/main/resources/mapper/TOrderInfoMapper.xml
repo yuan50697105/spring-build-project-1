@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.example.modules.repository.mysql.mapper.TOrderInfoMapper">
-  <resultMap id="BaseResultMap" type="org.example.modules.repository.mysql.entity.po.TOrderInfo">
+  <resultMap id="BaseResultMap" type="org.example.modules.repository.mysql.table.po.TOrderInfo">
     <!--@mbg.generated-->
     <!--@Table t_order_info-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -16,10 +16,11 @@
     <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
     <result column="total_price" jdbcType="DECIMAL" property="totalPrice" />
     <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="status" jdbcType="CHAR" property="status" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
     id, create_id, update_id, create_user, update_user, create_date, update_date, order_no, 
-    customer_id, customer_name, total_price, `type`
+    customer_id, customer_name, total_price, `type`, `status`
   </sql>
 </mapper>

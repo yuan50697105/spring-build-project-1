@@ -3,12 +3,15 @@ package org.example.modules.repository.mysql.repository.impl;
 import cn.hutool.core.collection.CollUtil;
 import lombok.AllArgsConstructor;
 import org.example.modules.repository.mysql.builder.AccountBuilder;
-import org.example.modules.repository.mysql.dao.*;
-import org.example.modules.repository.mysql.entity.po.TUser;
+import org.example.modules.repository.mysql.dao.TRoleDao;
+import org.example.modules.repository.mysql.dao.TUserDao;
+import org.example.modules.repository.mysql.dao.TUserPermissionDao;
+import org.example.modules.repository.mysql.dao.TUserRoleDao;
+import org.example.modules.repository.mysql.table.po.TUser;
 import org.example.modules.repository.mysql.entity.query.AccountQuery;
-import org.example.modules.repository.mysql.entity.query.TUserQuery;
-import org.example.modules.repository.mysql.entity.result.AccountDetails;
+import org.example.modules.repository.mysql.table.query.TUserQuery;
 import org.example.modules.repository.mysql.entity.result.Account;
+import org.example.modules.repository.mysql.entity.result.AccountDetails;
 import org.example.modules.repository.mysql.entity.result.Role;
 import org.example.modules.repository.mysql.entity.result.User;
 import org.example.modules.repository.mysql.entity.vo.AccountFormVo;
@@ -16,12 +19,18 @@ import org.example.modules.repository.mysql.helper.AccountHelper;
 import org.example.modules.repository.mysql.repository.AccountRepository;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.example.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
-import org.springframework.cache.annotation.*;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotEmpty;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -30,14 +39,17 @@ import java.util.stream.Collectors;
 @Repository
 @Transactional
 @AllArgsConstructor
-@CacheConfig(cacheNames = {"accounts", "users"})
+@CacheConfig(cacheNames = {AccountRepositoryImpl.ACCOUNTS})
 public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountFormVo, AccountDetails, AccountQuery> implements AccountRepository {
+    public static final String ACCOUNTS = "accounts";
+    public static final String USERS = "users";
     private final AccountBuilder accountBuilder;
     private final AccountHelper accountHelper;
     private final TUserDao userDao;
     private final TRoleDao roleDao;
     private final TUserRoleDao userRoleDao;
     private final TUserPermissionDao userPermissionDao;
+    private final CacheManager cacheManager;
 
     @Override
     @Transactional
@@ -90,6 +102,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
         Set<Role> roles = accountBuilder.generateUserRoleInfos(userRoleDao.getRolesByUserId(id));
         accountDetails.setRoles(roles);
         accountDetails.setPermissions(accountBuilder.generateUserPermissionInfos(userPermissionDao.getPermissionsByUserId(id)));
+        putUserCache(id, accountDetails.getUsername(), accountDetails.getName());
         return accountDetails;
     }
 
@@ -97,6 +110,9 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
     public IPageData<Account> queryPage(AccountQuery accountQuery) {
         TUserQuery userQuery = getUserQuery(accountQuery);
         IPageData<TUser> data = userDao.queryPage(userQuery);
+        for (TUser datum : data.getData()) {
+            putUserCache(datum.getId(), datum.getUsername(), datum.getName());
+        }
         return accountBuilder.generateAccountVoPage(data);
     }
 
@@ -104,6 +120,9 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
     public List<Account> queryList(AccountQuery accountQuery) {
         TUserQuery userQuery = getUserQuery(accountQuery);
         List<TUser> tUsers = userDao.queryList(userQuery);
+        for (TUser tUser : tUsers) {
+            putUserCache(tUser.getId(), tUser.getUsername(), tUser.getName());
+        }
         return accountBuilder.generateAccountVoList(tUsers);
     }
 
@@ -111,6 +130,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
     public Account queryOne(AccountQuery accountQuery) {
         TUserQuery query = getUserQuery(accountQuery);
         TUser tUser = userDao.queryOne(query);
+        putUserCache(tUser.getId(), tUser.getUsername(), tUser.getName());
         return accountBuilder.generateAccountVo(tUser);
     }
 
@@ -130,6 +150,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
             accountDetails.setId(tUser.getId());
             accountDetails.setUser(accountBuilder.generateUserInfo(tUser));
             accountDetails.setRoles(accountBuilder.generateUserRoleInfos(userRoleDao.getRolesByUsername(username)));
+            putUserCache(accountDetails.getId(),accountDetails.getUsername(),accountDetails.getName());
             return accountDetails;
         } else {
             return null;
@@ -141,6 +162,33 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountF
             @Cacheable(key = "#username"),
     })
     public Optional<AccountDetails> getByUsernameOpt(String username) {
-        return Optional.empty();
+        return Optional.ofNullable(getByUsername(username));
+    }
+
+    @Override
+    public void updateStatus(List<Long> ids, int status) {
+        userDao.updateStatus(ids, status);
+    }
+
+    private void putCache(Long id, String username, String name) {
+        Cache accounts = cacheManager.getCache(ACCOUNTS);
+        HashMap<String, Object> map = new HashMap<>(3);
+        map.put("id", id);
+        map.put("username", username);
+        map.put("name", name);
+        accounts.put(id, map);
+        accounts.put(username, map);
+        accounts.put(name, map);
+    }
+
+    private void putUserCache(Long id, String username, String name) {
+        Cache users = cacheManager.getCache(USERS);
+        HashMap<String, Object> map = new HashMap<>(3);
+        map.put("id", id);
+        map.put("username", username);
+        map.put("name", name);
+        users.put(id, map);
+        users.put(username, map);
+        users.put(name, map);
     }
 }

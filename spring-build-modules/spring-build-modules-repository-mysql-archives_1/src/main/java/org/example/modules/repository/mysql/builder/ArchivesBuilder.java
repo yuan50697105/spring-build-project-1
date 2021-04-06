@@ -1,8 +1,8 @@
 package org.example.modules.repository.mysql.builder;
 
-import org.example.modules.repository.mysql.entity.po.TCustomerHealthArchives;
+import org.example.modules.repository.mysql.table.po.TCustomerHealthArchives;
 import org.example.modules.repository.mysql.entity.query.CustomerHealthArchivesQuery;
-import org.example.modules.repository.mysql.entity.query.TCustomerHealthArchivesQuery;
+import org.example.modules.repository.mysql.table.query.TCustomerHealthArchivesQuery;
 import org.example.modules.repository.mysql.entity.result.CustomerHealthArchives;
 import org.example.modules.repository.mysql.entity.vo.HealthArchivesVo;
 import org.example.plugins.mybatis.entity.IPageData;

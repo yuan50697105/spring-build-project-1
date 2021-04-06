@@ -6,8 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.modules.repository.mysql.entity.po.TUser;
-import org.example.plugins.commons.entity.vo.IBaseVo;
+import org.example.modules.repository.mysql.table.po.TUser;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

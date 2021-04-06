@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.example.plugins.commons.entity.vo.IBaseVo;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * t_order_info
@@ -17,4 +18,5 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class OrderInfoDetails extends IBaseVo implements Serializable {
     private OrderInfo order;
+    private List<OrderItem> items;
 }
