@@ -9,6 +9,7 @@ import org.example.modules.repository.mysql.table.po.TMealItem;
 import org.example.modules.repository.mysql.table.query.TMealInfoQuery;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
 import java.util.ArrayList;
@@ -29,11 +30,12 @@ public interface MealInfoBuilder {
     default List<TMealItem> build(TMealInfo mealInfo, List<MealItemVo> items) {
         ArrayList<TMealItem> mealItems = new ArrayList<>();
         for (MealItemVo item : items) {
-            mealItems.add(buildOne(mealInfo, item));
+            mealItems.add(buildOne(mealInfo.getId(), mealInfo.getCode(), mealInfo.getName(), item));
         }
         return mealItems;
     }
 
-    TMealItem buildOne(TMealInfo mealInfo, MealItemVo item);
+    TMealItem buildOne(Long mealId, String mealCode, String mealName, MealItemVo item);
+
 
 }
