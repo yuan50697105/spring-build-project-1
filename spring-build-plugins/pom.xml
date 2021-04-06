@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-build-project-1</artifactId>
-        <groupId>org.example.Application</groupId>
+        <groupId>org.example.spring</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -18,8 +18,6 @@
         <module>spring-build-plugins-oss-aliyun</module>
         <module>spring-build-plugins-oss-tencent</module>
         <module>spring-build-plugins-oss-minio</module>
-        <module>spring-build-plugins-message-rocketmq</module>
-        <module>spring-build-plugins-message-kafka</module>
         <module>spring-build-plugins-web</module>
         <module>spring-build-plugins-security</module>
         <module>spring-build-plugins-wx</module>
@@ -29,7 +27,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.example.Application</groupId>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-dependencies</artifactId>
                 <version>1.0-SNAPSHOT</version>
                 <type>pom</type>

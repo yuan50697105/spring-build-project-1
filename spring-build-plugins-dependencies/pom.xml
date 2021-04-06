@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-build-project-1</artifactId>
-        <groupId>org.example.Application</groupId>
+        <groupId>org.example.spring</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -14,57 +14,57 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.example.Application</groupId>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-payment</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>org.example.Application</groupId>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-wx</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>org.example.Application</groupId>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-security</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>org.example.Application</groupId>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-web</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>org.example.Application</groupId>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-message-kafka</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>org.example.Application</groupId>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-commons</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>org.example.Application</groupId>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-mybatis_1</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>org.example.Application</groupId>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-mybatis_2</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>org.example.Application</groupId>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-oss-aliyun</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>org.example.Application</groupId>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-oss-tencent</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>org.example.Application</groupId>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-oss-minio</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
