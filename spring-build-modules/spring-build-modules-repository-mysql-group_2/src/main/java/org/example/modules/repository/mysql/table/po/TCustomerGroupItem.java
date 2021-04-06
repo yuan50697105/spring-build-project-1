@@ -5,9 +5,11 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.plugins.mybatis.entity.po.IBaseEntity;
 
+import java.io.Serializable;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TCustomerGroupItem extends IBaseEntity {
+public class TCustomerGroupItem extends IBaseEntity implements Serializable {
     private Long mealId;
     private Integer num;
 
