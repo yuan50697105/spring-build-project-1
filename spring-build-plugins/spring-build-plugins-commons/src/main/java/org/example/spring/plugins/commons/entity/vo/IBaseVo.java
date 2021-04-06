@@ -14,9 +14,6 @@ public class IBaseVo extends BaseEntity {
     @NotEmpty(groups = {Update.class})
     @JsonSerialize(using = StringSerializer.class)
     private Long id;
-    @JsonSerialize(using = StringSerializer.class)
-    private Long version;
-    private String requestId;
 
 
     public interface Update {
