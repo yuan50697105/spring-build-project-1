@@ -35,6 +35,10 @@
         <module>spring-build-modules-repository-mysql-meal_2</module>
         <module>spring-build-modules-repository-mysql-item_1</module>
         <module>spring-build-modules-repository-mysql-item_2</module>
+        <module>spring-build-modules-repository-mysqls_1</module>
+        <module>spring-build-modules-repository-mysqls_2</module>
+        <module>spring-build-modules-repository-clickhouses_1</module>
+        <module>spring-build-modules-repository-clickhouses_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
