@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.plugins.CommonsConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.Application.plugins.CommonsConfiguration
