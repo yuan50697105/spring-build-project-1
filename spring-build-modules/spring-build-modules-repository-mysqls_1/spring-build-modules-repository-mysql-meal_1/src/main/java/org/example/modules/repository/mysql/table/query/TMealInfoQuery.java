@@ -74,7 +74,4 @@ public class TMealInfoQuery extends TkBaseQuery<TMealInfo> implements Serializab
     @ApiModelProperty(value = "适用性 年龄 结束")
     @AndLessThanOrEqualTo
     private Integer applicableAgeEnd;
-    /**
-     * 折扣率
-     */
 }

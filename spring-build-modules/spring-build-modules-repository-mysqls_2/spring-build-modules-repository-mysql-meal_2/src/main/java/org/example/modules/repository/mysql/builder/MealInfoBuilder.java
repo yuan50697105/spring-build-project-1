@@ -1,18 +1,17 @@
 package org.example.modules.repository.mysql.builder;
 
-import org.example.modules.repository.mysql.entity.vo.MealItemVo;
-import org.example.modules.repository.mysql.table.po.TMealInfo;
 import org.example.modules.repository.mysql.entity.query.MealInfoQuery;
-import org.example.modules.repository.mysql.table.po.TMealItem;
-import org.example.modules.repository.mysql.table.query.TMealInfoQuery;
 import org.example.modules.repository.mysql.entity.result.MealInfo;
 import org.example.modules.repository.mysql.entity.vo.MealInfoVo;
+import org.example.modules.repository.mysql.entity.vo.MealItemVo;
+import org.example.modules.repository.mysql.table.po.TMealInfo;
+import org.example.modules.repository.mysql.table.po.TMealItem;
+import org.example.modules.repository.mysql.table.query.TMealInfoQuery;
 import org.example.plugins.mybatis.entity.IPageData;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
