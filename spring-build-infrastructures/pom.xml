@@ -11,6 +11,11 @@
 
     <artifactId>spring-build-infrastructures</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-build-infrastructures-mysql_1</module>
+        <module>spring-build-infrastructures-commons</module>
+        <module>spring-build-infrastructures-mysql_2</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
