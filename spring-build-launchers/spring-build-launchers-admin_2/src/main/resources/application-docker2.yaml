@@ -16,6 +16,8 @@ spring:
   jackson:
     date-format: yyyy-MM-dd
     locale: zh_CN
-logging:
-  level:
-    web: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
