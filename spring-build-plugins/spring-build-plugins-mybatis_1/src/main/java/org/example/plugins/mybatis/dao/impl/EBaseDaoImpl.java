@@ -3,8 +3,11 @@ package org.example.plugins.mybatis.dao.impl;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.LambdaUtils;
+import com.baomidou.mybatisplus.core.toolkit.support.SFunction;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
@@ -50,8 +53,9 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
             example = exampleAddOrder(query, example);
             return new IPageResult<>(PageInfo.of(baseMapper.selectByExample(example)));
         } else {
+            PageHelper.startPage(query.getPage(), query.getSize());
             wrapper = wrapperAddOrder(query, wrapper);
-            return new IPageResult<>(page(new Page<>(query.getPage(), query.getSize()), wrapper));
+            return new IPageResult<>(PageInfo.of(list(wrapper)));
         }
     }
 
@@ -64,8 +68,9 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
             example = exampleAddOrder(query, example);
             return baseMapper.selectByExample(example);
         } else {
+            PageHelper.startPage(query.getPage(), query.getSize());
             wrapper = wrapperAddOrder(query, wrapper);
-            return page(new Page<>(1, size), wrapper).getRecords();
+            return PageInfo.of(list(wrapper)).getList();
         }
     }
 
