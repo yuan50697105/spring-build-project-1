@@ -18,4 +18,9 @@ public class TUserDaoImpl extends TkBaseDaoImpl<TUser, TUserQuery, TUserMapper> 
     protected Wrapper<TUser> queryWrapper(TUserQuery tUserQuery) {
         return null;
     }
+
+    @Override
+    public boolean existByUsername(String username) {
+        return baseMapper.existByUsername(username);
+    }
 }

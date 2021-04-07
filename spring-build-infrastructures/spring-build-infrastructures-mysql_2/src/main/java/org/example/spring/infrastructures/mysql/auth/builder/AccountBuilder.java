@@ -16,17 +16,6 @@ import java.util.Collection;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface AccountBuilder extends TUserRoleBuilder{
-    TUser buildUser(AccountVo account);
-
-    void copyUser(AccountVo account, @MappingTarget TUser tUser);
-
-    Account buildAccount(TUser user);
-
-    TUserQuery buildQuery(AccountQuery accountQuery);
-
-    IPageData<Account> buildAccounts(IPageData<TUser> data);
-
-    List<Account> buildAccounts(List<TUser> data);
+public interface AccountBuilder extends TUserRoleBuilder, TUserBuilder, TRoleBuilder {
 
 }

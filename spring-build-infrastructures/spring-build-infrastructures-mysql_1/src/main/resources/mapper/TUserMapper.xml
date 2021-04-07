@@ -22,4 +22,7 @@
     `name`, `password`, `status`
   </sql>
 
+  <select id="existByUsername" resultType="boolean">
+    select count(*) from t_user where username=#{username,jdbcType=VARCHAR} limit 1
+    </select>
 </mapper>

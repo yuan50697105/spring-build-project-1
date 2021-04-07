@@ -6,4 +6,5 @@ import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 
 @Mapper
 public interface TUserMapper extends IBaseMapper<TUser> {
+    boolean existByUsername(String username);
 }

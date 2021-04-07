@@ -1,6 +1,7 @@
 package org.example.spring.infrastructures.mysql.auth.repository.impl;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.exceptions.ValidateException;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.builder.AccountBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TRoleDao;
@@ -32,22 +33,21 @@ public class AccountRepositoryImpl implements AccountRepository {
     private final AccountBuilder accountBuilder;
     @Override
     public void save(AccountFormVo accountFormVo) {
-        AccountVo account = accountFormVo.getAccount();
-        TUser entity = accountBuilder.buildUser(account);
-        userDao.save(entity);
-        List<Long> roleIds = roleDao.listRoleIdsByRoleIdsOrRoleName(accountFormVo.getRoleIds(), accountFormVo.getRoleName());
-        Long userId = entity.getId();
-        userRoleDao.saveBatch(accountBuilder.buildRoles(userId, roleIds));
+        saveWithId(accountFormVo);
     }
 
     @Override
     public Long saveWithId(AccountFormVo accountFormVo) {
         AccountVo account = accountFormVo.getAccount();
+        List<Long> roleIds = accountFormVo.getRoleIds();
+        List<String> roleName = accountFormVo.getRoleName();
+        String username = accountFormVo.getUsername();
+        validateUsername(username);
         TUser entity = accountBuilder.buildUser(account);
         userDao.save(entity);
-        List<Long> roleIds = roleDao.listRoleIdsByRoleIdsOrRoleName(accountFormVo.getRoleIds(), accountFormVo.getRoleName());
+        List<Long> existRoleIds = roleDao.listRoleIdsByRoleIdsOrRoleName(roleIds, roleName);
         Long userId = entity.getId();
-        userRoleDao.saveBatch(accountBuilder.buildRoles(userId, roleIds));
+        userRoleDao.saveBatch(accountBuilder.buildRoles(userId, existRoleIds));
         return userId;
     }
 
@@ -63,7 +63,6 @@ public class AccountRepositoryImpl implements AccountRepository {
             accountBuilder.copyUser(account, tUser);
             List<Long> existRoleIds = roleDao.listRoleIdsByRoleIdsOrRoleName(roleIds, roleName);
             userRoleDao.saveUpdate(id,existRoleIds);
-
         }
     }
 
@@ -100,5 +99,11 @@ public class AccountRepositoryImpl implements AccountRepository {
         TUserQuery query = accountBuilder.buildQuery(accountQuery);
         TUser data = userDao.queryOne(query);
         return accountBuilder.buildAccount(data);
+    }
+
+    private void validateUsername(String username) {
+        if (userDao.existByUsername(username)) {
+            throw new ValidateException(username + "已存在");
+        }
     }
 }
