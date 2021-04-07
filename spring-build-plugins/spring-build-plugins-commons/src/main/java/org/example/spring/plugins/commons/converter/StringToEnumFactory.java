@@ -11,7 +11,7 @@ import java.util.Map;
 public class StringToEnumFactory implements ConverterFactory<String, IBaseEnum> {
     @Override
     public <T extends IBaseEnum> Converter<String, T> getConverter(Class<T> targetType) {
-        return null;
+        return new StringToEnum<>(targetType);
     }
 
     public static class StringToEnum<T extends IBaseEnum> implements Converter<String, T> {

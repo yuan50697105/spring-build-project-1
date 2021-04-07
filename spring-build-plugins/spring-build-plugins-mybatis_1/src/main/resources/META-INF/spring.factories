@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.Application.plugins.mybatis.MybatisConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.plugins.mybatis.MybatisConfiguration

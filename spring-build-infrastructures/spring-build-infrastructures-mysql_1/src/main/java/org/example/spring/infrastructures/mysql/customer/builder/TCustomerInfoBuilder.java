@@ -7,6 +7,7 @@ import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
 import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerInfoQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
 public interface TCustomerInfoBuilder {
     TCustomerInfo buildCustomerInfo(CustomerVo customer);
 
-    void copyCustomerInfo(CustomerVo customer, TCustomerInfo tCustomerInfo);
+    void copyCustomerInfo(CustomerVo customer,@MappingTarget TCustomerInfo tCustomerInfo);
 
     TCustomerInfoQuery buildCustomerInfoQuery(CustomerQuery customerQuery);
 
