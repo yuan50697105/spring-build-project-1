@@ -30,4 +30,5 @@ public class TRoleDaoImpl extends TkBaseDaoImpl<TRole, TRoleQuery, TRoleMapper> 
             wrapper.or().in(TRole::getName, roleName);
         }).list().stream().map(IBaseEntity::getId).distinct().sorted().collect(Collectors.toList());
     }
+
 }
