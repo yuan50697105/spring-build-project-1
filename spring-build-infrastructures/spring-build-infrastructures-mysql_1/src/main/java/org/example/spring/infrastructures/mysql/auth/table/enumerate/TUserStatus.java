@@ -8,11 +8,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.example.spring.plugins.commons.converter.IBaseEnum;
+
+import java.util.List;
 
 @AllArgsConstructor
 @Getter
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
-public enum TUserStatus {
+public enum TUserStatus implements IBaseEnum {
     Normal("正常", "001", 0),
     Resign("离职", "002", 1),
     Forbidden("禁用", "003", 2),
@@ -29,4 +32,14 @@ public enum TUserStatus {
         return EnumUtil.likeValueOf(this.getDeclaringClass(), value);
     }
 
+    @Override
+    public String[] getValueArrays() {
+        List<String> fieldNames = EnumUtil.getFieldNames(this.getDeclaringClass());
+        return fieldNames.toArray(new String[fieldNames.size()]);
+    }
+
+    public static void main(String[] args) {
+        List<String> names = EnumUtil.getNames(TUserStatus.class);
+        System.out.println("names = " + names);
+    }
 }

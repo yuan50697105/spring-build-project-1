@@ -21,7 +21,7 @@ public class StringToEnumFactory implements ConverterFactory<String, IBaseEnum> 
             T[] arrays = type.getEnumConstants();
             this.map = new HashMap<>(arrays.length);
             for (T array : arrays) {
-                for (String s : array.getValue()) {
+                for (String s : array.getValueArrays()) {
                     this.map.put(s, array);
                 }
             }

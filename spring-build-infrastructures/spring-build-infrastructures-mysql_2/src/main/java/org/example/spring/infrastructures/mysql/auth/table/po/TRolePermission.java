@@ -11,37 +11,25 @@ import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
 /**
- * t_user_role
+ * t_role_permission
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TUserRole")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TRolePermission")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TUserRole extends IBaseEntity implements Serializable {
-    /**
-     * version
-     */
-    @ApiModelProperty(value = "version")
-    private Integer version;
-
-    /**
-     * isDelete
-     */
-    @ApiModelProperty(value = "isDelete")
-    private Integer isDelete;
-
-    /**
-     * userId
-     */
-    @ApiModelProperty(value = "userId")
-    private Long userId;
-
+public class TRolePermission extends IBaseEntity implements Serializable {
     /**
      * roleId
      */
     @ApiModelProperty(value = "roleId")
     private Long roleId;
+
+    /**
+     * permissionId
+     */
+    @ApiModelProperty(value = "permissionId")
+    private Long permissionId;
 
     private static final long serialVersionUID = 1L;
 }

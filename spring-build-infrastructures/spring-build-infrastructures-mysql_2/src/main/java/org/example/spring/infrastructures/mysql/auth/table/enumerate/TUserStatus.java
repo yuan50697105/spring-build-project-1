@@ -1,18 +1,45 @@
 package org.example.spring.infrastructures.mysql.auth.table.enumerate;
 
+import cn.hutool.core.util.EnumUtil;
+import com.baomidou.mybatisplus.annotation.EnumValue;
 import com.baomidou.mybatisplus.annotation.IEnum;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonValue;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import org.example.spring.plugins.commons.converter.IBaseEnum;
 
-public enum TUserStatus implements IEnum<String> {
-    Normal("001"), Resign("002"),;
+import java.util.List;
 
+@AllArgsConstructor
+@Getter
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
+public enum TUserStatus implements IBaseEnum {
+    Normal("正常", "001", 0),
+    Resign("离职", "002", 1),
+    Forbidden("禁用", "003", 2),
+    ;
+
+    @EnumValue
     private final String value;
+    @JsonValue
+    private final String name;
+    private final Integer code;
 
-    TUserStatus(String value) {
-        this.value = value;
+    @JsonCreator
+    public TUserStatus get(String value) {
+        return EnumUtil.likeValueOf(this.getDeclaringClass(), value);
     }
 
     @Override
-    public String getValue() {
-        return null;
+    public String[] getValueArrays() {
+        List<String> fieldNames = EnumUtil.getFieldNames(this.getDeclaringClass());
+        return fieldNames.toArray(new String[fieldNames.size()]);
+    }
+
+    public static void main(String[] args) {
+        List<String> names = EnumUtil.getNames(TUserStatus.class);
+        System.out.println("names = " + names);
     }
 }

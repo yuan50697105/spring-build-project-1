@@ -66,20 +66,20 @@ public class AccountRepositoryImpl implements AccountRepository {
     public IPageData<Account> queryPage(AccountQuery accountQuery) {
         TUserQuery query = accountBuilder.buildQuery(accountQuery);
         IPageData<TUser> data = userDao.queryPage(query);
-        return accountBuilder.buildResults(data);
+        return accountBuilder.buildPageResults(data);
     }
 
     @Override
     public List<Account> queryList(AccountQuery accountQuery) {
         TUserQuery query = accountBuilder.buildQuery(accountQuery);
         List<TUser> data = userDao.queryList(query);
-        return accountBuilder.buildResults(data);
+        return accountBuilder.buildPageResults(data);
     }
 
     @Override
     public Account queryOne(AccountQuery accountQuery) {
         TUserQuery query = accountBuilder.buildQuery(accountQuery);
         TUser data = userDao.queryOne(query);
-        return accountBuilder.buildResults(data);
+        return accountBuilder.buildPageResults(data);
     }
 }
