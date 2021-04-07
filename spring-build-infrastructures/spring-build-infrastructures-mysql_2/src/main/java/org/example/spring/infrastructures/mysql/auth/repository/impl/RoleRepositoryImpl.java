@@ -81,14 +81,14 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, Ro
     public IPageData<Role> queryPage(RoleQuery roleQuery) {
         TRoleQuery query = roleBuilder.buildRoleQuery(roleQuery);
         IPageData<TRole> role = roleDao.queryPage(query);
-        return roleBuilder.buildRolePageResult(role);
+        return roleBuilder.buildRoleResult(role);
     }
 
     @Override
     public List<Role> queryList(RoleQuery roleQuery) {
         TRoleQuery query = roleBuilder.buildRoleQuery(roleQuery);
         List<TRole> role = roleDao.queryList(query);
-        return roleBuilder.buildRoleListResult(role);
+        return roleBuilder.buildRoleResult(role);
     }
 
     @Override

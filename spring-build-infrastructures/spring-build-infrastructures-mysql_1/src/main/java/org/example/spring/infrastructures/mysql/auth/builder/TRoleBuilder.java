@@ -21,7 +21,7 @@ public interface TRoleBuilder {
 
     Role buildRoleResult(TRole role);
 
-    List<Role> buildRoleListResult(List<TRole> role);
+    List<Role> buildRoleResult(List<TRole> role);
 
-    IPageData<Role> buildRolePageResult(IPageData<TRole> role);
+    IPageData<Role> buildRoleResult(IPageData<TRole> role);
 }
