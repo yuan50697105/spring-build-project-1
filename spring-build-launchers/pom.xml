@@ -11,6 +11,9 @@
 
     <artifactId>spring-build-launchers</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-build-launchers-admin_1</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
