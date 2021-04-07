@@ -21,5 +21,4 @@ public interface TRolePermissionBuilder {
 
     TRolePermission buildRolePermission(Long roleId, Long permissionId);
 
-    List<Permission> buildRolePermissionResults(List<TPermission> permissions);
 }

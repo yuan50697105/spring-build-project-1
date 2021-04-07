@@ -73,7 +73,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, Ro
     public RoleDetails getById(Long id) {
         RoleDetails details = new RoleDetails();
         details.setRole(roleBuilder.buildRoleResult(roleDao.getById(id)));
-        details.setPermissions(roleBuilder.buildRolePermissionResults(rolePermissionDao.listByRoleId(id)));
+        details.setPermissions(roleBuilder.buildPermissionResult(rolePermissionDao.listByRoleId(id)));
         return details;
     }
 

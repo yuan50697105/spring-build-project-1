@@ -76,7 +76,7 @@ public class AccountRepositoryImpl implements AccountRepository {
     public AccountDetails getById(Long id) {
         AccountDetails accountDetails = new AccountDetails();
         accountDetails.setAccount(accountBuilder.buildAccount(userDao.getById(id)));
-        accountDetails.setRoles(accountBuilder.buildRoleResults(userRoleDao.listByUserId(id)));
+        accountDetails.setRoles(accountBuilder.buildRoleResult(userRoleDao.listByUserId(id)));
         return accountDetails;
     }
 
