@@ -50,4 +50,9 @@ public class TRolePermissionDaoImpl extends TkBaseDaoImpl<TRolePermission, TRole
     public List<TPermission> listByRoleId(Long roleId) {
         return baseMapper.listByRoleId(roleId);
     }
+
+    @Override
+    public boolean removeByPermissionIds(List<Long> permissionIds) {
+        return remove(lambdaQuery().in(TRolePermission::getPermissionId,permissionIds));
+    }
 }
