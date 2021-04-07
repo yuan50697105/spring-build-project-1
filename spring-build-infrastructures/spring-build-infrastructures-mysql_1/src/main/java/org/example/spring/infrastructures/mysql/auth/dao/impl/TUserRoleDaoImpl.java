@@ -5,10 +5,10 @@ import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.builder.TUserRoleBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TUserRoleDao;
 import org.example.spring.infrastructures.mysql.auth.mapper.TUserRoleMapper;
+import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
 import org.example.spring.infrastructures.mysql.auth.table.po.TUserRole;
 import org.example.spring.infrastructures.mysql.auth.table.query.TUserRoleQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,10 +32,19 @@ public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, T
     }
 
     @Override
-    public void saveUpdate(Long id, List<Long> existRoleIds) {
+    public boolean saveUpdate(Long id, List<Long> existRoleIds) {
         remove(lambdaQuery().eq(TUserRole::getUserId, id));
-        saveBatch(userRoleBuilder.buildRoles(id, existRoleIds));
+        return saveBatch(userRoleBuilder.buildRoles(id, existRoleIds));
+    }
 
+    @Override
+    public boolean removeByUserIds(List<Long> userIds) {
+        return remove(lambdaQuery().in(TUserRole::getUserId,userIds));
+    }
+
+    @Override
+    public List<TRole> listByUserId(Long userId) {
+        return baseMapper.listByUserId(userId);
     }
 
 }

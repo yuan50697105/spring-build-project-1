@@ -1,5 +1,7 @@
 package org.example.spring.infrastructures.mysql.auth.builder;
 
+import org.example.spring.infrastructures.mysql.auth.entity.result.Role;
+import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
 import org.example.spring.infrastructures.mysql.auth.table.po.TUserRole;
 import org.mapstruct.Mapper;
 
@@ -17,4 +19,6 @@ public interface TUserRoleBuilder {
     }
 
     TUserRole buildRole(Long userId, Long roleId);
+
+    List<Role> buildRoleResults(List<TRole> roles);
 }

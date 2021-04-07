@@ -70,12 +70,14 @@ public class AccountRepositoryImpl implements AccountRepository {
     @Override
     public void delete(List<Long> ids) {
         userDao.removeByIds(ids);
+        userRoleDao.removeByUserIds(ids);
     }
 
     @Override
     public AccountDetails getById(Long id) {
         AccountDetails accountDetails = new AccountDetails();
         accountDetails.setAccount(accountBuilder.buildAccount(userDao.getById(id)));
+        accountDetails.setRoles(accountBuilder.buildRoleResults(userRoleDao.listByUserId(id)));
         return accountDetails;
     }
 
