@@ -19,6 +19,4 @@ public interface TUserRoleBuilder {
     }
 
     TUserRole buildRole(Long userId, Long roleId);
-
-    List<Role> buildRoleResults(List<TRole> roles);
 }
