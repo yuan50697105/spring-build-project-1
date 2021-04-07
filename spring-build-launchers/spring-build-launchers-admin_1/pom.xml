@@ -13,6 +13,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-build-applications-admin_1</artifactId>
         </dependency>
