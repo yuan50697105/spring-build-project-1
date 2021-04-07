@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring-build-applications-admin_1</module>
+        <module>spring-build-applications-admin_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
