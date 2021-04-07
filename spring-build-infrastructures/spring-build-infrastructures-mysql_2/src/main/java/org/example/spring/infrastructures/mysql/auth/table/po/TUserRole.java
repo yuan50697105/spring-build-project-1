@@ -20,18 +20,6 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 @NoArgsConstructor
 public class TUserRole extends IBaseEntity implements Serializable {
     /**
-     * version
-     */
-    @ApiModelProperty(value = "version")
-    private Integer version;
-
-    /**
-     * isDelete
-     */
-    @ApiModelProperty(value = "isDelete")
-    private Integer isDelete;
-
-    /**
      * userId
      */
     @ApiModelProperty(value = "userId")

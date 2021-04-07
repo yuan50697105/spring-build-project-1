@@ -26,18 +26,6 @@ import java.io.Serializable;
 public class TUserRoleQuery extends TkBaseQuery<TUserRole> implements Serializable, MybatisExampleForTk<TUserRole, Example> {
     private static final long serialVersionUID = 1L;
     /**
-     * version
-     */
-    @ApiModelProperty(value = "version")
-    @AndEqualTo
-    private Integer version;
-    /**
-     * isDelete
-     */
-    @ApiModelProperty(value = "isDelete")
-    @AndEqualTo
-    private Integer isDelete;
-    /**
      * userId
      */
     @ApiModelProperty(value = "userId")
@@ -49,4 +37,5 @@ public class TUserRoleQuery extends TkBaseQuery<TUserRole> implements Serializab
     @ApiModelProperty(value = "roleId")
     @AndEqualTo
     private Long roleId;
+
 }

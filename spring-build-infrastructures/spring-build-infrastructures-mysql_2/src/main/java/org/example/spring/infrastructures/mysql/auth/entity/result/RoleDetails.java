@@ -5,8 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class AccountDetails {
-    private Account account;
-    private List<Role> roles;
+public class RoleDetails {
+    private Role role;
     private List<Permission> permissions;
 }

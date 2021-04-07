@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.infrastructures.mysql.auth.table.po.TUserRole;
+import org.example.spring.infrastructures.mysql.auth.table.po.TRolePermission;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
@@ -16,21 +16,14 @@ import tk.mybatis.mapper.entity.Example;
 import java.io.Serializable;
 
 /**
- * t_user_role
+ * t_role_permission
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TUserRole")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TRolePermission")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TUserRoleQuery extends TkBaseQuery<TUserRole> implements Serializable, MybatisExampleForTk<TUserRole, Example> {
-    private static final long serialVersionUID = 1L;
-    /**
-     * userId
-     */
-    @ApiModelProperty(value = "userId")
-    @AndEqualTo
-    private Long userId;
+public class TRolePermissionQuery extends TkBaseQuery<TRolePermission> implements Serializable, MybatisExampleForTk<TRolePermission, Example> {
     /**
      * roleId
      */
@@ -38,4 +31,12 @@ public class TUserRoleQuery extends TkBaseQuery<TUserRole> implements Serializab
     @AndEqualTo
     private Long roleId;
 
+    /**
+     * permissionId
+     */
+    @ApiModelProperty(value = "permissionId")
+    @AndEqualTo
+    private Long permissionId;
+
+    private static final long serialVersionUID = 1L;
 }

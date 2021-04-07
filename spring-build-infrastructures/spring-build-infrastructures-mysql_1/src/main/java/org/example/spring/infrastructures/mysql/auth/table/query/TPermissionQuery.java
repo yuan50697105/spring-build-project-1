@@ -2,13 +2,14 @@ package org.example.spring.infrastructures.mysql.auth.table.query;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.infrastructures.mysql.auth.table.po.TUserRole;
+import org.example.spring.infrastructures.mysql.auth.table.po.TPermission;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
@@ -16,26 +17,27 @@ import tk.mybatis.mapper.entity.Example;
 import java.io.Serializable;
 
 /**
- * t_user_role
- */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TUserRole")
+    * t_permission
+    */
+@ApiModel(value="org-example-spring-infrastructures-mysql-auth-table-po-TPermission")
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper=true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TUserRoleQuery extends TkBaseQuery<TUserRole> implements Serializable, MybatisExampleForTk<TUserRole, Example> {
-    private static final long serialVersionUID = 1L;
+public class TPermissionQuery extends TkBaseQuery<TPermission> implements Serializable, MybatisExampleForTk<TPermission, Example> {
     /**
-     * userId
-     */
-    @ApiModelProperty(value = "userId")
-    @AndEqualTo
-    private Long userId;
-    /**
-     * roleId
-     */
-    @ApiModelProperty(value = "roleId")
-    @AndEqualTo
-    private Long roleId;
+    * name
+    */
+    @ApiModelProperty(value="name")
+    @AndLike
+    private String name;
 
+    /**
+    * type
+    */
+    @ApiModelProperty(value="type")
+    @AndEqualTo
+    private String type;
+
+    private static final long serialVersionUID = 1L;
 }

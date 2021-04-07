@@ -8,4 +8,5 @@ import java.util.List;
 public class AccountDetails {
     private Account account;
     private List<Role> roles;
+    private List<Permission> permissions;
 }
