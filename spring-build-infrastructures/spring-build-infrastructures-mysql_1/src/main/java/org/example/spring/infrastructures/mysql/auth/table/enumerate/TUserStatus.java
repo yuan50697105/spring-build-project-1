@@ -34,12 +34,7 @@ public enum TUserStatus implements IBaseEnum {
 
     @Override
     public String[] getValueArrays() {
-        List<String> fieldNames = EnumUtil.getFieldNames(this.getDeclaringClass());
-        return fieldNames.toArray(new String[fieldNames.size()]);
+        return new String[]{value, name, String.valueOf(code)};
     }
 
-    public static void main(String[] args) {
-        List<String> names = EnumUtil.getNames(TUserStatus.class);
-        System.out.println("names = " + names);
-    }
 }
