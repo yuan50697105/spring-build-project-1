@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.AdminAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.applications.AdminAutoConfiguration
