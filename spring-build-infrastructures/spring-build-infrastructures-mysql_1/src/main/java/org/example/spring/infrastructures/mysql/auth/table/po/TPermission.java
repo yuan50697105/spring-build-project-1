@@ -11,31 +11,25 @@ import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
 /**
- * t_department
- */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TDepartment")
+    * t_permission
+    */
+@ApiModel(value="org-example-spring-infrastructures-mysql-auth-table-po-TPermission")
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper=true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TDepartment extends IBaseEntity implements Serializable {
+public class TPermission extends IBaseEntity implements Serializable {
     /**
-     * name
-     */
-    @ApiModelProperty(value = "name")
+    * name
+    */
+    @ApiModelProperty(value="name")
     private String name;
 
     /**
-     * code
-     */
-    @ApiModelProperty(value = "code")
-    private String code;
-
-    /**
-     * pid
-     */
-    @ApiModelProperty(value = "pid")
-    private Long pid;
+    * type
+    */
+    @ApiModelProperty(value="type")
+    private String type;
 
     private static final long serialVersionUID = 1L;
 }

@@ -29,6 +29,7 @@ public class AccountRepositoryImpl implements AccountRepository {
         AccountVo account = accountFormVo.getAccount();
         TUser entity = accountBuilder.buildUser(account);
         userDao.save(entity);
+
     }
 
     @Override

@@ -25,5 +25,9 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-infrastructures-mysql_2</artifactId>
+        </dependency>
     </dependencies>
 </project>

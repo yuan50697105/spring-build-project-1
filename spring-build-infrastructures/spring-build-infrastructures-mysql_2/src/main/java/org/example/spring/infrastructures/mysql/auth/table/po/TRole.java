@@ -7,4 +7,5 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class TRole extends IBaseEntity {
+    private String name;
 }

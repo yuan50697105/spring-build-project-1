@@ -1,14 +1,19 @@
-package org.example.spring.infrastructures.mysql.auth.table.po;
+package org.example.spring.infrastructures.mysql.auth.table.query;
 
+import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
+import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.example.spring.infrastructures.mysql.auth.table.po.TUserRole;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
+import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
+import tk.mybatis.mapper.entity.Example;
+
+import java.io.Serializable;
 
 /**
  * t_user_role
@@ -18,30 +23,30 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TUserRole extends IBaseEntity implements Serializable {
+public class TUserRoleQuery extends TkBaseQuery<TUserRole> implements Serializable, MybatisExampleForTk<TUserRole, Example> {
+    private static final long serialVersionUID = 1L;
     /**
      * version
      */
     @ApiModelProperty(value = "version")
+    @AndEqualTo
     private Integer version;
-
     /**
      * isDelete
      */
     @ApiModelProperty(value = "isDelete")
+    @AndEqualTo
     private Integer isDelete;
-
     /**
      * userId
      */
     @ApiModelProperty(value = "userId")
+    @AndEqualTo
     private Long userId;
-
     /**
      * roleId
      */
     @ApiModelProperty(value = "roleId")
+    @AndEqualTo
     private Long roleId;
-
-    private static final long serialVersionUID = 1L;
 }
