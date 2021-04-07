@@ -2,7 +2,7 @@ package org.example.spring.infrastructures.mysql.auth.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.mysql.auth.builder.TRolePermissionBuilder;
+import org.example.spring.infrastructures.mysql.auth.builder.AuthBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TRolePermissionDao;
 import org.example.spring.infrastructures.mysql.auth.mapper.TRolePermissionMapper;
 import org.example.spring.infrastructures.mysql.auth.table.po.TPermission;
@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @Transactional
 public class TRolePermissionDaoImpl extends TkBaseDaoImpl<TRolePermission, TRolePermissionQuery, TRolePermissionMapper> implements TRolePermissionDao {
-    private final TRolePermissionBuilder rolePermissionBuilder;
+    private final AuthBuilder authBuilder;
 
     @Override
     protected Wrapper<TRolePermission> queryWrapper(TRolePermissionQuery tRolePermissionQuery) {
@@ -27,7 +27,7 @@ public class TRolePermissionDaoImpl extends TkBaseDaoImpl<TRolePermission, TRole
 
     @Override
     public boolean saveNew(Long roleId, List<Long> permissionIds) {
-        return saveBatch(rolePermissionBuilder.buildRolePermissions(roleId, permissionIds));
+        return saveBatch(authBuilder.buildRolePermissions(roleId, permissionIds));
     }
 
     @Override

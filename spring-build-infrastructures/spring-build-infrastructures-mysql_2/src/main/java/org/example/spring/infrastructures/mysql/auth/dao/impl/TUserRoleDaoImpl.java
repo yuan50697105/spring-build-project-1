@@ -2,7 +2,7 @@ package org.example.spring.infrastructures.mysql.auth.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.mysql.auth.builder.TUserRoleBuilder;
+import org.example.spring.infrastructures.mysql.auth.builder.AuthBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TUserRoleDao;
 import org.example.spring.infrastructures.mysql.auth.mapper.TUserRoleMapper;
 import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Transactional
 public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, TUserRoleMapper> implements TUserRoleDao {
-    private final TUserRoleBuilder userRoleBuilder;
+    private final AuthBuilder authBuilder;
 
     @Override
     protected Wrapper<TUserRole> queryWrapper(TUserRoleQuery tUserRoleQuery) {
@@ -34,7 +34,7 @@ public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, T
     @Override
     public boolean saveUpdate(Long id, List<Long> existRoleIds) {
         remove(lambdaQuery().eq(TUserRole::getUserId, id));
-        return saveBatch(userRoleBuilder.buildRoles(id, existRoleIds));
+        return saveBatch(authBuilder.buildRoles(id, existRoleIds));
     }
 
     @Override
