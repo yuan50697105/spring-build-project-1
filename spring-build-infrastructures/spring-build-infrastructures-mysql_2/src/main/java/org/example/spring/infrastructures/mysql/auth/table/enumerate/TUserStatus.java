@@ -21,10 +21,10 @@ public enum TUserStatus implements IBaseEnum {
     Forbidden("禁用", "003", 2),
     ;
 
-    @EnumValue
-    private final String value;
     @JsonValue
     private final String name;
+    @EnumValue
+    private final String value;
     private final Integer code;
 
     @JsonCreator

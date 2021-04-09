@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.example.spring.infrastructures.mysql.auth.table.enumerate.TResourceType;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
 /**
@@ -20,16 +21,18 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 @NoArgsConstructor
 public class TPermission extends IBaseEntity implements Serializable {
     /**
-    * name
-    */
-    @ApiModelProperty(value="name")
+     * name
+     */
+    @ApiModelProperty(value = "name")
     private String name;
 
     /**
-    * type
-    */
-    @ApiModelProperty(value="type")
-    private String type;
-
+     * type
+     */
+    @ApiModelProperty(value = "type")
+    private TResourceType type;
+    private String url;
+    private Long pid = 0L;
+    private Integer weight = 0;
     private static final long serialVersionUID = 1L;
 }

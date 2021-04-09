@@ -1,12 +1,18 @@
 package org.example.spring.infrastructures.mysql.auth.repository.impl;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.lang.tree.Tree;
+import cn.hutool.core.lang.tree.TreeUtil;
+import cn.hutool.core.lang.tree.parser.NodeParser;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.builder.AuthBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TPermissionDao;
 import org.example.spring.infrastructures.mysql.auth.dao.TRolePermissionDao;
+import org.example.spring.infrastructures.mysql.auth.dao.UserPermissionDao;
 import org.example.spring.infrastructures.mysql.auth.entity.query.PermissionQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Permission;
 import org.example.spring.infrastructures.mysql.auth.entity.result.PermissionDetails;
+import org.example.spring.infrastructures.mysql.auth.entity.dto.ResourceNode;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.PermissionFormVo;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.PermissionVo;
 import org.example.spring.infrastructures.mysql.auth.repository.PermissionRepository;
@@ -27,6 +33,7 @@ public class PermissionRepositoryImpl extends IBaseRepositoryImpl<Permission, Pe
     private final TPermissionDao permissionDao;
     private final TRolePermissionDao rolePermissionDao;
     private final AuthBuilder authBuilder;
+    private final UserPermissionDao userPermissionDao;
 
     @Override
     public Long saveWithId(PermissionFormVo permissionFormVo) {
@@ -82,4 +89,17 @@ public class PermissionRepositoryImpl extends IBaseRepositoryImpl<Permission, Pe
         return authBuilder.buildPermissionResult(data);
     }
 
+    @Override
+    public List<Tree<Long>> listAllResourceByUserId(Long userId) {
+        List<TPermission> permissions = userPermissionDao.listPermissionByUserId(userId);
+        List<ResourceNode> resourceNodes = authBuilder.buildPermissionToResrouceNode(permissions);
+        return TreeUtil.build(resourceNodes, 0L, getNodeParser());
+    }
+
+    private NodeParser<ResourceNode, Long> getNodeParser() {
+        return (object, treeNode) -> {
+            BeanUtil.copyProperties(object, treeNode);
+            BeanUtil.beanToMap(object).forEach(treeNode::putExtra);
+        };
+    }
 }

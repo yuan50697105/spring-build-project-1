@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.example.spring.infrastructures.mysql.auth.table.enumerate.TResourceType;
 import org.example.spring.infrastructures.mysql.auth.table.po.TPermission;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
@@ -37,7 +38,8 @@ public class TPermissionQuery extends TkBaseQuery<TPermission> implements Serial
     */
     @ApiModelProperty(value="type")
     @AndEqualTo
-    private String type;
+    private TResourceType type;
+    private Long pid;
 
     private static final long serialVersionUID = 1L;
 }

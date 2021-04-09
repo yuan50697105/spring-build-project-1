@@ -1,4 +1,4 @@
-package org.example.spring.infrastructures.mysql.auth.table.po;
+package org.example.spring.infrastructures.mysql.customer.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -8,31 +8,46 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.infrastructures.mysql.auth.table.enumerate.TResourceType;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
 /**
     * t_permission
     */
-@ApiModel(value="org-example-spring-infrastructures-mysql-auth-table-po-TPermission")
+@ApiModel(value="org-example-spring-infrastructures-mysql-customer-table-po-TPermission")
 @Data
 @EqualsAndHashCode(callSuper=true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class TPermission extends IBaseEntity implements Serializable {
     /**
-     * name
-     */
-    @ApiModelProperty(value = "name")
+    * name
+    */
+    @ApiModelProperty(value="name")
     private String name;
 
     /**
-     * type
-     */
-    @ApiModelProperty(value = "type")
-    private TResourceType type;
+    * type
+    */
+    @ApiModelProperty(value="type")
+    private String type;
+
+    /**
+    * url
+    */
+    @ApiModelProperty(value="url")
     private String url;
-    private Long pid = 0L;
-    private Integer weight = 0;
+
+    /**
+    * pid
+    */
+    @ApiModelProperty(value="pid")
+    private Long pid;
+
+    /**
+    * weight
+    */
+    @ApiModelProperty(value="weight")
+    private Integer weight;
+
     private static final long serialVersionUID = 1L;
 }

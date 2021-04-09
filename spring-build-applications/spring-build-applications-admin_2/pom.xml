@@ -17,6 +17,10 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-plugins-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
             <artifactId>spring-build-domains-service_2</artifactId>
         </dependency>
         <dependency>

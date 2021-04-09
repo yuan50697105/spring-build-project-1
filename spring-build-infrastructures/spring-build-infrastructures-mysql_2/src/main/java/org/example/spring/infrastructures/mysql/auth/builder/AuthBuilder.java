@@ -5,6 +5,7 @@ import org.example.spring.infrastructures.mysql.auth.entity.query.PermissionQuer
 import org.example.spring.infrastructures.mysql.auth.entity.query.RoleQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Account;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Permission;
+import org.example.spring.infrastructures.mysql.auth.entity.dto.ResourceNode;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Role;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.AccountVo;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.PermissionVo;
@@ -78,4 +79,5 @@ public interface AuthBuilder {
 
     IPageData<Permission> buildPermissionResult(IPageData<TPermission> data);
 
+    List<ResourceNode> buildPermissionToResrouceNode(List<TPermission> permissions);
 }
