@@ -19,7 +19,8 @@
         <module>spring-build-infrastructures-clickhouse_2</module>
         <module>spring-build-infrastructures-mongodb</module>
         <module>spring-build-infrastructures-elasticsearch</module>
-        <module>spring-build-infrastructures-models</module>
+        <module>spring-build-infrastructures-models_1</module>
+        <module>spring-build-infrastructures-models_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
