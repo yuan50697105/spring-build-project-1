@@ -12,8 +12,9 @@
     <artifactId>spring-build-models</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-build-infrastructures-models_1</module>
-        <module>spring-build-infrastructures-models_2</module>
+        <module>spring-build-models_1</module>
+        <module>spring-build-models_2</module>
+        <module>spring-build-models-commons</module>
     </modules>
     <dependencyManagement>
         <dependencies>

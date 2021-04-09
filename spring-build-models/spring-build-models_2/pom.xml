@@ -9,19 +9,19 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-infrastructures-models_1</artifactId>
+    <artifactId>spring-build-models_2</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-infrastructures-mysql_1</artifactId>
+            <artifactId>spring-build-infrastructures-mysql_2</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-infrastructures-elasticsearch</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-infrastructures-mongodb</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.example.spring</groupId>-->
+<!--            <artifactId>spring-build-infrastructures-elasticsearch</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.example.spring</groupId>-->
+<!--            <artifactId>spring-build-infrastructures-mongodb</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 </project>
