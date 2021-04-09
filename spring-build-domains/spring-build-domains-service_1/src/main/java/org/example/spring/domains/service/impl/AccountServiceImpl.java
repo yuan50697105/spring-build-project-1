@@ -53,4 +53,14 @@ public class AccountServiceImpl implements AccountService {
     public void save(AccountFormVo formVo) {
         accountRepository.save(formVo);
     }
+
+    @Override
+    public void update(AccountFormVo formVo) {
+        accountRepository.update(formVo);
+    }
+
+    @Override
+    public void delete(List<Long> ids) {
+        accountRepository.delete(ids);
+    }
 }

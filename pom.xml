@@ -14,12 +14,12 @@
         <module>spring-build-infrastructures</module>
         <module>spring-build-domains</module>
         <module>spring-build-domains-dependencies</module>
+        <module>spring-build-models</module>
+        <module>spring-build-models-dependencies</module>
         <module>spring-build-applications</module>
         <module>spring-build-applications-dependencies</module>
         <module>spring-build-launchers</module>
         <module>spring-build-launchers-dependencies</module>
-        <module>spring-build-models</module>
-        <module>spring-build-models-dependencies</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
