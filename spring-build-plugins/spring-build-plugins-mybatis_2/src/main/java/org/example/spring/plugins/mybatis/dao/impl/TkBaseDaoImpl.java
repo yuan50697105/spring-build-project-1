@@ -1,7 +1,7 @@
 package org.example.spring.plugins.mybatis.dao.impl;
 
 import cn.hutool.core.util.StrUtil;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.OrderTypeEnum;
 import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
@@ -13,8 +13,8 @@ public abstract class TkBaseDaoImpl<T, Q extends TkBaseQuery<T>, M extends IBase
         example = super.exampleAddOrder(query, example);
         String order = query.getOrder();
         order = StrUtil.toUnderlineCase(order);
-        BaseQuery.OrderTypeEnum orderType = query.getOrderType();
-        if (orderType.equals(BaseQuery.OrderTypeEnum.DESC)) {
+        OrderTypeEnum orderType = query.getOrderType();
+        if (orderType.equals(OrderTypeEnum.desc)) {
             example.setOrderByClause(order + " desc");
         } else {
             example.setOrderByClause(order + " asc");

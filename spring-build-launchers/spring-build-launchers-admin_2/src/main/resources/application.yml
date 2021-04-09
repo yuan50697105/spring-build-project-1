@@ -11,3 +11,8 @@ spring:
   data:
     mongodb:
       uri: mongodb:root:root@8.140.177.12/shower
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

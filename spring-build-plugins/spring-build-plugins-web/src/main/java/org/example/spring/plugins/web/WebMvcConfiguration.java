@@ -9,10 +9,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @AllArgsConstructor
 public class WebMvcConfiguration implements WebMvcConfigurer {
-    private final StringToEnumFactory stringToEnumFactory;
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
-        registry.addConverterFactory(stringToEnumFactory);
+        registry.addConverterFactory(new StringToEnumFactory());
     }
 }

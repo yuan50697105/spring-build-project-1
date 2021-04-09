@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
 public class StringToEnumFactory implements ConverterFactory<String, IBaseEnum> {
     @Override
     public <T extends IBaseEnum> Converter<String, T> getConverter(Class<T> targetType) {
