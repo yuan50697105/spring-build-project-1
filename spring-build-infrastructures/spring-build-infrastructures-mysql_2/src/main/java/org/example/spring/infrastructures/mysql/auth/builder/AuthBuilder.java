@@ -16,6 +16,7 @@ import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
 import java.util.ArrayList;
@@ -27,7 +28,8 @@ public interface AuthBuilder {
 
     Account buildAccount(TUser user);
 
-    void copyUser(AccountVo account, @MappingTarget TUser tUser);
+    @Mapping(target = "id",source = "id")
+    void copyUser(Long id, AccountVo account, @MappingTarget TUser tUser);
 
     TUserRole buildRole(Long userId, Long roleId);
 

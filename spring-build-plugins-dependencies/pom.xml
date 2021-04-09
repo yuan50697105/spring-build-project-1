@@ -270,6 +270,11 @@
                 <artifactId>core</artifactId>
                 <version>${core.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.zon-g</groupId>
+                <artifactId>SnowFlake-spring-boot-starter</artifactId>
+                <version>${SnowFlake-spring-boot-starter.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <properties>
@@ -302,5 +307,6 @@
         <apollo-client.version>1.8.0</apollo-client.version>
         <redisson-spring-boot-starter.version>3.15.1</redisson-spring-boot-starter.version>
         <core.version>3.3.3</core.version>
+        <SnowFlake-spring-boot-starter.version>2.0.1</SnowFlake-spring-boot-starter.version>
     </properties>
 </project>

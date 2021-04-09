@@ -26,8 +26,8 @@ public abstract class IBaseEntity extends BaseEntity {
     private String updateUser;
     @TableField(updateStrategy = FieldStrategy.NEVER)
     @Column(updatable = false)
-    private Date createDate = new Date();
-    private Date updateDate = new Date();
+    private Date createDate;
+    private Date updateDate;
 //    @Version
 //    @com.baomidou.mybatisplus.annotation.Version
 //    private Integer version;

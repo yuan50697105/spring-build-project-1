@@ -16,6 +16,7 @@ import org.example.spring.infrastructures.mysql.auth.entity.dto.ResourceNode;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.PermissionFormVo;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.PermissionVo;
 import org.example.spring.infrastructures.mysql.auth.repository.PermissionRepository;
+import org.example.spring.infrastructures.mysql.auth.table.po.TPermission;
 import org.example.spring.infrastructures.mysql.auth.table.query.TPermissionQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;

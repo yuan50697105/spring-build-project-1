@@ -1,6 +1,7 @@
 package org.example.spring.infrastructures.mysql.auth.repository.impl;
 
 import cn.hutool.core.exceptions.ValidateException;
+import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.builder.AuthBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TRoleDao;
@@ -58,9 +59,14 @@ public class AccountRepositoryImpl implements AccountRepository {
         Optional<TUser> optional = userDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TUser tUser = optional.get();
-            authBuilder.copyUser(account, tUser);
-            List<Long> existRoleIds = roleDao.listRoleIdsByRoleIdsOrRoleName(roleIds, roleName);
-            userRoleDao.saveUpdate(id,existRoleIds);
+            authBuilder.copyUser(id, account, tUser);
+            userDao.updateById(tUser);
+            if (!ObjectUtil.isAllEmpty(roleIds, roleName)) {
+                List<Long> existRoleIds = roleDao.listRoleIdsByRoleIdsOrRoleName(roleIds, roleName);
+                if (ObjectUtil.isNotEmpty(existRoleIds)) {
+                    userRoleDao.saveUpdate(id, existRoleIds);
+                }
+            }
         }
     }
 
