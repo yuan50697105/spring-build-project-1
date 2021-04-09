@@ -24,8 +24,6 @@ public abstract class IBaseEntity extends BaseEntity {
     private Long updateId;
     private String createUser;
     private String updateUser;
-    @TableField(updateStrategy = FieldStrategy.NEVER)
-    @Column(updatable = false)
     private Date createDate;
     private Date updateDate;
 //    @Version

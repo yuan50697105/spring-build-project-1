@@ -16,18 +16,25 @@ public class AuditInjector implements MetaObjectHandler {
 
     public static final String CREATE_DATE = "createDate";
     public static final String UPDATE_DATE = "updateDate";
+    public static final String ID = "id";
     private final Generator generator;
 
     @Override
     public void insertFill(MetaObject metaObject) {
-        metaObject.setValue("id", generator.nextId());
-        fillValue(metaObject, CREATE_DATE, () -> getDateValue(metaObject.getSetterType(CREATE_DATE)));
-        fillValue(metaObject, UPDATE_DATE, () -> getDateValue(metaObject.getSetterType(UPDATE_DATE)));
+        metaObject.setValue(ID, generator.nextId());
+        metaObject.setValue(CREATE_DATE,new Date());
+        metaObject.setValue(UPDATE_DATE, new Date());
+//        fillValue(metaObject, CREATE_DATE, () -> getDateValue(metaObject.getSetterType(CREATE_DATE)));
+//        fillValue(metaObject, UPDATE_DATE, () -> getDateValue(metaObject.getSetterType(UPDATE_DATE)));
     }
 
     @Override
     public void updateFill(MetaObject metaObject) {
-        fillValue(metaObject, UPDATE_DATE, () -> getDateValue(metaObject.getSetterType(UPDATE_DATE)));
+        if (metaObject.hasSetter(UPDATE_DATE)) {
+
+            metaObject.setValue(UPDATE_DATE, new Date());
+        }
+//        fillValue(metaObject, UPDATE_DATE, () -> getDateValue(metaObject.getSetterType(UPDATE_DATE)));
     }
 
     private void fillValue(MetaObject metaObject, String fieldName, Supplier<Object> valueSupplier) {

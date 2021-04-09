@@ -16,3 +16,5 @@ management:
     web:
       exposure:
         include: '*'
+snowflake:
+  enable-atomic: true
