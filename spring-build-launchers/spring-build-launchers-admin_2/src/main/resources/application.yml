@@ -31,3 +31,8 @@ snowflake:
 logging:
   level:
     web: debug
+minio:
+  enabled: true
+  endpoint: 8.140.177.12:9200
+  secret-key: root
+  access-key: root
