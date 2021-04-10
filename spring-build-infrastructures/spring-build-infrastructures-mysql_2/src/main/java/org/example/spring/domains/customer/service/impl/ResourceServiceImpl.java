@@ -1,4 +1,4 @@
-package org.example.spring.domains.service.impl;
+package org.example.spring.domains.customer.service.impl;
 
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
