@@ -96,6 +96,14 @@ public class PermissionRepositoryImpl extends IBaseRepositoryImpl<Permission, Pe
         return TreeUtil.build(resourceNodes, 0L, getNodeParser());
     }
 
+    @Override
+    public List<Tree<Long>> queryTreeList(PermissionQuery query) {
+        TPermissionQuery permissionQuery = authBuilder.buildPermissionQuery(query);
+        List<TPermission> permissions = permissionDao.queryList(permissionQuery);
+        List<ResourceNode> resourceNodes = authBuilder.buildPermissionToResrouceNode(permissions);
+        return TreeUtil.build(resourceNodes, 0L, getNodeParser());
+    }
+
     private NodeParser<ResourceNode, Long> getNodeParser() {
         return (object, treeNode) -> {
             BeanUtil.copyProperties(object, treeNode);

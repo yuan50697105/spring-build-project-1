@@ -11,4 +11,6 @@ import java.util.List;
 
 public interface PermissionRepository extends IBaseRepository<Permission, PermissionFormVo, PermissionDetails, PermissionQuery> {
     List<Tree<Long>> listAllResourceByUserId(Long userId);
+
+    List<Tree<Long>> queryTreeList(PermissionQuery query);
 }
