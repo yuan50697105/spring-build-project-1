@@ -11,7 +11,7 @@ spring:
     type: redis
   data:
     mongodb:
-      uri: mongodb:root:root@8.140.177.12/shower
+      uri: mongodb:root:root@8.140.177.12:27017/shower
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss:SSS
     time-zone: GMT+8
