@@ -4,7 +4,7 @@ import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.service.ResourceService;
+import org.example.spring.domains.auth.service.ResourceService;
 import org.example.spring.infrastructures.mysql.auth.entity.query.PermissionQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Permission;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.PermissionFormVo;

@@ -1,4 +1,4 @@
-package org.example.spring.domains.service;
+package org.example.spring.domains.auth.service;
 
 import cn.hutool.core.lang.tree.Tree;
 import org.example.spring.infrastructures.mysql.auth.entity.query.PermissionQuery;

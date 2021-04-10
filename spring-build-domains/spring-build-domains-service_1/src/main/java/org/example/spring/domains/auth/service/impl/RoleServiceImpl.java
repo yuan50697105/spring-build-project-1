@@ -1,7 +1,7 @@
-package org.example.spring.domains.service.impl;
+package org.example.spring.domains.auth.service.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.service.RoleService;
+import org.example.spring.domains.auth.service.RoleService;
 import org.example.spring.infrastructures.mysql.auth.entity.query.RoleQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Role;
 import org.example.spring.infrastructures.mysql.auth.entity.result.RoleDetails;

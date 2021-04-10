@@ -3,7 +3,7 @@ package org.example.spring.applications.web.auth;
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.service.RoleService;
+import org.example.spring.domains.auth.service.RoleService;
 import org.example.spring.infrastructures.mysql.auth.entity.query.RoleQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Role;
 import org.example.spring.infrastructures.mysql.auth.entity.result.RoleDetails;

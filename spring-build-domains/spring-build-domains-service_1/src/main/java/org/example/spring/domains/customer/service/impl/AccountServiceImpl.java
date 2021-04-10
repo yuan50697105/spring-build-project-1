@@ -1,4 +1,4 @@
-package org.example.spring.domains.service.impl;
+package org.example.spring.domains.customer.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.service.AccountService;
