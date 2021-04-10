@@ -8,4 +8,6 @@ public interface MinioOssService {
     OssResponse upload(String bucketName, String key, InputStream file, String contentType);
 
     InputStream download(String bucketName, String key);
+
+    String getPath(String bucketName, String key);
 }

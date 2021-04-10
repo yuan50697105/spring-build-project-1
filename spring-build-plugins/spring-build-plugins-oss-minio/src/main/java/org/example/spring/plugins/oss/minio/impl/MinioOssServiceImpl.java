@@ -35,4 +35,10 @@ public class MinioOssServiceImpl implements MinioOssService {
     public InputStream download(String bucketName, String key) {
         return minioClient.getObject(GetObjectArgs.builder().bucket(bucketName).object(key).build());
     }
+
+    @SneakyThrows
+    @Override
+    public String getPath(String bucketName, String key) {
+        return minioClient.getPresignedObjectUrl(GetPresignedObjectUrlArgs.builder().bucket(bucketName).object(key).build())
+    }
 }
