@@ -10,6 +10,7 @@ import org.example.spring.infrastructures.mysql.customer.repository.CustomerCont
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -62,5 +63,10 @@ public class CustomerContractServiceImpl implements CustomerContractService {
     @Override
     public void delete(List<Long> ids) {
         customerContractRepository.delete(ids);
+    }
+
+    @Override
+    public void upload(Long id, MultipartFile file) {
+
     }
 }
