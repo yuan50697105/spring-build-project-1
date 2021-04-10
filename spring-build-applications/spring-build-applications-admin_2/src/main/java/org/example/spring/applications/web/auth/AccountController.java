@@ -34,21 +34,16 @@ public class AccountController {
         return R.success((long) data.size(), data);
     }
 
-    @GetMapping("top")
-    public Result<List<Account>> queryTop(AccountQuery query) {
+    @GetMapping("list/{size}")
+    public Result<List<Account>> queryTop(AccountQuery query, @PathVariable int size) {
+        query.setSize(size);
         List<Account> data = accountService.queryTop(query);
         return R.success((long) data.size(), data);
     }
 
-    @GetMapping("first")
-    public Result<Account> queryFirst(AccountQuery query) {
-        Account data = accountService.queryFirst(query);
-        return R.success(data);
-    }
-
     @GetMapping("one")
     public Result<Account> queryOne(AccountQuery query) {
-        Account data = accountService.queryOne(query);
+        Account data = accountService.queryFirst(query);
         return R.success(data);
     }
 

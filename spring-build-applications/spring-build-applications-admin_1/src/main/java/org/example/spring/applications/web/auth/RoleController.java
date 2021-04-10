@@ -40,15 +40,9 @@ public class RoleController {
         return R.success((long) data.size(), data);
     }
 
-    @GetMapping("first")
-    public Result<Role> queryFirst(RoleQuery query) {
-        Role data = roleService.queryFirst(query);
-        return R.success(data);
-    }
-
     @GetMapping("one")
     public Result<Role> queryOne(RoleQuery query) {
-        Role data = roleService.queryOne(query);
+        Role data = roleService.queryFirst(query);
         return R.success(data);
     }
 
