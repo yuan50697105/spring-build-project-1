@@ -13,5 +13,7 @@ CREATE TABLE t_customer_contract(
 	customer_id BIGINT (15) DEFAULT -1 COMMENT '客户ID',
 	signing_time DATETIME DEFAULT '1000-01-01 00:00:00' COMMENT '签约时间',
 	`status` VARCHAR (50) DEFAULT '' COMMENT '合同状态',
+	file_name VARCHAR (50) DEFAULT '' COMMENT 'fileName',
+	bukect_name VARCHAR (50) DEFAULT '' COMMENT 'bukectName',
 	PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 't_customer_contract';

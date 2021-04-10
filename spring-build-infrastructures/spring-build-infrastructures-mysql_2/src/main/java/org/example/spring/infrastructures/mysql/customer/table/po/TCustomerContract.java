@@ -49,5 +49,17 @@ public class TCustomerContract extends IBaseEntity implements Serializable {
     @ApiModelProperty(value = "合同状态")
     private String status;
 
+    /**
+     * fileName
+     */
+    @ApiModelProperty(value = "fileName")
+    private String fileName;
+
+    /**
+     * bukectName
+     */
+    @ApiModelProperty(value = "bukectName")
+    private String bukectName;
+
     private static final long serialVersionUID = 1L;
 }
