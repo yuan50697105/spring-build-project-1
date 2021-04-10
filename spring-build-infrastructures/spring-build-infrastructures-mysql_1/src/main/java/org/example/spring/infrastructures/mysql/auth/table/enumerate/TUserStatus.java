@@ -6,8 +6,11 @@ import com.baomidou.mybatisplus.annotation.IEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.SneakyThrows;
+import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
 import org.example.spring.plugins.commons.converter.IBaseEnum;
 
 import java.util.List;
@@ -15,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
-public enum TUserStatus implements IBaseEnum {
+public enum TUserStatus implements IBaseEnum, IEnum<String> {
     Normal("正常", "001", 0),
     Resign("离职", "002", 1),
     Forbidden("禁用", "003", 2),
@@ -29,12 +32,13 @@ public enum TUserStatus implements IBaseEnum {
 
     @JsonCreator
     public TUserStatus get(String value) {
-        return EnumUtil.likeValueOf(this.getDeclaringClass(), value);
+        return EnumUtil.likeValueOf(TUserStatus.class, value);
     }
 
     @Override
     public String[] getValueArrays() {
-        return new String[]{value, name, String.valueOf(code)};
+        return new String[]{value, name, String.valueOf(code), name()};
     }
+
 
 }
