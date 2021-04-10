@@ -139,6 +139,11 @@
                 <version>${cos_api.version}</version>
             </dependency>
             <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.github.hiwepy</groupId>
                 <artifactId>minio-spring-boot-starter</artifactId>
                 <version>${minio-spring-boot-starter.version}</version>
