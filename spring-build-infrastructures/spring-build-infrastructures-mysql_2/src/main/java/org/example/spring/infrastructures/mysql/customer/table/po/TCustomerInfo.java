@@ -36,7 +36,7 @@ public class TCustomerInfo extends IBaseEntity implements Serializable {
      * 类型
      */
     @ApiModelProperty(value = "类型")
-    private CustomerType type;
+    private String type;
 
     private static final long serialVersionUID = 1L;
 }

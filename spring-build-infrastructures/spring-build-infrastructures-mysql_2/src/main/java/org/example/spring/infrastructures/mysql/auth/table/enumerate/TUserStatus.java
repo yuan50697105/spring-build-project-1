@@ -18,20 +18,20 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
-public enum TUserStatus implements IBaseEnum, IEnum<String> {
-    Normal("正常", "001", 0),
-    Resign("离职", "002", 1),
-    Forbidden("禁用", "003", 2),
+public enum TUserStatus implements IBaseEnum {
+    Normal("001", "正常", 0),
+    Resign("002", "离职", 1),
+    Forbidden("003", "禁用", 2),
     ;
 
-    @JsonValue
-    private final String name;
     @EnumValue
     private final String value;
+    @JsonValue
+    private final String name;
     private final Integer code;
 
     @JsonCreator
-    public TUserStatus get(String value) {
+    public static TUserStatus get(String value) {
         return EnumUtil.likeValueOf(TUserStatus.class, value);
     }
 

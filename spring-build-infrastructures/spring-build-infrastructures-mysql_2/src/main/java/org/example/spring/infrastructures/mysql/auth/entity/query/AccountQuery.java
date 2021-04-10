@@ -9,5 +9,9 @@ import org.example.spring.plugins.commons.entity.query.BaseQuery;
 @Data
 public class AccountQuery extends BaseQuery {
     private String username;
-    private TUserStatus status;
+    private String status;
+
+    public String getStatus() {
+        return TUserStatus.get(status).getValue();
+    }
 }

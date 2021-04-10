@@ -42,7 +42,7 @@ public class TUser extends IBaseEntity implements Serializable {
      * 状态
      */
     @ApiModelProperty(value = "状态")
-    private TUserStatus status;
+    private String status;
 
     private static final long serialVersionUID = 1L;
 }

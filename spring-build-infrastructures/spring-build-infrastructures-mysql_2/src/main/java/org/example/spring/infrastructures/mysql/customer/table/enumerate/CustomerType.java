@@ -21,8 +21,8 @@ public enum CustomerType implements IBaseEnum {
     private final String code;
 
     @JsonCreator
-    public CustomerType get(String value) {
-        return EnumUtil.likeValueOf(this.getDeclaringClass(), value);
+    public static CustomerType get(String value) {
+        return EnumUtil.likeValueOf(CustomerType.class, value);
     }
 
     @Override
