@@ -28,3 +28,6 @@ management:
         include: '*'
 snowflake:
   enable-atomic: true
+logging:
+  level:
+    web: debug
