@@ -5,6 +5,7 @@ import org.example.spring.infrastructures.mysql.customer.entity.result.CustomerC
 import org.example.spring.infrastructures.mysql.customer.entity.result.CustomerContractDetails;
 import org.example.spring.infrastructures.mysql.customer.entity.vo.CustomerContractFormVo;
 import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,4 +40,6 @@ public interface CustomerContractService {
     void update(CustomerContractFormVo formVo);
 
     void delete(List<Long> ids);
+
+    void upload(Long id, MultipartFile file);
 }

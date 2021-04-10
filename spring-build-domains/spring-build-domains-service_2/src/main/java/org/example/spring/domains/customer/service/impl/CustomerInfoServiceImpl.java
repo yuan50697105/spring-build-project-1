@@ -35,12 +35,12 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
     }
 
     @Override
-    public Customer queryFirst(CustomerQuery query) {
+    public Customer selectFirst(CustomerQuery query) {
         return customerRepository.queryFirst(query);
     }
 
     @Override
-    public Customer queryOne(CustomerQuery query) {
+    public Customer selectOne(CustomerQuery query) {
         return customerRepository.queryOne(query);
     }
 

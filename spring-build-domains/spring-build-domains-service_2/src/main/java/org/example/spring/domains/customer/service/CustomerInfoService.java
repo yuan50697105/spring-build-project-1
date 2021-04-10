@@ -16,16 +16,16 @@ public interface CustomerInfoService {
 
     List<Customer> selectTop(CustomerQuery query);
 
-    Customer queryFirst(CustomerQuery query);
+    Customer selectFirst(CustomerQuery query);
 
-    default Optional<Customer> queryFirtOpt(CustomerQuery query) {
-        return Optional.ofNullable(queryFirst(query));
+    default Optional<Customer> selectFirstOpt(CustomerQuery query) {
+        return Optional.ofNullable(selectFirst(query));
     }
 
-    Customer queryOne(CustomerQuery query);
+    Customer selectOne(CustomerQuery query);
 
-    default Optional<Customer> queryOneOpt(CustomerQuery query) {
-        return Optional.ofNullable(queryOne(query));
+    default Optional<Customer> selectOneOpt(CustomerQuery query) {
+        return Optional.ofNullable(selectOne(query));
     }
 
     CustomerDetails get(Long id);

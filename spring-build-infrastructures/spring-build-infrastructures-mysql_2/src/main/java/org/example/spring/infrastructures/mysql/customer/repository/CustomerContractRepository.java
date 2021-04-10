@@ -11,4 +11,5 @@ import org.example.spring.infrastructures.mysql.customer.entity.vo.CustomerFormV
 import org.example.spring.plugins.mybatis.repository.IBaseRepository;
 
 public interface CustomerContractRepository extends IBaseRepository<CustomerContract, CustomerContractFormVo, CustomerContractDetails, CustomerContractQuery> {
+    void updateFile(Long id, String fileName);
 }

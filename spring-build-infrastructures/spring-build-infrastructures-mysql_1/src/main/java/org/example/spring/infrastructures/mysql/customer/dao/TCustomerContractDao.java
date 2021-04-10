@@ -5,4 +5,5 @@ import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerCo
 import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 public interface TCustomerContractDao extends TkBaseDao<TCustomerContract, TCustomerContractQuery> {
+    void updateFile(Long id, String fileName);
 }

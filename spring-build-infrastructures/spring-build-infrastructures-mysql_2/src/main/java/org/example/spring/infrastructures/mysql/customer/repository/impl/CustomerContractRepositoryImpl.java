@@ -82,4 +82,9 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
         TCustomerContract contract = customerContractDao.queryOne(query);
         return customerBuilder.buildCustomerContractResult(contract);
     }
+
+    @Override
+    public void updateFile(Long id, String fileName) {
+        customerContractDao.updateFile(id, fileName);
+    }
 }

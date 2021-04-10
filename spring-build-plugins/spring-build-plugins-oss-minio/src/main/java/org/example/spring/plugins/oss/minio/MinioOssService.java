@@ -1,5 +1,6 @@
 package org.example.spring.plugins.oss.minio;
 
+import lombok.SneakyThrows;
 import org.example.spring.plugins.oss.entity.OssResponse;
 
 import java.io.InputStream;

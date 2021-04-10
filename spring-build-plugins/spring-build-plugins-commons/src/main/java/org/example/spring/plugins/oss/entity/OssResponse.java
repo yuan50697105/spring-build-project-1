@@ -7,5 +7,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class OssResponse {
     private String fileName;
+    private String bukectName;
+    private String path;
 
 }

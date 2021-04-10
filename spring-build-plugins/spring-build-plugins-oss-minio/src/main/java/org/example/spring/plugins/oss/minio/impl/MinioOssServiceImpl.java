@@ -7,6 +7,7 @@ import org.example.spring.plugins.oss.entity.OssResponse;
 import org.example.spring.plugins.oss.minio.MinioOssService;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.io.InputStream;
 
 @Service
@@ -27,7 +28,7 @@ public class MinioOssServiceImpl implements MinioOssService {
                 .contentType(contentType)
                 .object(key).stream(file, -1, -1);
         ObjectWriteResponse response = minioClient.putObject(builder.build());
-        return new OssResponse(response.object());
+        return new OssResponse(response.object(),response.bucket(),null);
     }
 
     @SneakyThrows
@@ -39,6 +40,6 @@ public class MinioOssServiceImpl implements MinioOssService {
     @SneakyThrows
     @Override
     public String getPath(String bucketName, String key) {
-        return minioClient.getPresignedObjectUrl(GetPresignedObjectUrlArgs.builder().bucket(bucketName).object(key).build())
+        return minioClient.getPresignedObjectUrl(GetPresignedObjectUrlArgs.builder().bucket(bucketName).object(key).build());
     }
 }
