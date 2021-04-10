@@ -2,6 +2,7 @@ package org.example.spring.plugins.mybatis.audit;
 
 import com.github.Generator;
 import lombok.AllArgsConstructor;
+import org.apache.ibatis.binding.MapperMethod;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlCommandType;
@@ -33,6 +34,9 @@ public class CustomInterceptor implements Interceptor {
         MappedStatement statement = ((MappedStatement) invocation.getArgs()[0]);
         SqlCommandType sqlCommandType = statement.getSqlCommandType();
         Object parameter = invocation.getArgs()[1];
+        if (parameter instanceof MapperMethod.ParamMap) {
+            parameter = ((MapperMethod.ParamMap<?>) parameter).get("et");
+        }
         List<Field> fields = getAllField(parameter);
         for (Field field : fields) {
             if (field.getAnnotation(Id.class) != null || field.getName().equals(ID)) {

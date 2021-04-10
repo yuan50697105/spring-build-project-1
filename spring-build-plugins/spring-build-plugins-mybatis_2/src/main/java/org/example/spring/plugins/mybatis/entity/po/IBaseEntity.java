@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.plugins.commons.entity.BaseEntity;
+import org.example.spring.plugins.mybatis.audit.annotation.CreateTime;
+import org.example.spring.plugins.mybatis.audit.annotation.UpdateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -18,13 +20,16 @@ import java.util.Date;
 @Data
 public abstract class IBaseEntity extends BaseEntity {
     @Id
+    @org.example.spring.plugins.mybatis.audit.annotation.Id
     @TableId
     private Long id;
     private Long createId;
     private Long updateId;
     private String createUser;
     private String updateUser;
+    @CreateTime
     private Date createDate;
+    @UpdateTime
     private Date updateDate;
 //    @Version
 //    @com.baomidou.mybatisplus.annotation.Version
