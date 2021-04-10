@@ -5,11 +5,17 @@ import lombok.EqualsAndHashCode;
 import org.example.spring.infrastructures.mysql.customer.table.enumerate.CustomerType;
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
 
+import java.util.Optional;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class Customer extends TCustomerInfo {
     @Override
     public String getType() {
-        return CustomerType.get(super.getType()).getName();
+        return Optional.ofNullable(CustomerType.get(super.getType())).map(CustomerType::getName).orElse(null);
+    }
+
+    public String getTypeValue() {
+        return Optional.ofNullable(CustomerType.get(super.getType())).map(CustomerType::getValue).orElse(null);
     }
 }

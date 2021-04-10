@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import org.example.spring.infrastructures.mysql.auth.table.enumerate.TUserStatus;
 import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
 
+import java.util.Optional;
+
 /**
  * @author yuane
  */
@@ -17,6 +19,6 @@ public class Account extends TUser {
 
     @Override
     public String getStatus() {
-        return TUserStatus.get(super.getStatus()).getName();
+        return Optional.ofNullable(TUserStatus.get(super.getStatus())).map(TUserStatus::getName).orElse(null);
     }
 }

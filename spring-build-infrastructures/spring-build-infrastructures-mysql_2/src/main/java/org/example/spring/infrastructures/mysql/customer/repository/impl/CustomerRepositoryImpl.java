@@ -55,7 +55,10 @@ public class CustomerRepositoryImpl extends IBaseRepositoryImpl<Customer, Custom
     @Override
     public CustomerDetails getById(Long id) {
         CustomerDetails details = new CustomerDetails();
-        details.setCustomer(customerBuilder.buildCustomerInfoResult(customerInfoDao.getById(id)));
+        TCustomerInfo customerInfo = customerInfoDao.getById(id);
+        Customer customer = customerBuilder.buildCustomerInfoResult(customerInfo);
+        details.setCustomer(customer);
+        details.setId(customer.getId());
         return details;
     }
 

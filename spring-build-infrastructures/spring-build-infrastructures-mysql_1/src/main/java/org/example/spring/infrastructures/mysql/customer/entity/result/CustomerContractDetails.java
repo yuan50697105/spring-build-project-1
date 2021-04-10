@@ -6,6 +6,6 @@ import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CustomerDetails extends IBaseVo {
-    private Customer customer;
+public class CustomerContractDetails extends IBaseVo {
+    private CustomerContract contract;
 }
