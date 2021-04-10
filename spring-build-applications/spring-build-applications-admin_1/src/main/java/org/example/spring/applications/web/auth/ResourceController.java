@@ -6,7 +6,7 @@ import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.auth.service.ResourceService;
 import org.example.spring.infrastructures.mysql.auth.entity.query.PermissionQuery;
-import org.example.spring.infrastructures.mysql.auth.entity.result.Permission;
+import org.example.spring.infrastructures.mysql.auth.entity.result.PermissionDetails;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.PermissionFormVo;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +21,8 @@ public class ResourceController {
 
     @GetMapping("list/{id}")
     public Result<List<Tree<Long>>> listByUserId(@PathVariable Long id) {
-        return R.success(resourceService.listResourceByUserId(id));
+        List<Tree<Long>> data = resourceService.listResourceByUserId(id);
+        return R.success(data);
     }
 
     @GetMapping
@@ -30,8 +31,9 @@ public class ResourceController {
     }
 
     @GetMapping("{id}")
-    public Result<Permission> get(@PathVariable Long id) {
-        return R.success(resourceService.get(id));
+    public Result<PermissionDetails> get(@PathVariable Long id) {
+        PermissionDetails details = resourceService.get(id);
+        return R.success(details);
     }
 
     @PostMapping

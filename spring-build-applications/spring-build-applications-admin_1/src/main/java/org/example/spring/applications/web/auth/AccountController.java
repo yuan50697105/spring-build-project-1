@@ -48,12 +48,14 @@ public class AccountController {
 
     @GetMapping("one")
     public Result<Account> queryOne(AccountQuery query) {
-        return R.success(accountService.queryOne(query));
+        Account data = accountService.queryOne(query);
+        return R.success(data);
     }
 
     @GetMapping("{id}")
     public Result<AccountDetails> get(@PathVariable Long id) {
-        return R.success(accountService.get(id));
+        AccountDetails data = accountService.get(id);
+        return R.success(data);
     }
 
     @PostMapping
