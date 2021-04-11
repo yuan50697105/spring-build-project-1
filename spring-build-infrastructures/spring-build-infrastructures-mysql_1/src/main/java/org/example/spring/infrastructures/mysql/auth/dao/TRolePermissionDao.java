@@ -1,6 +1,6 @@
 package org.example.spring.infrastructures.mysql.auth.dao;
 
-import org.example.spring.infrastructures.mysql.auth.table.po.TPermission;
+import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
 import org.example.spring.infrastructures.mysql.auth.table.po.TRolePermission;
 import org.example.spring.infrastructures.mysql.auth.table.query.TRolePermissionQuery;
 import org.example.spring.plugins.mybatis.dao.TkBaseDao;
@@ -16,7 +16,7 @@ public interface TRolePermissionDao extends TkBaseDao<TRolePermission, TRolePerm
 
     void removeByRoleId(Long roleId);
 
-    List<TPermission> listByRoleId(Long roleId);
+    List<TResource> listByRoleId(Long roleId);
 
     boolean removeByPermissionIds(List<Long> permissionIds);
 }

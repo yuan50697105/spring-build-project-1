@@ -5,7 +5,7 @@ import ai.yue.library.base.view.Result;
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.auth.service.ResourceService;
-import org.example.spring.infrastructures.mysql.auth.entity.query.PermissionQuery;
+import org.example.spring.infrastructures.mysql.auth.entity.query.ResourceQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.result.PermissionDetails;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.PermissionFormVo;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +26,7 @@ public class ResourceController {
     }
 
     @GetMapping
-    public Result<List<Tree<Long>>> data(PermissionQuery query) {
+    public Result<List<Tree<Long>>> data(ResourceQuery query) {
         return R.success(resourceService.selectTreeList(query));
     }
 

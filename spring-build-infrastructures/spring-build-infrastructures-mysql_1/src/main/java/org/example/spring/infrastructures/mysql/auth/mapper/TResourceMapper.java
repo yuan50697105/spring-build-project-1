@@ -5,5 +5,5 @@ import org.example.spring.infrastructures.mysql.auth.table.po.TDepartment;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 
 @Mapper
-public interface TDepartmentMapper extends IBaseMapper<TDepartment> {
+public interface TResourceMapper extends IBaseMapper<TDepartment> {
 }

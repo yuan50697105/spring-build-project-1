@@ -18,7 +18,7 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 @EqualsAndHashCode(callSuper=true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TPermission extends IBaseEntity implements Serializable {
+public class TResource extends IBaseEntity implements Serializable {
     /**
     * name
     */

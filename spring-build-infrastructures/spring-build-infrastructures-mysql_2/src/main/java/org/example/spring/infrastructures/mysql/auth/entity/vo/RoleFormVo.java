@@ -3,7 +3,7 @@ package org.example.spring.infrastructures.mysql.auth.entity.vo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.mysql.auth.table.po.TPermission;
+import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
 import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @Data
 public class RoleFormVo extends IBaseVo {
     private RoleVo role;
-    private Set<PermissionVo> permissions;
+    private Set<ResourceVo> permissions;
 
     @JsonIgnore
     public List<Long> getPermissionIds() {
@@ -24,6 +24,6 @@ public class RoleFormVo extends IBaseVo {
 
     @JsonIgnore
     public List<String> getPermissionName() {
-        return permissions.stream().map(TPermission::getName).collect(Collectors.toList());
+        return permissions.stream().map(TResource::getName).collect(Collectors.toList());
     }
 }
