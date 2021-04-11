@@ -6,8 +6,8 @@ import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.auth.service.ResourceService;
 import org.example.spring.infrastructures.mysql.auth.entity.query.ResourceQuery;
-import org.example.spring.infrastructures.mysql.auth.entity.result.PermissionDetails;
-import org.example.spring.infrastructures.mysql.auth.entity.vo.PermissionFormVo;
+import org.example.spring.infrastructures.mysql.auth.entity.result.ResourceDetails;
+import org.example.spring.infrastructures.mysql.auth.entity.vo.ResourceFormVo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
@@ -31,26 +31,26 @@ public class ResourceController {
     }
 
     @GetMapping("{id}")
-    public Result<PermissionDetails> get(@PathVariable Long id) {
-        PermissionDetails details = resourceService.get(id);
+    public Result<ResourceDetails> get(@PathVariable Long id) {
+        ResourceDetails details = resourceService.get(id);
         return R.success(details);
     }
 
     @PostMapping
-    public Result<?> save(@RequestBody PermissionFormVo formVo) {
+    public Result<?> save(@RequestBody ResourceFormVo formVo) {
         resourceService.save(formVo);
         return R.success();
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody PermissionFormVo formVo) {
+    public Result<?> update(@RequestBody ResourceFormVo formVo) {
         resourceService.update(formVo);
         return R.success();
     }
 
 
     @PutMapping("{id}")
-    public Result<?> update(@PathVariable Long id,@RequestBody PermissionFormVo formVo) {
+    public Result<?> update(@PathVariable Long id,@RequestBody ResourceFormVo formVo) {
         formVo.setId(id);
         resourceService.update(formVo);
         return R.success();

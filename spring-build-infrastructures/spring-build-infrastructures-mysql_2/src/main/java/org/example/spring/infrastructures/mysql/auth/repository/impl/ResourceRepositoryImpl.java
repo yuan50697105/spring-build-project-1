@@ -11,9 +11,9 @@ import org.example.spring.infrastructures.mysql.auth.dao.TRoleResourceDao;
 import org.example.spring.infrastructures.mysql.auth.dao.UserResourceDao;
 import org.example.spring.infrastructures.mysql.auth.entity.query.ResourceQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Resource;
-import org.example.spring.infrastructures.mysql.auth.entity.result.PermissionDetails;
+import org.example.spring.infrastructures.mysql.auth.entity.result.ResourceDetails;
 import org.example.spring.infrastructures.mysql.auth.entity.dto.ResourceNode;
-import org.example.spring.infrastructures.mysql.auth.entity.vo.PermissionFormVo;
+import org.example.spring.infrastructures.mysql.auth.entity.vo.ResourceFormVo;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.ResourceVo;
 import org.example.spring.infrastructures.mysql.auth.repository.ResourceRepository;
 import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
@@ -29,24 +29,24 @@ import java.util.Optional;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, PermissionFormVo, PermissionDetails, ResourceQuery> implements ResourceRepository {
+public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, ResourceFormVo, ResourceDetails, ResourceQuery> implements ResourceRepository {
     private final TResourceDao permissionDao;
     private final TRoleResourceDao rolePermissionDao;
     private final AuthBuilder authBuilder;
     private final UserResourceDao userResourceDao;
 
     @Override
-    public Long saveWithId(PermissionFormVo permissionFormVo) {
-        ResourceVo permission = permissionFormVo.getPermission();
+    public Long saveWithId(ResourceFormVo resourceFormVo) {
+        ResourceVo permission = resourceFormVo.getPermission();
         TResource entity = authBuilder.buildPermission(permission);
         permissionDao.save(entity);
         return entity.getId();
     }
 
     @Override
-    public void update(PermissionFormVo permissionFormVo) {
-        Long id = permissionFormVo.getId();
-        ResourceVo permission = permissionFormVo.getPermission();
+    public void update(ResourceFormVo resourceFormVo) {
+        Long id = resourceFormVo.getId();
+        ResourceVo permission = resourceFormVo.getPermission();
         Optional<TResource> optional = permissionDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TResource tResource = optional.get();
@@ -62,8 +62,8 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Permis
     }
 
     @Override
-    public PermissionDetails getById(Long id) {
-        PermissionDetails details = new PermissionDetails();
+    public ResourceDetails getById(Long id) {
+        ResourceDetails details = new ResourceDetails();
         details.setPermission(authBuilder.buildPermissionResult(permissionDao.getById(id)));
         return details;
     }

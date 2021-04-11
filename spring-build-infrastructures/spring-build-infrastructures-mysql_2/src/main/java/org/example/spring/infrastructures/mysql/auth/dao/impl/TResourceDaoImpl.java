@@ -3,6 +3,7 @@ package org.example.spring.infrastructures.mysql.auth.dao.impl;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.dao.TResourceDao;
+import org.example.spring.infrastructures.mysql.auth.mapper.TResourceMapper;
 import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
 import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class TResourceDaoImpl extends TkBaseDaoImpl<TResource, TResourceQuery, TPermissionMapper> implements TResourceDao {
+public class TResourceDaoImpl extends TkBaseDaoImpl<TResource, TResourceQuery, TResourceMapper> implements TResourceDao {
     @Override
     protected Wrapper<TResource> queryWrapper(TResourceQuery tResourceQuery) {
         return null;

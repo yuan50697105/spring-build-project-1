@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
 import org.example.spring.infrastructures.mysql.patient.mapper.TPatientMapper;
+import org.example.spring.infrastructures.mysql.patient.table.po.TPatient;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Repository;
