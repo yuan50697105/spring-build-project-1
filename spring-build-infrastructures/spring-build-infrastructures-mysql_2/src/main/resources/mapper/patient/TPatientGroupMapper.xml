@@ -11,6 +11,7 @@
     <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="customer_id" jdbcType="BIGINT" property="customerId" />
     <result column="code" jdbcType="VARCHAR" property="code" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="age_start" jdbcType="INTEGER" property="ageStart" />
@@ -21,7 +22,7 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_id, update_id, create_user, update_user, create_date, update_date, code, 
-    `name`, age_start, age_end, sex, marriage, bear
+    id, create_id, update_id, create_user, update_user, create_date, update_date, customer_id, 
+    code, `name`, age_start, age_end, sex, marriage, bear
   </sql>
 </mapper>

@@ -28,6 +28,12 @@ import java.math.BigDecimal;
 public class TPatientGroupItemQuery extends TkBaseQuery<TPatientGroupItem> implements Serializable, MybatisExampleForTk<TPatientGroupItem, Example> {
     private static final long serialVersionUID = 1L;
     /**
+     * customerId
+     */
+    @ApiModelProperty(value = "customerId")
+    @AndEqualTo
+    private Long customerId;
+    /**
      * groupId
      */
     @ApiModelProperty(value = "groupId")

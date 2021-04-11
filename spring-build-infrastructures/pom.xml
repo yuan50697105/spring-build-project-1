@@ -20,6 +20,7 @@
         <module>spring-build-infrastructures-mongodb</module>
         <module>spring-build-infrastructures-elasticsearch</module>
         <module>spring-build-infrastructures-minio</module>
+        <module>spring-build-infrastructures-redis</module>
     </modules>
     <dependencyManagement>
         <dependencies>
