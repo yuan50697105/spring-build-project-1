@@ -11,12 +11,12 @@ import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
 import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerContractQuery;
 import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerInfoQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
+import org.mapstruct.*;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
+        nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL)
 public interface CustomerBuilder {
     TCustomerInfo buildCustomerInfo(CustomerVo customer);
 

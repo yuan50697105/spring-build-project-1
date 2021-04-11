@@ -59,7 +59,7 @@ public class AccountRepositoryImpl implements AccountRepository {
         Optional<TUser> optional = userDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TUser tUser = optional.get();
-            authBuilder.copyUser(id, account, tUser);
+            authBuilder.copyUser(account, tUser);
             userDao.updateById(tUser);
             if (!ObjectUtil.isAllEmpty(roleIds, roleName)) {
                 List<Long> existRoleIds = roleDao.listRoleIdsByRoleIdsOrRoleName(roleIds, roleName);
