@@ -26,16 +26,64 @@ public class TPatient extends IBaseEntity implements Serializable {
     private Long groupId;
 
     /**
+     * groupCode
+     */
+    @ApiModelProperty(value = "groupCode")
+    private String groupCode;
+
+    /**
+     * groupName
+     */
+    @ApiModelProperty(value = "groupName")
+    private String groupName;
+
+    /**
      * groupItemId
      */
     @ApiModelProperty(value = "groupItemId")
     private Long groupItemId;
 
     /**
+     * groupItemCode
+     */
+    @ApiModelProperty(value = "groupItemCode")
+    private String groupItemCode;
+
+    /**
+     * groupItemName
+     */
+    @ApiModelProperty(value = "groupItemName")
+    private String groupItemName;
+
+    /**
      * type
      */
     @ApiModelProperty(value = "type")
     private String type;
+
+    /**
+     * mealType
+     */
+    @ApiModelProperty(value = "mealType")
+    private String mealType;
+
+    /**
+     * mealId
+     */
+    @ApiModelProperty(value = "mealId")
+    private Long mealId;
+
+    /**
+     * mealCode
+     */
+    @ApiModelProperty(value = "mealCode")
+    private String mealCode;
+
+    /**
+     * mealName
+     */
+    @ApiModelProperty(value = "mealName")
+    private String mealName;
 
     /**
      * code
