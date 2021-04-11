@@ -15,14 +15,6 @@ public interface CustomerContractService {
 
     List<CustomerContract> selectList(CustomerContractQuery query);
 
-    List<CustomerContract> selectTop(CustomerContractQuery query);
-
-    CustomerContract selectFirst(CustomerContractQuery query);
-
-    default Optional<CustomerContract> selectFirstOpt(CustomerContractQuery query) {
-        return Optional.ofNullable(selectFirst(query));
-    }
-
     CustomerContract selectOne(CustomerContractQuery query);
 
     default Optional<CustomerContract> seletOneOpt(CustomerContractQuery query) {
