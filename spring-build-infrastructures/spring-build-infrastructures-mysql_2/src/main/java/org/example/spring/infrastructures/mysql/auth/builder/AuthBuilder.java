@@ -1,5 +1,6 @@
 package org.example.spring.infrastructures.mysql.auth.builder;
 
+import org.example.spring.infrastructures.commons.BaseBuilder;
 import org.example.spring.infrastructures.mysql.auth.entity.query.AccountQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.query.PermissionQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.query.RoleQuery;
@@ -20,8 +21,7 @@ import org.mapstruct.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
-        nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL)
+@Mapper(config = BaseBuilder.class)
 public interface AuthBuilder {
     TUser buildUser(AccountVo account);
 

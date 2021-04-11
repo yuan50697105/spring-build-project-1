@@ -1,5 +1,6 @@
 package org.example.spring.infrastructures.mysql.customer.builder;
 
+import org.example.spring.infrastructures.commons.BaseBuilder;
 import org.example.spring.infrastructures.mysql.customer.entity.query.CustomerContractQuery;
 import org.example.spring.infrastructures.mysql.customer.entity.query.CustomerQuery;
 import org.example.spring.infrastructures.mysql.customer.entity.result.Customer;
@@ -15,8 +16,7 @@ import org.mapstruct.*;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
-        nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL)
+@Mapper(config = BaseBuilder.class)
 public interface CustomerBuilder {
     TCustomerInfo buildCustomerInfo(CustomerVo customer);
 

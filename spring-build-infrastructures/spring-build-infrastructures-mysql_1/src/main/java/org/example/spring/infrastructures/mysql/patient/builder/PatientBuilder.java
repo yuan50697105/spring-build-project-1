@@ -1,5 +1,6 @@
 package org.example.spring.infrastructures.mysql.patient.builder;
 
+import org.example.spring.infrastructures.commons.BaseBuilder;
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupItemVo;
@@ -13,8 +14,7 @@ import org.mapstruct.*;
 import java.util.List;
 import java.util.Optional;
 
-@Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
-        nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL)
+@Mapper(config = BaseBuilder.class)
 public interface PatientBuilder {
     TPatient buildPatient(PatientVo patient);
 
