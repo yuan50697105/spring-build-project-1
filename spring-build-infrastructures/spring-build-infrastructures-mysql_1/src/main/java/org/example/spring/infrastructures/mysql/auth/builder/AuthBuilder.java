@@ -1,17 +1,22 @@
 package org.example.spring.infrastructures.mysql.auth.builder;
 
 import org.example.spring.infrastructures.commons.BaseBuilder;
+import org.example.spring.infrastructures.mysql.auth.entity.dto.DepartmentNode;
 import org.example.spring.infrastructures.mysql.auth.entity.query.AccountQuery;
+import org.example.spring.infrastructures.mysql.auth.entity.query.DepartmentQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.query.ResourceQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.query.RoleQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Account;
+import org.example.spring.infrastructures.mysql.auth.entity.result.Department;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Resource;
 import org.example.spring.infrastructures.mysql.auth.entity.dto.ResourceNode;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Role;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.AccountVo;
+import org.example.spring.infrastructures.mysql.auth.entity.vo.DepartmentVo;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.ResourceVo;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.RoleVo;
 import org.example.spring.infrastructures.mysql.auth.table.po.*;
+import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
@@ -71,7 +76,7 @@ public interface AuthBuilder {
 
     TResource buildPermission(ResourceVo permission);
 
-    void copyPermission(ResourceVo permission, @MappingTarget TResource tResource);
+    void copyResource(ResourceVo permission, @MappingTarget TResource tResource);
 
     Resource buildPermissionResult(TResource permission);
 
@@ -79,5 +84,29 @@ public interface AuthBuilder {
 
     IPageData<Resource> buildPermissionResult(IPageData<TResource> data);
 
+
     List<ResourceNode> buildPermissionToResrouceNode(List<TResource> permissions);
+
+    @Mapping(target = "extra", ignore = true)
+    @Mapping(target = "parentId", source = "pid")
+    ResourceNode buildPermissionToResrouceNode(TResource resource);
+
+    TDepartment buildAccountDepartment(DepartmentVo department);
+
+    void copyDepartment(DepartmentVo department, @MappingTarget TDepartment tDepartment);
+
+    Department buildDepartmentResult(TDepartment department);
+
+    TDepartmentQuery buildDepartmentQuery(DepartmentQuery departmentQuery);
+
+    IPageData<Department> buildDepartmentResult(IPageData<TDepartment> queryPage);
+
+    List<Department> buildDepartmentResult(List<TDepartment> data);
+
+    List<DepartmentNode> buildDepartmentToDepartmentNode(List<TDepartment> departments);
+
+    @Mapping(target = "weight", ignore = true)
+    @Mapping(target = "parentId", source = "pid")
+    @Mapping(target = "extra", ignore = true)
+    DepartmentNode buildDepartmentToDepartmentNode(TDepartment department);
 }

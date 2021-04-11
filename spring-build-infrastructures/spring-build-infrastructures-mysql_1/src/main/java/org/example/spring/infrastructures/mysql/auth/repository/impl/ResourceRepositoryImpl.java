@@ -30,7 +30,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @Transactional
 public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, ResourceFormVo, ResourceDetails, ResourceQuery> implements ResourceRepository {
-    private final TResourceDao permissionDao;
+    private final TResourceDao resourceDao;
     private final TRoleResourceDao rolePermissionDao;
     private final AuthBuilder authBuilder;
     private final UserResourceDao userResourceDao;
@@ -39,7 +39,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     public Long saveWithId(ResourceFormVo resourceFormVo) {
         ResourceVo permission = resourceFormVo.getPermission();
         TResource entity = authBuilder.buildPermission(permission);
-        permissionDao.save(entity);
+        resourceDao.save(entity);
         return entity.getId();
     }
 
@@ -47,45 +47,50 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     public void update(ResourceFormVo resourceFormVo) {
         Long id = resourceFormVo.getId();
         ResourceVo permission = resourceFormVo.getPermission();
-        Optional<TResource> optional = permissionDao.getByIdOpt(id);
+        Optional<TResource> optional = resourceDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TResource tResource = optional.get();
-            authBuilder.copyPermission(permission, tResource);
-            permissionDao.updateById(tResource);
+            authBuilder.copyResource(permission, tResource);
+            resourceDao.updateById(tResource);
         }
     }
 
     @Override
     public void delete(List<Long> ids) {
-        permissionDao.removeByIds(ids);
+        validateChildByIds(ids);
+        resourceDao.removeByIds(ids);
         rolePermissionDao.removeByPermissionIds(ids);
+    }
+
+    private void validateChildByIds(List<Long> ids) {
+        resourceDao.existChidByPids( ids);
     }
 
     @Override
     public ResourceDetails getById(Long id) {
         ResourceDetails details = new ResourceDetails();
-        details.setPermission(authBuilder.buildPermissionResult(permissionDao.getById(id)));
+        details.setPermission(authBuilder.buildPermissionResult(resourceDao.getById(id)));
         return details;
     }
 
     @Override
     public IPageData<Resource> queryPage(ResourceQuery resourceQuery) {
         TResourceQuery query = authBuilder.buildPermissionQuery(resourceQuery);
-        IPageData<TResource> data = permissionDao.queryPage(query);
+        IPageData<TResource> data = resourceDao.queryPage(query);
         return authBuilder.buildPermissionResult(data);
     }
 
     @Override
     public List<Resource> queryList(ResourceQuery resourceQuery) {
         TResourceQuery query = authBuilder.buildPermissionQuery(resourceQuery);
-        List<TResource> data = permissionDao.queryList(query);
+        List<TResource> data = resourceDao.queryList(query);
         return authBuilder.buildPermissionResult(data);
     }
 
     @Override
     public Resource queryOne(ResourceQuery resourceQuery) {
         TResourceQuery query = authBuilder.buildPermissionQuery(resourceQuery);
-        TResource data = permissionDao.queryOne(query);
+        TResource data = resourceDao.queryOne(query);
         return authBuilder.buildPermissionResult(data);
     }
 
@@ -99,7 +104,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     @Override
     public List<Tree<Long>> queryTreeList(ResourceQuery query) {
         TResourceQuery permissionQuery = authBuilder.buildPermissionQuery(query);
-        List<TResource> permissions = permissionDao.queryList(permissionQuery);
+        List<TResource> permissions = resourceDao.queryList(permissionQuery);
         List<ResourceNode> resourceNodes = authBuilder.buildPermissionToResrouceNode(permissions);
         return TreeUtil.build(resourceNodes, 0L, getNodeParser());
     }
