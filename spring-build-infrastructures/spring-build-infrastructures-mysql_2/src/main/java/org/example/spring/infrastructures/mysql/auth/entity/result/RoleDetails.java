@@ -7,5 +7,5 @@ import java.util.List;
 @Data
 public class RoleDetails {
     private Role role;
-    private List<Permission> permissions;
+    private List<Resource> permissions;
 }

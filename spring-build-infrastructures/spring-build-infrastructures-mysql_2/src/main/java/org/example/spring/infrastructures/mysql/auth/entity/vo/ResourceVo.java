@@ -2,9 +2,9 @@ package org.example.spring.infrastructures.mysql.auth.entity.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.mysql.auth.table.po.TPermission;
+import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PermissionVo extends TPermission {
+public class ResourceVo extends TResource {
 }

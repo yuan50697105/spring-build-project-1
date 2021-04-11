@@ -7,5 +7,5 @@ import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class PermissionFormVo extends IBaseVo {
-    private PermissionVo permission;
+    private ResourceVo permission;
 }

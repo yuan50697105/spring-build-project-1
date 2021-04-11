@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.builder.AuthBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TRolePermissionDao;
 import org.example.spring.infrastructures.mysql.auth.mapper.TRolePermissionMapper;
-import org.example.spring.infrastructures.mysql.auth.table.po.TPermission;
+import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
 import org.example.spring.infrastructures.mysql.auth.table.po.TRolePermission;
 import org.example.spring.infrastructures.mysql.auth.table.query.TRolePermissionQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
@@ -47,7 +47,7 @@ public class TRolePermissionDaoImpl extends TkBaseDaoImpl<TRolePermission, TRole
     }
 
     @Override
-    public List<TPermission> listByRoleId(Long roleId) {
+    public List<TResource> listByRoleId(Long roleId) {
         return baseMapper.listByRoleId(roleId);
     }
 

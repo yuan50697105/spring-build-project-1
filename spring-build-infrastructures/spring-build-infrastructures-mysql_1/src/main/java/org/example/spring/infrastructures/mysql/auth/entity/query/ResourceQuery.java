@@ -6,6 +6,6 @@ import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PermissionQuery extends BaseQuery {
+public class ResourceQuery extends BaseQuery {
     private String name;
 }

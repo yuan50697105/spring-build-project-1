@@ -2,17 +2,17 @@ package org.example.spring.infrastructures.mysql.auth.builder;
 
 import org.example.spring.infrastructures.commons.BaseBuilder;
 import org.example.spring.infrastructures.mysql.auth.entity.query.AccountQuery;
-import org.example.spring.infrastructures.mysql.auth.entity.query.PermissionQuery;
+import org.example.spring.infrastructures.mysql.auth.entity.query.ResourceQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.query.RoleQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Account;
-import org.example.spring.infrastructures.mysql.auth.entity.result.Permission;
+import org.example.spring.infrastructures.mysql.auth.entity.result.Resource;
 import org.example.spring.infrastructures.mysql.auth.entity.dto.ResourceNode;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Role;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.AccountVo;
-import org.example.spring.infrastructures.mysql.auth.entity.vo.PermissionVo;
+import org.example.spring.infrastructures.mysql.auth.entity.vo.ResourceVo;
 import org.example.spring.infrastructures.mysql.auth.entity.vo.RoleVo;
 import org.example.spring.infrastructures.mysql.auth.table.po.*;
-import org.example.spring.infrastructures.mysql.auth.table.query.TPermissionQuery;
+import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
@@ -67,17 +67,17 @@ public interface AuthBuilder {
 
     TRolePermission buildRolePermission(Long roleId, Long permissionId);
 
-    List<Permission> buildPermissionResult(List<TPermission> listByRoleId);
+    List<Resource> buildPermissionResult(List<TResource> listByRoleId);
 
-    TPermission buildPermission(PermissionVo permission);
+    TResource buildPermission(ResourceVo permission);
 
-    void copyPermission(PermissionVo permission, @MappingTarget TPermission tPermission);
+    void copyPermission(ResourceVo permission, @MappingTarget TResource tResource);
 
-    Permission buildPermissionResult(TPermission permission);
+    Resource buildPermissionResult(TResource permission);
 
-    TPermissionQuery buildPermissionQuery(PermissionQuery permissionQuery);
+    TResourceQuery buildPermissionQuery(ResourceQuery resourceQuery);
 
-    IPageData<Permission> buildPermissionResult(IPageData<TPermission> data);
+    IPageData<Resource> buildPermissionResult(IPageData<TResource> data);
 
-    List<ResourceNode> buildPermissionToResrouceNode(List<TPermission> permissions);
+    List<ResourceNode> buildPermissionToResrouceNode(List<TResource> permissions);
 }
