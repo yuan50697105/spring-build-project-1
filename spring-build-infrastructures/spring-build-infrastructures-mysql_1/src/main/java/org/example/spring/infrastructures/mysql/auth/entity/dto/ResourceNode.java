@@ -11,9 +11,9 @@ import java.util.Optional;
 @Data
 public class ResourceNode extends TreeNode<Long> {
     private String url;
-    private TResourceType type;
+    private String type;
 
     public String getValue() {
-        return type.getValue();
+        return Optional.ofNullable(TResourceType.get(type)).map(TResourceType::getName).orElse(null);
     }
 }

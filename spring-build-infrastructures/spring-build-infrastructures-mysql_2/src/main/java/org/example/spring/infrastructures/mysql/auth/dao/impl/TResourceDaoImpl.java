@@ -30,4 +30,9 @@ public class TResourceDaoImpl extends TkBaseDaoImpl<TResource, TResourceQuery, T
             wrapper.or().in(TResource::getName, permissionName);
         }).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
     }
+
+    @Override
+    public boolean existChidByPids(List<Long> ids) {
+        return baseMapper.existChidByPids(ids);
+    }
 }

@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface TResourceDao extends TkBaseDao<TResource, TResourceQuery> {
     List<Long> listPermissionIdsByPermissionIdsOrPermissionName(List<Long> permissionIds, List<String> permissionName);
+
+    boolean existChidByPids(List<Long> ids);
 }

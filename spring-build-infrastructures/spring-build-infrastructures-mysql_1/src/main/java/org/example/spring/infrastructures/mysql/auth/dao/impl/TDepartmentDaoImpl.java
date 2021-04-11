@@ -11,6 +11,8 @@ import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 @AllArgsConstructor
 @Transactional
@@ -18,5 +20,10 @@ public class TDepartmentDaoImpl extends TkBaseDaoImpl<TDepartment, TDepartmentQu
     @Override
     protected Wrapper<TDepartment> queryWrapper(TDepartmentQuery tDepartmentQuery) {
         return null;
+    }
+
+    @Override
+    public boolean existChildByPIds(List<Long> ids) {
+        return baseMapper.existChildByPIds(ids);
     }
 }
