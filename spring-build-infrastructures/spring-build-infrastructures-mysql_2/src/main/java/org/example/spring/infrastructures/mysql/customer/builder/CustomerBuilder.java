@@ -4,10 +4,8 @@ import org.example.spring.infrastructures.mysql.customer.entity.query.CustomerCo
 import org.example.spring.infrastructures.mysql.customer.entity.query.CustomerQuery;
 import org.example.spring.infrastructures.mysql.customer.entity.result.Customer;
 import org.example.spring.infrastructures.mysql.customer.entity.result.CustomerContract;
-import org.example.spring.infrastructures.mysql.customer.entity.vo.CustomerCommonsVo;
 import org.example.spring.infrastructures.mysql.customer.entity.vo.CustomerContractVo;
 import org.example.spring.infrastructures.mysql.customer.entity.vo.CustomerVo;
-import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerCommons;
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContract;
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
 import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerContractQuery;

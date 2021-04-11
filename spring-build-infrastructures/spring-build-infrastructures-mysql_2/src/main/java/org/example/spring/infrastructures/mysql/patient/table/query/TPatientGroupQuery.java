@@ -28,6 +28,11 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class TPatientGroupQuery extends TkBaseQuery<TPatientGroup> implements Serializable, MybatisExampleForTk<TPatientGroup, Example> {
     /**
+     * customerId
+     */
+    @ApiModelProperty(value = "customerId")
+    private Long customerId;
+    /**
      * code
      */
     @ApiModelProperty(value = "code")
