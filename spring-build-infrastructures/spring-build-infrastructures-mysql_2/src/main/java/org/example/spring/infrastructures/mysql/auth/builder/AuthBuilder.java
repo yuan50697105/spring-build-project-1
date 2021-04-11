@@ -1,6 +1,7 @@
 package org.example.spring.infrastructures.mysql.auth.builder;
 
 import org.example.spring.infrastructures.commons.BaseBuilder;
+import org.example.spring.infrastructures.mysql.auth.entity.dto.DepartmentNode;
 import org.example.spring.infrastructures.mysql.auth.entity.query.AccountQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.query.DepartmentQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.query.ResourceQuery;
@@ -83,7 +84,12 @@ public interface AuthBuilder {
 
     IPageData<Resource> buildPermissionResult(IPageData<TResource> data);
 
+
     List<ResourceNode> buildPermissionToResrouceNode(List<TResource> permissions);
+
+    @Mapping(target = "extra", ignore = true)
+    @Mapping(target = "parentId", source = "pid")
+    ResourceNode buildPermissionToResrouceNode(TResource resource);
 
     TDepartment buildAccountDepartment(DepartmentVo department);
 
@@ -96,4 +102,11 @@ public interface AuthBuilder {
     IPageData<Department> buildDepartmentResult(IPageData<TDepartment> queryPage);
 
     List<Department> buildDepartmentResult(List<TDepartment> data);
+
+    List<DepartmentNode> buildDepartmentToDepartmentNode(List<TDepartment> departments);
+
+    @Mapping(target = "weight", ignore = true)
+    @Mapping(target = "parentId", source = "pid")
+    @Mapping(target = "extra", ignore = true)
+    DepartmentNode buildDepartmentToDepartmentNode(TDepartment department);
 }

@@ -1,9 +1,14 @@
 package org.example.spring.infrastructures.mysql.auth.repository.impl;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.lang.tree.Tree;
+import cn.hutool.core.lang.tree.TreeUtil;
+import cn.hutool.core.lang.tree.parser.NodeParser;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import org.example.spring.infrastructures.mysql.auth.builder.AuthBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TDepartmentDao;
+import org.example.spring.infrastructures.mysql.auth.entity.dto.DepartmentNode;
 import org.example.spring.infrastructures.mysql.auth.entity.query.DepartmentQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Department;
 import org.example.spring.infrastructures.mysql.auth.entity.result.DepartmentDetails;
@@ -90,5 +95,16 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
         TDepartmentQuery query = authBuilder.buildDepartmentQuery(departmentQuery);
         Optional<TDepartment> data = departmentDao.queryFirst(query);
         return authBuilder.buildDepartmentResult(data.orElse(new Department()));
+    }
+
+    @Override
+    public List<Tree<Long>> listTree(DepartmentQuery query) {
+        TDepartmentQuery buildDepartmentQuery = authBuilder.buildDepartmentQuery(query);
+        List<TDepartment> data = departmentDao.queryList(buildDepartmentQuery);
+        List<DepartmentNode> departmentNodes = authBuilder.buildDepartmentToDepartmentNode(data);
+        return TreeUtil.build(departmentNodes, 0L, (object, treeNode) -> {
+            BeanUtil.copyProperties(object, treeNode);
+            BeanUtil.beanToMap(object).forEach(treeNode::putExtra);
+        });
     }
 }

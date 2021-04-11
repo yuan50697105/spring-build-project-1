@@ -23,7 +23,7 @@ public enum TResourceType implements IBaseEnum {
     private final Integer code;
 
     @JsonCreator
-    public TResourceType get(String value) {
+    public static TResourceType get(String value) {
         return EnumUtil.likeValueOf(this.getDeclaringClass(), value);
     }
 
