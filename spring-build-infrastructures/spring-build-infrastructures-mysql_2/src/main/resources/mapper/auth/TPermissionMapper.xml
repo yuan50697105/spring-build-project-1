@@ -3,7 +3,7 @@
 <mapper namespace="org.example.spring.infrastructures.mysql.auth.mapper.TPermissionMapper">
   <resultMap id="BaseResultMap" type="org.example.spring.infrastructures.mysql.auth.table.po.TResource">
     <!--@mbg.generated-->
-    <!--@Table t_permission-->
+    <!--@Table t_resource-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="create_id" jdbcType="BIGINT" property="createId" />
     <result column="update_id" jdbcType="BIGINT" property="updateId" />

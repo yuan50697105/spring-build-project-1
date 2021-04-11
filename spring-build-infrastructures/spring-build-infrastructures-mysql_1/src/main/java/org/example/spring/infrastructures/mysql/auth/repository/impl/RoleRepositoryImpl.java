@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.builder.AuthBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TResourceDao;
 import org.example.spring.infrastructures.mysql.auth.dao.TRoleDao;
-import org.example.spring.infrastructures.mysql.auth.dao.TRolePermissionDao;
+import org.example.spring.infrastructures.mysql.auth.dao.TRoleResourceDao;
 import org.example.spring.infrastructures.mysql.auth.entity.query.RoleQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Role;
 import org.example.spring.infrastructures.mysql.auth.entity.result.RoleDetails;
@@ -28,7 +28,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, Ro
     private final AuthBuilder authBuilder;
     private final TRoleDao roleDao;
     private final TResourceDao permissionDao;
-    private final TRolePermissionDao rolePermissionDao;
+    private final TRoleResourceDao rolePermissionDao;
 
     @Override
     public void save(RoleFormVo roleFormVo) {

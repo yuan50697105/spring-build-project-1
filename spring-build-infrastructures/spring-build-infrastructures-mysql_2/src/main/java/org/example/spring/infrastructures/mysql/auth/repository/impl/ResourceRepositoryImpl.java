@@ -7,8 +7,8 @@ import cn.hutool.core.lang.tree.parser.NodeParser;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.builder.AuthBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TResourceDao;
-import org.example.spring.infrastructures.mysql.auth.dao.TRolePermissionDao;
-import org.example.spring.infrastructures.mysql.auth.dao.UserPermissionDao;
+import org.example.spring.infrastructures.mysql.auth.dao.TRoleResourceDao;
+import org.example.spring.infrastructures.mysql.auth.dao.UserResourceDao;
 import org.example.spring.infrastructures.mysql.auth.entity.query.ResourceQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.result.Resource;
 import org.example.spring.infrastructures.mysql.auth.entity.result.PermissionDetails;
@@ -31,9 +31,9 @@ import java.util.Optional;
 @Transactional
 public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, PermissionFormVo, PermissionDetails, ResourceQuery> implements ResourceRepository {
     private final TResourceDao permissionDao;
-    private final TRolePermissionDao rolePermissionDao;
+    private final TRoleResourceDao rolePermissionDao;
     private final AuthBuilder authBuilder;
-    private final UserPermissionDao userPermissionDao;
+    private final UserResourceDao userResourceDao;
 
     @Override
     public Long saveWithId(PermissionFormVo permissionFormVo) {
@@ -91,7 +91,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Permis
 
     @Override
     public List<Tree<Long>> listAllResourceByUserId(Long userId) {
-        List<TResource> permissions = userPermissionDao.listPermissionByUserId(userId);
+        List<TResource> permissions = userResourceDao.listPermissionByUserId(userId);
         List<ResourceNode> resourceNodes = authBuilder.buildPermissionToResrouceNode(permissions);
         return TreeUtil.build(resourceNodes, 0L, getNodeParser());
     }
