@@ -12,7 +12,7 @@ import org.example.spring.plugins.commons.converter.IBaseEnum;
 @Getter
 @AllArgsConstructor
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
-public enum TResourceType implements IBaseEnum {
+public enum ResourceType implements IBaseEnum {
     MENU("菜单", "001", 1),
     SUB_MENU("子菜单", "002", 2),
     BUTTON("按钮", "003", 3);
@@ -23,8 +23,8 @@ public enum TResourceType implements IBaseEnum {
     private final Integer code;
 
     @JsonCreator
-    public static TResourceType get(String value) {
-        return EnumUtil.likeValueOf(this.getDeclaringClass(), value);
+    public static ResourceType get(String value) {
+        return EnumUtil.likeValueOf(ResourceType.class, value);
     }
 
     @Override

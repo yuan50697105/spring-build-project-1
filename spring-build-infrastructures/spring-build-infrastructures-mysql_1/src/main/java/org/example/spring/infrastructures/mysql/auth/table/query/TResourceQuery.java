@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.infrastructures.mysql.auth.table.enumerate.TResourceType;
+import org.example.spring.infrastructures.mysql.auth.table.enumerate.ResourceType;
 import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
@@ -37,7 +37,7 @@ public class TResourceQuery extends TkBaseQuery<TResource> implements Serializab
     */
     @ApiModelProperty(value="type")
     @AndEqualTo
-    private TResourceType type;
+    private ResourceType type;
     private Long pid;
 
     private static final long serialVersionUID = 1L;
