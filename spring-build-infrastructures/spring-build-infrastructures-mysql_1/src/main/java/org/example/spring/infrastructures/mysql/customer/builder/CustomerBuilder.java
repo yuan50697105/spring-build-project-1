@@ -4,8 +4,10 @@ import org.example.spring.infrastructures.mysql.customer.entity.query.CustomerCo
 import org.example.spring.infrastructures.mysql.customer.entity.query.CustomerQuery;
 import org.example.spring.infrastructures.mysql.customer.entity.result.Customer;
 import org.example.spring.infrastructures.mysql.customer.entity.result.CustomerContract;
+import org.example.spring.infrastructures.mysql.customer.entity.vo.CustomerCommonsVo;
 import org.example.spring.infrastructures.mysql.customer.entity.vo.CustomerContractVo;
 import org.example.spring.infrastructures.mysql.customer.entity.vo.CustomerVo;
+import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerCommons;
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContract;
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
 import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerContractQuery;
@@ -32,7 +34,7 @@ public interface CustomerBuilder {
 
     TCustomerContract buildCustomerContract(CustomerContractVo contract);
 
-    void copyCustomerContract(CustomerContractVo contract,@MappingTarget TCustomerContract tCustomerContract);
+    void copyCustomerContract(CustomerContractVo contract, @MappingTarget TCustomerContract tCustomerContract);
 
     CustomerContract buildCustomerContractResult(TCustomerContract contract);
 
@@ -41,4 +43,8 @@ public interface CustomerBuilder {
     List<CustomerContract> buildCustomerContractResult(List<TCustomerContract> contract);
 
     IPageData<CustomerContract> buildCustomerContractResult(IPageData<TCustomerContract> contract);
+
+    TCustomerCommons buildCustomerCommonsResult(CustomerCommonsVo commons);
+
+    void copyCustomerCommons(CustomerCommonsVo commons, @MappingTarget TCustomerCommons tCustomerCommons);
 }
