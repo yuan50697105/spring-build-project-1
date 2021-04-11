@@ -5,6 +5,7 @@ import org.example.spring.infrastructures.mysql.patient.entity.query.PatientQuer
 import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupItemVo;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientVo;
+import org.example.spring.infrastructures.mysql.patient.table.po.TPatient;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroupItem;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;

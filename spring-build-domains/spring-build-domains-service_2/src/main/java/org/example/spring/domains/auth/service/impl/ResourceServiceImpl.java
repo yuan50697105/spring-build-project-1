@@ -4,8 +4,8 @@ import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.auth.service.ResourceService;
 import org.example.spring.infrastructures.mysql.auth.entity.query.ResourceQuery;
-import org.example.spring.infrastructures.mysql.auth.entity.result.PermissionDetails;
-import org.example.spring.infrastructures.mysql.auth.entity.vo.PermissionFormVo;
+import org.example.spring.infrastructures.mysql.auth.entity.result.ResourceDetails;
+import org.example.spring.infrastructures.mysql.auth.entity.vo.ResourceFormVo;
 import org.example.spring.infrastructures.mysql.auth.repository.ResourceRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,17 +29,17 @@ public class ResourceServiceImpl implements ResourceService {
     }
 
     @Override
-    public PermissionDetails get(Long id) {
+    public ResourceDetails get(Long id) {
         return resourceRepository.getById(id);
     }
 
     @Override
-    public void save(PermissionFormVo formVo) {
+    public void save(ResourceFormVo formVo) {
         resourceRepository.save(formVo);
     }
 
     @Override
-    public void update(PermissionFormVo formVo) {
+    public void update(ResourceFormVo formVo) {
         resourceRepository.update(formVo);
     }
 

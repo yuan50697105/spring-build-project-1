@@ -1,6 +1,7 @@
 package org.example.spring.infrastructures.mysql.patient.repository.impl;
 
 import lombok.AllArgsConstructor;
+
 import org.example.spring.infrastructures.mysql.patient.builder.PatientBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientQuery;
@@ -9,6 +10,7 @@ import org.example.spring.infrastructures.mysql.patient.entity.result.PatientDet
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientFormVo;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientVo;
 import org.example.spring.infrastructures.mysql.patient.repository.PatientRepository;
+import org.example.spring.infrastructures.mysql.patient.table.po.TPatient;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
