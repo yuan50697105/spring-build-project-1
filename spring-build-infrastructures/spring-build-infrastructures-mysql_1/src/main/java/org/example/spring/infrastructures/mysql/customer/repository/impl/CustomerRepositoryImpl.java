@@ -30,7 +30,6 @@ public class CustomerRepositoryImpl extends IBaseRepositoryImpl<Customer, Custom
         CustomerVo customer = customerFormVo.getCustomer();
         TCustomerInfo entity = customerBuilder.buildCustomerInfo(customer);
         customerInfoDao.save(entity);
-        CustomerCommonsVo commons = customerFormVo.getCommons();
         return entity.getId();
     }
 
@@ -38,7 +37,6 @@ public class CustomerRepositoryImpl extends IBaseRepositoryImpl<Customer, Custom
     public void update(CustomerFormVo customerFormVo) {
         Long id = customerFormVo.getId();
         CustomerVo customer = customerFormVo.getCustomer();
-        CustomerCommonsVo commons = customerFormVo.getCommons();
         Optional<TCustomerInfo> optional = customerInfoDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TCustomerInfo tCustomerInfo = optional.get();

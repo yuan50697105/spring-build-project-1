@@ -42,7 +42,4 @@ public interface CustomerBuilder {
 
     IPageData<CustomerContract> buildCustomerContractResult(IPageData<TCustomerContract> contract);
 
-    TCustomerCommons buildCustomerCommonsResult(CustomerCommonsVo commons);
-
-    void copyCustomerCommons(CustomerCommonsVo commons, @MappingTarget TCustomerCommons tCustomerCommons);
 }
