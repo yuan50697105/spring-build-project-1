@@ -2,17 +2,18 @@ package org.example.spring.infrastructures.mysql.patient.builder;
 
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
+import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupItemVo;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientVo;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatient;
+import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroupItem;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
+import org.mapstruct.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface PatientBuilder {
     TPatient buildPatient(PatientVo patient);
 
@@ -26,4 +27,5 @@ public interface PatientBuilder {
 
     List<Patient> buildPatientResult(List<TPatient> queryPage);
 
+    TPatientGroupItem buildPatientGroupItem(PatientGroupItemVo item);
 }

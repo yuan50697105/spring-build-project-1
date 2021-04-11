@@ -2,6 +2,7 @@ package org.example.spring.infrastructures.mysql.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.customer.builder.CustomerBuilder;
+import org.example.spring.infrastructures.mysql.customer.dao.TCustomerContractDao;
 import org.example.spring.infrastructures.mysql.customer.dao.TCustomerInfoDao;
 import org.example.spring.infrastructures.mysql.customer.entity.query.CustomerQuery;
 import org.example.spring.infrastructures.mysql.customer.entity.result.Customer;
@@ -19,12 +20,16 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+@SuppressWarnings("AlibabaLowerCamelCaseVariableNaming")
 @Repository
 @AllArgsConstructor
 @Transactional
 public class CustomerRepositoryImpl extends IBaseRepositoryImpl<Customer, CustomerFormVo, CustomerDetails, CustomerQuery> implements CustomerRepository {
     private final CustomerBuilder customerBuilder;
     private final TCustomerInfoDao customerInfoDao;
+    private final TCustomerContractDao customerContractDao;
+
+    @SuppressWarnings("AlibabaSwitchStatement")
     @Override
     public Long saveWithId(CustomerFormVo customerFormVo) {
         CustomerVo customer = customerFormVo.getCustomer();
