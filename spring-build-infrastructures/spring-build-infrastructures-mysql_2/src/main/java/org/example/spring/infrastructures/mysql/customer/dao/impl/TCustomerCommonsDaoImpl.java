@@ -11,6 +11,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.Optional;
+
 @Repository
 @AllArgsConstructor
 @Transactional
@@ -18,5 +21,20 @@ public class TCustomerCommonsDaoImpl extends TkBaseDaoImpl<TCustomerCommons, TCu
     @Override
     protected Wrapper<TCustomerCommons> queryWrapper(TCustomerCommonsQuery tCustomerCommonsQuery) {
         return null;
+    }
+
+    @Override
+    public TCustomerCommons getByCustomerId(Long customerId) {
+        return lambdaQuery().eq(TCustomerCommons::getCustomerId,customerId).one();
+    }
+
+    @Override
+    public Optional<TCustomerCommons> getByCustomerIdOpt(Long customerId) {
+        return lambdaQuery().eq(TCustomerCommons::getCustomerId, customerId).oneOpt();
+    }
+
+    @Override
+    public boolean removeByCustomerIds(List<Long> ids) {
+        return remove(lambdaQuery().in(TCustomerCommons::getCustomerId, ids));
     }
 }
