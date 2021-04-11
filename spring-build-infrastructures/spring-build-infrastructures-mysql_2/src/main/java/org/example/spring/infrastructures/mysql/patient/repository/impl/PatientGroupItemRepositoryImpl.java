@@ -8,8 +8,11 @@ import org.example.spring.infrastructures.mysql.patient.entity.query.PatientGrou
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGroupItem;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGroupItemDetails;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupItemFormVo;
+import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupItemVo;
 import org.example.spring.infrastructures.mysql.patient.repository.PatientGroupItemRepository;
+import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroupItem;
 import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,14 +21,17 @@ import java.util.List;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class PatientGroupItemRepositoryImpl implements PatientGroupItemRepository {
+public class PatientGroupItemRepositoryImpl extends IBaseRepositoryImpl<PatientGroupItem, PatientGroupItemFormVo, PatientGroupItemDetails, PatientGroupItemQuery> implements PatientGroupItemRepository {
     private final PatientBuilder patientBuilder;
     private final TPatientGroupItemDao patientGroupItemDao;
     private final TPatientDao patientDao;
 
     @Override
     public Long saveWithId(PatientGroupItemFormVo patientGroupItemFormVo) {
-        return null;
+        PatientGroupItemVo item = patientGroupItemFormVo.getItem();
+        TPatientGroupItem entity = patientBuilder.buildPatientGroupItem(item);
+        patientGroupItemDao.save(entity);
+        return entity.getId();
     }
 
     @Override

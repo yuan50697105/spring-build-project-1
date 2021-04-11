@@ -13,5 +13,4 @@ import java.util.Set;
 public class PatientGroupDetails extends IBaseVo {
     private PatientGroup group;
     private List<PatientGroupItem> items;
-    private List<Patient> patients;
 }

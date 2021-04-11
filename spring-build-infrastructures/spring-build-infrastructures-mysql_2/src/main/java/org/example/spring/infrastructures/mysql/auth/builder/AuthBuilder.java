@@ -15,21 +15,19 @@ import org.example.spring.infrastructures.mysql.auth.table.query.TPermissionQuer
 import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
+import org.mapstruct.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
+        nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL)
 public interface AuthBuilder {
     TUser buildUser(AccountVo account);
 
     Account buildAccount(TUser user);
 
-    @Mapping(target = "id",source = "id")
-    void copyUser(Long id, AccountVo account, @MappingTarget TUser tUser);
+    void copyUser(AccountVo account, @MappingTarget TUser tUser);
 
     TUserRole buildRole(Long userId, Long roleId);
 

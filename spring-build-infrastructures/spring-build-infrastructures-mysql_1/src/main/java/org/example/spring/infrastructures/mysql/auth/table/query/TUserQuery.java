@@ -28,5 +28,5 @@ public class TUserQuery extends TkBaseQuery<TUser> implements MybatisExampleForT
      * 状态
      */
     @AndEqualTo
-    private TUserStatus status;
+    private String status;
 }
