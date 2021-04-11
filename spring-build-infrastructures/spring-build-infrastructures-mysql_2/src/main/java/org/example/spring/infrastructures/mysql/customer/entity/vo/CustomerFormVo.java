@@ -8,4 +8,5 @@ import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 @Data
 public class CustomerFormVo extends IBaseVo {
     private CustomerVo customer;
+    private CustomerCommonsVo commons;
 }
