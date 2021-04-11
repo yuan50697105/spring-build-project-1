@@ -57,15 +57,15 @@ public interface AuthBuilder {
 
     IPageData<Role> buildRoleResult(IPageData<TRole> role);
 
-    default List<TRolePermission> buildRolePermissions(Long roleId, List<Long> permissionIds) {
-        ArrayList<TRolePermission> permissions = new ArrayList<>(permissionIds.size());
+    default List<TRoleResource> buildRolePermissions(Long roleId, List<Long> permissionIds) {
+        ArrayList<TRoleResource> permissions = new ArrayList<>(permissionIds.size());
         for (Long permissionId : permissionIds) {
             permissions.add(buildRolePermission(roleId, permissionId));
         }
         return permissions;
     }
 
-    TRolePermission buildRolePermission(Long roleId, Long permissionId);
+    TRoleResource buildRolePermission(Long roleId, Long permissionId);
 
     List<Resource> buildPermissionResult(List<TResource> listByRoleId);
 

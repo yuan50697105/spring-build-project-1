@@ -3,7 +3,6 @@ package org.example.spring.infrastructures.mysql.auth.dao.impl;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.dao.TResourceDao;
-import org.example.spring.infrastructures.mysql.auth.mapper.TPermissionMapper;
 import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
 import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;

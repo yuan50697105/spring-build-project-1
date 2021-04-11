@@ -8,8 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.infrastructures.mysql.auth.table.po.TRolePermission;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
+import org.example.spring.infrastructures.mysql.auth.table.po.TRoleResource;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 
@@ -23,7 +22,7 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TRolePermissionQuery extends TkBaseQuery<TRolePermission> implements Serializable, MybatisExampleForTk<TRolePermission, Example> {
+public class TRolePermissionQuery extends TkBaseQuery<TRoleResource> implements Serializable, MybatisExampleForTk<TRoleResource, Example> {
     /**
      * roleId
      */
