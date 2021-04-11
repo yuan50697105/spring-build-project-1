@@ -13,6 +13,11 @@ public class BaseQuery extends BaseEntity {
     private String order = "createDate";
     private OrderTypeEnum orderType = OrderTypeEnum.desc;
 
+    public BaseQuery withSize(Integer size) {
+        setSize(size);
+        return this;
+    }
+
     public void addDefault() {
         this.page = ObjectUtil.isNotEmpty(this.page) ? this.page : 1;
         this.size = ObjectUtil.isNotEmpty(this.size) ? this.size : 20;

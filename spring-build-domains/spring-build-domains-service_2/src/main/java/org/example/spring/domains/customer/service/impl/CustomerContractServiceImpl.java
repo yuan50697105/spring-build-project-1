@@ -30,22 +30,12 @@ public class CustomerContractServiceImpl implements CustomerContractService {
 
     @Override
     public List<CustomerContract> selectList(CustomerContractQuery query) {
-        return customerContractRepository.queryList(query);
-    }
-
-    @Override
-    public List<CustomerContract> selectTop(CustomerContractQuery query) {
-        return customerContractRepository.queryTop(query, query.getSize());
-    }
-
-    @Override
-    public CustomerContract selectFirst(CustomerContractQuery query) {
-        return customerContractRepository.queryFirst(query);
+        return customerContractRepository.queryTop(query,query.getSize());
     }
 
     @Override
     public CustomerContract selectOne(CustomerContractQuery query) {
-        return customerContractRepository.queryOne(query);
+        return customerContractRepository.queryFirst(query);
     }
 
     @Override

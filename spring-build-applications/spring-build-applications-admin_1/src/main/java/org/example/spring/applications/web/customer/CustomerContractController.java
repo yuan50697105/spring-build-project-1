@@ -28,21 +28,15 @@ public class CustomerContractController {
     }
 
     @GetMapping("list/{size}")
-    public Result<List<CustomerContract>> queryList(CustomerContractQuery query,@PathVariable int size) {
+    public Result<List<CustomerContract>> queryList(CustomerContractQuery query, @PathVariable(required = false) int size) {
         query.setSize(size);
-        List<CustomerContract> list = customerContractService.selectTop(query);
-        return R.success((long) list.size(), list);
-    }
-
-    @GetMapping("list")
-    public Result<List<CustomerContract>> queryList(CustomerContractQuery query) {
-        List<CustomerContract> list = customerContractService.selectTop(query);
+        List<CustomerContract> list = customerContractService.selectList(query);
         return R.success((long) list.size(), list);
     }
 
     @GetMapping("one")
     public Result<CustomerContract> queryOne(CustomerContractQuery query) {
-        CustomerContract data = customerContractService.selectFirst(query);
+        CustomerContract data = customerContractService.selectOne(query);
         return R.success(data);
     }
 
