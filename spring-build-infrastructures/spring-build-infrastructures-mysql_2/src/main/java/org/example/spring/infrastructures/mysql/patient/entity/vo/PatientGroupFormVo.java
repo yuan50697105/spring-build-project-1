@@ -7,6 +7,6 @@ import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class PatientGroupFormVo extends IBaseVo {
-    private PatientGroupVo item;
+    private PatientGroupVo group;
 
 }

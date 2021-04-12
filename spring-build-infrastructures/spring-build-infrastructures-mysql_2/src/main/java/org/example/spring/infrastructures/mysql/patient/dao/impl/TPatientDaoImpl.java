@@ -27,4 +27,9 @@ public class TPatientDaoImpl extends TkBaseDaoImpl<TPatient, TPatientQuery, TPat
         return remove(lambdaQuery().in(TPatient::getTeamId, teamIds));
     }
 
+    @Override
+    public boolean removeByGroupIds(List<Long> ids) {
+        return remove(lambdaQuery().in(TPatient::getGroupId, ids));
+    }
+
 }
