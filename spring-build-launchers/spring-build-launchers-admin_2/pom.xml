@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-applications-admin_2</artifactId>
+            <artifactId>spring-build-applications_2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

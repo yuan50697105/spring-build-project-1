@@ -12,8 +12,8 @@
     <artifactId>spring-build-applications</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-build-applications-admin_1</module>
-        <module>spring-build-applications-admin_2</module>
+        <module>spring-build-applications_1</module>
+        <module>spring-build-applications_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

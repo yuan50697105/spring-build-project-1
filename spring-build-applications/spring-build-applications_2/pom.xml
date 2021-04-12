@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-applications-admin_2</artifactId>
+    <artifactId>spring-build-applications_2</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -22,14 +22,6 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-build-domains-service_2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-models_2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-infrastructures-mysql_2</artifactId>
         </dependency>
     </dependencies>
 </project>
