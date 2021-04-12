@@ -144,6 +144,16 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public boolean updateAll(T t, Q q) {
+        return retBool(baseMapper.updateByExample(t, q.toExample()));
+    }
+
+    @Override
+    public boolean updateSelective(T t, Q q) {
+        return retBool(baseMapper.updateByExampleSelective(t, q.toExample()));
+    }
+
+    @Override
     public boolean updateNotNullColumnsBatchById(List<T> listForUpdate) {
         return retBool(baseMapper.updateNotNullColumnsBatchById(listForUpdate));
     }
@@ -154,13 +164,28 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public boolean insertSetColumnsBatch(List<T> list) {
+        return retBool(baseMapper.insertSetColumnsBatch(list));
+    }
+
+    @Override
     public boolean insertNotNullColumnsBatch(List<T> list) {
         return retBool(baseMapper.insertNotNullColumnsBatch(list));
     }
 
     @Override
-    public boolean insertSetColumnsBatch(List<T> list) {
-        return retBool(baseMapper.insertSetColumnsBatch(list));
+    public boolean insertSelective(T t) {
+        return retBool(baseMapper.insertSelective(t));
+    }
+
+    @Override
+    public boolean insert(T t) {
+        return save(t);
+    }
+
+    @Override
+    public boolean remove(Q q) {
+        return retBool(baseMapper.deleteByExample(q.toExample()));
     }
 
     public boolean isNotEmpty(Object object) {
