@@ -15,14 +15,18 @@
     <result column="code" jdbcType="VARCHAR" property="code" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="age_start" jdbcType="INTEGER" property="ageStart" />
-    <result column="age_end" jdbcType="INTEGER" property="ageEnd" />
-    <result column="sex" jdbcType="VARCHAR" property="sex" />
-    <result column="marriage" jdbcType="VARCHAR" property="marriage" />
-    <result column="bear" jdbcType="VARCHAR" property="bear" />
+    <result column="age_end" jdbcType="INTEGER" property="ageEnd"/>
+    <result column="sex" jdbcType="VARCHAR" property="sex"/>
+    <result column="marriage" jdbcType="VARCHAR" property="marriage"/>
+    <result column="bear" jdbcType="VARCHAR" property="bear"/>
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_id, update_id, create_user, update_user, create_date, update_date, customer_id, 
+    id, create_id, update_id, create_user, update_user, create_date, update_date, customer_id,
     code, `name`, age_start, age_end, sex, marriage, bear
   </sql>
+
+  <select id="existById" resultType="boolean">
+    select count(*) from t_patient_team where id=#{id,jdbcType=BIGINT} limit 1
+  </select>
 </mapper>

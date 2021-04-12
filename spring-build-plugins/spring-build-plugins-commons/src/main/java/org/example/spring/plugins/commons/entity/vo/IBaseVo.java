@@ -15,6 +15,11 @@ public class IBaseVo extends BaseEntity {
     @JsonSerialize(using = StringSerializer.class)
     private Long id;
 
+    public IBaseVo withId(Long id) {
+        setId(id);
+        return this;
+    }
+
 
     public interface Update {
     }

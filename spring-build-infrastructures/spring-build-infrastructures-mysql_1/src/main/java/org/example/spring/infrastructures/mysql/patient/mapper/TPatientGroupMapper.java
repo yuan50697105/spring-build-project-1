@@ -6,4 +6,5 @@ import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 
 @Mapper
 public interface TPatientGroupMapper extends IBaseMapper<TPatientGroup> {
+    boolean existById(Long id);
 }

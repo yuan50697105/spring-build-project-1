@@ -21,6 +21,18 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 @NoArgsConstructor
 public class TPatientGroup extends IBaseEntity implements Serializable {
     /**
+     * code
+     */
+    @ApiModelProperty(value = "code")
+    private String code;
+
+    /**
+     * name
+     */
+    @ApiModelProperty(value = "name")
+    private String name;
+
+    /**
      * customerId
      */
     @ApiModelProperty(value = "customerId")
@@ -30,7 +42,7 @@ public class TPatientGroup extends IBaseEntity implements Serializable {
      * groupId
      */
     @ApiModelProperty(value = "groupId")
-    private Long groupId;
+    private Long teamId;
 
     /**
      * personNum

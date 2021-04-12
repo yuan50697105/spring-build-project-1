@@ -19,4 +19,9 @@ public class TPatientTeamDaoImpl extends TkBaseDaoImpl<TPatientTeam, TPatientTea
     protected Wrapper<TPatientTeam> queryWrapper(TPatientTeamQuery tPatientTeamQuery) {
         return null;
     }
+
+    @Override
+    public boolean existById(Long id) {
+        return baseMapper.existById(id);
+    }
 }

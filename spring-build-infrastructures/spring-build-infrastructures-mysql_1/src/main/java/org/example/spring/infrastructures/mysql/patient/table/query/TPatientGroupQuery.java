@@ -25,6 +25,10 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class TPatientGroupQuery extends TkBaseQuery<TPatientGroup> implements Serializable, MybatisExampleForTk<TPatientGroup, Example> {
     private static final long serialVersionUID = 1L;
+    @AndLike
+    private String code;
+    @AndLike
+    private String name;
     /**
      * customerId
      */
@@ -34,9 +38,9 @@ public class TPatientGroupQuery extends TkBaseQuery<TPatientGroup> implements Se
     /**
      * groupId
      */
-    @ApiModelProperty(value = "groupId")
+    @ApiModelProperty(value = "teamId")
     @AndEqualTo
-    private Long groupId;
+    private Long teamId;
     /**
      * mealId
      */

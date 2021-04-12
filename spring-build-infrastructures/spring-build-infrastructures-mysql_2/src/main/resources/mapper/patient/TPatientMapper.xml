@@ -11,12 +11,12 @@
     <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="team_id" jdbcType="BIGINT" property="teamId" />
+    <result column="team_code" jdbcType="VARCHAR" property="teamCode" />
+    <result column="team_name" jdbcType="VARCHAR" property="teamName" />
     <result column="group_id" jdbcType="BIGINT" property="groupId" />
     <result column="group_code" jdbcType="VARCHAR" property="groupCode" />
     <result column="group_name" jdbcType="VARCHAR" property="groupName" />
-    <result column="group_item_id" jdbcType="BIGINT" property="groupItemId" />
-    <result column="group_item_code" jdbcType="VARCHAR" property="groupItemCode" />
-    <result column="group_item_name" jdbcType="VARCHAR" property="groupItemName" />
     <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="code" jdbcType="VARCHAR" property="code" />
     <result column="customer_id" jdbcType="BIGINT" property="customerId" />
@@ -30,8 +30,8 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_id, update_id, create_user, update_user, create_date, update_date, group_id, 
-    group_code, group_name, group_item_id, group_item_code, group_item_name, `type`, 
-    code, customer_id, customer_type, customer_name, age, sex, marriage, bear, phone
+    id, create_id, update_id, create_user, update_user, create_date, update_date, team_id, 
+    team_code, team_name, group_id, group_code, group_name, `type`, code, customer_id, 
+    customer_type, customer_name, age, sex, marriage, bear, phone
   </sql>
 </mapper>

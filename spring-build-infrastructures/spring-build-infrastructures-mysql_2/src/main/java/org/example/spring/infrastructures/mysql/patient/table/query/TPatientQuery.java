@@ -49,9 +49,15 @@ public class TPatientQuery extends TkBaseQuery<TPatient> implements Serializable
     /**
      * groupItemId
      */
-    @ApiModelProperty(value = "groupItemId")
+    @ApiModelProperty(value = "teamId")
     @AndEqualTo
-    private Long groupItemId;
+    private Long teamId;
+    @ApiModelProperty(value = "teamCode")
+    @AndLike
+    private String teamCode;
+    @ApiModelProperty(value = "teamName")
+    @AndLike
+    private String teamName;
     /**
      * type
      */
