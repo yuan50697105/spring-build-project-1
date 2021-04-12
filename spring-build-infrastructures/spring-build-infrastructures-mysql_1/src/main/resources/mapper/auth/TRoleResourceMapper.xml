@@ -9,23 +9,22 @@
     <result column="update_id" jdbcType="BIGINT" property="updateId" />
     <result column="create_user" jdbcType="VARCHAR" property="createUser" />
     <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
-    <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
-    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
-    <result column="role_id" jdbcType="BIGINT" property="roleId"/>
-    <result column="permission_id" jdbcType="BIGINT" property="permissionId"/>
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+    <result column="resource_id" jdbcType="BIGINT" property="resourceId" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_id, update_id, create_user, update_user, create_date, update_date, role_id,
-    permission_id
+    id, create_id, update_id, create_user, update_user, create_date, update_date, role_id, 
+    resource_id
   </sql>
 
-  <select id="listByRoleId"
-          resultMap="org.example.spring.infrastructures.mysql.auth.mapper.TPermissionMapper.BaseResultMap">
+  <select id="listByRoleId" resultMap="org.example.spring.infrastructures.mysql.auth.mapper.TPermissionMapper.BaseResultMap">
     select
     <include refid="org.example.spring.infrastructures.mysql.auth.mapper.TPermissionMapper.Base_Column_List">
     </include>
     from t_resource
-    where id in (select permission_id from t_role_resource where role_id = #{roleId,jdbcType=BIGINT})
+    where id in (select resource_id from t_role_resource where role_id = #{roleId,jdbcType=BIGINT})
   </select>
 </mapper>

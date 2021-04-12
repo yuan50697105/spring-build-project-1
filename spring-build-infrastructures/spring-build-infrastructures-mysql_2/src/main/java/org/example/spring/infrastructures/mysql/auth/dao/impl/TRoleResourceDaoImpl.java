@@ -53,6 +53,6 @@ public class TRoleResourceDaoImpl extends TkBaseDaoImpl<TRoleResource, TRolePerm
 
     @Override
     public boolean removeByPermissionIds(List<Long> permissionIds) {
-        return remove(lambdaQuery().in(TRoleResource::getPermissionId,permissionIds));
+        return remove(lambdaQuery().in(TRoleResource::getResourceId,permissionIds));
     }
 }

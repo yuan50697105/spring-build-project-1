@@ -13,7 +13,7 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 /**
  * t_role_permission
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TRolePermission")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TRoleResource")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
@@ -29,7 +29,7 @@ public class TRoleResource extends IBaseEntity implements Serializable {
      * permissionId
      */
     @ApiModelProperty(value = "permissionId")
-    private Long permissionId;
+    private Long resourceId;
 
     private static final long serialVersionUID = 1L;
 }
