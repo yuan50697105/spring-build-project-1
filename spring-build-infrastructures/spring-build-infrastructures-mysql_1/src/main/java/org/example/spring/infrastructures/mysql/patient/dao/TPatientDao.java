@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface TPatientDao extends TkBaseDao<TPatient, TPatientQuery> {
     boolean removeByTeamIds(List<Long> teamIds);
+
+    boolean removeByGroupIds(List<Long> ids);
 }

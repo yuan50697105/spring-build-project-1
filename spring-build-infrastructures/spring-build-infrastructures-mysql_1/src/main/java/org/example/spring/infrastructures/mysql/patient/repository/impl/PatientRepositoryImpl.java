@@ -27,8 +27,8 @@ import javax.xml.bind.ValidationException;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+import java.util.concurrent.ThreadPoolExecutor;
 
 @Repository
 @AllArgsConstructor
@@ -38,7 +38,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     private final TPatientGroupDao patientGroupDao;
     private final PatientBuilder patientBuilder;
     private final TPatientDao patientDao;
-    private final ExecutorService executorService;
+    private final ThreadPoolExecutor executor;
 
     @Override
     public Long saveWithId(PatientFormVo patientFormVo) {
@@ -101,10 +101,10 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     @SneakyThrows
     private void addExtra(TPatient entity) {
         if (PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
-            Future<Boolean> validateGroup = executorService.submit(validateGroup(entity));
-            Future<Boolean> validateTeam = executorService.submit(validateTeam(entity));
-            Future<Optional<TPatientGroup>> group = executorService.submit(getGroupOpt(entity));
-            Future<Optional<TPatientTeam>> team = executorService.submit(getTeamOpt(entity));
+            Future<Boolean> validateGroup = executor.submit(validateGroup(entity));
+            Future<Boolean> validateTeam = executor.submit(validateTeam(entity));
+            Future<Optional<TPatientGroup>> group = executor.submit(getGroupOpt(entity));
+            Future<Optional<TPatientTeam>> team = executor.submit(getTeamOpt(entity));
             Optional<TPatientGroup> tPatientGroup = group.get();
             Optional<TPatientTeam> tPatientTeam = team.get();
             if (validateGroup.get() && tPatientGroup.isPresent()) {
@@ -123,10 +123,10 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     @SneakyThrows
     private void updateExtra(TPatient entity) {
         if (PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
-            Future<Boolean> validateGroup = executorService.submit(validateGroup(entity));
-            Future<Boolean> validateTeam = executorService.submit(validateTeam(entity));
-            Future<Optional<TPatientGroup>> group = executorService.submit(getGroupOpt(entity));
-            Future<Optional<TPatientTeam>> team = executorService.submit(getTeamOpt(entity));
+            Future<Boolean> validateGroup = executor.submit(validateGroup(entity));
+            Future<Boolean> validateTeam = executor.submit(validateTeam(entity));
+            Future<Optional<TPatientGroup>> group = executor.submit(getGroupOpt(entity));
+            Future<Optional<TPatientTeam>> team = executor.submit(getTeamOpt(entity));
             Optional<TPatientGroup> tPatientGroup = group.get();
             Optional<TPatientTeam> tPatientTeam = team.get();
             if (validateGroup.get() && tPatientGroup.isPresent()) {

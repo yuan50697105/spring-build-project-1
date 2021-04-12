@@ -1,9 +1,11 @@
 package org.example.spring.infrastructures.mysql.patient.builder;
 
 import org.example.spring.infrastructures.commons.BaseBuilder;
+import org.example.spring.infrastructures.mysql.patient.entity.query.PatientGroupQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientTeamQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
+import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGroup;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeam;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupVo;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientTeamVo;
@@ -11,6 +13,7 @@ import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientVo;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatient;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroup;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
+import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
@@ -32,7 +35,7 @@ public interface PatientBuilder {
 
     List<Patient> buildPatientResult(List<TPatient> queryPage);
 
-    TPatientGroup buildPatientGroupItem(PatientGroupVo item);
+    TPatientGroup buildPatientGroup(PatientGroupVo item);
 
     TPatientTeam buildPatientTeam(PatientTeamVo teamVo);
 
@@ -45,4 +48,14 @@ public interface PatientBuilder {
     IPageData<PatientTeam> buildPatientTeamResult(IPageData<TPatientTeam> data);
 
     List<PatientTeam> buildPatientTeamResult(List<TPatientTeam> data);
+
+    void copyPatientGroup(PatientGroupVo group, @MappingTarget TPatientGroup tPatientGroup);
+
+    PatientGroup buildPatientGroupResult(TPatientGroup group);
+
+    TPatientGroupQuery buildPatientGroupQuery(PatientGroupQuery patientGroupQuery);
+
+    IPageData<PatientGroup> buildPatientGroupResult(IPageData<TPatientGroup> queryPage);
+
+    List<PatientGroup> buildPatientGroupResult(List<TPatientGroup> data);
 }
