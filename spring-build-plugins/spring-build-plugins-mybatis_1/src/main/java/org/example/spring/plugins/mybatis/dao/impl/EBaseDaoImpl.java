@@ -14,9 +14,11 @@ import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.entity.query.EBaseQuery;
 import org.example.spring.plugins.mybatis.entity.result.IPageResult;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
+import org.springframework.scheduling.annotation.Async;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @author yuane
@@ -25,6 +27,13 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     @Override
     public Optional<T> getByIdOpt(Long id) {
         return Optional.ofNullable(getById(id));
+    }
+
+
+    @Override
+    @Async
+    public CompletableFuture<Optional<T>> getByIdOptAsync(Long id) {
+        return CompletableFuture.completedFuture(getByIdOpt(id));
     }
 
     @Override

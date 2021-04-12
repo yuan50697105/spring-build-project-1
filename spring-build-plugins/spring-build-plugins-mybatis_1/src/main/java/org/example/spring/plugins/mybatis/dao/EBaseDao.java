@@ -6,12 +6,15 @@ import org.example.spring.plugins.mybatis.entity.query.EBaseQuery;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @author yuane
  */
 public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
     Optional<T> getByIdOpt(Long id);
+
+    CompletableFuture<Optional<T>> getByIdOptAsync(Long id);
 
     List<T> queryList(Q query);
 
