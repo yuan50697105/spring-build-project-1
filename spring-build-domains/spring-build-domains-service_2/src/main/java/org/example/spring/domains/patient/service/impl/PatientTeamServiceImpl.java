@@ -52,6 +52,11 @@ public class PatientTeamServiceImpl implements PatientTeamService {
     }
 
     @Override
+    public void delete(List<Long> ids) {
+        patientTeamRepository.delete(ids);
+    }
+
+    @Override
     public PatientTeamDetails get(Long id) {
         return patientTeamRepository.getById(id);
     }
