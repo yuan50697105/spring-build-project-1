@@ -2,7 +2,6 @@ package org.example.spring.infrastructures.mysql.patient.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
-
 import lombok.SneakyThrows;
 import org.example.spring.infrastructures.mysql.patient.builder.PatientBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
@@ -21,15 +20,15 @@ import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
-import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.PostConstruct;
 import javax.xml.bind.ValidationException;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 
 @Repository
 @AllArgsConstructor
@@ -45,8 +44,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     public Long saveWithId(PatientFormVo patientFormVo) {
         PatientVo patient = patientFormVo.getPatient();
         TPatient entity = patientBuilder.buildPatient(patient);
-        addTeam(entity);
-        addGroup(entity);
+        addExtra(entity);
         patientDao.save(entity);
         return entity.getId();
     }
@@ -59,8 +57,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         if (optional.isPresent()) {
             TPatient tPatient = optional.get();
             patientBuilder.copyPatient(patient, tPatient);
-            updateTeam(tPatient);
-            updateGroup(tPatient);
+            updateExtra(tPatient);
             patientDao.updateById(tPatient);
         }
     }
@@ -102,82 +99,74 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     }
 
     @SneakyThrows
-    private void addTeam(TPatient entity) {
-        String type = entity.getType();
-        if (PatientType.get(type).equals(PatientType.TEAM)) {
-            if (validateTeam(entity)) {
-                setTeam(entity);
+    private void addExtra(TPatient entity) {
+        if (PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
+            Future<Boolean> validateGroup = executorService.submit(validateGroup(entity));
+            Future<Boolean> validateTeam = executorService.submit(validateTeam(entity));
+            Future<Optional<TPatientGroup>> group = executorService.submit(getGroupOpt(entity));
+            Future<Optional<TPatientTeam>> team = executorService.submit(getTeamOpt(entity));
+            Optional<TPatientGroup> tPatientGroup = group.get();
+            Optional<TPatientTeam> tPatientTeam = team.get();
+            if (validateGroup.get() && tPatientGroup.isPresent()) {
+                setGroup(entity, tPatientGroup.get());
             } else {
                 throw new ValidationException("分组ID不存在");
             }
-        }
-    }
-
-    @SneakyThrows
-    private void addGroup(TPatient entity) {
-        String type = entity.getType();
-        if (PatientType.get(type).equals(PatientType.TEAM)) {
-            if (validateGroup(entity)) {
-                setGroup(entity);
+            if (validateTeam.get() && tPatientTeam.isPresent()) {
+                setTeam(entity, tPatientTeam.get());
             } else {
-                throw new ValidationException("分组ID不存在");
+                throw new ValidationException("团队ID不存在");
             }
         }
     }
 
-    private void updateTeam(TPatient patient) {
-        String type = patient.getType();
-        if (PatientType.get(type).equals(PatientType.TEAM)) {
-            if (validateTeam(patient)) {
-                setTeam(patient);
+    @SneakyThrows
+    private void updateExtra(TPatient entity) {
+        if (PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
+            Future<Boolean> validateGroup = executorService.submit(validateGroup(entity));
+            Future<Boolean> validateTeam = executorService.submit(validateTeam(entity));
+            Future<Optional<TPatientGroup>> group = executorService.submit(getGroupOpt(entity));
+            Future<Optional<TPatientTeam>> team = executorService.submit(getTeamOpt(entity));
+            Optional<TPatientGroup> tPatientGroup = group.get();
+            Optional<TPatientTeam> tPatientTeam = team.get();
+            if (validateGroup.get() && tPatientGroup.isPresent()) {
+                setGroup(entity, tPatientGroup.get());
+            }
+            if (validateTeam.get() && tPatientTeam.isPresent()) {
+                setTeam(entity, tPatientTeam.get());
             }
         }
     }
 
-    private void updateGroup(TPatient patient) {
-        String type = patient.getType();
-        if (PatientType.get(type).equals(PatientType.TEAM)) {
-            if (validateGroup(patient)) {
-                setGroup(patient);
-            }
+    private Callable<Optional<TPatientTeam>> getTeamOpt(TPatient entity) {
+        return () -> patientTeamDao.getByIdOpt(entity.getTeamId());
+    }
 
-        }
+    private Callable<Optional<TPatientGroup>> getGroupOpt(TPatient entity) {
+        return () -> patientGroupDao.getByIdOpt(entity.getGroupId());
+    }
+
+    private Callable<Boolean> validateTeam(TPatient entity) {
+        return () -> ObjectUtil.isNotEmpty(entity.getTeamId()) && patientTeamDao.existById(entity.getTeamId());
+    }
+
+    private Callable<Boolean> validateGroup(TPatient entity) {
+        return () -> ObjectUtil.isNotEmpty(entity.getGroupId()) && patientGroupDao.existById(entity.getGroupId());
     }
 
     @SneakyThrows
-    private boolean validateTeam(TPatient entity) {
-        Long teamId = entity.getTeamId();
-        return ObjectUtil.isNotEmpty(teamId) && patientTeamDao.existById(teamId);
-
+    private void setTeam(TPatient entity, TPatientTeam team) {
+        entity.setTeamId(team.getId());
+        entity.setTeamCode(team.getCode());
+        entity.setTeamName(team.getName());
     }
 
     @SneakyThrows
-    private boolean validateGroup(TPatient entity) {
-        Long groupId = entity.getGroupId();
-        return ObjectUtil.isNotEmpty(groupId) && patientGroupDao.existById(groupId);
+    private void setGroup(TPatient entity, TPatientGroup group) {
+        entity.setGroupId(group.getId());
+        entity.setGroupCode(group.getCode());
+        entity.setGroupName(group.getName());
     }
 
-    @SneakyThrows
-    private void setGroup(TPatient entity) {
-        Future<Optional<TPatientGroup>> future = executorService.submit(() -> patientGroupDao.getByIdOpt(entity.getGroupId()));
-        Optional<TPatientGroup> optional = future.get();
-        if (optional.isPresent()) {
-            TPatientGroup group = optional.get();
-            entity.setGroupId(group.getId());
-            entity.setGroupCode(group.getCode());
-            entity.setGroupName(group.getName());
-        }
-    }
 
-    @SneakyThrows
-    private void setTeam(TPatient entity) {
-        Future<Optional<TPatientTeam>> future = executorService.submit(() -> patientTeamDao.getByIdOpt(entity.getTeamId()));
-        Optional<TPatientTeam> optional = future.get();
-        if (optional.isPresent()) {
-            TPatientTeam team = optional.get();
-            entity.setTeamId(team.getId());
-            entity.setTeamCode(team.getCode());
-            entity.setTeamName(team.getName());
-        }
-    }
 }
