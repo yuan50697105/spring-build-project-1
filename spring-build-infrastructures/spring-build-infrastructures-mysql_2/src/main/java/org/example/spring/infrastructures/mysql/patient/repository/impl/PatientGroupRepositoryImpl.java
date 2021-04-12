@@ -2,13 +2,11 @@ package org.example.spring.infrastructures.mysql.patient.repository.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.patient.builder.PatientBuilder;
-import org.example.spring.infrastructures.mysql.patient.dao.TPatientGroupDao;
-import org.example.spring.infrastructures.mysql.patient.entity.query.PatientGroupQuery;
-import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGroup;
+import org.example.spring.infrastructures.mysql.patient.dao.TPatientTeamDao;
+import org.example.spring.infrastructures.mysql.patient.entity.query.PatientTeamQuery;
+import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeam;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGroupDetails;
-import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupFormVo;
-import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupItemVo;
-import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientVo;
+import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientTeamFormVo;
 import org.example.spring.infrastructures.mysql.patient.repository.PatientGroupRepository;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
@@ -20,17 +18,17 @@ import java.util.List;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup, PatientGroupFormVo, PatientGroupDetails, PatientGroupQuery> implements PatientGroupRepository {
+public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, PatientTeamFormVo, PatientGroupDetails, PatientTeamQuery> implements PatientGroupRepository {
     private final PatientBuilder patientBuilder;
-    private final TPatientGroupDao patientGroupDao;
+    private final TPatientTeamDao patientGroupDao;
 
     @Override
-    public Long saveWithId(PatientGroupFormVo patientGroupFormVo) {
+    public Long saveWithId(PatientTeamFormVo patientTeamFormVo) {
         return null;
     }
 
     @Override
-    public void update(PatientGroupFormVo patientGroupFormVo) {
+    public void update(PatientTeamFormVo patientTeamFormVo) {
 
     }
 
@@ -45,17 +43,17 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     }
 
     @Override
-    public IPageData<PatientGroup> queryPage(PatientGroupQuery patientGroupQuery) {
+    public IPageData<PatientTeam> queryPage(PatientTeamQuery patientTeamQuery) {
         return null;
     }
 
     @Override
-    public List<PatientGroup> queryList(PatientGroupQuery patientGroupQuery) {
+    public List<PatientTeam> queryList(PatientTeamQuery patientTeamQuery) {
         return null;
     }
 
     @Override
-    public PatientGroup queryOne(PatientGroupQuery patientGroupQuery) {
+    public PatientTeam queryOne(PatientTeamQuery patientTeamQuery) {
         return null;
     }
 }

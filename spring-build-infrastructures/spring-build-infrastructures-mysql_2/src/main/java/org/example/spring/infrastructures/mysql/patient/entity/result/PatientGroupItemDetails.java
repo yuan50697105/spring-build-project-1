@@ -6,6 +6,6 @@ import java.util.List;
 
 @Data
 public class PatientGroupItemDetails {
-    private PatientGroupItem item;
+    private PatientGroup item;
     private List<Patient> patients;
 }

@@ -1,4 +1,4 @@
-create table if not exists t_customer_contract
+create table t_customer_contract
 (
     id bigint auto_increment comment 'id'
         primary key,
@@ -18,7 +18,7 @@ create table if not exists t_customer_contract
 )
     comment 't_customer_contract' charset=utf8mb4;
 
-create table if not exists t_customer_info
+create table t_customer_info
 (
     id bigint auto_increment comment 'id'
         primary key,
@@ -34,7 +34,7 @@ create table if not exists t_customer_info
 )
     comment 't_customer_info' charset=utf8mb4;
 
-create table if not exists t_department
+create table t_department
 (
     id bigint auto_increment comment 'id'
         primary key,
@@ -50,7 +50,7 @@ create table if not exists t_department
 )
     comment 't_department' charset=utf8mb4;
 
-create table if not exists t_patient
+create table t_patient
 (
     id bigint auto_increment comment 'id'
         primary key,
@@ -67,10 +67,6 @@ create table if not exists t_patient
     group_item_code varchar(50) default '' null comment 'groupItemCode',
     group_item_name varchar(50) default '' null comment 'groupItemName',
     type varchar(50) default '' null comment 'type',
-    meal_type varchar(50) default '' null comment 'mealType',
-    meal_id bigint default -1 null comment 'mealId',
-    meal_code varchar(50) default '' null comment 'mealCode',
-    meal_name varchar(50) default '' null comment 'mealName',
     code varchar(50) default '' null comment 'code',
     customer_id bigint default -1 null comment 'customerId',
     customer_type varchar(50) default '' null comment 'customerType',
@@ -83,7 +79,7 @@ create table if not exists t_patient
 )
     comment 't_patient' charset=utf8mb4;
 
-create table if not exists t_patient_group
+create table t_patient_check_item
 (
     id bigint auto_increment comment 'id'
         primary key,
@@ -93,18 +89,39 @@ create table if not exists t_patient_group
     update_user varchar(50) default '' null comment 'updateUser',
     create_date datetime default '1000-01-01 00:00:00' null comment 'createDate',
     update_date datetime default '1000-01-01 00:00:00' null comment 'updateDate',
-    customer_id bigint default -1 null comment 'customerId',
-    code varchar(50) default '' null comment 'code',
-    name varchar(50) default '' null comment 'name',
-    age_start int default -1 null comment 'ageStart',
-    age_end int default -1 null comment 'ageEnd',
-    sex varchar(50) default '' null comment 'sex',
-    marriage varchar(50) default '' null comment 'marriage',
-    bear varchar(50) default '' null comment 'bear'
+    patient_id bigint default -1 null comment 'patientId',
+    fee_item_id bigint default -1 null comment 'feeItemId',
+    check_item_id varchar(50) default '' null comment 'checkItemId',
+    check_item_code varchar(50) default '' null comment 'checkItemCode',
+    check_item_name varchar(50) default '' null comment 'checkItemName',
+    meal_id bigint default -1 null comment 'mealId',
+    source varchar(50) default '' null comment 'source'
 )
-    comment 't_patient_group' charset=utf8mb4;
+    comment 't_patient_check_item' charset=utf8mb4;
 
-create table if not exists t_patient_group_item
+create table t_patient_fee_item
+(
+    id bigint auto_increment comment 'id'
+        primary key,
+    create_id bigint default -1 null comment 'createId',
+    update_id bigint default -1 null comment 'updateId',
+    create_user varchar(50) default '' null comment 'createUser',
+    update_user varchar(50) default '' null comment 'updateUser',
+    create_date datetime default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date datetime default '1000-01-01 00:00:00' null comment 'updateDate',
+    patient_id bigint default -1 null comment 'patientId',
+    fee_item_id varchar(50) default '' null comment 'feeItemId',
+    fee_item_code varchar(50) default '' null comment 'feeItemCode',
+    fee_item_name varchar(50) default '' null comment 'feeItemName',
+    price decimal(13,4) default -1.0000 null comment 'price',
+    dis_price decimal(13,4) default -1.0000 null comment 'disPrice',
+    market_price decimal(13,4) default -1.0000 null comment 'marketPrice',
+    source varchar(50) default '' null comment 'source',
+    type varchar(50) default '' null comment 'type'
+)
+    comment 't_patient_fee_item' charset=utf8mb4;
+
+create table t_patient_group
 (
     id bigint auto_increment comment 'id'
         primary key,
@@ -124,9 +141,52 @@ create table if not exists t_patient_group_item
     max_dis_price decimal(13,4) default -1.0000 null comment 'maxDisPrice',
     max_discount decimal(13,4) default -1.0000 null comment 'maxDiscount'
 )
-    comment 't_patient_group_item' charset=utf8mb4;
+    comment 't_patient_group' charset=utf8mb4;
 
-create table if not exists t_resource
+create table t_patient_meal
+(
+    id bigint auto_increment comment 'id'
+        primary key,
+    create_id bigint default -1 null comment 'createId',
+    update_id bigint default -1 null comment 'updateId',
+    create_user varchar(50) default '' null comment 'createUser',
+    update_user varchar(50) default '' null comment 'updateUser',
+    create_date datetime default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date datetime default '1000-01-01 00:00:00' null comment 'updateDate',
+    team_id bigint default -1 null comment 'teamId',
+    group_id bigint default -1 null comment 'groupId',
+    meal_type varchar(50) default '' null comment 'mealType',
+    meal_id bigint default -1 null comment 'mealId',
+    meal_code varchar(50) default '' null comment 'mealCode',
+    meal_name varchar(50) default '' null comment 'mealName',
+    price decimal(13,4) default -1.0000 null comment 'price',
+    dis_price decimal(13,4) default -1.0000 null comment 'disPrice',
+    market_price decimal(13,4) default -1.0000 null comment 'marketPrice'
+)
+    comment 't_patient_meal' charset=utf8mb4;
+
+create table t_patient_team
+(
+    id bigint auto_increment comment 'id'
+        primary key,
+    create_id bigint default -1 null comment 'createId',
+    update_id bigint default -1 null comment 'updateId',
+    create_user varchar(50) default '' null comment 'createUser',
+    update_user varchar(50) default '' null comment 'updateUser',
+    create_date datetime default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date datetime default '1000-01-01 00:00:00' null comment 'updateDate',
+    customer_id bigint default -1 null comment 'customerId',
+    code varchar(50) default '' null comment 'code',
+    name varchar(50) default '' null comment 'name',
+    age_start int default -1 null comment 'ageStart',
+    age_end int default -1 null comment 'ageEnd',
+    sex varchar(50) default '' null comment 'sex',
+    marriage varchar(50) default '' null comment 'marriage',
+    bear varchar(50) default '' null comment 'bear'
+)
+    comment 't_patient_team' charset=utf8mb4;
+
+create table t_resource
 (
     id bigint auto_increment comment 'id'
         primary key,
@@ -144,7 +204,7 @@ create table if not exists t_resource
 )
     comment 't_permission' charset=utf8mb4;
 
-create table if not exists t_role
+create table t_role
 (
     id bigint auto_increment comment 'id'
         primary key,
@@ -158,7 +218,7 @@ create table if not exists t_role
 )
     comment 't_role' charset=utf8mb4;
 
-create table if not exists t_role_resource
+create table t_role_resource
 (
     id bigint auto_increment comment 'id'
         primary key,
@@ -169,11 +229,11 @@ create table if not exists t_role_resource
     create_date datetime default '1000-01-01 00:00:00' null comment 'createDate',
     update_date datetime default '1000-01-01 00:00:00' null comment 'updateDate',
     role_id bigint default -1 null comment 'roleId',
-    permission_id bigint default -1 null comment 'permissionId'
+    resource_id bigint default -1 null comment 'permissionId'
 )
     comment 't_role_permission' charset=utf8mb4;
 
-create table if not exists t_seller_info
+create table t_seller_info
 (
     id bigint auto_increment comment 'id'
         primary key,
@@ -192,7 +252,7 @@ create table if not exists t_seller_info
 )
     comment 't_seller_info' charset=utf8mb4;
 
-create table if not exists t_user
+create table t_user
 (
     id bigint auto_increment comment 'id'
         primary key,
@@ -209,7 +269,7 @@ create table if not exists t_user
 )
     comment 't_user' charset=utf8mb4;
 
-create table if not exists t_user_role
+create table t_user_role
 (
     id bigint auto_increment comment 'id'
         primary key,

@@ -3,6 +3,7 @@ package org.example.spring.infrastructures.mysql.patient.table.po;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,46 +27,52 @@ public class TPatientGroup extends IBaseEntity implements Serializable {
     private Long customerId;
 
     /**
-     * code
+     * groupId
      */
-    @ApiModelProperty(value = "code")
-    private String code;
+    @ApiModelProperty(value = "groupId")
+    private Long groupId;
 
     /**
-     * name
+     * personNum
      */
-    @ApiModelProperty(value = "name")
-    private String name;
+    @ApiModelProperty(value = "personNum")
+    private Integer personNum;
 
     /**
-     * ageStart
+     * mealId
      */
-    @ApiModelProperty(value = "ageStart")
-    private Integer ageStart;
+    @ApiModelProperty(value = "mealId")
+    private Long mealId;
 
     /**
-     * ageEnd
+     * mealName
      */
-    @ApiModelProperty(value = "ageEnd")
-    private Integer ageEnd;
+    @ApiModelProperty(value = "mealName")
+    private String mealName;
 
     /**
-     * sex
+     * mealPrice
      */
-    @ApiModelProperty(value = "sex")
-    private String sex;
+    @ApiModelProperty(value = "mealPrice")
+    private BigDecimal mealPrice;
 
     /**
-     * marriage
+     * mealDisPrice
      */
-    @ApiModelProperty(value = "marriage")
-    private String marriage;
+    @ApiModelProperty(value = "mealDisPrice")
+    private BigDecimal mealDisPrice;
 
     /**
-     * bear
+     * maxDisPrice
      */
-    @ApiModelProperty(value = "bear")
-    private String bear;
+    @ApiModelProperty(value = "maxDisPrice")
+    private BigDecimal maxDisPrice;
+
+    /**
+     * maxDiscount
+     */
+    @ApiModelProperty(value = "maxDiscount")
+    private BigDecimal maxDiscount;
 
     private static final long serialVersionUID = 1L;
 }
