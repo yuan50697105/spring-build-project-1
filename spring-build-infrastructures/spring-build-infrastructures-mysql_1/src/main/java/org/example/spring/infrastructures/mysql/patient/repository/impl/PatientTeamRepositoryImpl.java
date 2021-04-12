@@ -5,7 +5,7 @@ import org.example.spring.infrastructures.mysql.patient.builder.PatientBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientTeamDao;
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientTeamQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeam;
-import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGroupDetails;
+import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeamDetails;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientTeamFormVo;
 import org.example.spring.infrastructures.mysql.patient.repository.PatientTeamRepository;
 import org.example.spring.plugins.mybatis.entity.IPageData;
@@ -18,7 +18,7 @@ import java.util.List;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, PatientTeamFormVo, PatientGroupDetails, PatientTeamQuery> implements PatientTeamRepository {
+public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, PatientTeamFormVo, PatientTeamDetails, PatientTeamQuery> implements PatientTeamRepository {
     private final PatientBuilder patientBuilder;
     private final TPatientTeamDao patientGroupDao;
 
@@ -38,7 +38,7 @@ public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, 
     }
 
     @Override
-    public PatientGroupDetails getById(Long id) {
+    public PatientTeamDetails getById(Long id) {
         return null;
     }
 

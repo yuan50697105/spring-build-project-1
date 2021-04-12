@@ -5,4 +5,5 @@ import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGrou
 import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 public interface TPatientGroupDao extends TkBaseDao<TPatientGroup, TPatientGroupQuery> {
+    boolean existById(Long id);
 }
