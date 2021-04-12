@@ -26,22 +26,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public List<Account> queryList(AccountQuery query) {
-        return accountRepository.queryList(query);
-    }
-
-    @Override
-    public List<Account> queryTop(AccountQuery query) {
         return accountRepository.queryTop(query, query.getSize());
     }
 
     @Override
-    public Account queryFirst(AccountQuery query) {
-        return accountRepository.queryFirst(query);
-    }
-
-    @Override
     public Account queryOne(AccountQuery query) {
-        return accountRepository.queryOne(query);
+        return accountRepository.queryFirst(query);
     }
 
     @Override

@@ -13,10 +13,6 @@ public interface RoleService {
 
     List<Role> queryList(RoleQuery query);
 
-    List<Role> queryTop(RoleQuery query);
-
-    Role queryFirst(RoleQuery query);
-
     Role queryOne(RoleQuery query);
 
     RoleDetails get(Long id);

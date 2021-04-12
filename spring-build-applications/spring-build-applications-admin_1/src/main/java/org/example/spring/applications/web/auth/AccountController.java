@@ -28,22 +28,21 @@ public class AccountController {
         return R.success(data.getTotalRowNum(), data.getData());
     }
 
+    @GetMapping("list/{size}")
+    public Result<List<Account>> queryList(AccountQuery query, @PathVariable int size) {
+        List<Account> data = accountService.queryList((AccountQuery) query.withSize(size));
+        return R.success((long) data.size(), data);
+    }
+
     @GetMapping("list")
     public Result<List<Account>> queryList(AccountQuery query) {
         List<Account> data = accountService.queryList(query);
         return R.success((long) data.size(), data);
     }
 
-    @GetMapping("list/{size}")
-    public Result<List<Account>> queryTop(AccountQuery query, @PathVariable int size) {
-        query.setSize(size);
-        List<Account> data = accountService.queryTop(query);
-        return R.success((long) data.size(), data);
-    }
-
     @GetMapping("one")
     public Result<Account> queryOne(AccountQuery query) {
-        Account data = accountService.queryFirst(query);
+        Account data = accountService.queryOne(query);
         return R.success(data);
     }
 
