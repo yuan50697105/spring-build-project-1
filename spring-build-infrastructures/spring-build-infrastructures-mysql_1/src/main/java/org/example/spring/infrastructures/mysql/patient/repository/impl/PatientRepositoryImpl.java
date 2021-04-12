@@ -21,12 +21,15 @@ import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.PostConstruct;
 import javax.xml.bind.ValidationException;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.*;
 
 @Repository
 @AllArgsConstructor
@@ -36,6 +39,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     private final TPatientGroupDao patientGroupDao;
     private final PatientBuilder patientBuilder;
     private final TPatientDao patientDao;
+    private final ExecutorService executorService;
 
     @Override
     public Long saveWithId(PatientFormVo patientFormVo) {
@@ -153,8 +157,10 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         return ObjectUtil.isNotEmpty(groupId) && patientGroupDao.existById(groupId);
     }
 
+    @SneakyThrows
     private void setGroup(TPatient entity) {
-        Optional<TPatientGroup> optional = patientGroupDao.getByIdOpt(entity.getGroupId());
+        Future<Optional<TPatientGroup>> future = executorService.submit(() -> patientGroupDao.getByIdOpt(entity.getGroupId()));
+        Optional<TPatientGroup> optional = future.get();
         if (optional.isPresent()) {
             TPatientGroup group = optional.get();
             entity.setGroupId(group.getId());
@@ -163,8 +169,10 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         }
     }
 
+    @SneakyThrows
     private void setTeam(TPatient entity) {
-        Optional<TPatientTeam> optional = patientTeamDao.getByIdOpt(entity.getTeamId());
+        Future<Optional<TPatientTeam>> future = executorService.submit(() -> patientTeamDao.getByIdOpt(entity.getTeamId()));
+        Optional<TPatientTeam> optional = future.get();
         if (optional.isPresent()) {
             TPatientTeam team = optional.get();
             entity.setTeamId(team.getId());
