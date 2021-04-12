@@ -9,7 +9,7 @@ import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGro
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGroupItemDetails;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupFormVo;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupVo;
-import org.example.spring.infrastructures.mysql.patient.repository.PatientGroupItemRepository;
+import org.example.spring.infrastructures.mysql.patient.repository.PatientGroupRepository;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroup;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
@@ -21,7 +21,7 @@ import java.util.List;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup, PatientGroupFormVo, PatientGroupItemDetails, PatientGroupQuery> implements PatientGroupItemRepository {
+public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup, PatientGroupFormVo, PatientGroupItemDetails, PatientGroupQuery> implements PatientGroupRepository {
     private final PatientBuilder patientBuilder;
     private final TPatientGroupDao patientGroupItemDao;
     private final TPatientDao patientDao;
