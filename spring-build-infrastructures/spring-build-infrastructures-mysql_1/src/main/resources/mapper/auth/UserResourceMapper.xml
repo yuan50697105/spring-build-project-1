@@ -10,7 +10,7 @@
         </include>
         from t_resource
         where id in (
-                select permission_id
+                select resource_id
                 from t_role_resource
                 where role_id in (
                         select role_id
