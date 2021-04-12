@@ -13,10 +13,6 @@ public interface AccountService {
 
     List<Account> queryList(AccountQuery query);
 
-    List<Account> queryTop(AccountQuery query);
-
-    Account queryFirst(AccountQuery query);
-
     Account queryOne(AccountQuery query);
 
     AccountDetails get(Long id);
