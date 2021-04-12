@@ -7,5 +7,5 @@ import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class PatientTeamFormVo extends IBaseVo {
-    private PatientTeamVo group;
+    private PatientTeamVo team;
 }

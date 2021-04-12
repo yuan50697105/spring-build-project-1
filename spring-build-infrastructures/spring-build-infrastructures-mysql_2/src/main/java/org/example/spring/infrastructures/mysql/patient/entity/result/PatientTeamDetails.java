@@ -10,5 +10,4 @@ import java.util.List;
 @Data
 public class PatientTeamDetails extends IBaseVo {
     private PatientTeam team;
-    private List<PatientGroup> items;
 }

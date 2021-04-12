@@ -5,5 +5,8 @@ import org.example.spring.infrastructures.mysql.patient.table.query.TPatientMeal
 import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 
+import java.util.List;
+
 public interface TPatientMealDao extends TkBaseDao<TPatientMeal, TPatientMealQuery> {
+    boolean removeByTeamIds(List<Long> teamIds);
 }

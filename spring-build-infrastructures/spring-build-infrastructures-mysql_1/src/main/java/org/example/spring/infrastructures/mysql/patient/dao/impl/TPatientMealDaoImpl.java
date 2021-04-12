@@ -8,10 +8,17 @@ import org.example.spring.infrastructures.mysql.patient.table.query.TPatientMeal
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class TPatientMealDaoImpl extends TkBaseDaoImpl<TPatientMeal, TPatientMealQuery, TPatientMealMapper> implements TPatientMealDao {
     @Override
     protected Wrapper<TPatientMeal> queryWrapper(TPatientMealQuery tPatientMealQuery) {
         return null;
+    }
+
+    @Override
+    public boolean removeByTeamIds(List<Long> teamIds) {
+        return remove(lambdaQuery().in(TPatientMeal::getTeamId, teamIds));
     }
 }

@@ -18,9 +18,11 @@ public interface PatientTeamService {
 
     Optional<PatientTeam> selectOneOpt(PatientTeamQuery query);
 
+    PatientTeamDetails get(Long id);
+
     void save(PatientTeamFormVo formVo);
 
     void update(PatientTeamFormVo formVo);
 
-    PatientTeamDetails get(Long id);
+    void delete(List<Long> ids);
 }

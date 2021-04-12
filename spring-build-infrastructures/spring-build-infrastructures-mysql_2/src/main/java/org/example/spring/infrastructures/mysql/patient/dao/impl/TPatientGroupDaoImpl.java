@@ -10,6 +10,8 @@ import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 @AllArgsConstructor
 @Transactional
@@ -22,5 +24,10 @@ public class TPatientGroupDaoImpl extends TkBaseDaoImpl<TPatientGroup, TPatientG
     @Override
     public boolean existById(Long id) {
         return baseMapper.existById(id);
+    }
+
+    @Override
+    public boolean removeByTeamIds(List<Long> teamIds) {
+        return remove(lambdaQuery().in(TPatientGroup::getTeamId, teamIds));
     }
 }
