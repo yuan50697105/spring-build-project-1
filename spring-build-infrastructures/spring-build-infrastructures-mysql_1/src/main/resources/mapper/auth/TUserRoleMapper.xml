@@ -4,19 +4,20 @@
   <resultMap id="BaseResultMap" type="org.example.spring.infrastructures.mysql.auth.table.po.TUserRole">
     <!--@mbg.generated-->
     <!--@Table t_user_role-->
-    <id column="id" jdbcType="BIGINT" property="id"/>
-    <result column="create_id" jdbcType="BIGINT" property="createId"/>
-    <result column="update_id" jdbcType="BIGINT" property="updateId"/>
-    <result column="create_user" jdbcType="VARCHAR" property="createUser"/>
-    <result column="update_user" jdbcType="VARCHAR" property="updateUser"/>
-    <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
-    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
-    <result column="user_id" jdbcType="BIGINT" property="userId"/>
-    <result column="role_id" jdbcType="BIGINT" property="roleId"/>
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_id" jdbcType="BIGINT" property="createId" />
+    <result column="update_id" jdbcType="BIGINT" property="updateId" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_id, update_id, create_user, update_user, create_date, update_date, user_id, role_id
+    id, create_id, update_id, create_user, update_user, create_date, update_date, user_id, 
+    role_id
   </sql>
 
   <select id="listByUserId" resultMap="org.example.spring.infrastructures.mysql.auth.mapper.TRoleMapper.BaseResultMap">

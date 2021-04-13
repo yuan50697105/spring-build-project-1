@@ -20,9 +20,9 @@
     resource_id
   </sql>
 
-  <select id="listByRoleId" resultMap="org.example.spring.infrastructures.mysql.auth.mapper.TPermissionMapper.BaseResultMap">
+  <select id="listByRoleId" resultMap="org.example.spring.infrastructures.mysql.auth.mapper.TResourceMapper.BaseResultMap">
     select
-    <include refid="org.example.spring.infrastructures.mysql.auth.mapper.TPermissionMapper.Base_Column_List">
+    <include refid="org.example.spring.infrastructures.mysql.auth.mapper.TResourceMapper.Base_Column_List">
     </include>
     from t_resource
     where id in (select resource_id from t_role_resource where role_id = #{roleId,jdbcType=BIGINT})

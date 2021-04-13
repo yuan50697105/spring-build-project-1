@@ -10,14 +10,14 @@
     <result column="create_user" jdbcType="VARCHAR" property="createUser" />
     <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
-    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
-    <result column="name" jdbcType="VARCHAR" property="name"/>
-    <result column="code" jdbcType="VARCHAR" property="code"/>
-    <result column="pid" jdbcType="BIGINT" property="pid"/>
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="pid" jdbcType="BIGINT" property="pid" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_id, update_id, create_user, update_user, create_date, update_date, `name`,
+    id, create_id, update_id, create_user, update_user, create_date, update_date, `name`, 
     code, pid
   </sql>
 

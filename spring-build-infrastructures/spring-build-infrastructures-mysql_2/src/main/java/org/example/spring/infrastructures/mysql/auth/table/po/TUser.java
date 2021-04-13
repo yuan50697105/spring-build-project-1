@@ -3,18 +3,17 @@ package org.example.spring.infrastructures.mysql.auth.table.po;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
-
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.infrastructures.mysql.auth.table.enumerate.TUserStatus;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
 /**
  * t_user
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-table-po-TUser")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TUser")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

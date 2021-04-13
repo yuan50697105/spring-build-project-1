@@ -1,8 +1,6 @@
 package org.example.spring.infrastructures.mysql.auth.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.example.spring.infrastructures.mysql.auth.table.po.TDepartment;
+import org.apache.ibatis.annotations.Mapper;import org.apache.ibatis.annotations.Param;
 import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 

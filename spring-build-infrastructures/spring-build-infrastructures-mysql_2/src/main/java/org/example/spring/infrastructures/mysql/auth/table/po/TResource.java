@@ -11,42 +11,42 @@ import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
 /**
-    * t_permission
-    */
-@ApiModel(value="org-example-spring-infrastructures-mysql-customer-table-po-TPermission")
+ * t_permission
+ */
+@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TResource")
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class TResource extends IBaseEntity implements Serializable {
     /**
-    * name
-    */
-    @ApiModelProperty(value="name")
+     * name
+     */
+    @ApiModelProperty(value = "name")
     private String name;
 
     /**
-    * type
-    */
-    @ApiModelProperty(value="type")
+     * type
+     */
+    @ApiModelProperty(value = "type")
     private String type;
 
     /**
-    * url
-    */
-    @ApiModelProperty(value="url")
+     * url
+     */
+    @ApiModelProperty(value = "url")
     private String url;
 
     /**
-    * pid
-    */
-    @ApiModelProperty(value="pid")
+     * pid
+     */
+    @ApiModelProperty(value = "pid")
     private Long pid;
 
     /**
-    * weight
-    */
-    @ApiModelProperty(value="weight")
+     * weight
+     */
+    @ApiModelProperty(value = "weight")
     private Integer weight;
 
     private static final long serialVersionUID = 1L;
