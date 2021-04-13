@@ -1,7 +1,6 @@
 package org.example.spring.infrastructures.mysql.patient.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
-import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import org.example.spring.infrastructures.mysql.patient.builder.PatientBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
@@ -20,25 +19,41 @@ import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.xml.bind.ValidationException;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import static org.example.spring.infrastructures.cache.RedisCacheConfig.PATIENT_DATA;
 
 @Repository
-@AllArgsConstructor
 @Transactional
+@CacheConfig(cacheNames = PATIENT_DATA)
 public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientFormVo, PatientDetails, PatientQuery> implements PatientRepository {
     private final TPatientTeamDao patientTeamDao;
     private final TPatientGroupDao patientGroupDao;
     private final PatientBuilder patientBuilder;
     private final TPatientDao patientDao;
     private final ThreadPoolExecutor executor;
+
+    public PatientRepositoryImpl(TPatientTeamDao patientTeamDao,
+                                 TPatientGroupDao patientGroupDao,
+                                 PatientBuilder patientBuilder,
+                                 TPatientDao patientDao,
+                                 ThreadPoolExecutor executor) {
+        this.patientTeamDao = patientTeamDao;
+        this.patientGroupDao = patientGroupDao;
+        this.patientBuilder = patientBuilder;
+        this.patientDao = patientDao;
+        this.executor = executor;
+    }
 
     @Override
     public Long saveWithId(PatientFormVo patientFormVo) {
@@ -72,7 +87,8 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     public PatientDetails getById(Long id) {
         PatientDetails details = new PatientDetails();
         TPatient patient = patientDao.getById(id);
-        details.setPatient(patientBuilder.buildPatientResult(patient));
+        Patient patientResult = patientBuilder.buildPatientResult(patient);
+        details.setPatient(patientResult);
         details.setId(patient.getId());
         return details;
     }
@@ -81,21 +97,26 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     public IPageData<Patient> queryPage(PatientQuery patientQuery) {
         TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
         IPageData<TPatient> queryPage = patientDao.queryPage(query);
-        return patientBuilder.buildPatientResult(queryPage);
+        IPageData<Patient> data = patientBuilder.buildPatientResult(queryPage);
+        Map<Long, Patient> map = data.getData().stream().collect(Collectors.toMap(Patient::getId, Function.identity()));
+        return data;
     }
 
     @Override
     public List<Patient> queryList(PatientQuery patientQuery) {
         TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
-        List<TPatient> queryPage = patientDao.queryList(query);
-        return patientBuilder.buildPatientResult(queryPage);
+        List<TPatient> list = patientDao.queryList(query);
+        List<Patient> patients = patientBuilder.buildPatientResult(list);
+        Map<Long, Patient> map = patients.stream().collect(Collectors.toMap(Patient::getId, Function.identity()));
+        return patients;
     }
 
     @Override
     public Patient queryOne(PatientQuery patientQuery) {
         TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
         Optional<TPatient> queryPage = patientDao.queryFirst(query);
-        return patientBuilder.buildPatientResult(queryPage.orElse(new Patient()));
+        TPatient patient = queryPage.orElse(new Patient());
+        return patientBuilder.buildPatientResult(patient);
     }
 
     @SneakyThrows
