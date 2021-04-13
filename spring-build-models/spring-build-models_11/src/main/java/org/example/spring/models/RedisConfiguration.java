@@ -19,8 +19,8 @@ public class RedisConfiguration {
     public static final String CACHE_PATIENT = "patient";
 
     @Bean("redisTemplate")
-    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
-        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+    public RedisTemplate<Long, Map<String, Object>> redisTemplate(RedisConnectionFactory factory) {
+        RedisTemplate<Long, Map<String, Object>> redisTemplate = new RedisTemplate<>();
         redisTemplate.setKeySerializer(RedisSerializer.json());
         redisTemplate.setValueSerializer(RedisSerializer.json());
         redisTemplate.setHashKeySerializer(RedisSerializer.json());

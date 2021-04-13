@@ -14,6 +14,8 @@ import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroup;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +26,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Repository
 @AllArgsConstructor
 @Transactional
+@CacheConfig(cacheNames = {"patient_group"})
 public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup, PatientGroupFormVo, PatientGroupDetails, PatientGroupQuery> implements PatientGroupRepository {
     private final PatientBuilder patientBuilder;
     private final TPatientGroupDao patientGroupDao;
@@ -56,6 +59,7 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     }
 
     @Override
+    @Cacheable(key = "'details:'+#id")
     public PatientGroupDetails getById(Long id) {
         PatientGroupDetails details = new PatientGroupDetails();
         details.setId(id);

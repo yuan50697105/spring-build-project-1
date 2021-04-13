@@ -13,7 +13,7 @@ import javax.validation.constraints.NotEmpty;
 @Data
 public class IBaseVo extends BaseEntity {
     @NotEmpty(groups = {Update.class})
-    @JsonSerialize(using = StringSerializer.class)
+    @JsonSerialize(contentUsing = StringSerializer.class)
     private Long id;
 
     public IBaseVo withId(Long id) {

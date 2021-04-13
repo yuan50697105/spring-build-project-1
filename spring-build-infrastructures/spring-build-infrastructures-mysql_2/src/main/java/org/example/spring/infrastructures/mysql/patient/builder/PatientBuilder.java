@@ -59,5 +59,5 @@ public interface PatientBuilder {
 
     List<PatientGroup> buildPatientGroupResult(List<TPatientGroup> data);
 
-    Patient buildPatientVoToResult(PatientVo patientVo);
+    Patient buildPatientVoToResult(PatientVo patient);
 }

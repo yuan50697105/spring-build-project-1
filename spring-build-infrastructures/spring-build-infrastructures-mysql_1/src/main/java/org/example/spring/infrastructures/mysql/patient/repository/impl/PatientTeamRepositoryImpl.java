@@ -16,6 +16,7 @@ import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -71,6 +72,7 @@ public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, 
     }
 
     @Override
+    @Cacheable(key = "'details:'+#id")
     public PatientTeamDetails getById(Long id) {
         PatientTeamDetails details = new PatientTeamDetails();
         TPatientTeam team = patientTeamDao.getById(id);

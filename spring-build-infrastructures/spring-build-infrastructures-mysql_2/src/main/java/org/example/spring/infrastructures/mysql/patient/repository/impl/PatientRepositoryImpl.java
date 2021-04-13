@@ -19,6 +19,8 @@ import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,6 +37,7 @@ import java.util.stream.Collectors;
 
 @Repository
 @Transactional
+@CacheConfig(cacheNames = "patient")
 public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientFormVo, PatientDetails, PatientQuery> implements PatientRepository {
     private final TPatientTeamDao patientTeamDao;
     private final TPatientGroupDao patientGroupDao;
@@ -83,6 +86,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     }
 
     @Override
+    @Cacheable(key = "'details:'+#id")
     public PatientDetails getById(Long id) {
         PatientDetails details = new PatientDetails();
         TPatient patient = patientDao.getById(id);
@@ -96,31 +100,27 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     public IPageData<Patient> queryPage(PatientQuery patientQuery) {
         TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
         IPageData<TPatient> queryPage = patientDao.queryPage(query);
-        IPageData<Patient> data = patientBuilder.buildPatientResult(queryPage);
-        Map<Long, Patient> map = data.getData().stream().collect(Collectors.toMap(Patient::getId, Function.identity()));
-        return data;
+        return patientBuilder.buildPatientResult(queryPage);
     }
 
     @Override
     public List<Patient> queryList(PatientQuery patientQuery) {
         TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
         List<TPatient> list = patientDao.queryList(query);
-        List<Patient> patients = patientBuilder.buildPatientResult(list);
-        Map<Long, Patient> map = patients.stream().collect(Collectors.toMap(Patient::getId, Function.identity()));
-        return patients;
+        return patientBuilder.buildPatientResult(list);
     }
 
     @Override
     public Patient queryOne(PatientQuery patientQuery) {
         TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
-        Optional<TPatient> queryPage = patientDao.queryFirst(query);
-        TPatient patient = queryPage.orElse(new Patient());
+        Optional<TPatient> optional = patientDao.queryFirst(query);
+        TPatient patient = optional.orElse(new Patient());
         return patientBuilder.buildPatientResult(patient);
     }
 
     @SneakyThrows
     private void addExtra(TPatient entity) {
-        if (PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
+        if (ObjectUtil.isNotEmpty(entity.getType()) && PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
             Future<Boolean> validateGroup = executor.submit(validateGroup(entity));
             Future<Boolean> validateTeam = executor.submit(validateTeam(entity));
             Future<Optional<TPatientGroup>> group = executor.submit(getGroupOpt(entity));
@@ -142,7 +142,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     @SneakyThrows
     private void updateExtra(TPatient entity) {
-        if (PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
+        if (ObjectUtil.isNotEmpty(entity.getType()) && PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
             Future<Boolean> validateGroup = executor.submit(validateGroup(entity));
             Future<Boolean> validateTeam = executor.submit(validateTeam(entity));
             Future<Optional<TPatientGroup>> group = executor.submit(getGroupOpt(entity));

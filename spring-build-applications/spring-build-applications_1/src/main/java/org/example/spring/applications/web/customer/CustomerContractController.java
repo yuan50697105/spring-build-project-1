@@ -9,6 +9,7 @@ import org.example.spring.infrastructures.mysql.customer.entity.result.CustomerC
 import org.example.spring.infrastructures.mysql.customer.entity.result.CustomerContractDetails;
 import org.example.spring.infrastructures.mysql.customer.entity.vo.CustomerContractFormVo;
 import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -76,7 +77,7 @@ public class CustomerContractController {
         return R.success();
     }
 
-    @PostMapping
+    @PostMapping(value = "upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public Result<?> upload(Long id, MultipartFile file) {
         customerContractService.upload(id, file);
         return R.success();

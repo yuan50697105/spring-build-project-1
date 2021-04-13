@@ -21,7 +21,6 @@
         <module>spring-build-infrastructures-elasticsearch</module>
         <module>spring-build-infrastructures-minio</module>
         <module>spring-build-infrastructures-redis</module>
-        <module>spring-build-infrastructures-redis-cache</module>
     </modules>
     <dependencyManagement>
         <dependencies>
