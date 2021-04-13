@@ -17,8 +17,8 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
-@EnableCaching  // 如果需要使用注解形式的缓存则加上该注解
+//@Configuration
+//@EnableCaching  // 如果需要使用注解形式的缓存则加上该注解
 public class RedisCacheConfig extends CachingConfigurerSupport {
 
     /**
