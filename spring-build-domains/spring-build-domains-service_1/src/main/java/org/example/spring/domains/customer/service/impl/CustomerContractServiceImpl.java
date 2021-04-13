@@ -61,7 +61,7 @@ public class CustomerContractServiceImpl implements CustomerContractService {
     @SneakyThrows
     @Override
     public void upload(Long id, MultipartFile file) {
-        OssResponse response = customerContractOssRepository.put(id +"_"+ file.getOriginalFilename(), file.getContentType(), file.getInputStream());
+        OssResponse response = customerContractOssRepository.put(id +"_"+ file.getOriginalFilename(), file.getContentType(), file.getInputStream(), String.valueOf(file.getSize()));
         String fileName = response.getFileName();
         customerContractRepository.updateFile(id, fileName);
     }

@@ -1,12 +1,11 @@
 package org.example.spring.plugins.oss.minio;
 
-import lombok.SneakyThrows;
 import org.example.spring.plugins.oss.entity.OssResponse;
 
 import java.io.InputStream;
 
 public interface MinioOssService {
-    OssResponse upload(String bucketName, String key, InputStream file, String contentType);
+    OssResponse upload(String bucketName, String key, InputStream file, String contentType, String size);
 
     InputStream download(String bucketName, String key);
 

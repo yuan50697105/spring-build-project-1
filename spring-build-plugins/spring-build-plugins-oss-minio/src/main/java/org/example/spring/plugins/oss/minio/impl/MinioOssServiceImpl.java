@@ -1,14 +1,15 @@
 package org.example.spring.plugins.oss.minio.impl;
 
 import io.minio.*;
+import io.minio.http.Method;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import org.example.spring.plugins.oss.entity.OssResponse;
 import org.example.spring.plugins.oss.minio.MinioOssService;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
 import java.io.InputStream;
+import java.util.IdentityHashMap;
 
 @Service
 @AllArgsConstructor
@@ -17,29 +18,25 @@ public class MinioOssServiceImpl implements MinioOssService {
 
     @SneakyThrows
     @Override
-    public OssResponse upload(String bucketName, String key, InputStream file, String contentType) {
-        boolean bucketExists = minioClient.bucketExists(BucketExistsArgs.builder().bucket(bucketName).build());
+    public OssResponse upload(String bucketName, String key, InputStream file, String contentType, String size) {
+        boolean bucketExists = minioClient.bucketExists(bucketName);
         if (!bucketExists) {
-            minioClient.makeBucket(MakeBucketArgs.builder().bucket(bucketName).build());
+            minioClient.makeBucket(bucketName);
         }
-        PutObjectArgs.Builder builder = PutObjectArgs
-                .builder()
-                .bucket(bucketName)
-                .contentType(contentType)
-                .object(key).stream(file, -1, -1);
-        ObjectWriteResponse response = minioClient.putObject(builder.build());
-        return new OssResponse(response.object(),response.bucket(),null);
+        minioClient.putObject(bucketName, key, file, size);
+        String object = minioClient.presignedGetObject(bucketName, key);
+        return new OssResponse(key, bucketName, object);
     }
 
     @SneakyThrows
     @Override
     public InputStream download(String bucketName, String key) {
-        return minioClient.getObject(GetObjectArgs.builder().bucket(bucketName).object(key).build());
+        return minioClient.getObject(bucketName, key);
     }
 
     @SneakyThrows
     @Override
     public String getPath(String bucketName, String key) {
-        return minioClient.getPresignedObjectUrl(GetPresignedObjectUrlArgs.builder().bucket(bucketName).object(key).build());
+        return minioClient.getPresignedObjectUrl(Method.GET, bucketName, key, 1, new IdentityHashMap<>());
     }
 }

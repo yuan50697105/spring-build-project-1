@@ -15,7 +15,7 @@ public class CustomerContractOssRepositoryImpl implements CustomerContractOssRep
     private final MinioOssService minioOssService;
 
     @Override
-    public OssResponse put(String file, String contentType, InputStream stream) {
-        return minioOssService.upload(CONTRACT, file, stream, contentType);
+    public OssResponse put(String file, String contentType, InputStream stream, String size) {
+        return minioOssService.upload(CONTRACT, file, stream, contentType, size);
     }
 }

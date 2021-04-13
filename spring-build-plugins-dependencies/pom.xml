@@ -138,11 +138,6 @@
                 <artifactId>cos_api</artifactId>
                 <version>${cos_api.version}</version>
             </dependency>
-<!--            <dependency>-->
-<!--                <groupId>io.minio</groupId>-->
-<!--                <artifactId>minio</artifactId>-->
-<!--                <version>${minio.version}</version>-->
-<!--            </dependency>-->
             <dependency>
                 <groupId>com.github.hiwepy</groupId>
                 <artifactId>minio-spring-boot-starter</artifactId>
@@ -290,7 +285,6 @@
         <mybatis-plus-batch-spring-boot-starter.version>1.1</mybatis-plus-batch-spring-boot-starter.version>
         <hutool-all.version>5.6.1</hutool-all.version>
         <cos_api.version>5.6.39</cos_api.version>
-        <minio.version>8.1.0</minio.version>
         <minio-spring-boot-starter.version>1.0.1.RELEASE</minio-spring-boot-starter.version>
         <qcloudcos-spring-boot-starter.version>1.0.1</qcloudcos-spring-boot-starter.version>
         <rocketmq-spring-boot-starter.version>2.2.0</rocketmq-spring-boot-starter.version>
