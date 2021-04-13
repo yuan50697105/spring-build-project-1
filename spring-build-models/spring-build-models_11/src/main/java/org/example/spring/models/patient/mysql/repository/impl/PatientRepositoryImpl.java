@@ -1,4 +1,4 @@
-package org.example.spring.models.patient.repository.impl;
+package org.example.spring.models.patient.mysql.repository.impl;
 
 import org.example.spring.infrastructures.mysql.patient.builder.PatientBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
@@ -9,7 +9,8 @@ import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientDetails;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientFormVo;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientVo;
-import org.example.spring.models.patient.repository.PatientRepository;
+import org.example.spring.models.RedisConfiguration;
+import org.example.spring.models.patient.mysql.repository.PatientRepository;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.springframework.cache.Cache;
 import org.springframework.cache.annotation.CacheConfig;
@@ -17,6 +18,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.IndexOperations;
 import org.springframework.data.redis.cache.RedisCacheManager;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Repository;
 
@@ -24,10 +26,9 @@ import java.util.List;
 import java.util.concurrent.ThreadPoolExecutor;
 
 @Repository
-@CacheConfig(cacheNames = PatientRepositoryImpl.CACHE_NAME)
+@CacheConfig(cacheNames = RedisConfiguration.CACHE_PATIENT)
 public class PatientRepositoryImpl extends org.example.spring.infrastructures.mysql.patient.repository.impl.PatientRepositoryImpl implements PatientRepository {
 
-    public static final String CACHE_NAME = "patient";
     private final TPatientTeamDao patientTeamDao;
     private final TPatientGroupDao patientGroupDao;
     private final PatientBuilder patientBuilder;
@@ -35,12 +36,12 @@ public class PatientRepositoryImpl extends org.example.spring.infrastructures.my
     private final ThreadPoolExecutor executor;
     private final RedisCacheManager cacheManager;
     private final ElasticsearchRestTemplate elasticsearchRestTemplate;
-
+    private final RedisTemplate<String, Object> redisTemplate;
     public PatientRepositoryImpl(TPatientTeamDao patientTeamDao,
                                  TPatientGroupDao patientGroupDao,
                                  PatientBuilder patientBuilder,
                                  TPatientDao patientDao,
-                                 ThreadPoolExecutor executor, RedisCacheManager cacheManager, ElasticsearchRestTemplate elasticsearchRestTemplate) {
+                                 ThreadPoolExecutor executor, RedisCacheManager cacheManager, ElasticsearchRestTemplate elasticsearchRestTemplate, RedisTemplate<String, Object> redisTemplate) {
         super(patientTeamDao, patientGroupDao, patientBuilder, patientDao, executor);
         this.patientTeamDao = patientTeamDao;
         this.patientGroupDao = patientGroupDao;
@@ -49,6 +50,7 @@ public class PatientRepositoryImpl extends org.example.spring.infrastructures.my
         this.executor = executor;
         this.cacheManager = cacheManager;
         this.elasticsearchRestTemplate = elasticsearchRestTemplate;
+        this.redisTemplate = redisTemplate;
         IndexOperations indexOperations = this.elasticsearchRestTemplate.indexOps(Patient.class);
         if (!indexOperations.exists()) {
             indexOperations.create();
@@ -133,7 +135,7 @@ public class PatientRepositoryImpl extends org.example.spring.infrastructures.my
     }
 
     private void putCache(Long id, Patient patient) {
-        Cache cache = cacheManager.getCache(CACHE_NAME);
+        Cache cache = cacheManager.getCache(RedisConfiguration.CACHE_PATIENT);
         cache.put(id, patient);
     }
 
@@ -143,7 +145,7 @@ public class PatientRepositoryImpl extends org.example.spring.infrastructures.my
 
     private void putDetailsCache(final Long id, final PatientDetails details) {
         Runnable runnable = () -> {
-            Cache cache = cacheManager.getCache(CACHE_NAME);
+            Cache cache = cacheManager.getCache(RedisConfiguration.CACHE_PATIENT);
             cache.put("details:" + id, details);
         };
         executor.submit(runnable);

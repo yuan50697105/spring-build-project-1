@@ -1,4 +1,4 @@
-package org.example.spring.models.patient.repository.impl;
+package org.example.spring.models.patient.mysql.repository.impl;
 
 import org.example.spring.infrastructures.mysql.patient.builder.PatientBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
@@ -9,7 +9,7 @@ import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientDetails;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientFormVo;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientVo;
-import org.example.spring.models.patient.repository.PatientRepository;
+import org.example.spring.models.patient.mysql.repository.PatientRepository;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.springframework.cache.Cache;
 import org.springframework.cache.annotation.CacheConfig;
