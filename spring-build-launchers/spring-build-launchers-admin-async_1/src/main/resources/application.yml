@@ -35,6 +35,6 @@ logging:
     web: debug
 minio:
   enabled: true
-  endpoint: 8.140.177.12:9200
+  endpoint: http://8.140.177.12:9001/
   secret-key: root
   access-key: root
