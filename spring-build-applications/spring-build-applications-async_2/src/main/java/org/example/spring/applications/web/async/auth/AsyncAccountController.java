@@ -1,4 +1,4 @@
-package org.example.spring.applications.web.auth;
+package org.example.spring.applications.web.async.auth;
 
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
