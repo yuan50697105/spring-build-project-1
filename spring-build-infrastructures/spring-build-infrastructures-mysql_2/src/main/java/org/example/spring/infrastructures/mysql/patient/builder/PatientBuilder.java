@@ -58,4 +58,6 @@ public interface PatientBuilder {
     IPageData<PatientGroup> buildPatientGroupResult(IPageData<TPatientGroup> queryPage);
 
     List<PatientGroup> buildPatientGroupResult(List<TPatientGroup> data);
+
+    Patient buildPatientVoToResult(PatientVo patientVo);
 }

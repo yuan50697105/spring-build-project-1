@@ -2,9 +2,7 @@ package org.example.spring.infrastructures.cache;
 
 import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.cache.RedisCacheWriter;
@@ -28,21 +26,6 @@ public class RedisCacheConfig extends CachingConfigurerSupport {
 
     public static final String PATIENT_DATA = "patient_data";
     public static final String PATIENT_DATA_LIST = "patient_data_list";
-
-    /*
-     * 注册对应的 RedisMultiCache
-     */
-
-    @Bean(PATIENT_DATA)
-    public RedisMultiCache dataCache(RedisTemplate redisTemplate, RedisCacheManager cacheManager) {
-        // 这里为了方便演示，创建缓存时，清空已存在的缓存数据，
-        return new RedisMultiCache(cacheManager.getCache(PATIENT_DATA), redisTemplate, true);
-    }
-
-    @Bean(PATIENT_DATA_LIST)
-    public RedisMultiCache dataListCache(RedisTemplate redisTemplate, RedisCacheManager cacheManager) {
-        return new RedisMultiCache(cacheManager.getCache(PATIENT_DATA_LIST), redisTemplate);
-    }
 
     /*
      * redis cache 配置

@@ -96,25 +96,21 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     public IPageData<Patient> queryPage(PatientQuery patientQuery) {
         TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
         IPageData<TPatient> queryPage = patientDao.queryPage(query);
-        IPageData<Patient> data = patientBuilder.buildPatientResult(queryPage);
-        Map<Long, Patient> map = data.getData().stream().collect(Collectors.toMap(Patient::getId, Function.identity()));
-        return data;
+        return patientBuilder.buildPatientResult(queryPage);
     }
 
     @Override
     public List<Patient> queryList(PatientQuery patientQuery) {
         TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
         List<TPatient> list = patientDao.queryList(query);
-        List<Patient> patients = patientBuilder.buildPatientResult(list);
-        Map<Long, Patient> map = patients.stream().collect(Collectors.toMap(Patient::getId, Function.identity()));
-        return patients;
+        return patientBuilder.buildPatientResult(list);
     }
 
     @Override
     public Patient queryOne(PatientQuery patientQuery) {
         TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
-        Optional<TPatient> queryPage = patientDao.queryFirst(query);
-        TPatient patient = queryPage.orElse(new Patient());
+        Optional<TPatient> optional = patientDao.queryFirst(query);
+        TPatient patient = optional.orElse(new Patient());
         return patientBuilder.buildPatientResult(patient);
     }
 

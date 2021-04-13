@@ -9,15 +9,29 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-models_1</artifactId>
+    <artifactId>spring-build-models_21</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-infrastructures-mysql_1</artifactId>
+            <artifactId>spring-build-infrastructures-mysql_2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-build-infrastructures-minio</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
     </dependencies>
+
+
 </project>
