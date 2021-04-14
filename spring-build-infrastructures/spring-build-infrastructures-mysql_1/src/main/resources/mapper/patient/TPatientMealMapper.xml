@@ -14,7 +14,9 @@
     <result column="team_id" jdbcType="BIGINT" property="teamId" />
     <result column="group_id" jdbcType="BIGINT" property="groupId" />
     <result column="meal_type" jdbcType="VARCHAR" property="mealType" />
+    <result column="meal_source" jdbcType="VARCHAR" property="mealSource" />
     <result column="meal_id" jdbcType="BIGINT" property="mealId" />
+    <result column="team_meal_id" jdbcType="BIGINT" property="teamMealId" />
     <result column="meal_code" jdbcType="VARCHAR" property="mealCode" />
     <result column="meal_name" jdbcType="VARCHAR" property="mealName" />
     <result column="price" jdbcType="DECIMAL" property="price" />
@@ -24,6 +26,7 @@
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
     id, create_id, update_id, create_user, update_user, create_date, update_date, team_id, 
-    group_id, meal_type, meal_id, meal_code, meal_name, price, dis_price, market_price
+    group_id, meal_type, meal_source, meal_id, team_meal_id, meal_code, meal_name, price, 
+    dis_price, market_price
   </sql>
 </mapper>

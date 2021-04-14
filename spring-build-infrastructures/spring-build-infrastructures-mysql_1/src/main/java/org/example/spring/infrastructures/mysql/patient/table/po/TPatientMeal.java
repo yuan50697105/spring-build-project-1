@@ -39,10 +39,22 @@ public class TPatientMeal extends IBaseEntity implements Serializable {
     private String mealType;
 
     /**
+     * mealSource
+     */
+    @ApiModelProperty(value = "mealSource")
+    private String mealSource;
+
+    /**
      * mealId
      */
     @ApiModelProperty(value = "mealId")
     private Long mealId;
+
+    /**
+     * teamMealId
+     */
+    @ApiModelProperty(value = "teamMealId")
+    private Long teamMealId;
 
     /**
      * mealCode

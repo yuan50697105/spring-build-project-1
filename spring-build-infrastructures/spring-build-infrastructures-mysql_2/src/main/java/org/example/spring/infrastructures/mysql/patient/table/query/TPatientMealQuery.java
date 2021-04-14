@@ -46,6 +46,12 @@ public class TPatientMealQuery extends TkBaseQuery<TPatientMeal> implements Seri
     @ApiModelProperty(value = "mealType")
     @AndEqualTo
     private String mealType;
+    /**
+     * mealSource
+     */
+    @ApiModelProperty(value = "mealSource")
+    @AndEqualTo
+    private String mealSource;
 
     /**
      * mealId
@@ -53,6 +59,13 @@ public class TPatientMealQuery extends TkBaseQuery<TPatientMeal> implements Seri
     @ApiModelProperty(value = "mealId")
     @AndEqualTo
     private Long mealId;
+
+    /**
+     * teamMealId
+     */
+    @ApiModelProperty(value = "teamMealId")
+    @AndEqualTo
+    private Long teamMealId;
 
     /**
      * mealCode
