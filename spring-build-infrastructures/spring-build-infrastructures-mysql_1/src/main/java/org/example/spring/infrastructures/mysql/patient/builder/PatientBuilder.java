@@ -9,14 +9,8 @@ import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGroup;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeam;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeamMeal;
-import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupVo;
-import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientTeamMealVo;
-import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientTeamVo;
-import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientVo;
-import org.example.spring.infrastructures.mysql.patient.table.po.TPatient;
-import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroup;
-import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
-import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeamMeal;
+import org.example.spring.infrastructures.mysql.patient.entity.vo.*;
+import org.example.spring.infrastructures.mysql.patient.table.po.*;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamMealQuery;
@@ -75,4 +69,8 @@ public interface PatientBuilder {
     List<PatientTeamMeal> buildPatientTeamMealResult(List<TPatientTeamMeal> meal);
 
     IPageData<PatientTeamMeal> buildPatientTeamMealResult(IPageData<TPatientTeamMeal> meal);
+
+    TPatientTeamMealFeeItem buildPatientTeamMealFeeItem(PatientTeamMealFeeItemVo feeItemVo);
+
+    List<TPatientTeamMealCheckItem> buildPatientTeamMealCheckItem(List<PatientTeamMealCheckItemVo> checkItems);
 }

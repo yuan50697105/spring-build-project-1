@@ -27,6 +27,12 @@ public class TPatientTeamMealFeeItem extends IBaseEntity implements Serializable
     private Long teamId;
 
     /**
+     * teamMealId
+     */
+    @ApiModelProperty(value = "teamMealId")
+    private Long teamMealId;
+
+    /**
      * patientId
      */
     @ApiModelProperty(value = "mealId")
@@ -36,8 +42,7 @@ public class TPatientTeamMealFeeItem extends IBaseEntity implements Serializable
      * feeItemId
      */
     @ApiModelProperty(value = "feeItemId")
-    private String feeItemId;
-
+    private Long feeItemId;
     /**
      * feeItemCode
      */

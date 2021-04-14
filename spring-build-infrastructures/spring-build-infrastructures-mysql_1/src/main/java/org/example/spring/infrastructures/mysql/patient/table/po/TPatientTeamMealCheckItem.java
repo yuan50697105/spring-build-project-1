@@ -26,10 +26,28 @@ public class TPatientTeamMealCheckItem extends IBaseEntity implements Serializab
     private Long teamId;
 
     /**
+     * mealId
+     */
+    @ApiModelProperty(value = "mealId")
+    private Long mealId;
+
+    /**
+     * teamMealId
+     */
+    @ApiModelProperty(value = "teamMealId")
+    private Long teamMealId;
+
+    /**
      * feeItemId
      */
     @ApiModelProperty(value = "feeItemId")
     private Long feeItemId;
+
+    /**
+     * teamFeeItemId
+     */
+    @ApiModelProperty(value = "teamFeeItemId")
+    private Long teamFeeItemId;
 
     /**
      * checkItemId
@@ -48,12 +66,6 @@ public class TPatientTeamMealCheckItem extends IBaseEntity implements Serializab
      */
     @ApiModelProperty(value = "checkItemName")
     private String checkItemName;
-
-    /**
-     * mealId
-     */
-    @ApiModelProperty(value = "mealId")
-    private Long mealId;
 
     /**
      * source

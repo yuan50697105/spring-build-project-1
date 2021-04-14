@@ -32,7 +32,9 @@ public class TPatientTeamMealFeeItemQuery extends TkBaseQuery<TPatientTeamMealFe
     @ApiModelProperty(value = "teamId")
     @AndEqualTo
     private Long teamId;
-
+    @ApiModelProperty(value = "teamMealId")
+    @AndEqualTo
+    private Long teamMealId;
     /**
      * patientId
      */
@@ -45,7 +47,7 @@ public class TPatientTeamMealFeeItemQuery extends TkBaseQuery<TPatientTeamMealFe
      */
     @ApiModelProperty(value = "feeItemId")
     @AndEqualTo
-    private String feeItemId;
+    private Long feeItemId;
 
     /**
      * feeItemCode
