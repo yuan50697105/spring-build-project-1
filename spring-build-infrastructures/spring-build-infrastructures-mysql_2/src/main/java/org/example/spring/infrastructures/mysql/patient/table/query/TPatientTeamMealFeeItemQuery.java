@@ -1,15 +1,21 @@
-package org.example.spring.infrastructures.mysql.patient.table.po;
+package org.example.spring.infrastructures.mysql.patient.table.query;
 
+import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
+import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeamMealFeeItem;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
+import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
+import tk.mybatis.mapper.entity.Example;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * t_patient_team_meal_fee_item
@@ -19,65 +25,54 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TPatientTeamMealFeeItem extends IBaseEntity implements Serializable {
+public class TPatientTeamMealFeeItemQuery extends TkBaseQuery<TPatientTeamMealFeeItem> implements Serializable, MybatisExampleForTk<TPatientTeamMealFeeItem, Example> {
     /**
      * teamId
      */
     @ApiModelProperty(value = "teamId")
+    @AndEqualTo
     private Long teamId;
 
     /**
      * patientId
      */
     @ApiModelProperty(value = "mealId")
+    @AndEqualTo
     private Long mealId;
 
     /**
      * feeItemId
      */
     @ApiModelProperty(value = "feeItemId")
+    @AndEqualTo
     private String feeItemId;
 
     /**
      * feeItemCode
      */
     @ApiModelProperty(value = "feeItemCode")
+    @AndLike
     private String feeItemCode;
 
     /**
      * feeItemName
      */
     @ApiModelProperty(value = "feeItemName")
+    @AndLike
     private String feeItemName;
-
-    /**
-     * price
-     */
-    @ApiModelProperty(value = "price")
-    private BigDecimal price;
-
-    /**
-     * disPrice
-     */
-    @ApiModelProperty(value = "disPrice")
-    private BigDecimal disPrice;
-
-    /**
-     * marketPrice
-     */
-    @ApiModelProperty(value = "marketPrice")
-    private BigDecimal marketPrice;
 
     /**
      * source
      */
     @ApiModelProperty(value = "source")
+    @AndEqualTo
     private String source;
 
     /**
      * type
      */
     @ApiModelProperty(value = "type")
+    @AndEqualTo
     private String type;
 
     private static final long serialVersionUID = 1L;
