@@ -1,3 +1,23 @@
+create table t_check_item
+(
+    id bigint auto_increment comment 'id'
+        primary key,
+    create_id bigint default -1 null comment 'createId',
+    update_id bigint default -1 null comment 'updateId',
+    create_user varchar(50) default '' null comment 'createUser',
+    update_user varchar(50) default '' null comment 'updateUser',
+    create_date datetime default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date datetime default '1000-01-01 00:00:00' null comment 'updateDate',
+    fee_item_id bigint default -1 null comment 'feeItemId',
+    code varchar(50) default '' null comment 'code',
+    name varchar(50) default '' null comment 'name',
+    lowest_value decimal(13,4) default -1.0000 null comment 'lowestValue',
+    highest_value decimal(13,4) default -1.0000 null comment 'highestValue',
+    yin_yang varchar(50) default '' null comment 'yinYang',
+    lis_code varchar(50) default '' null comment 'lisCode'
+)
+    comment 't_check_item' charset=utf8mb4;
+
 create table t_customer_contract
 (
     id bigint auto_increment comment 'id'
@@ -49,6 +69,28 @@ create table t_department
     pid bigint default -1 null comment 'pid'
 )
     comment 't_department' charset=utf8mb4;
+
+create table t_fee_item
+(
+    id bigint auto_increment comment 'id'
+        primary key,
+    create_id bigint default -1 null comment 'createId',
+    update_id bigint default -1 null comment 'updateId',
+    create_user varchar(50) default '' null comment 'createUser',
+    update_user varchar(50) default '' null comment 'updateUser',
+    create_date datetime default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date datetime default '1000-01-01 00:00:00' null comment 'updateDate',
+    code varchar(50) default '' null comment '项目编号',
+    name varchar(50) default '' null comment '项目名称',
+    price decimal(13,4) default -1.0000 null comment '价格',
+    dis_price decimal(13,4) default -1.0000 null comment '优惠价',
+    market_price decimal(13,4) default -1.0000 null comment '市价',
+    type varchar(50) default '' null comment '类型',
+    sex varchar(50) default '' null comment '性别',
+    age_start int default -1 null comment '年龄',
+    age_end int default -1 null comment '年龄'
+)
+    comment 't_fee_item' charset=utf8mb4;
 
 create table t_patient
 (
@@ -113,6 +155,8 @@ create table t_patient_fee_item
     fee_item_id varchar(50) default '' null comment 'feeItemId',
     fee_item_code varchar(50) default '' null comment 'feeItemCode',
     fee_item_name varchar(50) default '' null comment 'feeItemName',
+    meal_id bigint default -1 null comment 'mealId',
+    patient_meal_id bigint default -1 null comment 'patientMealId',
     price decimal(13,4) default -1.0000 null comment 'price',
     dis_price decimal(13,4) default -1.0000 null comment 'disPrice',
     market_price decimal(13,4) default -1.0000 null comment 'marketPrice',
@@ -155,7 +199,9 @@ create table t_patient_meal
     team_id bigint default -1 null comment 'teamId',
     group_id bigint default -1 null comment 'groupId',
     meal_type varchar(50) default '' null comment 'mealType',
+    meal_source varchar(50) default '' null comment 'mealSource',
     meal_id bigint default -1 null comment 'mealId',
+    team_meal_id bigint default -1 null comment 'teamMealId',
     meal_code varchar(50) default '' null comment 'mealCode',
     meal_name varchar(50) default '' null comment 'mealName',
     price decimal(13,4) default -1.0000 null comment 'price',
