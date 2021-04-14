@@ -212,4 +212,7 @@
             </build>
         </profile>
     </profiles>
+    <scm>
+        <connection>scm:git@gitee.com:/yuan50697105/spring-build-project-1.git</connection>
+    </scm>
 </project>
