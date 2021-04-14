@@ -19,5 +19,9 @@
             <groupId>org.example.spring</groupId>
             <artifactId>spring-build-infrastructures-minio</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-infrastructures-elasticsearch</artifactId>
+        </dependency>
     </dependencies>
 </project>
