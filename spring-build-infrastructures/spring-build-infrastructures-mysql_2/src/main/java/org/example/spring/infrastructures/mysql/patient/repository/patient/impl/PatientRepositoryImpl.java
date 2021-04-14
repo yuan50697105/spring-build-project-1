@@ -68,7 +68,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         }
         if (ObjectUtil.isNotEmpty(patientFormVo.getFeeItems())) {
             executor.submit(() -> {
-                savePersonalFeeItem(patientFormVo, entity);
+                saveFeeItem(entity, patientFormVo.getFeeItems(), ItemSource.OPTIONAL.getValue(), FeeItemType.PERSONAL.getValue());
             });
         }
         return entity.getId();
@@ -78,10 +78,6 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         TPatientMeal patientMeal = patientBuilder.buildPatientMeal(meal.getMeal());
         patientMealDao.save(patientMeal);
         executor.submit(() -> saveFeeItem(entity, meal.getItems(), ItemSource.MEAL.getValue(),FeeItemType.PERSONAL.getValue()));
-    }
-
-    private void savePersonalFeeItem(PatientFormVo patientFormVo, TPatient entity) {
-        saveFeeItem(entity, patientFormVo.getFeeItems(), ItemSource.OPTIONAL.getValue(), FeeItemType.PERSONAL.getValue());
     }
 
     private void savePersonalCheckItem(PatientFeeItemFormVo feeItem, TPatientFeeItem tPatientFeeItem) {

@@ -3,7 +3,7 @@ package org.example.spring.infrastructures.mysql.auth.entity.dto;
 import cn.hutool.core.lang.tree.TreeNode;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.mysql.auth.table.enumerate.ResourceType;
+import org.example.spring.infrastructures.mysql.auth.entity.enumerate.ResourceType;
 
 import java.util.Optional;
 

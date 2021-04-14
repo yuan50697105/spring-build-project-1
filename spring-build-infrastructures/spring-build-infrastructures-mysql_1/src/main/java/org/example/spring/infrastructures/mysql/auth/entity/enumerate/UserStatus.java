@@ -1,4 +1,4 @@
-package org.example.spring.infrastructures.mysql.auth.table.enumerate;
+package org.example.spring.infrastructures.mysql.auth.entity.enumerate;
 
 import cn.hutool.core.util.EnumUtil;
 import com.baomidou.mybatisplus.annotation.EnumValue;
@@ -9,26 +9,30 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.example.spring.plugins.commons.converter.IBaseEnum;
 
-@Getter
 @AllArgsConstructor
+@Getter
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
-public enum ResourceType implements IBaseEnum {
-    MENU("菜单", "001", 1),
-    SUB_MENU("子菜单", "002", 2),
-    BUTTON("按钮", "003", 3);
-    @JsonValue
-    private final String name;
+public enum UserStatus implements IBaseEnum {
+    Normal("001", "正常", 0),
+    Resign("002", "离职", 1),
+    Forbidden("003", "禁用", 2),
+    ;
+
     @EnumValue
     private final String value;
+    @JsonValue
+    private final String name;
     private final Integer code;
 
     @JsonCreator
-    public static ResourceType get(String value) {
-        return EnumUtil.likeValueOf(ResourceType.class, value);
+    public static UserStatus get(String value) {
+        return EnumUtil.likeValueOf(UserStatus.class, value);
     }
 
     @Override
     public String[] getValueArrays() {
-        return new String[]{value, name, String.valueOf(code)};
+        return new String[]{value, name, String.valueOf(code), name()};
     }
+
+
 }

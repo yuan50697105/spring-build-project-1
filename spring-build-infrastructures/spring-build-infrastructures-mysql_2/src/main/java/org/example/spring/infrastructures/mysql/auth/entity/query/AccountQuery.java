@@ -2,7 +2,7 @@ package org.example.spring.infrastructures.mysql.auth.entity.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.mysql.auth.table.enumerate.TUserStatus;
+import org.example.spring.infrastructures.mysql.auth.entity.enumerate.UserStatus;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
 import java.util.Optional;
@@ -14,6 +14,6 @@ public class AccountQuery extends BaseQuery {
     private String status;
 
     public String getStatus() {
-        return Optional.ofNullable(TUserStatus.get(status)).map(TUserStatus::getValue).orElse(null);
+        return Optional.ofNullable(UserStatus.get(status)).map(UserStatus::getValue).orElse(null);
     }
 }

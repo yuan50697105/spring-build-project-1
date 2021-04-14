@@ -1,19 +1,13 @@
-package org.example.spring.infrastructures.mysql.auth.table.enumerate;
+package org.example.spring.infrastructures.mysql.auth.entity.enumerate;
 
 import cn.hutool.core.util.EnumUtil;
 import com.baomidou.mybatisplus.annotation.EnumValue;
-import com.baomidou.mybatisplus.annotation.IEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.SneakyThrows;
-import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
 import org.example.spring.plugins.commons.converter.IBaseEnum;
-
-import java.util.List;
 
 @AllArgsConstructor
 @Getter
