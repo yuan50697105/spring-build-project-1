@@ -60,12 +60,12 @@ create table t_patient
     update_user varchar(50) default '' null comment 'updateUser',
     create_date datetime default '1000-01-01 00:00:00' null comment 'createDate',
     update_date datetime default '1000-01-01 00:00:00' null comment 'updateDate',
-    group_id bigint default -1 null comment 'groupId',
-    group_code varchar(50) default '' null comment 'groupCode',
-    group_name varchar(50) default '' null comment 'groupName',
-    group_item_id bigint default -1 null comment 'groupItemId',
-    group_item_code varchar(50) default '' null comment 'groupItemCode',
-    group_item_name varchar(50) default '' null comment 'groupItemName',
+    team_id bigint default -1 null comment 'groupId',
+    team_code varchar(50) default '' null comment 'groupCode',
+    team_name varchar(50) default '' null comment 'groupName',
+    group_id bigint default -1 null comment 'groupItemId',
+    group_code varchar(50) default '' null comment 'groupItemCode',
+    group_name varchar(50) default '' null comment 'groupItemName',
     type varchar(50) default '' null comment 'type',
     code varchar(50) default '' null comment 'code',
     customer_id bigint default -1 null comment 'customerId',
@@ -131,8 +131,10 @@ create table t_patient_group
     update_user varchar(50) default '' null comment 'updateUser',
     create_date datetime default '1000-01-01 00:00:00' null comment 'createDate',
     update_date datetime default '1000-01-01 00:00:00' null comment 'updateDate',
+    code varchar(50) default '' null comment 'code',
+    name varchar(50) default '' null comment 'name',
     customer_id bigint default -1 null comment 'customerId',
-    group_id bigint default -1 null comment 'groupId',
+    team_id bigint default -1 null comment 'groupId',
     person_num int default -1 null comment 'personNum',
     meal_id bigint default -1 null comment 'mealId',
     meal_name varchar(50) default '' null comment 'mealName',
@@ -185,6 +187,29 @@ create table t_patient_team
     bear varchar(50) default '' null comment 'bear'
 )
     comment 't_patient_team' charset=utf8mb4;
+
+create table t_patient_team_meal
+(
+    id bigint auto_increment comment 'id'
+        primary key,
+    create_id bigint default -1 null comment 'createId',
+    update_id bigint default -1 null comment 'updateId',
+    create_user varchar(50) default '' null comment 'createUser',
+    update_user varchar(50) default '' null comment 'updateUser',
+    create_date datetime default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date datetime default '1000-01-01 00:00:00' null comment 'updateDate',
+    team_id bigint default -1 null comment 'teamId',
+    team_code varchar(50) default '' null comment 'teamCode',
+    team_name varchar(50) default '' null comment 'teamName',
+    meal_type varchar(50) default '' null comment 'mealType',
+    meal_id bigint default -1 null comment 'mealId',
+    meal_code varchar(50) default '' null comment 'mealCode',
+    meal_name varchar(50) default '' null comment 'mealName',
+    price decimal(13,4) default -1.0000 null comment 'price',
+    dis_price decimal(13,4) default -1.0000 null comment 'disPrice',
+    market_price decimal(13,4) default -1.0000 null comment 'marketPrice'
+)
+    comment 't_patient_team_meal' charset=utf8mb4;
 
 create table t_resource
 (

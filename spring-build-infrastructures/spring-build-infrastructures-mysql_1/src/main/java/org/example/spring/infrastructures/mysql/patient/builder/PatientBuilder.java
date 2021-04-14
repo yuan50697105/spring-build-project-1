@@ -3,18 +3,23 @@ package org.example.spring.infrastructures.mysql.patient.builder;
 import org.example.spring.infrastructures.commons.BaseBuilder;
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientGroupQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientQuery;
+import org.example.spring.infrastructures.mysql.patient.entity.query.PatientTeamMealQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientTeamQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGroup;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeam;
+import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeamMeal;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupVo;
+import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientTeamMealVo;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientTeamVo;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientVo;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatient;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroup;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
+import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeamMeal;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
+import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamMealQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.mapstruct.*;
@@ -59,4 +64,15 @@ public interface PatientBuilder {
 
     List<PatientGroup> buildPatientGroupResult(List<TPatientGroup> data);
 
+    TPatientTeamMeal buildPatientTeamMeal(PatientTeamMealVo meal);
+
+    void copyPatientTeamMeal(PatientTeamMealVo meal, @MappingTarget TPatientTeamMeal patientTeamMeal);
+
+    TPatientTeamMealQuery buildPatientTeamMealQuery(PatientTeamMealQuery patientTeamMealQuery);
+
+    PatientTeamMeal buildPatientTeamMealResult(TPatientTeamMeal meal);
+
+    List<PatientTeamMeal> buildPatientTeamMealResult(List<TPatientTeamMeal> meal);
+
+    IPageData<PatientTeamMeal> buildPatientTeamMealResult(IPageData<TPatientTeamMeal> meal);
 }

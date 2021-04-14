@@ -3,7 +3,7 @@ package org.example.spring.infrastructures.mysql.patient.entity.vo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.infrastructures.mysql.patient.entity.enumerate.ItemSource;
-import org.example.spring.infrastructures.mysql.patient.entity.enumerate.ItemType;
+import org.example.spring.infrastructures.mysql.patient.entity.enumerate.FeeItemType;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientFeeItem;
 
 import java.util.Optional;
@@ -18,6 +18,6 @@ public class PatientFeeItemVo extends TPatientFeeItem {
 
     @Override
     public void setType(String type) {
-        super.setType(Optional.ofNullable(ItemType.get(type)).map(ItemType::getValue).orElse(null));
+        super.setType(Optional.ofNullable(FeeItemType.get(type)).map(FeeItemType::getValue).orElse(null));
     }
 }

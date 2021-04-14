@@ -10,9 +10,10 @@ import org.example.spring.plugins.commons.converter.IBaseEnum;
 
 @AllArgsConstructor
 @Getter
-public enum ItemType implements IBaseEnum {
-    COMMONS("普通", "001", "1"),
-    ADDITIONAL("已生育", "2", "2"),
+public enum FeeItemType implements IBaseEnum {
+    PERSONAL("个人项目", "001", "1"),
+    ADDITIONAL("自选加项", "002", "2"),
+    GROUP("团队项目", "003", "3"),
     ;
 
     @JsonValue
@@ -22,8 +23,8 @@ public enum ItemType implements IBaseEnum {
     private final String code;
 
     @JsonCreator
-    public static ItemType get(String value) {
-        return EnumUtil.likeValueOf(ItemType.class, value);
+    public static FeeItemType get(String value) {
+        return EnumUtil.likeValueOf(FeeItemType.class, value);
     }
 
     @Override
