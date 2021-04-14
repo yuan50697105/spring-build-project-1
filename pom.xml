@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example.spring</groupId>
     <artifactId>spring-build-project-1</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <modules>
         <module>spring-build-plugins-dependencies</module>
         <module>spring-build-plugins</module>
@@ -214,5 +212,6 @@
     </profiles>
     <scm>
         <connection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</connection>
-    </scm>
+      <tag>spring-build-project-1-0.0.1</tag>
+  </scm>
 </project>
