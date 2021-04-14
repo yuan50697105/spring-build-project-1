@@ -69,7 +69,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     @Override
     public ResourceDetails getById(Long id) {
         ResourceDetails details = new ResourceDetails();
-        details.setPermission(authBuilder.buildPermissionResult(resourceDao.getById(id)));
+        details.setResource(authBuilder.buildPermissionResult(resourceDao.getById(id)));
         return details;
     }
 

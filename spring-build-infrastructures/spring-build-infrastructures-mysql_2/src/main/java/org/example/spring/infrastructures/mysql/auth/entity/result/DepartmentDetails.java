@@ -4,8 +4,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 
-@EqualsAndHashCode(callSuper = true)
+import java.io.Serializable;
+
 @Data
-public class DepartmentDetails extends IBaseVo {
+public class DepartmentDetails implements Serializable {
     private Department department;
 }

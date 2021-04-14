@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import org.example.spring.infrastructures.mysql.auth.table.enumerate.TUserStatus;
 import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
 
+import java.io.Serializable;
 import java.util.Optional;
 
 /**
@@ -13,7 +14,7 @@ import java.util.Optional;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class Account extends TUser {
+public class Account extends TUser implements Serializable {
     @JsonIgnore
     private String password;
 

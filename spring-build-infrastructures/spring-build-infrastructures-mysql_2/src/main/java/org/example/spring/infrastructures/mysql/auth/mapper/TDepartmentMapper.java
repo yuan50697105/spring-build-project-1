@@ -1,12 +1,16 @@
 package org.example.spring.infrastructures.mysql.auth.mapper;
 
-import org.apache.ibatis.annotations.Mapper;import org.apache.ibatis.annotations.Param;
+import com.github.liuanxin.caches.MybatisRedisCache;
+import org.apache.ibatis.annotations.CacheNamespace;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.example.spring.infrastructures.mysql.auth.table.po.TDepartment;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 
 import java.util.List;
 
 @Mapper
+@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class)
 public interface TDepartmentMapper extends IBaseMapper<TDepartment> {
     boolean existChildByPIds(@Param("ids") List<Long> ids);
 }

@@ -1,17 +1,14 @@
 package org.example.spring.infrastructures.mysql;
 
-import com.github.liuanxin.caches.MybatisRedisCache;
-import com.github.liuanxin.caches.RedisContextUtils;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.context.annotation.Bean;
+import org.example.spring.infrastructures.mysql.cache.configuration.MybatisCacheConfig;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.context.annotation.Import;
+import tk.mybatis.spring.annotation.MapperScan;
 
 @Configuration
-@ConditionalOnClass({ MybatisRedisCache.class, RedisTemplate.class })
+@Import(MybatisCacheConfig.class)
+@ComponentScan
+@MapperScan(basePackages = "org.example.spring.infrastructures.mysql.*.mapper")
 public class MySQLConfiguration {
-    @Bean
-    public RedisContextUtils setupCacheContext() {
-        return new RedisContextUtils();
-    }
 }

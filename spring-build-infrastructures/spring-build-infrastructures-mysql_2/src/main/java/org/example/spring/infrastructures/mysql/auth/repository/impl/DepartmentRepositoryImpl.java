@@ -72,7 +72,6 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
         DepartmentDetails details = new DepartmentDetails();
         TDepartment department = departmentDao.getById(id);
         details.setDepartment(authBuilder.buildDepartmentResult(department));
-        details.setId(department.getId());
         return details;
     }
 

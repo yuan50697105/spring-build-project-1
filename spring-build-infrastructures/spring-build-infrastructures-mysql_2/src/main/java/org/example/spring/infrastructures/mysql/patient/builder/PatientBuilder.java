@@ -27,13 +27,13 @@ public interface PatientBuilder {
 
     void copyPatient(PatientVo patient, @MappingTarget TPatient tPatient);
 
-    Patient buildPatientResult(TPatient patient);
-
     TPatientQuery buildPatientQuery(PatientQuery patientQuery);
 
-    IPageData<Patient> buildPatientResult(IPageData<TPatient> queryPage);
+    Patient buildPatientResult(TPatient data);
 
-    List<Patient> buildPatientResult(List<TPatient> queryPage);
+    IPageData<Patient> buildPatientResult(IPageData<TPatient> data);
+
+    List<Patient> buildPatientResult(List<TPatient> data);
 
     TPatientGroup buildPatientGroup(PatientGroupVo item);
 
@@ -59,5 +59,4 @@ public interface PatientBuilder {
 
     List<PatientGroup> buildPatientGroupResult(List<TPatientGroup> data);
 
-    Patient buildPatientVoToResult(PatientVo patient);
 }

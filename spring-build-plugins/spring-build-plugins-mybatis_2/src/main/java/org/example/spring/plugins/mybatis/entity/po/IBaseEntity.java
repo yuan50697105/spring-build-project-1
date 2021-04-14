@@ -11,6 +11,7 @@ import org.example.spring.plugins.mybatis.audit.annotation.UpdateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -18,7 +19,7 @@ import java.util.Date;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public abstract class IBaseEntity extends BaseEntity {
+public abstract class IBaseEntity extends BaseEntity implements Serializable {
     @Id
     @org.example.spring.plugins.mybatis.audit.annotation.Id
     @TableId

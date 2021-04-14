@@ -22,7 +22,7 @@ import java.util.*;
  * @create: 2020-01-19 21:34
  */
 @Component
-@Intercepts({@Signature(type = Executor.class, method = "updateAll", args = {MappedStatement.class, Object.class})})
+@Intercepts({@Signature(type = Executor.class, method = "update", args = {MappedStatement.class, Object.class})})
 @AllArgsConstructor
 public class CustomInterceptor implements Interceptor {
     private static final String ID = "id";
@@ -62,10 +62,10 @@ public class CustomInterceptor implements Interceptor {
         return invocation.proceed();
     }
 
-    @Override
-    public Object plugin(Object target) {
-        return Plugin.wrap(target, this);
-    }
+//    @Override
+//    public Object plugin(Object target) {
+//        return Plugin.wrap(target, this);
+//    }
 
     @Override
     public void setProperties(Properties properties) {

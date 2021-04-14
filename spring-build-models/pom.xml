@@ -15,8 +15,6 @@
         <module>spring-build-models_1</module>
         <module>spring-build-models_2</module>
         <module>spring-build-models-commons</module>
-        <module>spring-build-models_11</module>
-        <module>spring-build-models_21</module>
     </modules>
     <dependencyManagement>
         <dependencies>
