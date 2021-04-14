@@ -3,7 +3,6 @@ package org.example.spring.infrastructures.mysql.patient.table.po;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,14 +40,15 @@ public class TPatientGroup extends IBaseEntity implements Serializable {
     /**
      * groupId
      */
-    @ApiModelProperty(value = "groupId")
+    @ApiModelProperty(value = "teamId")
     private Long teamId;
 
+
     /**
-     * personNum
+     * teamMealId
      */
-    @ApiModelProperty(value = "personNum")
-    private Integer personNum;
+    @ApiModelProperty(value = "teamMealId")
+    private Long teamMealId;
 
     /**
      * mealId
@@ -63,28 +63,9 @@ public class TPatientGroup extends IBaseEntity implements Serializable {
     private String mealName;
 
     /**
-     * mealPrice
+     * personNum
      */
-    @ApiModelProperty(value = "mealPrice")
-    private BigDecimal mealPrice;
-
-    /**
-     * mealDisPrice
-     */
-    @ApiModelProperty(value = "mealDisPrice")
-    private BigDecimal mealDisPrice;
-
-    /**
-     * maxDisPrice
-     */
-    @ApiModelProperty(value = "maxDisPrice")
-    private BigDecimal maxDisPrice;
-
-    /**
-     * maxDiscount
-     */
-    @ApiModelProperty(value = "maxDiscount")
-    private BigDecimal maxDiscount;
-
+    @ApiModelProperty(value = "personNum")
+    private Integer personNum;
     private static final long serialVersionUID = 1L;
 }

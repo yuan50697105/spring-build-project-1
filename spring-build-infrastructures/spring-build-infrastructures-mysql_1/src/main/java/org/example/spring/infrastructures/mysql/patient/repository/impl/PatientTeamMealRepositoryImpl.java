@@ -1,5 +1,8 @@
 package org.example.spring.infrastructures.mysql.patient.repository.impl;
+import java.math.BigDecimal;
+import java.util.Date;
 
+import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.patient.builder.PatientBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientTeamMealCheckItemDao;
@@ -37,38 +40,66 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
         PatientTeamMealVo meal = patientTeamMealFormVo.getMeal();
         TPatientTeamMeal patientTeamMeal = patientBuilder.buildPatientTeamMeal(meal);
         patientTeamMealDao.save(patientTeamMeal);
-        List<PatientTeamMealFeeItemFormVo> feeItems = patientTeamMealFormVo.getFeeItems();
-        for (PatientTeamMealFeeItemFormVo feeItem : feeItems) {
-            PatientTeamMealFeeItemVo feeItemVo = feeItem.getFeeItem();
-            TPatientTeamMealFeeItem patientTeamMealFeeItem = patientBuilder.buildPatientTeamMealFeeItem(feeItemVo);
-            patientTeamMealFeeItem.setMealId(patientTeamMeal.getMealId());
-            patientTeamMealFeeItem.setTeamMealId(patientTeamMeal.getId());
-            patientTeamMealFeeItemDao.save(patientTeamMealFeeItem);
-            List<PatientTeamMealCheckItemVo> checkItems = feeItem.getCheckItems();
-            List<TPatientTeamMealCheckItem> patientTeamMealCheckItems = patientBuilder.buildPatientTeamMealCheckItem(checkItems);
-            patientTeamMealCheckItems = patientTeamMealCheckItems.stream().peek(tPatientTeamMealCheckItem -> {
-                tPatientTeamMealCheckItem.setMealId(patientTeamMealFeeItem.getMealId());
-                tPatientTeamMealCheckItem.setFeeItemId(patientTeamMealFeeItem.getFeeItemId());
-            }).collect(Collectors.toList());
-
+        if (ObjectUtil.isNotEmpty(patientTeamMealFormVo.getFeeItems())) {
+            saveFeeItem(patientTeamMeal, patientTeamMealFormVo.getFeeItems());
         }
         return patientTeamMeal.getId();
     }
 
+    private void saveFeeItem(TPatientTeamMeal patientTeamMeal, List<PatientTeamMealFeeItemFormVo> feeItemFormVos) {
+        if (ObjectUtil.isNotEmpty(feeItemFormVos)) {
+            for (PatientTeamMealFeeItemFormVo feeItemFormVo : feeItemFormVos) {
+                PatientTeamMealFeeItemVo patientTeamMealFeeItemVo = feeItemFormVo.getFeeItem();
+                TPatientTeamMealFeeItem entity = patientBuilder.buildPatientTeamMealFeeItem(patientTeamMealFeeItemVo);
+                setMealFeeItem(patientTeamMeal, entity);
+                patientTeamMealFeeItemDao.save(entity);
+                if (ObjectUtil.isNotEmpty(feeItemFormVo.getCheckItems())) {
+                    saveCheckItem(entity, feeItemFormVo.getCheckItems());
+                }
+            }
+        }
+    }
+
+    private void saveCheckItem(TPatientTeamMealFeeItem entity, List<PatientTeamMealCheckItemVo> checkItems) {
+        for (PatientTeamMealCheckItemVo checkItem : checkItems) {
+            TPatientTeamMealCheckItem patientTeamMealCheckItem = patientBuilder.buildPatientTeamMealCheckItem(checkItem);
+            setMealCheckItem(entity, patientTeamMealCheckItem);
+            patientTeamMealCheckItemDao.save(patientTeamMealCheckItem);
+        }
+    }
+
+    private void setMealCheckItem(TPatientTeamMealFeeItem entity, TPatientTeamMealCheckItem patientTeamMealCheckItem) {
+        patientTeamMealCheckItem.setTeamId(entity.getTeamId());
+        patientTeamMealCheckItem.setMealId(entity.getMealId());
+        patientTeamMealCheckItem.setTeamMealId(entity.getTeamMealId());
+        patientTeamMealCheckItem.setFeeItemId(entity.getFeeItemId());
+        patientTeamMealCheckItem.setTeamFeeItemId(entity.getId());
+    }
+
+    private void setMealFeeItem(TPatientTeamMeal patientTeamMeal, TPatientTeamMealFeeItem entity) {
+        entity.setTeamId(patientTeamMeal.getTeamId());
+        entity.setTeamMealId(patientTeamMeal.getId());
+        entity.setMealId(patientTeamMeal.getMealId());
+    }
+
     @Override
     public void update(PatientTeamMealFormVo patientTeamMealFormVo) {
-        Long id = patientTeamMealFormVo.getId();
-        PatientTeamMealVo meal = patientTeamMealFormVo.getMeal();
-        Optional<TPatientTeamMeal> optional = patientTeamMealDao.getByIdOpt(id);
-        if (optional.isPresent()) {
-            TPatientTeamMeal patientTeamMeal = optional.get();
-            patientBuilder.copyPatientTeamMeal(meal, patientTeamMeal);
-            patientTeamMealDao.updateById(patientTeamMeal);
-        }
+//        Long id = patientTeamMealFormVo.getId();
+//        PatientTeamMealVo meal = patientTeamMealFormVo.getMeal();
+//        Optional<TPatientTeamMeal> optional = patientTeamMealDao.getByIdOpt(id);
+//        if (optional.isPresent()) {
+//            TPatientTeamMeal patientTeamMeal = optional.get();
+//            patientBuilder.copyPatientTeamMeal(meal, patientTeamMeal);
+//            patientTeamMealDao.updateById(patientTeamMeal);
+//        }
+        throw new RuntimeException("不能更新");
+
     }
 
     @Override
     public void delete(List<Long> ids) {
+        patientTeamMealCheckItemDao.removeByTeamMealIds(ids);
+        patientTeamMealFeeItemDao.removeByTeamMealIds(ids);
         patientTeamMealDao.removeByIds(ids);
     }
 
@@ -76,6 +107,7 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
     public PatientTeamMealDetails getById(Long id) {
         PatientTeamMealDetails details = new PatientTeamMealDetails();
         details.setMeal(patientBuilder.buildPatientTeamMealResult(patientTeamMealDao.getById(id)));
+        details.setFeeItem(patientBuilder.buildPatientTeamMealFeeItemResult(patientTeamMealFeeItemDao.listByTeamMealId(id)));
         return details;
     }
 

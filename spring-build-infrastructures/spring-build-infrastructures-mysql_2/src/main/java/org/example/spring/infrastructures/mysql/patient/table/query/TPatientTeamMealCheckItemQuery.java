@@ -1,6 +1,8 @@
 package org.example.spring.infrastructures.mysql.patient.table.query;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
+import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -27,36 +29,57 @@ public class TPatientTeamMealCheckItemQuery extends TkBaseQuery<TPatientTeamMeal
     /**
      * patientId
      */
-    @ApiModelProperty(value = "patientId")
+    @ApiModelProperty(value = "teamId")
+    @AndEqualTo
     private Long teamId;
+    /**
+     * mealId
+     */
+    @ApiModelProperty(value = "mealId")
+    @AndEqualTo
+    private Long mealId;
+
+    /**
+     * teamMealId
+     */
+    @ApiModelProperty(value = "teamMealId")
+    @AndEqualTo
+    private Long teamMealId;
     /**
      * feeItemId
      */
     @ApiModelProperty(value = "feeItemId")
+    @AndEqualTo
     private Long feeItemId;
+
+    /**
+     * teamFeeItemId
+     */
+    @ApiModelProperty(value = "teamFeeItemId")
+    @AndEqualTo
+    private Long teamFeeItemId;
     /**
      * checkItemId
      */
     @ApiModelProperty(value = "checkItemId")
+    @AndEqualTo
     private String checkItemId;
     /**
      * checkItemCode
      */
     @ApiModelProperty(value = "checkItemCode")
+    @AndLike
     private String checkItemCode;
     /**
      * checkItemName
      */
     @ApiModelProperty(value = "checkItemName")
+    @AndLike
     private String checkItemName;
-    /**
-     * mealId
-     */
-    @ApiModelProperty(value = "mealId")
-    private Long mealId;
     /**
      * source
      */
     @ApiModelProperty(value = "source")
+    @AndEqualTo
     private String source;
 }

@@ -47,6 +47,13 @@ public class TPatientGroupQuery extends TkBaseQuery<TPatientGroup> implements Se
     @ApiModelProperty(value = "mealId")
     @AndEqualTo
     private Long mealId;
+
+    /**
+     * teamMealId
+     */
+    @ApiModelProperty(value = "teamMealId")
+    @AndEqualTo
+    private Long teamMealId;
     /**
      * mealName
      */

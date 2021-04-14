@@ -10,6 +10,8 @@ import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 @AllArgsConstructor
 @Transactional
@@ -17,5 +19,15 @@ public class TPatientTeamMealFeeItemDaoImpl extends TkBaseDaoImpl<TPatientTeamMe
     @Override
     protected Wrapper<TPatientTeamMealFeeItem> queryWrapper(TPatientTeamMealFeeItemQuery tPatientTeamMealFeeItemQuery) {
         return null;
+    }
+
+    @Override
+    public boolean removeByTeamMealIds(List<Long> ids) {
+        return remove(lambdaQuery().in(TPatientTeamMealFeeItem::getTeamMealId, ids));
+    }
+
+    @Override
+    public List<TPatientTeamMealFeeItem> listByTeamMealId(Long id) {
+        return lambdaQuery().eq(TPatientTeamMealFeeItem::getTeamMealId, id).list();
     }
 }
