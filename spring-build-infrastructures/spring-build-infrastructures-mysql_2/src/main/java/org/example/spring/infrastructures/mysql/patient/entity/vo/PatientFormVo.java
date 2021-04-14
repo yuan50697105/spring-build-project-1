@@ -10,5 +10,6 @@ import java.util.List;
 @Data
 public class PatientFormVo extends IBaseVo {
     private PatientVo patient;
-
+    private PatientMealFormVo meal;
+    private List<PatientFeeItemFormVo> feeItems;
 }

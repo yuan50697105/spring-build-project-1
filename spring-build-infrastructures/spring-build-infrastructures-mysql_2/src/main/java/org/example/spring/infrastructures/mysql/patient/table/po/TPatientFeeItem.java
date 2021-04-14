@@ -30,7 +30,7 @@ public class TPatientFeeItem extends IBaseEntity implements Serializable {
      * feeItemId
      */
     @ApiModelProperty(value = "feeItemId")
-    private String feeItemId;
+    private Long feeItemId;
 
     /**
      * feeItemCode

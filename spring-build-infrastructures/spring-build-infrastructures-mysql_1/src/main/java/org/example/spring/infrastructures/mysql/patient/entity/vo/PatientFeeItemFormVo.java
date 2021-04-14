@@ -8,8 +8,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PatientFormVo extends IBaseVo {
-    private PatientVo patient;
-    private PatientMealFormVo meal;
-    private List<PatientFeeItemFormVo> feeItems;
+public class PatientFeeItemFormVo extends IBaseVo {
+    private PatientFeeItemVo feeItem;
+    private List<PatientCheckItemVo> checkItems;
 }

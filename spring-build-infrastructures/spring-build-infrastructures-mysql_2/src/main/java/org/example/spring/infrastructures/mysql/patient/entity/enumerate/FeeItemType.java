@@ -12,7 +12,7 @@ import org.example.spring.plugins.commons.converter.IBaseEnum;
 @Getter
 public enum FeeItemType implements IBaseEnum {
     PERSONAL("个人项目", "001", "1"),
-    ADDITIONAL("自选加项", "002", "2"),
+    ADDITIONAL("医生加项", "002", "2"),
     GROUP("团队项目", "003", "3"),
     ;
 

@@ -74,4 +74,10 @@ public interface PatientBuilder {
     TPatientTeamMealCheckItem buildPatientTeamMealCheckItem(PatientTeamMealCheckItemVo checkItem);
 
     List<PatientTeamMealFeeItem> buildPatientTeamMealFeeItemResult(List<TPatientTeamMealFeeItem> listByTeamMealId);
+
+    TPatientFeeItem buildPatientFeeItem(PatientFeeItemVo patientFeeItemVo);
+
+    TPatientMeal buildPatientMeal(PatientMealVo meal);
+
+    TPatientCheckItem buildPatientCheckItem(PatientCheckItemVo checkItem);
 }

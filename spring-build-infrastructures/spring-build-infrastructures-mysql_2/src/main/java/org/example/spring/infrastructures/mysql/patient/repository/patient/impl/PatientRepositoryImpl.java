@@ -3,19 +3,16 @@ package org.example.spring.infrastructures.mysql.patient.repository.patient.impl
 import cn.hutool.core.util.ObjectUtil;
 import lombok.SneakyThrows;
 import org.example.spring.infrastructures.mysql.patient.builder.PatientBuilder;
-import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
-import org.example.spring.infrastructures.mysql.patient.dao.TPatientGroupDao;
-import org.example.spring.infrastructures.mysql.patient.dao.TPatientTeamDao;
+import org.example.spring.infrastructures.mysql.patient.dao.*;
+import org.example.spring.infrastructures.mysql.patient.entity.enumerate.FeeItemType;
+import org.example.spring.infrastructures.mysql.patient.entity.enumerate.ItemSource;
 import org.example.spring.infrastructures.mysql.patient.entity.enumerate.PatientType;
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientDetails;
-import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientFormVo;
-import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientVo;
+import org.example.spring.infrastructures.mysql.patient.entity.vo.*;
 import org.example.spring.infrastructures.mysql.patient.repository.patient.PatientRepository;
-import org.example.spring.infrastructures.mysql.patient.table.po.TPatient;
-import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroup;
-import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
+import org.example.spring.infrastructures.mysql.patient.table.po.*;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
@@ -38,29 +35,82 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientFormVo, PatientDetails, PatientQuery> implements PatientRepository {
     private final TPatientTeamDao patientTeamDao;
     private final TPatientGroupDao patientGroupDao;
-    private final PatientBuilder patientBuilder;
     private final TPatientDao patientDao;
+    private final TPatientMealDao patientMealDao;
+    private final TPatientFeeItemDao patientFeeItemDao;
+    private final TPatientCheckItemDao patientCheckItemDao;
+    private final PatientBuilder patientBuilder;
     private final ThreadPoolExecutor executor;
 
     public PatientRepositoryImpl(TPatientTeamDao patientTeamDao,
                                  TPatientGroupDao patientGroupDao,
-                                 PatientBuilder patientBuilder,
+                                 TPatientMealDao patientMealDao, TPatientFeeItemDao patientFeeItemDao, PatientBuilder patientBuilder,
                                  TPatientDao patientDao,
-                                 ThreadPoolExecutor executor) {
+                                 TPatientCheckItemDao patientCheckItemDao, ThreadPoolExecutor executor) {
         this.patientTeamDao = patientTeamDao;
         this.patientGroupDao = patientGroupDao;
+        this.patientMealDao = patientMealDao;
+        this.patientFeeItemDao = patientFeeItemDao;
         this.patientBuilder = patientBuilder;
         this.patientDao = patientDao;
+        this.patientCheckItemDao = patientCheckItemDao;
         this.executor = executor;
     }
 
     @Override
-    public Long saveWithId(PatientFormVo patientFormVo) {
+    public Long saveWithId(final PatientFormVo patientFormVo) {
         PatientVo patient = patientFormVo.getPatient();
-        TPatient entity = patientBuilder.buildPatient(patient);
+        final TPatient entity = patientBuilder.buildPatient(patient);
         addExtra(entity);
         patientDao.save(entity);
+        if (ObjectUtil.isNotEmpty(patientFormVo.getMeal())) {
+            executor.submit(() -> saveMealItem(entity, patientFormVo.getMeal()));
+        }
+        if (ObjectUtil.isNotEmpty(patientFormVo.getFeeItems())) {
+            executor.submit(() -> {
+                savePersonalFeeItem(patientFormVo, entity);
+            });
+        }
         return entity.getId();
+    }
+
+    private void saveMealItem(final TPatient entity, final PatientMealFormVo meal) {
+        TPatientMeal patientMeal = patientBuilder.buildPatientMeal(meal.getMeal());
+        patientMealDao.save(patientMeal);
+        executor.submit(() -> saveFeeItem(entity, meal.getItems(), ItemSource.MEAL.getValue(),FeeItemType.PERSONAL.getValue()));
+    }
+
+    private void savePersonalFeeItem(PatientFormVo patientFormVo, TPatient entity) {
+        saveFeeItem(entity, patientFormVo.getFeeItems(), ItemSource.OPTIONAL.getValue(), FeeItemType.PERSONAL.getValue());
+    }
+
+    private void savePersonalCheckItem(PatientFeeItemFormVo feeItem, TPatientFeeItem tPatientFeeItem) {
+        saveCheckItem(tPatientFeeItem, feeItem.getCheckItems(), ItemSource.OPTIONAL.getValue());
+    }
+
+    private void saveFeeItem(TPatient entity, List<PatientFeeItemFormVo> feeItems, String source, String type) {
+        for (final PatientFeeItemFormVo feeItem : feeItems) {
+            PatientFeeItemVo patientFeeItemVo = feeItem.getFeeItem();
+            final TPatientFeeItem tPatientFeeItem = patientBuilder.buildPatientFeeItem(patientFeeItemVo);
+            tPatientFeeItem.setPatientId(entity.getId());
+            tPatientFeeItem.setSource(source);
+            tPatientFeeItem.setType(type);
+            patientFeeItemDao.save(tPatientFeeItem);
+            if (ObjectUtil.isNotEmpty(feeItem.getCheckItems())) {
+                executor.submit(() -> savePersonalCheckItem(feeItem, tPatientFeeItem));
+            }
+        }
+    }
+
+    private void saveCheckItem(TPatientFeeItem tPatientFeeItem, List<PatientCheckItemVo> checkItems, String source) {
+        for (PatientCheckItemVo checkItem : checkItems) {
+            TPatientCheckItem entity = patientBuilder.buildPatientCheckItem(checkItem);
+            entity.setPatientId(tPatientFeeItem.getPatientId());
+            entity.setFeeItemId(tPatientFeeItem.getFeeItemId());
+            entity.setMealId(tPatientFeeItem.getMealId());
+            entity.setSource(source);
+            patientCheckItemDao.save(entity);
+        }
     }
 
     @Override
