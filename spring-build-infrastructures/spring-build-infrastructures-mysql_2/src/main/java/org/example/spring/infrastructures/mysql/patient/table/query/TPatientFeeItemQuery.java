@@ -28,6 +28,19 @@ import java.math.BigDecimal;
 public class TPatientFeeItemQuery extends TkBaseQuery<TPatientFeeItem> implements Serializable, MybatisExampleForTk<TPatientFeeItem, Example> {
     private static final long serialVersionUID = 1L;
     /**
+     * mealId
+     */
+    @ApiModelProperty(value = "mealId")
+    @AndEqualTo
+    private Long mealId;
+
+    /**
+     * patientMealId
+     */
+    @ApiModelProperty(value = "patientMealId")
+    @AndEqualTo
+    private Long patientMealId;
+    /**
      * patientId
      */
     @ApiModelProperty(value = "patientId")

@@ -1,13 +1,12 @@
 package org.example.spring.domains.patient.service.impl;
 
 import lombok.AllArgsConstructor;
-import org.checkerframework.checker.nullness.Opt;
 import org.example.spring.domains.patient.service.PatientTeamService;
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientTeamQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeam;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeamDetails;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientTeamFormVo;
-import org.example.spring.infrastructures.mysql.patient.repository.PatientTeamRepository;
+import org.example.spring.infrastructures.mysql.patient.repository.team.PatientTeamRepository;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

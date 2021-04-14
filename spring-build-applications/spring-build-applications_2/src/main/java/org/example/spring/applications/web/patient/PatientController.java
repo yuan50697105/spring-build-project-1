@@ -9,6 +9,7 @@ import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientDetails;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientFormVo;
 import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
@@ -73,13 +74,13 @@ public class PatientController {
         return R.success();
     }
 
-    @DeleteMapping
+    @DeleteMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public Result<?> delete1(List<Long> ids) {
         patientService.delete(ids);
         return R.success();
     }
 
-    @DeleteMapping
+    @DeleteMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public Result<?> delete2(@RequestBody List<Long> ids) {
         patientService.delete(ids);
         return R.success();

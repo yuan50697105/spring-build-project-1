@@ -1,4 +1,4 @@
-package org.example.spring.infrastructures.mysql.patient.repository.impl;
+package org.example.spring.infrastructures.mysql.patient.repository.team.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.patient.builder.PatientBuilder;
@@ -11,7 +11,7 @@ import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTea
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeamDetails;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientTeamFormVo;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientTeamVo;
-import org.example.spring.infrastructures.mysql.patient.repository.PatientTeamRepository;
+import org.example.spring.infrastructures.mysql.patient.repository.team.PatientTeamRepository;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;

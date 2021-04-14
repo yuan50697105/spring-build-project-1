@@ -45,6 +45,18 @@ public class TPatientFeeItem extends IBaseEntity implements Serializable {
     private String feeItemName;
 
     /**
+     * mealId
+     */
+    @ApiModelProperty(value = "mealId")
+    private Long mealId;
+
+    /**
+     * patientMealId
+     */
+    @ApiModelProperty(value = "patientMealId")
+    private Long patientMealId;
+
+    /**
      * price
      */
     @ApiModelProperty(value = "price")

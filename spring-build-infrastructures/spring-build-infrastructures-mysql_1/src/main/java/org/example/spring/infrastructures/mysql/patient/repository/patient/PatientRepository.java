@@ -1,4 +1,4 @@
-package org.example.spring.infrastructures.mysql.patient.repository;
+package org.example.spring.infrastructures.mysql.patient.repository.patient;
 
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientDetails;
