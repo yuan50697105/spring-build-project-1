@@ -4,7 +4,7 @@
 
     <groupId>org.example.spring</groupId>
     <artifactId>spring-build-project-1</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <modules>
         <module>spring-build-plugins-dependencies</module>
         <module>spring-build-plugins</module>
@@ -212,6 +212,6 @@
     </profiles>
     <scm>
         <connection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</connection>
-      <tag>HEAD</tag>
+      <tag>spring-build-project-1-0.0.2</tag>
   </scm>
 </project>
