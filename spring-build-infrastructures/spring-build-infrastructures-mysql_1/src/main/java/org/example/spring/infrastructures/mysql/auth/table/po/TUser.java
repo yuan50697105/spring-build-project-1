@@ -8,17 +8,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.apache.ibatis.type.Alias;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
 /**
  * t_user
+ * @author yuane
  */
 @ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TUser")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
+@Alias("TUser")
 public class TUser extends IBaseEntity implements Serializable {
+
+    private static final long serialVersionUID = 2799305908245541459L;
     /**
      * 用户名
      */
@@ -42,6 +47,4 @@ public class TUser extends IBaseEntity implements Serializable {
      */
     @ApiModelProperty(value = "状态")
     private String status;
-
-    private static final long serialVersionUID = 1L;
 }

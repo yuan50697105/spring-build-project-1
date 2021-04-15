@@ -5,10 +5,13 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class DepartmentNode extends TreeNode<Long> {
+public class DepartmentNode extends TreeNode<Long> implements Serializable {
 
+    private static final long serialVersionUID = -6000213215886155757L;
     /**
      * name
      */

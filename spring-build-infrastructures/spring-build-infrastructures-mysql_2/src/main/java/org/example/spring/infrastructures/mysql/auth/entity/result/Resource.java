@@ -9,4 +9,5 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class Resource extends TResource implements Serializable {
+    private static final long serialVersionUID = 190084135795234677L;
 }

@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.apache.ibatis.type.Alias;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
 /**
@@ -18,6 +19,7 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
+@Alias("TRoleResource")
 public class TRoleResource extends IBaseEntity implements Serializable {
     /**
      * roleId

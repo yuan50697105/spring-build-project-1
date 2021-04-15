@@ -9,4 +9,5 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class Role extends TRole implements Serializable {
+    private static final long serialVersionUID = -4310728382386930248L;
 }

@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class AccountFormVo extends IBaseVo {
+    private static final long serialVersionUID = 587049309938653406L;
     private AccountVo account;
     private Set<RoleVo> roles;
 

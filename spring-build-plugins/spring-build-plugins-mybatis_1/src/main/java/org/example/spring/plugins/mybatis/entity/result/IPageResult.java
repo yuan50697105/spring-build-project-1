@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Value;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 
+import java.util.List;
+
 /**
  * @author yuane
  */
@@ -13,6 +15,22 @@ import org.example.spring.plugins.mybatis.entity.IPageData;
 @EqualsAndHashCode(callSuper = true)
 @Value
 public class IPageResult<T> extends IPageData<T> {
+    public IPageResult(List<T> data, Integer page, Integer size, Integer totalPage, Integer totalRowNum) {
+        super(data, page, size, totalPage, totalRowNum);
+    }
+
+    public IPageResult(List<T> data, Integer page, Integer size, Long totalPage, Long totalRowNum) {
+        super(data, page, size, totalPage, totalRowNum);
+    }
+
+    public IPageResult(List<T> data, Integer page, Integer size, Integer totalPages, Long totalRowNum) {
+        super(data, page, size, totalPages, totalRowNum);
+    }
+
+    public IPageResult(List<T> data, Long page, Long size, Long totalPage, Long totalRowNum) {
+        super(data, page, size, totalPage, totalRowNum);
+    }
+
     public IPageResult(IPage<T> iPage) {
         super(iPage.getRecords(), iPage.getCurrent(), iPage.getSize(), iPage.getPages(), iPage.getTotal());
     }

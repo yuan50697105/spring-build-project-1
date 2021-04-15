@@ -8,4 +8,5 @@ import java.io.Serializable;
 public abstract class BaseEntity implements Serializable {
 
 
+    private static final long serialVersionUID = -5543758035153062715L;
 }

@@ -5,11 +5,13 @@ import lombok.EqualsAndHashCode;
 import org.example.spring.infrastructures.mysql.auth.entity.enumerate.UserStatus;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
+import java.io.Serializable;
 import java.util.Optional;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class AccountQuery extends BaseQuery {
+public class AccountQuery extends BaseQuery implements Serializable {
+    private static final long serialVersionUID = -1686733748193152774L;
     private String username;
     private String status;
 

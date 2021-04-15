@@ -15,6 +15,7 @@ import java.util.Optional;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class Account extends TUser implements Serializable {
+    private static final long serialVersionUID = -7479710667266816361L;
     @JsonIgnore
     private String password;
 

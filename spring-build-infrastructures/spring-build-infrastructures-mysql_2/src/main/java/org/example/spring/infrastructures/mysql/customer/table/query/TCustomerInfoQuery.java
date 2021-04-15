@@ -44,7 +44,7 @@ public class TCustomerInfoQuery extends TkBaseQuery<TCustomerInfo> implements Se
      */
     @ApiModelProperty(value = "类型")
     @AndEqualTo
-    private CustomerType type;
+    private String type;
 
     private static final long serialVersionUID = 1L;
 }

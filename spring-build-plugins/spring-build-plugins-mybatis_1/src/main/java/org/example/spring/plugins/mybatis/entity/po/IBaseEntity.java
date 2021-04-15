@@ -20,6 +20,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public abstract class IBaseEntity extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 236773490325517697L;
     @Id
     @org.example.spring.plugins.mybatis.audit.annotation.Id
     @TableId

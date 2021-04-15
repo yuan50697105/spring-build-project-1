@@ -30,8 +30,6 @@ import java.util.List;
 public interface AuthBuilder {
     TUser buildUser(AccountVo account);
 
-    Account buildAccount(TUser user);
-
     void copyUser(AccountVo account, @MappingTarget TUser tUser);
 
     TUserRole buildRole(Long userId, Long roleId);
@@ -45,6 +43,8 @@ public interface AuthBuilder {
         }
         return userRoles;
     }
+
+    Account buildAccount(TUser user);
 
     IPageData<Account> buildAccounts(IPageData<TUser> data);
 
