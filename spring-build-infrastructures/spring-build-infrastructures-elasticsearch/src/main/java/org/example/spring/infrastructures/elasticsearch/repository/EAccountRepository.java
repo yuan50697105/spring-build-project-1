@@ -1,10 +1,13 @@
 package org.example.spring.infrastructures.elasticsearch.repository;
 
 import org.example.spring.infrastructures.elasticsearch.entity.EAccount;
-import org.springframework.data.domain.Page;
-import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
-import org.springframework.stereotype.Repository;
+import org.example.spring.infrastructures.elasticsearch.entity.EAccountQuery;
+import org.springframework.data.domain.Pageable;
 
-@Repository
-public interface EAccountRepository extends ElasticsearchRepository<EAccount, Long> {
+import java.util.List;
+
+public interface EAccountRepository {
+    List<EAccount> findAllByQuery(EAccountQuery account, Pageable pageable);
+
+    List<Long> findIdsByQuery(EAccountQuery query, Pageable pageable);
 }

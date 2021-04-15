@@ -1,4 +1,4 @@
-package org.example.spring.infrastructures.mysql.patient.repository.team.impl;
+package org.example.spring.infrastructures.mysql.patient.repository.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.patient.builder.PatientBuilder;

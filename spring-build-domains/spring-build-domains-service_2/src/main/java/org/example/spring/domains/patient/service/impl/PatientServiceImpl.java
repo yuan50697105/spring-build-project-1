@@ -6,7 +6,7 @@ import org.example.spring.infrastructures.mysql.patient.entity.query.PatientQuer
 import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientDetails;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientFormVo;
-import org.example.spring.infrastructures.mysql.patient.repository.patient.PatientRepository;
+import org.example.spring.infrastructures.mysql.patient.repository.PatientRepository;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

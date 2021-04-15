@@ -1,4 +1,4 @@
-package org.example.spring.infrastructures.mysql.patient.repository.patient.impl;
+package org.example.spring.infrastructures.mysql.patient.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.SneakyThrows;

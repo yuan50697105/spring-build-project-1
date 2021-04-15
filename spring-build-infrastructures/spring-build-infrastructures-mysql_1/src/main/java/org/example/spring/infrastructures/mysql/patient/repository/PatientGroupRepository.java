@@ -1,4 +1,4 @@
-package org.example.spring.infrastructures.mysql.patient.repository.team;
+package org.example.spring.infrastructures.mysql.patient.repository;
 
 import org.example.spring.infrastructures.mysql.patient.entity.query.PatientGroupQuery;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGroup;
