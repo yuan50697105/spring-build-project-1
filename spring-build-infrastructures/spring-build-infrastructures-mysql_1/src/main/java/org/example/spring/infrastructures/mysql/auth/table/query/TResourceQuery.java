@@ -37,7 +37,7 @@ public class TResourceQuery extends TkBaseQuery<TResource> implements Serializab
     */
     @ApiModelProperty(value="type")
     @AndEqualTo
-    private ResourceType type;
+    private String type;
     private Long pid;
 
     private static final long serialVersionUID = 1L;
