@@ -2,7 +2,7 @@ package org.example.spring.models.customer.entity.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.mysql.customer.table.enumerate.CustomerType;
+import org.example.spring.models.enumerate.CustomerType;
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
 
 import java.util.Optional;

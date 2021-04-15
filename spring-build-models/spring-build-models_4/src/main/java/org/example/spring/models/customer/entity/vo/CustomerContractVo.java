@@ -2,8 +2,8 @@ package org.example.spring.models.customer.entity.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.mysql.customer.table.enumerate.CustomerContractStatus;
-import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContract;
+import org.example.spring.infrastructures.es.customer.entity.enumerate.CustomerContractStatus;
+import org.example.spring.infrastructures.es.customer.entity.po.TCustomerContract;
 
 import javax.validation.constraints.NotEmpty;
 import java.util.Optional;

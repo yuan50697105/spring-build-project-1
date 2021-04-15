@@ -3,7 +3,7 @@ package org.example.spring.models.customer.entity.query;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.mysql.customer.table.enumerate.CustomerContractStatus;
+import org.example.spring.models.enumerate.CustomerContractStatus;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
 import java.io.Serializable;

@@ -22,6 +22,7 @@
         <module>spring-build-plugins-payment</module>
         <module>spring-build-plugins-mybatis-sharding_1</module>
         <module>spring-build-plugins-mybatis-sharding_2</module>
+        <module>spring-build-plugins-elasticsearch</module>
     </modules>
 
     <dependencyManagement>

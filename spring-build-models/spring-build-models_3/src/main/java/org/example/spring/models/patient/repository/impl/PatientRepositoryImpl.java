@@ -2,6 +2,7 @@ package org.example.spring.models.patient.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.SneakyThrows;
+import org.example.spring.infrastructures.es.patient.entity.po.TPatientGroup;
 import org.example.spring.models.patient.builder.PatientBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.*;
 import org.example.spring.models.enumerate.FeeItemType;
@@ -12,8 +13,7 @@ import org.example.spring.models.patient.entity.result.Patient;
 import org.example.spring.models.patient.entity.result.PatientDetails;
 import org.example.spring.models.patient.entity.vo.*;
 import org.example.spring.models.patient.repository.PatientRepository;
-import org.example.spring.infrastructures.mysql.patient.table.po.*;
-import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
+import org.example.spring.infrastructures.es.patient.entity.query.TPatientQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.cache.annotation.CacheConfig;
@@ -60,7 +60,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     @Override
     public Long saveWithId(final PatientFormVo patientFormVo) {
         PatientVo patient = patientFormVo.getPatient();
-        final TPatient entity = patientBuilder.buildPatient(patient);
+        final org.example.spring.infrastructures.es.patient.entity.po.TPatient entity = patientBuilder.buildPatient(patient);
         addExtra(entity);
         patientDao.save(entity);
         if (ObjectUtil.isNotEmpty(patientFormVo.getMeal())) {
@@ -74,20 +74,20 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         return entity.getId();
     }
 
-    private void saveMealItem(final TPatient entity, final PatientMealFormVo meal) {
-        TPatientMeal patientMeal = patientBuilder.buildPatientMeal(meal.getMeal());
+    private void saveMealItem(final org.example.spring.infrastructures.es.patient.entity.po.TPatient entity, final PatientMealFormVo meal) {
+        org.example.spring.infrastructures.es.patient.entity.po.TPatientMeal patientMeal = patientBuilder.buildPatientMeal(meal.getMeal());
         patientMealDao.save(patientMeal);
         executor.submit(() -> saveFeeItem(entity, meal.getItems(), ItemSource.MEAL.getValue(),FeeItemType.PERSONAL.getValue()));
     }
 
-    private void savePersonalCheckItem(PatientFeeItemFormVo feeItem, TPatientFeeItem tPatientFeeItem) {
+    private void savePersonalCheckItem(PatientFeeItemFormVo feeItem, org.example.spring.infrastructures.es.patient.entity.po.TPatientFeeItem tPatientFeeItem) {
         saveCheckItem(tPatientFeeItem, feeItem.getCheckItems(), ItemSource.OPTIONAL.getValue());
     }
 
-    private void saveFeeItem(TPatient entity, List<PatientFeeItemFormVo> feeItems, String source, String type) {
+    private void saveFeeItem(org.example.spring.infrastructures.es.patient.entity.po.TPatient entity, List<PatientFeeItemFormVo> feeItems, String source, String type) {
         for (final PatientFeeItemFormVo feeItem : feeItems) {
             PatientFeeItemVo patientFeeItemVo = feeItem.getFeeItem();
-            final TPatientFeeItem tPatientFeeItem = patientBuilder.buildPatientFeeItem(patientFeeItemVo);
+            final org.example.spring.infrastructures.es.patient.entity.po.TPatientFeeItem tPatientFeeItem = patientBuilder.buildPatientFeeItem(patientFeeItemVo);
             tPatientFeeItem.setPatientId(entity.getId());
             tPatientFeeItem.setSource(source);
             tPatientFeeItem.setType(type);
@@ -98,9 +98,9 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         }
     }
 
-    private void saveCheckItem(TPatientFeeItem tPatientFeeItem, List<PatientCheckItemVo> checkItems, String source) {
+    private void saveCheckItem(org.example.spring.infrastructures.es.patient.entity.po.TPatientFeeItem tPatientFeeItem, List<PatientCheckItemVo> checkItems, String source) {
         for (PatientCheckItemVo checkItem : checkItems) {
-            TPatientCheckItem entity = patientBuilder.buildPatientCheckItem(checkItem);
+            org.example.spring.infrastructures.es.patient.entity.po.TPatientCheckItem entity = patientBuilder.buildPatientCheckItem(checkItem);
             entity.setPatientId(tPatientFeeItem.getPatientId());
             entity.setFeeItemId(tPatientFeeItem.getFeeItemId());
             entity.setMealId(tPatientFeeItem.getMealId());
@@ -113,9 +113,9 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     public void update(PatientFormVo patientFormVo) {
         Long id = patientFormVo.getId();
         PatientVo patient = patientFormVo.getPatient();
-        Optional<TPatient> optional = patientDao.getByIdOpt(id);
+        Optional<org.example.spring.infrastructures.es.patient.entity.po.TPatient> optional = patientDao.getByIdOpt(id);
         if (optional.isPresent()) {
-            TPatient tPatient = optional.get();
+            org.example.spring.infrastructures.es.patient.entity.po.TPatient tPatient = optional.get();
             patientBuilder.copyPatient(patient, tPatient);
             updateExtra(tPatient);
             patientDao.updateById(tPatient);
@@ -132,7 +132,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     @Cacheable(key = "'details:'+#id")
     public PatientDetails getById(Long id) {
         PatientDetails details = new PatientDetails();
-        TPatient patient = patientDao.getById(id);
+        org.example.spring.infrastructures.es.patient.entity.po.TPatient patient = patientDao.getById(id);
         Patient patientResult = patientBuilder.buildPatientResult(patient);
         details.setPatient(patientResult);
         details.setId(patient.getId());
@@ -142,34 +142,34 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     @Override
     public IPageData<Patient> queryPage(PatientQuery patientQuery) {
         TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
-        IPageData<TPatient> queryPage = patientDao.queryPage(query);
+        IPageData<org.example.spring.infrastructures.es.patient.entity.po.TPatient> queryPage = patientDao.queryPage(query);
         return patientBuilder.buildPatientResult(queryPage);
     }
 
     @Override
     public List<Patient> queryList(PatientQuery patientQuery) {
         TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
-        List<TPatient> list = patientDao.queryList(query);
+        List<org.example.spring.infrastructures.es.patient.entity.po.TPatient> list = patientDao.queryList(query);
         return patientBuilder.buildPatientResult(list);
     }
 
     @Override
     public Patient queryOne(PatientQuery patientQuery) {
         TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
-        Optional<TPatient> optional = patientDao.queryFirst(query);
-        TPatient patient = optional.orElse(new Patient());
+        Optional<org.example.spring.infrastructures.es.patient.entity.po.TPatient> optional = patientDao.queryFirst(query);
+        org.example.spring.infrastructures.es.patient.entity.po.TPatient patient = optional.orElse(new Patient());
         return patientBuilder.buildPatientResult(patient);
     }
 
     @SneakyThrows
-    private void addExtra(TPatient entity) {
+    private void addExtra(org.example.spring.infrastructures.es.patient.entity.po.TPatient entity) {
         if (ObjectUtil.isNotEmpty(entity.getType()) && PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
             Future<Boolean> validateGroup = executor.submit(validateGroup(entity));
             Future<Boolean> validateTeam = executor.submit(validateTeam(entity));
-            Future<Optional<TPatientGroup>> group = executor.submit(getGroupOpt(entity));
-            Future<Optional<TPatientTeam>> team = executor.submit(getTeamOpt(entity));
-            Optional<TPatientGroup> tPatientGroup = group.get();
-            Optional<TPatientTeam> tPatientTeam = team.get();
+            Future<Optional<org.example.spring.infrastructures.es.patient.entity.po.TPatientGroup>> group = executor.submit(getGroupOpt(entity));
+            Future<Optional<org.example.spring.infrastructures.es.patient.entity.po.TPatientTeam>> team = executor.submit(getTeamOpt(entity));
+            Optional<org.example.spring.infrastructures.es.patient.entity.po.TPatientGroup> tPatientGroup = group.get();
+            Optional<org.example.spring.infrastructures.es.patient.entity.po.TPatientTeam> tPatientTeam = team.get();
             if (validateGroup.get() && tPatientGroup.isPresent()) {
                 setGroup(entity, tPatientGroup.get());
             } else {
@@ -184,14 +184,14 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     }
 
     @SneakyThrows
-    private void updateExtra(TPatient entity) {
+    private void updateExtra(org.example.spring.infrastructures.es.patient.entity.po.TPatient entity) {
         if (ObjectUtil.isNotEmpty(entity.getType()) && PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
             Future<Boolean> validateGroup = executor.submit(validateGroup(entity));
             Future<Boolean> validateTeam = executor.submit(validateTeam(entity));
-            Future<Optional<TPatientGroup>> group = executor.submit(getGroupOpt(entity));
-            Future<Optional<TPatientTeam>> team = executor.submit(getTeamOpt(entity));
-            Optional<TPatientGroup> tPatientGroup = group.get();
-            Optional<TPatientTeam> tPatientTeam = team.get();
+            Future<Optional<org.example.spring.infrastructures.es.patient.entity.po.TPatientGroup>> group = executor.submit(getGroupOpt(entity));
+            Future<Optional<org.example.spring.infrastructures.es.patient.entity.po.TPatientTeam>> team = executor.submit(getTeamOpt(entity));
+            Optional<org.example.spring.infrastructures.es.patient.entity.po.TPatientGroup> tPatientGroup = group.get();
+            Optional<org.example.spring.infrastructures.es.patient.entity.po.TPatientTeam> tPatientTeam = team.get();
             if (validateGroup.get() && tPatientGroup.isPresent()) {
                 setGroup(entity, tPatientGroup.get());
             }
@@ -201,31 +201,31 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         }
     }
 
-    private Callable<Optional<TPatientTeam>> getTeamOpt(TPatient entity) {
+    private Callable<Optional<org.example.spring.infrastructures.es.patient.entity.po.TPatientTeam>> getTeamOpt(org.example.spring.infrastructures.es.patient.entity.po.TPatient entity) {
         return () -> patientTeamDao.getByIdOpt(entity.getTeamId());
     }
 
-    private Callable<Optional<TPatientGroup>> getGroupOpt(TPatient entity) {
+    private Callable<Optional<org.example.spring.infrastructures.es.patient.entity.po.TPatientGroup>> getGroupOpt(org.example.spring.infrastructures.es.patient.entity.po.TPatient entity) {
         return () -> patientGroupDao.getByIdOpt(entity.getGroupId());
     }
 
-    private Callable<Boolean> validateTeam(TPatient entity) {
+    private Callable<Boolean> validateTeam(org.example.spring.infrastructures.es.patient.entity.po.TPatient entity) {
         return () -> ObjectUtil.isNotEmpty(entity.getTeamId()) && patientTeamDao.existById(entity.getTeamId());
     }
 
-    private Callable<Boolean> validateGroup(TPatient entity) {
+    private Callable<Boolean> validateGroup(org.example.spring.infrastructures.es.patient.entity.po.TPatient entity) {
         return () -> ObjectUtil.isNotEmpty(entity.getGroupId()) && patientGroupDao.existById(entity.getGroupId());
     }
 
     @SneakyThrows
-    private void setTeam(TPatient entity, TPatientTeam team) {
+    private void setTeam(org.example.spring.infrastructures.es.patient.entity.po.TPatient entity, org.example.spring.infrastructures.es.patient.entity.po.TPatientTeam team) {
         entity.setTeamId(team.getId());
         entity.setTeamCode(team.getCode());
         entity.setTeamName(team.getName());
     }
 
     @SneakyThrows
-    private void setGroup(TPatient entity, TPatientGroup group) {
+    private void setGroup(org.example.spring.infrastructures.es.patient.entity.po.TPatient entity, TPatientGroup group) {
         entity.setGroupId(group.getId());
         entity.setGroupCode(group.getCode());
         entity.setGroupName(group.getName());

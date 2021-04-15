@@ -1,17 +1,17 @@
 package org.example.spring.models.patient.builder;
 
 import org.example.spring.infrastructures.commons.BaseBuilder;
+import org.example.spring.infrastructures.es.patient.entity.po.TPatientGroup;
 import org.example.spring.models.patient.entity.query.PatientGroupQuery;
 import org.example.spring.models.patient.entity.query.PatientQuery;
 import org.example.spring.models.patient.entity.query.PatientTeamMealQuery;
 import org.example.spring.models.patient.entity.query.PatientTeamQuery;
 import org.example.spring.models.patient.entity.result.*;
 import org.example.spring.models.patient.entity.vo.*;
-import org.example.spring.infrastructures.mysql.patient.table.po.*;
-import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
-import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
-import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamMealQuery;
-import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamQuery;
+import org.example.spring.infrastructures.es.patient.entity.query.TPatientGroupQuery;
+import org.example.spring.infrastructures.es.patient.entity.query.TPatientQuery;
+import org.example.spring.infrastructures.es.patient.entity.query.TPatientTeamMealQuery;
+import org.example.spring.infrastructures.es.patient.entity.query.TPatientTeamQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.mapstruct.*;
 
@@ -19,65 +19,65 @@ import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
 public interface PatientBuilder {
-    TPatient buildPatient(PatientVo patient);
+    org.example.spring.infrastructures.es.patient.entity.po.TPatient buildPatient(PatientVo patient);
 
-    void copyPatient(PatientVo patient, @MappingTarget TPatient tPatient);
+    void copyPatient(PatientVo patient, @MappingTarget org.example.spring.infrastructures.es.patient.entity.po.TPatient tPatient);
 
     TPatientQuery buildPatientQuery(PatientQuery patientQuery);
 
-    Patient buildPatientResult(TPatient data);
+    Patient buildPatientResult(org.example.spring.infrastructures.es.patient.entity.po.TPatient data);
 
-    IPageData<Patient> buildPatientResult(IPageData<TPatient> data);
+    IPageData<Patient> buildPatientResult(IPageData<org.example.spring.infrastructures.es.patient.entity.po.TPatient> data);
 
-    List<Patient> buildPatientResult(List<TPatient> data);
+    List<Patient> buildPatientResult(List<org.example.spring.infrastructures.es.patient.entity.po.TPatient> data);
 
-    TPatientGroup buildPatientGroup(PatientGroupVo item);
+    org.example.spring.infrastructures.es.patient.entity.po.TPatientGroup buildPatientGroup(PatientGroupVo item);
 
-    TPatientTeam buildPatientTeam(PatientTeamVo teamVo);
+    org.example.spring.infrastructures.es.patient.entity.po.TPatientTeam buildPatientTeam(PatientTeamVo teamVo);
 
-    void copyPatientTeam(PatientTeamVo team, @MappingTarget TPatientTeam tPatientTeam);
+    void copyPatientTeam(PatientTeamVo team, @MappingTarget org.example.spring.infrastructures.es.patient.entity.po.TPatientTeam tPatientTeam);
 
-    PatientTeam buildPatientTeamResult(TPatientTeam team);
+    PatientTeam buildPatientTeamResult(org.example.spring.infrastructures.es.patient.entity.po.TPatientTeam team);
 
     TPatientTeamQuery buildPatientTeamQuery(PatientTeamQuery patientTeamQuery);
 
-    IPageData<PatientTeam> buildPatientTeamResult(IPageData<TPatientTeam> data);
+    IPageData<PatientTeam> buildPatientTeamResult(IPageData<org.example.spring.infrastructures.es.patient.entity.po.TPatientTeam> data);
 
-    List<PatientTeam> buildPatientTeamResult(List<TPatientTeam> data);
+    List<PatientTeam> buildPatientTeamResult(List<org.example.spring.infrastructures.es.patient.entity.po.TPatientTeam> data);
 
-    void copyPatientGroup(PatientGroupVo group, @MappingTarget TPatientGroup tPatientGroup);
+    void copyPatientGroup(PatientGroupVo group, @MappingTarget org.example.spring.infrastructures.es.patient.entity.po.TPatientGroup tPatientGroup);
 
-    PatientGroup buildPatientGroupResult(TPatientGroup group);
+    PatientGroup buildPatientGroupResult(org.example.spring.infrastructures.es.patient.entity.po.TPatientGroup group);
 
     TPatientGroupQuery buildPatientGroupQuery(PatientGroupQuery patientGroupQuery);
 
-    IPageData<PatientGroup> buildPatientGroupResult(IPageData<TPatientGroup> queryPage);
+    IPageData<PatientGroup> buildPatientGroupResult(IPageData<org.example.spring.infrastructures.es.patient.entity.po.TPatientGroup> queryPage);
 
     List<PatientGroup> buildPatientGroupResult(List<TPatientGroup> data);
 
-    TPatientTeamMeal buildPatientTeamMeal(PatientTeamMealVo meal);
+    org.example.spring.infrastructures.es.patient.entity.po.TPatientTeamMeal buildPatientTeamMeal(PatientTeamMealVo meal);
 
-    void copyPatientTeamMeal(PatientTeamMealVo meal, @MappingTarget TPatientTeamMeal patientTeamMeal);
+    void copyPatientTeamMeal(PatientTeamMealVo meal, @MappingTarget org.example.spring.infrastructures.es.patient.entity.po.TPatientTeamMeal patientTeamMeal);
 
     TPatientTeamMealQuery buildPatientTeamMealQuery(PatientTeamMealQuery patientTeamMealQuery);
 
-    PatientTeamMeal buildPatientTeamMealResult(TPatientTeamMeal meal);
+    PatientTeamMeal buildPatientTeamMealResult(org.example.spring.infrastructures.es.patient.entity.po.TPatientTeamMeal meal);
 
-    List<PatientTeamMeal> buildPatientTeamMealResult(List<TPatientTeamMeal> meal);
+    List<PatientTeamMeal> buildPatientTeamMealResult(List<org.example.spring.infrastructures.es.patient.entity.po.TPatientTeamMeal> meal);
 
-    IPageData<PatientTeamMeal> buildPatientTeamMealResult(IPageData<TPatientTeamMeal> meal);
+    IPageData<PatientTeamMeal> buildPatientTeamMealResult(IPageData<org.example.spring.infrastructures.es.patient.entity.po.TPatientTeamMeal> meal);
 
-    TPatientTeamMealFeeItem buildPatientTeamMealFeeItem(PatientTeamMealFeeItemVo feeItemVo);
+    org.example.spring.infrastructures.es.patient.entity.po.TPatientTeamMealFeeItem buildPatientTeamMealFeeItem(PatientTeamMealFeeItemVo feeItemVo);
 
-    List<TPatientTeamMealCheckItem> buildPatientTeamMealCheckItem(List<PatientTeamMealCheckItemVo> checkItems);
+    List<org.example.spring.infrastructures.es.patient.entity.po.TPatientTeamMealCheckItem> buildPatientTeamMealCheckItem(List<PatientTeamMealCheckItemVo> checkItems);
 
-    TPatientTeamMealCheckItem buildPatientTeamMealCheckItem(PatientTeamMealCheckItemVo checkItem);
+    org.example.spring.infrastructures.es.patient.entity.po.TPatientTeamMealCheckItem buildPatientTeamMealCheckItem(PatientTeamMealCheckItemVo checkItem);
 
-    List<PatientTeamMealFeeItem> buildPatientTeamMealFeeItemResult(List<TPatientTeamMealFeeItem> listByTeamMealId);
+    List<PatientTeamMealFeeItem> buildPatientTeamMealFeeItemResult(List<org.example.spring.infrastructures.es.patient.entity.po.TPatientTeamMealFeeItem> listByTeamMealId);
 
-    TPatientFeeItem buildPatientFeeItem(PatientFeeItemVo patientFeeItemVo);
+    org.example.spring.infrastructures.es.patient.entity.po.TPatientFeeItem buildPatientFeeItem(PatientFeeItemVo patientFeeItemVo);
 
-    TPatientMeal buildPatientMeal(PatientMealVo meal);
+    org.example.spring.infrastructures.es.patient.entity.po.TPatientMeal buildPatientMeal(PatientMealVo meal);
 
-    TPatientCheckItem buildPatientCheckItem(PatientCheckItemVo checkItem);
+    org.example.spring.infrastructures.es.patient.entity.po.TPatientCheckItem buildPatientCheckItem(PatientCheckItemVo checkItem);
 }

@@ -2,8 +2,8 @@ package org.example.spring.models.customer.entity.result;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.mysql.customer.table.enumerate.SellerInfoStatus;
-import org.example.spring.infrastructures.mysql.customer.table.po.TSellerInfo;
+import org.example.spring.infrastructures.es.customer.entity.enumerate.SellerInfoStatus;
+import org.example.spring.infrastructures.es.customer.entity.po.TSellerInfo;
 
 import java.util.Optional;
 

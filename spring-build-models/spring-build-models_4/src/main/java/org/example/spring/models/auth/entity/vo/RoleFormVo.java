@@ -3,7 +3,7 @@ package org.example.spring.models.auth.entity.vo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
+import org.example.spring.infrastructures.es.auth.entity.po.TResource;
 import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
