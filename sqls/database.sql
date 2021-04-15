@@ -383,6 +383,18 @@ create table t_user
 )
     comment 't_user' charset=utf8mb4;
 
+create index t_user_id_name_index
+    on t_user (id, name);
+
+create index t_user_id_username_index
+    on t_user (id, username);
+
+create index t_user_name_index
+    on t_user (name);
+
+create index t_user_username_index
+    on t_user (username);
+
 create table t_user_role
 (
     id bigint auto_increment comment 'id'

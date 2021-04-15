@@ -1,5 +1,6 @@
 package org.example.spring.models.patient.repository.impl;
 
+import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
 import org.example.spring.models.patient.builder.PatientBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
@@ -9,6 +10,7 @@ import org.example.spring.models.patient.entity.result.PatientGroup;
 import org.example.spring.models.patient.entity.result.PatientGroupDetails;
 import org.example.spring.models.patient.entity.vo.PatientGroupFormVo;
 import org.example.spring.models.patient.entity.vo.PatientGroupVo;
+import org.example.spring.models.patient.entity.vo.PatientTeamMealVo;
 import org.example.spring.models.patient.repository.PatientGroupRepository;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroup;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
@@ -34,11 +36,19 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     private final ThreadPoolExecutor executor;
 
     @Override
-    public Long saveWithId(PatientGroupFormVo patientGroupFormVo) {
+    public Long saveWithId(final PatientGroupFormVo patientGroupFormVo) {
         PatientGroupVo group = patientGroupFormVo.getGroup();
         TPatientGroup entity = patientBuilder.buildPatientGroup(group);
+        setExtra(patientGroupFormVo, entity);
         patientGroupDao.save(entity);
         return entity.getId();
+    }
+
+    private void setExtra(PatientGroupFormVo patientGroupFormVo, TPatientGroup entity) {
+        PatientTeamMealVo meal = patientGroupFormVo.getMeal();
+        entity.setMealId(meal.getMealId());
+        entity.setTeamMealId(meal.getId());
+        entity.setMealName(meal.getMealName());
     }
 
     @Override
@@ -49,14 +59,15 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
         if (optional.isPresent()) {
             TPatientGroup tPatientGroup = optional.get();
             patientBuilder.copyPatientGroup(group, tPatientGroup);
+            setExtra(patientGroupFormVo, tPatientGroup);
             patientGroupDao.updateById(tPatientGroup);
         }
     }
 
     @Override
     public void delete(List<Long> ids) {
-        patientGroupDao.removeByIds(ids);
         patientDao.removeByGroupIds(ids);
+        patientGroupDao.removeByIds(ids);
     }
 
     @Override

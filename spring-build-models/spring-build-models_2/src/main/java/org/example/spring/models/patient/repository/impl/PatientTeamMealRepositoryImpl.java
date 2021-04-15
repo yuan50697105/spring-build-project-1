@@ -21,6 +21,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.concurrent.ThreadPoolExecutor;
 
 @Repository
 @AllArgsConstructor
@@ -30,27 +31,28 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
     private final TPatientTeamMealDao patientTeamMealDao;
     private final TPatientTeamMealFeeItemDao patientTeamMealFeeItemDao;
     private final TPatientTeamMealCheckItemDao patientTeamMealCheckItemDao;
+    private final ThreadPoolExecutor executor;
 
     @Override
-    public Long saveWithId(PatientTeamMealFormVo patientTeamMealFormVo) {
+    public Long saveWithId(final PatientTeamMealFormVo patientTeamMealFormVo) {
         PatientTeamMealVo meal = patientTeamMealFormVo.getMeal();
-        TPatientTeamMeal patientTeamMeal = patientBuilder.buildPatientTeamMeal(meal);
+        final TPatientTeamMeal patientTeamMeal = patientBuilder.buildPatientTeamMeal(meal);
         patientTeamMealDao.save(patientTeamMeal);
         if (ObjectUtil.isNotEmpty(patientTeamMealFormVo.getFeeItems())) {
-            saveFeeItem(patientTeamMeal, patientTeamMealFormVo.getFeeItems());
+            executor.submit(() -> saveFeeItem(patientTeamMeal, patientTeamMealFormVo.getFeeItems()));
         }
         return patientTeamMeal.getId();
     }
 
     private void saveFeeItem(TPatientTeamMeal patientTeamMeal, List<PatientTeamMealFeeItemFormVo> feeItemFormVos) {
         if (ObjectUtil.isNotEmpty(feeItemFormVos)) {
-            for (PatientTeamMealFeeItemFormVo feeItemFormVo : feeItemFormVos) {
+            for (final PatientTeamMealFeeItemFormVo feeItemFormVo : feeItemFormVos) {
                 PatientTeamMealFeeItemVo patientTeamMealFeeItemVo = feeItemFormVo.getFeeItem();
-                TPatientTeamMealFeeItem entity = patientBuilder.buildPatientTeamMealFeeItem(patientTeamMealFeeItemVo);
+                final TPatientTeamMealFeeItem entity = patientBuilder.buildPatientTeamMealFeeItem(patientTeamMealFeeItemVo);
                 setMealFeeItem(patientTeamMeal, entity);
                 patientTeamMealFeeItemDao.save(entity);
                 if (ObjectUtil.isNotEmpty(feeItemFormVo.getCheckItems())) {
-                    saveCheckItem(entity, feeItemFormVo.getCheckItems());
+                    executor.submit(() -> saveCheckItem(entity, feeItemFormVo.getCheckItems()));
                 }
             }
         }
