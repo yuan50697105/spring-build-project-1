@@ -1,31 +1,23 @@
 package org.example.spring.infrastructures.es.auth.entity.query;
 
-import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
-import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
-import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.es.auth.entity.po.TUser;
-import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
-import tk.mybatis.mapper.entity.Example;
+import org.example.spring.plugins.elasticsearch.entity.query.IBaseQuery;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TUserQuery extends TkBaseQuery<TUser> implements MybatisExampleForTk<TUser, Example> {
+public class TUserQuery extends IBaseQuery{
 
     /**
      * 用户名
      */
-    @AndLike
     private String username;
     /**
      * 姓名
      */
-    @AndLike
     private String name;
     /**
      * 状态
      */
-    @AndEqualTo
     private String status;
 }
