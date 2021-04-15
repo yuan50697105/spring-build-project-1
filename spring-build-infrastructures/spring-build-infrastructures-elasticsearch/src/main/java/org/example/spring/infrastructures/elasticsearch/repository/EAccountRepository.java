@@ -10,4 +10,6 @@ public interface EAccountRepository {
     List<EAccount> findAllByQuery(EAccountQuery account, Pageable pageable);
 
     List<Long> findIdsByQuery(EAccountQuery query, Pageable pageable);
+
+    void save(EAccount account);
 }

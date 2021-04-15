@@ -49,4 +49,9 @@ public class EAccountRepositoryImpl implements EAccountRepository {
     public List<Long> findIdsByQuery(EAccountQuery query, Pageable pageable) {
         return findAllByQuery(query, pageable).stream().map(EAccount::getId).collect(Collectors.toList());
     }
+
+    @Override
+    public void save(EAccount account) {
+        elasticsearchRestTemplate.save(account);
+    }
 }
