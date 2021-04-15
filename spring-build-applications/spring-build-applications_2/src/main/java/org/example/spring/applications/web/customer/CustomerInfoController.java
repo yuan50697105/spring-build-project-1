@@ -4,10 +4,10 @@ import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.customer.service.CustomerInfoService;
-import org.example.spring.infrastructures.mysql.customer.entity.query.CustomerQuery;
-import org.example.spring.infrastructures.mysql.customer.entity.result.Customer;
-import org.example.spring.infrastructures.mysql.customer.entity.result.CustomerDetails;
-import org.example.spring.infrastructures.mysql.customer.entity.vo.CustomerFormVo;
+import org.example.spring.models.customer.entity.query.CustomerQuery;
+import org.example.spring.models.customer.entity.result.Customer;
+import org.example.spring.models.customer.entity.result.CustomerDetails;
+import org.example.spring.models.customer.entity.vo.CustomerFormVo;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.springframework.web.bind.annotation.*;
 

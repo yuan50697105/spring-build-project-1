@@ -2,11 +2,11 @@ package org.example.spring.domains.patient.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.patient.service.PatientService;
-import org.example.spring.infrastructures.mysql.patient.entity.query.PatientQuery;
-import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
-import org.example.spring.infrastructures.mysql.patient.entity.result.PatientDetails;
-import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientFormVo;
-import org.example.spring.infrastructures.mysql.patient.repository.PatientRepository;
+import org.example.spring.models.patient.entity.query.PatientQuery;
+import org.example.spring.models.patient.entity.result.Patient;
+import org.example.spring.models.patient.entity.result.PatientDetails;
+import org.example.spring.models.patient.entity.vo.PatientFormVo;
+import org.example.spring.models.patient.repository.PatientRepository;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

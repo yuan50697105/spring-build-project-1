@@ -2,11 +2,11 @@ package org.example.spring.domains.customer.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.customer.service.CustomerInfoService;
-import org.example.spring.infrastructures.mysql.customer.entity.query.CustomerQuery;
-import org.example.spring.infrastructures.mysql.customer.entity.result.Customer;
-import org.example.spring.infrastructures.mysql.customer.entity.result.CustomerDetails;
-import org.example.spring.infrastructures.mysql.customer.entity.vo.CustomerFormVo;
-import org.example.spring.infrastructures.mysql.customer.repository.CustomerRepository;
+import org.example.spring.models.customer.entity.query.CustomerQuery;
+import org.example.spring.models.customer.entity.result.Customer;
+import org.example.spring.models.customer.entity.result.CustomerDetails;
+import org.example.spring.models.customer.entity.vo.CustomerFormVo;
+import org.example.spring.models.customer.repository.CustomerRepository;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

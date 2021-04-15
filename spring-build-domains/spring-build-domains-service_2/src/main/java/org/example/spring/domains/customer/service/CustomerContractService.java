@@ -1,9 +1,9 @@
 package org.example.spring.domains.customer.service;
 
-import org.example.spring.infrastructures.mysql.customer.entity.query.CustomerContractQuery;
-import org.example.spring.infrastructures.mysql.customer.entity.result.CustomerContract;
-import org.example.spring.infrastructures.mysql.customer.entity.result.CustomerContractDetails;
-import org.example.spring.infrastructures.mysql.customer.entity.vo.CustomerContractFormVo;
+import org.example.spring.models.customer.entity.query.CustomerContractQuery;
+import org.example.spring.models.customer.entity.result.CustomerContract;
+import org.example.spring.models.customer.entity.result.CustomerContractDetails;
+import org.example.spring.models.customer.entity.vo.CustomerContractFormVo;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.springframework.web.multipart.MultipartFile;
 

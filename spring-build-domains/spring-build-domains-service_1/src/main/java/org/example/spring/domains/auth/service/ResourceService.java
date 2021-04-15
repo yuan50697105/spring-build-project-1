@@ -1,9 +1,9 @@
 package org.example.spring.domains.auth.service;
 
 import cn.hutool.core.lang.tree.Tree;
-import org.example.spring.infrastructures.mysql.auth.entity.query.ResourceQuery;
-import org.example.spring.infrastructures.mysql.auth.entity.result.ResourceDetails;
-import org.example.spring.infrastructures.mysql.auth.entity.vo.ResourceFormVo;
+import org.example.spring.models.auth.entity.query.ResourceQuery;
+import org.example.spring.models.auth.entity.result.ResourceDetails;
+import org.example.spring.models.auth.entity.vo.ResourceFormVo;
 
 import java.util.List;
 

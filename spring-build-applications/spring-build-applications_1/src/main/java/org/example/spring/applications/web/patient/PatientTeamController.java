@@ -4,14 +4,13 @@ import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.patient.service.PatientTeamService;
-import org.example.spring.infrastructures.mysql.patient.entity.query.PatientTeamQuery;
-import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeam;
-import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientTeamFormVo;
+import org.example.spring.models.patient.entity.query.PatientTeamQuery;
+import org.example.spring.models.patient.entity.result.PatientTeam;
+import org.example.spring.models.patient.entity.vo.PatientTeamFormVo;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
 import java.util.Collections;
 import java.util.List;
 

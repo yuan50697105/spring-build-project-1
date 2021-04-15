@@ -2,11 +2,11 @@ package org.example.spring.domains.auth.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.auth.service.RoleService;
-import org.example.spring.infrastructures.mysql.auth.entity.query.RoleQuery;
-import org.example.spring.infrastructures.mysql.auth.entity.result.Role;
-import org.example.spring.infrastructures.mysql.auth.entity.result.RoleDetails;
-import org.example.spring.infrastructures.mysql.auth.entity.vo.RoleFormVo;
-import org.example.spring.infrastructures.mysql.auth.repository.RoleRepository;
+import org.example.spring.models.auth.entity.query.RoleQuery;
+import org.example.spring.models.auth.entity.result.Role;
+import org.example.spring.models.auth.entity.result.RoleDetails;
+import org.example.spring.models.auth.entity.vo.RoleFormVo;
+import org.example.spring.models.auth.repository.RoleRepository;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

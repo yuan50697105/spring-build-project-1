@@ -3,10 +3,10 @@ package org.example.spring.domains.auth.service.impl;
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.auth.service.ResourceService;
-import org.example.spring.infrastructures.mysql.auth.entity.query.ResourceQuery;
-import org.example.spring.infrastructures.mysql.auth.entity.result.ResourceDetails;
-import org.example.spring.infrastructures.mysql.auth.entity.vo.ResourceFormVo;
-import org.example.spring.infrastructures.mysql.auth.repository.ResourceRepository;
+import org.example.spring.models.auth.entity.query.ResourceQuery;
+import org.example.spring.models.auth.entity.result.ResourceDetails;
+import org.example.spring.models.auth.entity.vo.ResourceFormVo;
+import org.example.spring.models.auth.repository.ResourceRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

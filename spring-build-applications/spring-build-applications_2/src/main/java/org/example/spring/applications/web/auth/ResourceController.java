@@ -5,9 +5,9 @@ import ai.yue.library.base.view.Result;
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.auth.service.ResourceService;
-import org.example.spring.infrastructures.mysql.auth.entity.query.ResourceQuery;
-import org.example.spring.infrastructures.mysql.auth.entity.result.ResourceDetails;
-import org.example.spring.infrastructures.mysql.auth.entity.vo.ResourceFormVo;
+import org.example.spring.models.auth.entity.query.ResourceQuery;
+import org.example.spring.models.auth.entity.result.ResourceDetails;
+import org.example.spring.models.auth.entity.vo.ResourceFormVo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;

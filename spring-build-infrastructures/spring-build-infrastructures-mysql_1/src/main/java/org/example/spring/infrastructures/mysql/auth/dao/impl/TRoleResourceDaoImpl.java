@@ -27,7 +27,7 @@ public class TRoleResourceDaoImpl extends TkBaseDaoImpl<TRoleResource, TRolePerm
 
     @Override
     public boolean saveNew(Long roleId, List<Long> permissionIds) {
-        return saveBatch(authBuilder.buildRolePermissions(roleId, permissionIds));
+        return saveBatch(authBuilder.buildRoleResources(roleId, permissionIds));
     }
 
     @Override

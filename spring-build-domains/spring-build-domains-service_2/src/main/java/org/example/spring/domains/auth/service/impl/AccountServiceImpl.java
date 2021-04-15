@@ -2,11 +2,11 @@ package org.example.spring.domains.auth.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.auth.service.AccountService;
-import org.example.spring.infrastructures.mysql.auth.entity.query.AccountQuery;
-import org.example.spring.infrastructures.mysql.auth.entity.result.Account;
-import org.example.spring.infrastructures.mysql.auth.entity.result.AccountDetails;
-import org.example.spring.infrastructures.mysql.auth.entity.vo.AccountFormVo;
-import org.example.spring.infrastructures.mysql.auth.repository.AccountRepository;
+import org.example.spring.models.auth.entity.query.AccountQuery;
+import org.example.spring.models.auth.entity.result.Account;
+import org.example.spring.models.auth.entity.result.AccountDetails;
+import org.example.spring.models.auth.entity.vo.AccountFormVo;
+import org.example.spring.models.auth.repository.AccountRepository;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

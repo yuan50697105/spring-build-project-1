@@ -1,9 +1,9 @@
 package org.example.spring.domains.patient.service;
 
-import org.example.spring.infrastructures.mysql.patient.entity.query.PatientTeamQuery;
-import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeam;
-import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeamDetails;
-import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientTeamFormVo;
+import org.example.spring.models.patient.entity.query.PatientTeamQuery;
+import org.example.spring.models.patient.entity.result.PatientTeam;
+import org.example.spring.models.patient.entity.result.PatientTeamDetails;
+import org.example.spring.models.patient.entity.vo.PatientTeamFormVo;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 
 import java.util.List;
