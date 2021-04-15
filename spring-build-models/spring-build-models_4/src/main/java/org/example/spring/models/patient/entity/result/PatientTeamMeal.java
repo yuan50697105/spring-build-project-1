@@ -3,7 +3,7 @@ package org.example.spring.models.patient.entity.result;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.models.enumerate.MealType;
-import org.example.spring.infrastructures.es.patient.entity.po.TPatientTeamMeal;
+import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeamMeal;
 
 import java.util.Optional;
 

@@ -1,7 +1,6 @@
 package org.example.spring.models.auth.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.es.auth.entity.po.ERole;
 import org.example.spring.models.auth.builder.AuthBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TResourceDao;
 import org.example.spring.infrastructures.mysql.auth.dao.TRoleDao;
@@ -12,7 +11,8 @@ import org.example.spring.models.auth.entity.result.RoleDetails;
 import org.example.spring.models.auth.entity.vo.RoleFormVo;
 import org.example.spring.models.auth.entity.vo.RoleVo;
 import org.example.spring.models.auth.repository.RoleRepository;
-import org.example.spring.infrastructures.es.auth.entity.query.TRoleQuery;
+import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
+import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
@@ -40,7 +40,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, Ro
         RoleVo role = roleFormVo.getRole();
         List<Long> permissionIds = roleFormVo.getPermissionIds();
         List<String> permissionName = roleFormVo.getPermissionName();
-        ERole entity = authBuilder.buildRole(role);
+        TRole entity = authBuilder.buildRole(role);
         roleDao.save(entity);
         permissionIds = permissionDao.listPermissionIdsByPermissionIdsOrPermissionName(permissionIds, permissionName);
         rolePermissionDao.saveNew(entity.getId(), permissionIds);
@@ -53,11 +53,11 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, Ro
         RoleVo role = roleFormVo.getRole();
         List<Long> permissionIds = roleFormVo.getPermissionIds();
         List<String> permissionName = roleFormVo.getPermissionName();
-        Optional<ERole> optional = roleDao.getByIdOpt(id);
+        Optional<TRole> optional = roleDao.getByIdOpt(id);
         if (optional.isPresent()) {
-            ERole eRole = optional.get();
-            authBuilder.copyRole(role, eRole);
-            roleDao.updateById(eRole);
+            TRole tRole = optional.get();
+            authBuilder.copyRole(role, tRole);
+            roleDao.updateById(tRole);
             permissionIds = permissionDao.listPermissionIdsByPermissionIdsOrPermissionName(permissionIds, permissionName);
             rolePermissionDao.saveUpdate(id, permissionIds);
         }
@@ -80,21 +80,21 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, Ro
     @Override
     public IPageData<Role> queryPage(RoleQuery roleQuery) {
         TRoleQuery query = authBuilder.buildRoleQuery(roleQuery);
-        IPageData<ERole> role = roleDao.queryPage(query);
+        IPageData<TRole> role = roleDao.queryPage(query);
         return authBuilder.buildRoleResult(role);
     }
 
     @Override
     public List<Role> queryList(RoleQuery roleQuery) {
         TRoleQuery query = authBuilder.buildRoleQuery(roleQuery);
-        List<ERole> role = roleDao.queryList(query);
+        List<TRole> role = roleDao.queryList(query);
         return authBuilder.buildRoleResult(role);
     }
 
     @Override
     public Role queryOne(RoleQuery roleQuery) {
         TRoleQuery query = authBuilder.buildRoleQuery(roleQuery);
-        ERole role = roleDao.queryOne(query);
+        TRole role = roleDao.queryOne(query);
         return authBuilder.buildRoleResult(role);
     }
 }

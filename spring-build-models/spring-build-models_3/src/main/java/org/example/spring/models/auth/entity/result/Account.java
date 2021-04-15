@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.models.enumerate.UserStatus;
-import org.example.spring.infrastructures.es.auth.entity.po.TUser;
+import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
 
 import java.io.Serializable;
 import java.util.Optional;

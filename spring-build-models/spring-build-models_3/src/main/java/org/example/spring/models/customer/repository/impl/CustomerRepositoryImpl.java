@@ -1,8 +1,6 @@
 package org.example.spring.models.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.es.customer.entity.query.TCustomerInfoQuery;
-import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
 import org.example.spring.models.customer.builder.CustomerBuilder;
 import org.example.spring.infrastructures.mysql.customer.dao.TCustomerContractDao;
 import org.example.spring.infrastructures.mysql.customer.dao.TCustomerInfoDao;
@@ -12,6 +10,8 @@ import org.example.spring.models.customer.entity.result.CustomerDetails;
 import org.example.spring.models.customer.entity.vo.CustomerFormVo;
 import org.example.spring.models.customer.entity.vo.CustomerVo;
 import org.example.spring.models.customer.repository.CustomerRepository;
+import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
+import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerInfoQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;

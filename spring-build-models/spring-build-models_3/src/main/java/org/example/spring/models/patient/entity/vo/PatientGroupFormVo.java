@@ -8,5 +8,5 @@ import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 @Data
 public class PatientGroupFormVo extends IBaseVo {
     private PatientGroupVo group;
-
+    private PatientTeamMealVo meal;
 }

@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.models.enumerate.MealType;
-import org.example.spring.infrastructures.es.patient.entity.po.TPatientMeal;
+import org.example.spring.infrastructures.mysql.patient.table.po.TPatientMeal;
 
 import javax.validation.constraints.NotEmpty;
 import java.util.Optional;

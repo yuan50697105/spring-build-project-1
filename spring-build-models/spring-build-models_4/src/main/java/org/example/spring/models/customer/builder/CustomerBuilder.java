@@ -7,10 +7,10 @@ import org.example.spring.models.customer.entity.result.Customer;
 import org.example.spring.models.customer.entity.result.CustomerContract;
 import org.example.spring.models.customer.entity.vo.CustomerContractVo;
 import org.example.spring.models.customer.entity.vo.CustomerVo;
-import org.example.spring.infrastructures.es.customer.entity.po.TCustomerContract;
-import org.example.spring.infrastructures.es.customer.entity.po.TCustomerInfo;
-import org.example.spring.infrastructures.es.customer.entity.query.TCustomerContractQuery;
-import org.example.spring.infrastructures.es.customer.entity.query.TCustomerInfoQuery;
+import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContract;
+import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
+import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerContractQuery;
+import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerInfoQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.mapstruct.*;
 

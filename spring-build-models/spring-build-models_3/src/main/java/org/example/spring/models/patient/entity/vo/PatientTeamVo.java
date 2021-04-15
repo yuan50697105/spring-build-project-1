@@ -3,7 +3,7 @@ package org.example.spring.models.patient.entity.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.es.patient.entity.po.TPatientTeam;
+import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;

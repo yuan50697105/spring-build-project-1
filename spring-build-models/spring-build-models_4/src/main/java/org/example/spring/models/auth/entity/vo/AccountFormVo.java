@@ -3,8 +3,8 @@ package org.example.spring.models.auth.entity.vo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.es.auth.entity.po.ERole;
-import org.example.spring.infrastructures.es.auth.entity.po.TUser;
+import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
+import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
 import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
@@ -37,7 +37,7 @@ public class AccountFormVo extends IBaseVo {
 
     @JsonIgnore
     public List<String> getRoleName() {
-        return roles.stream().map(ERole::getName).collect(Collectors.toList());
+        return roles.stream().map(TRole::getName).collect(Collectors.toList());
     }
 
 }

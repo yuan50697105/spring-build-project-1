@@ -3,7 +3,7 @@ package org.example.spring.models.patient.entity.vo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.models.enumerate.ItemSource;
-import org.example.spring.infrastructures.es.patient.entity.po.TPatientCheckItem;
+import org.example.spring.infrastructures.mysql.patient.table.po.TPatientCheckItem;
 
 import java.util.Optional;
 

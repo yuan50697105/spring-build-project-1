@@ -3,7 +3,7 @@ package org.example.spring.models.auth.entity.vo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.models.enumerate.UserStatus;
-import org.example.spring.infrastructures.es.auth.entity.po.TUser;
+import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

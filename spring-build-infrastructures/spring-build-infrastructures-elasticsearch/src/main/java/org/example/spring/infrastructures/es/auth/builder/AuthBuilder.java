@@ -1,16 +1,16 @@
 package org.example.spring.infrastructures.es.auth.builder;
 
-import org.example.spring.infrastructures.es.auth.entity.po.TRoleResource;
-import org.example.spring.infrastructures.es.auth.entity.po.TUserRole;
+import org.example.spring.infrastructures.es.auth.entity.po.ERoleResource;
+import org.example.spring.infrastructures.es.auth.entity.po.EUserRole;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public interface AuthBuilder {
-    default List<TUserRole> buildRoles(Long id, List<Long> existRoleIds) {
+    default List<EUserRole> buildRoles(Long id, List<Long> existRoleIds) {
         if (existRoleIds != null) {
-            ArrayList<TUserRole> list = new ArrayList<>(existRoleIds.size());
+            ArrayList<EUserRole> list = new ArrayList<>(existRoleIds.size());
             Iterator<Long> iterator = existRoleIds.iterator();
             while (iterator.hasNext()) {
                 list.add(buildRole(id, iterator.next()));
@@ -21,11 +21,11 @@ public interface AuthBuilder {
         }
     }
 
-    TUserRole buildRole(Long userId, Long roleId);
+    EUserRole buildRole(Long userId, Long roleId);
 
-    default List<TRoleResource> buildRoleResources(Long roleId, List<Long> permissionIds) {
+    default List<ERoleResource> buildRoleResources(Long roleId, List<Long> permissionIds) {
         if (permissionIds != null) {
-            ArrayList<TRoleResource> list = new ArrayList<>(permissionIds.size());
+            ArrayList<ERoleResource> list = new ArrayList<>(permissionIds.size());
             Iterator<Long> iterator = permissionIds.iterator();
             while (iterator.hasNext()) {
                 list.add(buildRoleResource(roleId, iterator.next()));
@@ -36,5 +36,5 @@ public interface AuthBuilder {
         }
     }
 
-    TRoleResource buildRoleResource(Long roleId, Long resourceId);
+    ERoleResource buildRoleResource(Long roleId, Long resourceId);
 }
