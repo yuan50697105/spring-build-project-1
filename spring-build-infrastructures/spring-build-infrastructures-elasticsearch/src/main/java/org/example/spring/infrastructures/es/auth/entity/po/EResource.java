@@ -19,7 +19,7 @@ import org.example.spring.plugins.elasticsearch.entity.po.IBaseEntity;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TResource extends IBaseEntity implements Serializable {
+public class EResource extends IBaseEntity implements Serializable {
     /**
      * name
      */

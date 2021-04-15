@@ -1,6 +1,5 @@
 package org.example.spring.infrastructures.es.auth.entity.po;
 
-import cn.hutool.core.annotation.Alias;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -12,19 +11,31 @@ import lombok.NoArgsConstructor;
 import org.example.spring.plugins.elasticsearch.entity.po.IBaseEntity;
 
 /**
- * t_role
+ * t_department
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TRole")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TDepartment")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TRole extends IBaseEntity implements Serializable {
+public class EDepartment extends IBaseEntity implements Serializable {
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     private String name;
+
+    /**
+     * code
+     */
+    @ApiModelProperty(value = "code")
+    private String code;
+
+    /**
+     * pid
+     */
+    @ApiModelProperty(value = "pid")
+    private Long pid;
 
     private static final long serialVersionUID = 1L;
 }

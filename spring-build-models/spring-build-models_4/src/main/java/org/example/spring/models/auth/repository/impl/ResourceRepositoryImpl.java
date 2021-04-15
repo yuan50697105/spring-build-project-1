@@ -5,6 +5,7 @@ import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.lang.tree.TreeUtil;
 import cn.hutool.core.lang.tree.parser.NodeParser;
 import lombok.AllArgsConstructor;
+import org.example.spring.infrastructures.es.auth.entity.po.EResource;
 import org.example.spring.models.auth.builder.AuthBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TResourceDao;
 import org.example.spring.infrastructures.mysql.auth.dao.TRoleResourceDao;
@@ -16,7 +17,6 @@ import org.example.spring.models.auth.entity.dto.ResourceNode;
 import org.example.spring.models.auth.entity.vo.ResourceFormVo;
 import org.example.spring.models.auth.entity.vo.ResourceVo;
 import org.example.spring.models.auth.repository.ResourceRepository;
-import org.example.spring.infrastructures.es.auth.entity.po.TResource;
 import org.example.spring.infrastructures.es.auth.entity.query.TResourceQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
@@ -38,7 +38,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     @Override
     public Long saveWithId(ResourceFormVo resourceFormVo) {
         ResourceVo permission = resourceFormVo.getPermission();
-        TResource entity = authBuilder.buildPermission(permission);
+        EResource entity = authBuilder.buildPermission(permission);
         resourceDao.save(entity);
         return entity.getId();
     }
@@ -47,11 +47,11 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     public void update(ResourceFormVo resourceFormVo) {
         Long id = resourceFormVo.getId();
         ResourceVo permission = resourceFormVo.getPermission();
-        Optional<TResource> optional = resourceDao.getByIdOpt(id);
+        Optional<EResource> optional = resourceDao.getByIdOpt(id);
         if (optional.isPresent()) {
-            TResource tResource = optional.get();
-            authBuilder.copyResource(permission, tResource);
-            resourceDao.updateById(tResource);
+            EResource eResource = optional.get();
+            authBuilder.copyResource(permission, eResource);
+            resourceDao.updateById(eResource);
         }
     }
 
@@ -76,27 +76,27 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     @Override
     public IPageData<Resource> queryPage(ResourceQuery resourceQuery) {
         TResourceQuery query = authBuilder.buildPermissionQuery(resourceQuery);
-        IPageData<TResource> data = resourceDao.queryPage(query);
+        IPageData<EResource> data = resourceDao.queryPage(query);
         return authBuilder.buildPermissionResult(data);
     }
 
     @Override
     public List<Resource> queryList(ResourceQuery resourceQuery) {
         TResourceQuery query = authBuilder.buildPermissionQuery(resourceQuery);
-        List<TResource> data = resourceDao.queryList(query);
+        List<EResource> data = resourceDao.queryList(query);
         return authBuilder.buildPermissionResult(data);
     }
 
     @Override
     public Resource queryOne(ResourceQuery resourceQuery) {
         TResourceQuery query = authBuilder.buildPermissionQuery(resourceQuery);
-        TResource data = resourceDao.queryOne(query);
+        EResource data = resourceDao.queryOne(query);
         return authBuilder.buildPermissionResult(data);
     }
 
     @Override
     public List<Tree<Long>> listAllResourceByUserId(Long userId) {
-        List<TResource> permissions = userResourceDao.listPermissionByUserId(userId);
+        List<EResource> permissions = userResourceDao.listPermissionByUserId(userId);
         List<ResourceNode> resourceNodes = authBuilder.buildPermissionToResrouceNode(permissions);
         return TreeUtil.build(resourceNodes, 0L, getNodeParser());
     }
@@ -104,7 +104,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     @Override
     public List<Tree<Long>> queryTreeList(ResourceQuery query) {
         TResourceQuery permissionQuery = authBuilder.buildPermissionQuery(query);
-        List<TResource> permissions = resourceDao.queryList(permissionQuery);
+        List<EResource> permissions = resourceDao.queryList(permissionQuery);
         List<ResourceNode> resourceNodes = authBuilder.buildPermissionToResrouceNode(permissions);
         return TreeUtil.build(resourceNodes, 0L, getNodeParser());
     }

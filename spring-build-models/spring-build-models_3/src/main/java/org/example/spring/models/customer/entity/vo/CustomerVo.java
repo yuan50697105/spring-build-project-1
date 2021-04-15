@@ -2,8 +2,8 @@ package org.example.spring.models.customer.entity.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.es.customer.entity.enumerate.CustomerType;
 import org.example.spring.infrastructures.es.customer.entity.po.TCustomerInfo;
+import org.example.spring.models.enumerate.CustomerType;
 
 import java.util.Optional;
 

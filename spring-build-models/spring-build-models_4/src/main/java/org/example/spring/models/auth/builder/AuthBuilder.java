@@ -1,7 +1,9 @@
 package org.example.spring.models.auth.builder;
 
 import org.example.spring.infrastructures.commons.BaseBuilder;
-import org.example.spring.infrastructures.es.auth.entity.po.TDepartment;
+import org.example.spring.infrastructures.es.auth.entity.po.EDepartment;
+import org.example.spring.infrastructures.es.auth.entity.po.EResource;
+import org.example.spring.infrastructures.es.auth.entity.po.ERole;
 import org.example.spring.models.auth.entity.dto.DepartmentNode;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.query.DepartmentQuery;
@@ -50,17 +52,17 @@ public interface AuthBuilder {
 
     List<Account> buildAccounts(List<org.example.spring.infrastructures.es.auth.entity.po.TUser> data);
 
-    org.example.spring.infrastructures.es.auth.entity.po.TRole buildRole(RoleVo role);
+    ERole buildRole(RoleVo role);
 
-    void copyRole(RoleVo role, @MappingTarget org.example.spring.infrastructures.es.auth.entity.po.TRole tRole);
+    void copyRole(RoleVo role, @MappingTarget ERole eRole);
 
     TRoleQuery buildRoleQuery(RoleQuery roleQuery);
 
-    Role buildRoleResult(org.example.spring.infrastructures.es.auth.entity.po.TRole role);
+    Role buildRoleResult(ERole role);
 
-    List<Role> buildRoleResult(List<org.example.spring.infrastructures.es.auth.entity.po.TRole> role);
+    List<Role> buildRoleResult(List<ERole> role);
 
-    IPageData<Role> buildRoleResult(IPageData<org.example.spring.infrastructures.es.auth.entity.po.TRole> role);
+    IPageData<Role> buildRoleResult(IPageData<ERole> role);
 
     default List<org.example.spring.infrastructures.es.auth.entity.po.TRoleResource> buildRolePermissions(Long roleId, List<Long> permissionIds) {
         ArrayList<org.example.spring.infrastructures.es.auth.entity.po.TRoleResource> permissions = new ArrayList<>(permissionIds.size());
@@ -72,41 +74,41 @@ public interface AuthBuilder {
 
     org.example.spring.infrastructures.es.auth.entity.po.TRoleResource buildRolePermission(Long roleId, Long permissionId);
 
-    List<Resource> buildPermissionResult(List<org.example.spring.infrastructures.es.auth.entity.po.TResource> listByRoleId);
+    List<Resource> buildPermissionResult(List<EResource> listByRoleId);
 
-    org.example.spring.infrastructures.es.auth.entity.po.TResource buildPermission(ResourceVo permission);
+    EResource buildPermission(ResourceVo permission);
 
-    void copyResource(ResourceVo permission, @MappingTarget org.example.spring.infrastructures.es.auth.entity.po.TResource tResource);
+    void copyResource(ResourceVo permission, @MappingTarget EResource eResource);
 
-    Resource buildPermissionResult(org.example.spring.infrastructures.es.auth.entity.po.TResource permission);
+    Resource buildPermissionResult(EResource permission);
 
     TResourceQuery buildPermissionQuery(ResourceQuery resourceQuery);
 
-    IPageData<Resource> buildPermissionResult(IPageData<org.example.spring.infrastructures.es.auth.entity.po.TResource> data);
+    IPageData<Resource> buildPermissionResult(IPageData<EResource> data);
 
 
-    List<ResourceNode> buildPermissionToResrouceNode(List<org.example.spring.infrastructures.es.auth.entity.po.TResource> permissions);
+    List<ResourceNode> buildPermissionToResrouceNode(List<EResource> permissions);
 
     @Mapping(target = "extra", ignore = true)
     @Mapping(target = "parentId", source = "pid")
-    ResourceNode buildPermissionToResrouceNode(org.example.spring.infrastructures.es.auth.entity.po.TResource resource);
+    ResourceNode buildPermissionToResrouceNode(EResource resource);
 
-    org.example.spring.infrastructures.es.auth.entity.po.TDepartment buildAccountDepartment(DepartmentVo department);
+    EDepartment buildAccountDepartment(DepartmentVo department);
 
-    void copyDepartment(DepartmentVo department, @MappingTarget org.example.spring.infrastructures.es.auth.entity.po.TDepartment tDepartment);
+    void copyDepartment(DepartmentVo department, @MappingTarget EDepartment eDepartment);
 
-    Department buildDepartmentResult(org.example.spring.infrastructures.es.auth.entity.po.TDepartment department);
+    Department buildDepartmentResult(EDepartment department);
 
     TDepartmentQuery buildDepartmentQuery(DepartmentQuery departmentQuery);
 
-    IPageData<Department> buildDepartmentResult(IPageData<org.example.spring.infrastructures.es.auth.entity.po.TDepartment> queryPage);
+    IPageData<Department> buildDepartmentResult(IPageData<EDepartment> queryPage);
 
-    List<Department> buildDepartmentResult(List<org.example.spring.infrastructures.es.auth.entity.po.TDepartment> data);
+    List<Department> buildDepartmentResult(List<EDepartment> data);
 
-    List<DepartmentNode> buildDepartmentToDepartmentNode(List<org.example.spring.infrastructures.es.auth.entity.po.TDepartment> departments);
+    List<DepartmentNode> buildDepartmentToDepartmentNode(List<EDepartment> departments);
 
     @Mapping(target = "weight", ignore = true)
     @Mapping(target = "parentId", source = "pid")
     @Mapping(target = "extra", ignore = true)
-    DepartmentNode buildDepartmentToDepartmentNode(TDepartment department);
+    DepartmentNode buildDepartmentToDepartmentNode(EDepartment department);
 }
