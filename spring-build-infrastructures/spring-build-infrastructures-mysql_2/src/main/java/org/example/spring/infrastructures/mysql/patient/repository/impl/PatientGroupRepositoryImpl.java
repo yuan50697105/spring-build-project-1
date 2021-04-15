@@ -9,7 +9,7 @@ import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGro
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientGroupDetails;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupFormVo;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.PatientGroupVo;
-import org.example.spring.infrastructures.mysql.patient.repository.team.PatientGroupRepository;
+import org.example.spring.infrastructures.mysql.patient.repository.PatientGroupRepository;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroup;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
@@ -32,6 +32,7 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     private final TPatientGroupDao patientGroupDao;
     private final TPatientDao patientDao;
     private final ThreadPoolExecutor executor;
+
     @Override
     public Long saveWithId(PatientGroupFormVo patientGroupFormVo) {
         PatientGroupVo group = patientGroupFormVo.getGroup();

@@ -13,6 +13,8 @@
         <module>spring-build-models_1</module>
         <module>spring-build-models_2</module>
         <module>spring-build-models-commons</module>
+        <module>spring-build-models_3</module>
+        <module>spring-build-models_4</module>
     </modules>
     <dependencyManagement>
         <dependencies>

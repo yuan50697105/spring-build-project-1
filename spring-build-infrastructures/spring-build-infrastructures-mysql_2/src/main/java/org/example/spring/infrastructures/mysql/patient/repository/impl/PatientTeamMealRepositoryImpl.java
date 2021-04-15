@@ -10,7 +10,7 @@ import org.example.spring.infrastructures.mysql.patient.entity.query.PatientTeam
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeamMeal;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientTeamMealDetails;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.*;
-import org.example.spring.infrastructures.mysql.patient.repository.team.PatientTeamMealRepository;
+import org.example.spring.infrastructures.mysql.patient.repository.PatientTeamMealRepository;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeamMeal;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeamMealCheckItem;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeamMealFeeItem;

@@ -11,7 +11,7 @@ import org.example.spring.infrastructures.mysql.patient.entity.query.PatientQuer
 import org.example.spring.infrastructures.mysql.patient.entity.result.Patient;
 import org.example.spring.infrastructures.mysql.patient.entity.result.PatientDetails;
 import org.example.spring.infrastructures.mysql.patient.entity.vo.*;
-import org.example.spring.infrastructures.mysql.patient.repository.patient.PatientRepository;
+import org.example.spring.infrastructures.mysql.patient.repository.PatientRepository;
 import org.example.spring.infrastructures.mysql.patient.table.po.*;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
