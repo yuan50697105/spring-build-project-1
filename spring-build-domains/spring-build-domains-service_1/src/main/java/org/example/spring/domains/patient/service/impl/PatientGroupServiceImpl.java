@@ -9,7 +9,7 @@ import org.example.spring.models.patient.entity.vo.PatientGroupVo;
 import org.example.spring.models.patient.repository.PatientGroupRepository;
 import org.example.spring.models.patient.repository.PatientTeamMealRepository;
 import org.example.spring.models.patient.repository.PatientTeamRepository;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

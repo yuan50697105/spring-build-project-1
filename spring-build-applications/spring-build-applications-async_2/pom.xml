@@ -22,6 +22,11 @@
             <groupId>org.example.spring</groupId>
             <artifactId>spring-build-domains-service_2</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.reactivex.rxjava3</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>3.0.10</version>
+        </dependency>
     </dependencies>
 
 </project>

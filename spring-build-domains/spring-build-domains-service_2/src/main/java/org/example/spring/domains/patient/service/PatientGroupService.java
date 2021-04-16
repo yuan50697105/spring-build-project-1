@@ -4,7 +4,7 @@ import org.example.spring.models.patient.entity.query.PatientGroupQuery;
 import org.example.spring.models.patient.entity.result.PatientGroup;
 import org.example.spring.models.patient.entity.result.PatientGroupDetails;
 import org.example.spring.models.patient.entity.vo.PatientGroupFormVo;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 import java.util.Optional;

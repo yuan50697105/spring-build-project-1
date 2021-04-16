@@ -7,7 +7,7 @@ import org.example.spring.models.auth.entity.result.Account;
 import org.example.spring.models.auth.entity.result.AccountDetails;
 import org.example.spring.models.auth.entity.vo.AccountFormVo;
 import org.example.spring.models.auth.repository.AccountRepository;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
