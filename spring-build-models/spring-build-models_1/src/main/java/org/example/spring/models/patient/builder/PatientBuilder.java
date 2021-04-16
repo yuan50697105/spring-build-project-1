@@ -1,6 +1,6 @@
 package org.example.spring.models.patient.builder;
 
-import org.example.spring.infrastructures.commons.BaseBuilder;
+import org.example.spring.plugins.commons.BaseBuilder;
 import org.example.spring.models.patient.entity.query.PatientGroupQuery;
 import org.example.spring.models.patient.entity.query.PatientQuery;
 import org.example.spring.models.patient.entity.query.PatientTeamMealQuery;

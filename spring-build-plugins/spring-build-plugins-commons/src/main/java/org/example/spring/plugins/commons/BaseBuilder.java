@@ -1,4 +1,4 @@
-package org.example.spring.infrastructures.commons;
+package org.example.spring.plugins.commons;
 
 import org.mapstruct.*;
 import org.mapstruct.control.DeepClone;

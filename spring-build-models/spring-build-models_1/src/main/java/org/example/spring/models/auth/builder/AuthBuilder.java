@@ -1,6 +1,6 @@
 package org.example.spring.models.auth.builder;
 
-import org.example.spring.infrastructures.commons.BaseBuilder;
+import org.example.spring.plugins.commons.BaseBuilder;
 import org.example.spring.models.auth.entity.dto.DepartmentNode;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.query.DepartmentQuery;

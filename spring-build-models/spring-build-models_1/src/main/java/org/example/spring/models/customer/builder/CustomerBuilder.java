@@ -1,6 +1,6 @@
 package org.example.spring.models.customer.builder;
 
-import org.example.spring.infrastructures.commons.BaseBuilder;
+import org.example.spring.plugins.commons.BaseBuilder;
 import org.example.spring.models.customer.entity.query.CustomerContractQuery;
 import org.example.spring.models.customer.entity.query.CustomerQuery;
 import org.example.spring.models.customer.entity.result.Customer;
