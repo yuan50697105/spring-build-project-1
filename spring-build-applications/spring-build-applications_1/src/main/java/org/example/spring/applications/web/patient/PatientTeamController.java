@@ -7,7 +7,7 @@ import org.example.spring.domains.patient.service.PatientTeamService;
 import org.example.spring.models.patient.entity.query.PatientTeamQuery;
 import org.example.spring.models.patient.entity.result.PatientTeam;
 import org.example.spring.models.patient.entity.vo.PatientTeamFormVo;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 

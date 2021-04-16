@@ -1,7 +1,7 @@
 package org.example.spring.plugins.commons.repository;
 
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 import java.util.Optional;

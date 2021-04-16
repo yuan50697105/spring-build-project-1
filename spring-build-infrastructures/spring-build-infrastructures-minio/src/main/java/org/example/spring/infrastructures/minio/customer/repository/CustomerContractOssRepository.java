@@ -1,6 +1,6 @@
 package org.example.spring.infrastructures.minio.customer.repository;
 
-import org.example.spring.plugins.oss.entity.OssResponse;
+import org.example.spring.plugins.commons.entity.OssResponse;
 
 import java.io.InputStream;
 

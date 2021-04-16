@@ -8,7 +8,7 @@ import org.example.spring.models.auth.entity.query.RoleQuery;
 import org.example.spring.models.auth.entity.result.Role;
 import org.example.spring.models.auth.entity.result.RoleDetails;
 import org.example.spring.models.auth.entity.vo.RoleFormVo;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 

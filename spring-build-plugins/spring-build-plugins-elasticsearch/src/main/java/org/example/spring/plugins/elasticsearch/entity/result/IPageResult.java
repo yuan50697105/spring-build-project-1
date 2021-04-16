@@ -2,7 +2,7 @@ package org.example.spring.plugins.elasticsearch.entity.result;
 
 import lombok.EqualsAndHashCode;
 import lombok.Value;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.data.domain.Page;
 
 import java.util.List;

@@ -20,7 +20,7 @@ import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentQuer
 import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.*;
 
 import java.util.ArrayList;

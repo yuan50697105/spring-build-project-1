@@ -12,7 +12,7 @@ import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGrou
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamMealQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamQuery;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.*;
 
 import java.util.List;

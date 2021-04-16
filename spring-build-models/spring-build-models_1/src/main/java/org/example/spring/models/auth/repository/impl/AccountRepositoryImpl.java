@@ -15,7 +15,7 @@ import org.example.spring.models.auth.entity.vo.AccountVo;
 import org.example.spring.models.auth.repository.AccountRepository;
 import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
 import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

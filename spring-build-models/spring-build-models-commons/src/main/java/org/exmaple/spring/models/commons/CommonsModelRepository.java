@@ -1,6 +1,6 @@
 package org.exmaple.spring.models.commons;
 
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 import java.util.Optional;

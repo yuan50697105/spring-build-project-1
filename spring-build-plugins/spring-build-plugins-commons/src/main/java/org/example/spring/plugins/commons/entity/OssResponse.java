@@ -1,4 +1,4 @@
-package org.example.spring.plugins.oss.entity;
+package org.example.spring.plugins.commons.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

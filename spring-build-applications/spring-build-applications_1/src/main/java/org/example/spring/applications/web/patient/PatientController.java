@@ -8,7 +8,7 @@ import org.example.spring.models.patient.entity.query.PatientQuery;
 import org.example.spring.models.patient.entity.result.Patient;
 import org.example.spring.models.patient.entity.result.PatientDetails;
 import org.example.spring.models.patient.entity.vo.PatientFormVo;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 

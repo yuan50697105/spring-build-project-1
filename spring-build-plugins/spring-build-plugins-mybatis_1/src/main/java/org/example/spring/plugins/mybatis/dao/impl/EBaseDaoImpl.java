@@ -10,7 +10,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.example.spring.plugins.commons.entity.query.OrderTypeEnum;
 import org.example.spring.plugins.mybatis.dao.EBaseDao;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.mybatis.entity.query.EBaseQuery;
 import org.example.spring.plugins.mybatis.entity.result.IPageResult;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;

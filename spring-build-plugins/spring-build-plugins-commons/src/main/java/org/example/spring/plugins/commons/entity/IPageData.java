@@ -1,4 +1,4 @@
-package org.example.spring.plugins.mybatis.entity;
+package org.example.spring.plugins.commons.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

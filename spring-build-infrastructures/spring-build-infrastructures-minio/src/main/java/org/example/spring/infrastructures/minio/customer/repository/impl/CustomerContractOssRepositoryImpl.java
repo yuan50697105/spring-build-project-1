@@ -2,7 +2,7 @@ package org.example.spring.infrastructures.minio.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.minio.customer.repository.CustomerContractOssRepository;
-import org.example.spring.plugins.oss.entity.OssResponse;
+import org.example.spring.plugins.commons.entity.OssResponse;
 import org.example.spring.plugins.oss.minio.MinioOssService;
 import org.springframework.stereotype.Repository;
 

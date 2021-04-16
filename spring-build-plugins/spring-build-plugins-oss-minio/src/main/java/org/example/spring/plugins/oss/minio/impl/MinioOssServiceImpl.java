@@ -4,7 +4,7 @@ import io.minio.*;
 import io.minio.http.Method;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
-import org.example.spring.plugins.oss.entity.OssResponse;
+import org.example.spring.plugins.commons.entity.OssResponse;
 import org.example.spring.plugins.oss.minio.MinioOssService;
 import org.springframework.stereotype.Service;
 

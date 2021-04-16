@@ -8,7 +8,7 @@ import org.example.spring.models.customer.entity.query.CustomerQuery;
 import org.example.spring.models.customer.entity.result.Customer;
 import org.example.spring.models.customer.entity.result.CustomerDetails;
 import org.example.spring.models.customer.entity.vo.CustomerFormVo;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
