@@ -1,6 +1,5 @@
 package org.example.spring.models.patient.repository.impl;
 
-import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
 import org.example.spring.models.patient.builder.PatientBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
@@ -15,7 +14,7 @@ import org.example.spring.models.patient.repository.PatientGroupRepository;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroup;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
-import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;

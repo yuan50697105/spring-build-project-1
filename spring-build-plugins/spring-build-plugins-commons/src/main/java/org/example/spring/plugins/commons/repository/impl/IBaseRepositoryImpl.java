@@ -1,7 +1,7 @@
-package org.example.spring.plugins.mybatis.repository.impl;
+package org.example.spring.plugins.commons.repository.impl;
 
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
-import org.example.spring.plugins.mybatis.repository.IBaseRepository;
+import org.example.spring.plugins.commons.repository.IBaseRepository;
 
 /**
  * @author yuane

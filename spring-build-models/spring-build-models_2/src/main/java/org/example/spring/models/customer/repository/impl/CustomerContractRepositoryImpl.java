@@ -12,7 +12,7 @@ import org.example.spring.models.customer.repository.CustomerContractRepository;
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContract;
 import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerContractQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
-import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

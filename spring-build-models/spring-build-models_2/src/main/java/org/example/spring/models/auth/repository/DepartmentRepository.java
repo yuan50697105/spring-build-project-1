@@ -5,7 +5,7 @@ import org.example.spring.models.auth.entity.query.DepartmentQuery;
 import org.example.spring.models.auth.entity.result.Department;
 import org.example.spring.models.auth.entity.result.DepartmentDetails;
 import org.example.spring.models.auth.entity.vo.DepartmentFormVo;
-import org.example.spring.plugins.mybatis.repository.IBaseRepository;
+import org.example.spring.plugins.commons.repository.IBaseRepository;
 
 import java.util.List;
 

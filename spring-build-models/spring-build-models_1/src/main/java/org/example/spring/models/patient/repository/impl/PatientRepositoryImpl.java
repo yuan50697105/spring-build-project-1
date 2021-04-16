@@ -15,7 +15,7 @@ import org.example.spring.models.patient.entity.result.PatientDetails;
 import org.example.spring.models.patient.entity.vo.*;
 import org.example.spring.models.patient.repository.PatientRepository;
 import org.example.spring.plugins.mybatis.entity.IPageData;
-import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;

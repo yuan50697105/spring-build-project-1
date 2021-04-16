@@ -5,7 +5,7 @@ import org.example.spring.models.auth.entity.query.ResourceQuery;
 import org.example.spring.models.auth.entity.result.Resource;
 import org.example.spring.models.auth.entity.result.ResourceDetails;
 import org.example.spring.models.auth.entity.vo.ResourceFormVo;
-import org.example.spring.plugins.mybatis.repository.IBaseRepository;
+import org.example.spring.plugins.commons.repository.IBaseRepository;
 
 import java.util.List;
 

@@ -14,7 +14,7 @@ import org.example.spring.models.auth.repository.RoleRepository;
 import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
 import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.plugins.mybatis.entity.IPageData;
-import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
