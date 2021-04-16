@@ -30,7 +30,7 @@ public class ResourceServiceImpl implements ResourceService {
 
     @Override
     public ResourceDetails get(Long id) {
-        return resourceRepository.getById(id);
+        return resourceRepository.getDetailsById(id);
     }
 
     @Override

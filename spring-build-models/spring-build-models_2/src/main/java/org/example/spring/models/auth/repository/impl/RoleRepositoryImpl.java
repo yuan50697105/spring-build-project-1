@@ -70,10 +70,15 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, Ro
     }
 
     @Override
-    public RoleDetails getById(Long id) {
+    public Role getById(Long id) {
+        return authBuilder.buildRoleResult(roleDao.getById(id));
+    }
+
+    @Override
+    public RoleDetails getDetailsById(Long id) {
         RoleDetails details = new RoleDetails();
         details.setRole(authBuilder.buildRoleResult(roleDao.getById(id)));
-        details.setResources(authBuilder.buildPermissionResult(rolePermissionDao.listByRoleId(id)));
+        details.setResources(authBuilder.buildResourceResult(rolePermissionDao.listByRoleId(id)));
         return details;
     }
 

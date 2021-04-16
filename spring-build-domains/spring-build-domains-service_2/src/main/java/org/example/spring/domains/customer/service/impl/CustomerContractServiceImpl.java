@@ -40,7 +40,7 @@ public class CustomerContractServiceImpl implements CustomerContractService {
 
     @Override
     public CustomerContractDetails get(Long id) {
-        return customerContractRepository.getById(id);
+        return customerContractRepository.getDetailsById(id);
     }
 
     @Override

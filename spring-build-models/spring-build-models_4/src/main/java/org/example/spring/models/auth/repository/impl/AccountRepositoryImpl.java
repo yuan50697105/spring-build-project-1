@@ -77,7 +77,12 @@ public class AccountRepositoryImpl implements AccountRepository {
     }
 
     @Override
-    public AccountDetails getById(Long id) {
+    public Account getById(Long id) {
+        return authBuilder.buildAccount(userDao.getById(id));
+    }
+
+    @Override
+    public AccountDetails getDetailsById(Long id) {
         AccountDetails accountDetails = new AccountDetails();
         accountDetails.setAccount(authBuilder.buildAccount(userDao.getById(id)));
         accountDetails.setRoles(authBuilder.buildRoleResult(userRoleDao.listByUserId(id)));

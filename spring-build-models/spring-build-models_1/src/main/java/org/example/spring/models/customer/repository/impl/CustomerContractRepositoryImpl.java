@@ -52,7 +52,12 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
     }
 
     @Override
-    public CustomerContractDetails getById(Long id) {
+    public CustomerContract getById(Long id) {
+        return customerBuilder.buildCustomerContractResult(customerContractDao.getById(id));
+    }
+
+    @Override
+    public CustomerContractDetails getDetailsById(Long id) {
         CustomerContractDetails details = new CustomerContractDetails();
         TCustomerContract contract = customerContractDao.getById(id);
         details.setContract(customerBuilder.buildCustomerContractResult(contract));

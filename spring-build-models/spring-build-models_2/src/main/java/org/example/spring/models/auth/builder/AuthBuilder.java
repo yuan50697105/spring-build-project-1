@@ -72,17 +72,17 @@ public interface AuthBuilder {
 
     TRoleResource buildRolePermission(Long roleId, Long permissionId);
 
-    List<Resource> buildPermissionResult(List<TResource> listByRoleId);
+    List<Resource> buildResourceResult(List<TResource> listByRoleId);
 
     TResource buildPermission(ResourceVo permission);
 
     void copyResource(ResourceVo permission, @MappingTarget TResource tResource);
 
-    Resource buildPermissionResult(TResource permission);
+    Resource buildResourceResult(TResource permission);
 
     TResourceQuery buildPermissionQuery(ResourceQuery resourceQuery);
 
-    IPageData<Resource> buildPermissionResult(IPageData<TResource> data);
+    IPageData<Resource> buildResourceResult(IPageData<TResource> data);
 
 
     List<ResourceNode> buildPermissionToResrouceNode(List<TResource> permissions);

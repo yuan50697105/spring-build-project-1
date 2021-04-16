@@ -129,8 +129,13 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     }
 
     @Override
+    public Patient getById(Long id) {
+        return patientBuilder.buildPatientResult(patientDao.getById(id));
+    }
+
+    @Override
     @Cacheable(key = "'details:'+#id")
-    public PatientDetails getById(Long id) {
+    public PatientDetails getDetailsById(Long id) {
         PatientDetails details = new PatientDetails();
         TPatient patient = patientDao.getById(id);
         Patient patientResult = patientBuilder.buildPatientResult(patient);

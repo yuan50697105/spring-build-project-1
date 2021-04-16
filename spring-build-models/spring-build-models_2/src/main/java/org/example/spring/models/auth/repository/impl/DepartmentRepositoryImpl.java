@@ -58,6 +58,11 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
         departmentDao.removeByIds(ids);
     }
 
+    @Override
+    public Department getById(Long id) {
+        return authBuilder.buildDepartmentResult(departmentDao.getById(id));
+    }
+
     @SneakyThrows
     private void validateChildDepartment(List<Long> ids) {
         boolean existChildByPIds = departmentDao.existChildByPIds(ids);
@@ -67,7 +72,7 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
     }
 
     @Override
-    public DepartmentDetails getById(Long id) {
+    public DepartmentDetails getDetailsById(Long id) {
         DepartmentDetails details = new DepartmentDetails();
         TDepartment department = departmentDao.getById(id);
         details.setDepartment(authBuilder.buildDepartmentResult(department));

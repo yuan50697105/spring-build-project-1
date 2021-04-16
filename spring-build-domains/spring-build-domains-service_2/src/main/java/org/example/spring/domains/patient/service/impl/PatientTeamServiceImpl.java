@@ -57,6 +57,6 @@ public class PatientTeamServiceImpl implements PatientTeamService {
 
     @Override
     public PatientTeamDetails get(Long id) {
-        return patientTeamRepository.getById(id);
+        return patientTeamRepository.getDetailsById(id);
     }
 }

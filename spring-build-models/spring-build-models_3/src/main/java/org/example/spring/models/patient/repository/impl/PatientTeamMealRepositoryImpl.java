@@ -84,7 +84,7 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
     public void update(PatientTeamMealFormVo patientTeamMealFormVo) {
 //        Long id = patientTeamMealFormVo.getId();
 //        PatientTeamMealVo meal = patientTeamMealFormVo.getMeal();
-//        Optional<TPatientTeamMeal> optional = patientTeamMealDao.getByIdOpt(id);
+//        Optional<TPatientTeamMeal> optional = patientTeamMealDao.getDetailsByIdOpt(id);
 //        if (optional.isPresent()) {
 //            TPatientTeamMeal patientTeamMeal = optional.get();
 //            patientBuilder.copyPatientTeamMeal(meal, patientTeamMeal);
@@ -102,7 +102,12 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
     }
 
     @Override
-    public PatientTeamMealDetails getById(Long id) {
+    public PatientTeamMeal getById(Long id) {
+        return patientBuilder.buildPatientTeamMealResult(patientTeamMealDao.getById(id));
+    }
+
+    @Override
+    public PatientTeamMealDetails getDetailsById(Long id) {
         PatientTeamMealDetails details = new PatientTeamMealDetails();
         details.setMeal(patientBuilder.buildPatientTeamMealResult(patientTeamMealDao.getById(id)));
         details.setFeeItem(patientBuilder.buildPatientTeamMealFeeItemResult(patientTeamMealFeeItemDao.listByTeamMealId(id)));

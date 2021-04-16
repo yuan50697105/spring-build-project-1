@@ -46,7 +46,7 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
 
     @Override
     public CustomerDetails get(Long id) {
-        return customerRepository.getById(id);
+        return customerRepository.getDetailsById(id);
     }
 
     @Override

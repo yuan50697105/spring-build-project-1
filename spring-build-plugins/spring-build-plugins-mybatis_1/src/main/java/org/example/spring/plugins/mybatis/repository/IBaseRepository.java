@@ -22,10 +22,16 @@ public interface IBaseRepository<T, V, D, Q extends BaseQuery> {
 
     void delete(List<Long> ids);
 
-    D getById(Long id);
+    T getById(Long id);
 
-    default Optional<D> getByIdOpt(Long id) {
+    default Optional<T> getByIdOpt(Long id) {
         return Optional.ofNullable(getById(id));
+    }
+
+    D getDetailsById(Long id);
+
+    default Optional<D> getDetailsByIdOpt(Long id) {
+        return Optional.ofNullable(getDetailsById(id));
     }
 
     IPageData<T> queryPage(Q q);

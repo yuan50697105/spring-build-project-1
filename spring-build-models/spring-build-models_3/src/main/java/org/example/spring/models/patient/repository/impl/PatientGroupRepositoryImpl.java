@@ -71,8 +71,13 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     }
 
     @Override
+    public PatientGroup getById(Long id) {
+        return patientBuilder.buildPatientGroupResult(patientGroupDao.getById(id));
+    }
+
+    @Override
     @Cacheable(key = "'details:'+#id")
-    public PatientGroupDetails getById(Long id) {
+    public PatientGroupDetails getDetailsById(Long id) {
         PatientGroupDetails details = new PatientGroupDetails();
         details.setId(id);
         details.setGroup(patientBuilder.buildPatientGroupResult(patientGroupDao.getById(id)));
