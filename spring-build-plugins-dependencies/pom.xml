@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-build-project-1</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.3</version>
+        <version>0.0.4-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,27 +14,27 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-elasticsearch</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-payment</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-wx</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-security</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-web</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
@@ -44,32 +44,32 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-commons</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-mybatis_1</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-mybatis_2</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-oss-aliyun</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-oss-tencent</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-plugins-oss-minio</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>io.github.beyondlov1</groupId>
