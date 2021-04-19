@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.example.spring.domains.auth.service.DepartmentService;
 import org.example.spring.models.auth.entity.query.DepartmentQuery;
 import org.example.spring.models.auth.entity.result.Department;
+import org.example.spring.models.auth.entity.result.DepartmentDetails;
 import org.example.spring.models.auth.entity.vo.DepartmentFormVo;
 import org.example.spring.models.auth.repository.DepartmentRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -46,5 +47,10 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public Department selectOne(DepartmentQuery query) {
         return departmentRepository.queryFirst(query);
+    }
+
+    @Override
+    public DepartmentDetails get(Long id) {
+        return departmentRepository.getDetailsById(id);
     }
 }
