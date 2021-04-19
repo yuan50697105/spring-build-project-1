@@ -1,4 +1,4 @@
-package org.exmaple.spring.models.commons;
+package org.example.spring.models.commons;
 
 import org.example.spring.plugins.commons.entity.IPageData;
 
