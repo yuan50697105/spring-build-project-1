@@ -70,6 +70,21 @@ create table t_department
 )
     comment 't_department' charset=utf8mb4;
 
+create table t_department_role
+(
+    id bigint auto_increment comment 'id'
+        primary key,
+    create_id bigint default -1 null comment 'createId',
+    update_id bigint default -1 null comment 'updateId',
+    create_user varchar(50) default '' null comment 'createUser',
+    update_user varchar(50) default '' null comment 'updateUser',
+    create_date datetime default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date datetime default '1000-01-01 00:00:00' null comment 'updateDate',
+    department_id bigint default -1 null comment 'departmentId',
+    role_id bigint default -1 null comment 'roleId'
+)
+    comment 't_department_role' charset=utf8mb4;
+
 create table t_fee_item
 (
     id bigint auto_increment comment 'id'
