@@ -1,6 +1,6 @@
 package org.example.spring.models.auth.builder;
 
-import org.example.spring.infrastructures.commons.BaseBuilder;
+import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.models.auth.entity.dto.DepartmentNode;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.query.DepartmentQuery;
@@ -20,7 +20,7 @@ import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentQuer
 import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.*;
 
 import java.util.ArrayList;
@@ -109,4 +109,14 @@ public interface AuthBuilder {
     @Mapping(target = "parentId", source = "pid")
     @Mapping(target = "extra", ignore = true)
     DepartmentNode buildDepartmentToDepartmentNode(TDepartment department);
+
+
+    @Mapping(target = "updateUser", ignore = true)
+    @Mapping(target = "updateId", ignore = true)
+    @Mapping(target = "updateDate", ignore = true)
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "createUser", ignore = true)
+    @Mapping(target = "createId", ignore = true)
+    @Mapping(target = "createDate", ignore = true)
+    TDepartmentRole buildDepartmentRole(Long departmentId, Long roleId);
 }

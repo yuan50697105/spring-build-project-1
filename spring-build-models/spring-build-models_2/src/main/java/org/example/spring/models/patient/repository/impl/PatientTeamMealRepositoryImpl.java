@@ -15,7 +15,7 @@ import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeamMea
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeamMealCheckItem;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeamMealFeeItem;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamMealQuery;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

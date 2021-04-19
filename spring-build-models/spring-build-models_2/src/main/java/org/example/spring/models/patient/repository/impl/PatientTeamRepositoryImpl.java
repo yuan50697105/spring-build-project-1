@@ -14,7 +14,7 @@ import org.example.spring.models.patient.entity.vo.PatientTeamVo;
 import org.example.spring.models.patient.repository.PatientTeamRepository;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamQuery;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;

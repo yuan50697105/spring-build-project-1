@@ -3,10 +3,16 @@ package org.example.spring.models.auth.repository.impl;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.lang.tree.TreeUtil;
+import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
-import org.example.spring.models.auth.builder.AuthBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TDepartmentDao;
+import org.example.spring.infrastructures.mysql.auth.dao.TDepartmentRoleDao;
+import org.example.spring.infrastructures.mysql.auth.dao.TRoleDao;
+import org.example.spring.infrastructures.mysql.auth.table.po.TDepartment;
+import org.example.spring.infrastructures.mysql.auth.table.po.TDepartmentRole;
+import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentQuery;
+import org.example.spring.models.auth.builder.AuthBuilder;
 import org.example.spring.models.auth.entity.dto.DepartmentNode;
 import org.example.spring.models.auth.entity.query.DepartmentQuery;
 import org.example.spring.models.auth.entity.result.Department;
@@ -14,8 +20,6 @@ import org.example.spring.models.auth.entity.result.DepartmentDetails;
 import org.example.spring.models.auth.entity.vo.DepartmentFormVo;
 import org.example.spring.models.auth.entity.vo.DepartmentVo;
 import org.example.spring.models.auth.repository.DepartmentRepository;
-import org.example.spring.infrastructures.mysql.auth.table.po.TDepartment;
-import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
@@ -24,6 +28,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.validation.ValidationException;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.stream.Collectors;
 
 @Repository
 @AllArgsConstructor
@@ -31,13 +37,26 @@ import java.util.Optional;
 public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, DepartmentFormVo, DepartmentDetails, DepartmentQuery> implements DepartmentRepository {
     private final AuthBuilder authBuilder;
     private final TDepartmentDao departmentDao;
+    private final TRoleDao roleDao;
+    private final TDepartmentRoleDao departmentRoleDao;
+    private final ThreadPoolExecutor executor;
 
     @Override
     public Long saveWithId(DepartmentFormVo departmentFormVo) {
         DepartmentVo department = departmentFormVo.getDepartment();
         TDepartment entity = authBuilder.buildAccountDepartment(department);
         departmentDao.save(entity);
+        if (ObjectUtil.isNotEmpty(departmentFormVo.getDepartment())) {
+            executor.submit(() -> saveRole(departmentFormVo, entity));
+        }
         return entity.getId();
+    }
+
+    private void saveRole(DepartmentFormVo roles, TDepartment entity) {
+        Long id = entity.getId();
+        List<Long> roleIds = roleDao.listRoleIdsByRoleIdsOrRoleName(roles.getRoleIds(), roles.getRoleName());
+        List<TDepartmentRole> departmentRoleList = roleIds.stream().map(roleId -> authBuilder.buildDepartmentRole(id, roleId)).collect(Collectors.toList());
+        departmentRoleDao.saveBatch(departmentRoleList);
     }
 
     @Override
@@ -49,13 +68,23 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
             TDepartment tDepartment = optional.get();
             authBuilder.copyDepartment(department, tDepartment);
             departmentDao.updateById(tDepartment);
+            if (ObjectUtil.isNotEmpty(departmentFormVo.getRoles())) {
+                executor.submit(() -> updateRole(department, departmentFormVo));
+            }
         }
+    }
+
+    private void updateRole(DepartmentVo department, DepartmentFormVo departmentFormVo) {
+        Long id = department.getId();
+        departmentRoleDao.removeByDepartmentId(id);
+        saveRole(departmentFormVo, department);
     }
 
     @Override
     public void delete(List<Long> ids) {
         validateChildDepartment(ids);
         departmentDao.removeByIds(ids);
+        departmentRoleDao.removeByDepartmentIds(ids);
     }
 
     @Override
@@ -65,7 +94,7 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
 
     @SneakyThrows
     private void validateChildDepartment(List<Long> ids) {
-        boolean existChildByPIds = departmentDao.existChildByPIds(ids);
+        @SuppressWarnings("AlibabaLowerCamelCaseVariableNaming") boolean existChildByPIds = departmentDao.existChildByPIds(ids);
         if (existChildByPIds) {
             throw new ValidationException("存在子部门使用");
         }
@@ -76,6 +105,7 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
         DepartmentDetails details = new DepartmentDetails();
         TDepartment department = departmentDao.getById(id);
         details.setDepartment(authBuilder.buildDepartmentResult(department));
+        details.setRoles(authBuilder.buildRoleResult(departmentRoleDao.listRolesByDepartmentId(id)));
         return details;
     }
 

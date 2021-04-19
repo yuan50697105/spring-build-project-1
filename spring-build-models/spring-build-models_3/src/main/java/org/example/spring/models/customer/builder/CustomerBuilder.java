@@ -1,6 +1,6 @@
 package org.example.spring.models.customer.builder;
 
-import org.example.spring.infrastructures.commons.BaseBuilder;
+import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.models.customer.entity.query.CustomerContractQuery;
 import org.example.spring.models.customer.entity.query.CustomerQuery;
 import org.example.spring.models.customer.entity.result.Customer;
@@ -11,7 +11,7 @@ import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContr
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
 import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerContractQuery;
 import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerInfoQuery;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.*;
 
 import java.util.List;

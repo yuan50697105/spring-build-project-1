@@ -109,4 +109,14 @@ public interface AuthBuilder {
     @Mapping(target = "parentId", source = "pid")
     @Mapping(target = "extra", ignore = true)
     DepartmentNode buildDepartmentToDepartmentNode(TDepartment department);
+
+
+    @Mapping(target = "updateUser", ignore = true)
+    @Mapping(target = "updateId", ignore = true)
+    @Mapping(target = "updateDate", ignore = true)
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "createUser", ignore = true)
+    @Mapping(target = "createId", ignore = true)
+    @Mapping(target = "createDate", ignore = true)
+    TDepartmentRole buildDepartmentRole(Long departmentId, Long roleId);
 }

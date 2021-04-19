@@ -1,6 +1,6 @@
 package org.example.spring.models.patient.builder;
 
-import org.example.spring.infrastructures.commons.BaseBuilder;
+import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.models.patient.entity.query.PatientGroupQuery;
 import org.example.spring.models.patient.entity.query.PatientQuery;
 import org.example.spring.models.patient.entity.query.PatientTeamMealQuery;
@@ -12,7 +12,7 @@ import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGrou
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamMealQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamQuery;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.*;
 
 import java.util.List;
