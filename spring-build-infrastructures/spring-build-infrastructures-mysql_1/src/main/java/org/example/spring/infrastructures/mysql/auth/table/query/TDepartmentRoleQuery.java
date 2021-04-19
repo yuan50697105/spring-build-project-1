@@ -1,12 +1,15 @@
-package org.example.spring.infrastructures.mysql.auth.table.po;
+package org.example.spring.infrastructures.mysql.auth.table.query;
 
+import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
+import org.example.spring.infrastructures.mysql.auth.table.po.TDepartmentRole;
+import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
+import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;
 
@@ -18,7 +21,7 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TDepartmentRole extends IBaseEntity implements Serializable {
+public class TDepartmentRoleQuery extends TkBaseQuery<TDepartmentRole> implements Serializable, MybatisExampleForTk<TDepartmentRole, Example> {
     private static final long serialVersionUID = 1L;
     /**
      * departmentId
