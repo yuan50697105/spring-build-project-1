@@ -21,6 +21,10 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 @NoArgsConstructor
 public class TPatientTeamMeal extends IBaseEntity implements Serializable {
     /**
+     * 体检者ID
+     */
+    private Long patientId;
+    /**
      * teamId
      */
     @ApiModelProperty(value = "teamId")

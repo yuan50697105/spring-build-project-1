@@ -20,6 +20,7 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TPatientMeal extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * teamId
      */
@@ -85,6 +86,4 @@ public class TPatientMeal extends IBaseEntity implements Serializable {
      */
     @ApiModelProperty(value = "marketPrice")
     private BigDecimal marketPrice;
-
-    private static final long serialVersionUID = 1L;
 }
