@@ -16,6 +16,7 @@ import org.example.spring.models.auth.repository.AccountRepository;
 import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
 import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,7 +26,7 @@ import java.util.Optional;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class AccountRepositoryImpl implements AccountRepository {
+public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account,AccountFormVo,AccountDetails,AccountQuery> implements AccountRepository {
     private final TUserDao userDao;
     private final TRoleDao roleDao;
     private final TUserRoleDao userRoleDao;

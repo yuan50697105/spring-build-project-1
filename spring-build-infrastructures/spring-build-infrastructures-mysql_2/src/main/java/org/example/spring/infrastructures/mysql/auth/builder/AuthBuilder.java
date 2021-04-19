@@ -2,11 +2,14 @@ package org.example.spring.infrastructures.mysql.auth.builder;
 
 import org.example.spring.infrastructures.mysql.auth.table.po.TRoleResource;
 import org.example.spring.infrastructures.mysql.auth.table.po.TUserRole;
+import org.example.spring.plugins.commons.builder.BaseBuilder;
+import org.mapstruct.Mapper;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+@Mapper(config = BaseBuilder.class)
 public interface AuthBuilder {
     default List<TUserRole> buildRoles(Long id, List<Long> existRoleIds) {
         if (existRoleIds != null) {
