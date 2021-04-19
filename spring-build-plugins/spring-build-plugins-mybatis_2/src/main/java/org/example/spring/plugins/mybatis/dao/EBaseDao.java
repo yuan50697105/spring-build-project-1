@@ -1,7 +1,7 @@
 package org.example.spring.plugins.mybatis.dao;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.example.spring.plugins.mybatis.entity.IPageData;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.mybatis.entity.query.EBaseQuery;
 
 import java.util.List;
