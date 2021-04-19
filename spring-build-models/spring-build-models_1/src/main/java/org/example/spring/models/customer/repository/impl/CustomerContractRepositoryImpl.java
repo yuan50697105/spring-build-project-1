@@ -1,7 +1,7 @@
 package org.example.spring.models.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.models.customer.builder.CustomerBuilder;
+import org.example.spring.models.customer.builder.CustomerModelBuilder;
 import org.example.spring.infrastructures.mysql.customer.dao.TCustomerContractDao;
 import org.example.spring.models.customer.entity.query.CustomerContractQuery;
 import org.example.spring.models.customer.entity.result.CustomerContract;
@@ -23,13 +23,13 @@ import java.util.Optional;
 @AllArgsConstructor
 @Transactional
 public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<CustomerContract, CustomerContractFormVo, CustomerContractDetails, CustomerContractQuery> implements CustomerContractRepository {
-    private final CustomerBuilder customerBuilder;
+    private final CustomerModelBuilder customerModelBuilder;
     private final TCustomerContractDao customerContractDao;
 
     @Override
     public Long saveWithId(CustomerContractFormVo customerContractFormVo) {
         CustomerContractVo contract = customerContractFormVo.getContract();
-        TCustomerContract entity = customerBuilder.buildCustomerContract(contract);
+        TCustomerContract entity = customerModelBuilder.buildCustomerContract(contract);
         customerContractDao.save(entity);
         return entity.getId();
     }
@@ -41,7 +41,7 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
         Optional<TCustomerContract> optional = customerContractDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TCustomerContract tCustomerContract = optional.get();
-            customerBuilder.copyCustomerContract(contract, tCustomerContract);
+            customerModelBuilder.copyCustomerContract(contract, tCustomerContract);
             customerContractDao.updateById(tCustomerContract);
         }
     }
@@ -53,37 +53,37 @@ public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<Customer
 
     @Override
     public CustomerContract getById(Long id) {
-        return customerBuilder.buildCustomerContractResult(customerContractDao.getById(id));
+        return customerModelBuilder.buildCustomerContractResult(customerContractDao.getById(id));
     }
 
     @Override
     public CustomerContractDetails getDetailsById(Long id) {
         CustomerContractDetails details = new CustomerContractDetails();
         TCustomerContract contract = customerContractDao.getById(id);
-        details.setContract(customerBuilder.buildCustomerContractResult(contract));
+        details.setContract(customerModelBuilder.buildCustomerContractResult(contract));
         details.setId(contract.getId());
         return details;
     }
 
     @Override
     public IPageData<CustomerContract> queryPage(CustomerContractQuery customerContractQuery) {
-        TCustomerContractQuery query = customerBuilder.buildCustomerContractQuery(customerContractQuery);
+        TCustomerContractQuery query = customerModelBuilder.buildCustomerContractQuery(customerContractQuery);
         IPageData<TCustomerContract> contract = customerContractDao.queryPage(query);
-        return customerBuilder.buildCustomerContractResult(contract);
+        return customerModelBuilder.buildCustomerContractResult(contract);
     }
 
     @Override
     public List<CustomerContract> queryList(CustomerContractQuery customerContractQuery) {
-        TCustomerContractQuery query = customerBuilder.buildCustomerContractQuery(customerContractQuery);
+        TCustomerContractQuery query = customerModelBuilder.buildCustomerContractQuery(customerContractQuery);
         List<TCustomerContract> contract = customerContractDao.queryList(query);
-        return customerBuilder.buildCustomerContractResult(contract);
+        return customerModelBuilder.buildCustomerContractResult(contract);
     }
 
     @Override
     public CustomerContract queryOne(CustomerContractQuery customerContractQuery) {
-        TCustomerContractQuery query = customerBuilder.buildCustomerContractQuery(customerContractQuery);
+        TCustomerContractQuery query = customerModelBuilder.buildCustomerContractQuery(customerContractQuery);
         TCustomerContract contract = customerContractDao.queryOne(query);
-        return customerBuilder.buildCustomerContractResult(contract);
+        return customerModelBuilder.buildCustomerContractResult(contract);
     }
 
     @Override

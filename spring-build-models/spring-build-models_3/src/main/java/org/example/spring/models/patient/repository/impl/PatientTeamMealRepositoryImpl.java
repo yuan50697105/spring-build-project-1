@@ -2,7 +2,7 @@ package org.example.spring.models.patient.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
-import org.example.spring.models.patient.builder.PatientBuilder;
+import org.example.spring.models.patient.builder.PatientModelBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientTeamMealCheckItemDao;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientTeamMealDao;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientTeamMealFeeItemDao;
@@ -27,7 +27,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 @AllArgsConstructor
 @Transactional
 public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTeamMeal, PatientTeamMealFormVo, PatientTeamMealDetails, PatientTeamMealQuery> implements PatientTeamMealRepository {
-    private final PatientBuilder patientBuilder;
+    private final PatientModelBuilder patientModelBuilder;
     private final TPatientTeamMealDao patientTeamMealDao;
     private final TPatientTeamMealFeeItemDao patientTeamMealFeeItemDao;
     private final TPatientTeamMealCheckItemDao patientTeamMealCheckItemDao;
@@ -36,7 +36,7 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
     @Override
     public Long saveWithId(final PatientTeamMealFormVo patientTeamMealFormVo) {
         PatientTeamMealVo meal = patientTeamMealFormVo.getMeal();
-        final TPatientTeamMeal patientTeamMeal = patientBuilder.buildPatientTeamMeal(meal);
+        final TPatientTeamMeal patientTeamMeal = patientModelBuilder.buildPatientTeamMeal(meal);
         patientTeamMealDao.save(patientTeamMeal);
         if (ObjectUtil.isNotEmpty(patientTeamMealFormVo.getFeeItems())) {
             executor.submit(() -> saveFeeItem(patientTeamMeal, patientTeamMealFormVo.getFeeItems()));
@@ -48,7 +48,7 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
         if (ObjectUtil.isNotEmpty(feeItemFormVos)) {
             for (final PatientTeamMealFeeItemFormVo feeItemFormVo : feeItemFormVos) {
                 PatientTeamMealFeeItemVo patientTeamMealFeeItemVo = feeItemFormVo.getFeeItem();
-                final TPatientTeamMealFeeItem entity = patientBuilder.buildPatientTeamMealFeeItem(patientTeamMealFeeItemVo);
+                final TPatientTeamMealFeeItem entity = patientModelBuilder.buildPatientTeamMealFeeItem(patientTeamMealFeeItemVo);
                 setMealFeeItem(patientTeamMeal, entity);
                 patientTeamMealFeeItemDao.save(entity);
                 if (ObjectUtil.isNotEmpty(feeItemFormVo.getCheckItems())) {
@@ -60,7 +60,7 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
 
     private void saveCheckItem(TPatientTeamMealFeeItem entity, List<PatientTeamMealCheckItemVo> checkItems) {
         for (PatientTeamMealCheckItemVo checkItem : checkItems) {
-            TPatientTeamMealCheckItem patientTeamMealCheckItem = patientBuilder.buildPatientTeamMealCheckItem(checkItem);
+            TPatientTeamMealCheckItem patientTeamMealCheckItem = patientModelBuilder.buildPatientTeamMealCheckItem(checkItem);
             setMealCheckItem(entity, patientTeamMealCheckItem);
             patientTeamMealCheckItemDao.save(patientTeamMealCheckItem);
         }
@@ -103,35 +103,35 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
 
     @Override
     public PatientTeamMeal getById(Long id) {
-        return patientBuilder.buildPatientTeamMealResult(patientTeamMealDao.getById(id));
+        return patientModelBuilder.buildPatientTeamMealResult(patientTeamMealDao.getById(id));
     }
 
     @Override
     public PatientTeamMealDetails getDetailsById(Long id) {
         PatientTeamMealDetails details = new PatientTeamMealDetails();
-        details.setMeal(patientBuilder.buildPatientTeamMealResult(patientTeamMealDao.getById(id)));
-        details.setFeeItem(patientBuilder.buildPatientTeamMealFeeItemResult(patientTeamMealFeeItemDao.listByTeamMealId(id)));
+        details.setMeal(patientModelBuilder.buildPatientTeamMealResult(patientTeamMealDao.getById(id)));
+        details.setFeeItem(patientModelBuilder.buildPatientTeamMealFeeItemResult(patientTeamMealFeeItemDao.listByTeamMealId(id)));
         return details;
     }
 
     @Override
     public IPageData<PatientTeamMeal> queryPage(PatientTeamMealQuery patientTeamMealQuery) {
-        TPatientTeamMealQuery query = patientBuilder.buildPatientTeamMealQuery(patientTeamMealQuery);
+        TPatientTeamMealQuery query = patientModelBuilder.buildPatientTeamMealQuery(patientTeamMealQuery);
         IPageData<TPatientTeamMeal> meal = patientTeamMealDao.queryPage(query);
-        return patientBuilder.buildPatientTeamMealResult(meal);
+        return patientModelBuilder.buildPatientTeamMealResult(meal);
     }
 
     @Override
     public List<PatientTeamMeal> queryList(PatientTeamMealQuery patientTeamMealQuery) {
-        TPatientTeamMealQuery query = patientBuilder.buildPatientTeamMealQuery(patientTeamMealQuery);
+        TPatientTeamMealQuery query = patientModelBuilder.buildPatientTeamMealQuery(patientTeamMealQuery);
         List<TPatientTeamMeal> meal = patientTeamMealDao.queryList(query);
-        return patientBuilder.buildPatientTeamMealResult(meal);
+        return patientModelBuilder.buildPatientTeamMealResult(meal);
     }
 
     @Override
     public PatientTeamMeal queryOne(PatientTeamMealQuery patientTeamMealQuery) {
-        TPatientTeamMealQuery query = patientBuilder.buildPatientTeamMealQuery(patientTeamMealQuery);
+        TPatientTeamMealQuery query = patientModelBuilder.buildPatientTeamMealQuery(patientTeamMealQuery);
         TPatientTeamMeal meal = patientTeamMealDao.queryFirst(query).orElse(new TPatientTeamMeal());
-        return patientBuilder.buildPatientTeamMealResult(meal);
+        return patientModelBuilder.buildPatientTeamMealResult(meal);
     }
 }

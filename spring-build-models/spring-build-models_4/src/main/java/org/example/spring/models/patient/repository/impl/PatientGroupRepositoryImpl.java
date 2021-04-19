@@ -1,7 +1,7 @@
 package org.example.spring.models.patient.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.models.patient.builder.PatientBuilder;
+import org.example.spring.models.patient.builder.PatientModelBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientGroupDao;
 import org.example.spring.models.patient.entity.query.PatientGroupQuery;
@@ -29,7 +29,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Transactional
 @CacheConfig(cacheNames = {"patient_group"})
 public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup, PatientGroupFormVo, PatientGroupDetails, PatientGroupQuery> implements PatientGroupRepository {
-    private final PatientBuilder patientBuilder;
+    private final PatientModelBuilder patientModelBuilder;
     private final TPatientGroupDao patientGroupDao;
     private final TPatientDao patientDao;
     private final ThreadPoolExecutor executor;
@@ -37,7 +37,7 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     @Override
     public Long saveWithId(final PatientGroupFormVo patientGroupFormVo) {
         PatientGroupVo group = patientGroupFormVo.getGroup();
-        TPatientGroup entity = patientBuilder.buildPatientGroup(group);
+        TPatientGroup entity = patientModelBuilder.buildPatientGroup(group);
         setExtra(patientGroupFormVo, entity);
         patientGroupDao.save(entity);
         return entity.getId();
@@ -57,7 +57,7 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
         Optional<TPatientGroup> optional = patientGroupDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TPatientGroup tPatientGroup = optional.get();
-            patientBuilder.copyPatientGroup(group, tPatientGroup);
+            patientModelBuilder.copyPatientGroup(group, tPatientGroup);
             setExtra(patientGroupFormVo, tPatientGroup);
             patientGroupDao.updateById(tPatientGroup);
         }
@@ -71,7 +71,7 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
 
     @Override
     public PatientGroup getById(Long id) {
-        return patientBuilder.buildPatientGroupResult(patientGroupDao.getById(id));
+        return patientModelBuilder.buildPatientGroupResult(patientGroupDao.getById(id));
     }
 
     @Override
@@ -79,29 +79,29 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     public PatientGroupDetails getDetailsById(Long id) {
         PatientGroupDetails details = new PatientGroupDetails();
         details.setId(id);
-        details.setGroup(patientBuilder.buildPatientGroupResult(patientGroupDao.getById(id)));
+        details.setGroup(patientModelBuilder.buildPatientGroupResult(patientGroupDao.getById(id)));
         return details;
     }
 
     @Override
     public IPageData<PatientGroup> queryPage(PatientGroupQuery patientGroupQuery) {
-        TPatientGroupQuery query = patientBuilder.buildPatientGroupQuery(patientGroupQuery);
+        TPatientGroupQuery query = patientModelBuilder.buildPatientGroupQuery(patientGroupQuery);
         IPageData<TPatientGroup> data = patientGroupDao.queryPage(query);
-        return patientBuilder.buildPatientGroupResult(data);
+        return patientModelBuilder.buildPatientGroupResult(data);
     }
 
     @Override
     public List<PatientGroup> queryList(PatientGroupQuery patientGroupQuery) {
-        TPatientGroupQuery query = patientBuilder.buildPatientGroupQuery(patientGroupQuery);
+        TPatientGroupQuery query = patientModelBuilder.buildPatientGroupQuery(patientGroupQuery);
         List<TPatientGroup> data = patientGroupDao.queryList(query);
-        return patientBuilder.buildPatientGroupResult(data);
+        return patientModelBuilder.buildPatientGroupResult(data);
     }
 
     @Override
     public PatientGroup queryOne(PatientGroupQuery patientGroupQuery) {
-        TPatientGroupQuery query = patientBuilder.buildPatientGroupQuery(patientGroupQuery);
+        TPatientGroupQuery query = patientModelBuilder.buildPatientGroupQuery(patientGroupQuery);
         TPatientGroup data = patientGroupDao.queryOne(query);
-        return patientBuilder.buildPatientGroupResult(data);
+        return patientModelBuilder.buildPatientGroupResult(data);
     }
 
 }

@@ -3,7 +3,7 @@ package org.example.spring.models.auth.repository.impl;
 import cn.hutool.core.exceptions.ValidateException;
 import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
-import org.example.spring.models.auth.builder.AuthBuilder;
+import org.example.spring.models.auth.builder.AuthModelBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TRoleDao;
 import org.example.spring.infrastructures.mysql.auth.dao.TUserDao;
 import org.example.spring.infrastructures.mysql.auth.dao.TUserRoleDao;
@@ -30,7 +30,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account,AccountFo
     private final TUserDao userDao;
     private final TRoleDao roleDao;
     private final TUserRoleDao userRoleDao;
-    private final AuthBuilder authBuilder;
+    private final AuthModelBuilder authModelBuilder;
     @Override
     public void save(AccountFormVo accountFormVo) {
         saveWithId(accountFormVo);
@@ -43,11 +43,11 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account,AccountFo
         List<String> roleName = accountFormVo.getRoleName();
         String username = accountFormVo.getUsername();
         validateUsername(username);
-        TUser entity = authBuilder.buildUser(account);
+        TUser entity = authModelBuilder.buildUser(account);
         userDao.save(entity);
         List<Long> existRoleIds = roleDao.listRoleIdsByRoleIdsOrRoleName(roleIds, roleName);
         Long userId = entity.getId();
-        userRoleDao.saveBatch(authBuilder.buildRoles(userId, existRoleIds));
+        userRoleDao.saveBatch(authModelBuilder.buildRoles(userId, existRoleIds));
         return userId;
     }
 
@@ -60,7 +60,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account,AccountFo
         Optional<TUser> optional = userDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TUser tUser = optional.get();
-            authBuilder.copyUser(account, tUser);
+            authModelBuilder.copyUser(account, tUser);
             userDao.updateById(tUser);
             if (!ObjectUtil.isAllEmpty(roleIds, roleName)) {
                 List<Long> existRoleIds = roleDao.listRoleIdsByRoleIdsOrRoleName(roleIds, roleName);
@@ -79,36 +79,36 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account,AccountFo
 
     @Override
     public Account getById(Long id) {
-        return authBuilder.buildAccount(userDao.getById(id));
+        return authModelBuilder.buildAccount(userDao.getById(id));
     }
 
     @Override
     public AccountDetails getDetailsById(Long id) {
         AccountDetails accountDetails = new AccountDetails();
-        accountDetails.setAccount(authBuilder.buildAccount(userDao.getById(id)));
-        accountDetails.setRoles(authBuilder.buildRoleResult(userRoleDao.listByUserId(id)));
+        accountDetails.setAccount(authModelBuilder.buildAccount(userDao.getById(id)));
+        accountDetails.setRoles(authModelBuilder.buildRoleResult(userRoleDao.listByUserId(id)));
         return accountDetails;
     }
 
     @Override
     public IPageData<Account> queryPage(AccountQuery accountQuery) {
-        TUserQuery query = authBuilder.buildAccountQuery(accountQuery);
+        TUserQuery query = authModelBuilder.buildAccountQuery(accountQuery);
         IPageData<TUser> data = userDao.queryPage(query);
-        return authBuilder.buildAccounts(data);
+        return authModelBuilder.buildAccounts(data);
     }
 
     @Override
     public List<Account> queryList(AccountQuery accountQuery) {
-        TUserQuery query = authBuilder.buildAccountQuery(accountQuery);
+        TUserQuery query = authModelBuilder.buildAccountQuery(accountQuery);
         List<TUser> data = userDao.queryList(query);
-        return authBuilder.buildAccounts(data);
+        return authModelBuilder.buildAccounts(data);
     }
 
     @Override
     public Account queryOne(AccountQuery accountQuery) {
-        TUserQuery query = authBuilder.buildAccountQuery(accountQuery);
+        TUserQuery query = authModelBuilder.buildAccountQuery(accountQuery);
         TUser data = userDao.queryOne(query);
-        return authBuilder.buildAccount(data);
+        return authModelBuilder.buildAccount(data);
     }
 
     private void validateUsername(String username) {

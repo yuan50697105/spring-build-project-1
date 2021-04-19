@@ -1,7 +1,7 @@
 package org.example.spring.models.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.models.customer.builder.CustomerBuilder;
+import org.example.spring.models.customer.builder.CustomerModelBuilder;
 import org.example.spring.infrastructures.mysql.customer.dao.TCustomerContractDao;
 import org.example.spring.infrastructures.mysql.customer.dao.TCustomerInfoDao;
 import org.example.spring.models.customer.entity.query.CustomerQuery;
@@ -25,7 +25,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @Transactional
 public class CustomerRepositoryImpl extends IBaseRepositoryImpl<Customer, CustomerFormVo, CustomerDetails, CustomerQuery> implements CustomerRepository {
-    private final CustomerBuilder customerBuilder;
+    private final CustomerModelBuilder customerModelBuilder;
     private final TCustomerInfoDao customerInfoDao;
     private final TCustomerContractDao customerContractDao;
 
@@ -33,7 +33,7 @@ public class CustomerRepositoryImpl extends IBaseRepositoryImpl<Customer, Custom
     @Override
     public Long saveWithId(CustomerFormVo customerFormVo) {
         CustomerVo customer = customerFormVo.getCustomer();
-        TCustomerInfo entity = customerBuilder.buildCustomerInfo(customer);
+        TCustomerInfo entity = customerModelBuilder.buildCustomerInfo(customer);
         customerInfoDao.save(entity);
         return entity.getId();
     }
@@ -45,7 +45,7 @@ public class CustomerRepositoryImpl extends IBaseRepositoryImpl<Customer, Custom
         Optional<TCustomerInfo> optional = customerInfoDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TCustomerInfo tCustomerInfo = optional.get();
-            customerBuilder.copyCustomerInfo(customer, tCustomerInfo);
+            customerModelBuilder.copyCustomerInfo(customer, tCustomerInfo);
             customerInfoDao.updateById(tCustomerInfo);
         }
     }
@@ -57,14 +57,14 @@ public class CustomerRepositoryImpl extends IBaseRepositoryImpl<Customer, Custom
 
     @Override
     public Customer getById(Long id) {
-        return customerBuilder.buildCustomerInfoResult(customerInfoDao.getById(id));
+        return customerModelBuilder.buildCustomerInfoResult(customerInfoDao.getById(id));
     }
 
     @Override
     public CustomerDetails getDetailsById(Long id) {
         CustomerDetails details = new CustomerDetails();
         TCustomerInfo customerInfo = customerInfoDao.getById(id);
-        Customer customer = customerBuilder.buildCustomerInfoResult(customerInfo);
+        Customer customer = customerModelBuilder.buildCustomerInfoResult(customerInfo);
         details.setCustomer(customer);
         details.setId(customer.getId());
         return details;
@@ -72,22 +72,22 @@ public class CustomerRepositoryImpl extends IBaseRepositoryImpl<Customer, Custom
 
     @Override
     public IPageData<Customer> queryPage(CustomerQuery customerQuery) {
-        TCustomerInfoQuery query = customerBuilder.buildCustomerInfoQuery(customerQuery);
+        TCustomerInfoQuery query = customerModelBuilder.buildCustomerInfoQuery(customerQuery);
         IPageData<TCustomerInfo> customerInfo = customerInfoDao.queryPage(query);
-        return customerBuilder.buildCustomerInfoResult(customerInfo);
+        return customerModelBuilder.buildCustomerInfoResult(customerInfo);
     }
 
     @Override
     public List<Customer> queryList(CustomerQuery customerQuery) {
-        TCustomerInfoQuery query = customerBuilder.buildCustomerInfoQuery(customerQuery);
+        TCustomerInfoQuery query = customerModelBuilder.buildCustomerInfoQuery(customerQuery);
         List<TCustomerInfo> customerInfo = customerInfoDao.queryList(query);
-        return customerBuilder.buildCustomerInfoResult(customerInfo);
+        return customerModelBuilder.buildCustomerInfoResult(customerInfo);
     }
 
     @Override
     public Customer queryOne(CustomerQuery customerQuery) {
-        TCustomerInfoQuery query = customerBuilder.buildCustomerInfoQuery(customerQuery);
+        TCustomerInfoQuery query = customerModelBuilder.buildCustomerInfoQuery(customerQuery);
         TCustomerInfo customerInfo = customerInfoDao.queryOne(query);
-        return customerBuilder.buildCustomerInfoResult(customerInfo);
+        return customerModelBuilder.buildCustomerInfoResult(customerInfo);
     }
 }

@@ -17,7 +17,7 @@ import org.mapstruct.*;
 import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
-public interface CustomerBuilder {
+public interface CustomerModelBuilder {
     TCustomerInfo buildCustomerInfo(CustomerVo customer);
 
     void copyCustomerInfo(CustomerVo customer, @MappingTarget TCustomerInfo tCustomerInfo);

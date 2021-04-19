@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
-public interface AuthBuilder {
+public interface AuthModelBuilder {
     TUser buildUser(AccountVo account);
 
     void copyUser(AccountVo account, @MappingTarget TUser tUser);

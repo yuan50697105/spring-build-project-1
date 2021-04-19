@@ -18,7 +18,7 @@ import org.mapstruct.*;
 import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
-public interface PatientBuilder {
+public interface PatientModelBuilder {
     TPatient buildPatient(PatientVo patient);
 
     void copyPatient(PatientVo patient, @MappingTarget TPatient tPatient);

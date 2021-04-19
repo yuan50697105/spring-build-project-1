@@ -1,7 +1,7 @@
 package org.example.spring.models.patient.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.models.patient.builder.PatientBuilder;
+import org.example.spring.models.patient.builder.PatientModelBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientGroupDao;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientMealDao;
@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 @AllArgsConstructor
 @Transactional
 public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, PatientTeamFormVo, PatientTeamDetails, PatientTeamQuery> implements PatientTeamRepository {
-    private final PatientBuilder patientBuilder;
+    private final PatientModelBuilder patientModelBuilder;
     private final TPatientTeamDao patientTeamDao;
     private final TPatientGroupDao patientGroupDao;
     private final TPatientDao patientDao;
@@ -46,7 +46,7 @@ public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, 
     @Override
     public Long saveWithId(PatientTeamFormVo patientTeamFormVo) {
         PatientTeamVo group = patientTeamFormVo.getTeam();
-        TPatientTeam entity = patientBuilder.buildPatientTeam(group);
+        TPatientTeam entity = patientModelBuilder.buildPatientTeam(group);
         patientTeamDao.save(entity);
         return entity.getId();
     }
@@ -58,7 +58,7 @@ public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, 
         Optional<TPatientTeam> optional = patientTeamDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TPatientTeam tPatientTeam = optional.get();
-            patientBuilder.copyPatientTeam(team, tPatientTeam);
+            patientModelBuilder.copyPatientTeam(team, tPatientTeam);
             patientTeamDao.updateById(tPatientTeam);
         }
     }
@@ -73,7 +73,7 @@ public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, 
 
     @Override
     public PatientTeam getById(Long id) {
-        return patientBuilder.buildPatientTeamResult(patientTeamDao.getById(id));
+        return patientModelBuilder.buildPatientTeamResult(patientTeamDao.getById(id));
     }
 
     @Override
@@ -82,28 +82,28 @@ public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, 
         PatientTeamDetails details = new PatientTeamDetails();
         TPatientTeam team = patientTeamDao.getById(id);
         details.setId(team.getId());
-        details.setTeam(patientBuilder.buildPatientTeamResult(team));
+        details.setTeam(patientModelBuilder.buildPatientTeamResult(team));
         return details;
     }
 
     @Override
     public IPageData<PatientTeam> queryPage(PatientTeamQuery patientTeamQuery) {
-        TPatientTeamQuery query = patientBuilder.buildPatientTeamQuery(patientTeamQuery);
+        TPatientTeamQuery query = patientModelBuilder.buildPatientTeamQuery(patientTeamQuery);
         IPageData<TPatientTeam> data = patientTeamDao.queryPage(query);
-        return patientBuilder.buildPatientTeamResult(data);
+        return patientModelBuilder.buildPatientTeamResult(data);
     }
 
     @Override
     public List<PatientTeam> queryList(PatientTeamQuery patientTeamQuery) {
-        TPatientTeamQuery query = patientBuilder.buildPatientTeamQuery(patientTeamQuery);
+        TPatientTeamQuery query = patientModelBuilder.buildPatientTeamQuery(patientTeamQuery);
         List<TPatientTeam> data = patientTeamDao.queryList(query);
-        return patientBuilder.buildPatientTeamResult(data);
+        return patientModelBuilder.buildPatientTeamResult(data);
     }
 
     @Override
     public PatientTeam queryOne(PatientTeamQuery patientTeamQuery) {
-        TPatientTeamQuery query = patientBuilder.buildPatientTeamQuery(patientTeamQuery);
+        TPatientTeamQuery query = patientModelBuilder.buildPatientTeamQuery(patientTeamQuery);
         TPatientTeam data = patientTeamDao.queryOne(query);
-        return patientBuilder.buildPatientTeamResult(data);
+        return patientModelBuilder.buildPatientTeamResult(data);
     }
 }

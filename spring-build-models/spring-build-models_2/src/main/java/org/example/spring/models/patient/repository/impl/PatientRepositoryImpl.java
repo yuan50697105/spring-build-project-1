@@ -8,7 +8,7 @@ import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuer
 import org.example.spring.models.enumerate.FeeItemType;
 import org.example.spring.models.enumerate.ItemSource;
 import org.example.spring.models.enumerate.PatientType;
-import org.example.spring.models.patient.builder.PatientBuilder;
+import org.example.spring.models.patient.builder.PatientModelBuilder;
 import org.example.spring.models.patient.entity.query.PatientQuery;
 import org.example.spring.models.patient.entity.result.Patient;
 import org.example.spring.models.patient.entity.result.PatientDetails;
@@ -39,19 +39,19 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     private final TPatientMealDao patientMealDao;
     private final TPatientFeeItemDao patientFeeItemDao;
     private final TPatientCheckItemDao patientCheckItemDao;
-    private final PatientBuilder patientBuilder;
+    private final PatientModelBuilder patientModelBuilder;
     private final ThreadPoolExecutor executor;
 
     public PatientRepositoryImpl(TPatientTeamDao patientTeamDao,
                                  TPatientGroupDao patientGroupDao,
-                                 TPatientMealDao patientMealDao, TPatientFeeItemDao patientFeeItemDao, PatientBuilder patientBuilder,
+                                 TPatientMealDao patientMealDao, TPatientFeeItemDao patientFeeItemDao, PatientModelBuilder patientModelBuilder,
                                  TPatientDao patientDao,
                                  TPatientCheckItemDao patientCheckItemDao, ThreadPoolExecutor executor) {
         this.patientTeamDao = patientTeamDao;
         this.patientGroupDao = patientGroupDao;
         this.patientMealDao = patientMealDao;
         this.patientFeeItemDao = patientFeeItemDao;
-        this.patientBuilder = patientBuilder;
+        this.patientModelBuilder = patientModelBuilder;
         this.patientDao = patientDao;
         this.patientCheckItemDao = patientCheckItemDao;
         this.executor = executor;
@@ -60,7 +60,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     @Override
     public Long saveWithId(final PatientFormVo patientFormVo) {
         PatientVo patient = patientFormVo.getPatient();
-        final TPatient entity = patientBuilder.buildPatient(patient);
+        final TPatient entity = patientModelBuilder.buildPatient(patient);
         addExtra(entity);
         patientDao.save(entity);
         if (ObjectUtil.isNotEmpty(patientFormVo.getMeal())) {
@@ -75,7 +75,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     }
 
     private void saveMealItem(final TPatient entity, final PatientMealFormVo meal) {
-        TPatientMeal patientMeal = patientBuilder.buildPatientMeal(meal.getMeal());
+        TPatientMeal patientMeal = patientModelBuilder.buildPatientMeal(meal.getMeal());
         patientMealDao.save(patientMeal);
         executor.submit(() -> saveFeeItem(entity, meal.getItems(), ItemSource.MEAL.getValue(),FeeItemType.PERSONAL.getValue()));
     }
@@ -87,7 +87,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     private void saveFeeItem(TPatient entity, List<PatientFeeItemFormVo> feeItems, String source, String type) {
         for (final PatientFeeItemFormVo feeItem : feeItems) {
             PatientFeeItemVo patientFeeItemVo = feeItem.getFeeItem();
-            final TPatientFeeItem tPatientFeeItem = patientBuilder.buildPatientFeeItem(patientFeeItemVo);
+            final TPatientFeeItem tPatientFeeItem = patientModelBuilder.buildPatientFeeItem(patientFeeItemVo);
             tPatientFeeItem.setPatientId(entity.getId());
             tPatientFeeItem.setSource(source);
             tPatientFeeItem.setType(type);
@@ -100,7 +100,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     private void saveCheckItem(TPatientFeeItem tPatientFeeItem, List<PatientCheckItemVo> checkItems, String source) {
         for (PatientCheckItemVo checkItem : checkItems) {
-            TPatientCheckItem entity = patientBuilder.buildPatientCheckItem(checkItem);
+            TPatientCheckItem entity = patientModelBuilder.buildPatientCheckItem(checkItem);
             entity.setPatientId(tPatientFeeItem.getPatientId());
             entity.setFeeItemId(tPatientFeeItem.getFeeItemId());
             entity.setMealId(tPatientFeeItem.getMealId());
@@ -116,7 +116,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         Optional<TPatient> optional = patientDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TPatient tPatient = optional.get();
-            patientBuilder.copyPatient(patient, tPatient);
+            patientModelBuilder.copyPatient(patient, tPatient);
             updateExtra(tPatient);
             patientDao.updateById(tPatient);
         }
@@ -130,7 +130,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     @Override
     public Patient getById(Long id) {
-        return patientBuilder.buildPatientResult(patientDao.getById(id));
+        return patientModelBuilder.buildPatientResult(patientDao.getById(id));
     }
 
     @Override
@@ -138,7 +138,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     public PatientDetails getDetailsById(Long id) {
         PatientDetails details = new PatientDetails();
         TPatient patient = patientDao.getById(id);
-        Patient patientResult = patientBuilder.buildPatientResult(patient);
+        Patient patientResult = patientModelBuilder.buildPatientResult(patient);
         details.setPatient(patientResult);
         details.setId(patient.getId());
         return details;
@@ -146,24 +146,24 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     @Override
     public IPageData<Patient> queryPage(PatientQuery patientQuery) {
-        TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
+        TPatientQuery query = patientModelBuilder.buildPatientQuery(patientQuery);
         IPageData<TPatient> queryPage = patientDao.queryPage(query);
-        return patientBuilder.buildPatientResult(queryPage);
+        return patientModelBuilder.buildPatientResult(queryPage);
     }
 
     @Override
     public List<Patient> queryList(PatientQuery patientQuery) {
-        TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
+        TPatientQuery query = patientModelBuilder.buildPatientQuery(patientQuery);
         List<TPatient> list = patientDao.queryList(query);
-        return patientBuilder.buildPatientResult(list);
+        return patientModelBuilder.buildPatientResult(list);
     }
 
     @Override
     public Patient queryOne(PatientQuery patientQuery) {
-        TPatientQuery query = patientBuilder.buildPatientQuery(patientQuery);
+        TPatientQuery query = patientModelBuilder.buildPatientQuery(patientQuery);
         Optional<TPatient> optional = patientDao.queryFirst(query);
         TPatient patient = optional.orElse(new Patient());
-        return patientBuilder.buildPatientResult(patient);
+        return patientModelBuilder.buildPatientResult(patient);
     }
 
     @SneakyThrows
