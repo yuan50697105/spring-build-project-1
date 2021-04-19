@@ -1,7 +1,7 @@
 package org.example.spring.plugins.commons.repository;
 
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,9 +12,7 @@ import java.util.Optional;
 @SuppressWarnings("UnusedReturnValue")
 public interface IBaseRepository<T, V, D, Q extends BaseQuery> {
 
-    default void save(V v) {
-        saveWithId(v);
-    }
+    void save(V v);
 
     Long saveWithId(V v);
 
@@ -24,15 +22,12 @@ public interface IBaseRepository<T, V, D, Q extends BaseQuery> {
 
     T getById(Long id);
 
-    default Optional<T> getByIdOpt(Long id) {
-        return Optional.ofNullable(getById(id));
-    }
+    Optional<T> getByIdOpt(Long id);
+
 
     D getDetailsById(Long id);
 
-    default Optional<D> getDetailsByIdOpt(Long id) {
-        return Optional.ofNullable(getDetailsById(id));
-    }
+    Optional<D> getDetailsByIdOpt(Long id);
 
     IPageData<T> queryPage(Q q);
 
@@ -40,21 +35,12 @@ public interface IBaseRepository<T, V, D, Q extends BaseQuery> {
 
     T queryOne(Q q);
 
-    default Optional<T> queryOneOpt(Q q) {
-        return Optional.ofNullable(queryOne(q));
-    }
+    Optional<T> queryOneOpt(Q q);
 
-    default List<T> queryTop(Q q, int size) {
-        q.setPage(1);
-        q.setSize(size);
-        return queryPage(q).getData();
-    }
+    List<T> queryTop(Q q, int size);
 
-    default T queryFirst(Q q) {
-        return queryTop(q, 1).stream().findFirst().orElse(null);
-    }
 
-    default Optional<T> queryFirstOpt(Q q) {
-        return Optional.ofNullable(queryFirst(q));
-    }
+    T queryFirst(Q q);
+
+    Optional<T> queryFirstOpt(Q q);
 }
