@@ -1,9 +1,11 @@
 package org.example.spring.models.patient.repository.impl;
 
+import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
+import org.example.spring.infrastructures.mysql.patient.dao.*;
+import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroup;
+import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
 import org.example.spring.models.patient.builder.PatientModelBuilder;
-import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
-import org.example.spring.infrastructures.mysql.patient.dao.TPatientGroupDao;
 import org.example.spring.models.patient.entity.query.PatientGroupQuery;
 import org.example.spring.models.patient.entity.result.PatientGroup;
 import org.example.spring.models.patient.entity.result.PatientGroupDetails;
@@ -11,8 +13,6 @@ import org.example.spring.models.patient.entity.vo.PatientGroupFormVo;
 import org.example.spring.models.patient.entity.vo.PatientGroupVo;
 import org.example.spring.models.patient.entity.vo.PatientTeamMealVo;
 import org.example.spring.models.patient.repository.PatientGroupRepository;
-import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroup;
-import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.cache.annotation.CacheConfig;
@@ -32,6 +32,9 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     private final PatientModelBuilder patientModelBuilder;
     private final TPatientGroupDao patientGroupDao;
     private final TPatientDao patientDao;
+    private final TPatientMealDao patientMealDao;
+    private final TPatientFeeItemDao patientFeeItemDao;
+    private final TPatientCheckItemDao patientCheckItemDao;
     private final ThreadPoolExecutor executor;
 
     @Override
@@ -40,7 +43,19 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
         TPatientGroup entity = patientModelBuilder.buildPatientGroup(group);
         setExtra(patientGroupFormVo, entity);
         patientGroupDao.save(entity);
+        savePatients(entity, patientGroupFormVo);
         return entity.getId();
+    }
+
+    private void savePatients(TPatientGroup entity, PatientGroupFormVo patientGroupFormVo) {
+        if (ObjectUtil.isNotEmpty(patientGroupFormVo.getPatients())) {
+            executor.submit(() -> {
+//                List<PatientVo> patients = patientGroupFormVo.getPatients();
+//                for (PatientVo patient : patients) {
+//                    patientDao.save(patient);
+//                }
+            });
+        }
     }
 
     private void setExtra(PatientGroupFormVo patientGroupFormVo, TPatientGroup entity) {

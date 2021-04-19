@@ -80,4 +80,9 @@ public interface PatientModelBuilder {
     TPatientMeal buildPatientMeal(PatientMealVo meal);
 
     TPatientCheckItem buildPatientCheckItem(PatientCheckItemVo checkItem);
+
+    @Mapping(target = "teamMealId", ignore = true)
+    @Mapping(target = "mealSource", ignore = true)
+    @Mapping(target = "groupId", ignore = true)
+    PatientMealVo buildPatientMeal(PatientTeamMealVo meal);
 }

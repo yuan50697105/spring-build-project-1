@@ -11,5 +11,7 @@ import java.util.List;
 public class PatientGroupFormVo extends IBaseVo {
     private PatientGroupVo group;
     private PatientTeamMealVo meal;
+    private List<PatientTeamMealFeeItemVo> feeItems;
+    private List<PatientTeamMealCheckItemVo> checkItems;
     private List<PatientVo> patients;
 }
