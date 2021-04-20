@@ -25,6 +25,10 @@
             <groupId>org.example.spring</groupId>
             <artifactId>spring-build-infrastructures-elasticsearch</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-infrastructures-mongodb</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
