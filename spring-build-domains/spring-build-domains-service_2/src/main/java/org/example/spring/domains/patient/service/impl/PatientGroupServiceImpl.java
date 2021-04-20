@@ -26,12 +26,6 @@ public class PatientGroupServiceImpl implements PatientGroupService {
 
     @Override
     public void save(PatientGroupFormVo formVo) {
-        PatientGroupVo group = formVo.getGroup();
-        Optional<PatientTeamDetails> patientTeamDetails = patientTeamRepository.getDetailsByIdOpt(group.getTeamId());
-        PatientTeam patientTeam = patientTeamDetails.map(PatientTeamDetails::getTeam).orElse(new PatientTeam());
-        group.setTeamId(patientTeam.getId());
-        Optional<PatientTeamMealDetails> patientTeamMealDetails = patientTeamMealRepository.getDetailsByIdOpt(group.getTeamMealId());
-        PatientTeamMeal patientTeamMeal = patientTeamMealDetails.map(PatientTeamMealDetails::getMeal).orElse(new PatientTeamMeal());
         patientGroupRepository.save(formVo);
     }
 

@@ -1,6 +1,5 @@
 package org.example.spring.models.patient.builder;
 
-import org.example.spring.models.enumerate.MealSource;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.models.patient.entity.query.PatientGroupQuery;
 import org.example.spring.models.patient.entity.query.PatientQuery;
@@ -70,8 +69,6 @@ public interface PatientModelBuilder {
 
     TPatientTeamMealFeeItem buildPatientTeamMealFeeItem(PatientTeamMealFeeItemVo feeItemVo);
 
-    List<TPatientTeamMealCheckItem> buildPatientTeamMealCheckItem(List<PatientTeamMealCheckItemVo> checkItems);
-
     TPatientTeamMealCheckItem buildPatientTeamMealCheckItem(PatientTeamMealCheckItemVo checkItem);
 
     List<PatientTeamMealFeeItem> buildPatientTeamMealFeeItemResult(List<TPatientTeamMealFeeItem> listByTeamMealId);
@@ -83,25 +80,4 @@ public interface PatientModelBuilder {
     TPatientCheckItem buildPatientCheckItem(PatientCheckItemVo checkItem);
 
 
-    default PatientMealVo buildPatientMeal(PatientTeamMealVo meal, Long id, Long groupId) {
-        PatientMealVo vo = buildPatientMealBuild(meal);
-        vo.setTeamMealId(meal.getId());
-        vo.setMealSource(MealSource.TEAM.getValue());
-        vo.setGroupId(groupId);
-        return vo;
-    }
-
-    @Mapping(target = "teamMealId", ignore = true)
-    @Mapping(target = "mealSource", ignore = true)
-    @Mapping(target = "groupId", ignore = true)
-    PatientMealVo buildPatientMealBuild(PatientTeamMealVo meal);
-
-    default TPatient buildGroupPatient(PatientVo patient, TPatientGroup entity) {
-        TPatient tPatient = buildPatient(patient);
-        tPatient.setTeamId(entity.getTeamId());
-        tPatient.setGroupId(entity.getId());
-        tPatient.setGroupCode(entity.getCode());
-        tPatient.setGroupName(entity.getName());
-        return tPatient;
-    }
 }

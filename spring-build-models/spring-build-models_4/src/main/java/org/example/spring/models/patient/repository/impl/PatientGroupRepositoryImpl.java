@@ -14,6 +14,8 @@ import org.example.spring.models.patient.entity.result.PatientGroup;
 import org.example.spring.models.patient.entity.result.PatientGroupDetails;
 import org.example.spring.models.patient.entity.vo.*;
 import org.example.spring.models.patient.repository.PatientGroupRepository;
+import org.example.spring.models.patient.repository.PatientRepository;
+import org.example.spring.models.patient.repository.PatientTeamRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.cache.annotation.CacheConfig;
@@ -24,6 +26,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.stream.Collectors;
 
 @Repository
 @AllArgsConstructor
@@ -33,9 +36,6 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     private final PatientModelBuilder patientModelBuilder;
     private final TPatientGroupDao patientGroupDao;
     private final TPatientDao patientDao;
-    private final TPatientMealDao patientMealDao;
-    private final TPatientFeeItemDao patientFeeItemDao;
-    private final TPatientCheckItemDao patientCheckItemDao;
     private final ThreadPoolExecutor executor;
 
     @Override
@@ -44,33 +44,7 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
         TPatientGroup entity = patientModelBuilder.buildPatientGroup(group);
         setExtra(patientGroupFormVo, entity);
         patientGroupDao.save(entity);
-        savePatients(entity, patientGroupFormVo);
         return entity.getId();
-    }
-
-    private void savePatients(TPatientGroup entity, PatientGroupFormVo patientGroupFormVo) {
-        if (ObjectUtil.isNotEmpty(patientGroupFormVo.getPatients())) {
-            executor.submit(() -> {
-//                List<PatientVo> patients = patientGroupFormVo.getPatients();
-//                PatientTeamMealVo meal = patientGroupFormVo.getMeal();
-//                List<PatientTeamMealFeeItemVo> feeItems = patientGroupFormVo.getFeeItems();
-//                List<PatientTeamMealCheckItemVo> checkItems = patientGroupFormVo.getCheckItems();
-//                for (PatientVo patient : patients) {
-//                    TPatient tPatient = patientModelBuilder.buildGroupPatient(patient, entity);
-//                    patientDao.save(tPatient);
-//                    patientMealDao.save(patientModelBuilder.buildPatientMeal(meal, entity.getId(), tPatient.getId()));
-//                    patientFeeItemDao.saveBatch(patientModelBuilder.buildPatientFeeItem())
-//                }
-            });
-        }
-    }
-
-    private void setPatient(TPatientGroup entity, PatientVo patient) {
-        patient.setTeamId(entity.getTeamId());
-        patient.setGroupId(entity.getId());
-        patient.setGroupCode(entity.getCode());
-        patient.setGroupName(entity.getName());
-        patient.setCustomerType(CustomerType.GENERAL.getValue());
     }
 
     private void setExtra(PatientGroupFormVo patientGroupFormVo, TPatientGroup entity) {
