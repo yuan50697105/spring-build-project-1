@@ -7,6 +7,6 @@ import org.example.spring.infrastructures.mysql.patient.table.po.TPatient;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 
 @Mapper
-@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class)
+@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class ,readWrite = false,blocking = true,flushInterval = 2000)
 public interface TPatientMapper extends IBaseMapper<TPatient> {
 }

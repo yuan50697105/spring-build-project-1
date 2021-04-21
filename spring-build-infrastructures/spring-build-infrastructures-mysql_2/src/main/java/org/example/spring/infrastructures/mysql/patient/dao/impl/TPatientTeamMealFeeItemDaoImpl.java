@@ -7,10 +7,12 @@ import org.example.spring.infrastructures.mysql.patient.mapper.TPatientTeamMealF
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeamMealFeeItem;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamMealFeeItemQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
+import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 @AllArgsConstructor
@@ -23,7 +25,7 @@ public class TPatientTeamMealFeeItemDaoImpl extends TkBaseDaoImpl<TPatientTeamMe
 
     @Override
     public boolean removeByTeamMealIds(List<Long> ids) {
-        return remove(lambdaQuery().in(TPatientTeamMealFeeItem::getTeamMealId, ids));
+        return removeByIds(lambdaQuery().in(TPatientTeamMealFeeItem::getTeamMealId,ids).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
     }
 
     @Override

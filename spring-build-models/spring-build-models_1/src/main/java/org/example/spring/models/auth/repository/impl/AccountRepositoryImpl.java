@@ -3,18 +3,18 @@ package org.example.spring.models.auth.repository.impl;
 import cn.hutool.core.exceptions.ValidateException;
 import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
-import org.example.spring.models.auth.builder.AuthModelBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TRoleDao;
 import org.example.spring.infrastructures.mysql.auth.dao.TUserDao;
 import org.example.spring.infrastructures.mysql.auth.dao.TUserRoleDao;
+import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
+import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
+import org.example.spring.models.auth.builder.AuthModelBuilder;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.result.Account;
 import org.example.spring.models.auth.entity.result.AccountDetails;
 import org.example.spring.models.auth.entity.vo.AccountFormVo;
 import org.example.spring.models.auth.entity.vo.AccountVo;
 import org.example.spring.models.auth.repository.AccountRepository;
-import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
-import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
@@ -31,12 +31,14 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account,AccountFo
     private final TRoleDao roleDao;
     private final TUserRoleDao userRoleDao;
     private final AuthModelBuilder authModelBuilder;
+
     @Override
     public void save(AccountFormVo accountFormVo) {
         saveWithId(accountFormVo);
     }
 
     @Override
+    @Transactional
     public Long saveWithId(AccountFormVo accountFormVo) {
         AccountVo account = accountFormVo.getAccount();
         List<Long> roleIds = accountFormVo.getRoleIds();
@@ -52,6 +54,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account,AccountFo
     }
 
     @Override
+    @Transactional
     public void update(AccountFormVo accountFormVo) {
         Long id = accountFormVo.getId();
         AccountVo account = accountFormVo.getAccount();

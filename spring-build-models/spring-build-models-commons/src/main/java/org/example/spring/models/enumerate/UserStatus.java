@@ -20,7 +20,8 @@ public enum UserStatus implements IBaseEnum {
     private final String code;
 
     public static UserStatus get(String value) {
-        return EnumUtil.likeValueOf(UserStatus.class, value);
+        UserStatus userStatus = EnumUtil.likeValueOf(UserStatus.class, value);
+        return userStatus;
     }
 
     @Override

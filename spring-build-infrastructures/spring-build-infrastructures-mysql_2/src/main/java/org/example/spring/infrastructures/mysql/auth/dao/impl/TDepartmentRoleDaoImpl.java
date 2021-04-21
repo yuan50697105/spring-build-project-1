@@ -8,10 +8,12 @@ import org.example.spring.infrastructures.mysql.auth.table.po.TDepartmentRole;
 import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
 import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentRoleQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
+import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 @AllArgsConstructor
@@ -25,12 +27,14 @@ public class TDepartmentRoleDaoImpl extends TkBaseDaoImpl<TDepartmentRole, TDepa
 
     @Override
     public boolean removeByDepartmentId(Long id) {
-        return remove(lambdaQuery().eq(TDepartmentRole::getDepartmentId, id));
+        List<Long> longs = lambdaQuery().eq(TDepartmentRole::getDepartmentId, id).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
+        return removeByIds(longs);
     }
 
     @Override
     public boolean removeByDepartmentIds(List<Long> ids) {
-        return remove(lambdaQuery().in(TDepartmentRole::getDepartmentId, ids));
+        List<Long> longs = lambdaQuery().in(TDepartmentRole::getDepartmentId, ids).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
+        return removeByIds(longs);
     }
 
     @Override

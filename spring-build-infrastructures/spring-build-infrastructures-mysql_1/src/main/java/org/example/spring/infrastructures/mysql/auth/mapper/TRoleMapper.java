@@ -7,6 +7,6 @@ import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 
 @Mapper
-@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class)
+@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class ,readWrite = false,blocking = true,flushInterval = 2000)
 public interface TRoleMapper extends IBaseMapper<TRole> {
 }

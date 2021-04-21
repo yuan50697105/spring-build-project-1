@@ -4,6 +4,8 @@ spring:
     username: yuanenzhi
     password: Root@123
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      auto-commit: true
   redis:
     host: 8.140.177.12
     password: root

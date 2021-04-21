@@ -7,7 +7,7 @@ import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 
 @Mapper
-@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class )
+@CacheNamespace(implementation = MybatisRedisCache.class,flushInterval = 2000)
 public interface TUserMapper extends IBaseMapper<TUser> {
     boolean existByUsername(String username);
 }

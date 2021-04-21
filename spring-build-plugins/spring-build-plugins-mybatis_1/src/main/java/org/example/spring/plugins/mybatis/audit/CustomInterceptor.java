@@ -33,31 +33,33 @@ public class CustomInterceptor implements Interceptor {
     public Object intercept(Invocation invocation) throws Throwable {
         MappedStatement statement = ((MappedStatement) invocation.getArgs()[0]);
         SqlCommandType sqlCommandType = statement.getSqlCommandType();
-        Object parameter = invocation.getArgs()[1];
-        if (parameter instanceof MapperMethod.ParamMap) {
-            parameter = ((MapperMethod.ParamMap<?>) parameter).get("et");
-        }
-        List<Field> fields = getAllField(parameter);
-        for (Field field : fields) {
-            if (field.getAnnotation(Id.class) != null || field.getName().equals(ID)) {
-                if (SqlCommandType.INSERT.equals(sqlCommandType)) {
-                    field.setAccessible(true);
-                    field.set(parameter, generator.nextId());
-                }
+        if (sqlCommandType.equals(SqlCommandType.INSERT)||sqlCommandType.equals(SqlCommandType.UPDATE)) {
+            Object parameter = invocation.getArgs()[1];
+            if (parameter instanceof MapperMethod.ParamMap) {
+                parameter = ((MapperMethod.ParamMap<?>) parameter).get("et");
             }
-            if (field.getAnnotation(CreateTime.class) != null || field.getName().equals(CREATE_DATE)) {
-                if (SqlCommandType.INSERT.equals(sqlCommandType)) {
-                    field.setAccessible(true);
-                    field.set(parameter, new Date());
+            List<Field> fields = getAllField(parameter);
+            for (Field field : fields) {
+                if (field.getAnnotation(Id.class) != null || field.getName().equals(ID)) {
+                    if (SqlCommandType.INSERT.equals(sqlCommandType)) {
+                        field.setAccessible(true);
+                        field.set(parameter, generator.nextId());
+                    }
                 }
-            }
-            if (field.getAnnotation(UpdateTime.class) != null || field.getName().equals(UPDATE_DATE)) {
-                if (SqlCommandType.INSERT.equals(sqlCommandType) || SqlCommandType.UPDATE.equals(sqlCommandType)) {
-                    field.setAccessible(true);
-                    field.set(parameter, new Date());
+                if (field.getAnnotation(CreateTime.class) != null || field.getName().equals(CREATE_DATE)) {
+                    if (SqlCommandType.INSERT.equals(sqlCommandType)) {
+                        field.setAccessible(true);
+                        field.set(parameter, new Date());
+                    }
                 }
-            }
+                if (field.getAnnotation(UpdateTime.class) != null || field.getName().equals(UPDATE_DATE)) {
+                    if (SqlCommandType.INSERT.equals(sqlCommandType) || SqlCommandType.UPDATE.equals(sqlCommandType)) {
+                        field.setAccessible(true);
+                        field.set(parameter, new Date());
+                    }
+                }
 
+            }
         }
         return invocation.proceed();
     }

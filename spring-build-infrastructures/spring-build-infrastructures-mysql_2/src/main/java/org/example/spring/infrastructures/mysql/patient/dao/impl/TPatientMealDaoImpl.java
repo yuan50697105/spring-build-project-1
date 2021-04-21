@@ -6,9 +6,11 @@ import org.example.spring.infrastructures.mysql.patient.mapper.TPatientMealMappe
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientMeal;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientMealQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
+import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class TPatientMealDaoImpl extends TkBaseDaoImpl<TPatientMeal, TPatientMealQuery, TPatientMealMapper> implements TPatientMealDao {
@@ -19,6 +21,6 @@ public class TPatientMealDaoImpl extends TkBaseDaoImpl<TPatientMeal, TPatientMea
 
     @Override
     public boolean removeByTeamIds(List<Long> teamIds) {
-        return remove(lambdaQuery().in(TPatientMeal::getTeamId, teamIds));
+        return removeByIds(lambdaQuery().in(TPatientMeal::getTeamId, teamIds).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
     }
 }
