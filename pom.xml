@@ -169,6 +169,7 @@
                 <version>2.8.2</version>
                 <configuration>
                     <deployAtEnd>true</deployAtEnd>
+                    <uniqueVersion>false</uniqueVersion>
                 </configuration>
             </plugin>
             <plugin>
