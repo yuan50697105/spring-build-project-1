@@ -50,6 +50,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <attach>false</attach>
+                </configuration>
             </plugin>
         </plugins>
     </build>
