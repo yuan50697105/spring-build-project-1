@@ -81,7 +81,6 @@ public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, 
     public PatientTeamDetails getDetailsById(Long id) {
         PatientTeamDetails details = new PatientTeamDetails();
         TPatientTeam team = patientTeamDao.getById(id);
-        details.setId(team.getId());
         details.setTeam(patientModelBuilder.buildPatientTeamResult(team));
         return details;
     }

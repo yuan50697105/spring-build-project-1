@@ -24,7 +24,7 @@ public class TResourceDaoImpl extends TkBaseDaoImpl<TResource, TResourceQuery, T
     }
 
     @Override
-    public List<Long> listPermissionIdsByPermissionIdsOrPermissionName(List<Long> permissionIds, List<String> permissionName) {
+    public List<Long> listResourceIdsByResourceIdsOrPermissionName(List<Long> permissionIds, List<String> permissionName) {
         return lambdaQuery().select(IBaseEntity::getId).and(wrapper -> {
             wrapper.or().in(IBaseEntity::getId, permissionIds);
             wrapper.or().in(TResource::getName, permissionName);
@@ -34,5 +34,10 @@ public class TResourceDaoImpl extends TkBaseDaoImpl<TResource, TResourceQuery, T
     @Override
     public boolean existChidByPids(List<Long> ids) {
         return baseMapper.existChidByPids(ids);
+    }
+
+    @Override
+    public List<Long> listResourceIdsByResourceIds(List<Long> resourceIds) {
+        return lambdaQuery().select(IBaseEntity::getId).in(IBaseEntity::getId, resourceIds).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
     }
 }

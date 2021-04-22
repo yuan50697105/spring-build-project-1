@@ -3,7 +3,7 @@ package org.example.spring.domains.auth.service;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.result.Account;
 import org.example.spring.models.auth.entity.result.AccountDetails;
-import org.example.spring.models.auth.entity.vo.AccountFormVo;
+import org.example.spring.models.auth.entity.vo.AccountModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
@@ -17,9 +17,9 @@ public interface AccountService {
 
     AccountDetails get(Long id);
 
-    void save(AccountFormVo formVo);
+    void save(AccountModelVo formVo);
 
-    void update(AccountFormVo formVo);
+    void update(AccountModelVo formVo);
 
     void delete(List<Long> ids);
 }

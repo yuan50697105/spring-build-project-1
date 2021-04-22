@@ -5,7 +5,7 @@ import org.example.spring.domains.auth.service.RoleService;
 import org.example.spring.models.auth.entity.query.RoleQuery;
 import org.example.spring.models.auth.entity.result.Role;
 import org.example.spring.models.auth.entity.result.RoleDetails;
-import org.example.spring.models.auth.entity.vo.RoleFormVo;
+import org.example.spring.models.auth.entity.vo.RoleModelVo;
 import org.example.spring.models.auth.repository.RoleRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
@@ -40,12 +40,12 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public void save(RoleFormVo formVo) {
+    public void save(RoleModelVo formVo) {
         roleRepository.save(formVo);
     }
 
     @Override
-    public void update(RoleFormVo formVo) {
+    public void update(RoleModelVo formVo) {
         roleRepository.update(formVo);
     }
 

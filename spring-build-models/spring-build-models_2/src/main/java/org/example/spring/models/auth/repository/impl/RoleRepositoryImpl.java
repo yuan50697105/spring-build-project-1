@@ -8,7 +8,7 @@ import org.example.spring.infrastructures.mysql.auth.dao.TRoleResourceDao;
 import org.example.spring.models.auth.entity.query.RoleQuery;
 import org.example.spring.models.auth.entity.result.Role;
 import org.example.spring.models.auth.entity.result.RoleDetails;
-import org.example.spring.models.auth.entity.vo.RoleFormVo;
+import org.example.spring.models.auth.entity.vo.RoleModelVo;
 import org.example.spring.models.auth.entity.vo.RoleVo;
 import org.example.spring.models.auth.repository.RoleRepository;
 import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
@@ -24,42 +24,40 @@ import java.util.Optional;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleFormVo, RoleDetails, RoleQuery> implements RoleRepository {
+public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleModelVo, RoleDetails, RoleQuery> implements RoleRepository {
     private final AuthModelBuilder authModelBuilder;
     private final TRoleDao roleDao;
     private final TResourceDao permissionDao;
     private final TRoleResourceDao rolePermissionDao;
 
     @Override
-    public void save(RoleFormVo roleFormVo) {
-        saveWithId(roleFormVo);
+    public void save(RoleModelVo roleModelVo) {
+        saveWithId(roleModelVo);
     }
 
     @Override
-    public Long saveWithId(RoleFormVo roleFormVo) {
-        RoleVo role = roleFormVo.getRole();
-        List<Long> permissionIds = roleFormVo.getPermissionIds();
-        List<String> permissionName = roleFormVo.getPermissionName();
+    public Long saveWithId(RoleModelVo roleModelVo) {
+        RoleVo role = roleModelVo.getRole();
+        List<Long> resourceIds = roleModelVo.getResourceIds();
         TRole entity = authModelBuilder.buildRole(role);
         roleDao.save(entity);
-        permissionIds = permissionDao.listPermissionIdsByPermissionIdsOrPermissionName(permissionIds, permissionName);
-        rolePermissionDao.saveNew(entity.getId(), permissionIds);
+        resourceIds = permissionDao.listResourceIdsByResourceIds(resourceIds);
+        rolePermissionDao.saveNew(entity.getId(), resourceIds);
         return entity.getId();
     }
 
     @Override
-    public void update(RoleFormVo roleFormVo) {
-        Long id = roleFormVo.getId();
-        RoleVo role = roleFormVo.getRole();
-        List<Long> permissionIds = roleFormVo.getPermissionIds();
-        List<String> permissionName = roleFormVo.getPermissionName();
+    public void update(RoleModelVo roleModelVo) {
+        Long id = roleModelVo.getId();
+        RoleVo role = roleModelVo.getRole();
+        List<Long> resourceIds = roleModelVo.getResourceIds();
         Optional<TRole> optional = roleDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TRole tRole = optional.get();
             authModelBuilder.copyRole(role, tRole);
             roleDao.updateById(tRole);
-            permissionIds = permissionDao.listPermissionIdsByPermissionIdsOrPermissionName(permissionIds, permissionName);
-            rolePermissionDao.saveUpdate(id, permissionIds);
+            resourceIds = permissionDao.listResourceIdsByResourceIds(resourceIds);
+            rolePermissionDao.saveUpdate(id, resourceIds);
         }
     }
 

@@ -75,7 +75,6 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     @Cacheable(key = "'details:'+#id")
     public PatientGroupDetails getDetailsById(Long id) {
         PatientGroupDetails details = new PatientGroupDetails();
-        details.setId(id);
         details.setGroup(patientModelBuilder.buildPatientGroupResult(patientGroupDao.getById(id)));
         return details;
     }

@@ -2,12 +2,11 @@ package org.example.spring.models.patient.entity.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.plugins.commons.entity.vo.IBaseVo;
+import org.example.spring.models.commons.entity.IModelVo;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PatientTeamFormVo extends IBaseVo {
+public class PatientTeamFormVo extends IModelVo {
     private PatientTeamVo team;
 
-    public abstract void setDefault();
 }

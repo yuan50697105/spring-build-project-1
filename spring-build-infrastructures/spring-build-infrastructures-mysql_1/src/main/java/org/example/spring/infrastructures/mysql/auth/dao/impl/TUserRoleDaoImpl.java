@@ -41,7 +41,8 @@ public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, T
 
     @Override
     public boolean removeByUserIds(List<Long> userIds) {
-        return removeByIds(lambdaQuery().in(TUserRole::getUserId, userIds).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
+        return remove(lambdaQuery().in(TUserRole::getUserId, userIds).select(IBaseEntity::getId));
+//        return removeByIds(lambdaQuery().in(TUserRole::getUserId, userIds).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
     }
 
     @Override

@@ -5,7 +5,7 @@ import org.example.spring.domains.auth.service.DepartmentService;
 import org.example.spring.models.auth.entity.query.DepartmentQuery;
 import org.example.spring.models.auth.entity.result.Department;
 import org.example.spring.models.auth.entity.result.DepartmentDetails;
-import org.example.spring.models.auth.entity.vo.DepartmentFormVo;
+import org.example.spring.models.auth.entity.vo.DepartmentModelVo;
 import org.example.spring.models.auth.repository.DepartmentRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
@@ -20,12 +20,12 @@ public class DepartmentServiceImpl implements DepartmentService {
     private final DepartmentRepository departmentRepository;
 
     @Override
-    public void save(DepartmentFormVo formVo) {
+    public void save(DepartmentModelVo formVo) {
         departmentRepository.save(formVo);
     }
 
     @Override
-    public void update(DepartmentFormVo formVo) {
+    public void update(DepartmentModelVo formVo) {
         departmentRepository.update(formVo);
     }
 

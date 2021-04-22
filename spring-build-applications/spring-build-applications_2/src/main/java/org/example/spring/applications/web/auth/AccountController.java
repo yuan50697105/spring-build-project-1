@@ -7,7 +7,7 @@ import org.example.spring.domains.auth.service.AccountService;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.result.Account;
 import org.example.spring.models.auth.entity.result.AccountDetails;
-import org.example.spring.models.auth.entity.vo.AccountFormVo;
+import org.example.spring.models.auth.entity.vo.AccountModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -53,21 +53,20 @@ public class AccountController {
     }
 
     @PostMapping
-    public Result<?> save(@RequestBody AccountFormVo formVo) {
+    public Result<?> save(@RequestBody AccountModelVo formVo) {
         accountService.save(formVo);
         return R.success();
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody AccountFormVo formVo) {
+    public Result<?> update(@RequestBody AccountModelVo formVo) {
         accountService.update(formVo);
         return R.success();
     }
 
     @PutMapping("{id}")
-    public Result<?> update(@RequestBody AccountFormVo formVo, @PathVariable Long id) {
-        formVo.setId(id);
-        accountService.update(formVo);
+    public Result<?> update(@RequestBody AccountModelVo formVo, @PathVariable Long id) {
+        accountService.update((AccountModelVo) formVo.withId(id));
         return R.success();
     }
 

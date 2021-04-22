@@ -1,5 +1,6 @@
 package org.example.spring.infrastructures.mysql.auth.dao.impl;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.dao.TRoleDao;
@@ -25,10 +26,15 @@ public class TRoleDaoImpl extends TkBaseDaoImpl<TRole, TRoleQuery, TRoleMapper> 
 
     @Override
     public List<Long> listRoleIdsByRoleIdsOrRoleName(List<Long> roleIds, List<String> roleName) {
-        return lambdaQuery().and(wrapper->{
-            wrapper.or().in(IBaseEntity::getId, roleIds);
-            wrapper.or().in(TRole::getName, roleName);
+        return lambdaQuery().and(wrapper-> {
+            wrapper.or().in(ObjectUtil.isNotEmpty(roleIds), IBaseEntity::getId, roleIds);
+            wrapper.or().in(ObjectUtil.isNotEmpty(roleName), TRole::getName, roleName);
         }).list().stream().map(IBaseEntity::getId).distinct().sorted().collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Long> listRoleIdsByRoleIds(List<Long> roleIds) {
+        return lambdaQuery().in(IBaseEntity::getId,roleIds).list().stream().map(IBaseEntity::getId).distinct().sorted().collect(Collectors.toList());
     }
 
 }

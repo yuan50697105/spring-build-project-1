@@ -7,7 +7,9 @@ import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import java.util.List;
 
 public interface TResourceDao extends TkBaseDao<TResource, TResourceQuery> {
-    List<Long> listPermissionIdsByPermissionIdsOrPermissionName(List<Long> permissionIds, List<String> permissionName);
+    List<Long> listResourceIdsByResourceIdsOrPermissionName(List<Long> permissionIds, List<String> permissionName);
 
     boolean existChidByPids(List<Long> ids);
+
+    List<Long> listResourceIdsByResourceIds(List<Long> resourceIds);
 }

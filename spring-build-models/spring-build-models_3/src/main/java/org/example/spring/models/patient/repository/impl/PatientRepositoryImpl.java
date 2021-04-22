@@ -140,7 +140,6 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         TPatient patient = patientDao.getById(id);
         Patient patientResult = patientModelBuilder.buildPatientResult(patient);
         details.setPatient(patientResult);
-        details.setId(patient.getId());
         return details;
     }
 

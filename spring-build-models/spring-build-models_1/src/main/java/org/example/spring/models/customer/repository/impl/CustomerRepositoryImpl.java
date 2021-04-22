@@ -66,7 +66,6 @@ public class CustomerRepositoryImpl extends IBaseRepositoryImpl<Customer, Custom
         TCustomerInfo customerInfo = customerInfoDao.getById(id);
         Customer customer = customerModelBuilder.buildCustomerInfoResult(customerInfo);
         details.setCustomer(customer);
-        details.setId(customer.getId());
         return details;
     }
 

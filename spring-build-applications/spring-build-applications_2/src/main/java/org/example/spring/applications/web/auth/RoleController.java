@@ -7,7 +7,7 @@ import org.example.spring.domains.auth.service.RoleService;
 import org.example.spring.models.auth.entity.query.RoleQuery;
 import org.example.spring.models.auth.entity.result.Role;
 import org.example.spring.models.auth.entity.result.RoleDetails;
-import org.example.spring.models.auth.entity.vo.RoleFormVo;
+import org.example.spring.models.auth.entity.vo.RoleModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -53,21 +53,20 @@ public class RoleController {
     }
 
     @PostMapping
-    public Result<?> save(@RequestBody RoleFormVo formVo) {
+    public Result<?> save(@RequestBody RoleModelVo formVo) {
         roleService.save(formVo);
         return R.success();
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody RoleFormVo formVo) {
+    public Result<?> update(@RequestBody RoleModelVo formVo) {
         roleService.update(formVo);
         return R.success();
     }
 
     @PutMapping("{id}")
-    public Result<?> update(@RequestBody RoleFormVo formVo, @PathVariable Long id) {
-        formVo.setId(id);
-        roleService.update(formVo);
+    public Result<?> update(@RequestBody RoleModelVo formVo, @PathVariable Long id) {
+        roleService.update((RoleModelVo) formVo.withId(id));
         return R.success();
     }
 

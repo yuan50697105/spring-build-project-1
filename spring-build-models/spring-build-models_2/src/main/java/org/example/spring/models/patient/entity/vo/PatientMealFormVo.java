@@ -2,15 +2,14 @@ package org.example.spring.models.patient.entity.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.plugins.commons.entity.vo.IBaseVo;
+import org.example.spring.models.commons.entity.IModelVo;
 
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PatientMealFormVo extends IBaseVo {
+public class PatientMealFormVo extends IModelVo {
     private PatientMealVo meal;
     private List<PatientFeeItemFormVo> items;
 
-    public abstract void setDefault();
 }

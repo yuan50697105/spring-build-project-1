@@ -2,12 +2,9 @@ package org.example.spring.models.patient.entity.result;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
-public class PatientGroupDetails extends IBaseVo {
+public class PatientGroupDetails {
     private PatientGroup group;
 
-    public abstract void setDefault();
 }
