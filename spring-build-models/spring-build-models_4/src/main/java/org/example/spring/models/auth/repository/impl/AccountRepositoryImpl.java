@@ -37,7 +37,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
     public Long saveWithId(final AccountModelVo accountModelVo) {
         accountModelVo.saveValidate();
         accountModelVo.setSaveDefault();
-        TUser account = accountModelVo.getUser();
+        TUser account = accountModelVo.getUserForSave();
         userDao.save(account);
         final Long userId = account.getId();
         if (ObjectUtil.isNotEmpty(accountModelVo.getRoleIds())) {
@@ -55,7 +55,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
     @Transactional
     public void update(AccountModelVo accountModelVo) {
         Long id = accountModelVo.getId();
-        TUser account = accountModelVo.getUser();
+        TUser account = accountModelVo.getUserForSave();
         List<Long> roleIds = accountModelVo.getRoleIds();
         Optional<TUser> optional = userDao.getByIdOpt(id);
         if (optional.isPresent()) {

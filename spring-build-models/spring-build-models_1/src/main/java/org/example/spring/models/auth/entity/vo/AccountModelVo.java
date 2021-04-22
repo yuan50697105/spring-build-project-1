@@ -45,7 +45,7 @@ public class AccountModelVo extends IModelVo {
     private Set<Long> roleIds;
 
     public void saveValidate() throws ValidationException {
-        if (ObjectUtil.isNotEmpty(getUsername())) {
+        if (ObjectUtil.isEmpty(getUsername())) {
             throw new ValidationException("username 不能为空");
         }
     }
@@ -59,7 +59,7 @@ public class AccountModelVo extends IModelVo {
     }
 
     @JsonIgnore
-    public TUser getUser() {
+    public TUser getUserForSave() {
         TUser tUser = new TUser();
         tUser.setStatus(status);
         tUser.setUsername(username);
