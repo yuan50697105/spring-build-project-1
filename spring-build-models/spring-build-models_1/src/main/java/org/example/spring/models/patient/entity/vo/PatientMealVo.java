@@ -3,7 +3,7 @@ package org.example.spring.models.patient.entity.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.models.enumerate.MealType;
+import org.example.spring.models.commons.enumerate.MealType;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientMeal;
 
 import javax.validation.constraints.NotEmpty;

@@ -8,4 +8,6 @@ import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 @Data
 public class CustomerContractDetails extends IBaseVo {
     private CustomerContract contract;
+
+    public abstract void setDefault();
 }

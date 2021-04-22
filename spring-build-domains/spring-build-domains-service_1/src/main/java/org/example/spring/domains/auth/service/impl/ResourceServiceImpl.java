@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import org.example.spring.domains.auth.service.ResourceService;
 import org.example.spring.models.auth.entity.query.ResourceQuery;
 import org.example.spring.models.auth.entity.result.ResourceDetails;
-import org.example.spring.models.auth.entity.vo.ResourceFormVo;
+import org.example.spring.models.auth.entity.vo.ResourceModelVo;
 import org.example.spring.models.auth.repository.ResourceRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,12 +34,12 @@ public class ResourceServiceImpl implements ResourceService {
     }
 
     @Override
-    public void save(ResourceFormVo formVo) {
+    public void save(ResourceModelVo formVo) {
         resourceRepository.save(formVo);
     }
 
     @Override
-    public void update(ResourceFormVo formVo) {
+    public void update(ResourceModelVo formVo) {
         resourceRepository.update(formVo);
     }
 

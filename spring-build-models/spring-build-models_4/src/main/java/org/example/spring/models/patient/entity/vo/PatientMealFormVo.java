@@ -11,4 +11,6 @@ import java.util.List;
 public class PatientMealFormVo extends IBaseVo {
     private PatientMealVo meal;
     private List<PatientFeeItemFormVo> items;
+
+    public abstract void setDefault();
 }

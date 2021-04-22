@@ -5,7 +5,7 @@ import org.example.spring.domains.auth.service.AccountService;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.result.Account;
 import org.example.spring.models.auth.entity.result.AccountDetails;
-import org.example.spring.models.auth.entity.vo.AccountFormVo;
+import org.example.spring.models.auth.entity.vo.AccountModelVo;
 import org.example.spring.models.auth.repository.AccountRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
@@ -40,12 +40,12 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void save(AccountFormVo formVo) {
+    public void save(AccountModelVo formVo) {
         accountRepository.save(formVo);
     }
 
     @Override
-    public void update(AccountFormVo formVo) {
+    public void update(AccountModelVo formVo) {
         accountRepository.update(formVo);
     }
 

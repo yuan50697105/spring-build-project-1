@@ -12,4 +12,6 @@ public class PatientFormVo extends IBaseVo {
     private PatientVo patient;
     private PatientMealFormVo meal;
     private List<PatientFeeItemFormVo> feeItems;
+
+    public abstract void setDefault();
 }

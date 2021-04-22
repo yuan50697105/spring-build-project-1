@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import org.example.spring.domains.auth.service.ResourceService;
 import org.example.spring.models.auth.entity.query.ResourceQuery;
 import org.example.spring.models.auth.entity.result.ResourceDetails;
-import org.example.spring.models.auth.entity.vo.ResourceFormVo;
+import org.example.spring.models.auth.entity.vo.ResourceModelVo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
@@ -37,20 +37,20 @@ public class ResourceController {
     }
 
     @PostMapping
-    public Result<?> save(@RequestBody ResourceFormVo formVo) {
+    public Result<?> save(@RequestBody ResourceModelVo formVo) {
         resourceService.save(formVo);
         return R.success();
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody ResourceFormVo formVo) {
+    public Result<?> update(@RequestBody ResourceModelVo formVo) {
         resourceService.update(formVo);
         return R.success();
     }
 
 
     @PutMapping("{id}")
-    public Result<?> update(@PathVariable Long id,@RequestBody ResourceFormVo formVo) {
+    public Result<?> update(@PathVariable Long id,@RequestBody ResourceModelVo formVo) {
         formVo.setId(id);
         resourceService.update(formVo);
         return R.success();

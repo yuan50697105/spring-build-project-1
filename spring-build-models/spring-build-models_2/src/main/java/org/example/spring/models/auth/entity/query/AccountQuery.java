@@ -2,7 +2,7 @@ package org.example.spring.models.auth.entity.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.models.enumerate.UserStatus;
+import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
 import java.io.Serializable;

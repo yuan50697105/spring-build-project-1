@@ -8,4 +8,6 @@ import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 @Data
 public class PatientTeamDetails extends IBaseVo {
     private PatientTeam team;
+
+    public abstract void setDefault();
 }

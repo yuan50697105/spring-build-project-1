@@ -27,4 +27,6 @@ public class RoleFormVo extends IBaseVo {
     public List<String> getPermissionName() {
         return permissions.stream().map(TResource::getName).collect(Collectors.toList());
     }
+
+    public abstract void setDefault();
 }

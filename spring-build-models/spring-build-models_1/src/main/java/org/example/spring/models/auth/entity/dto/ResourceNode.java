@@ -3,7 +3,7 @@ package org.example.spring.models.auth.entity.dto;
 import cn.hutool.core.lang.tree.TreeNode;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.models.enumerate.ResourceType;
+import org.example.spring.models.commons.enumerate.ResourceType;
 
 import java.io.Serializable;
 import java.util.Optional;

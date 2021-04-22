@@ -14,4 +14,6 @@ public class PatientGroupFormVo extends IBaseVo {
     private List<PatientTeamMealFeeItemVo> feeItems;
     private List<PatientTeamMealCheckItemVo> checkItems;
     private List<PatientVo> patients;
+
+    public abstract void setDefault();
 }

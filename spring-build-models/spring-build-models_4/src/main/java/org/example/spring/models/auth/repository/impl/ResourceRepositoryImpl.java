@@ -13,13 +13,13 @@ import org.example.spring.models.auth.entity.query.ResourceQuery;
 import org.example.spring.models.auth.entity.result.Resource;
 import org.example.spring.models.auth.entity.result.ResourceDetails;
 import org.example.spring.models.auth.entity.dto.ResourceNode;
-import org.example.spring.models.auth.entity.vo.ResourceFormVo;
+import org.example.spring.models.auth.entity.vo.ResourceModelVo;
 import org.example.spring.models.auth.entity.vo.ResourceVo;
 import org.example.spring.models.auth.repository.ResourceRepository;
 import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
 import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,28 +29,28 @@ import java.util.Optional;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, ResourceFormVo, ResourceDetails, ResourceQuery> implements ResourceRepository {
+public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, ResourceModelVo, ResourceDetails, ResourceQuery> implements ResourceRepository {
     private final TResourceDao resourceDao;
     private final TRoleResourceDao rolePermissionDao;
     private final AuthModelBuilder authModelBuilder;
     private final UserResourceDao userResourceDao;
 
     @Override
-    public Long saveWithId(ResourceFormVo resourceFormVo) {
-        ResourceVo permission = resourceFormVo.getPermission();
-        TResource entity = authModelBuilder.buildPermission(permission);
+    public Long saveWithId(ResourceModelVo resourceModelVo) {
+        ResourceVo resouce = resourceModelVo.getResource();
+        TResource entity = authModelBuilder.buildPermission(resouce);
         resourceDao.save(entity);
         return entity.getId();
     }
 
     @Override
-    public void update(ResourceFormVo resourceFormVo) {
-        Long id = resourceFormVo.getId();
-        ResourceVo permission = resourceFormVo.getPermission();
+    public void update(ResourceModelVo resourceModelVo) {
+        Long id = resourceModelVo.getId();
+        ResourceVo resouce = resourceModelVo.getResource();
         Optional<TResource> optional = resourceDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TResource tResource = optional.get();
-            authModelBuilder.copyResource(permission, tResource);
+            authModelBuilder.copyResource(resouce, tResource);
             resourceDao.updateById(tResource);
         }
     }

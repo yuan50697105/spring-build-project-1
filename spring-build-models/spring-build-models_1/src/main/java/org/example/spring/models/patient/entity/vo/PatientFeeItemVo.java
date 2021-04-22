@@ -2,8 +2,8 @@ package org.example.spring.models.patient.entity.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.models.enumerate.ItemSource;
-import org.example.spring.models.enumerate.FeeItemType;
+import org.example.spring.models.commons.enumerate.ItemSource;
+import org.example.spring.models.commons.enumerate.FeeItemType;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientFeeItem;
 
 import java.util.Optional;

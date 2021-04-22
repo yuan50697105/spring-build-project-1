@@ -1,6 +1,5 @@
 package org.example.spring.plugins.commons.entity.vo;
 
-import cn.hutool.core.convert.Convert;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.StringSerializer;
 import lombok.Data;
@@ -11,7 +10,7 @@ import javax.validation.constraints.NotEmpty;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class IBaseVo extends BaseEntity {
+public abstract class IBaseVo extends BaseEntity {
     @NotEmpty(groups = {Update.class})
     @JsonSerialize(contentUsing = StringSerializer.class)
     private Long id;

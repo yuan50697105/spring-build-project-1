@@ -9,4 +9,5 @@ import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 public class CustomerFormVo extends IBaseVo {
     private CustomerVo customer;
 
+    public abstract void setDefault();
 }

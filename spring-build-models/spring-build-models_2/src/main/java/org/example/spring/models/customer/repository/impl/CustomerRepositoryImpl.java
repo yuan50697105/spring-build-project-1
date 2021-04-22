@@ -13,7 +13,7 @@ import org.example.spring.models.customer.repository.CustomerRepository;
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
 import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerInfoQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

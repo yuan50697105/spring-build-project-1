@@ -11,4 +11,6 @@ import java.util.List;
 public class PatientFeeItemFormVo extends IBaseVo {
     private PatientFeeItemVo feeItem;
     private List<PatientCheckItemVo> checkItems;
+
+    public abstract void setDefault();
 }

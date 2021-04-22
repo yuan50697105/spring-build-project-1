@@ -7,7 +7,7 @@ import org.example.spring.domains.auth.service.DepartmentService;
 import org.example.spring.models.auth.entity.query.DepartmentQuery;
 import org.example.spring.models.auth.entity.result.Department;
 import org.example.spring.models.auth.entity.result.DepartmentDetails;
-import org.example.spring.models.auth.entity.vo.DepartmentFormVo;
+import org.example.spring.models.auth.entity.vo.DepartmentModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -49,20 +49,20 @@ public class DepartmentController {
     }
 
     @PostMapping
-    public Result<?> save(@RequestBody DepartmentFormVo formVo) {
+    public Result<?> save(@RequestBody DepartmentModelVo formVo) {
         departmentService.save(formVo);
         return R.success();
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody DepartmentFormVo formVo) {
+    public Result<?> update(@RequestBody DepartmentModelVo formVo) {
         departmentService.update(formVo);
         return R.success();
     }
 
     @PutMapping("{id}")
-    public Result<?> update(@RequestBody DepartmentFormVo formVo, @PathVariable Long id) {
-        departmentService.update((DepartmentFormVo) formVo.withId(id));
+    public Result<?> update(@RequestBody DepartmentModelVo formVo, @PathVariable Long id) {
+        departmentService.update((DepartmentModelVo) formVo.withId(id));
         return R.success();
     }
 

@@ -17,11 +17,11 @@ import org.example.spring.models.auth.entity.dto.DepartmentNode;
 import org.example.spring.models.auth.entity.query.DepartmentQuery;
 import org.example.spring.models.auth.entity.result.Department;
 import org.example.spring.models.auth.entity.result.DepartmentDetails;
-import org.example.spring.models.auth.entity.vo.DepartmentFormVo;
+import org.example.spring.models.auth.entity.vo.DepartmentModelVo;
 import org.example.spring.models.auth.entity.vo.DepartmentVo;
 import org.example.spring.models.auth.repository.DepartmentRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.plugins.commons.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,7 +34,7 @@ import java.util.stream.Collectors;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, DepartmentFormVo, DepartmentDetails, DepartmentQuery> implements DepartmentRepository {
+public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, DepartmentModelVo, DepartmentDetails, DepartmentQuery> implements DepartmentRepository {
     private final AuthModelBuilder authModelBuilder;
     private final TDepartmentDao departmentDao;
     private final TRoleDao roleDao;
@@ -42,42 +42,42 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
     private final ThreadPoolExecutor executor;
 
     @Override
-    public Long saveWithId(DepartmentFormVo departmentFormVo) {
-        DepartmentVo department = departmentFormVo.getDepartment();
+    public Long saveWithId(DepartmentModelVo departmentModelVo) {
+        DepartmentVo department = departmentModelVo.getDepartment();
         TDepartment entity = authModelBuilder.buildAccountDepartment(department);
         departmentDao.save(entity);
-        if (ObjectUtil.isNotEmpty(departmentFormVo.getDepartment())) {
-            executor.submit(() -> saveRole(departmentFormVo, entity));
+        if (ObjectUtil.isNotEmpty(departmentModelVo.getDepartment())) {
+            executor.submit(() -> saveRole(departmentModelVo, entity));
         }
         return entity.getId();
     }
 
-    private void saveRole(DepartmentFormVo roles, TDepartment entity) {
+    private void saveRole(DepartmentModelVo roles, TDepartment entity) {
         Long id = entity.getId();
-        List<Long> roleIds = roleDao.listRoleIdsByRoleIdsOrRoleName(roles.getRoleIds(), roles.getRoleName());
+        List<Long> roleIds = roleDao.listRoleIdsByRoleIds(roles.getRoleIds());
         List<TDepartmentRole> departmentRoleList = roleIds.stream().map(roleId -> authModelBuilder.buildDepartmentRole(id, roleId)).collect(Collectors.toList());
         departmentRoleDao.saveBatch(departmentRoleList);
     }
 
     @Override
-    public void update(DepartmentFormVo departmentFormVo) {
-        Long id = departmentFormVo.getId();
-        DepartmentVo department = departmentFormVo.getDepartment();
+    public void update(DepartmentModelVo departmentModelVo) {
+        Long id = departmentModelVo.getId();
+        DepartmentVo department = departmentModelVo.getDepartment();
         Optional<TDepartment> optional = departmentDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TDepartment tDepartment = optional.get();
             authModelBuilder.copyDepartment(department, tDepartment);
             departmentDao.updateById(tDepartment);
-            if (ObjectUtil.isNotEmpty(departmentFormVo.getRoles())) {
-                executor.submit(() -> updateRole(department, departmentFormVo));
+            if (ObjectUtil.isNotEmpty(departmentModelVo.getRoleIds())) {
+                executor.submit(() -> updateRole(department, departmentModelVo));
             }
         }
     }
 
-    private void updateRole(DepartmentVo department, DepartmentFormVo departmentFormVo) {
+    private void updateRole(DepartmentVo department, DepartmentModelVo departmentModelVo) {
         Long id = department.getId();
         departmentRoleDao.removeByDepartmentId(id);
-        saveRole(departmentFormVo, department);
+        saveRole(departmentModelVo, department);
     }
 
     @Override

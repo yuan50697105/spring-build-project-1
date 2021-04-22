@@ -8,4 +8,6 @@ import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 @Data
 public class SellerInfoDetails extends IBaseVo {
     private SellerInfo seller;
+
+    public abstract void setDefault();
 }
