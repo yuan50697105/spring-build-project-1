@@ -7,4 +7,8 @@ public interface TkBaseDao<T, Q extends TkBaseQuery<T>> extends EBaseDao<T, Q, E
     boolean removeByExample(Example example);
 
     boolean deleteByExample(Example example);
+
+    boolean update(T t, Example example);
+
+    boolean updateSelective(T t, Example example);
 }

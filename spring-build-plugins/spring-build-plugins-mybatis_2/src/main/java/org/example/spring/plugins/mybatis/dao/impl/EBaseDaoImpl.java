@@ -17,6 +17,7 @@ import org.example.spring.plugins.mybatis.entity.query.EBaseQuery;
 import org.example.spring.plugins.mybatis.entity.result.IPageResult;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 import org.springframework.scheduling.annotation.Async;
+import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;
 import java.util.Collection;

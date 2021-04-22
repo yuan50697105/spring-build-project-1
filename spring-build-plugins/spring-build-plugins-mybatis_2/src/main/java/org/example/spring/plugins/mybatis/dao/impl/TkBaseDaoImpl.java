@@ -17,6 +17,10 @@ public abstract class TkBaseDaoImpl<T, Q extends TkBaseQuery<T>, M extends IBase
         return (Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), 2);
     }
 
+    protected Example.Builder exampleBuilder(){
+        return Example.builder(entityClass);
+    }
+
     @Override
     public boolean removeByExample(Example example) {
         return SqlHelper.retBool(baseMapper.deleteByExample(example));
@@ -25,6 +29,17 @@ public abstract class TkBaseDaoImpl<T, Q extends TkBaseQuery<T>, M extends IBase
     @Override
     public boolean deleteByExample(Example example) {
         return SqlHelper.retBool(baseMapper.deleteByExample(example));
+    }
+
+
+    @Override
+    public boolean update(T t, Example example) {
+        return SqlHelper.retBool(baseMapper.updateByExample(t, example));
+    }
+
+    @Override
+    public boolean updateSelective(T t, Example example) {
+        return SqlHelper.retBool(baseMapper.updateByExampleSelective(t, example));
     }
 
     @Override
