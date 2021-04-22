@@ -45,7 +45,7 @@ public class AccountModelVo extends IModelVo {
     private Set<Long> roleIds;
 
     public void saveValidate() throws ValidationException {
-        if (ObjectUtil.isNotEmpty(username)) {
+        if (ObjectUtil.isNotEmpty(getUsername())) {
             throw new ValidationException("username 不能为空");
         }
     }
