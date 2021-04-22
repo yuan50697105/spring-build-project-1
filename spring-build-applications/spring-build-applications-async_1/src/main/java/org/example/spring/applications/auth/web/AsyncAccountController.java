@@ -1,4 +1,4 @@
-package org.example.spring.applications.web.async.auth;
+package org.example.spring.applications.auth.web;
 
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
@@ -24,10 +24,9 @@ public class AsyncAccountController {
     private final AccountService accountService;
 
     @GetMapping
-    public WebAsyncTask<Result<List<Account>>> queryPage(AccountQuery query) {
+    public WebAsyncTask<Result<IPageData<Account>>> queryPage(AccountQuery query) {
         return new WebAsyncTask<>(() -> {
-            IPageData<Account> data = accountService.queryPage(query);
-            return R.success(data.getTotalRowNum(), data.getData());
+            return R.success(accountService.queryPage(query));
         });
     }
 
