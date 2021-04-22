@@ -60,6 +60,10 @@ public interface AuthModelBuilder {
 
     List<ResourceNode> buildPermissionToResrouceNode(List<TResource> permissions);
 
+    @Mapping(target = "parentId", source = "pid")
+    @Mapping(target = "extra", ignore = true)
+    ResourceNode buildPermissionToResrouceNode(TResource permissions);
+
     void copyDepartment(TDepartment department, @MappingTarget TDepartment tDepartment);
 
     Department buildDepartmentResult(TDepartment department);

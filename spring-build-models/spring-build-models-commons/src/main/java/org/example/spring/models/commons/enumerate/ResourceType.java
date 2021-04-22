@@ -11,12 +11,12 @@ import org.example.spring.plugins.commons.converter.IBaseEnum;
 @AllArgsConstructor
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum ResourceType implements IBaseEnum {
-    MENU("菜单", "001", 1),
-    SUB_MENU("子菜单", "002", 2),
-    BUTTON("按钮", "003", 3);
+    MENU("菜单", "001", "1"),
+    SUB_MENU("子菜单", "002", "2"),
+    BUTTON("按钮", "003", "3");
     private final String name;
     private final String value;
-    private final Integer code;
+    private final String code;
 
     @JsonCreator
     public static ResourceType get(String value) {

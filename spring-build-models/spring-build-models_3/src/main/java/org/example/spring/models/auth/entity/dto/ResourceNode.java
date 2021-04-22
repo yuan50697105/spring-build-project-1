@@ -15,7 +15,8 @@ public class ResourceNode extends TreeNode<Long> implements Serializable {
     private String url;
     private String type;
 
-    public String getValue() {
+    public String getType() {
         return Optional.ofNullable(ResourceType.get(type)).map(ResourceType::getName).orElse(null);
     }
+
 }

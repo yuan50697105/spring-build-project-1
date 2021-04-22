@@ -24,6 +24,9 @@ import java.util.List;
 @Mapper(config = BaseBuilder.class)
 public interface AuthModelBuilder {
 
+    @Mapping(target = "username", ignore = true)
+    @Mapping(target = "password", ignore = true)
+    @Mapping(target = "status", ignore = true)
     void copyUser(TUser account, @MappingTarget TUser tUser);
 
     TUserQuery buildAccountQuery(AccountQuery accountQuery);
@@ -56,6 +59,10 @@ public interface AuthModelBuilder {
 
 
     List<ResourceNode> buildPermissionToResrouceNode(List<TResource> permissions);
+
+    @Mapping(target = "parentId", source = "pid")
+    @Mapping(target = "extra", ignore = true)
+    ResourceNode buildPermissionToResrouceNode(TResource permissions);
 
     void copyDepartment(TDepartment department, @MappingTarget TDepartment tDepartment);
 

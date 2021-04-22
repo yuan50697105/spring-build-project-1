@@ -114,8 +114,8 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
 
     private NodeParser<ResourceNode, Long> getNodeParser() {
         return (object, treeNode) -> {
-            BeanUtil.copyProperties(object, treeNode);
             BeanUtil.beanToMap(object).forEach(treeNode::putExtra);
+            BeanUtil.copyProperties(object, treeNode);
         };
     }
 }

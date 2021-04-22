@@ -8,7 +8,7 @@ import org.mapstruct.control.DeepClone;
         , componentModel = "spring"
         , nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL
         , nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE
-        , nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS
+        , nullValueCheckStrategy = NullValueCheckStrategy.ON_IMPLICIT_CONVERSION
         , unmappedSourcePolicy = ReportingPolicy.IGNORE
         , unmappedTargetPolicy = ReportingPolicy.IGNORE
         , mappingControl = DeepClone.class
@@ -16,4 +16,5 @@ import org.mapstruct.control.DeepClone;
         , injectionStrategy = InjectionStrategy.FIELD
 )
 public interface BaseBuilder {
+
 }

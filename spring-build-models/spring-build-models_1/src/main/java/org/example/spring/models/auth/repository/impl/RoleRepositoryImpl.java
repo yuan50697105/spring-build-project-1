@@ -42,7 +42,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleModelVo, R
         final List<Long> resourceIds = roleModelVo.getResourceIds();
         roleDao.save(role);
         if (ObjectUtil.isNotEmpty(roleModelVo.getResourceIds())) {
-            executor.submit(() -> saveResource(resourceIds, role.getId()));
+            executor.execute(() -> saveResource(resourceIds, role.getId()));
         }
         return role.getId();
     }
