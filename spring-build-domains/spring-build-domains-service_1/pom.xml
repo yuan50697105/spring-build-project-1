@@ -18,5 +18,9 @@
             <artifactId>spring-build-models_1</artifactId>
             <version>0.0.5-SNAPSHOT</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.example.spring</groupId>-->
+<!--            <artifactId>spring-build-plugins-wx</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 </project>

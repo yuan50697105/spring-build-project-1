@@ -40,3 +40,14 @@ minio:
   endpoint: http://8.140.177.12:9001/
   secret-key: root
   access-key: root
+wx:
+  pay:
+    apiv3-key:
+    app-id:
+    cert-serial-no:
+    key-path:
+    mch-id:
+    mch-key:
+    pay-score-notify-url:
+    private-cert-path:
+    private-key-path:
