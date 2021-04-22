@@ -1,0 +1,11 @@
+version: '3'
+services:
+  admin-async-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: admin:2-async
+    container_name: damin-async-2
+    hostname: damin-async-2
+    ports:
+    - 8180:8080

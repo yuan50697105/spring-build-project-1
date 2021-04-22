@@ -4,7 +4,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.mybatis.entity.query.EBaseQuery;
 
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
@@ -28,9 +31,9 @@ public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
 
     Optional<T> queryOneOpt(Q query);
 
-    boolean updateAllById(T t);
+    boolean update(T t);
 
-    boolean updateSelectiveById(T t);
+    boolean updateSelective(T t);
 
     boolean updateNotNullColumnsBatchById(List<T> listForUpdate);
 
@@ -44,9 +47,17 @@ public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
 
     boolean remove(Q q);
 
-    boolean updateAll(T t, Q q);
+    boolean update(T t, Q q);
 
     boolean updateSelective(T t, Q q);
 
     boolean insertSetColumnsBatch(List<T> list);
+
+    boolean deleteByMap(Map<String, Object> map);
+
+    boolean delete(Q q);
+
+    boolean deleteById(Serializable id);
+
+    boolean deleteByIds(Collection<? extends Serializable> ids);
 }

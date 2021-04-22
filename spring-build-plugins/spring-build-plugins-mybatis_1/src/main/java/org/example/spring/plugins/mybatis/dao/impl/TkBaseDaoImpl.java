@@ -1,6 +1,8 @@
 package org.example.spring.plugins.mybatis.dao.impl;
 
 import cn.hutool.core.util.StrUtil;
+import com.baomidou.mybatisplus.core.toolkit.ReflectionKit;
+import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
 import org.example.spring.plugins.commons.entity.query.OrderTypeEnum;
 import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
@@ -8,6 +10,23 @@ import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 import tk.mybatis.mapper.entity.Example;
 
 public abstract class TkBaseDaoImpl<T, Q extends TkBaseQuery<T>, M extends IBaseMapper<T>> extends EBaseDaoImpl<T, Q, Example, M> implements TkBaseDao<T, Q> {
+
+    @SuppressWarnings("unchecked")
+    @Override
+    protected Class<T> currentMapperClass() {
+        return (Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), 2);
+    }
+
+    @Override
+    public boolean removeByExample(Example example) {
+        return SqlHelper.retBool(baseMapper.deleteByExample(example));
+    }
+
+    @Override
+    public boolean deleteByExample(Example example) {
+        return SqlHelper.retBool(baseMapper.deleteByExample(example));
+    }
+
     @Override
     protected Example exampleAddOrder(Q query, Example example) {
         example = super.exampleAddOrder(query, example);

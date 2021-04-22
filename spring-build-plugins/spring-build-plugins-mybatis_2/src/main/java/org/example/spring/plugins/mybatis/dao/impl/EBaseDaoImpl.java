@@ -5,30 +5,45 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.ReflectionKit;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.entity.query.OrderTypeEnum;
 import org.example.spring.plugins.mybatis.dao.EBaseDao;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.mybatis.entity.query.EBaseQuery;
 import org.example.spring.plugins.mybatis.entity.result.IPageResult;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 import org.springframework.scheduling.annotation.Async;
 
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 /**
  * @author yuane
  */
+@SuppressWarnings("unchecked")
 public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBaseMapper<T>> extends ServiceImpl<M, T> implements EBaseDao<T, Q, E> {
     @Override
     public Optional<T> getByIdOpt(Long id) {
         return Optional.ofNullable(getById(id));
     }
 
+    @Override
+    protected Class<T> currentMapperClass() {
+        return (Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), 3);
+    }
+
+    @Override
+    protected Class<T> currentModelClass() {
+        return (Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), 0);
+    }
 
     @Override
     @Async
@@ -131,51 +146,49 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
         }
     }
 
-    @SuppressWarnings("deprecation")
     @Override
-    public boolean updateAllById(T t) {
-        return retBool(baseMapper.updateByPrimaryKey(t));
-    }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public boolean updateSelectiveById(T t) {
-        return retBool(baseMapper.updateByPrimaryKeySelective(t));
+    public boolean update(T t) {
+        return SqlHelper.retBool(baseMapper.updateByPrimaryKey(t));
     }
 
     @Override
-    public boolean updateAll(T t, Q q) {
-        return retBool(baseMapper.updateByExample(t, q.toExample()));
+    public boolean updateSelective(T t) {
+        return SqlHelper.retBool(baseMapper.updateByPrimaryKeySelective(t));
+    }
+
+    @Override
+    public boolean update(T t, Q q) {
+        return SqlHelper.retBool(baseMapper.updateByExample(t, q.toExample()));
     }
 
     @Override
     public boolean updateSelective(T t, Q q) {
-        return retBool(baseMapper.updateByExampleSelective(t, q.toExample()));
+        return SqlHelper.retBool(baseMapper.updateByExampleSelective(t, q.toExample()));
     }
 
     @Override
     public boolean updateNotNullColumnsBatchById(List<T> listForUpdate) {
-        return retBool(baseMapper.updateNotNullColumnsBatchById(listForUpdate));
+        return SqlHelper.retBool(baseMapper.updateNotNullColumnsBatchById(listForUpdate));
     }
 
     @Override
     public boolean updateSetColumnsBatchById(List<T> list) {
-        return retBool(baseMapper.updateSetColumnsBatchById(list));
+        return SqlHelper.retBool(baseMapper.updateSetColumnsBatchById(list));
     }
 
     @Override
     public boolean insertSetColumnsBatch(List<T> list) {
-        return retBool(baseMapper.insertSetColumnsBatch(list));
+        return SqlHelper.retBool(baseMapper.insertSetColumnsBatch(list));
     }
 
     @Override
     public boolean insertNotNullColumnsBatch(List<T> list) {
-        return retBool(baseMapper.insertNotNullColumnsBatch(list));
+        return SqlHelper.retBool(baseMapper.insertNotNullColumnsBatch(list));
     }
 
     @Override
     public boolean insertSelective(T t) {
-        return retBool(baseMapper.insertSelective(t));
+        return SqlHelper.retBool(baseMapper.insertSelective(t));
     }
 
     @Override
@@ -185,7 +198,27 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
 
     @Override
     public boolean remove(Q q) {
-        return retBool(baseMapper.deleteByExample(q.toExample()));
+        return SqlHelper.retBool(baseMapper.deleteByExample(q.toExample()));
+    }
+
+    @Override
+    public boolean deleteByMap(Map<String, Object> map) {
+        return removeByMap(map);
+    }
+
+    @Override
+    public boolean delete(Q q) {
+        return remove(q);
+    }
+
+    @Override
+    public boolean deleteById(Serializable id) {
+        return removeById(id);
+    }
+
+    @Override
+    public boolean deleteByIds(Collection<? extends Serializable> ids) {
+        return removeByIds(ids);
     }
 
     public boolean isNotEmpty(Object object) {
@@ -194,11 +227,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
 
     protected abstract Wrapper<T> queryWrapper(Q q);
 
-    protected <T> IPageData<T> pageData(PageInfo<T> pageInfo) {
+    protected IPageData<T> pageData(PageInfo<T> pageInfo) {
         return new IPageResult<>(pageInfo);
     }
 
-    protected <T> IPageData<T> pageData(IPage<T> iPage) {
+    protected IPageData<T> pageData(IPage<T> iPage) {
         return new IPageResult<>(iPage);
     }
 }

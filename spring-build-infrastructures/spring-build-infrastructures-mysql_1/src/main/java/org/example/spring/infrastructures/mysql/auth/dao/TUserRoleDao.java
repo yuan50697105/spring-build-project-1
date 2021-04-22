@@ -12,7 +12,7 @@ public interface TUserRoleDao extends TkBaseDao<TUserRole, TUserRoleQuery> {
 
     boolean updateUserRole(Long id, List<Long> existRoleIds);
 
-    void removeByUserId(Long id);
+    boolean removeByUserId(Long id);
 
     boolean removeByUserIds(List<Long> userIds);
 

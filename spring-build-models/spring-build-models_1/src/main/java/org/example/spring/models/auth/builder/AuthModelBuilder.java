@@ -24,6 +24,9 @@ import java.util.List;
 @Mapper(config = BaseBuilder.class)
 public interface AuthModelBuilder {
 
+    @Mapping(target = "username", ignore = true)
+    @Mapping(target = "password", ignore = true)
+    @Mapping(target = "status", ignore = true)
     void copyUser(TUser account, @MappingTarget TUser tUser);
 
     TUserQuery buildAccountQuery(AccountQuery accountQuery);

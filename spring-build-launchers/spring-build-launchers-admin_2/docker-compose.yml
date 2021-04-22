@@ -1,0 +1,11 @@
+version: '3'
+services:
+  admin-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: admin:2
+    container_name: damin-2
+    hostname: damin-2
+    ports:
+    - 8380:8080

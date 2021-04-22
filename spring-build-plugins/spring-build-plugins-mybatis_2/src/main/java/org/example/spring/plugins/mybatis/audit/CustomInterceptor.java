@@ -2,11 +2,15 @@ package org.example.spring.plugins.mybatis.audit;
 
 import com.github.Generator;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.binding.MapperMethod;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlCommandType;
-import org.apache.ibatis.plugin.*;
+import org.apache.ibatis.plugin.Interceptor;
+import org.apache.ibatis.plugin.Intercepts;
+import org.apache.ibatis.plugin.Invocation;
+import org.apache.ibatis.plugin.Signature;
 import org.example.spring.plugins.mybatis.audit.annotation.CreateTime;
 import org.example.spring.plugins.mybatis.audit.annotation.Id;
 import org.example.spring.plugins.mybatis.audit.annotation.UpdateTime;
@@ -24,6 +28,7 @@ import java.util.*;
 @Component
 @Intercepts({@Signature(type = Executor.class, method = "update", args = {MappedStatement.class, Object.class})})
 @AllArgsConstructor
+@Slf4j
 public class CustomInterceptor implements Interceptor {
     private static final String ID = "id";
     private static final String CREATE_DATE = "createDate";
@@ -64,10 +69,6 @@ public class CustomInterceptor implements Interceptor {
         return invocation.proceed();
     }
 
-//    @Override
-//    public Object plugin(Object target) {
-//        return Plugin.wrap(target, this);
-//    }
 
     @Override
     public void setProperties(Properties properties) {
