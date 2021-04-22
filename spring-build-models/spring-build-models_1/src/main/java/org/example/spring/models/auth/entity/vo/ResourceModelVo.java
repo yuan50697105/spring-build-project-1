@@ -2,6 +2,7 @@ package org.example.spring.models.auth.entity.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
 import org.example.spring.models.commons.entity.IModelVo;
 
 @EqualsAndHashCode(callSuper = true)
@@ -40,13 +41,13 @@ public class ResourceModelVo extends IModelVo {
     private Integer weight;
 
 
-    public ResourceVo getResource() {
-        ResourceVo resourceVo = new ResourceVo();
-        resourceVo.setName(name);
-        resourceVo.setType(type);
-        resourceVo.setUrl(url);
-        resourceVo.setPid(pid);
-        resourceVo.setWeight(weight);
-        return resourceVo;
+    public TResource getResource() {
+        TResource resource = new TResource();
+        resource.setName(name);
+        resource.setType(type);
+        resource.setUrl(url);
+        resource.setPid(pid);
+        resource.setWeight(weight);
+        return resource;
     }
 }

@@ -1,8 +1,10 @@
 package org.example.spring.models.auth.entity.vo;
 import cn.hutool.core.util.ObjectUtil;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
 import org.example.spring.models.commons.entity.IModelVo;
 import org.example.spring.models.commons.enumerate.UserStatus;
 
@@ -56,12 +58,15 @@ public class AccountModelVo extends IModelVo {
         return new ArrayList<>(roleIds);
     }
 
-    public AccountVo getAccount() {
-        AccountVo accountVo = new AccountVo();
-        accountVo.setStatus(UserStatus.Normal.getValue());
-        accountVo.setUsername(username);
-        accountVo.setName(name);
-        accountVo.setPassword(password);
-        return accountVo;
+    @JsonIgnore
+    public TUser getUser() {
+        TUser tUser = new TUser();
+        tUser.setStatus(status);
+        tUser.setUsername(username);
+        tUser.setName(name);
+        tUser.setPassword(password);
+        return tUser;
     }
+
+
 }

@@ -2,6 +2,8 @@ package org.example.spring.models.auth.entity.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.infrastructures.mysql.auth.table.po.TDepartment;
+import org.example.spring.infrastructures.mysql.auth.table.vo.DepartmentVo;
 import org.example.spring.models.commons.entity.IModelVo;
 
 import java.util.List;
@@ -30,11 +32,11 @@ public class DepartmentModelVo extends IModelVo {
     private Long pid;
     private List<Long> roleIds;
 
-    public DepartmentVo getDepartment() {
-        DepartmentVo departmentVo = new DepartmentVo();
-        departmentVo.setName(name);
-        departmentVo.setCode(code);
-        departmentVo.setPid(pid);
-        return departmentVo;
+    public TDepartment getDepartment() {
+        TDepartment department = new TDepartment();
+        department.setName(name);
+        department.setCode(code);
+        department.setPid(pid);
+        return department;
     }
 }

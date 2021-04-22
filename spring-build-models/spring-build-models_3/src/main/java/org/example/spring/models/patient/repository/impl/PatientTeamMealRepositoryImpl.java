@@ -2,6 +2,9 @@ package org.example.spring.models.patient.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
+import org.example.spring.infrastructures.mysql.patient.table.vo.PatientTeamMealCheckItemVo;
+import org.example.spring.infrastructures.mysql.patient.table.vo.PatientTeamMealFeeItemVo;
+import org.example.spring.infrastructures.mysql.patient.table.vo.PatientTeamMealVo;
 import org.example.spring.models.patient.builder.PatientModelBuilder;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientTeamMealCheckItemDao;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientTeamMealDao;

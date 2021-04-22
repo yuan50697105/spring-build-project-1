@@ -1,8 +1,9 @@
 package org.example.spring.models.auth.entity.vo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
 import org.example.spring.models.commons.entity.IModelVo;
-import org.example.spring.plugins.commons.entity.vo.IBaseVo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +21,11 @@ public class RoleModelVo extends IModelVo {
         return new ArrayList<>(resourceIds);
     }
 
-    public RoleVo getRole() {
-        RoleVo roleVo = new RoleVo();
-        roleVo.setName(name);
-        return roleVo;
+    @JsonIgnore
+    public TRole getRole() {
+        TRole tRole = new TRole();
+        tRole.setName(name);
+        return tRole;
     }
 
 }

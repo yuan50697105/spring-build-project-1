@@ -2,6 +2,7 @@ package org.example.spring.models.patient.entity.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.infrastructures.mysql.patient.table.vo.*;
 import org.example.spring.models.commons.entity.IModelVo;
 
 import java.util.List;

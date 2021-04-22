@@ -5,7 +5,6 @@ import org.example.spring.domains.patient.service.PatientGroupService;
 import org.example.spring.models.patient.entity.query.PatientGroupQuery;
 import org.example.spring.models.patient.entity.result.*;
 import org.example.spring.models.patient.entity.vo.PatientGroupFormVo;
-import org.example.spring.models.patient.entity.vo.PatientGroupVo;
 import org.example.spring.models.patient.repository.PatientGroupRepository;
 import org.example.spring.models.patient.repository.PatientTeamMealRepository;
 import org.example.spring.models.patient.repository.PatientTeamRepository;

@@ -10,7 +10,7 @@ import org.example.spring.models.patient.entity.query.PatientTeamQuery;
 import org.example.spring.models.patient.entity.result.PatientTeam;
 import org.example.spring.models.patient.entity.result.PatientTeamDetails;
 import org.example.spring.models.patient.entity.vo.PatientTeamFormVo;
-import org.example.spring.models.patient.entity.vo.PatientTeamVo;
+import org.example.spring.infrastructures.mysql.patient.table.vo.PatientTeamVo;
 import org.example.spring.models.patient.repository.PatientTeamRepository;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamQuery;

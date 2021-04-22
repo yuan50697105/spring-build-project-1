@@ -1,6 +1,7 @@
 package org.example.spring.infrastructures.mysql.auth.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.builder.AuthBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TUserRoleDao;
@@ -9,7 +10,6 @@ import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
 import org.example.spring.infrastructures.mysql.auth.table.po.TUserRole;
 import org.example.spring.infrastructures.mysql.auth.table.query.TUserRoleQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,14 +34,23 @@ public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, T
 
     @Override
     @Transactional
-    public boolean saveUpdate(Long id, List<Long> existRoleIds) {
-        remove(lambdaQuery().eq(TUserRole::getUserId, id));
+    public boolean updateUserRole(Long id, List<Long> existRoleIds) {
+        removeByUserId(id);
         return saveBatch(authBuilder.buildRoles(id, existRoleIds));
     }
 
     @Override
+    public void removeByUserId(Long id) {
+        LambdaQueryWrapper<TUserRole> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(TUserRole::getUserId, id);
+        remove(lambdaQueryWrapper);
+    }
+
+    @Override
     public boolean removeByUserIds(List<Long> userIds) {
-        return remove(lambdaQuery().in(TUserRole::getUserId, userIds).select(IBaseEntity::getId));
+        LambdaQueryWrapper<TUserRole> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.in(TUserRole::getUserId, userIds);
+        return remove(queryWrapper);
 //        return removeByIds(lambdaQuery().in(TUserRole::getUserId, userIds).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
     }
 

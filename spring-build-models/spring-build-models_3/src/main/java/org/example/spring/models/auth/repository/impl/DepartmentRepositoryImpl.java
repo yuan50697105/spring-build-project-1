@@ -18,7 +18,6 @@ import org.example.spring.models.auth.entity.query.DepartmentQuery;
 import org.example.spring.models.auth.entity.result.Department;
 import org.example.spring.models.auth.entity.result.DepartmentDetails;
 import org.example.spring.models.auth.entity.vo.DepartmentModelVo;
-import org.example.spring.models.auth.entity.vo.DepartmentVo;
 import org.example.spring.models.auth.repository.DepartmentRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
@@ -43,18 +42,17 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
 
     @Override
     public Long saveWithId(DepartmentModelVo departmentModelVo) {
-        DepartmentVo department = departmentModelVo.getDepartment();
-        TDepartment entity = authModelBuilder.buildAccountDepartment(department);
-        departmentDao.save(entity);
-        if (ObjectUtil.isNotEmpty(departmentModelVo.getDepartment())) {
-            executor.submit(() -> saveRole(departmentModelVo, entity));
+        TDepartment department = departmentModelVo.getDepartment();
+        List<Long> roleIds = departmentModelVo.getRoleIds();
+        departmentDao.save(department);
+        if (ObjectUtil.isNotEmpty(roleIds)) {
+            executor.submit(() -> saveRole(roleIds, department.getId()));
         }
-        return entity.getId();
+        return department.getId();
     }
 
-    private void saveRole(DepartmentModelVo roles, TDepartment entity) {
-        Long id = entity.getId();
-        List<Long> roleIds = roleDao.listRoleIdsByRoleIds(roles.getRoleIds());
+    private void saveRole(List<Long> rolesRoleIds, Long id) {
+        List<Long> roleIds = roleDao.listRoleIdsByRoleIds(rolesRoleIds);
         List<TDepartmentRole> departmentRoleList = roleIds.stream().map(roleId -> authModelBuilder.buildDepartmentRole(id, roleId)).collect(Collectors.toList());
         departmentRoleDao.saveBatch(departmentRoleList);
     }
@@ -62,22 +60,22 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
     @Override
     public void update(DepartmentModelVo departmentModelVo) {
         Long id = departmentModelVo.getId();
-        DepartmentVo department = departmentModelVo.getDepartment();
+        List<Long> roleIds = departmentModelVo.getRoleIds();
+        TDepartment department = departmentModelVo.getDepartment();
         Optional<TDepartment> optional = departmentDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TDepartment tDepartment = optional.get();
             authModelBuilder.copyDepartment(department, tDepartment);
             departmentDao.updateById(tDepartment);
-            if (ObjectUtil.isNotEmpty(departmentModelVo.getRoleIds())) {
-                executor.submit(() -> updateRole(department, departmentModelVo));
+            if (ObjectUtil.isNotEmpty(roleIds)) {
+                executor.submit(() -> updateRole(department.getId(), roleIds));
             }
         }
     }
 
-    private void updateRole(DepartmentVo department, DepartmentModelVo departmentModelVo) {
-        Long id = department.getId();
+    private void updateRole(Long id, List<Long> roleIds) {
         departmentRoleDao.removeByDepartmentId(id);
-        saveRole(departmentModelVo, department);
+        saveRole(roleIds,id);
     }
 
     @Override

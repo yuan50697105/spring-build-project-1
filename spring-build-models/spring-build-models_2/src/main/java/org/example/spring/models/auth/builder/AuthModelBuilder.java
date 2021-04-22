@@ -11,10 +11,6 @@ import org.example.spring.models.auth.entity.result.Department;
 import org.example.spring.models.auth.entity.result.Resource;
 import org.example.spring.models.auth.entity.dto.ResourceNode;
 import org.example.spring.models.auth.entity.result.Role;
-import org.example.spring.models.auth.entity.vo.AccountVo;
-import org.example.spring.models.auth.entity.vo.DepartmentVo;
-import org.example.spring.models.auth.entity.vo.ResourceVo;
-import org.example.spring.models.auth.entity.vo.RoleVo;
 import org.example.spring.infrastructures.mysql.auth.table.po.*;
 import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
@@ -28,9 +24,9 @@ import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
 public interface AuthModelBuilder {
-    TUser buildUser(AccountVo account);
+    TUser buildUser(TUser account);
 
-    void copyUser(AccountVo account, @MappingTarget TUser tUser);
+    void copyUser(TUser account, @MappingTarget TUser tUser);
 
     TUserRole buildRole(Long userId, Long roleId);
 
@@ -50,9 +46,9 @@ public interface AuthModelBuilder {
 
     List<Account> buildAccounts(List<TUser> data);
 
-    TRole buildRole(RoleVo role);
+    TRole buildRole(TRole role);
 
-    void copyRole(RoleVo role, @MappingTarget TRole tRole);
+    void copyRole(TRole role, @MappingTarget TRole tRole);
 
     TRoleQuery buildRoleQuery(RoleQuery roleQuery);
 
@@ -74,9 +70,9 @@ public interface AuthModelBuilder {
 
     List<Resource> buildResourceResult(List<TResource> listByRoleId);
 
-    TResource buildPermission(ResourceVo permission);
+    TResource buildPermission(TResource permission);
 
-    void copyResource(ResourceVo permission, @MappingTarget TResource tResource);
+    void copyResource(TResource permission, @MappingTarget TResource tResource);
 
     Resource buildResourceResult(TResource permission);
 
@@ -91,9 +87,9 @@ public interface AuthModelBuilder {
     @Mapping(target = "parentId", source = "pid")
     ResourceNode buildPermissionToResrouceNode(TResource resource);
 
-    TDepartment buildAccountDepartment(DepartmentVo department);
+    TDepartment buildAccountDepartment(TDepartment department);
 
-    void copyDepartment(DepartmentVo department, @MappingTarget TDepartment tDepartment);
+    void copyDepartment(TDepartment department, @MappingTarget TDepartment tDepartment);
 
     Department buildDepartmentResult(TDepartment department);
 

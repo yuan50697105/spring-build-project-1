@@ -1,6 +1,5 @@
 package org.example.spring.models.auth.repository.impl;
 
-import cn.hutool.core.exceptions.ValidateException;
 import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.dao.TRoleDao;
@@ -13,15 +12,15 @@ import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.result.Account;
 import org.example.spring.models.auth.entity.result.AccountDetails;
 import org.example.spring.models.auth.entity.vo.AccountModelVo;
-import org.example.spring.models.auth.entity.vo.AccountVo;
 import org.example.spring.models.auth.repository.AccountRepository;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.ThreadPoolExecutor;
 
 @Repository
 @AllArgsConstructor
@@ -31,33 +30,32 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
     private final TRoleDao roleDao;
     private final TUserRoleDao userRoleDao;
     private final AuthModelBuilder authModelBuilder;
-
-    @Override
-    public void save(AccountModelVo accountModelVo) {
-        saveWithId(accountModelVo);
-    }
+    private final ThreadPoolExecutor executor;
 
     @Override
     @Transactional
-    public Long saveWithId(AccountModelVo accountModelVo) {
+    public Long saveWithId(final AccountModelVo accountModelVo) {
         accountModelVo.saveValidate();
         accountModelVo.setSaveDefault();
-        AccountVo account = accountModelVo.getAccount();
-        String username = accountModelVo.getUsername();
-        validateUsername(username);
-        TUser entity = authModelBuilder.buildUser(account);
-        userDao.save(entity);
-        List<Long> existRoleIds = roleDao.listRoleIdsByRoleIds(accountModelVo.getRoleIds());
-        Long userId = entity.getId();
-        userRoleDao.saveBatch(authModelBuilder.buildRoles(userId, existRoleIds));
+        TUser account = accountModelVo.getUser();
+        userDao.save(account);
+        final Long userId = account.getId();
+        if (ObjectUtil.isNotEmpty(accountModelVo.getRoleIds())) {
+            executor.submit(() -> saveUserRole(userId, accountModelVo.getRoleIds()));
+        }
         return userId;
+    }
+
+    private void saveUserRole(Long userId, List<Long> roleIds) {
+        List<Long> existRoleIds = roleDao.listRoleIdsByRoleIds(roleIds);
+        userRoleDao.updateUserRole(userId, existRoleIds);
     }
 
     @Override
     @Transactional
     public void update(AccountModelVo accountModelVo) {
         Long id = accountModelVo.getId();
-        AccountVo account = accountModelVo.getAccount();
+        TUser account = accountModelVo.getUser();
         List<Long> roleIds = accountModelVo.getRoleIds();
         Optional<TUser> optional = userDao.getByIdOpt(id);
         if (optional.isPresent()) {
@@ -65,10 +63,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
             authModelBuilder.copyUser(account, tUser);
             userDao.updateById(tUser);
             if (!ObjectUtil.isAllEmpty(roleIds)) {
-                List<Long> existRoleIds = roleDao.listRoleIdsByRoleIds(roleIds);
-                if (ObjectUtil.isNotEmpty(existRoleIds)) {
-                    userRoleDao.saveUpdate(id, existRoleIds);
-                }
+                executor.submit(() -> saveUserRole(tUser.getId(), roleIds));
             }
         }
     }
@@ -113,9 +108,4 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
         return authModelBuilder.buildAccount(data);
     }
 
-    private void validateUsername(String username) {
-        if (userDao.existByUsername(username)) {
-            throw new ValidateException(username + "已存在");
-        }
-    }
 }

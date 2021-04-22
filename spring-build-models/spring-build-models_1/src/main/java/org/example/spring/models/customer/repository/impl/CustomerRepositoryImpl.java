@@ -8,7 +8,7 @@ import org.example.spring.models.customer.entity.query.CustomerQuery;
 import org.example.spring.models.customer.entity.result.Customer;
 import org.example.spring.models.customer.entity.result.CustomerDetails;
 import org.example.spring.models.customer.entity.vo.CustomerFormVo;
-import org.example.spring.models.customer.entity.vo.CustomerVo;
+import org.example.spring.infrastructures.mysql.customer.table.vo.CustomerVo;
 import org.example.spring.models.customer.repository.CustomerRepository;
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
 import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerInfoQuery;

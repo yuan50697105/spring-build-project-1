@@ -7,7 +7,7 @@ import org.example.spring.models.customer.entity.query.CustomerContractQuery;
 import org.example.spring.models.customer.entity.result.CustomerContract;
 import org.example.spring.models.customer.entity.result.CustomerContractDetails;
 import org.example.spring.models.customer.entity.vo.CustomerContractFormVo;
-import org.example.spring.models.customer.entity.vo.CustomerContractVo;
+import org.example.spring.infrastructures.mysql.customer.table.vo.CustomerContractVo;
 import org.example.spring.models.customer.repository.CustomerContractRepository;
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContract;
 import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerContractQuery;
