@@ -7,7 +7,7 @@ import org.example.spring.infrastructures.minio.customer.repository.CustomerCont
 import org.example.spring.models.customer.entity.query.CustomerContractQuery;
 import org.example.spring.models.customer.entity.result.CustomerContract;
 import org.example.spring.models.customer.entity.result.CustomerContractDetails;
-import org.example.spring.models.customer.entity.vo.CustomerContractFormVo;
+import org.example.spring.models.customer.entity.vo.CustomerContractModelVo;
 import org.example.spring.models.customer.repository.CustomerContractRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.entity.OssResponse;
@@ -44,12 +44,12 @@ public class CustomerContractServiceImpl implements CustomerContractService {
     }
 
     @Override
-    public void save(CustomerContractFormVo formVo) {
+    public void save(CustomerContractModelVo formVo) {
         customerContractRepository.save(formVo);
     }
 
     @Override
-    public void update(CustomerContractFormVo formVo) {
+    public void update(CustomerContractModelVo formVo) {
         customerContractRepository.update(formVo);
     }
 

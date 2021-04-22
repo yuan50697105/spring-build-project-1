@@ -3,7 +3,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
-import org.example.spring.infrastructures.mysql.auth.table.vo.RoleVo;
 import org.example.spring.models.commons.entity.IModelVo;
 
 import java.util.ArrayList;

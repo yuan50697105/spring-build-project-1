@@ -7,7 +7,7 @@ import org.example.spring.domains.customer.service.CustomerContractService;
 import org.example.spring.models.customer.entity.query.CustomerContractQuery;
 import org.example.spring.models.customer.entity.result.CustomerContract;
 import org.example.spring.models.customer.entity.result.CustomerContractDetails;
-import org.example.spring.models.customer.entity.vo.CustomerContractFormVo;
+import org.example.spring.models.customer.entity.vo.CustomerContractModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -47,19 +47,19 @@ public class CustomerContractController {
     }
 
     @PostMapping
-    public Result<?> save(@RequestBody CustomerContractFormVo formVo) {
+    public Result<?> save(@RequestBody CustomerContractModelVo formVo) {
         customerContractService.save(formVo);
         return R.success();
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody CustomerContractFormVo formVo) {
+    public Result<?> update(@RequestBody CustomerContractModelVo formVo) {
         customerContractService.update(formVo);
         return R.success();
     }
 
     @PutMapping("{id}")
-    public Result<?> update(@PathVariable Long id, @RequestBody CustomerContractFormVo formVo) {
+    public Result<?> update(@PathVariable Long id, @RequestBody CustomerContractModelVo formVo) {
         formVo.setId(id);
         customerContractService.update(formVo);
         return R.success();

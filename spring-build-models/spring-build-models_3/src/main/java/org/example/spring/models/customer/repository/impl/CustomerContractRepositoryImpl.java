@@ -1,18 +1,17 @@
 package org.example.spring.models.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.models.customer.builder.CustomerModelBuilder;
 import org.example.spring.infrastructures.mysql.customer.dao.TCustomerContractDao;
+import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContract;
+import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerContractQuery;
+import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.models.customer.builder.CustomerModelBuilder;
 import org.example.spring.models.customer.entity.query.CustomerContractQuery;
 import org.example.spring.models.customer.entity.result.CustomerContract;
 import org.example.spring.models.customer.entity.result.CustomerContractDetails;
-import org.example.spring.models.customer.entity.vo.CustomerContractFormVo;
-import org.example.spring.infrastructures.mysql.customer.table.vo.CustomerContractVo;
+import org.example.spring.models.customer.entity.vo.CustomerContractModelVo;
 import org.example.spring.models.customer.repository.CustomerContractRepository;
-import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContract;
-import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerContractQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,22 +21,21 @@ import java.util.Optional;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<CustomerContract, CustomerContractFormVo, CustomerContractDetails, CustomerContractQuery> implements CustomerContractRepository {
+public class CustomerContractRepositoryImpl extends IBaseRepositoryImpl<CustomerContract, CustomerContractModelVo, CustomerContractDetails, CustomerContractQuery> implements CustomerContractRepository {
     private final CustomerModelBuilder customerModelBuilder;
     private final TCustomerContractDao customerContractDao;
 
     @Override
-    public Long saveWithId(CustomerContractFormVo customerContractFormVo) {
-        CustomerContractVo contract = customerContractFormVo.getContract();
-        TCustomerContract entity = customerModelBuilder.buildCustomerContract(contract);
-        customerContractDao.save(entity);
-        return entity.getId();
+    public Long saveWithId(CustomerContractModelVo customerContractModelVo) {
+        TCustomerContract contract = customerContractModelVo.createContractForSave();
+        customerContractDao.save(contract);
+        return contract.getId();
     }
 
     @Override
-    public void update(CustomerContractFormVo customerContractFormVo) {
-        Long id = customerContractFormVo.getId();
-        CustomerContractVo contract = customerContractFormVo.getContract();
+    public void update(CustomerContractModelVo customerContractModelVo) {
+        Long id = customerContractModelVo.getId();
+        TCustomerContract contract = customerContractModelVo.createContractForSave();
         Optional<TCustomerContract> optional = customerContractDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TCustomerContract tCustomerContract = optional.get();

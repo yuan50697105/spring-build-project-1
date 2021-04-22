@@ -3,7 +3,7 @@ package org.example.spring.domains.customer.service;
 import org.example.spring.models.customer.entity.query.CustomerContractQuery;
 import org.example.spring.models.customer.entity.result.CustomerContract;
 import org.example.spring.models.customer.entity.result.CustomerContractDetails;
-import org.example.spring.models.customer.entity.vo.CustomerContractFormVo;
+import org.example.spring.models.customer.entity.vo.CustomerContractModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,9 +27,9 @@ public interface CustomerContractService {
         return Optional.ofNullable(get(id));
     }
 
-    void save(CustomerContractFormVo formVo);
+    void save(CustomerContractModelVo formVo);
 
-    void update(CustomerContractFormVo formVo);
+    void update(CustomerContractModelVo formVo);
 
     void delete(List<Long> ids);
 

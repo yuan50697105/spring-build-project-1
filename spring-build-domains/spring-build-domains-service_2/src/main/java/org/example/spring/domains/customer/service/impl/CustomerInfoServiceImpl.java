@@ -5,7 +5,7 @@ import org.example.spring.domains.customer.service.CustomerInfoService;
 import org.example.spring.models.customer.entity.query.CustomerQuery;
 import org.example.spring.models.customer.entity.result.Customer;
 import org.example.spring.models.customer.entity.result.CustomerDetails;
-import org.example.spring.models.customer.entity.vo.CustomerFormVo;
+import org.example.spring.models.customer.entity.vo.CustomerModelVo;
 import org.example.spring.models.customer.repository.CustomerRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
@@ -50,12 +50,12 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
     }
 
     @Override
-    public void save(CustomerFormVo formVo) {
+    public void save(CustomerModelVo formVo) {
         customerRepository.save(formVo);
     }
 
     @Override
-    public void update(CustomerFormVo formVo) {
+    public void update(CustomerModelVo formVo) {
         customerRepository.update(formVo);
     }
 

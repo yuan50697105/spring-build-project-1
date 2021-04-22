@@ -3,7 +3,6 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.infrastructures.mysql.auth.table.po.TDepartment;
-import org.example.spring.infrastructures.mysql.auth.table.vo.DepartmentVo;
 import org.example.spring.models.commons.entity.IModelVo;
 
 import java.util.List;

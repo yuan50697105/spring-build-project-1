@@ -7,8 +7,7 @@ import org.example.spring.infrastructures.mysql.customer.dao.TCustomerInfoDao;
 import org.example.spring.models.customer.entity.query.CustomerQuery;
 import org.example.spring.models.customer.entity.result.Customer;
 import org.example.spring.models.customer.entity.result.CustomerDetails;
-import org.example.spring.models.customer.entity.vo.CustomerFormVo;
-import org.example.spring.infrastructures.mysql.customer.table.vo.CustomerVo;
+import org.example.spring.models.customer.entity.vo.CustomerModelVo;
 import org.example.spring.models.customer.repository.CustomerRepository;
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
 import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerInfoQuery;
@@ -24,24 +23,23 @@ import java.util.Optional;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class CustomerRepositoryImpl extends IBaseRepositoryImpl<Customer, CustomerFormVo, CustomerDetails, CustomerQuery> implements CustomerRepository {
+public class CustomerRepositoryImpl extends IBaseRepositoryImpl<Customer, CustomerModelVo, CustomerDetails, CustomerQuery> implements CustomerRepository {
     private final CustomerModelBuilder customerModelBuilder;
     private final TCustomerInfoDao customerInfoDao;
     private final TCustomerContractDao customerContractDao;
 
     @SuppressWarnings("AlibabaSwitchStatement")
     @Override
-    public Long saveWithId(CustomerFormVo customerFormVo) {
-        CustomerVo customer = customerFormVo.getCustomer();
-        TCustomerInfo entity = customerModelBuilder.buildCustomerInfo(customer);
-        customerInfoDao.save(entity);
-        return entity.getId();
+    public Long saveWithId(CustomerModelVo customerModelVo) {
+        TCustomerInfo customer = customerModelVo.createCustomerForSave();
+        customerInfoDao.save(customer);
+        return customer.getId();
     }
 
     @Override
-    public void update(CustomerFormVo customerFormVo) {
-        Long id = customerFormVo.getId();
-        CustomerVo customer = customerFormVo.getCustomer();
+    public void update(CustomerModelVo customerModelVo) {
+        Long id = customerModelVo.getId();
+        TCustomerInfo customer = customerModelVo.createCustomerForSave();
         Optional<TCustomerInfo> optional = customerInfoDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TCustomerInfo tCustomerInfo = optional.get();

@@ -3,7 +3,6 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
-import org.example.spring.infrastructures.mysql.auth.table.vo.ResourceVo;
 import org.example.spring.models.commons.entity.IModelVo;
 
 @EqualsAndHashCode(callSuper = true)

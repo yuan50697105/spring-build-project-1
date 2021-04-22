@@ -7,7 +7,7 @@ import org.example.spring.domains.customer.service.CustomerInfoService;
 import org.example.spring.models.customer.entity.query.CustomerQuery;
 import org.example.spring.models.customer.entity.result.Customer;
 import org.example.spring.models.customer.entity.result.CustomerDetails;
-import org.example.spring.models.customer.entity.vo.CustomerFormVo;
+import org.example.spring.models.customer.entity.vo.CustomerModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.web.bind.annotation.*;
 
@@ -58,19 +58,19 @@ public class CustomerInfoController {
     }
 
     @PostMapping
-    public Result<?> save(@RequestBody CustomerFormVo formVo) {
+    public Result<?> save(@RequestBody CustomerModelVo formVo) {
         customerInfoService.save(formVo);
         return R.success();
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody CustomerFormVo formVo) {
+    public Result<?> update(@RequestBody CustomerModelVo formVo) {
         customerInfoService.update(formVo);
         return R.success();
     }
 
     @PutMapping("{id}")
-    public Result<?> update(@RequestBody CustomerFormVo formVo, @PathVariable Long id) {
+    public Result<?> update(@RequestBody CustomerModelVo formVo, @PathVariable Long id) {
         formVo.setId(id);
         customerInfoService.update(formVo);
         return R.success();

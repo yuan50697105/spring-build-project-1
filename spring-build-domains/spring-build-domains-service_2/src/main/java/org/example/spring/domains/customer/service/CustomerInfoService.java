@@ -3,7 +3,7 @@ package org.example.spring.domains.customer.service;
 import org.example.spring.models.customer.entity.query.CustomerQuery;
 import org.example.spring.models.customer.entity.result.Customer;
 import org.example.spring.models.customer.entity.result.CustomerDetails;
-import org.example.spring.models.customer.entity.vo.CustomerFormVo;
+import org.example.spring.models.customer.entity.vo.CustomerModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
@@ -35,9 +35,9 @@ public interface CustomerInfoService {
         return Optional.ofNullable(get(id));
     }
 
-    void save(CustomerFormVo formVo);
+    void save(CustomerModelVo formVo);
 
-    void update(CustomerFormVo formVo);
+    void update(CustomerModelVo formVo);
 
     void delete(List<Long> ids);
 }
