@@ -56,7 +56,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
     @Transactional
     public void update(AccountModelVo accountModelVo) {
         Long id = accountModelVo.getId();
-        TUser account = accountModelVo.getUserForSave();
+        TUser account = accountModelVo.getUserForUpdate();
         List<Long> roleIds = accountModelVo.getRoleIds();
         Optional<TUser> optional = userDao.getByIdOpt(id);
         if (optional.isPresent()) {

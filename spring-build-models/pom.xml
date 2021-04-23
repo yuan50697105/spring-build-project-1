@@ -15,6 +15,10 @@
         <module>spring-build-models-commons</module>
         <module>spring-build-models_3</module>
         <module>spring-build-models_4</module>
+        <module>spring-build-models-mysql_1</module>
+        <module>spring-build-models-mysql_2</module>
+        <module>spring-build-models-postgresql_1</module>
+        <module>spring-build-models-postgresql_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

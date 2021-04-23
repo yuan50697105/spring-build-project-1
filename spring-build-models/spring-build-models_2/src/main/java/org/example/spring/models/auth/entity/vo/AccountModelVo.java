@@ -1,4 +1,6 @@
 package org.example.spring.models.auth.entity.vo;
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.bean.copier.CopyOptions;
 import cn.hutool.core.util.ObjectUtil;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
@@ -35,12 +37,6 @@ public class AccountModelVo extends IModelVo {
      */
     @ApiModelProperty(value = "密码")
     private String password;
-
-    /**
-     * 状态
-     */
-    @ApiModelProperty(value = "状态")
-    private String status;
     @ApiModelProperty(value = "角色ID")
     private Set<Long> roleIds;
 
@@ -51,7 +47,7 @@ public class AccountModelVo extends IModelVo {
     }
 
     public void setSaveDefault() {
-        this.status = UserStatus.Normal.getValue();
+
     }
 
     public List<Long> getRoleIds() {
@@ -61,11 +57,16 @@ public class AccountModelVo extends IModelVo {
     @JsonIgnore
     public TUser getUserForSave() {
         TUser tUser = new TUser();
-        tUser.setStatus(status);
+        tUser.setStatus(UserStatus.Normal.getValue());
         tUser.setUsername(username);
         tUser.setName(name);
         tUser.setPassword(password);
         return tUser;
+    }
+
+    @JsonIgnore
+    public TUser getUserForUpdate() {
+        return BeanUtil.toBean(this, TUser.class, CopyOptions.create().ignoreNullValue().setIgnoreProperties("password", "username"));
     }
 
 
