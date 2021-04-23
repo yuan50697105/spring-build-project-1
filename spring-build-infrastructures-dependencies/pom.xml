@@ -54,6 +54,16 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-infrastructures-postgrsql_1</artifactId>
+                <version>0.0.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-infrastructures-postgrsql_2</artifactId>
+                <version>0.0.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-infrastructures-minio</artifactId>
                 <version>0.0.5-SNAPSHOT</version>
             </dependency>
