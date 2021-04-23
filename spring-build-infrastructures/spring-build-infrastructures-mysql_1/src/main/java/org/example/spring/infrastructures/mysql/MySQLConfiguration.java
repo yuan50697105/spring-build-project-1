@@ -1,5 +1,8 @@
 package org.example.spring.infrastructures.mysql;
 
+import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.github.liuanxin.caches.MybatisRedisCache;
 import com.github.liuanxin.caches.RedisContextUtils;
 import org.apache.ibatis.cache.Cache;
@@ -45,6 +48,18 @@ public class MySQLConfiguration {
 
         }
     }
+
+
+    @Configuration
+    public static class MybatisConfiguration {
+        @Bean
+        public MybatisPlusInterceptor mybatisPlusInterceptor() {
+            MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+            interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
+            return interceptor;
+        }
+    }
+
 
 
 }

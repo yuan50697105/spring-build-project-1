@@ -1,4 +1,4 @@
-package org.example.spring.infrastructures.mysql;
+package org.example.spring.infrastructures.postgresql;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
@@ -16,10 +16,10 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @Configuration
-@Import(MySQLConfiguration.MybatisCacheConfig.class)
+@Import({PostgresqlConfiguration.MybatisCacheConfig.class, PostgresqlConfiguration.MybatisConfiguration.class})
 @ComponentScan
 @MapperScan(basePackages = "org.example.spring.infrastructures.mysql.*.mapper")
-public class MySQLConfiguration {
+public class PostgresqlConfiguration {
     @Configuration
     @ConditionalOnClass({ MybatisRedisCache.class, RedisTemplate.class })
     public static class MybatisCacheConfig {
@@ -47,7 +47,7 @@ public class MySQLConfiguration {
         @Bean
         public MybatisPlusInterceptor mybatisPlusInterceptor() {
             MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
-            interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
+            interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.POSTGRE_SQL));
             return interceptor;
         }
     }
