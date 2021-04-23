@@ -19,6 +19,8 @@
         <module>spring-build-models-mysql_2</module>
         <module>spring-build-models-postgresql_1</module>
         <module>spring-build-models-postgresql_2</module>
+        <module>spring-build-models-clickhouse_1</module>
+        <module>spring-build-models-clickhouse_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
