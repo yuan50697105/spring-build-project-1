@@ -2,23 +2,21 @@ package org.example.spring.infrastructures.postgresql.patient.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
-import java.io.Serializable;
-
-/**
- * t_patient_group
- */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-patient-table-po-TPatientGroup")
+@ApiModel(value = "org-example-spring-infrastructures-postgresql-patient-table-po-TPatientGroup")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class TPatientGroup extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * code
      */
@@ -40,9 +38,8 @@ public class TPatientGroup extends IBaseEntity implements Serializable {
     /**
      * groupId
      */
-    @ApiModelProperty(value = "teamId")
+    @ApiModelProperty(value = "groupId")
     private Long teamId;
-
 
     /**
      * teamMealId
@@ -67,5 +64,4 @@ public class TPatientGroup extends IBaseEntity implements Serializable {
      */
     @ApiModelProperty(value = "personNum")
     private Integer personNum;
-    private static final long serialVersionUID = 1L;
 }

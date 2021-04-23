@@ -2,24 +2,22 @@ package org.example.spring.infrastructures.postgresql.patient.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-
-/**
- * t_patient_fee_item
- */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-patient-table-po-TPatientFeeItem")
+@ApiModel(value = "org-example-spring-infrastructures-postgresql-patient-table-po-TPatientFeeItem")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class TPatientFeeItem extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * patientId
      */
@@ -85,6 +83,4 @@ public class TPatientFeeItem extends IBaseEntity implements Serializable {
      */
     @ApiModelProperty(value = "type")
     private String type;
-
-    private static final long serialVersionUID = 1L;
 }

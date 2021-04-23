@@ -2,24 +2,21 @@ package org.example.spring.infrastructures.postgresql.customer.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
-import java.io.Serializable;
-import java.util.Date;
-
-/**
- * t_customer_contract
- */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-customer-table-po-TCustomerContract")
+@ApiModel(value = "org-example-spring-infrastructures-postgresql-customer-table-po-TCustomerContract")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class TCustomerContract extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * 合同编号
      */
@@ -61,6 +58,4 @@ public class TCustomerContract extends IBaseEntity implements Serializable {
      */
     @ApiModelProperty(value = "bukectName")
     private String bukectName;
-
-    private static final long serialVersionUID = 1L;
 }

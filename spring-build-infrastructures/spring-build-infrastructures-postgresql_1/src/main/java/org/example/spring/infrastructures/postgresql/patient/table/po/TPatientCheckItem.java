@@ -2,23 +2,21 @@ package org.example.spring.infrastructures.postgresql.patient.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
-import java.io.Serializable;
-
-/**
- * t_patient_check_item
- */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-patient-table-po-TPatientCheckItem")
+@ApiModel(value = "org-example-spring-infrastructures-postgresql-patient-table-po-TPatientCheckItem")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class TPatientCheckItem extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * patientId
      */
@@ -60,6 +58,4 @@ public class TPatientCheckItem extends IBaseEntity implements Serializable {
      */
     @ApiModelProperty(value = "source")
     private String source;
-
-    private static final long serialVersionUID = 1L;
 }

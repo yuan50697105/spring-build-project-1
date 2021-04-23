@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="TPatientFeeItemMapper">
-  <resultMap id="BaseResultMap" type="TPatientFeeItem">
+<mapper namespace="org.example.spring.infrastructures.postgresql.patient.mapper.TPatientFeeItemMapper">
+  <resultMap id="BaseResultMap" type="org.example.spring.infrastructures.postgresql.patient.table.po.TPatientFeeItem">
     <!--@mbg.generated-->
     <!--@Table t_patient_fee_item-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -12,14 +12,14 @@
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
     <result column="patient_id" jdbcType="BIGINT" property="patientId" />
-    <result column="fee_item_id" jdbcType="VARCHAR" property="feeItemId" />
+    <result column="fee_item_id" jdbcType="BIGINT" property="feeItemId" />
     <result column="fee_item_code" jdbcType="VARCHAR" property="feeItemCode" />
     <result column="fee_item_name" jdbcType="VARCHAR" property="feeItemName" />
     <result column="meal_id" jdbcType="BIGINT" property="mealId" />
     <result column="patient_meal_id" jdbcType="BIGINT" property="patientMealId" />
-    <result column="price" jdbcType="DECIMAL" property="price" />
-    <result column="dis_price" jdbcType="DECIMAL" property="disPrice" />
-    <result column="market_price" jdbcType="DECIMAL" property="marketPrice" />
+    <result column="price" jdbcType="NUMERIC" property="price" />
+    <result column="dis_price" jdbcType="NUMERIC" property="disPrice" />
+    <result column="market_price" jdbcType="NUMERIC" property="marketPrice" />
     <result column="source" jdbcType="VARCHAR" property="source" />
     <result column="type" jdbcType="VARCHAR" property="type" />
   </resultMap>
@@ -27,6 +27,6 @@
     <!--@mbg.generated-->
     id, create_id, update_id, create_user, update_user, create_date, update_date, patient_id, 
     fee_item_id, fee_item_code, fee_item_name, meal_id, patient_meal_id, price, dis_price, 
-    market_price, `source`, `type`
+    market_price, "source", "type"
   </sql>
 </mapper>

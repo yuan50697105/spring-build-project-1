@@ -6,10 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.example.spring.infrastructures.clickhouse.patient.table.po.TPatientTeamMealCheckItem;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 
-/**
- * @author yuane
- */
 @Mapper
-@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class, readWrite = false, blocking = true, flushInterval = 2000)
+@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class ,readWrite = false,blocking = true,flushInterval = 2000)
 public interface TPatientTeamMealCheckItemMapper extends IBaseMapper<TPatientTeamMealCheckItem> {
 }

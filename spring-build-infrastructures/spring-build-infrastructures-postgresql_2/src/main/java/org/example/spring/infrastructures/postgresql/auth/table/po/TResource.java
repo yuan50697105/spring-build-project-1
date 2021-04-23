@@ -2,25 +2,21 @@ package org.example.spring.infrastructures.postgresql.auth.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.apache.ibatis.type.Alias;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
-import java.io.Serializable;
-
-/**
- * t_permission
- */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TResource")
+@ApiModel(value = "org-example-spring-infrastructures-postgresql-auth-table-po-TResource")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Alias("TResource")
 public class TResource extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * name
      */
@@ -50,6 +46,4 @@ public class TResource extends IBaseEntity implements Serializable {
      */
     @ApiModelProperty(value = "weight")
     private Integer weight;
-
-    private static final long serialVersionUID = 1L;
 }

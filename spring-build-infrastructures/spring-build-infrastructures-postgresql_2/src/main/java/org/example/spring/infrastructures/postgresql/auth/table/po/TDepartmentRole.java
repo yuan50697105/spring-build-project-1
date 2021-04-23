@@ -2,18 +2,15 @@ package org.example.spring.infrastructures.postgresql.auth.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
-import java.io.Serializable;
-
-/**
- * t_department_role
- */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TDepartmentRole")
+@ApiModel(value = "org-example-spring-infrastructures-postgresql-auth-table-po-TDepartmentRole")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

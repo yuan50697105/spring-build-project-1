@@ -2,24 +2,22 @@ package org.example.spring.infrastructures.postgresql.items.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-
-/**
- * t_check_item
- */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-items-table-po-TCheckItem")
+@ApiModel(value = "org-example-spring-infrastructures-postgresql-items-table-po-TCheckItem")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class TCheckItem extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * feeItemId
      */
@@ -61,6 +59,4 @@ public class TCheckItem extends IBaseEntity implements Serializable {
      */
     @ApiModelProperty(value = "lisCode")
     private String lisCode;
-
-    private static final long serialVersionUID = 1L;
 }

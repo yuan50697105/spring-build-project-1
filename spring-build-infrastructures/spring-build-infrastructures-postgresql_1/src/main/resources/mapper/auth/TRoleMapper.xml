@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="TRoleMapper">
-  <resultMap id="BaseResultMap" type="TRole">
+<mapper namespace="org.example.spring.infrastructures.postgresql.auth.mapper.TRoleMapper">
+  <resultMap id="BaseResultMap" type="org.example.spring.infrastructures.postgresql.auth.table.po.TRole">
     <!--@mbg.generated-->
     <!--@Table t_role-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -15,6 +15,6 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_id, update_id, create_user, update_user, create_date, update_date, `name`
+    id, create_id, update_id, create_user, update_user, create_date, update_date, "name"
   </sql>
 </mapper>

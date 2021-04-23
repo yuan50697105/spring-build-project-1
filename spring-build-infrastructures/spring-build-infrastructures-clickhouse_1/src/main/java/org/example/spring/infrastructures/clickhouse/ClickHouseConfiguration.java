@@ -16,7 +16,7 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @Configuration
-@Import({ClickHouseConfiguration.MybatisCacheConfig.class, ClickHouseConfiguration.MybatisConfiguration.class})
+@Import(ClickHouseConfiguration.MybatisCacheConfig.class)
 @ComponentScan
 @MapperScan(basePackages = "org.example.spring.infrastructures.mysql.*.mapper")
 public class ClickHouseConfiguration {

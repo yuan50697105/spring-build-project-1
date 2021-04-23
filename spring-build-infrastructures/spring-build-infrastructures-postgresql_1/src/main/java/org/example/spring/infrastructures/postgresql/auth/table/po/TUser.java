@@ -2,49 +2,42 @@ package org.example.spring.infrastructures.postgresql.auth.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.apache.ibatis.type.Alias;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
-import java.io.Serializable;
-
-/**
- * t_user
- * @author yuane
- */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TUser")
+@ApiModel(value = "org-example-spring-infrastructures-postgresql-auth-table-po-TUser")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Alias("TUser")
 public class TUser extends IBaseEntity implements Serializable {
-
     private static final long serialVersionUID = 2799305908245541459L;
     /**
-     * 用户名
+     * username
      */
-    @ApiModelProperty(value = "用户名")
+    @ApiModelProperty(value = "username")
     private String username;
 
     /**
-     * 姓名
+     * name
      */
-    @ApiModelProperty(value = "姓名")
+    @ApiModelProperty(value = "name")
     private String name;
 
     /**
-     * 密码
+     * password
      */
-    @ApiModelProperty(value = "密码")
+    @ApiModelProperty(value = "password")
     private String password;
 
     /**
-     * 状态
+     * status
      */
-    @ApiModelProperty(value = "状态")
+    @ApiModelProperty(value = "status")
     private String status;
 }

@@ -30,6 +30,6 @@ public class TPatientGroupDaoImpl extends TkBaseDaoImpl<TPatientGroup, TPatientG
 
     @Override
     public boolean removeByTeamIds(List<Long> teamIds) {
-        return removeByIds(lambdaQuery().in(TPatientGroup::getTeamId, teamIds).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
+        return removeByIds(lambdaQuery().in(TPatientGroup::getTeamId,teamIds).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
     }
 }
