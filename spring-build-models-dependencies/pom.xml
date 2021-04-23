@@ -49,6 +49,37 @@
                 <artifactId>spring-build-models_4</artifactId>
                 <version>0.0.5-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-models-mysql_1</artifactId>
+                <version>0.0.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-models-mysql_2</artifactId>
+                <version>0.0.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-models-postgresql_1</artifactId>
+                <version>0.0.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-models-postgresql_2</artifactId>
+                <version>0.0.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-models-clickhouse_1</artifactId>
+                <version>0.0.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-models-clickhouse_2</artifactId>
+                <version>0.0.5-SNAPSHOT</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 </project>
