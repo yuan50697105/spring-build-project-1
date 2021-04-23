@@ -31,15 +31,6 @@
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.mybatis.caches</groupId>
-            <artifactId>mybatis-redis</artifactId>
-            <version>1.0.0-beta2</version>
-        </dependency>
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.github.liuanxin</groupId>
             <artifactId>mybatis-redis-cache</artifactId>
             <version>1.2.7</version>

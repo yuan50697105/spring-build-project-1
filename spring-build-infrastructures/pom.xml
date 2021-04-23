@@ -19,6 +19,8 @@
         <module>spring-build-infrastructures-elasticsearch</module>
         <module>spring-build-infrastructures-minio</module>
         <module>spring-build-infrastructures-redis</module>
+        <module>spring-build-infrastructures-postgresql_1</module>
+        <module>spring-build-infrastructures-postgresql_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
