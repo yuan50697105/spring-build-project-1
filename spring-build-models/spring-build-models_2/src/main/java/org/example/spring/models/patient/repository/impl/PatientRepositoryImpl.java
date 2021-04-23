@@ -11,14 +11,16 @@ import org.example.spring.infrastructures.mysql.patient.table.vo.PatientVo;
 import org.example.spring.models.commons.enumerate.FeeItemType;
 import org.example.spring.models.commons.enumerate.ItemSource;
 import org.example.spring.models.commons.enumerate.PatientType;
+import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.patient.builder.PatientModelBuilder;
 import org.example.spring.models.patient.entity.query.PatientQuery;
 import org.example.spring.models.patient.entity.result.Patient;
 import org.example.spring.models.patient.entity.result.PatientDetails;
-import org.example.spring.models.patient.entity.vo.*;
+import org.example.spring.models.patient.entity.vo.PatientFeeItemFormVo;
+import org.example.spring.models.patient.entity.vo.PatientFormVo;
+import org.example.spring.models.patient.entity.vo.PatientMealFormVo;
 import org.example.spring.models.patient.repository.PatientRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
@@ -80,7 +82,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     private void saveMealItem(final TPatient entity, final PatientMealFormVo meal) {
         TPatientMeal patientMeal = patientModelBuilder.buildPatientMeal(meal.getMeal());
         patientMealDao.save(patientMeal);
-        executor.submit(() -> saveFeeItem(entity, meal.getItems(), ItemSource.MEAL.getValue(),FeeItemType.PERSONAL.getValue()));
+        executor.submit(() -> saveFeeItem(entity, meal.getItems(), ItemSource.MEAL.getValue(), FeeItemType.PERSONAL.getValue()));
     }
 
     private void savePersonalCheckItem(PatientFeeItemFormVo feeItem, TPatientFeeItem tPatientFeeItem) {

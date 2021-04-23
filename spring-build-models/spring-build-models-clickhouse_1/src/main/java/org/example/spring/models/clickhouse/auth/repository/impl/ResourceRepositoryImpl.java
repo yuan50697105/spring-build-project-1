@@ -5,20 +5,20 @@ import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.lang.tree.TreeUtil;
 import cn.hutool.core.lang.tree.parser.NodeParser;
 import lombok.AllArgsConstructor;
-import org.example.spring.models.clickhouse.auth.builder.AuthModelBuilder;
-import org.example.spring.models.clickhouse.auth.entity.result.Resource;
-import org.example.spring.models.clickhouse.auth.entity.result.ResourceDetails;
-import org.example.spring.models.clickhouse.auth.repository.ResourceRepository;
 import org.example.spring.infrastructures.clickhouse.auth.dao.TResourceDao;
 import org.example.spring.infrastructures.clickhouse.auth.dao.TRoleResourceDao;
 import org.example.spring.infrastructures.clickhouse.auth.dao.UserResourceDao;
-import org.example.spring.models.clickhouse.auth.entity.query.ResourceQuery;
-import org.example.spring.models.clickhouse.auth.entity.dto.ResourceNode;
-import org.example.spring.models.clickhouse.auth.entity.vo.ResourceModelVo;
 import org.example.spring.infrastructures.clickhouse.auth.table.po.TResource;
 import org.example.spring.infrastructures.clickhouse.auth.table.query.TResourceQuery;
-import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.models.clickhouse.auth.builder.AuthModelBuilder;
+import org.example.spring.models.clickhouse.auth.entity.dto.ResourceNode;
+import org.example.spring.models.clickhouse.auth.entity.query.ResourceQuery;
+import org.example.spring.models.clickhouse.auth.entity.result.Resource;
+import org.example.spring.models.clickhouse.auth.entity.result.ResourceDetails;
+import org.example.spring.models.clickhouse.auth.entity.vo.ResourceModelVo;
+import org.example.spring.models.clickhouse.auth.repository.ResourceRepository;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -66,7 +66,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     }
 
     private void validateChildByIds(List<Long> ids) {
-        resourceDao.existChidByPids( ids);
+        resourceDao.existChidByPids(ids);
     }
 
     @Override

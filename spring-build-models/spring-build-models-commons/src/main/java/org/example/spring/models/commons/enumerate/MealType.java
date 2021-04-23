@@ -8,10 +8,11 @@ import org.example.spring.plugins.commons.converter.IBaseEnum;
 @AllArgsConstructor
 @Getter
 public enum MealType implements IBaseEnum {
-    OPTIONAL("自选套餐","1","1"),
+    OPTIONAL("自选套餐", "1", "1"),
     CAREER_MEAL("职业套餐", "2", "2"),
     TEAM_MEAL("团队套餐", "3", "3"),
-    VIP_MEAL("VIP套餐", "4", "4"),;
+    VIP_MEAL("VIP套餐", "4", "4"),
+    ;
 
     private final String name;
     private final String value;

@@ -1,23 +1,25 @@
 package org.example.spring.models.mysql.auth.builder;
 
-import org.example.spring.models.mysql.auth.entity.result.Account;
-import org.example.spring.models.mysql.auth.entity.result.Department;
-import org.example.spring.models.mysql.auth.entity.result.Resource;
-import org.example.spring.models.mysql.auth.entity.result.Role;
-import org.example.spring.plugins.commons.builder.BaseBuilder;
-import org.example.spring.models.mysql.auth.entity.dto.DepartmentNode;
-import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
-import org.example.spring.models.mysql.auth.entity.query.DepartmentQuery;
-import org.example.spring.models.mysql.auth.entity.query.ResourceQuery;
-import org.example.spring.models.mysql.auth.entity.query.RoleQuery;
-import org.example.spring.models.mysql.auth.entity.dto.ResourceNode;
 import org.example.spring.infrastructures.mysql.auth.table.po.*;
 import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
+import org.example.spring.models.mysql.auth.entity.dto.DepartmentNode;
+import org.example.spring.models.mysql.auth.entity.dto.ResourceNode;
+import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
+import org.example.spring.models.mysql.auth.entity.query.DepartmentQuery;
+import org.example.spring.models.mysql.auth.entity.query.ResourceQuery;
+import org.example.spring.models.mysql.auth.entity.query.RoleQuery;
+import org.example.spring.models.mysql.auth.entity.result.Account;
+import org.example.spring.models.mysql.auth.entity.result.Department;
+import org.example.spring.models.mysql.auth.entity.result.Resource;
+import org.example.spring.models.mysql.auth.entity.result.Role;
+import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 import java.util.List;
 

@@ -1,4 +1,5 @@
 package org.example.spring.models.mysql.auth.entity.vo;
+
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.bean.copier.CopyOptions;
 import cn.hutool.core.util.ObjectUtil;

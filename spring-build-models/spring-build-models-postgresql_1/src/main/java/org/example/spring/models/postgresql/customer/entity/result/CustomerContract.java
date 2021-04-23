@@ -2,8 +2,8 @@ package org.example.spring.models.postgresql.customer.entity.result;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.models.commons.enumerate.CustomerContractStatus;
 import org.example.spring.infrastructures.postgresql.customer.table.po.TCustomerContract;
+import org.example.spring.models.commons.enumerate.CustomerContractStatus;
 
 import java.util.Optional;
 

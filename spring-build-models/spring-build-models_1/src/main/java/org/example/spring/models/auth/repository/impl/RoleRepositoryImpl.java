@@ -2,19 +2,19 @@ package org.example.spring.models.auth.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
-import org.example.spring.models.auth.builder.AuthModelBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TResourceDao;
 import org.example.spring.infrastructures.mysql.auth.dao.TRoleDao;
 import org.example.spring.infrastructures.mysql.auth.dao.TRoleResourceDao;
+import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
+import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
+import org.example.spring.models.auth.builder.AuthModelBuilder;
 import org.example.spring.models.auth.entity.query.RoleQuery;
 import org.example.spring.models.auth.entity.result.Role;
 import org.example.spring.models.auth.entity.result.RoleDetails;
 import org.example.spring.models.auth.entity.vo.RoleModelVo;
 import org.example.spring.models.auth.repository.RoleRepository;
-import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
-import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,6 +31,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleModelVo, R
     private final TResourceDao permissionDao;
     private final TRoleResourceDao rolePermissionDao;
     private final ThreadPoolExecutor executor;
+
     @Override
     public void save(RoleModelVo roleModelVo) {
         saveWithId(roleModelVo);

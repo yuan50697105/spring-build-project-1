@@ -1,18 +1,18 @@
 package org.example.spring.models.postgresql.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.models.postgresql.customer.builder.CustomerModelBuilder;
 import org.example.spring.infrastructures.postgresql.customer.dao.TCustomerContractDao;
 import org.example.spring.infrastructures.postgresql.customer.dao.TCustomerInfoDao;
+import org.example.spring.infrastructures.postgresql.customer.table.po.TCustomerInfo;
+import org.example.spring.infrastructures.postgresql.customer.table.query.TCustomerInfoQuery;
+import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.models.postgresql.customer.builder.CustomerModelBuilder;
 import org.example.spring.models.postgresql.customer.entity.query.CustomerQuery;
 import org.example.spring.models.postgresql.customer.entity.result.Customer;
 import org.example.spring.models.postgresql.customer.entity.result.CustomerDetails;
 import org.example.spring.models.postgresql.customer.entity.vo.CustomerModelVo;
 import org.example.spring.models.postgresql.customer.repository.CustomerRepository;
-import org.example.spring.infrastructures.postgresql.customer.table.po.TCustomerInfo;
-import org.example.spring.infrastructures.postgresql.customer.table.query.TCustomerInfoQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

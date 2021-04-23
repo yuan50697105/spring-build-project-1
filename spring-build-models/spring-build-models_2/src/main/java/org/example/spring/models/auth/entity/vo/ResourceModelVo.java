@@ -1,4 +1,5 @@
 package org.example.spring.models.auth.entity.vo;
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

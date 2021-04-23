@@ -5,20 +5,20 @@ import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.lang.tree.TreeUtil;
 import cn.hutool.core.lang.tree.parser.NodeParser;
 import lombok.AllArgsConstructor;
-import org.example.spring.models.auth.builder.AuthModelBuilder;
 import org.example.spring.infrastructures.mysql.auth.dao.TResourceDao;
 import org.example.spring.infrastructures.mysql.auth.dao.TRoleResourceDao;
 import org.example.spring.infrastructures.mysql.auth.dao.UserResourceDao;
+import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
+import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
+import org.example.spring.models.auth.builder.AuthModelBuilder;
+import org.example.spring.models.auth.entity.dto.ResourceNode;
 import org.example.spring.models.auth.entity.query.ResourceQuery;
 import org.example.spring.models.auth.entity.result.Resource;
 import org.example.spring.models.auth.entity.result.ResourceDetails;
-import org.example.spring.models.auth.entity.dto.ResourceNode;
 import org.example.spring.models.auth.entity.vo.ResourceModelVo;
 import org.example.spring.models.auth.repository.ResourceRepository;
-import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
-import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -66,7 +66,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     }
 
     private void validateChildByIds(List<Long> ids) {
-        resourceDao.existChidByPids( ids);
+        resourceDao.existChidByPids(ids);
     }
 
     @Override

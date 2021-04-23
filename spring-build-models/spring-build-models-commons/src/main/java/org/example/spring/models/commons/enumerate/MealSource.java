@@ -26,4 +26,4 @@ public enum MealSource implements IBaseEnum {
     public String[] getValueArrays() {
         return new String[]{name, value, code, name()};
     }
-    }
+}

@@ -1,8 +1,8 @@
 package org.example.spring.models.commons.repository.impl;
 
 import org.example.spring.models.commons.entity.IModelVo;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
 import org.example.spring.models.commons.repository.IBaseRepository;
+import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
 import java.util.List;
 import java.util.Optional;

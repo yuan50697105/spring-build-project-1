@@ -1,19 +1,20 @@
 package org.example.spring.models.patient.builder;
 
-import org.example.spring.infrastructures.mysql.patient.table.vo.*;
-import org.example.spring.plugins.commons.builder.BaseBuilder;
-import org.example.spring.models.patient.entity.query.PatientGroupQuery;
-import org.example.spring.models.patient.entity.query.PatientQuery;
-import org.example.spring.models.patient.entity.query.PatientTeamMealQuery;
-import org.example.spring.models.patient.entity.query.PatientTeamQuery;
-import org.example.spring.models.patient.entity.result.*;
 import org.example.spring.infrastructures.mysql.patient.table.po.*;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamMealQuery;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamQuery;
+import org.example.spring.infrastructures.mysql.patient.table.vo.*;
+import org.example.spring.models.patient.entity.query.PatientGroupQuery;
+import org.example.spring.models.patient.entity.query.PatientQuery;
+import org.example.spring.models.patient.entity.query.PatientTeamMealQuery;
+import org.example.spring.models.patient.entity.query.PatientTeamQuery;
+import org.example.spring.models.patient.entity.result.*;
+import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 
 import java.util.List;
 

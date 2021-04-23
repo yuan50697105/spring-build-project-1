@@ -2,19 +2,19 @@ package org.example.spring.models.postgresql.auth.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
-import org.example.spring.models.postgresql.auth.builder.AuthModelBuilder;
 import org.example.spring.infrastructures.postgresql.auth.dao.TResourceDao;
 import org.example.spring.infrastructures.postgresql.auth.dao.TRoleDao;
 import org.example.spring.infrastructures.postgresql.auth.dao.TRoleResourceDao;
+import org.example.spring.infrastructures.postgresql.auth.table.po.TRole;
+import org.example.spring.infrastructures.postgresql.auth.table.query.TRoleQuery;
+import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.models.postgresql.auth.builder.AuthModelBuilder;
 import org.example.spring.models.postgresql.auth.entity.query.RoleQuery;
 import org.example.spring.models.postgresql.auth.entity.result.Role;
 import org.example.spring.models.postgresql.auth.entity.result.RoleDetails;
 import org.example.spring.models.postgresql.auth.entity.vo.RoleModelVo;
 import org.example.spring.models.postgresql.auth.repository.RoleRepository;
-import org.example.spring.infrastructures.postgresql.auth.table.po.TRole;
-import org.example.spring.infrastructures.postgresql.auth.table.query.TRoleQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,6 +31,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleModelVo, R
     private final TResourceDao permissionDao;
     private final TRoleResourceDao rolePermissionDao;
     private final ThreadPoolExecutor executor;
+
     @Override
     public void save(RoleModelVo roleModelVo) {
         saveWithId(roleModelVo);

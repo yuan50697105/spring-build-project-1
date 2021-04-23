@@ -12,6 +12,7 @@ import org.example.spring.infrastructures.postgresql.auth.dao.TRoleDao;
 import org.example.spring.infrastructures.postgresql.auth.table.po.TDepartment;
 import org.example.spring.infrastructures.postgresql.auth.table.po.TDepartmentRole;
 import org.example.spring.infrastructures.postgresql.auth.table.query.TDepartmentQuery;
+import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.postgresql.auth.builder.AuthModelBuilder;
 import org.example.spring.models.postgresql.auth.entity.dto.DepartmentNode;
 import org.example.spring.models.postgresql.auth.entity.query.DepartmentQuery;
@@ -20,7 +21,6 @@ import org.example.spring.models.postgresql.auth.entity.result.DepartmentDetails
 import org.example.spring.models.postgresql.auth.entity.vo.DepartmentModelVo;
 import org.example.spring.models.postgresql.auth.repository.DepartmentRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -75,7 +75,7 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
 
     private void updateRole(Long id, List<Long> roleIds) {
         departmentRoleDao.removeByDepartmentId(id);
-        saveRole(roleIds,id);
+        saveRole(roleIds, id);
     }
 
     @Override

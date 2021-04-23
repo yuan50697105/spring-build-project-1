@@ -8,7 +8,7 @@ import org.example.spring.plugins.commons.converter.IBaseEnum;
 @AllArgsConstructor
 @Getter
 public enum Bear implements IBaseEnum {
-    COMMONS("通用","1","1"),
+    COMMONS("通用", "1", "1"),
     BORN("已生育", "2", "2"),
     UNBORN("未生育", "3", "3");
 

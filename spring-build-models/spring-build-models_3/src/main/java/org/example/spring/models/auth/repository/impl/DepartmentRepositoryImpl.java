@@ -19,8 +19,8 @@ import org.example.spring.models.auth.entity.result.Department;
 import org.example.spring.models.auth.entity.result.DepartmentDetails;
 import org.example.spring.models.auth.entity.vo.DepartmentModelVo;
 import org.example.spring.models.auth.repository.DepartmentRepository;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -75,7 +75,7 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
 
     private void updateRole(Long id, List<Long> roleIds) {
         departmentRoleDao.removeByDepartmentId(id);
-        saveRole(roleIds,id);
+        saveRole(roleIds, id);
     }
 
     @Override

@@ -9,7 +9,8 @@ import org.example.spring.plugins.commons.converter.IBaseEnum;
 @Getter
 public enum CustomerType implements IBaseEnum {
     GENERAL("普通客户", "001", "1"),
-    VIP_1("VIP一级", "002", "2"),;
+    VIP_1("VIP一级", "002", "2"),
+    ;
 
     private final String name;
     private final String value;

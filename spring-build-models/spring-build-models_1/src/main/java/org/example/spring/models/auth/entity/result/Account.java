@@ -3,8 +3,8 @@ package org.example.spring.models.auth.entity.result;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
+import org.example.spring.models.commons.enumerate.UserStatus;
 
 import java.io.Serializable;
 import java.util.Optional;

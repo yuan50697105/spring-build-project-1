@@ -1,4 +1,5 @@
 package org.example.spring.models.clickhouse.auth.entity.vo;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
