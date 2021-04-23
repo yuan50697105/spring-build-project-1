@@ -24,10 +24,10 @@ public class AccountController {
     private final AAccountService accountService;
 
     @GetMapping
-    public WebAsyncTask<Result<List<Account>>> queryPage(AccountQuery query) {
+    public WebAsyncTask<Result<IPageData<Account>>> queryPage(AccountQuery query) {
         return new WebAsyncTask<>(() -> {
             IPageData<Account> data = accountService.queryPage(query);
-            return R.success(data.getTotalRowNum(), data.getData());
+            return R.success(data.getTotalRowNum(), data);
         });
     }
 

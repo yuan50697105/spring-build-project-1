@@ -18,11 +18,18 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_id, update_id, create_user, update_user, create_date, update_date, username, 
+    id, create_id, update_id, create_user, update_user, create_date, update_date, username,
     "name", "password", "status"
   </sql>
 
   <select id="existByUsername" resultType="boolean">
     select count(*) from t_user where username=#{username,jdbcType=VARCHAR} limit 1
-    </select>
+  </select>
+
+  <select id="updateStatusByIds" resultType="java.lang.Integer">
+    update t_user set status=#{status,jdbcType=VARCHAR} where id in
+    <foreach collection="ids" open="(" close=")" separator="," item="id">
+      #{id,jdbcType=BIGINT}
+    </foreach>
+  </select>
 </mapper>
