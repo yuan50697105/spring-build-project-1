@@ -7,6 +7,7 @@ import org.example.spring.infrastructures.postgresql.auth.dao.TUserDao;
 import org.example.spring.infrastructures.postgresql.auth.dao.TUserRoleDao;
 import org.example.spring.infrastructures.postgresql.auth.table.po.TUser;
 import org.example.spring.infrastructures.postgresql.auth.table.query.TUserQuery;
+import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.postgresql.auth.builder.AuthModelBuilder;
 import org.example.spring.models.postgresql.auth.entity.query.AccountQuery;
@@ -109,4 +110,8 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
         return authModelBuilder.buildAccount(data);
     }
 
+    @Override
+    public void updateStatusByIds(UserStatus status, List<Long> ids) {
+        userDao.updateStatusByIds(status.getValue(), ids);
+    }
 }
