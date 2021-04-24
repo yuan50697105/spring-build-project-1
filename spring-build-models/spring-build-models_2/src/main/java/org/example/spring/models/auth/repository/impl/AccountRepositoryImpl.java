@@ -13,6 +13,7 @@ import org.example.spring.models.auth.entity.result.Account;
 import org.example.spring.models.auth.entity.result.AccountDetails;
 import org.example.spring.models.auth.entity.vo.AccountModelVo;
 import org.example.spring.models.auth.repository.AccountRepository;
+import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
@@ -107,6 +108,11 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
         TUserQuery query = authModelBuilder.buildAccountQuery(accountQuery);
         TUser data = userDao.queryOne(query);
         return authModelBuilder.buildAccount(data);
+    }
+
+    @Override
+    public void updateStatusByIds(UserStatus status, List<Long> ids) {
+        userDao.updateStatusByIds(status.getValue(), ids);
     }
 
 }

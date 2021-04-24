@@ -56,6 +56,5 @@ public class AAccountServiceImpl implements AAccountService {
 
     @Override
     public void updateStatus(String status, List<Long> list) {
-
     }
 }
