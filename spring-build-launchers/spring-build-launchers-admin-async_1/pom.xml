@@ -8,7 +8,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-build-launchers-admin-async_1</artifactId>
-
+    <properties>
+        <start-class>org.example.spring.Application</start-class>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
