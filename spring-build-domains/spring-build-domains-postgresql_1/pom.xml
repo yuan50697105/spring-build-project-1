@@ -18,10 +18,14 @@
             <groupId>org.example.spring</groupId>
             <artifactId>spring-build-models-postgresql_1</artifactId>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.example.spring</groupId>-->
-        <!--            <artifactId>spring-build-plugins-wx</artifactId>-->
-        <!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.example.spring</groupId>-->
+<!--            <artifactId>spring-build-plugins-wx</artifactId>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>aliyun-sms-spring-boot-starter</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
