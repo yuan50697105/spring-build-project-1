@@ -32,7 +32,7 @@
         <spring-cloud.version>2020.0.2</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
         <spring-cloud-huawei.version>1.5.1-Hoxton</spring-cloud-huawei.version>
-        <api-boot.version>2.3.3.RELEASE</api-boot.version>
+        <api-boot.version>2.3.4</api-boot.version>
         <yue-library.version>j8.2.3.2</yue-library.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <aliyun-spring-boot-dependencies.version>1.0.0</aliyun-spring-boot-dependencies.version>
@@ -188,15 +188,6 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring-boot.version}</version>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>repackage</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                     <configuration>
                         <attach>false</attach>
                     </configuration>
