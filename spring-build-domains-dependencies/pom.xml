@@ -40,6 +40,28 @@
                 <artifactId>spring-build-domains-service_2</artifactId>
                 <version>0.0.5-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-domains-mysql_1</artifactId>
+                <version>0.0.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-domains-mysql_2</artifactId>
+                <version>0.0.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-domains-postgresql_1</artifactId>
+                <version>0.0.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-domains-postgresql_2</artifactId>
+                <version>0.0.5-SNAPSHOT</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 </project>
