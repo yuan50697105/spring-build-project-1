@@ -7,5 +7,7 @@ services:
     image: admin:1-async
     container_name: damin-async-1
     hostname: damin-async-1
+    expose:
+      - 8080
     ports:
     - 8080:8080
