@@ -27,7 +27,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public List<Account> queryList(AccountQuery query) {
-        return accountRepository.queryTop(query,query.getSize());
+        return accountRepository.queryTop(query, query.getSize());
     }
 
     @Override
@@ -57,6 +57,6 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void updateStatusByIds(UserStatus status, List<Long> ids) {
-        accountRepository.updateStatus(status,ids);
+        accountRepository.updateStatus(status, ids);
     }
 }

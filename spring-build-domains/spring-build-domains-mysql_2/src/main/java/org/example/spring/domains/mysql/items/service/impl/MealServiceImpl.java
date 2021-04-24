@@ -9,5 +9,5 @@ import org.springframework.transaction.annotation.Transactional;
 @AllArgsConstructor
 @Transactional
 public class MealServiceImpl implements MealService {
-    
+
 }

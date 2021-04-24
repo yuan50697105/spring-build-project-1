@@ -23,6 +23,7 @@ import java.util.List;
 public class CustomerContractServiceImpl implements CustomerContractService {
     private final CustomerContractRepository customerContractRepository;
     private final CustomerContractOssRepository customerContractOssRepository;
+
     @Override
     public IPageData<CustomerContract> selectPage(CustomerContractQuery query) {
         return customerContractRepository.queryPage(query);
@@ -30,7 +31,7 @@ public class CustomerContractServiceImpl implements CustomerContractService {
 
     @Override
     public List<CustomerContract> selectList(CustomerContractQuery query) {
-        return customerContractRepository.queryTop(query,query.getSize());
+        return customerContractRepository.queryTop(query, query.getSize());
     }
 
     @Override
@@ -61,7 +62,7 @@ public class CustomerContractServiceImpl implements CustomerContractService {
     @SneakyThrows
     @Override
     public void upload(Long id, MultipartFile file) {
-        OssResponse response = customerContractOssRepository.put(id +"_"+ file.getOriginalFilename(), file.getContentType(), file.getInputStream(), String.valueOf(file.getSize()));
+        OssResponse response = customerContractOssRepository.put(id + "_" + file.getOriginalFilename(), file.getContentType(), file.getInputStream(), String.valueOf(file.getSize()));
         String fileName = response.getFileName();
         customerContractRepository.updateFile(id, fileName);
     }

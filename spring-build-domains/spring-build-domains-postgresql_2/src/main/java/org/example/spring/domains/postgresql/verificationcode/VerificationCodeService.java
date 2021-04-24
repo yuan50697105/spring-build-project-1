@@ -1,4 +1,4 @@
-package org.example.spring.domains.mysql.verificationcode;
+package org.example.spring.domains.postgresql.verificationcode;
 
 import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;

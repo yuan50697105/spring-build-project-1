@@ -26,7 +26,7 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public List<Role> queryList(RoleQuery query) {
-        return roleRepository.queryTop(query,query.getSize());
+        return roleRepository.queryTop(query, query.getSize());
     }
 
     @Override
