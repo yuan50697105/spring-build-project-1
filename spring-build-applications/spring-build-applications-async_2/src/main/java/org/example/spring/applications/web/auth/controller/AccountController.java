@@ -3,6 +3,7 @@ package org.example.spring.applications.web.auth.controller;
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
+import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.result.Account;
@@ -15,6 +16,7 @@ import org.springframework.web.context.request.async.WebAsyncTask;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 @SuppressWarnings("deprecation")
 @RestController
@@ -139,5 +141,12 @@ public class AccountController {
         });
     }
 
+    @PostMapping("message/send")
+    public WebAsyncTask<Result<?>> sendMessage(@RequestBody PhoneMessageDTO phoneMessageDTO) {
+        return new WebAsyncTask<>(() -> {
+            accountService.sendMessage(phoneMessageDTO);
+            return R.success();
+        });
+    }
 
 }

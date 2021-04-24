@@ -1,16 +1,20 @@
 package org.example.spring.applications.web.auth.service.impl;
 
+import cn.hutool.core.lang.Validator;
 import lombok.AllArgsConstructor;
+import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.domains.auth.service.AccountService;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.result.Account;
 import org.example.spring.models.auth.entity.result.AccountDetails;
 import org.example.spring.models.auth.entity.vo.AccountModelVo;
+import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.validation.ValidationException;
 import java.util.List;
 
 @Service
@@ -56,5 +60,17 @@ public class AAccountServiceImpl implements AAccountService {
 
     @Override
     public void updateStatus(String status, List<Long> list) {
+        UserStatus userStatus = UserStatus.get(status);
+        if (Validator.isNotEmpty(userStatus)) {
+            accountService.updateStatusByIds(userStatus, list);
+        } else {
+            throw new ValidationException("status无效");
+        }
+    }
+
+    @Override
+    public void sendMessage(PhoneMessageDTO phoneMessageDTO) {
+        String phone = phoneMessageDTO.getPhone();
+
     }
 }

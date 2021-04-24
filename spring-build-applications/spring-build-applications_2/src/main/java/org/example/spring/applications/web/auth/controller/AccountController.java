@@ -3,6 +3,7 @@ package org.example.spring.applications.web.auth.controller;
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
+import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.result.Account;
@@ -11,6 +12,7 @@ import org.example.spring.models.auth.entity.vo.AccountModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.async.WebAsyncTask;
 
 import java.util.Collections;
 import java.util.List;
@@ -101,5 +103,10 @@ public class AccountController {
         return R.success();
     }
 
+    @PostMapping("message/send")
+    public Result<?> sendMessage(@RequestBody PhoneMessageDTO phoneMessageDTO) {
+        accountService.sendMessage(phoneMessageDTO);
+        return R.success();
+    }
 
 }

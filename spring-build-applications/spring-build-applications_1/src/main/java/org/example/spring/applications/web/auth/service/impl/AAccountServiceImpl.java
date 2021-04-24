@@ -2,6 +2,7 @@ package org.example.spring.applications.web.auth.service.impl;
 
 import cn.hutool.core.lang.Validator;
 import lombok.AllArgsConstructor;
+import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.domains.auth.service.AccountService;
 import org.example.spring.models.auth.entity.query.AccountQuery;
@@ -65,5 +66,10 @@ public class AAccountServiceImpl implements AAccountService {
         } else {
             throw new ValidationException("status无效");
         }
+    }
+
+    @Override
+    public void sendMessage(PhoneMessageDTO phoneMessageDTO) {
+
     }
 }

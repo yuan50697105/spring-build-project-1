@@ -1,5 +1,6 @@
 package org.example.spring.applications.web.auth.service;
 
+import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.result.Account;
 import org.example.spring.models.auth.entity.result.AccountDetails;
@@ -24,4 +25,6 @@ public interface AAccountService {
     void delete(List<Long> list);
 
     void updateStatus(String status, List<Long> list);
+
+    void sendMessage(PhoneMessageDTO phoneMessageDTO);
 }
