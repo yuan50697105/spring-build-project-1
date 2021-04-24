@@ -1,0 +1,53 @@
+spring:
+  datasource:
+    url: jdbc:mysql://rm-2zel2q0w4x1t6sn77ko.mysql.rds.aliyuncs.com:3306/spring_demo?serverTimezone=Asia/Shanghai
+    username: yuanenzhi
+    password: Root@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 8.140.177.12
+    password: root
+#    redisson:
+#      config: "redisson.yaml"
+  cache:
+    type: redis
+  data:
+    mongodb:
+      uri: mongodb:root:root@8.140.177.12:27017/shower
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss:SSS
+    time-zone: GMT+8
+  mvc:
+    format:
+      date-time: yyyy-MM-dd HH:mm:ss
+      date: yyyy-MM-dd
+      time: HH:mm:ss
+    locale: zh_CN
+    async:
+      request-timeout: 10s
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+snowflake:
+  enable-atomic: true
+logging:
+  level:
+    web: debug
+minio:
+  enabled: true
+  endpoint: http://8.140.177.12:9001/
+  secret-key: root
+  access-key: root
+wx:
+  pay:
+    apiv3-key:
+    app-id:
+    cert-serial-no:
+    key-path:
+    mch-id:
+    mch-key:
+    pay-score-notify-url:
+    private-cert-path:
+    private-key-path:
