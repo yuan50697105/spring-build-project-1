@@ -13,6 +13,10 @@
         <module>spring-build-domains-commons</module>
         <module>spring-build-domains-service_1</module>
         <module>spring-build-domains-service_2</module>
+        <module>spring-build-domains-mysql_1</module>
+        <module>spring-build-domains-mysql_2</module>
+        <module>spring-build-domains-postgresql_1</module>
+        <module>spring-build-domains-postgresql_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
