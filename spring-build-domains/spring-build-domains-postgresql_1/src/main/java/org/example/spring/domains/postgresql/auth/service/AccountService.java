@@ -1,5 +1,6 @@
 package org.example.spring.domains.postgresql.auth.service;
 
+import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.models.postgresql.auth.entity.query.AccountQuery;
 import org.example.spring.models.postgresql.auth.entity.result.Account;
 import org.example.spring.models.postgresql.auth.entity.result.AccountDetails;
@@ -22,4 +23,6 @@ public interface AccountService {
     void update(AccountModelVo formVo);
 
     void delete(List<Long> ids);
+
+    void updateStatusByIds(UserStatus status, List<Long> ids);
 }

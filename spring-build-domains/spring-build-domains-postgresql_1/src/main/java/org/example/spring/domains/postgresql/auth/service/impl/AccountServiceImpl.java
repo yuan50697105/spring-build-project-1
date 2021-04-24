@@ -2,6 +2,7 @@ package org.example.spring.domains.postgresql.auth.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.postgresql.auth.service.AccountService;
+import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.models.postgresql.auth.entity.query.AccountQuery;
 import org.example.spring.models.postgresql.auth.entity.result.Account;
 import org.example.spring.models.postgresql.auth.entity.result.AccountDetails;
@@ -52,5 +53,10 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void delete(List<Long> ids) {
         accountRepository.delete(ids);
+    }
+
+    @Override
+    public void updateStatusByIds(UserStatus status, List<Long> ids) {
+        accountRepository.updateStatusByIds(status,ids);
     }
 }

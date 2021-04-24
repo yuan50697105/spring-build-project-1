@@ -57,6 +57,6 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void updateStatusByIds(UserStatus status, List<Long> ids) {
-
+        accountRepository.updateStatusByIds(status, ids);
     }
 }
