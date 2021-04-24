@@ -2,7 +2,10 @@ package org.example.spring.applications.web.auth.controller;
 
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
+import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.core.Single;
 import lombok.AllArgsConstructor;
+import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.result.Account;
@@ -25,16 +28,16 @@ public class AccountController {
     private final AAccountService accountService;
 
     @GetMapping
-    public WebAsyncTask<Result<IPageData<Account>>> queryPage(AccountQuery query) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<IPageData<Account>>> queryPage(AccountQuery query) {
+        return Single.fromCallable(() -> {
             IPageData<Account> data = accountService.queryPage(query);
             return R.success(data.getTotalRowNum(), data);
         });
     }
 
     @GetMapping("list/{size}")
-    public WebAsyncTask<Result<List<Account>>> queryList(AccountQuery query, @PathVariable int size) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<List<Account>>> queryList(AccountQuery query, @PathVariable int size) {
+        return Single.fromCallable(() -> {
             List<Account> data = accountService.queryList((AccountQuery) query.withSize(size));
             return R.success((long) data.size(), data);
 
@@ -42,8 +45,8 @@ public class AccountController {
     }
 
     @GetMapping("list")
-    public WebAsyncTask<Result<List<Account>>> queryList(AccountQuery query) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<List<Account>>> queryList(AccountQuery query) {
+        return Single.fromCallable(() -> {
             List<Account> data = accountService.queryList(query);
             return R.success((long) data.size(), data);
 
@@ -51,16 +54,16 @@ public class AccountController {
     }
 
     @GetMapping("one")
-    public WebAsyncTask<Result<Account>> queryOne(AccountQuery query) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<Account>> queryOne(AccountQuery query) {
+        return Single.fromCallable(() -> {
             Account data = accountService.queryOne(query);
             return R.success(data);
         });
     }
 
     @GetMapping("{id}")
-    public WebAsyncTask<Result<AccountDetails>> get(@PathVariable Long id) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<AccountDetails>> get(@PathVariable Long id) {
+        return Single.fromCallable(() -> {
             AccountDetails data = accountService.get(id);
             return R.success(data);
 
@@ -68,8 +71,8 @@ public class AccountController {
     }
 
     @PostMapping
-    public WebAsyncTask<Result<?>> save(@RequestBody AccountModelVo formVo) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<?>> save(@RequestBody AccountModelVo formVo) {
+        return Single.fromCallable(() -> {
             accountService.save(formVo);
             return R.success();
 
@@ -77,16 +80,16 @@ public class AccountController {
     }
 
     @PutMapping
-    public WebAsyncTask<Result<?>> update(@RequestBody AccountModelVo formVo) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<?>> update(@RequestBody AccountModelVo formVo) {
+        return Single.fromCallable(() -> {
             accountService.update(formVo);
             return R.success();
         });
     }
 
     @PutMapping("{id}")
-    public WebAsyncTask<Result<?>> update(@RequestBody AccountModelVo formVo, @PathVariable Long id) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<?>> update(@RequestBody AccountModelVo formVo, @PathVariable Long id) {
+        return Single.fromCallable(() -> {
             accountService.update((AccountModelVo) formVo.withId(id));
             return R.success();
 
@@ -95,48 +98,48 @@ public class AccountController {
 
 
     @DeleteMapping("{id}")
-    public WebAsyncTask<Result<?>> delete(@PathVariable Long id) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<?>> delete(@PathVariable Long id) {
+        return Single.fromCallable(() -> {
             accountService.delete(Collections.singletonList(id));
             return R.success();
         });
     }
 
     @DeleteMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public WebAsyncTask<Result<?>> delete1(@RequestParam List<Long> ids) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<?>> delete1(@RequestParam List<Long> ids) {
+        return Single.fromCallable(() -> {
             accountService.delete(ids);
             return R.success();
         });
     }
 
     @DeleteMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public WebAsyncTask<Result<?>> delete2(@RequestBody List<Long> ids) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<?>> delete2(@RequestBody List<Long> ids) {
+        return Single.fromCallable(() -> {
             accountService.delete(ids);
             return R.success();
         });
     }
 
     @PutMapping("status/{status}/{id}")
-    public WebAsyncTask<Result<?>> updateStatus(@PathVariable String status, @PathVariable Long id) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<?>> updateStatus(@PathVariable String status, @PathVariable Long id) {
+        return Single.fromCallable(() -> {
             accountService.updateStatus(status, Collections.singletonList(id));
             return R.success();
         });
     }
 
     @PutMapping(value = "status/{status}", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public WebAsyncTask<Result<?>> updateStatus1(@PathVariable String status, @RequestParam List<Long> ids) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<?>> updateStatus1(@PathVariable String status, @RequestParam List<Long> ids) {
+        return Single.fromCallable(() -> {
             accountService.updateStatus(status, ids);
             return R.success();
         });
     }
 
     @PutMapping(value = "status/{status}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public WebAsyncTask<Result<?>> updateStatus2(@PathVariable String status,@RequestBody List<Long> ids) {
-        return new WebAsyncTask<>(() -> {
+    public @NonNull Single<Result<?>> updateStatus2(@PathVariable String status, @RequestBody List<Long> ids) {
+        return Single.fromCallable(() -> {
             accountService.updateStatus(status, ids);
             return R.success();
         });

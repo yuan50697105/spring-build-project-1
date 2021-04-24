@@ -3,7 +3,6 @@ package org.example.spring.applications.web.auth.controller;
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
-import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.models.auth.entity.query.AccountQuery;
 import org.example.spring.models.auth.entity.result.Account;
@@ -78,9 +77,11 @@ public class AccountController {
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody AccountModelVo formVo) {
-        accountService.update(formVo);
-        return R.success();
+    public WebAsyncTask<Result<?>> update(@RequestBody AccountModelVo formVo) {
+        return new WebAsyncTask<>(() -> {
+            accountService.update(formVo);
+            return R.success();
+        });
     }
 
     @PutMapping("{id}")
@@ -137,14 +138,6 @@ public class AccountController {
     public WebAsyncTask<Result<?>> updateStatus2(@PathVariable String status,@RequestBody List<Long> ids) {
         return new WebAsyncTask<>(() -> {
             accountService.updateStatus(status, ids);
-            return R.success();
-        });
-    }
-
-    @PostMapping("message/send")
-    public WebAsyncTask<Result<?>> sendMessage(@RequestBody PhoneMessageDTO phoneMessageDTO) {
-        return new WebAsyncTask<>(() -> {
-            accountService.sendMessage(phoneMessageDTO);
             return R.success();
         });
     }
