@@ -13,16 +13,27 @@
     <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="password" jdbcType="VARCHAR" property="password"/>
+    <result column="status" jdbcType="VARCHAR" property="status"/>
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_id, update_id, create_user, update_user, create_date, update_date, username, 
+    id, create_id, update_id, create_user, update_user, create_date, update_date, username,
     `name`, `password`, `status`
   </sql>
 
   <select id="existByUsername" resultType="boolean">
-    select count(*) from t_user where username=#{username,jdbcType=VARCHAR} limit 1
-    </select>
+    select count(*)
+    from t_user
+    where username = #{username,jdbcType=VARCHAR}
+    limit 1
+  </select>
+
+  <update id="updateStatusByIds">
+    update t_user
+    set status=#{status,jdbcType=VARCHAR} where id in
+    <foreach collection="ids" open="(" close=")" separator="," item="id">
+      #{id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
 </mapper>
