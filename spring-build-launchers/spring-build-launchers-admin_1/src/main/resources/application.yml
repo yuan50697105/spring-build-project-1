@@ -25,6 +25,8 @@ spring:
     locale: zh_CN
     async:
       request-timeout: 10s
+  web:
+    locale: zh_CN
 management:
   endpoints:
     web:
