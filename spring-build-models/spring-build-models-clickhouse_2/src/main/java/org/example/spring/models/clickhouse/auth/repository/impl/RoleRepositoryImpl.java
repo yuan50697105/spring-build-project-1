@@ -64,7 +64,7 @@ public class RoleRepositoryImpl extends IBaseRepositoryImpl<Role, RoleModelVo, R
             authModelBuilder.copyRole(role, tRole);
             roleDao.updateById(tRole);
             if (ObjectUtil.isNotEmpty(resourceIds)) {
-                executor.submit(() -> saveResource(resourceIds, tRole.getId()));
+                executor.execute(() -> saveResource(resourceIds, tRole.getId()));
             }
         }
     }

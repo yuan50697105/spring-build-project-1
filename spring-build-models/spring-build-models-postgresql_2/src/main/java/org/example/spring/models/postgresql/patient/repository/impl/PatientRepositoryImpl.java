@@ -69,10 +69,10 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         addExtra(entity);
         patientDao.save(entity);
         if (ObjectUtil.isNotEmpty(patientFormVo.getMeal())) {
-            executor.submit(() -> saveMealItem(entity, patientFormVo.getMeal()));
+            executor.execute(() -> saveMealItem(entity, patientFormVo.getMeal()));
         }
         if (ObjectUtil.isNotEmpty(patientFormVo.getFeeItems())) {
-            executor.submit(() -> {
+            executor.execute(() -> {
                 saveFeeItem(entity, patientFormVo.getFeeItems(), ItemSource.OPTIONAL.getValue(), FeeItemType.PERSONAL.getValue());
             });
         }
@@ -82,7 +82,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     private void saveMealItem(final TPatient entity, final PatientMealFormVo meal) {
         TPatientMeal patientMeal = patientModelBuilder.buildPatientMeal(meal.getMeal());
         patientMealDao.save(patientMeal);
-        executor.submit(() -> saveFeeItem(entity, meal.getItems(), ItemSource.MEAL.getValue(), FeeItemType.PERSONAL.getValue()));
+        executor.execute(() -> saveFeeItem(entity, meal.getItems(), ItemSource.MEAL.getValue(), FeeItemType.PERSONAL.getValue()));
     }
 
     private void savePersonalCheckItem(PatientFeeItemFormVo feeItem, TPatientFeeItem tPatientFeeItem) {

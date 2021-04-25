@@ -46,7 +46,7 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
         List<Long> roleIds = departmentModelVo.getRoleIds();
         departmentDao.save(department);
         if (ObjectUtil.isNotEmpty(roleIds)) {
-            executor.submit(() -> saveRole(roleIds, department.getId()));
+            executor.execute(() -> saveRole(roleIds, department.getId()));
         }
         return department.getId();
     }
@@ -68,7 +68,7 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
             authModelBuilder.copyDepartment(department, tDepartment);
             departmentDao.updateById(tDepartment);
             if (ObjectUtil.isNotEmpty(roleIds)) {
-                executor.submit(() -> updateRole(department.getId(), roleIds));
+                executor.execute(() -> updateRole(department.getId(), roleIds));
             }
         }
     }

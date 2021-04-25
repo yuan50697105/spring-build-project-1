@@ -43,7 +43,7 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
         final TPatientTeamMeal patientTeamMeal = patientModelBuilder.buildPatientTeamMeal(meal);
         patientTeamMealDao.save(patientTeamMeal);
         if (ObjectUtil.isNotEmpty(patientTeamMealFormVo.getFeeItems())) {
-            executor.submit(() -> saveFeeItem(patientTeamMeal, patientTeamMealFormVo.getFeeItems()));
+            executor.execute(() -> saveFeeItem(patientTeamMeal, patientTeamMealFormVo.getFeeItems()));
         }
         return patientTeamMeal.getId();
     }
@@ -56,7 +56,7 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
                 setMealFeeItem(patientTeamMeal, entity);
                 patientTeamMealFeeItemDao.save(entity);
                 if (ObjectUtil.isNotEmpty(feeItemFormVo.getCheckItems())) {
-                    executor.submit(() -> saveCheckItem(entity, feeItemFormVo.getCheckItems()));
+                    executor.execute(() -> saveCheckItem(entity, feeItemFormVo.getCheckItems()));
                 }
             }
         }

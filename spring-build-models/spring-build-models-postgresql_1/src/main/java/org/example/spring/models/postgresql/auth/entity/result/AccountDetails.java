@@ -1,5 +1,6 @@
 package org.example.spring.models.postgresql.auth.entity.result;
 
+import cn.hutool.core.lang.tree.Tree;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -10,6 +11,6 @@ public class AccountDetails implements Serializable {
     private static final long serialVersionUID = -3696634452174847099L;
     private Account account;
     private List<Role> roles;
-    private List<Resource> permissions;
+    private List<Tree<Long>> resources;
 
 }

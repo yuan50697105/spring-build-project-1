@@ -15,6 +15,7 @@ import org.example.spring.models.mysql.auth.entity.result.Account;
 import org.example.spring.models.mysql.auth.entity.result.AccountDetails;
 import org.example.spring.models.mysql.auth.entity.vo.AccountModelVo;
 import org.example.spring.models.mysql.auth.repository.AccountRepository;
+import org.example.spring.models.mysql.auth.repository.ResourceRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,6 +28,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 @AllArgsConstructor
 @Transactional
 public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountModelVo, AccountDetails, AccountQuery> implements AccountRepository {
+    private final ResourceRepository resourceRepository;
     private final TUserDao userDao;
     private final TRoleDao roleDao;
     private final TUserRoleDao userRoleDao;
@@ -65,7 +67,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
             authModelBuilder.copyUser(account, tUser);
             userDao.updateById(tUser);
             if (!ObjectUtil.isAllEmpty(roleIds)) {
-                executor.submit(() -> saveUserRole(tUser.getId(), roleIds));
+                executor.execute(() -> saveUserRole(tUser.getId(), roleIds));
             }
         }
     }
@@ -86,6 +88,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
         AccountDetails accountDetails = new AccountDetails();
         accountDetails.setAccount(authModelBuilder.buildAccount(userDao.getById(id)));
         accountDetails.setRoles(authModelBuilder.buildRoleResult(userRoleDao.listByUserId(id)));
+        accountDetails.setResources(resourceRepository.listAllResourceByUserId(id));
         return accountDetails;
     }
 
