@@ -4,10 +4,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: admin:1
-    container_name: damin-1
-    hostname: damin-1
+    image: admin-1
+    container_name: admin-1
+    hostname: admin-1
     ports:
-    - 8280:8080
+    - 8380:8080
     expose:
       - 8080
