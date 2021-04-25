@@ -6,12 +6,16 @@ import com.gitee.denger.mybatis.example.ext.analytical.IExampleCriteriaValue;
 import com.gitee.denger.mybatis.example.ext.annotation.ExampleAnalytical;
 import com.gitee.denger.mybatis.example.ext.util.ClassUtils;
 import com.gitee.denger.mybatis.example.ext.util.SimpleReflectionUtils;
+import lombok.SneakyThrows;
 import tk.mybatis.mapper.entity.Example;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Type;
 
 public abstract class TkBaseQuery<T> extends EBaseQuery<Example> implements MybatisExampleForTk<T, Example> {
+    @SuppressWarnings({"JavaReflectionMemberAccess", "unchecked"})
+    @SneakyThrows
     @Override
     public Example toExample() {
 
@@ -22,7 +26,8 @@ public abstract class TkBaseQuery<T> extends EBaseQuery<Example> implements Myba
         } else {
             Class<T> entityClass = (Class)actualTypeArguments[0];
             Class<Example> exampleClass = Example.class;
-            Example example = ClassUtils.newInstance(exampleClass, new Object[]{entityClass});
+            Constructor<Example> constructor = exampleClass.getConstructor(Class.class);
+            Example example = constructor.newInstance(entityClass);
             Object exampleCriteria = SimpleReflectionUtils.invokeMethod(exampleClass, example, "createCriteria");
             SimpleReflectionUtils.doWithFields(thisClass, (field) -> {
                 field.setAccessible(true);
