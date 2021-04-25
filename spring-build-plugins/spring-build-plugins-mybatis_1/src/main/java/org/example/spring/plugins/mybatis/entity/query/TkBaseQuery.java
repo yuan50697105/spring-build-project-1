@@ -14,4 +14,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Type;
 
 public abstract class TkBaseQuery<T> extends EBaseQuery<Example> implements MybatisExampleForTk<T, Example> {
+    @Override
+    public Example toExample() {
+        return MybatisExampleForTk.super.toExample();
+    }
 }
