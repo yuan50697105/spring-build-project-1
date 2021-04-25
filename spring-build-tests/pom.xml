@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-build-tests</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-build-tests-1</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>

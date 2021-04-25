@@ -9,9 +9,11 @@ import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 
+import java.io.Serializable;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TUserQuery extends TkBaseQuery<TUser> implements MybatisExampleForTk<TUser, Example> {
+public class TUserQuery extends TkBaseQuery<TUser> implements Serializable, MybatisExampleForTk<TUser, Example> {
 
     /**
      * 用户名

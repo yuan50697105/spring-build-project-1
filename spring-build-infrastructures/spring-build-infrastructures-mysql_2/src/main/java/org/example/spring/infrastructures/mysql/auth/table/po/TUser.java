@@ -1,15 +1,16 @@
 package org.example.spring.infrastructures.mysql.auth.table.po;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.apache.ibatis.type.Alias;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
+
+import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * t_user
@@ -20,10 +21,12 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Alias("TUser")
+@TableName(TUser.TABLE)
+@Table(name = TUser.TABLE)
 public class TUser extends IBaseEntity implements Serializable {
 
     private static final long serialVersionUID = 2799305908245541459L;
+    public static final String TABLE = "t_user";
     /**
      * 用户名
      */
