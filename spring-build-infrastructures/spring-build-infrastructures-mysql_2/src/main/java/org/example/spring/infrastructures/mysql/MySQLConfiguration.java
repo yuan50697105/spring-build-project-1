@@ -5,26 +5,22 @@ import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.github.liuanxin.caches.MybatisRedisCache;
 import com.github.liuanxin.caches.RedisContextUtils;
-import org.apache.ibatis.cache.Cache;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.example.spring.infrastructures.mysql.auth.AuthConfiguration;
+import org.example.spring.infrastructures.mysql.customer.CustomerConfiguration;
+import org.example.spring.infrastructures.mysql.items.ItemsConfiguration;
+import org.example.spring.infrastructures.mysql.patient.PatientConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.data.redis.RedisConnectionFailureException;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import tk.mybatis.spring.annotation.MapperScan;
 
-import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-import java.util.regex.Pattern;
-
 @Configuration
-@Import(MySQLConfiguration.MybatisCacheConfig.class)
+@Import({MySQLConfiguration.MybatisCacheConfig.class, AuthConfiguration.class, CustomerConfiguration.class, ItemsConfiguration.class, PatientConfiguration.class})
 @ComponentScan
 @MapperScan(basePackages = "org.example.spring.infrastructures.mysql.*.mapper")
 public class MySQLConfiguration {
