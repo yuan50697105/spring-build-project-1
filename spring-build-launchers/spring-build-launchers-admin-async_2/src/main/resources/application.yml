@@ -4,6 +4,7 @@ spring:
     username: yuanenzhi
     password: Root@123
     driver-class-name: com.mysql.cj.jdbc.Driver
+    type: cn.beecp.BeeDataSource
   redis:
     host: 8.140.177.12
     password: root
@@ -22,10 +23,13 @@ spring:
       date-time: yyyy-MM-dd HH:mm:ss
       date: yyyy-MM-dd
       time: HH:mm:ss
+    locale: zh_CN
     async:
       request-timeout: 10s
-  web:
-    locale: zh_CN
+  boot:
+    admin:
+      client:
+        url: http://8.140.177.12:9080
 management:
   endpoints:
     web:
@@ -41,3 +45,14 @@ minio:
   endpoint: http://8.140.177.12:9001/
   secret-key: root
   access-key: root
+wx:
+  pay:
+    apiv3-key:
+    app-id:
+    cert-serial-no:
+    key-path:
+    mch-id:
+    mch-key:
+    pay-score-notify-url:
+    private-cert-path:
+    private-key-path:
