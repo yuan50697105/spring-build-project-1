@@ -10,31 +10,8 @@
     <artifactId>spring-build-plugins</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-build-plugins-mybatis_1</module>
-        <module>spring-build-plugins-mybatis_2</module>
-        <module>spring-build-plugins-commons</module>
-        <module>spring-build-plugins-oss-aliyun</module>
-        <module>spring-build-plugins-oss-tencent</module>
-        <module>spring-build-plugins-oss-minio</module>
-        <module>spring-build-plugins-web</module>
-        <module>spring-build-plugins-security</module>
-        <module>spring-build-plugins-wx</module>
-        <module>spring-build-plugins-payment</module>
-        <module>spring-build-plugins-mybatis-sharding_1</module>
-        <module>spring-build-plugins-mybatis-sharding_2</module>
-        <module>spring-build-plugins-elasticsearch</module>
+        <module>spring-build-plugins-modules</module>
+        <module>spring-build-plugins-dependencies</module>
     </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-plugins-dependencies</artifactId>
-                <version>0.0.6-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>
