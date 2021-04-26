@@ -10,10 +10,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-build-applications-microservices-mysql-modules</artifactId>
-
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
-
+    <packaging>pom</packaging>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-applications-microservices-dependencies</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
