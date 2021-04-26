@@ -2,18 +2,13 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-build-project-1</artifactId>
+        <artifactId>spring-build-domains-modules</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.6-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-domains</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>spring-build-domains-modules</module>
-        <module>spring-build-domains-dependencies</module>
-    </modules>
+    <artifactId>spring-build-domains-commons</artifactId>
 
 
 </project>

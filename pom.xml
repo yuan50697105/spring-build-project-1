@@ -12,10 +12,8 @@
     <modules>
         <module>spring-build-plugins-dependencies</module>
         <module>spring-build-plugins</module>
-        <module>spring-build-infrastructures-dependencies</module>
         <module>spring-build-infrastructures</module>
         <module>spring-build-domains</module>
-        <module>spring-build-domains-dependencies</module>
         <module>spring-build-models</module>
         <module>spring-build-models-dependencies</module>
         <module>spring-build-applications</module>
