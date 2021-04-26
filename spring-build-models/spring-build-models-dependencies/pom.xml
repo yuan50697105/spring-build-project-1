@@ -43,12 +43,12 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-models_3</artifactId>
-                <version>0.0.6-SNAPSHOT</version>
+                <version>0.0.7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-models_4</artifactId>
-                <version>0.0.6-SNAPSHOT</version>
+                <version>0.0.7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>

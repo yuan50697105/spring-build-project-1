@@ -2,7 +2,7 @@ version: '3'
 services:
   admin-async-1:
     build:
-      context: .
+      context: ""
       dockerfile: Dockerfile
     image: admin:1-async
     container_name: damin-async-1

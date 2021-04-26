@@ -10,31 +10,7 @@
     <artifactId>spring-build-launchers</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-build-launchers-admin_1</module>
-        <module>spring-build-launchers-admin_2</module>
-        <module>spring-build-launchers-admin-async_1</module>
-        <module>spring-build-launchers-admin-async_2</module>
-        <module>spring-build-launchers-admin-rx_1</module>
-        <module>spring-build-launchers-admin-rx_2</module>
+        <module>spring-build-launchers-dependencies</module>
+        <module>spring-build-launchers-modules</module>
     </modules>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-launchers-dependencies</artifactId>
-                <version>0.0.6-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.1.2</version>
-            </plugin>
-        </plugins>
-    </build>
 </project>

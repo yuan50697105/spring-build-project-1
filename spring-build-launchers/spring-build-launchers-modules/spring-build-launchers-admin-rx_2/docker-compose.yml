@@ -2,7 +2,7 @@ version: '3'
 services:
   admin-rx-2:
     build:
-      context: .
+      context: ""
       dockerfile: Dockerfile
     image: admin-rx-2
     container_name: admin-rx-2

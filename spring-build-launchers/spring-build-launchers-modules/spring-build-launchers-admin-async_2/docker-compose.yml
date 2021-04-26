@@ -2,7 +2,7 @@ version: '3'
 services:
   admin-async-2:
     build:
-      context: .
+      context: ""
       dockerfile: Dockerfile
     image: admin-async-2
     container_name: admin-async-2

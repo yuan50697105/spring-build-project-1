@@ -2,7 +2,7 @@ version: '3'
 services:
   admin-2:
     build:
-      context: .
+      context: ""
       dockerfile: Dockerfile
     image: admin-2
     container_name: admin-2
