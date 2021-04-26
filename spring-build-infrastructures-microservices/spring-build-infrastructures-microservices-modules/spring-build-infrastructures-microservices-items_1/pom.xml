@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-infrastructures-microservices-auth_1</artifactId>
+    <artifactId>spring-build-infrastructures-microservices-items_1</artifactId>
 
     <dependencies>
         <dependency>

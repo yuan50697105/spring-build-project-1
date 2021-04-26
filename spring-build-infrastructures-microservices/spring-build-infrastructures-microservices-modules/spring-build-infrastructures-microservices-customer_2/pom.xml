@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-build-infrastructures-microservices-auth_1</artifactId>
+    <artifactId>spring-build-infrastructures-microservices-customer_2</artifactId>
 
     <dependencies>
         <dependency>
@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-plugins-mybatis_1</artifactId>
+            <artifactId>spring-build-plugins-mybatis_2</artifactId>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
