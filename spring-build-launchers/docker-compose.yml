@@ -1,4 +1,8 @@
 version: '3'
+networks:
+  default:
+    external:
+      name: spring
 services:
   admin1:
     build:
