@@ -14,6 +14,22 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-infrastructures-microservices-mysql-auth_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-infrastructures-microservices-mysql-customer_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-infrastructures-microservices-mysql-items_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-infrastructures-microservices-mysql-patient_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
             <artifactId>spring-build-infrastructures-commons</artifactId>
         </dependency>
         <dependency>
