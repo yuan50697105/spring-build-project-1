@@ -318,6 +318,11 @@
                 <artifactId>dubbo-spring-boot-starter</artifactId>
                 <version>${dubbo-spring-boot-starter.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.reactivex.rxjava3</groupId>
+                <artifactId>rxjava</artifactId>
+                <version>${rxjava.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <properties>
@@ -356,5 +361,6 @@
         <sagacity-sqltoy-starter.version>4.18.17</sagacity-sqltoy-starter.version>
         <easyjdbc-spring-boot-starter.version>2.0.4</easyjdbc-spring-boot-starter.version>
         <dubbo-spring-boot-starter.version>2.7.10</dubbo-spring-boot-starter.version>
+        <rxjava.version>3.0.10</rxjava.version>
     </properties>
 </project>
