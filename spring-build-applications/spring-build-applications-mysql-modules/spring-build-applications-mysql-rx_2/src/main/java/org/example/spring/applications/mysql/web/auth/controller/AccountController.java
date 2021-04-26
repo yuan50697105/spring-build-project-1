@@ -1,15 +1,15 @@
-package org.example.spring.applications.web.auth.controller;
+package org.example.spring.applications.mysql.web.auth.controller;
 
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Single;
 import lombok.AllArgsConstructor;
-import org.example.spring.applications.web.auth.service.AAccountService;
-import org.example.spring.models.auth.entity.query.AccountQuery;
-import org.example.spring.models.auth.entity.result.Account;
-import org.example.spring.models.auth.entity.result.AccountDetails;
-import org.example.spring.models.auth.entity.vo.AccountModelVo;
+import org.example.spring.applications.mysql.web.auth.service.AAccountService;
+import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
+import org.example.spring.models.mysql.auth.entity.result.Account;
+import org.example.spring.models.mysql.auth.entity.result.AccountDetails;
+import org.example.spring.models.mysql.auth.entity.vo.AccountModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

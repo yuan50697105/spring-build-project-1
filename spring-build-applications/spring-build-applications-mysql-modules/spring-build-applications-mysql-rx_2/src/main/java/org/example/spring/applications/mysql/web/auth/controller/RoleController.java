@@ -1,13 +1,13 @@
-package org.example.spring.applications.web.auth.controller;
+package org.example.spring.applications.mysql.web.auth.controller;
 
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.auth.service.RoleService;
-import org.example.spring.models.auth.entity.query.RoleQuery;
-import org.example.spring.models.auth.entity.result.Role;
-import org.example.spring.models.auth.entity.result.RoleDetails;
-import org.example.spring.models.auth.entity.vo.RoleModelVo;
+import org.example.spring.domains.mysql.auth.service.RoleService;
+import org.example.spring.models.mysql.auth.entity.query.RoleQuery;
+import org.example.spring.models.mysql.auth.entity.result.Role;
+import org.example.spring.models.mysql.auth.entity.result.RoleDetails;
+import org.example.spring.models.mysql.auth.entity.vo.RoleModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

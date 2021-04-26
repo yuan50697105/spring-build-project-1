@@ -1,13 +1,13 @@
-package org.example.spring.applications.web.conntroller;
+package org.example.spring.applications.mysql.web.conntroller;
 
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.patient.service.PatientGroupService;
-import org.example.spring.models.patient.entity.query.PatientGroupQuery;
-import org.example.spring.models.patient.entity.result.PatientGroup;
-import org.example.spring.models.patient.entity.result.PatientGroupDetails;
-import org.example.spring.models.patient.entity.vo.PatientGroupFormVo;
+import org.example.spring.domains.mysql.patient.service.PatientGroupService;
+import org.example.spring.models.mysql.patient.entity.query.PatientGroupQuery;
+import org.example.spring.models.mysql.patient.entity.result.PatientGroup;
+import org.example.spring.models.mysql.patient.entity.result.PatientGroupDetails;
+import org.example.spring.models.mysql.patient.entity.vo.PatientGroupFormVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
