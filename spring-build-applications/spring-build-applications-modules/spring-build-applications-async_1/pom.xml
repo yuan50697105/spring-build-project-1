@@ -20,12 +20,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-domains-service_1</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.reactivex.rxjava3</groupId>
-            <artifactId>rxjava</artifactId>
-            <version>3.0.10</version>
+            <artifactId>spring-build-domains-mysql_1</artifactId>
         </dependency>
     </dependencies>
 

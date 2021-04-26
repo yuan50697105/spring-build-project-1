@@ -12,5 +12,6 @@
     <modules>
         <module>spring-build-applications-dependencies</module>
         <module>spring-build-applications-modules</module>
+        <module>spring-build-applications-mysql-modules</module>
     </modules>
 </project>
