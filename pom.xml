@@ -8,9 +8,10 @@
     </parent>
     <groupId>org.example.spring</groupId>
     <artifactId>spring-build-project-1</artifactId>
-    <version>0.0.6-SNAPSHOT</version>
+    <version>0.0.7-SNAPSHOT</version>
     <modules>
         <module>spring-build-tests</module>
+        <module>spring-build-admin-server</module>
         <module>spring-build-plugins</module>
         <module>spring-build-infrastructures</module>
         <module>spring-build-models</module>
@@ -20,6 +21,7 @@
         <module>spring-build-infrastructures-microservices</module>
         <module>spring-build-models-microservices</module>
         <module>spring-build-domains-microservices</module>
+        <module>spring-build-applications-microservices</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
@@ -240,7 +242,7 @@
     </build>
     <scm>
         <connection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</connection>
-        <tag>HEAD</tag>
+        <tag>spring-build-project-1-0.0.6</tag>
     </scm>
 <!--    <profiles>-->
 <!--        <profile>-->
