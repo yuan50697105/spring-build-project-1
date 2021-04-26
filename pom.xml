@@ -23,6 +23,7 @@
         <module>spring-build-launchers</module>
         <module>spring-build-launchers-dependencies</module>
         <module>spring-build-tests</module>
+        <module>spring-build-infrastructures-microservices</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
