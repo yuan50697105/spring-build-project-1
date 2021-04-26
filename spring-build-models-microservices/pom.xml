@@ -12,6 +12,8 @@
     <modules>
         <module>spring-build-models-microservices-dependencies</module>
         <module>spring-build-models-microservices-mysql-modules</module>
+        <module>spring-build-models-microservices-postgresql-modules</module>
+        <module>spring-build-models-microservices-clickhouse-modules</module>
     </modules>
 
     <dependencyManagement>
