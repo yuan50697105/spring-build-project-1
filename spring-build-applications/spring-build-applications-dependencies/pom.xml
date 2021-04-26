@@ -58,6 +58,26 @@
                 <artifactId>spring-build-applications-mysql_2</artifactId>
                 <version>0.0.6-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-applications-mysql-async_1</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-applications-mysql-async_2</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-applications-mysql-rx_1</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-applications-mysql-rx_2</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

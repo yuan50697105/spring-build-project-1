@@ -1,4 +1,4 @@
-package org.example.spring.applications.web.conntroller;
+package org.example.spring.applications.web.patient.conntroller;
 
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;

@@ -1,4 +1,4 @@
-package org.example.spring.applications.web.controller;
+package org.example.spring.applications.web.customer.controller;
 
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
