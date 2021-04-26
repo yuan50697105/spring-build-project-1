@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-build-models-modules</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.7</version>
+        <version>0.0.6-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,7 +13,7 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-build-models-commons</artifactId>
-            <version>0.0.7</version>
+            <version>0.0.6-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
