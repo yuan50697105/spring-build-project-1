@@ -10,41 +10,8 @@
     <artifactId>spring-build-models</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-build-models_1</module>
-        <module>spring-build-models_2</module>
-        <module>spring-build-models-commons</module>
-        <module>spring-build-models_3</module>
-        <module>spring-build-models_4</module>
-        <module>spring-build-models-mysql_1</module>
-        <module>spring-build-models-mysql_2</module>
-        <module>spring-build-models-postgresql_1</module>
-        <module>spring-build-models-postgresql_2</module>
-        <module>spring-build-models-clickhouse_1</module>
-        <module>spring-build-models-clickhouse_2</module>
+        <module>spring-build-models-modules</module>
+        <module>spring-build-models-dependencies</module>
     </modules>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-models-dependencies</artifactId>
-                <version>0.0.6-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-plugins-dependencies</artifactId>
-                <version>0.0.6-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-infrastructures-dependencies</artifactId>
-                <version>0.0.6-SNAPSHOT</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+
 </project>
