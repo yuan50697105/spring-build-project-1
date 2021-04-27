@@ -20,12 +20,62 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-applications_1</artifactId>
+                <artifactId>spring-build-launchers-admin_1</artifactId>
                 <version>0.0.7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-applications_2</artifactId>
+                <artifactId>spring-build-launchers-admin_2</artifactId>
+                <version>0.0.7-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-launchers-admin-rx_1</artifactId>
+                <version>0.0.7-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-launchers-admin-rx_2</artifactId>
+                <version>0.0.7-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-launchers-admin-async_1</artifactId>
+                <version>0.0.7-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-launchers-admin-async_2</artifactId>
+                <version>0.0.7-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-launchers-mysql_1</artifactId>
+                <version>0.0.7-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-launchers-mysql_2</artifactId>
+                <version>0.0.7-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-launchers-mysql-rx_1</artifactId>
+                <version>0.0.7-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-launchers-mysql-rx_2</artifactId>
+                <version>0.0.7-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-launchers-mysql-async_1</artifactId>
+                <version>0.0.7-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-launchers-mysql-async_2</artifactId>
                 <version>0.0.7-SNAPSHOT</version>
             </dependency>
         </dependencies>
