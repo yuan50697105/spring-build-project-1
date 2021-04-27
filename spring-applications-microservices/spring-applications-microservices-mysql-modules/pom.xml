@@ -20,4 +20,10 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <modules>
+        <module>spring-applications-microservices-mysql-auth-async_1</module>
+        <module>spring-applications-microservices-mysql-auth-async_2</module>
+        <module>spring-applications-microservices-mysql-auth-rx_1</module>
+        <module>spring-applications-microservices-mysql-auth-rx_2</module>
+    </modules>
 </project>
