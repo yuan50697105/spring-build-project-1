@@ -12,5 +12,6 @@
     <modules>
         <module>spring-build-launchers-dependencies</module>
         <module>spring-build-launchers-modules</module>
+        <module>spring-build-launchers-mysql-modules</module>
     </modules>
 </project>
