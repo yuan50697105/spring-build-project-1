@@ -20,6 +20,8 @@
         <module>spring-infrastructures-microservices-mysql-patient_2</module>
         <module>spring-infrastructures-microservices-mysql_1</module>
         <module>spring-infrastructures-microservices-mysql_2</module>
+        <module>spring-infrastructures-microservices-mysql-report_1</module>
+        <module>spring-infrastructures-microservices-mysql-report_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

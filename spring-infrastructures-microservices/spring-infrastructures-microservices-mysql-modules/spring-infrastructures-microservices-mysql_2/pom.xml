@@ -28,6 +28,10 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
+            <artifactId>spring-infrastructures-microservices-mysql-report_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
             <artifactId>spring-infrastructures-commons</artifactId>
         </dependency>
         <dependency>

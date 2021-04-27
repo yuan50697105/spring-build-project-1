@@ -9,6 +9,14 @@
 
     <artifactId>spring-models-microservices-mysql-modules</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-models-microservices-mysql-auth_1</module>
+        <module>spring-models-microservices-mysql-auth_2</module>
+        <module>spring-models-microservices-mysql-customer_1</module>
+        <module>spring-models-microservices-mysql-customer_2</module>
+        <module>spring-models-microservices-mysql-patient_1</module>
+        <module>spring-models-microservices-mysql-patient_2</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>

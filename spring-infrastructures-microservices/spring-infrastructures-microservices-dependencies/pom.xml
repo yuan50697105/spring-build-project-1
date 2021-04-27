@@ -60,6 +60,16 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-infrastructures-microservices-mysql-report_1</artifactId>
+                <version>0.0.8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-infrastructures-microservices-mysql-report_2</artifactId>
+                <version>0.0.8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-microservices-mysql_1</artifactId>
                 <version>0.0.8-SNAPSHOT</version>
             </dependency>
