@@ -70,3 +70,69 @@ services:
       - 8080
     ports:
       - 8382:8080
+  mysql1:
+    build:
+      context: ./mysql1
+      dockerfile: Dockerfile
+    image: mysql1
+    container_name: mysql1
+    hostname: mysql1
+    expose:
+      - 8080
+    ports:
+    - 8481:8080
+  mysql2:
+    build:
+      context: ./mysql2
+      dockerfile: Dockerfile
+    image: mysql2
+    container_name: mysql2
+    hostname: mysql2
+    expose:
+      - 8080
+    ports:
+      - 8482:8080
+  mysqlasync1:
+    build:
+      context: ./mysqlasync1
+      dockerfile: Dockerfile
+    image: mysqlasync1
+    container_name: mysqlasync1
+    hostname: mysqlasync1
+    expose:
+      - 8080
+    ports:
+      - 8581:8080
+  mysqlasync2:
+    build:
+      context: ./mysqlasync2
+      dockerfile: Dockerfile
+    image: mysqlasync2
+    container_name: mysqlasync2
+    hostname: mysqlasync2
+    expose:
+      - 8080
+    ports:
+      - 8582:8080
+  mysqlrx1:
+    build:
+      context: ./mysqlrx1
+      dockerfile: Dockerfile
+    image: mysqlrx1
+    container_name: mysqlrx1
+    hostname: mysqlrx1
+    expose:
+      - 8080
+    ports:
+      - 8681:8080
+    mysqlrx2:
+      build:
+        context: ./mysqlrx2
+        dockerfile: Dockerfile
+      image: mysqlrx2
+      container_name: mysqlrx2
+      hostname: mysqlrx2
+      expose:
+        - 8080
+      ports:
+        - 8682:8080
