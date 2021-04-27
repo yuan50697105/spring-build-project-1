@@ -11,11 +11,11 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-infrastructures-commons</artifactId>
+            <artifactId>spring-infrastructures-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-plugins-commons</artifactId>
+            <artifactId>spring-plugins-commons</artifactId>
         </dependency>
     </dependencies>
 

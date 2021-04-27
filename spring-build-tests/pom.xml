@@ -17,42 +17,42 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-applications-dependencies</artifactId>
+                <artifactId>spring-applications-dependencies</artifactId>
                 <version>0.0.8-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-domains-dependencies</artifactId>
+                <artifactId>spring-domains-dependencies</artifactId>
                 <version>0.0.8-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-infrastructures-dependencies</artifactId>
+                <artifactId>spring-infrastructures-dependencies</artifactId>
                 <version>0.0.8-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-launchers-dependencies</artifactId>
+                <artifactId>spring-launchers-dependencies</artifactId>
                 <version>0.0.8-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-models-dependencies</artifactId>
+                <artifactId>spring-models-dependencies</artifactId>
                 <version>0.0.8-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-plugins-dependencies</artifactId>
+                <artifactId>spring-plugins-dependencies</artifactId>
                 <version>0.0.8-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>

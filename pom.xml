@@ -12,12 +12,12 @@
     <modules>
         <module>spring-build-tests</module>
         <module>spring-build-admin-server</module>
-        <module>spring-build-plugins</module>
+        <module>spring-plugins</module>
         <module>spring-infrastructures</module>
         <module>spring-models</module>
         <module>spring-domains</module>
-        <module>spring-build-applications</module>
-        <module>spring-build-launchers</module>
+        <module>spring-applications</module>
+        <module>spring-launchers</module>
         <module>spring-infrastructures-microservices</module>
         <module>spring-models-microservices</module>
         <module>spring-domains-microservices</module>

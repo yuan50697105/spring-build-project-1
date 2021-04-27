@@ -27,14 +27,14 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-plugins-dependencies</artifactId>
+                <artifactId>spring-plugins-dependencies</artifactId>
                 <version>0.0.8-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-build-infrastructures-microservices-dependencies</artifactId>
+                <artifactId>spring-infrastructures-microservices-dependencies</artifactId>
                 <version>0.0.8-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>

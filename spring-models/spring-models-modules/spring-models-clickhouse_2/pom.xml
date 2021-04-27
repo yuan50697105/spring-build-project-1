@@ -17,11 +17,11 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-infrastructures-clickhouse_2</artifactId>
+            <artifactId>spring-infrastructures-clickhouse_2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-build-infrastructures-minio</artifactId>
+            <artifactId>spring-infrastructures-minio</artifactId>
         </dependency>
     </dependencies>
 
