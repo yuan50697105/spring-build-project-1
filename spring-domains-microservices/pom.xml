@@ -4,6 +4,7 @@
     <modules>
         <module>spring-domains-microservices-dependencies</module>
         <module>spring-domains-microservices-mysql-modules</module>
+        <module>spring-domains-microservices-postgresql-modules</module>
     </modules>
     <parent>
         <artifactId>spring-build-project-1</artifactId>

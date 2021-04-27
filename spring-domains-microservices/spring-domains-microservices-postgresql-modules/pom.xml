@@ -7,26 +7,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-domains-microservices-mysql-modules</artifactId>
+    <artifactId>spring-domains-microservices-postgresql-modules</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>spring-domains-microservices-mysql-auth_1</module>
-        <module>spring-domains-microservices-mysql-auth_2</module>
-        <module>spring-domains-microservices-mysql-customer_1</module>
-        <module>spring-domains-microservices-mysql-customer_2</module>
-        <module>spring-domains-microservices-mysql-patient_1</module>
-        <module>spring-domains-microservices-mysql-patient_2</module>
-        <module>spring-domains-microservices-mysql_1</module>
-        <module>spring-domains-microservices-mysql_2</module>
-    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microservices-dependencies</artifactId>
                 <version>0.0.8-SNAPSHOT</version>
-                <scope>import</scope>
-                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
