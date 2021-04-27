@@ -16,7 +16,7 @@ import org.example.spring.plugins.elasticsearch.entity.query.IBaseQuery;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class ECheckItemQuery extends IBaseQuery{
+public class ECheckItemQuery extends IBaseQuery {
     private static final long serialVersionUID = 1L;
     /**
      * feeItemId

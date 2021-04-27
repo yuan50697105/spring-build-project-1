@@ -1,6 +1,7 @@
 package org.example.spring.infrastructures.postgresql.auth.mapper;
 
-import org.apache.ibatis.annotations.Mapper;import org.example.spring.infrastructures.postgresql.auth.table.po.TResource;
+import org.apache.ibatis.annotations.Mapper;
+import org.example.spring.infrastructures.postgresql.auth.table.po.TResource;
 import org.example.spring.infrastructures.postgresql.auth.table.po.TRoleResource;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 

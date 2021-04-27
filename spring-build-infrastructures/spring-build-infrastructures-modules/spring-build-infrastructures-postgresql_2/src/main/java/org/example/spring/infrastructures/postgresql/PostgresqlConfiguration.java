@@ -21,7 +21,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @MapperScan(basePackages = "org.example.spring.infrastructures.mysql.*.mapper")
 public class PostgresqlConfiguration {
     @Configuration
-    @ConditionalOnClass({ MybatisRedisCache.class, RedisTemplate.class })
+    @ConditionalOnClass({MybatisRedisCache.class, RedisTemplate.class})
     public static class MybatisCacheConfig {
         @Bean
         public RedisContextUtils setupCacheContext() {
@@ -29,7 +29,7 @@ public class PostgresqlConfiguration {
         }
 
         @Bean("redisTemplate")
-        public RedisTemplate<Object,Object> redisTemplate(RedisConnectionFactory connectionFactory) {
+        public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
             RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
             redisTemplate.setHashKeySerializer(RedisSerializer.byteArray());
             redisTemplate.setHashValueSerializer(RedisSerializer.byteArray());
@@ -51,7 +51,6 @@ public class PostgresqlConfiguration {
             return interceptor;
         }
     }
-
 
 
 }

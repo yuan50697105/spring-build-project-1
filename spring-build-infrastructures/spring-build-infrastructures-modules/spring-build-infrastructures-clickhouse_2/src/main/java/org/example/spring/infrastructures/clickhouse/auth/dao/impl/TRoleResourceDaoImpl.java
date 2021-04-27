@@ -40,12 +40,12 @@ public class TRoleResourceDaoImpl extends TkBaseDaoImpl<TRoleResource, TRolePerm
 
     @Override
     public boolean removeByRoleIds(List<Long> ids) {
-        return removeByIds(lambdaQuery().in(TRoleResource::getRoleId,ids).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
+        return removeByIds(lambdaQuery().in(TRoleResource::getRoleId, ids).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
     }
 
     @Override
     public boolean removeByRoleId(Long roleId) {
-        return removeByIds(lambdaQuery().eq(TRoleResource::getRoleId,roleId).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
+        return removeByIds(lambdaQuery().eq(TRoleResource::getRoleId, roleId).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
     }
 
     @Override

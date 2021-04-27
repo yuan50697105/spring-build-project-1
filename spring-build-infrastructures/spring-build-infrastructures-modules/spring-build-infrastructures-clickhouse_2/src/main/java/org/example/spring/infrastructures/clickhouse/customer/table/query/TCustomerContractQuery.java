@@ -1,7 +1,10 @@
 package org.example.spring.infrastructures.clickhouse.customer.table.query;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
-import com.gitee.denger.mybatis.example.ext.annotation.*;
+import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndGreaterThanOrEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndLessThanOrEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;

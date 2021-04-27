@@ -18,8 +18,8 @@ services:
       MYSQL_PASSWORD: yuanenzhi
       TZ: Asia/Shanghai
     ports:
-    - 3306:3306
+      - 3306:3306
     volumes:
-    - data:/var/lib/mysql
-    - logs:/var/logs/mysql
-    - conf:/etc/mysql
+      - data:/var/lib/mysql
+      - logs:/var/logs/mysql
+      - conf:/etc/mysql

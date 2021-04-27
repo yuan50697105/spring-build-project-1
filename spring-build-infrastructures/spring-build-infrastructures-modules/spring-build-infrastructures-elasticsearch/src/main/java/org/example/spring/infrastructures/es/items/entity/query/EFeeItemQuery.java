@@ -8,11 +8,12 @@ import java.math.BigDecimal;
 
 /**
  * 收费项目
+ *
  * @author yuane
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class EFeeItemQuery extends IBaseQuery{
+public class EFeeItemQuery extends IBaseQuery {
     /**
      * 项目编号
      */

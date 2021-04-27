@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.dao.TDepartmentDao;
 import org.example.spring.infrastructures.mysql.auth.mapper.TDepartmentMapper;
-import org.example.spring.infrastructures.mysql.auth.mapper.TResourceMapper;
 import org.example.spring.infrastructures.mysql.auth.table.po.TDepartment;
 import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;

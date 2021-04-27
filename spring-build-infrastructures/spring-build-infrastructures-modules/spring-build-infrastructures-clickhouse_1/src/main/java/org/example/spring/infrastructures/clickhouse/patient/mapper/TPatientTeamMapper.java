@@ -7,7 +7,7 @@ import org.example.spring.infrastructures.clickhouse.patient.table.po.TPatientTe
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 
 @Mapper
-@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class ,readWrite = false,blocking = true,flushInterval = 2000)
+@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class, readWrite = false, blocking = true, flushInterval = 2000)
 public interface TPatientTeamMapper extends IBaseMapper<TPatientTeam> {
     boolean existById(Long id);
 }

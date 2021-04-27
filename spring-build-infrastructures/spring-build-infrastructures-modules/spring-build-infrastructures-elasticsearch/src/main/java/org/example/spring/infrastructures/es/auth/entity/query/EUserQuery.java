@@ -6,7 +6,7 @@ import org.example.spring.plugins.elasticsearch.entity.query.IBaseQuery;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class EUserQuery extends IBaseQuery{
+public class EUserQuery extends IBaseQuery {
 
     /**
      * 用户名

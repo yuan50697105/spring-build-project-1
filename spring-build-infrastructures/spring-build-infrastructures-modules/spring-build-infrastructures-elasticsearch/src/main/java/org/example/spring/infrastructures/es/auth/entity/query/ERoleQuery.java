@@ -16,12 +16,11 @@ import org.example.spring.plugins.elasticsearch.entity.query.IBaseQuery;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class ERoleQuery extends IBaseQuery{
+public class ERoleQuery extends IBaseQuery {
+    private static final long serialVersionUID = 1L;
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     private String name;
-
-    private static final long serialVersionUID = 1L;
 }

@@ -2,8 +2,6 @@ package org.example.spring.infrastructures.clickhouse.auth.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,8 +9,11 @@ import lombok.NoArgsConstructor;
 import org.apache.ibatis.type.Alias;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
+import java.io.Serializable;
+
 /**
  * t_user
+ *
  * @author yuane
  */
 @ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TUser")

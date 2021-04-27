@@ -23,19 +23,17 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TRolePermissionQuery extends TkBaseQuery<TRoleResource> implements Serializable, MybatisExampleForTk<TRoleResource, Example> {
+    private static final long serialVersionUID = 1L;
     /**
      * roleId
      */
     @ApiModelProperty(value = "roleId")
     @AndEqualTo
     private Long roleId;
-
     /**
      * permissionId
      */
     @ApiModelProperty(value = "permissionId")
     @AndEqualTo
     private Long permissionId;
-
-    private static final long serialVersionUID = 1L;
 }

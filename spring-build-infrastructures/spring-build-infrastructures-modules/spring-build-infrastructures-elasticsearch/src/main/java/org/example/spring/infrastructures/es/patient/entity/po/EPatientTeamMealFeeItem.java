@@ -2,14 +2,14 @@ package org.example.spring.infrastructures.es.patient.entity.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
-import java.math.BigDecimal;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.elasticsearch.entity.po.IBaseEntity;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * t_patient_team_meal_fee_item
@@ -20,24 +20,22 @@ import org.example.spring.plugins.elasticsearch.entity.po.IBaseEntity;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EPatientTeamMealFeeItem extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * teamId
      */
     @ApiModelProperty(value = "teamId")
     private Long teamId;
-
     /**
      * teamMealId
      */
     @ApiModelProperty(value = "teamMealId")
     private Long teamMealId;
-
     /**
      * patientId
      */
     @ApiModelProperty(value = "mealId")
     private Long mealId;
-
     /**
      * feeItemId
      */
@@ -48,42 +46,34 @@ public class EPatientTeamMealFeeItem extends IBaseEntity implements Serializable
      */
     @ApiModelProperty(value = "feeItemCode")
     private String feeItemCode;
-
     /**
      * feeItemName
      */
     @ApiModelProperty(value = "feeItemName")
     private String feeItemName;
-
     /**
      * price
      */
     @ApiModelProperty(value = "price")
     private BigDecimal price;
-
     /**
      * disPrice
      */
     @ApiModelProperty(value = "disPrice")
     private BigDecimal disPrice;
-
     /**
      * marketPrice
      */
     @ApiModelProperty(value = "marketPrice")
     private BigDecimal marketPrice;
-
     /**
      * source
      */
     @ApiModelProperty(value = "source")
     private String source;
-
     /**
      * type
      */
     @ApiModelProperty(value = "type")
     private String type;
-
-    private static final long serialVersionUID = 1L;
 }

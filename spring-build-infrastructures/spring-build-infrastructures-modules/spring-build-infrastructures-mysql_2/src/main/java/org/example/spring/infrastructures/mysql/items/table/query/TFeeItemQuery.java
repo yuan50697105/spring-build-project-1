@@ -16,6 +16,7 @@ import java.math.BigDecimal;
 
 /**
  * 收费项目
+ *
  * @author yuane
  */
 @EqualsAndHashCode(callSuper = true)

@@ -1,15 +1,14 @@
 package org.example.spring.infrastructures.es.auth.entity.po;
 
-import cn.hutool.core.annotation.Alias;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.elasticsearch.entity.po.IBaseEntity;
+
+import java.io.Serializable;
 
 /**
  * t_permission
@@ -20,35 +19,30 @@ import org.example.spring.plugins.elasticsearch.entity.po.IBaseEntity;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EResource extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     private String name;
-
     /**
      * type
      */
     @ApiModelProperty(value = "type")
     private String type;
-
     /**
      * url
      */
     @ApiModelProperty(value = "url")
     private String url;
-
     /**
      * pid
      */
     @ApiModelProperty(value = "pid")
     private Long pid;
-
     /**
      * weight
      */
     @ApiModelProperty(value = "weight")
     private Integer weight;
-
-    private static final long serialVersionUID = 1L;
 }

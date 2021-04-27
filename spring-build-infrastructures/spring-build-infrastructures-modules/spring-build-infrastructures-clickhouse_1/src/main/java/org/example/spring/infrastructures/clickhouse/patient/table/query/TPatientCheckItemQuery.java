@@ -24,54 +24,47 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TPatientCheckItemQuery extends TkBaseQuery<TPatientCheckItem> implements Serializable, MybatisExampleForTk<TPatientCheckItem, Example> {
+    private static final long serialVersionUID = 1L;
     /**
      * patientId
      */
     @ApiModelProperty(value = "patientId")
     @AndEqualTo
     private Long patientId;
-
     /**
      * feeItemId
      */
     @ApiModelProperty(value = "feeItemId")
     @AndEqualTo
     private Long feeItemId;
-
     /**
      * checkItemId
      */
     @ApiModelProperty(value = "checkItemId")
     @AndEqualTo
     private String checkItemId;
-
     /**
      * checkItemCode
      */
     @ApiModelProperty(value = "checkItemCode")
     @AndLike
     private String checkItemCode;
-
     /**
      * checkItemName
      */
     @ApiModelProperty(value = "checkItemName")
     @AndLike
     private String checkItemName;
-
     /**
      * mealId
      */
     @ApiModelProperty(value = "mealId")
     @AndEqualTo
     private Long mealId;
-
     /**
      * source
      */
     @ApiModelProperty(value = "source")
     @AndEqualTo
     private String source;
-
-    private static final long serialVersionUID = 1L;
 }

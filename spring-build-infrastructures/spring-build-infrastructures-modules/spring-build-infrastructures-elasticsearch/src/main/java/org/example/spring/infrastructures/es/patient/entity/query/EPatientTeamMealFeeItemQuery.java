@@ -16,7 +16,8 @@ import org.example.spring.plugins.elasticsearch.entity.query.IBaseQuery;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class EPatientTeamMealFeeItemQuery extends IBaseQuery{
+public class EPatientTeamMealFeeItemQuery extends IBaseQuery {
+    private static final long serialVersionUID = 1L;
     /**
      * teamId
      */
@@ -29,36 +30,29 @@ public class EPatientTeamMealFeeItemQuery extends IBaseQuery{
      */
     @ApiModelProperty(value = "mealId")
     private Long mealId;
-
     /**
      * feeItemId
      */
     @ApiModelProperty(value = "feeItemId")
     private Long feeItemId;
-
     /**
      * feeItemCode
      */
     @ApiModelProperty(value = "feeItemCode")
     private String feeItemCode;
-
     /**
      * feeItemName
      */
     @ApiModelProperty(value = "feeItemName")
     private String feeItemName;
-
     /**
      * source
      */
     @ApiModelProperty(value = "source")
     private String source;
-
     /**
      * type
      */
     @ApiModelProperty(value = "type")
     private String type;
-
-    private static final long serialVersionUID = 1L;
 }

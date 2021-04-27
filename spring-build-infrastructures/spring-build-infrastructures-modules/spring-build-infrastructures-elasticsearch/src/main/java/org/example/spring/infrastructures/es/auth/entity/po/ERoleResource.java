@@ -2,13 +2,13 @@ package org.example.spring.infrastructures.es.auth.entity.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.elasticsearch.entity.po.IBaseEntity;
+
+import java.io.Serializable;
 
 /**
  * t_role_permission
@@ -19,17 +19,15 @@ import org.example.spring.plugins.elasticsearch.entity.po.IBaseEntity;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ERoleResource extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * roleId
      */
     @ApiModelProperty(value = "roleId")
     private Long roleId;
-
     /**
      * permissionId
      */
     @ApiModelProperty(value = "permissionId")
     private Long resourceId;
-
-    private static final long serialVersionUID = 1L;
 }

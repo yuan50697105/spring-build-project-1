@@ -9,7 +9,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.infrastructures.mysql.items.table.po.TMealFeeItem;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 

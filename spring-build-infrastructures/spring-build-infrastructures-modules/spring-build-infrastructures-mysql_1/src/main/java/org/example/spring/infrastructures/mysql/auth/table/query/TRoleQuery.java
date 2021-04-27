@@ -9,7 +9,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 
@@ -24,12 +23,11 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TRoleQuery extends TkBaseQuery<TRole> implements Serializable, MybatisExampleForTk<TRole, Example> {
+    private static final long serialVersionUID = 1L;
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     @AndLike
     private String name;
-
-    private static final long serialVersionUID = 1L;
 }

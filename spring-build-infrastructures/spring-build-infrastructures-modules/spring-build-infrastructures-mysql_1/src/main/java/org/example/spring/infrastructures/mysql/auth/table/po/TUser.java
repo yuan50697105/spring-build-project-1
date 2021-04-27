@@ -14,6 +14,7 @@ import java.io.Serializable;
 
 /**
  * t_user
+ *
  * @author yuane
  */
 @ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TUser")
@@ -25,8 +26,8 @@ import java.io.Serializable;
 @Table(name = TUser.TABLE)
 public class TUser extends IBaseEntity implements Serializable {
 
-    private static final long serialVersionUID = 2799305908245541459L;
     public static final String TABLE = "t_user";
+    private static final long serialVersionUID = 2799305908245541459L;
     /**
      * 用户名
      */

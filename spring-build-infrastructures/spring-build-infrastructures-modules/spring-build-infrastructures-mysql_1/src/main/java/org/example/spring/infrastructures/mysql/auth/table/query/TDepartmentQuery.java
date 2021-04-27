@@ -1,7 +1,6 @@
 package org.example.spring.infrastructures.mysql.auth.table.query;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
-import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -10,7 +9,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.infrastructures.mysql.auth.table.po.TDepartment;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 

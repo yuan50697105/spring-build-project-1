@@ -18,7 +18,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class ECustomerContractQuery extends IBaseQuery{
+public class ECustomerContractQuery extends IBaseQuery {
     private static final long serialVersionUID = 1L;
     /**
      * 合同编号

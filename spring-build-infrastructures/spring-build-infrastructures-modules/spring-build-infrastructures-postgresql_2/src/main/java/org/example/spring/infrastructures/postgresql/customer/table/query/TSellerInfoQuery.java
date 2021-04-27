@@ -26,20 +26,19 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TSellerInfoQuery extends TkBaseQuery<TSellerInfo> implements Serializable, MybatisExampleForTk<TSellerInfo, Example> {
+    private static final long serialVersionUID = 1L;
     /**
      * code
      */
     @ApiModelProperty(value = "code")
     @AndLike
     private String code;
-
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     @AndLike
     private String name;
-
     /**
      * age
      */
@@ -51,21 +50,18 @@ public class TSellerInfoQuery extends TkBaseQuery<TSellerInfo> implements Serial
     private Integer ageEnd;
 
     /**
+     * address
+     */
+    /**
      * phone
      */
     @ApiModelProperty(value = "phone")
     @AndLike
     private String phone;
-
-    /**
-     * address
-     */
     /**
      * status
      */
     @ApiModelProperty(value = "status")
     @AndEqualTo
     private String status;
-
-    private static final long serialVersionUID = 1L;
 }

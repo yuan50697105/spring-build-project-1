@@ -16,24 +16,21 @@ import org.example.spring.plugins.elasticsearch.entity.query.IBaseQuery;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class ECustomerInfoQuery extends IBaseQuery{
+public class ECustomerInfoQuery extends IBaseQuery {
+    private static final long serialVersionUID = 1L;
     /**
      * 编号
      */
     @ApiModelProperty(value = "编号")
     private String code;
-
     /**
      * 名称
      */
     @ApiModelProperty(value = "名称")
     private String name;
-
     /**
      * 类型
      */
     @ApiModelProperty(value = "类型")
     private String type;
-
-    private static final long serialVersionUID = 1L;
 }

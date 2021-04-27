@@ -17,6 +17,7 @@ import org.example.spring.plugins.elasticsearch.entity.query.IBaseQuery;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EPatientTeamQuery extends IBaseQuery {
+    private static final long serialVersionUID = 1L;
     /**
      * customerId
      */
@@ -27,42 +28,34 @@ public class EPatientTeamQuery extends IBaseQuery {
      */
     @ApiModelProperty(value = "code")
     private String code;
-
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     private String name;
-
     /**
      * ageStart
      */
     @ApiModelProperty(value = "ageStart")
     private Integer ageStart;
-
     /**
      * ageEnd
      */
     @ApiModelProperty(value = "ageEnd")
     private Integer ageEnd;
-
     /**
      * sex
      */
     @ApiModelProperty(value = "sex")
     private String sex;
-
     /**
      * marriage
      */
     @ApiModelProperty(value = "marriage")
     private String marriage;
-
     /**
      * bear
      */
     @ApiModelProperty(value = "bear")
     private String bear;
-
-    private static final long serialVersionUID = 1L;
 }

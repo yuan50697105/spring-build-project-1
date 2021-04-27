@@ -1,7 +1,7 @@
 package org.example.spring.infrastructures.clickhouse.auth.dao;
 
-import org.example.spring.infrastructures.clickhouse.auth.table.po.TRoleResource;
 import org.example.spring.infrastructures.clickhouse.auth.table.po.TResource;
+import org.example.spring.infrastructures.clickhouse.auth.table.po.TRoleResource;
 import org.example.spring.infrastructures.clickhouse.auth.table.query.TRolePermissionQuery;
 import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 

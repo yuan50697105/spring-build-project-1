@@ -17,18 +17,17 @@ import org.example.spring.plugins.elasticsearch.entity.query.IBaseQuery;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ESellerInfoQuery extends IBaseQuery {
+    private static final long serialVersionUID = 1L;
     /**
      * code
      */
     @ApiModelProperty(value = "code")
     private String code;
-
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     private String name;
-
     /**
      * age
      */
@@ -38,19 +37,16 @@ public class ESellerInfoQuery extends IBaseQuery {
     private Integer ageEnd;
 
     /**
+     * address
+     */
+    /**
      * phone
      */
     @ApiModelProperty(value = "phone")
     private String phone;
-
-    /**
-     * address
-     */
     /**
      * status
      */
     @ApiModelProperty(value = "status")
     private String status;
-
-    private static final long serialVersionUID = 1L;
 }

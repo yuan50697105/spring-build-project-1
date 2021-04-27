@@ -9,26 +9,24 @@ import lombok.NoArgsConstructor;
 import org.example.spring.plugins.elasticsearch.entity.query.IBaseQuery;
 
 /**
-    * t_permission
-    */
-@ApiModel(value="org-example-spring-infrastructures-mysql-auth-table-po-TPermission")
+ * t_permission
+ */
+@ApiModel(value = "org-example-spring-infrastructures-mysql-auth-table-po-TPermission")
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class EResourceQuery extends IBaseQuery{
+public class EResourceQuery extends IBaseQuery {
+    private static final long serialVersionUID = 1L;
     /**
-    * name
-    */
-    @ApiModelProperty(value="name")
+     * name
+     */
+    @ApiModelProperty(value = "name")
     private String name;
-
     /**
-    * type
-    */
-    @ApiModelProperty(value="type")
+     * type
+     */
+    @ApiModelProperty(value = "type")
     private String type;
     private Long pid;
-
-    private static final long serialVersionUID = 1L;
 }

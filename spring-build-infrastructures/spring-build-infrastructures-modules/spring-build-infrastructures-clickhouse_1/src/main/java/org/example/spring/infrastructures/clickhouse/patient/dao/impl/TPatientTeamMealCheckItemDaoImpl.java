@@ -25,6 +25,6 @@ public class TPatientTeamMealCheckItemDaoImpl extends TkBaseDaoImpl<TPatientTeam
 
     @Override
     public boolean removeByTeamMealIds(List<Long> ids) {
-        return removeByIds(lambdaQuery().in(TPatientTeamMealCheckItem::getTeamMealId,ids).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
+        return removeByIds(lambdaQuery().in(TPatientTeamMealCheckItem::getTeamMealId, ids).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
     }
 }

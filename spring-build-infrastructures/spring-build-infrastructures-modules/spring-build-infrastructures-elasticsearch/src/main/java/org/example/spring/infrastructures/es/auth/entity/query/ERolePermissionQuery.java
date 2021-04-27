@@ -16,18 +16,16 @@ import org.example.spring.plugins.elasticsearch.entity.query.IBaseQuery;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class ERolePermissionQuery extends IBaseQuery{
+public class ERolePermissionQuery extends IBaseQuery {
+    private static final long serialVersionUID = 1L;
     /**
      * roleId
      */
     @ApiModelProperty(value = "roleId")
     private Long roleId;
-
     /**
      * permissionId
      */
     @ApiModelProperty(value = "permissionId")
     private Long permissionId;
-
-    private static final long serialVersionUID = 1L;
 }
