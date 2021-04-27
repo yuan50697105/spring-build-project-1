@@ -25,6 +25,26 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-applications-microservices-mysql-auth-rx_1</artifactId>
+                <version>0.0.8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-applications-microservices-mysql-auth-rx_2</artifactId>
+                <version>0.0.8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-applications-microservices-mysql-auth_1</artifactId>
+                <version>0.0.8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-applications-microservices-mysql-auth_2</artifactId>
+                <version>0.0.8-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
