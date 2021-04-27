@@ -16,6 +16,8 @@
         <module>spring-models-microservices-mysql-customer_2</module>
         <module>spring-models-microservices-mysql-patient_1</module>
         <module>spring-models-microservices-mysql-patient_2</module>
+        <module>spring-models-microservices-mysql_1</module>
+        <module>spring-models-microservices-mysql_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
