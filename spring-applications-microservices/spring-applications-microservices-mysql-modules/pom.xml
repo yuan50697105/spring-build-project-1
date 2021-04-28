@@ -60,5 +60,7 @@
         <module>spring-applications-microservices-mysql-auth-rx_2</module>
         <module>spring-applications-microservices-mysql-auth_1</module>
         <module>spring-applications-microservices-mysql-auth_2</module>
+        <module>spring-applications-microservices-mysql-auth-rx-api</module>
+        <module>spring-applications-microservices-mysql-auth-api</module>
     </modules>
 </project>
