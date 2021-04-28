@@ -1,0 +1,13 @@
+version: '3'
+services:
+  admin-rx-1:
+    build:
+      context: ""
+      dockerfile: Dockerfile
+    image: admin-rx-1
+    container_name: admin-rx-1
+    hostname: admin-rx-1
+    expose:
+      - 8080
+    ports:
+    - 8280:8080
