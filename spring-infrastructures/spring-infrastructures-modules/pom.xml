@@ -21,6 +21,8 @@
         <module>spring-infrastructures-redis</module>
         <module>spring-infrastructures-postgresql_1</module>
         <module>spring-infrastructures-postgresql_2</module>
+        <module>spring-infrastructures-kylin</module>
+        <module>spring-infrastructures-doris</module>
     </modules>
     <dependencyManagement>
         <dependencies>
