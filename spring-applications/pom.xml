@@ -14,5 +14,6 @@
         <module>spring-applications-modules</module>
         <module>spring-applications-mysql-modules</module>
         <module>spring-applications-postgresql-modules</module>
+        <module>spring-applications-tasks</module>
     </modules>
 </project>

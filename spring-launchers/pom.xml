@@ -14,5 +14,6 @@
         <module>spring-launchers-modules</module>
         <module>spring-launchers-mysql-modules</module>
         <module>spring-launchers-postgresql-modules</module>
+        <module>spring-launchers-tasks</module>
     </modules>
 </project>
