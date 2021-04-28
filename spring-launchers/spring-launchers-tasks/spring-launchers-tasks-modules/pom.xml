@@ -5,7 +5,7 @@
     <parent>
         <artifactId>spring-launchers-tasks</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.8-SNAPSHOT</version>
+        <version>0.0.8</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,7 +16,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-launchers-tasks-dependencies</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.0.8</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>

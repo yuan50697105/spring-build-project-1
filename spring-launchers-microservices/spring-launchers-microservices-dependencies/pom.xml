@@ -5,7 +5,7 @@
     <parent>
         <artifactId>spring-launchers-microservices</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.8-SNAPSHOT</version>
+        <version>0.0.8</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,26 +16,26 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-microservices-dependencies</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.0.8</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-launchers-dependencies</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.0.8</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-launchers-microservices-mysql-auth_1</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.0.8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-launchers-microservices-mysql-auth_2</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.0.8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
@@ -45,7 +45,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-launchers-microservices-mysql-auth-rx_2</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.0.8</version>
             </dependency>
 
         </dependencies>
