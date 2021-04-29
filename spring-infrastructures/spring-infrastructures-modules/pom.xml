@@ -22,7 +22,8 @@
         <module>spring-infrastructures-postgresql_1</module>
         <module>spring-infrastructures-postgresql_2</module>
         <module>spring-infrastructures-kylin</module>
-        <module>spring-infrastructures-doris</module>
+        <module>spring-infrastructures-doris_1</module>
+        <module>spring-infrastructures-doris_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
