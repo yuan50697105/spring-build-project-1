@@ -1,5 +1,7 @@
 package org.example.spring.plugins.elasticsearch.entity.po;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.bean.copier.CopyOptions;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.plugins.commons.entity.BaseEntity;
@@ -37,4 +39,10 @@ public abstract class IBaseEntity extends BaseEntity implements Serializable {
 //    @LogicDelete
 //    @TableLogic
 //    private Integer isDelete;
+
+    @Override
+    public void copy(Object object) {
+        String[] ignoreProperties = new String[]{"id", "createDate", "updateDate"};
+        BeanUtil.copyProperties(object, this, CopyOptions.create().ignoreNullValue().setIgnoreProperties(ignoreProperties));
+    }
 }

@@ -1,5 +1,7 @@
 package org.example.spring.plugins.mybatis.entity.po;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.bean.copier.CopyOptions;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -30,10 +32,16 @@ public abstract class IBaseEntity extends BaseEntity implements Serializable {
     private Date createDate;
     @UpdateTime
     private Date updateDate;
-//    @Version
+
+    //    @Version
 //    @com.baomidou.mybatisplus.annotation.Version
 //    private Integer version;
 //    @LogicDelete
 //    @TableLogic
 //    private Integer isDelete;
+    @Override
+    public void copy(Object object) {
+        String[] ignoreProperties = new String[]{"id", "createDate", "updateDate"};
+        BeanUtil.copyProperties(object, this, CopyOptions.create().ignoreNullValue().setIgnoreProperties(ignoreProperties));
+    }
 }

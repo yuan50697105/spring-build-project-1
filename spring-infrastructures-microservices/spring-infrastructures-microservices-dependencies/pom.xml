@@ -78,6 +78,11 @@
                 <artifactId>spring-infrastructures-microservices-mysql_2</artifactId>
                 <version>0.0.12-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-infrastructures-microservices-mysql-api</artifactId>
+                <version>0.0.12-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
