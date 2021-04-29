@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-models</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.11</version>
+        <version>0.0.12-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,31 +14,31 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.11</version>
+                <version>0.0.12-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-dependencies</artifactId>
-                <version>0.0.11</version>
+                <version>0.0.12-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-models-commons</artifactId>
-                <version>0.0.11</version>
+                <version>0.0.12-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-models_1</artifactId>
-                <version>0.0.11</version>
+                <version>0.0.12-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-models_2</artifactId>
-                <version>0.0.11</version>
+                <version>0.0.12-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
@@ -53,32 +53,32 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-models-mysql_1</artifactId>
-                <version>0.0.11</version>
+                <version>0.0.12-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-models-mysql_2</artifactId>
-                <version>0.0.11</version>
+                <version>0.0.12-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-models-postgresql_1</artifactId>
-                <version>0.0.11</version>
+                <version>0.0.12-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-models-postgresql_2</artifactId>
-                <version>0.0.11</version>
+                <version>0.0.12-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-models-clickhouse_1</artifactId>
-                <version>0.0.11</version>
+                <version>0.0.12-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-models-clickhouse_2</artifactId>
-                <version>0.0.11</version>
+                <version>0.0.12-SNAPSHOT</version>
             </dependency>
 
         </dependencies>
