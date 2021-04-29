@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.example.spring.infrastructures.mysql.commons.entity.CommonsEntity;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * t_department
@@ -30,4 +31,5 @@ public class ITDepartment extends CommonsEntity implements Serializable {
      * pid
      */
     private Long pid;
+    private List<Long> roleIds;
 }

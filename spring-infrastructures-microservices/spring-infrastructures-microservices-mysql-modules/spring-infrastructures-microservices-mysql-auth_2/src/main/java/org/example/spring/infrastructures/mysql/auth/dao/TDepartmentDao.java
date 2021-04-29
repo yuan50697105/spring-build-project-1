@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface TDepartmentDao extends TkBaseDao<TDepartment, TDepartmentQuery> {
     boolean existChildByPIds(List<Long> ids);
+
+    boolean validateDelete(List<Long> ids);
 }

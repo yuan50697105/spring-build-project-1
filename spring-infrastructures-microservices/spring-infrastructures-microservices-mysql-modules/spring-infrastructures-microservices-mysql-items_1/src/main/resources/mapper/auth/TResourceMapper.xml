@@ -14,19 +14,37 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="url" jdbcType="VARCHAR" property="url" />
-    <result column="pid" jdbcType="BIGINT" property="pid" />
-    <result column="weight" jdbcType="INTEGER" property="weight" />
+    <result column="pid" jdbcType="BIGINT" property="pid"/>
+    <result column="weight" jdbcType="INTEGER" property="weight"/>
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_id, update_id, create_user, update_user, create_date, update_date, `name`, 
+    id, create_id, update_id, create_user, update_user, create_date, update_date, `name`,
     `type`, url, pid, weight
   </sql>
 
   <select id="existChidByPids" resultType="boolean">
-    select count(*) from t_resource where pid in (<foreach collection="ids" item="id" separator=",">
-    #{id,jdbcType=BIGINT}
-  </foreach> )
+    select count(*)
+    from t_resource where pid in (
+    <foreach collection="ids" item="id" separator=",">
+      #{id,jdbcType=BIGINT}
+    </foreach>
+    )
+            limit 1
+  </select>
+
+  <select id="validateDelete" resultType="java.lang.Integer">
+    select count(*)
+    from t_resource where pid in
+    <foreach collection="ids" item="id" open="(" close=")" separator=",">
+      #{id,jdbcType=BIGINT}
+    </foreach>
+    <if test="types != null and types.length != 0">
+      and type in
+      <foreach collection="types" item="id" open="(" close=")" separator=",">
+        #{id,jdbcType=VARCHAR}
+      </foreach>
+    </if>
     limit 1
   </select>
 </mapper>

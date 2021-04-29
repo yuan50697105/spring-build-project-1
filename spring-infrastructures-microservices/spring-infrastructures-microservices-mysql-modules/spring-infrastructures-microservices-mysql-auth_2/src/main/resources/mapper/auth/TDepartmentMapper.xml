@@ -17,15 +17,26 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_id, update_id, create_user, update_user, create_date, update_date, `name`, 
+    id, create_id, update_id, create_user, update_user, create_date, update_date, `name`,
     code, pid
   </sql>
 
   <select id="existChildByPIds" resultType="boolean">
-    select count(*) from t_resource where pid in (
+    select count(*)
+    from t_resource where pid in (
     <foreach collection="ids" item="id" separator=",">
       #{id,jdbcType=BIGINT}
     </foreach>)
+          limit 1
+  </select>
+
+  <select id="validateDelete" resultType="java.lang.Integer">
+    select count(*)
+    from t_department
+            where pid in
+    <foreach collection="ids" open="(" close=")" separator="," item="id">
+      #{id,jdbcType=BIGINT}
+    </foreach>
     limit 1
   </select>
 </mapper>
