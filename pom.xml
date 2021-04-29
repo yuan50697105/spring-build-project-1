@@ -196,7 +196,7 @@
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useEditMode>false</useEditMode>
-                        <arguments>-Pdeploy</arguments>
+                        <arguments>-Pd</arguments>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -265,7 +265,7 @@
   </scm>
     <profiles>
         <profile>
-            <id>deploy</id>
+            <id>d</id>
             <build>
                 <plugins>
                     <!--配置生成Javadoc包-->
