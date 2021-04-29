@@ -192,12 +192,13 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.5.3</version>
+                    <version>3.0.0-M4</version>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useEditMode>false</useEditMode>
                         <arguments>-Pd</arguments>
-                        <commitByProject>true</commitByProject>
+                        <commitByProject>false</commitByProject>
+                        <autoResolveSnapshots>all</autoResolveSnapshots>
                     </configuration>
                 </plugin>
                 <plugin>
