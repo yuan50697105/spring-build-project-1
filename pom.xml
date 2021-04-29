@@ -150,6 +150,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.9</version>
+            <type>maven-plugin</type>
+        </dependency>
     </dependencies>
     <build>
         <pluginManagement>
@@ -268,21 +274,25 @@
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>2.10.4</version>
                         <configuration>
-                            <!--指定编码为UTF-8-->
-                            <encoding>UTF-8</encoding>
+                            <encoding>${maven.compiler.encoding}</encoding>
                             <aggregate>true</aggregate>
-                            <charset>UTF-8</charset>
-                            <docencoding>UTF-8</docencoding>
+                            <charset>${maven.compiler.encoding}</charset>
+                            <docencoding>${maven.compiler.encoding}</docencoding>
                         </configuration>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
+                                <phase>package</phase>
                                 <goals>
                                     <goal>jar</goal>
                                 </goals>
+                                <configuration>
+                                    <additionalparam>-Xdoclint:none</additionalparam>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
+
                     <!--配置生成源码包-->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
