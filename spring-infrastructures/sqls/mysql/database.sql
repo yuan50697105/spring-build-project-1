@@ -350,6 +350,100 @@ create table if not exists t_patient_team_meal_fee_item
 )
     comment 't_patient_team_meal_fee_item' charset = utf8mb4;
 
+create table if not exists t_personal_report_check_items
+(
+    id              bigint auto_increment comment 'id'
+        primary key,
+    create_id       bigint      default -1                    null comment 'createId',
+    update_id       bigint      default -1                    null comment 'updateId',
+    create_user     varchar(50) default ''                    null comment 'createUser',
+    update_user     varchar(50) default ''                    null comment 'updateUser',
+    create_date     datetime    default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date     datetime    default '1000-01-01 00:00:00' null comment 'updateDate',
+    patient_id      bigint      default -1                    null comment 'patientId',
+    fee_item_id     bigint      default -1                    null comment 'feeItemId',
+    check_item_id   bigint      default -1                    null comment 'checkItemId',
+    check_item_name varchar(50) default ''                    null comment 'checkItemName',
+    result_type     varchar(50) default ''                    null comment 'resultType',
+    lower_limit     varchar(50) default ''                    null comment 'lowerLimit',
+    upper_limit     varchar(50) default ''                    null comment 'upperLimit',
+    detection_value varchar(50) default ''                    null comment 'detectionValue',
+    conclusion      varchar(50) default ''                    null comment 'conclusion'
+)
+    comment 't_personal_report_check_items' charset = utf8mb4;
+
+create table if not exists t_personal_report_fee_items
+(
+    id            bigint auto_increment comment 'id'
+        primary key,
+    create_id     bigint      default -1                    null comment 'createId',
+    update_id     bigint      default -1                    null comment 'updateId',
+    create_user   varchar(50) default ''                    null comment 'createUser',
+    update_user   varchar(50) default ''                    null comment 'updateUser',
+    create_date   datetime    default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date   datetime    default '1000-01-01 00:00:00' null comment 'updateDate',
+    patient_id    bigint      default -1                    null comment 'patientId',
+    fee_item_id   bigint      default -1                    null comment 'feeItemId',
+    fee_item_name varchar(50) default ''                    null comment 'feeItemName',
+    conclusion    varchar(50) default ''                    null comment 'conclusion'
+)
+    comment 't_personal_report_fee_items' charset = utf8mb4;
+
+create table if not exists t_personal_report_info
+(
+    id                bigint auto_increment comment 'id'
+        primary key,
+    create_id         bigint      default -1                    null comment 'createId',
+    update_id         bigint      default -1                    null comment 'updateId',
+    create_user       varchar(50) default ''                    null comment 'createUser',
+    update_user       varchar(50) default ''                    null comment 'updateUser',
+    create_date       datetime    default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date       datetime    default '1000-01-01 00:00:00' null comment 'updateDate',
+    patient_id        bigint      default -1                    null comment 'patientId',
+    patient_name      varchar(50) default ''                    null comment 'patientName',
+    patient_id_number varchar(50) default ''                    null comment 'patientIdNumber',
+    patient_phone     varchar(50) default ''                    null comment 'patientPhone',
+    file_name         varchar(50) default ''                    null comment 'fileName',
+    bucket_name       varchar(50) default ''                    null comment 'bucketName',
+    template_id       bigint      default -1                    null comment 'templateId'
+)
+    comment 't_personal_report_info' charset = utf8mb4;
+
+create table if not exists t_personal_report_summary
+(
+    id          bigint auto_increment comment 'id'
+        primary key,
+    create_id   bigint      default -1                    null comment 'createId',
+    update_id   bigint      default -1                    null comment 'updateId',
+    create_user varchar(50) default ''                    null comment 'createUser',
+    update_user varchar(50) default ''                    null comment 'updateUser',
+    create_date datetime    default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date datetime    default '1000-01-01 00:00:00' null comment 'updateDate',
+    patient_id  bigint      default -1                    null comment 'patientId',
+    conclusion  varchar(50) default ''                    null comment 'conclusion'
+)
+    comment 't_personal_report_summary' charset = utf8mb4;
+
+create table if not exists t_report_info
+(
+    id           bigint auto_increment comment 'id'
+        primary key,
+    create_id    bigint      default -1                    not null comment 'createId',
+    update_id    bigint      default -1                    not null comment 'updateId',
+    create_user  varchar(50) default ''                    not null comment 'createUser',
+    update_user  varchar(50) default ''                    not null comment 'updateUser',
+    create_date  datetime    default '1000-01-01 00:00:00' not null comment 'createDate',
+    update_date  datetime    default '1000-01-01 00:00:00' not null comment 'updateDate',
+    code         varchar(50) default ''                    not null comment '报告编号',
+    patient_id   bigint      default -1                    not null comment '体检ID',
+    patient_code varchar(50) default ''                    not null comment '体检号',
+    name         varchar(50) default ''                    not null comment '人员姓名',
+    bucket_name  varchar(50) default ''                    not null comment '对象名称',
+    file_name    varchar(50) default ''                    not null comment '文件名称',
+    versions     int         default -1                    not null comment 'versions'
+)
+    comment 't_report_info' charset = utf8mb4;
+
 create table if not exists t_resource
 (
     id          bigint auto_increment comment 'id'
@@ -415,6 +509,24 @@ create table if not exists t_seller_info
     status      varchar(50) default ''                    null comment 'status'
 )
     comment 't_seller_info' charset = utf8mb4;
+
+create table if not exists t_template_info
+(
+    id          bigint auto_increment comment 'id'
+        primary key,
+    create_id   bigint      default -1                    null comment 'createId',
+    update_id   bigint      default -1                    null comment 'updateId',
+    create_user varchar(50) default ''                    null comment 'createUser',
+    update_user varchar(50) default ''                    null comment 'updateUser',
+    create_date datetime    default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date datetime    default '1000-01-01 00:00:00' null comment 'updateDate',
+    type        varchar(50) default ''                    null comment 'type',
+    code        bigint      default -1                    null comment 'code',
+    name        varchar(50) default ''                    null comment 'name',
+    bucket_name varchar(50) default ''                    null comment 'bucketName',
+    file_name   varchar(50) default ''                    null comment 'fileName'
+)
+    comment 't_template_info' charset = utf8mb4;
 
 create table if not exists t_user
 (
