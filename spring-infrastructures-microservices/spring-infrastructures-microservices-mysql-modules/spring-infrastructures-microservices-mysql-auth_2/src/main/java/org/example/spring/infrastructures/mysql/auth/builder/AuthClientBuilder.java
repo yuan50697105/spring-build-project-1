@@ -59,5 +59,5 @@ public interface AuthClientBuilder {
     List<ITResource> createForGetResource(List<TResource> queryTop);
 
 
-    IPageData<ITResource> createForGetResource(IPageData<TDepartment> data);
+    IPageData<ITResource> createForGetResource(IPageData<TResource> data);
 }

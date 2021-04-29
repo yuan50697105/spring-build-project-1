@@ -1,4 +1,4 @@
-package org.example.spring.infrastructures.mysql.auth.client.impl;
+package org.example.spring.infrastructures.mysql.auth.client;
 
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
