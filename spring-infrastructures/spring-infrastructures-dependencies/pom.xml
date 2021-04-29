@@ -65,6 +65,16 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-infrastructures-kylin</artifactId>
+                <version>0.0.9-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-infrastructures-doris</artifactId>
+                <version>0.0.9-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-minio</artifactId>
                 <version>0.0.9-SNAPSHOT</version>
             </dependency>
