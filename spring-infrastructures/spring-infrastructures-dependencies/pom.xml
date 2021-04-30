@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-infrastructures</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.12</version>
+        <version>0.0.13-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,74 +14,74 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-commons</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-elasticsearch</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-mongodb</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-mysql_1</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-mysql_2</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-clickhouse_1</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-clickhouse_2</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-postgresql_1</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-postgresql_2</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-kylin</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-doris_1</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-doris_2</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-infrastructures-minio</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.13-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
