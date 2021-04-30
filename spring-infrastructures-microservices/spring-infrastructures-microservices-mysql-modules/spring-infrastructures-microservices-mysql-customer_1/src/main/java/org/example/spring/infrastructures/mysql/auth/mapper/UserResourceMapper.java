@@ -8,7 +8,7 @@ import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
 import java.util.List;
 
 @Mapper
-@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class ,readWrite = false,blocking = true,flushInterval = 2000)
+@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class, readWrite = false, blocking = true, flushInterval = 2000)
 public interface UserResourceMapper {
     List<TResource> listPermissionByUserId(Long userId);
 }

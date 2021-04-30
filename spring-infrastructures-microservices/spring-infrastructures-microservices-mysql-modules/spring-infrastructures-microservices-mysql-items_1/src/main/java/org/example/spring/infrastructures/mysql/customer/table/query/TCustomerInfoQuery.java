@@ -24,26 +24,23 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TCustomerInfoQuery extends TkBaseQuery<TCustomerInfo> implements Serializable, MybatisExampleForTk<TCustomerInfo, Example> {
+    private static final long serialVersionUID = 1L;
     /**
      * 编号
      */
     @ApiModelProperty(value = "编号")
     @AndLike
     private String code;
-
     /**
      * 名称
      */
     @ApiModelProperty(value = "名称")
     @AndLike
     private String name;
-
     /**
      * 类型
      */
     @ApiModelProperty(value = "类型")
     @AndEqualTo
     private String type;
-
-    private static final long serialVersionUID = 1L;
 }

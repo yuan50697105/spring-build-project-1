@@ -11,7 +11,7 @@ import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 import java.util.List;
 
 @Mapper
-@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class ,readWrite = false,blocking = true,flushInterval = 2000)
+@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class, readWrite = false, blocking = true, flushInterval = 2000)
 public interface TDepartmentRoleMapper extends IBaseMapper<TDepartmentRole> {
     List<TRole> listRolesByDepartmentId(@Param("departmentId") Long departmentId);
 }

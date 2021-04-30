@@ -15,7 +15,7 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class ITUserRoleQuery extends CommonsQuery implements Serializable{
+public class ITUserRoleQuery extends CommonsQuery implements Serializable {
     private static final long serialVersionUID = 3958781961574655476L;
     /**
      * userId

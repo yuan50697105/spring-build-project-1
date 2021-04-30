@@ -3,7 +3,6 @@ package org.example.spring.infrastructures.mysql.auth.client;
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.infrastructures.mysql.auth.builder.AuthClientBuilder;
-import org.example.spring.infrastructures.mysql.auth.client.TResourceClient;
 import org.example.spring.infrastructures.mysql.auth.dao.TResourceDao;
 import org.example.spring.infrastructures.mysql.auth.entity.ITResource;
 import org.example.spring.infrastructures.mysql.auth.entity.query.ITResourceQuery;

@@ -9,22 +9,22 @@ import org.example.spring.infrastructures.mysql.commons.entity.CommonsQuery;
 import java.io.Serializable;
 
 /**
-    * t_permission
-    */
+ * t_permission
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class ITResourceQuery extends CommonsQuery implements Serializable {
     private static final long serialVersionUID = 680462284463979385L;
     /**
-    * name
-    */
+     * name
+     */
     private String name;
 
     /**
-    * type
-    */
+     * type
+     */
     private String type;
     private Long pid;
 

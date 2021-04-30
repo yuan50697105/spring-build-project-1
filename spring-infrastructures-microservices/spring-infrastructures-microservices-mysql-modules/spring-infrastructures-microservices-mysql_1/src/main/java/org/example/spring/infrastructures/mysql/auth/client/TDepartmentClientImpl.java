@@ -31,7 +31,7 @@ public class TDepartmentClientImpl implements TDepartmentClient {
     public void save(ITDepartment department) {
         TDepartment tDepartment = authClientBuilder.createForSave(department);
         departmentDao.save(tDepartment);
-        List<TDepartmentRole> departmentRoles = authClientBuilder.createForSave(department.getRoleIds(), tDepartment.getId());
+        List<TDepartmentRole> departmentRoles = authClientBuilder.createForSaveDepartmentRole(department.getRoleIds(), tDepartment.getId());
         departmentRoleDao.saveBatch(departmentRoles);
     }
 
@@ -43,7 +43,7 @@ public class TDepartmentClientImpl implements TDepartmentClient {
             TDepartment tDepartment = optional.get();
             authClientBuilder.copy(department, tDepartment);
             departmentDao.updateById(tDepartment);
-            departmentRoleDao.saveBatch(authClientBuilder.createForSave(department.getRoleIds(), tDepartment.getId()));
+            departmentRoleDao.saveBatch(authClientBuilder.createForSaveDepartmentRole(department.getRoleIds(), tDepartment.getId()));
         }
     }
 

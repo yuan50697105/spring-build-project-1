@@ -16,6 +16,7 @@ import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.weekend.Weekend;
 import tk.mybatis.mapper.weekend.WeekendSqls;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,7 +30,6 @@ public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, T
     protected Wrapper<TUserRole> queryWrapper(TUserRoleQuery tUserRoleQuery) {
         return null;
     }
-
 
 
     @Override
@@ -57,8 +57,24 @@ public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, T
     }
 
     @Override
+    public boolean deleteByUserId(Long id) {
+        return removeByUserId(id);
+    }
+
+    @Override
+    public boolean deleteByUserIds(List<Long> ids) {
+        return removeByUserIds(ids);
+    }
+
+    @Override
     public List<TRole> listByUserId(Long userId) {
         return baseMapper.listByUserId(userId);
     }
 
+    @Override
+    public boolean saveBatch(Collection<TUserRole> entityList, int batchSize) {
+        List<Long> longs = entityList.stream().map(TUserRole::getUserId).collect(Collectors.toList());
+        removeByUserIds(longs);
+        return super.saveBatch(entityList, batchSize);
+    }
 }

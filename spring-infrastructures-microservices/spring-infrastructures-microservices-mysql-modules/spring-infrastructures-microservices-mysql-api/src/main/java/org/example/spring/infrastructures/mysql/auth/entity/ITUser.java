@@ -7,9 +7,11 @@ import lombok.NoArgsConstructor;
 import org.example.spring.infrastructures.mysql.commons.entity.CommonsEntity;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * t_user
+ *
  * @author yuane
  */
 @Data
@@ -38,4 +40,6 @@ public class ITUser extends CommonsEntity implements Serializable {
      * 状态
      */
     private String status;
+
+    private List<Long> roleIds;
 }

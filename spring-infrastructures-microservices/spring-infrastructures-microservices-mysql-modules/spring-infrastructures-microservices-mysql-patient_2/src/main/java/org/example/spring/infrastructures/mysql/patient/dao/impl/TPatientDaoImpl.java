@@ -6,7 +6,6 @@ import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
 import org.example.spring.infrastructures.mysql.patient.mapper.TPatientMapper;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatient;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
-import org.example.spring.plugins.mybatis.audit.annotation.Id;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;
@@ -31,7 +30,7 @@ public class TPatientDaoImpl extends TkBaseDaoImpl<TPatient, TPatientQuery, TPat
 
     @Override
     public boolean removeByGroupIds(List<Long> ids) {
-        return removeByIds(lambdaQuery().in(TPatient::getGroupId,ids).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
+        return removeByIds(lambdaQuery().in(TPatient::getGroupId, ids).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
     }
 
 }

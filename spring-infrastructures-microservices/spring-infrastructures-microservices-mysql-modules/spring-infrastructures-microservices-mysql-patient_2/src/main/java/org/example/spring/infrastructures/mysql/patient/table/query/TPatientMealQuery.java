@@ -10,12 +10,10 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientMeal;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 /**
  * t_patient_meal
@@ -26,20 +24,19 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TPatientMealQuery extends TkBaseQuery<TPatientMeal> implements Serializable, MybatisExampleForTk<TPatientMeal, Example> {
+    private static final long serialVersionUID = 1L;
     /**
      * teamId
      */
     @ApiModelProperty(value = "teamId")
     @AndEqualTo
     private Long teamId;
-
     /**
      * groupId
      */
     @ApiModelProperty(value = "groupId")
     @AndEqualTo
     private Long groupId;
-
     /**
      * mealType
      */
@@ -52,35 +49,28 @@ public class TPatientMealQuery extends TkBaseQuery<TPatientMeal> implements Seri
     @ApiModelProperty(value = "mealSource")
     @AndEqualTo
     private String mealSource;
-
     /**
      * mealId
      */
     @ApiModelProperty(value = "mealId")
     @AndEqualTo
     private Long mealId;
-
     /**
      * teamMealId
      */
     @ApiModelProperty(value = "teamMealId")
     @AndEqualTo
     private Long teamMealId;
-
     /**
      * mealCode
      */
     @ApiModelProperty(value = "mealCode")
     @AndLike
     private String mealCode;
-
     /**
      * mealName
      */
     @ApiModelProperty(value = "mealName")
     @AndLike
     private String mealName;
-
-
-    private static final long serialVersionUID = 1L;
 }

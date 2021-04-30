@@ -21,23 +21,20 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Alias("TDepartment")
 public class TDepartment extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     private String name;
-
     /**
      * code
      */
     @ApiModelProperty(value = "code")
     private String code;
-
     /**
      * pid
      */
     @ApiModelProperty(value = "pid")
     private Long pid;
-
-    private static final long serialVersionUID = 1L;
 }

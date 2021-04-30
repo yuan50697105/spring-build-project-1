@@ -16,15 +16,13 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ITRolePermissionQuery extends CommonsQuery implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * roleId
      */
     private Long roleId;
-
     /**
      * permissionId
      */
     private Long permissionId;
-
-    private static final long serialVersionUID = 1L;
 }

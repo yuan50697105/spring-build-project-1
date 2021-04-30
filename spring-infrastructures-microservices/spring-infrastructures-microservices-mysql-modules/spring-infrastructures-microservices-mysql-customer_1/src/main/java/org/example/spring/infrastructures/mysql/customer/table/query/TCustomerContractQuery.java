@@ -1,7 +1,10 @@
 package org.example.spring.infrastructures.mysql.customer.table.query;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
-import com.gitee.denger.mybatis.example.ext.annotation.*;
+import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndGreaterThanOrEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndLessThanOrEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -9,7 +12,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContract;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 

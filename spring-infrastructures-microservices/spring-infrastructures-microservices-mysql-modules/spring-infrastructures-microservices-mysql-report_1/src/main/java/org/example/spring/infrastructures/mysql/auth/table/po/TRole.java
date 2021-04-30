@@ -21,11 +21,10 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Alias("TRole")
 public class TRole extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     private String name;
-
-    private static final long serialVersionUID = 1L;
 }

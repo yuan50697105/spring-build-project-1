@@ -31,7 +31,6 @@ public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, T
     }
 
 
-
     @Override
     public List<Long> listRoleIdsByUserId(Long userId) {
         return lambdaQuery().eq(TUserRole::getUserId, userId).list().stream().map(TUserRole::getRoleId).distinct().sorted().collect(Collectors.toList());

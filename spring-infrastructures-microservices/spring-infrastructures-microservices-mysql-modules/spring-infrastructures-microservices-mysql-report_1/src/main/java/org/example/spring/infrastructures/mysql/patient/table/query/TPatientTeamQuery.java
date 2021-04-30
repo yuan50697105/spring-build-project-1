@@ -26,6 +26,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TPatientTeamQuery extends TkBaseQuery<TPatientTeam> implements Serializable, MybatisExampleForTk<TPatientTeam, Example> {
+    private static final long serialVersionUID = 1L;
     /**
      * customerId
      */
@@ -37,48 +38,40 @@ public class TPatientTeamQuery extends TkBaseQuery<TPatientTeam> implements Seri
     @ApiModelProperty(value = "code")
     @AndLike
     private String code;
-
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     @AndLike
     private String name;
-
     /**
      * ageStart
      */
     @ApiModelProperty(value = "ageStart")
     @AndGreaterThanOrEqualTo(property = "ageStart")
     private Integer ageStart;
-
     /**
      * ageEnd
      */
     @ApiModelProperty(value = "ageEnd")
     @AndLessThanOrEqualTo(property = "ageEnd")
     private Integer ageEnd;
-
     /**
      * sex
      */
     @ApiModelProperty(value = "sex")
     @AndEqualTo
     private String sex;
-
     /**
      * marriage
      */
     @ApiModelProperty(value = "marriage")
     @AndEqualTo
     private String marriage;
-
     /**
      * bear
      */
     @ApiModelProperty(value = "bear")
     @AndEqualTo
     private String bear;
-
-    private static final long serialVersionUID = 1L;
 }

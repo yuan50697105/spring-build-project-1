@@ -2,13 +2,14 @@ package org.example.spring.infrastructures.mysql.auth.builder;
 
 import org.example.spring.infrastructures.mysql.auth.entity.ITDepartment;
 import org.example.spring.infrastructures.mysql.auth.entity.ITResource;
+import org.example.spring.infrastructures.mysql.auth.entity.ITUser;
 import org.example.spring.infrastructures.mysql.auth.entity.query.ITDepartmentQuery;
 import org.example.spring.infrastructures.mysql.auth.entity.query.ITResourceQuery;
-import org.example.spring.infrastructures.mysql.auth.table.po.TDepartment;
-import org.example.spring.infrastructures.mysql.auth.table.po.TDepartmentRole;
-import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
+import org.example.spring.infrastructures.mysql.auth.entity.query.ITUserQuery;
+import org.example.spring.infrastructures.mysql.auth.table.po.*;
 import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
+import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
@@ -37,7 +38,8 @@ public interface AuthClientBuilder {
     @Mapping(target = "withSize", ignore = true)
     TDepartmentQuery createForQuery(ITDepartmentQuery query);
 
-    default List<TDepartmentRole> createForSave(List<Long> roleIds, Long departmentId) {
+    @SuppressWarnings("unchecked")
+    default List<TDepartmentRole> createForSaveDepartmentRole(List<Long> roleIds, Long departmentId) {
         if (roleIds != null && departmentId != null) {
             List<TDepartmentRole> departmentRoles = new ArrayList<>(roleIds.size());
             for (Long roleId : roleIds) {
@@ -60,4 +62,27 @@ public interface AuthClientBuilder {
 
 
     IPageData<ITResource> createForGetResource(IPageData<TResource> data);
+
+    TUser createForSave(ITUser user);
+
+    @SuppressWarnings("unchecked")
+    default List<TUserRole> createForSaveUserRole(List<Long> roleIds, Long userId) {
+        if (roleIds != null && userId != null) {
+            ArrayList<TUserRole> userRoles = new ArrayList<>(roleIds.size());
+            for (Long roleId : roleIds) {
+                userRoles.add(new TUserRole(userId, roleId));
+            }
+            return userRoles;
+        } else {
+            return Collections.EMPTY_LIST;
+        }
+    }
+
+    ITUser createForGetUser(TUser user);
+
+    TUserQuery createForQuery(ITUserQuery query);
+
+    List<ITUser> createForGetUser(List<TUser> queryTop);
+
+    IPageData<ITUser> createForGetUser(IPageData<TUser> queryTop);
 }

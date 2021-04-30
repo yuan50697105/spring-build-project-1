@@ -16,28 +16,26 @@ import tk.mybatis.mapper.entity.Example;
 import java.io.Serializable;
 
 /**
-    * t_permission
-    */
-@ApiModel(value="org-example-spring-infrastructures-mysql-org.example.spring.infrastructures.mysql.auth-table-po-TPermission")
+ * t_permission
+ */
+@ApiModel(value = "org-example-spring-infrastructures-mysql-org.example.spring.infrastructures.mysql.auth-table-po-TPermission")
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class TResourceQuery extends TkBaseQuery<TResource> implements Serializable, MybatisExampleForTk<TResource, Example> {
+    private static final long serialVersionUID = 1L;
     /**
-    * name
-    */
-    @ApiModelProperty(value="name")
+     * name
+     */
+    @ApiModelProperty(value = "name")
     @AndLike
     private String name;
-
     /**
-    * type
-    */
-    @ApiModelProperty(value="type")
+     * type
+     */
+    @ApiModelProperty(value = "type")
     @AndEqualTo
     private String type;
     private Long pid;
-
-    private static final long serialVersionUID = 1L;
 }

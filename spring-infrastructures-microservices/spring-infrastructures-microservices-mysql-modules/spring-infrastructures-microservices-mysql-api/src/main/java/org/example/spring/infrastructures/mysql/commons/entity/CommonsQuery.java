@@ -11,11 +11,6 @@ public class CommonsQuery {
     private Integer size = 20;
     private String order = "createDate";
     private OrderTypeEnum orderType;
-
-    public CommonsQuery withSize(Integer size) {
-        this.setSize(size);
-        return this;
-    }
     private Long id;
     private List<Long> ids;
     private Long createId;
@@ -26,4 +21,9 @@ public class CommonsQuery {
     private Date createDateEnd;
     private Integer version;
     private Integer isDelete;
+
+    public CommonsQuery withSize(Integer size) {
+        this.setSize(size);
+        return this;
+    }
 }

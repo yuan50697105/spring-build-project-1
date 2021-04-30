@@ -21,17 +21,15 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Alias("TRoleResource")
 public class TRoleResource extends IBaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * roleId
      */
     @ApiModelProperty(value = "roleId")
     private Long roleId;
-
     /**
      * permissionId
      */
     @ApiModelProperty(value = "permissionId")
     private Long resourceId;
-
-    private static final long serialVersionUID = 1L;
 }

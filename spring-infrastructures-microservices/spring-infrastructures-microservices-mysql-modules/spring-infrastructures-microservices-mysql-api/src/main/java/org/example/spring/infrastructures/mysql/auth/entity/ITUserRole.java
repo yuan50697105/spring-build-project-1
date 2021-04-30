@@ -16,15 +16,13 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ITUserRole extends CommonsEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * userId
      */
     private Long userId;
-
     /**
      * roleId
      */
     private Long roleId;
-
-    private static final long serialVersionUID = 1L;
 }

@@ -3,7 +3,6 @@ package org.example.spring.infrastructures.mysql.patient.dao.impl;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
 import org.example.spring.infrastructures.mysql.patient.dao.TPatientTeamDao;
-import org.example.spring.infrastructures.mysql.patient.mapper.TPatientGroupMapper;
 import org.example.spring.infrastructures.mysql.patient.mapper.TPatientTeamMapper;
 import org.example.spring.infrastructures.mysql.patient.table.po.TPatientTeam;
 import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamQuery;

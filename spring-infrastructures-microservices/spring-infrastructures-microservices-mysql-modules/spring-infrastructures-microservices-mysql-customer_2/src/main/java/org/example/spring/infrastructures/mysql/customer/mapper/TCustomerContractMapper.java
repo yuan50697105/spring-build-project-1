@@ -7,6 +7,6 @@ import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContr
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 
 @Mapper
-@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class ,readWrite = false,blocking = true,flushInterval = 2000)
+@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class, readWrite = false, blocking = true, flushInterval = 2000)
 public interface TCustomerContractMapper extends IBaseMapper<TCustomerContract> {
 }
