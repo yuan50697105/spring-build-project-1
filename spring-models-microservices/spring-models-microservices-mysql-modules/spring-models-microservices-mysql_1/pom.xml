@@ -20,15 +20,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-models-microservices-mysql-auth_1</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-models-microservices-mysql-customer_1</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-models-microservices-mysql-patient_1</artifactId>
+            <artifactId>spring-infrastructures-mysql_1</artifactId>
         </dependency>
     </dependencies>
 
