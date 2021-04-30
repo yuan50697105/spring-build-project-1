@@ -44,8 +44,18 @@ public class TRoleResourceDaoImpl extends TkBaseDaoImpl<TRoleResource, TRolePerm
     }
 
     @Override
+    public boolean deleteByRoleIds(List<Long> ids) {
+        return removeByRoleIds(ids);
+    }
+
+    @Override
     public boolean removeByRoleId(Long roleId) {
         return removeByIds(lambdaQuery().eq(TRoleResource::getRoleId, roleId).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList()));
+    }
+
+    @Override
+    public boolean deleteByRoleId(Long roleId) {
+        return removeByRoleId(roleId);
     }
 
     @Override
@@ -54,8 +64,13 @@ public class TRoleResourceDaoImpl extends TkBaseDaoImpl<TRoleResource, TRolePerm
     }
 
     @Override
-    public boolean removeByPermissionIds(List<Long> permissionIds) {
-        List<Long> collect = lambdaQuery().in(TRoleResource::getResourceId, permissionIds).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
+    public boolean removeByResourceIds(List<Long> resourceIds) {
+        List<Long> collect = lambdaQuery().in(TRoleResource::getResourceId, resourceIds).select(IBaseEntity::getId).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
         return removeByIds(collect);
+    }
+
+    @Override
+    public boolean deleteByResourceIds(List<Long> resourceIds) {
+        return removeByResourceIds(resourceIds);
     }
 }

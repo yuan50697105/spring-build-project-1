@@ -73,13 +73,13 @@ public class TUserClientImpl implements TUserClient {
     public List<ITUser> list(ITUserQuery query) {
         TUserQuery userQuery = authClientBuilder.createForQuery(query);
         List<TUser> list = userDao.queryTop(userQuery, userQuery.getSize());
-        return authClientBuilder.createForGetUser(list);
+        return authClientBuilder.createForGetRole(list);
     }
 
     @Override
     public IPageData<ITUser> data(ITUserQuery query) {
         TUserQuery userQuery = authClientBuilder.createForQuery(query);
         IPageData<TUser> list = userDao.queryPage(userQuery);
-        return authClientBuilder.createForGetUser(list);
+        return authClientBuilder.createForGetRole(list);
     }
 }

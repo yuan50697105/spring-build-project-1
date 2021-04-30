@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.example.spring.infrastructures.mysql.commons.entity.CommonsEntity;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * t_role
@@ -21,4 +22,5 @@ public class ITRole extends CommonsEntity implements Serializable {
      * name
      */
     private String name;
+    private List<Long> resourceIds;
 }
