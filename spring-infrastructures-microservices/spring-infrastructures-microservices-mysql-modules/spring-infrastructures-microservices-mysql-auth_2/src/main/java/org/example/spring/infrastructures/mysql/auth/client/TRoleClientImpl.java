@@ -63,12 +63,14 @@ public class TRoleClientImpl implements TRoleClient {
     public List<ITRole> list(ITRoleQuery query) {
         TRoleQuery roleQuery = authClientBuilder.createForQuery(query);
         List<TRole> list = roleDao.queryTop(roleQuery, roleQuery.getSize());
-        return authClientBuilder.createForGetUser(list);
+        return authClientBuilder.createForGetRole(list);
 
     }
 
     @Override
     public IPageData<ITRole> data(ITRoleQuery query) {
-        return null;
+        TRoleQuery roleQuery = authClientBuilder.createForQuery(query);
+        IPageData<TRole> list = roleDao.queryPage(roleQuery);
+        return authClientBuilder.createForGetRole(list);
     }
 }
