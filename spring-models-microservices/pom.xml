@@ -11,10 +11,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring-models-microservices-dependencies</module>
+        <module>spring-models-microservices-client-api</module>
         <module>spring-models-microservices-mysql-modules</module>
         <module>spring-models-microservices-postgresql-modules</module>
         <module>spring-models-microservices-clickhouse-modules</module>
-        <module>spring-models-microservices-client-api</module>
     </modules>
 
     <dependencyManagement>
