@@ -1,13 +1,13 @@
 package org.example.spring.infrastructures.mysql.auth.builder;
 
-import org.example.spring.infrastructures.mysql.auth.entity.ITDepartment;
-import org.example.spring.infrastructures.mysql.auth.entity.ITResource;
-import org.example.spring.infrastructures.mysql.auth.entity.ITRole;
-import org.example.spring.infrastructures.mysql.auth.entity.ITUser;
-import org.example.spring.infrastructures.mysql.auth.entity.query.ITDepartmentQuery;
-import org.example.spring.infrastructures.mysql.auth.entity.query.ITResourceQuery;
-import org.example.spring.infrastructures.mysql.auth.entity.query.ITRoleQuery;
-import org.example.spring.infrastructures.mysql.auth.entity.query.ITUserQuery;
+import org.example.spring.infrastructures.mysql.auth.entity.Department;
+import org.example.spring.infrastructures.mysql.auth.entity.Resource;
+import org.example.spring.infrastructures.mysql.auth.entity.Role;
+import org.example.spring.infrastructures.mysql.auth.entity.User;
+import org.example.spring.infrastructures.mysql.auth.entity.query.DepartmentQuery;
+import org.example.spring.infrastructures.mysql.auth.entity.query.ResourceQuery;
+import org.example.spring.infrastructures.mysql.auth.entity.query.RoleQuery;
+import org.example.spring.infrastructures.mysql.auth.entity.query.UserQuery;
 import org.example.spring.infrastructures.mysql.auth.table.po.*;
 import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
@@ -24,22 +24,22 @@ import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
 public interface AuthClientBuilder {
-    TDepartment createForSave(ITDepartment department);
+    TDepartment createForSave(Department department);
 
-    default void copy(ITDepartment department, TDepartment tDepartment) {
+    default void copy(Department department, TDepartment tDepartment) {
         if (department != null) {
             tDepartment.copy(department);
         }
     }
 
-    ITDepartment createForGetDepartment(TDepartment department);
+    Department createForGetDepartment(TDepartment department);
 
-    List<ITDepartment> createForGetDepartment(List<TDepartment> list);
+    List<Department> createForGetDepartment(List<TDepartment> list);
 
-    IPageData<ITDepartment> createForGetDepartment(IPageData<TDepartment> data);
+    IPageData<Department> createForGetDepartment(IPageData<TDepartment> data);
 
     @Mapping(target = "withSize", ignore = true)
-    TDepartmentQuery createForQuery(ITDepartmentQuery query);
+    TDepartmentQuery createForQuery(DepartmentQuery query);
 
     @SuppressWarnings("unchecked")
     default List<TDepartmentRole> createForSaveDepartmentRole(List<Long> roleIds, Long departmentId) {
@@ -54,19 +54,19 @@ public interface AuthClientBuilder {
         }
     }
 
-    TResource createForSave(ITResource resource);
+    TResource createForSave(Resource resource);
 
     @Mapping(target = "withSize", ignore = true)
-    TResourceQuery createForQuery(ITResourceQuery query);
+    TResourceQuery createForQuery(ResourceQuery query);
 
-    ITResource createForGetResource(TResource resource);
+    Resource createForGetResource(TResource resource);
 
-    List<ITResource> createForGetResource(List<TResource> queryTop);
+    List<Resource> createForGetResource(List<TResource> queryTop);
 
 
-    IPageData<ITResource> createForGetResource(IPageData<TResource> data);
+    IPageData<Resource> createForGetResource(IPageData<TResource> data);
 
-    TUser createForSave(ITUser user);
+    TUser createForSave(User user);
 
     @SuppressWarnings("unchecked")
     default List<TUserRole> createForSaveUserRole(List<Long> roleIds, Long userId) {
@@ -81,21 +81,21 @@ public interface AuthClientBuilder {
         }
     }
 
-    ITUser createForGetUser(TUser user);
+    User createForGetUser(TUser user);
 
-    TUserQuery createForQuery(ITUserQuery query);
+    TUserQuery createForQuery(UserQuery query);
 
-    List<ITUser> createForGetUser(List<TUser> queryTop);
+    List<User> createForGetUser(List<TUser> queryTop);
 
-    IPageData<ITUser> createForGetUser(IPageData<TUser> queryTop);
+    IPageData<User> createForGetUser(IPageData<TUser> queryTop);
 
-    TRole createForSave(ITRole role);
+    TRole createForSave(Role role);
 
-    ITRole createForGetRole(TRole tRole);
+    Role createForGetRole(TRole tRole);
 
-    TRoleQuery createForQuery(ITRoleQuery query);
+    TRoleQuery createForQuery(RoleQuery query);
 
-    List<ITRole> createForGetRole(List<TRole> queryTop);
+    List<Role> createForGetRole(List<TRole> queryTop);
 
-    IPageData<ITRole> createForGetRole(IPageData<TRole> list);
+    IPageData<Role> createForGetRole(IPageData<TRole> list);
 }
