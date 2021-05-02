@@ -30,4 +30,10 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-models-microservices-client-api</artifactId>
+        </dependency>
+    </dependencies>
 </project>

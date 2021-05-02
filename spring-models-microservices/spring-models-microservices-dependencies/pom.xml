@@ -72,6 +72,11 @@
                 <artifactId>spring-models-microservices-mysql_2</artifactId>
                 <version>0.0.14-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-models-microservices-client-api</artifactId>
+                <version>0.0.14-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

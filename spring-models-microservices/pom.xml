@@ -14,6 +14,7 @@
         <module>spring-models-microservices-mysql-modules</module>
         <module>spring-models-microservices-postgresql-modules</module>
         <module>spring-models-microservices-clickhouse-modules</module>
+        <module>spring-models-microservices-client-api</module>
     </modules>
 
     <dependencyManagement>
@@ -41,6 +42,28 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sidecar</artifactId>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
