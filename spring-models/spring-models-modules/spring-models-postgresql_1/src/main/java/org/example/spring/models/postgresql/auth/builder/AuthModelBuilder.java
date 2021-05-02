@@ -1,10 +1,10 @@
 package org.example.spring.models.postgresql.auth.builder;
 
-import org.example.spring.infrastructures.postgresql.auth.table.po.*;
-import org.example.spring.infrastructures.postgresql.auth.table.query.TDepartmentQuery;
-import org.example.spring.infrastructures.postgresql.auth.table.query.TResourceQuery;
-import org.example.spring.infrastructures.postgresql.auth.table.query.TRoleQuery;
-import org.example.spring.infrastructures.postgresql.auth.table.query.TUserQuery;
+import org.example.spring.daos.postgresql.auth.table.po.*;
+import org.example.spring.daos.postgresql.auth.table.query.TDepartmentQuery;
+import org.example.spring.daos.postgresql.auth.table.query.TResourceQuery;
+import org.example.spring.daos.postgresql.auth.table.query.TRoleQuery;
+import org.example.spring.daos.postgresql.auth.table.query.TUserQuery;
 import org.example.spring.models.postgresql.auth.entity.dto.DepartmentNode;
 import org.example.spring.models.postgresql.auth.entity.dto.ResourceNode;
 import org.example.spring.models.postgresql.auth.entity.query.AccountQuery;

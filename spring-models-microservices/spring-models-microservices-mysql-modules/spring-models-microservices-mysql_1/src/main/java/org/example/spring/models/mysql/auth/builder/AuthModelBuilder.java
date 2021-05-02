@@ -1,11 +1,10 @@
 package org.example.spring.models.mysql.auth.builder;
 
-import org.example.spring.infrastructures.mysql.auth.table.po.*;
-import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentQuery;
-import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
-import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
-import org.example.spring.infrastructures.mysql.auth.table.query.TUserQuery;
-import org.example.spring.models.mysql.auth.client.entity.*;
+import org.example.spring.daos.mysql.auth.table.po.*;
+import org.example.spring.daos.mysql.auth.table.query.TDepartmentQuery;
+import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;
+import org.example.spring.daos.mysql.auth.table.query.TRoleQuery;
+import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
 import org.example.spring.models.mysql.auth.entity.dto.DepartmentNode;
 import org.example.spring.models.mysql.auth.entity.dto.ResourceNode;
 import org.example.spring.models.mysql.auth.entity.query.AccountQuery;

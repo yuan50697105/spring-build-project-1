@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.clickhouse.customer.table.po.TCustomerContract;
+import org.example.spring.daos.clickhouse.customer.table.po.TCustomerContract;
 import org.example.spring.models.commons.entity.IModelVo;
 import org.example.spring.models.commons.enumerate.CustomerContractStatus;
 

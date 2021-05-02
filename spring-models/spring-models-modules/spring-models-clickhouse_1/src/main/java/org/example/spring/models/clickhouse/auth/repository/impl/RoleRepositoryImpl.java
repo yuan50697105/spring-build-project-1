@@ -2,11 +2,11 @@ package org.example.spring.models.clickhouse.auth.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.clickhouse.auth.dao.TResourceDao;
-import org.example.spring.infrastructures.clickhouse.auth.dao.TRoleDao;
-import org.example.spring.infrastructures.clickhouse.auth.dao.TRoleResourceDao;
-import org.example.spring.infrastructures.clickhouse.auth.table.po.TRole;
-import org.example.spring.infrastructures.clickhouse.auth.table.query.TRoleQuery;
+import org.example.spring.daos.clickhouse.auth.dao.TResourceDao;
+import org.example.spring.daos.clickhouse.auth.dao.TRoleDao;
+import org.example.spring.daos.clickhouse.auth.dao.TRoleResourceDao;
+import org.example.spring.daos.clickhouse.auth.table.po.TRole;
+import org.example.spring.daos.clickhouse.auth.table.query.TRoleQuery;
 import org.example.spring.models.clickhouse.auth.builder.AuthModelBuilder;
 import org.example.spring.models.clickhouse.auth.entity.query.RoleQuery;
 import org.example.spring.models.clickhouse.auth.entity.result.Role;

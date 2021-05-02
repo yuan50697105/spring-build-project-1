@@ -1,10 +1,10 @@
 package org.example.spring.models.clickhouse.auth.builder;
 
-import org.example.spring.infrastructures.clickhouse.auth.table.po.*;
-import org.example.spring.infrastructures.clickhouse.auth.table.query.TDepartmentQuery;
-import org.example.spring.infrastructures.clickhouse.auth.table.query.TResourceQuery;
-import org.example.spring.infrastructures.clickhouse.auth.table.query.TRoleQuery;
-import org.example.spring.infrastructures.clickhouse.auth.table.query.TUserQuery;
+import org.example.spring.daos.clickhouse.auth.table.po.*;
+import org.example.spring.daos.clickhouse.auth.table.query.TDepartmentQuery;
+import org.example.spring.daos.clickhouse.auth.table.query.TResourceQuery;
+import org.example.spring.daos.clickhouse.auth.table.query.TRoleQuery;
+import org.example.spring.daos.clickhouse.auth.table.query.TUserQuery;
 import org.example.spring.models.clickhouse.auth.entity.dto.DepartmentNode;
 import org.example.spring.models.clickhouse.auth.entity.dto.ResourceNode;
 import org.example.spring.models.clickhouse.auth.entity.query.AccountQuery;

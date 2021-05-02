@@ -1,13 +1,13 @@
 package org.example.spring.models.clickhouse.patient.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.clickhouse.patient.dao.TPatientDao;
-import org.example.spring.infrastructures.clickhouse.patient.dao.TPatientGroupDao;
-import org.example.spring.infrastructures.clickhouse.patient.dao.TPatientMealDao;
-import org.example.spring.infrastructures.clickhouse.patient.dao.TPatientTeamDao;
-import org.example.spring.infrastructures.clickhouse.patient.table.po.TPatientTeam;
-import org.example.spring.infrastructures.clickhouse.patient.table.query.TPatientTeamQuery;
-import org.example.spring.infrastructures.clickhouse.patient.table.vo.PatientTeamVo;
+import org.example.spring.daos.clickhouse.patient.dao.TPatientDao;
+import org.example.spring.daos.clickhouse.patient.dao.TPatientGroupDao;
+import org.example.spring.daos.clickhouse.patient.dao.TPatientMealDao;
+import org.example.spring.daos.clickhouse.patient.dao.TPatientTeamDao;
+import org.example.spring.daos.clickhouse.patient.table.po.TPatientTeam;
+import org.example.spring.daos.clickhouse.patient.table.query.TPatientTeamQuery;
+import org.example.spring.daos.clickhouse.patient.table.vo.PatientTeamVo;
 import org.example.spring.models.clickhouse.patient.builder.PatientModelBuilder;
 import org.example.spring.models.clickhouse.patient.entity.query.PatientTeamQuery;
 import org.example.spring.models.clickhouse.patient.entity.result.PatientTeam;

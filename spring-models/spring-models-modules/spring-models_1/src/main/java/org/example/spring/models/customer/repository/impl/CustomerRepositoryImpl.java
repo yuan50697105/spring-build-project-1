@@ -1,10 +1,10 @@
 package org.example.spring.models.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.mysql.customer.dao.TCustomerContractDao;
-import org.example.spring.infrastructures.mysql.customer.dao.TCustomerInfoDao;
-import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
-import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerInfoQuery;
+import org.example.spring.daos.mysql.customer.dao.TCustomerContractDao;
+import org.example.spring.daos.mysql.customer.dao.TCustomerInfoDao;
+import org.example.spring.daos.mysql.customer.table.po.TCustomerInfo;
+import org.example.spring.daos.mysql.customer.table.query.TCustomerInfoQuery;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.customer.builder.CustomerModelBuilder;
 import org.example.spring.models.customer.entity.query.CustomerQuery;

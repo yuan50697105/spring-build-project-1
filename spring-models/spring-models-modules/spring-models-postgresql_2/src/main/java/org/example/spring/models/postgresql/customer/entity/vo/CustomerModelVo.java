@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.postgresql.customer.table.po.TCustomerInfo;
+import org.example.spring.daos.postgresql.customer.table.po.TCustomerInfo;
 import org.example.spring.models.commons.entity.IModelVo;
 
 @EqualsAndHashCode(callSuper = true)

@@ -1,9 +1,9 @@
 package org.example.spring.models.clickhouse.customer.builder;
 
-import org.example.spring.infrastructures.clickhouse.customer.table.po.TCustomerContract;
-import org.example.spring.infrastructures.clickhouse.customer.table.po.TCustomerInfo;
-import org.example.spring.infrastructures.clickhouse.customer.table.query.TCustomerContractQuery;
-import org.example.spring.infrastructures.clickhouse.customer.table.query.TCustomerInfoQuery;
+import org.example.spring.daos.clickhouse.customer.table.po.TCustomerContract;
+import org.example.spring.daos.clickhouse.customer.table.po.TCustomerInfo;
+import org.example.spring.daos.clickhouse.customer.table.query.TCustomerContractQuery;
+import org.example.spring.daos.clickhouse.customer.table.query.TCustomerInfoQuery;
 import org.example.spring.models.clickhouse.customer.entity.query.CustomerContractQuery;
 import org.example.spring.models.clickhouse.customer.entity.query.CustomerQuery;
 import org.example.spring.models.clickhouse.customer.entity.result.Customer;

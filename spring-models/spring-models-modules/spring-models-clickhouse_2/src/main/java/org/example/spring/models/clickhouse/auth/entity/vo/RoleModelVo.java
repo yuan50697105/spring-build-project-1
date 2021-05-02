@@ -3,7 +3,7 @@ package org.example.spring.models.clickhouse.auth.entity.vo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.clickhouse.auth.table.po.TRole;
+import org.example.spring.daos.clickhouse.auth.table.po.TRole;
 import org.example.spring.models.commons.entity.IModelVo;
 
 import java.util.ArrayList;

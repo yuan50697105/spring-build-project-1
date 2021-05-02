@@ -1,10 +1,10 @@
 package org.example.spring.models.clickhouse.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.clickhouse.customer.dao.TCustomerContractDao;
-import org.example.spring.infrastructures.clickhouse.customer.dao.TCustomerInfoDao;
-import org.example.spring.infrastructures.clickhouse.customer.table.po.TCustomerInfo;
-import org.example.spring.infrastructures.clickhouse.customer.table.query.TCustomerInfoQuery;
+import org.example.spring.daos.clickhouse.customer.dao.TCustomerContractDao;
+import org.example.spring.daos.clickhouse.customer.dao.TCustomerInfoDao;
+import org.example.spring.daos.clickhouse.customer.table.po.TCustomerInfo;
+import org.example.spring.daos.clickhouse.customer.table.query.TCustomerInfoQuery;
 import org.example.spring.models.clickhouse.customer.builder.CustomerModelBuilder;
 import org.example.spring.models.clickhouse.customer.entity.query.CustomerQuery;
 import org.example.spring.models.clickhouse.customer.entity.result.Customer;

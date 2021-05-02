@@ -1,12 +1,12 @@
 package org.example.spring.models.postgresql.patient.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.postgresql.patient.dao.TPatientDao;
-import org.example.spring.infrastructures.postgresql.patient.dao.TPatientGroupDao;
-import org.example.spring.infrastructures.postgresql.patient.table.po.TPatientGroup;
-import org.example.spring.infrastructures.postgresql.patient.table.query.TPatientGroupQuery;
-import org.example.spring.infrastructures.postgresql.patient.table.vo.PatientGroupVo;
-import org.example.spring.infrastructures.postgresql.patient.table.vo.PatientTeamMealVo;
+import org.example.spring.daos.postgresql.patient.dao.TPatientDao;
+import org.example.spring.daos.postgresql.patient.dao.TPatientGroupDao;
+import org.example.spring.daos.postgresql.patient.table.po.TPatientGroup;
+import org.example.spring.daos.postgresql.patient.table.query.TPatientGroupQuery;
+import org.example.spring.daos.postgresql.patient.table.vo.PatientGroupVo;
+import org.example.spring.daos.postgresql.patient.table.vo.PatientTeamMealVo;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.postgresql.patient.builder.PatientModelBuilder;
 import org.example.spring.models.postgresql.patient.entity.query.PatientGroupQuery;

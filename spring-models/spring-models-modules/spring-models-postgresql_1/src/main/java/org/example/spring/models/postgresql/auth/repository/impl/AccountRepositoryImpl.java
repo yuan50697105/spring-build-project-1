@@ -2,11 +2,11 @@ package org.example.spring.models.postgresql.auth.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.postgresql.auth.dao.TRoleDao;
-import org.example.spring.infrastructures.postgresql.auth.dao.TUserDao;
-import org.example.spring.infrastructures.postgresql.auth.dao.TUserRoleDao;
-import org.example.spring.infrastructures.postgresql.auth.table.po.TUser;
-import org.example.spring.infrastructures.postgresql.auth.table.query.TUserQuery;
+import org.example.spring.daos.postgresql.auth.dao.TRoleDao;
+import org.example.spring.daos.postgresql.auth.dao.TUserDao;
+import org.example.spring.daos.postgresql.auth.dao.TUserRoleDao;
+import org.example.spring.daos.postgresql.auth.table.po.TUser;
+import org.example.spring.daos.postgresql.auth.table.query.TUserQuery;
 import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.postgresql.auth.builder.AuthModelBuilder;

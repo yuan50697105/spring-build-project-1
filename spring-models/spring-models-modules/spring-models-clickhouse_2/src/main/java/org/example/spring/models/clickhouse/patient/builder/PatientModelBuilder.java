@@ -1,11 +1,11 @@
 package org.example.spring.models.clickhouse.patient.builder;
 
-import org.example.spring.infrastructures.clickhouse.patient.table.po.*;
-import org.example.spring.infrastructures.clickhouse.patient.table.query.TPatientGroupQuery;
-import org.example.spring.infrastructures.clickhouse.patient.table.query.TPatientQuery;
-import org.example.spring.infrastructures.clickhouse.patient.table.query.TPatientTeamMealQuery;
-import org.example.spring.infrastructures.clickhouse.patient.table.query.TPatientTeamQuery;
-import org.example.spring.infrastructures.clickhouse.patient.table.vo.*;
+import org.example.spring.daos.clickhouse.patient.table.po.*;
+import org.example.spring.daos.clickhouse.patient.table.query.TPatientGroupQuery;
+import org.example.spring.daos.clickhouse.patient.table.query.TPatientQuery;
+import org.example.spring.daos.clickhouse.patient.table.query.TPatientTeamMealQuery;
+import org.example.spring.daos.clickhouse.patient.table.query.TPatientTeamQuery;
+import org.example.spring.daos.clickhouse.patient.table.vo.*;
 import org.example.spring.models.clickhouse.patient.entity.query.PatientGroupQuery;
 import org.example.spring.models.clickhouse.patient.entity.query.PatientQuery;
 import org.example.spring.models.clickhouse.patient.entity.query.PatientTeamMealQuery;

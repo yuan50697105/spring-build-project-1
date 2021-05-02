@@ -2,7 +2,7 @@ package org.example.spring.models.postgresql.auth.entity.result;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.postgresql.auth.table.po.TRole;
+import org.example.spring.daos.postgresql.auth.table.po.TRole;
 
 import java.io.Serializable;
 

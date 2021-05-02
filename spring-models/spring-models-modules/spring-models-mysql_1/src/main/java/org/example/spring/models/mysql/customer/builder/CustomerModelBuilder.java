@@ -1,9 +1,9 @@
 package org.example.spring.models.mysql.customer.builder;
 
-import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContract;
-import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerInfo;
-import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerContractQuery;
-import org.example.spring.infrastructures.mysql.customer.table.query.TCustomerInfoQuery;
+import org.example.spring.daos.mysql.customer.table.po.TCustomerContract;
+import org.example.spring.daos.mysql.customer.table.po.TCustomerInfo;
+import org.example.spring.daos.mysql.customer.table.query.TCustomerContractQuery;
+import org.example.spring.daos.mysql.customer.table.query.TCustomerInfoQuery;
 import org.example.spring.models.mysql.customer.entity.query.CustomerContractQuery;
 import org.example.spring.models.mysql.customer.entity.query.CustomerQuery;
 import org.example.spring.models.mysql.customer.entity.result.Customer;

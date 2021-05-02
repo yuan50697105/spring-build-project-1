@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.infrastructures.postgresql.PostgresqlConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.daos.postgresql.PostgresqlConfiguration

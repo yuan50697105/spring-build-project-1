@@ -2,7 +2,7 @@ package org.example.spring.models.clickhouse.auth.entity.result;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.clickhouse.auth.table.po.TDepartment;
+import org.example.spring.daos.clickhouse.auth.table.po.TDepartment;
 
 import java.io.Serializable;
 

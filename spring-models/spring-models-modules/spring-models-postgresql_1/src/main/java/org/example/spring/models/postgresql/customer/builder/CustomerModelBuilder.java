@@ -1,9 +1,9 @@
 package org.example.spring.models.postgresql.customer.builder;
 
-import org.example.spring.infrastructures.postgresql.customer.table.po.TCustomerContract;
-import org.example.spring.infrastructures.postgresql.customer.table.po.TCustomerInfo;
-import org.example.spring.infrastructures.postgresql.customer.table.query.TCustomerContractQuery;
-import org.example.spring.infrastructures.postgresql.customer.table.query.TCustomerInfoQuery;
+import org.example.spring.daos.postgresql.customer.table.po.TCustomerContract;
+import org.example.spring.daos.postgresql.customer.table.po.TCustomerInfo;
+import org.example.spring.daos.postgresql.customer.table.query.TCustomerContractQuery;
+import org.example.spring.daos.postgresql.customer.table.query.TCustomerInfoQuery;
 import org.example.spring.models.postgresql.customer.entity.query.CustomerContractQuery;
 import org.example.spring.models.postgresql.customer.entity.query.CustomerQuery;
 import org.example.spring.models.postgresql.customer.entity.result.Customer;

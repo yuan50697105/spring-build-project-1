@@ -2,12 +2,12 @@ package org.example.spring.models.postgresql.patient.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.SneakyThrows;
-import org.example.spring.infrastructures.postgresql.patient.dao.*;
-import org.example.spring.infrastructures.postgresql.patient.table.po.*;
-import org.example.spring.infrastructures.postgresql.patient.table.query.TPatientQuery;
-import org.example.spring.infrastructures.postgresql.patient.table.vo.PatientCheckItemVo;
-import org.example.spring.infrastructures.postgresql.patient.table.vo.PatientFeeItemVo;
-import org.example.spring.infrastructures.postgresql.patient.table.vo.PatientVo;
+import org.example.spring.daos.postgresql.patient.dao.*;
+import org.example.spring.daos.postgresql.patient.table.po.*;
+import org.example.spring.daos.postgresql.patient.table.query.TPatientQuery;
+import org.example.spring.daos.postgresql.patient.table.vo.PatientCheckItemVo;
+import org.example.spring.daos.postgresql.patient.table.vo.PatientFeeItemVo;
+import org.example.spring.daos.postgresql.patient.table.vo.PatientVo;
 import org.example.spring.models.commons.enumerate.FeeItemType;
 import org.example.spring.models.commons.enumerate.ItemSource;
 import org.example.spring.models.commons.enumerate.PatientType;

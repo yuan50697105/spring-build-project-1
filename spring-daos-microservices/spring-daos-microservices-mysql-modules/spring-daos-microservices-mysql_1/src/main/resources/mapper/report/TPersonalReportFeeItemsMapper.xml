@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.example.spring.infrastructures.mysql.report.mapper.TPersonalReportFeeItemsMapper">
+<mapper namespace="org.example.spring.daos.mysql.report.mapper.TPersonalReportFeeItemsMapper">
     <resultMap id="BaseResultMap"
-               type="org.example.spring.infrastructures.mysql.report.table.po.TPersonalReportFeeItems">
+               type="org.example.spring.daos.mysql.report.table.po.TPersonalReportFeeItems">
         <!--@mbg.generated-->
         <!--@Table t_personal_report_fee_items-->
         <id column="id" jdbcType="BIGINT" property="id"/>

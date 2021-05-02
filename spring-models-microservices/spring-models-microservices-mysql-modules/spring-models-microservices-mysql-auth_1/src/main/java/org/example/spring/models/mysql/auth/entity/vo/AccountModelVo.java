@@ -7,8 +7,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
-import org.example.spring.infrastructures.mysql.auth.table.po.TUserRole;
+import org.example.spring.daos.mysql.auth.table.po.TUser;
+import org.example.spring.daos.mysql.auth.table.po.TUserRole;
 import org.example.spring.models.commons.entity.IModelVo;
 
 import javax.validation.ValidationException;

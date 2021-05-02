@@ -1,11 +1,11 @@
 package org.example.spring.models.postgresql.patient.builder;
 
-import org.example.spring.infrastructures.postgresql.patient.table.po.*;
-import org.example.spring.infrastructures.postgresql.patient.table.query.TPatientGroupQuery;
-import org.example.spring.infrastructures.postgresql.patient.table.query.TPatientQuery;
-import org.example.spring.infrastructures.postgresql.patient.table.query.TPatientTeamMealQuery;
-import org.example.spring.infrastructures.postgresql.patient.table.query.TPatientTeamQuery;
-import org.example.spring.infrastructures.postgresql.patient.table.vo.*;
+import org.example.spring.daos.postgresql.patient.table.po.*;
+import org.example.spring.daos.postgresql.patient.table.query.TPatientGroupQuery;
+import org.example.spring.daos.postgresql.patient.table.query.TPatientQuery;
+import org.example.spring.daos.postgresql.patient.table.query.TPatientTeamMealQuery;
+import org.example.spring.daos.postgresql.patient.table.query.TPatientTeamQuery;
+import org.example.spring.daos.postgresql.patient.table.vo.*;
 import org.example.spring.models.postgresql.patient.entity.query.PatientGroupQuery;
 import org.example.spring.models.postgresql.patient.entity.query.PatientQuery;
 import org.example.spring.models.postgresql.patient.entity.query.PatientTeamMealQuery;

@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.infrastructures.commons.CommonsConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.daos.commons.CommonsConfiguration

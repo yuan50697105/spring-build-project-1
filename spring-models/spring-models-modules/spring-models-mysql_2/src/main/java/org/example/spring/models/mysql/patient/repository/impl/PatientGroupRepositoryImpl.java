@@ -1,12 +1,12 @@
 package org.example.spring.models.mysql.patient.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.mysql.patient.dao.TPatientDao;
-import org.example.spring.infrastructures.mysql.patient.dao.TPatientGroupDao;
-import org.example.spring.infrastructures.mysql.patient.table.po.TPatientGroup;
-import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
-import org.example.spring.infrastructures.mysql.patient.table.vo.PatientGroupVo;
-import org.example.spring.infrastructures.mysql.patient.table.vo.PatientTeamMealVo;
+import org.example.spring.daos.mysql.patient.dao.TPatientDao;
+import org.example.spring.daos.mysql.patient.dao.TPatientGroupDao;
+import org.example.spring.daos.mysql.patient.table.po.TPatientGroup;
+import org.example.spring.daos.mysql.patient.table.query.TPatientGroupQuery;
+import org.example.spring.daos.mysql.patient.table.vo.PatientGroupVo;
+import org.example.spring.daos.mysql.patient.table.vo.PatientTeamMealVo;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.mysql.patient.builder.PatientModelBuilder;
 import org.example.spring.models.mysql.patient.entity.query.PatientGroupQuery;

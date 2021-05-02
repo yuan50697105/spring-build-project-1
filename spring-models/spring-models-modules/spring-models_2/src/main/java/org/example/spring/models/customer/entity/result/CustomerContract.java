@@ -2,7 +2,7 @@ package org.example.spring.models.customer.entity.result;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.mysql.customer.table.po.TCustomerContract;
+import org.example.spring.daos.mysql.customer.table.po.TCustomerContract;
 import org.example.spring.models.commons.enumerate.CustomerContractStatus;
 
 import java.util.Optional;

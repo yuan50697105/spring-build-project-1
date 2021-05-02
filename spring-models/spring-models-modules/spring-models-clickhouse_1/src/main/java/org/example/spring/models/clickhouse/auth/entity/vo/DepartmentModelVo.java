@@ -3,7 +3,7 @@ package org.example.spring.models.clickhouse.auth.entity.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.clickhouse.auth.table.po.TDepartment;
+import org.example.spring.daos.clickhouse.auth.table.po.TDepartment;
 import org.example.spring.models.commons.entity.IModelVo;
 
 import java.util.List;

@@ -1,11 +1,11 @@
 package org.example.spring.models.mysql.patient.builder;
 
-import org.example.spring.infrastructures.mysql.patient.table.po.*;
-import org.example.spring.infrastructures.mysql.patient.table.query.TPatientGroupQuery;
-import org.example.spring.infrastructures.mysql.patient.table.query.TPatientQuery;
-import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamMealQuery;
-import org.example.spring.infrastructures.mysql.patient.table.query.TPatientTeamQuery;
-import org.example.spring.infrastructures.mysql.patient.table.vo.*;
+import org.example.spring.daos.mysql.patient.table.po.*;
+import org.example.spring.daos.mysql.patient.table.query.TPatientGroupQuery;
+import org.example.spring.daos.mysql.patient.table.query.TPatientQuery;
+import org.example.spring.daos.mysql.patient.table.query.TPatientTeamMealQuery;
+import org.example.spring.daos.mysql.patient.table.query.TPatientTeamQuery;
+import org.example.spring.daos.mysql.patient.table.vo.*;
 import org.example.spring.models.mysql.patient.entity.query.PatientGroupQuery;
 import org.example.spring.models.mysql.patient.entity.query.PatientQuery;
 import org.example.spring.models.mysql.patient.entity.query.PatientTeamMealQuery;

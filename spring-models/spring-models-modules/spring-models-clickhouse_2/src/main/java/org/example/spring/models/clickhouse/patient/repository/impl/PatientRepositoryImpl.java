@@ -2,12 +2,12 @@ package org.example.spring.models.clickhouse.patient.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.SneakyThrows;
-import org.example.spring.infrastructures.clickhouse.patient.dao.*;
-import org.example.spring.infrastructures.clickhouse.patient.table.po.*;
-import org.example.spring.infrastructures.clickhouse.patient.table.query.TPatientQuery;
-import org.example.spring.infrastructures.clickhouse.patient.table.vo.PatientCheckItemVo;
-import org.example.spring.infrastructures.clickhouse.patient.table.vo.PatientFeeItemVo;
-import org.example.spring.infrastructures.clickhouse.patient.table.vo.PatientVo;
+import org.example.spring.daos.clickhouse.patient.dao.*;
+import org.example.spring.daos.clickhouse.patient.table.po.*;
+import org.example.spring.daos.clickhouse.patient.table.query.TPatientQuery;
+import org.example.spring.daos.clickhouse.patient.table.vo.PatientCheckItemVo;
+import org.example.spring.daos.clickhouse.patient.table.vo.PatientFeeItemVo;
+import org.example.spring.daos.clickhouse.patient.table.vo.PatientVo;
 import org.example.spring.models.clickhouse.patient.builder.PatientModelBuilder;
 import org.example.spring.models.clickhouse.patient.entity.query.PatientQuery;
 import org.example.spring.models.clickhouse.patient.entity.result.Patient;

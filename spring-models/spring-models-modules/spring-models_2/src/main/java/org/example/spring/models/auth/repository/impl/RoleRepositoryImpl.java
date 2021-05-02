@@ -2,11 +2,11 @@ package org.example.spring.models.auth.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.mysql.auth.dao.TResourceDao;
-import org.example.spring.infrastructures.mysql.auth.dao.TRoleDao;
-import org.example.spring.infrastructures.mysql.auth.dao.TRoleResourceDao;
-import org.example.spring.infrastructures.mysql.auth.table.po.TRole;
-import org.example.spring.infrastructures.mysql.auth.table.query.TRoleQuery;
+import org.example.spring.daos.mysql.auth.dao.TResourceDao;
+import org.example.spring.daos.mysql.auth.dao.TRoleDao;
+import org.example.spring.daos.mysql.auth.dao.TRoleResourceDao;
+import org.example.spring.daos.mysql.auth.table.po.TRole;
+import org.example.spring.daos.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.models.auth.builder.AuthModelBuilder;
 import org.example.spring.models.auth.entity.query.RoleQuery;
 import org.example.spring.models.auth.entity.result.Role;

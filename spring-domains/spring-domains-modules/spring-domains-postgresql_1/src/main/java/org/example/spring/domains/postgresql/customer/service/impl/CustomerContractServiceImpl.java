@@ -3,7 +3,7 @@ package org.example.spring.domains.postgresql.customer.service.impl;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import org.example.spring.domains.postgresql.customer.service.CustomerContractService;
-import org.example.spring.infrastructures.minio.customer.repository.CustomerContractOssRepository;
+import org.example.spring.daos.repository.CustomerContractOssRepository;
 import org.example.spring.models.postgresql.customer.entity.query.CustomerContractQuery;
 import org.example.spring.models.postgresql.customer.entity.result.CustomerContract;
 import org.example.spring.models.postgresql.customer.entity.result.CustomerContractDetails;

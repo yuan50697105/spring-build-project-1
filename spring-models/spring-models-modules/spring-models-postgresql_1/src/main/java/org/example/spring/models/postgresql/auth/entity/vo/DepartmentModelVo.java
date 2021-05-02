@@ -3,7 +3,7 @@ package org.example.spring.models.postgresql.auth.entity.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.postgresql.auth.table.po.TDepartment;
+import org.example.spring.daos.postgresql.auth.table.po.TDepartment;
 import org.example.spring.models.commons.entity.IModelVo;
 
 import java.util.List;

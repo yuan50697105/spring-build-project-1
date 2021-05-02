@@ -44,6 +44,5 @@
             <groupId>com.github.chris2018998</groupId>
             <artifactId>beecp-spring-boot-starter</artifactId>
         </dependency>
-     
     </dependencies>
 </project>

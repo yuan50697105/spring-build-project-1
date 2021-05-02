@@ -1,10 +1,10 @@
 package org.example.spring.models.postgresql.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.infrastructures.postgresql.customer.dao.TCustomerContractDao;
-import org.example.spring.infrastructures.postgresql.customer.dao.TCustomerInfoDao;
-import org.example.spring.infrastructures.postgresql.customer.table.po.TCustomerInfo;
-import org.example.spring.infrastructures.postgresql.customer.table.query.TCustomerInfoQuery;
+import org.example.spring.daos.postgresql.customer.dao.TCustomerContractDao;
+import org.example.spring.daos.postgresql.customer.dao.TCustomerInfoDao;
+import org.example.spring.daos.postgresql.customer.table.po.TCustomerInfo;
+import org.example.spring.daos.postgresql.customer.table.query.TCustomerInfoQuery;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.postgresql.customer.builder.CustomerModelBuilder;
 import org.example.spring.models.postgresql.customer.entity.query.CustomerQuery;

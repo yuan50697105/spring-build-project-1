@@ -3,7 +3,7 @@ package org.example.spring.models.auth.entity.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.infrastructures.mysql.auth.table.po.TResource;
+import org.example.spring.daos.mysql.auth.table.po.TResource;
 import org.example.spring.models.commons.entity.IModelVo;
 import org.example.spring.models.commons.enumerate.ResourceType;
 
