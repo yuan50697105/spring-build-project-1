@@ -15,7 +15,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-infrastructures-commons</artifactId>
+            <artifactId>spring-daos-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>io.reactivex.rxjava3</groupId>

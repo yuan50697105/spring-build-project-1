@@ -35,7 +35,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-infrastructures-microservices-dependencies</artifactId>
+                <artifactId>spring-daos-microservices-dependencies</artifactId>
                 <version>0.0.15-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
