@@ -1,6 +1,5 @@
 package org.example.spring.models.mysql.auth.builder;
 
-import cn.hutool.core.lang.tree.Tree;
 import org.example.spring.infrastructures.mysql.auth.table.po.*;
 import org.example.spring.infrastructures.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.infrastructures.mysql.auth.table.query.TResourceQuery;
@@ -65,11 +64,11 @@ public interface AuthModelBuilder {
     IPageData<Resource> buildResourceResult(IPageData<TResource> data);
 
 
-    List<ResourceNode> buildPermissionToResrouceNode(List<TResource> permissions);
+    List<ResourceNode> buildPermissionToResourceNode(List<TResource> permissions);
 
     @Mapping(target = "parentId", source = "pid")
     @Mapping(target = "extra", ignore = true)
-    ResourceNode buildPermissionToResrouceNode(TResource permissions);
+    ResourceNode buildPermissionToResourceNode(TResource permissions);
 
     void copyDepartment(TDepartment department, @MappingTarget TDepartment tDepartment);
 
@@ -93,8 +92,6 @@ public interface AuthModelBuilder {
     @Mapping(target = "createDate", ignore = true)
     TDepartmentRole buildDepartmentRole(Long departmentId, Long roleId);
 
-    @Mapping(target = "withId", ignore = true)
-    @Mapping(target = "id", ignore = true)
     AccountModelVo buildAccountAdd(AccountAddVo accountAddVo);
 
     AccountModelVo buildAccountUpdate(AccountUpdateVo accountUpdateVo);
