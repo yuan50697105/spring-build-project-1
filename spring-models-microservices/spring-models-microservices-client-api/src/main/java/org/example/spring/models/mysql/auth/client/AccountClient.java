@@ -1,9 +1,8 @@
 package org.example.spring.models.mysql.auth.client;
 
 import org.example.spring.models.commons.enumerate.UserStatus;
-import org.example.spring.models.mysql.auth.client.entity.AccountAddVo;
-import org.example.spring.models.mysql.auth.client.entity.AccountDetailDto;
-import org.example.spring.models.mysql.auth.client.entity.AccountUpdateVo;
+import org.example.spring.models.mysql.auth.client.entity.*;
+import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 
@@ -23,4 +22,10 @@ public interface AccountClient {
     void delete(Long... ids);
 
     AccountDetailDto get(Long id);
+
+    AccountDto get(AccountQueryVo queryDto);
+
+    List<AccountDto> list(AccountQueryVo queryVo);
+
+    IPageData<AccountDto> data(AccountQueryVo queryVo);
 }

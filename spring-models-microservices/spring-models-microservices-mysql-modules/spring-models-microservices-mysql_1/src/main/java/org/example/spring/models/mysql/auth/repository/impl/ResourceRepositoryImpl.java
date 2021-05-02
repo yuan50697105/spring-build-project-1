@@ -57,7 +57,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     public void delete(List<Long> ids) {
         validateChildByIds(ids);
         resourceDao.removeByIds(ids);
-        roleResourceDao.removeByPermissionIds(ids);
+        roleResourceDao.removeByResourceIds(ids);
     }
 
     @Override
@@ -100,7 +100,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     @Override
     public List<Tree<Long>> listAllResourceByUserId(Long userId) {
         List<TResource> permissions = userResourceDao.listPermissionByUserId(userId);
-        List<ResourceNode> resourceNodes = authModelBuilder.buildPermissionToResrouceNode(permissions);
+        List<ResourceNode> resourceNodes = authModelBuilder.buildPermissionToResourceNode(permissions);
         return TreeUtil.build(resourceNodes, 0L, getNodeParser());
     }
 
@@ -108,7 +108,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     public List<Tree<Long>> queryTreeList(ResourceQuery query) {
         TResourceQuery permissionQuery = authModelBuilder.buildPermissionQuery(query);
         List<TResource> permissions = resourceDao.queryList(permissionQuery);
-        List<ResourceNode> resourceNodes = authModelBuilder.buildPermissionToResrouceNode(permissions);
+        List<ResourceNode> resourceNodes = authModelBuilder.buildPermissionToResourceNode(permissions);
         return TreeUtil.build(resourceNodes, 0L, getNodeParser());
     }
 

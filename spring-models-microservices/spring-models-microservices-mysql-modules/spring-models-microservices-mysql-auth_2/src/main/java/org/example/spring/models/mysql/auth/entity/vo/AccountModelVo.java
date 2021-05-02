@@ -8,8 +8,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.infrastructures.mysql.auth.table.po.TUser;
+import org.example.spring.infrastructures.mysql.auth.table.po.TUserRole;
 import org.example.spring.models.commons.entity.IModelVo;
-import org.example.spring.models.commons.enumerate.UserStatus;
 
 import javax.validation.ValidationException;
 import java.util.ArrayList;
@@ -57,17 +57,21 @@ public class AccountModelVo extends IModelVo {
 
     @JsonIgnore
     public TUser getUserForSave() {
-        TUser tUser = new TUser();
-        tUser.setStatus(UserStatus.Normal.getValue());
-        tUser.setUsername(username);
-        tUser.setName(name);
-        tUser.setPassword(password);
-        return tUser;
+        return BeanUtil.toBean(this, TUser.class);
     }
 
     @JsonIgnore
     public TUser getUserForUpdate() {
         return BeanUtil.toBean(this, TUser.class, CopyOptions.create().ignoreNullValue().setIgnoreProperties("password", "username"));
+    }
+
+    public List<TUserRole> getUserRoles() {
+        List<Long> roleIds = this.getRoleIds();
+        ArrayList<TUserRole> tUserRoles = new ArrayList<>(roleIds.size());
+        for (Long roleId : roleIds) {
+            tUserRoles.add(new TUserRole(getId(), roleId));
+        }
+        return tUserRoles;
     }
 
 

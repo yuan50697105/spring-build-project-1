@@ -20,7 +20,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-infrastructures-mysql_2</artifactId>
+            <artifactId>spring-infrastructures-microservices-mysql_2</artifactId>
         </dependency>
     </dependencies>
 

@@ -45,7 +45,6 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
         final Long userId = account.getId();
         if (ObjectUtil.isNotEmpty(accountModelVo.getRoleIds())) {
             executor.execute(() -> saveUserRole(userId, accountModelVo.getRoleIds()));
-//            executor.submit();
         }
         return userId;
     }
