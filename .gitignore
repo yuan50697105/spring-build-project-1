@@ -88,3 +88,7 @@ fabric.properties
 .idea
 *.iml
 *.ipr
+.classpath
+.project
+.settings
+.factorypath*
