@@ -22,7 +22,6 @@
         <module>spring-infrastructures-microservices-mysql_2</module>
         <module>spring-infrastructures-microservices-mysql-report_1</module>
         <module>spring-infrastructures-microservices-mysql-report_2</module>
-        <module>spring-infrastructures-microservices-mysql-api</module>
     </modules>
     <dependencyManagement>
         <dependencies>
