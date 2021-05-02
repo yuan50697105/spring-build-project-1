@@ -211,7 +211,7 @@
                         <encoding>${maven.compiler.encoding}</encoding>
                         <fork>true</fork>
                         <meminitial>128m</meminitial>
-                        <maxmem>512m</maxmem>
+                        <maxmem>256m</maxmem>
                     </configuration>
                 </plugin>
                 <plugin>
