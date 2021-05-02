@@ -128,12 +128,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-devtools</artifactId>-->
-<!--            <scope>runtime</scope>-->
-<!--            <optional>true</optional>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-devtools</artifactId>-->
+        <!--            <scope>runtime</scope>-->
+        <!--            <optional>true</optional>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
@@ -168,6 +168,9 @@
                         <source>${maven.compiler.source}</source>
                         <target>${maven.compiler.target}</target>
                         <encoding>${maven.compiler.encoding}</encoding>
+                        <fork>true</fork>
+                        <meminitial>128m</meminitial>
+                        <maxmem>512m</maxmem>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -252,8 +255,8 @@
     <scm>
         <developerConnection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</developerConnection>
         <connection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</connection>
-      <tag>spring-build-project-1-0.0.7</tag>
-  </scm>
+        <tag>spring-build-project-1-0.0.7</tag>
+    </scm>
     <profiles>
         <profile>
             <id>d</id>
@@ -301,48 +304,48 @@
             </build>
         </profile>
     </profiles>
-<!--    <profiles>-->
-<!--        <profile>-->
-<!--            <id>jdk8</id>-->
-<!--            <activation>-->
-<!--                <jdk>1.8,8</jdk>-->
-<!--            </activation>-->
-<!--            <build>-->
-<!--                <finalName>${project.artifactId}-${project.version}-jdk8</finalName>-->
-<!--                <plugins>-->
-<!--                    <plugin>-->
-<!--                        <groupId>org.apache.maven.plugins</groupId>-->
-<!--                        <artifactId>maven-compiler-plugin</artifactId>-->
-<!--                        <version>3.8.1</version>-->
-<!--                        <configuration>-->
-<!--                            <encoding>UTF-8</encoding>-->
-<!--                            <source>8</source>-->
-<!--                            <target>8</target>-->
-<!--                        </configuration>-->
-<!--                    </plugin>-->
-<!--                </plugins>-->
-<!--            </build>-->
-<!--        </profile>-->
-<!--        <profile>-->
-<!--            <id>jdk11</id>-->
-<!--            <activation>-->
-<!--                <jdk>11</jdk>-->
-<!--            </activation>-->
-<!--            <build>-->
-<!--                <finalName>${project.artifactId}-${project.version}-jdk11</finalName>-->
-<!--                <plugins>-->
-<!--                    <plugin>-->
-<!--                        <groupId>org.apache.maven.plugins</groupId>-->
-<!--                        <artifactId>maven-compiler-plugin</artifactId>-->
-<!--                        <version>3.8.1</version>-->
-<!--                        <configuration>-->
-<!--                            <encoding>UTF-8</encoding>-->
-<!--                            <source>8</source>-->
-<!--                            <target>8</target>-->
-<!--                        </configuration>-->
-<!--                    </plugin>-->
-<!--                </plugins>-->
-<!--            </build>-->
-<!--        </profile>-->
-<!--    </profiles>-->
+    <!--    <profiles>-->
+    <!--        <profile>-->
+    <!--            <id>jdk8</id>-->
+    <!--            <activation>-->
+    <!--                <jdk>1.8,8</jdk>-->
+    <!--            </activation>-->
+    <!--            <build>-->
+    <!--                <finalName>${project.artifactId}-${project.version}-jdk8</finalName>-->
+    <!--                <plugins>-->
+    <!--                    <plugin>-->
+    <!--                        <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                        <artifactId>maven-compiler-plugin</artifactId>-->
+    <!--                        <version>3.8.1</version>-->
+    <!--                        <configuration>-->
+    <!--                            <encoding>UTF-8</encoding>-->
+    <!--                            <source>8</source>-->
+    <!--                            <target>8</target>-->
+    <!--                        </configuration>-->
+    <!--                    </plugin>-->
+    <!--                </plugins>-->
+    <!--            </build>-->
+    <!--        </profile>-->
+    <!--        <profile>-->
+    <!--            <id>jdk11</id>-->
+    <!--            <activation>-->
+    <!--                <jdk>11</jdk>-->
+    <!--            </activation>-->
+    <!--            <build>-->
+    <!--                <finalName>${project.artifactId}-${project.version}-jdk11</finalName>-->
+    <!--                <plugins>-->
+    <!--                    <plugin>-->
+    <!--                        <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                        <artifactId>maven-compiler-plugin</artifactId>-->
+    <!--                        <version>3.8.1</version>-->
+    <!--                        <configuration>-->
+    <!--                            <encoding>UTF-8</encoding>-->
+    <!--                            <source>8</source>-->
+    <!--                            <target>8</target>-->
+    <!--                        </configuration>-->
+    <!--                    </plugin>-->
+    <!--                </plugins>-->
+    <!--            </build>-->
+    <!--        </profile>-->
+    <!--    </profiles>-->
 </project>
