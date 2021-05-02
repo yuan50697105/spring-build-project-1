@@ -7,6 +7,7 @@
         <module>spring-infrastructures-microservices-postgresql-modules</module>
         <module>spring-infrastructures-microservices-clickhouse-modules</module>
         <module>spring-infrastructures-microservices-client-api</module>
+        <module>spring-infrastructures-microservices-launchers</module>
     </modules>
     <parent>
         <artifactId>spring-build-project-1</artifactId>
