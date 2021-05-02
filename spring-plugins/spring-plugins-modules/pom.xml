@@ -12,7 +12,6 @@
     <modules>
         <module>spring-plugins-commons</module>
         <module>spring-plugins-web</module>
-        <module>spring-plugins-security</module>
         <module>spring-plugins-mybatis_1</module>
         <module>spring-plugins-mybatis_2</module>
         <module>spring-plugins-mybatis-sharding_1</module>
