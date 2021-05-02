@@ -4,10 +4,11 @@
     <modules>
         <module>spring-infrastructures-microservices-dependencies</module>
         <module>spring-infrastructures-microservices-mysql-modules</module>
+        <module>spring-infrastructures-microservices-mysql-applications</module>
+        <module>spring-infrastructures-microservices-mysql-launchers</module>
         <module>spring-infrastructures-microservices-postgresql-modules</module>
         <module>spring-infrastructures-microservices-clickhouse-modules</module>
         <module>spring-infrastructures-microservices-client-api</module>
-        <module>spring-infrastructures-microservices-launchers</module>
     </modules>
     <parent>
         <artifactId>spring-build-project-1</artifactId>

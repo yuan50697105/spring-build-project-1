@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-infrastructures-microservices-launchers</artifactId>
+    <artifactId>spring-infrastructures-microservices-mysql-launchers</artifactId>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>
