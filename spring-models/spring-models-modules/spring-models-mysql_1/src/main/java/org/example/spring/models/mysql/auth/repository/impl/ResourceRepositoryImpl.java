@@ -57,7 +57,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     public void delete(List<Long> ids) {
         validateChildByIds(ids);
         resourceDao.removeByIds(ids);
-        roleResourceDao.removeByPermissionIds(ids);
+        roleResourceDao.removeByResourceIds(ids);
     }
 
     @Override
