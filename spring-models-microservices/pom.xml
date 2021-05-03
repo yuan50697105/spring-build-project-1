@@ -35,6 +35,13 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-daos-dependencies</artifactId>
+                <version>0.0.15-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-microservices-dependencies</artifactId>
                 <version>0.0.15-SNAPSHOT</version>
                 <type>pom</type>
@@ -72,14 +79,5 @@
             <artifactId>spring-cloud-starter-dubbo</artifactId>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.1.2</version>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
