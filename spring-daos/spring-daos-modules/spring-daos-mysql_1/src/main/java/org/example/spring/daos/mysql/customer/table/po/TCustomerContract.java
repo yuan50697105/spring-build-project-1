@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * t_customer_contract
  */
-@ApiModel(value = "org-example-spring-daos-mysql-customer-table-po-TCustomerContract")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-customer-table-po-TCustomerContract")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

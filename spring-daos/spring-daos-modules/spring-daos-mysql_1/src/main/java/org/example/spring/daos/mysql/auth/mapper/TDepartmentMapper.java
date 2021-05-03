@@ -13,4 +13,6 @@ import java.util.List;
 @CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class, readWrite = false, blocking = true, flushInterval = 2000)
 public interface TDepartmentMapper extends IBaseMapper<TDepartment> {
     boolean existChildByPIds(@Param("ids") List<Long> ids);
+
+    Integer validateDelete(@Param("ids") List<Long> ids);
 }

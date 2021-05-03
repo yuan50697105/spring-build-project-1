@@ -1,6 +1,7 @@
 package org.example.spring.daos.mysql.auth.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
 import lombok.AllArgsConstructor;
 import org.example.spring.daos.mysql.auth.dao.TDepartmentDao;
 import org.example.spring.daos.mysql.auth.mapper.TDepartmentMapper;
@@ -24,5 +25,10 @@ public class TDepartmentDaoImpl extends TkBaseDaoImpl<TDepartment, TDepartmentQu
     @Override
     public boolean existChildByPIds(List<Long> ids) {
         return baseMapper.existChildByPIds(ids);
+    }
+
+    @Override
+    public boolean validateDelete(List<Long> ids) {
+        return SqlHelper.retBool(baseMapper.validateDelete(ids));
     }
 }

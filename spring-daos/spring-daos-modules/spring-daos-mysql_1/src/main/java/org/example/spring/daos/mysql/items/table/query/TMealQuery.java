@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * t_meal
  */
-@ApiModel(value = "org-example-spring-daos-mysql-items-table-po-TMeal")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-items-table-po-TMeal")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

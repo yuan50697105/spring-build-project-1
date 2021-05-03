@@ -13,7 +13,7 @@ import java.io.Serializable;
 /**
  * t_patient_check_item
  */
-@ApiModel(value = "org-example-spring-daos-mysql-patient-table-po-TPatientCheckItem")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-patient-table-po-TPatientCheckItem")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

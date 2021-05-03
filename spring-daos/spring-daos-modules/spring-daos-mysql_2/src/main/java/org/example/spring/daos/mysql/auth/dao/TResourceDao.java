@@ -12,4 +12,6 @@ public interface TResourceDao extends TkBaseDao<TResource, TResourceQuery> {
     boolean existChidByPids(List<Long> ids);
 
     List<Long> listResourceIdsByResourceIds(List<Long> resourceIds);
+
+    boolean validateDelete(List<Long> ids, String... types);
 }

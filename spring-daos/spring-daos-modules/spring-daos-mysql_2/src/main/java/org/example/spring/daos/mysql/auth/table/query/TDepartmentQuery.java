@@ -17,7 +17,7 @@ import java.io.Serializable;
 /**
  * t_department
  */
-@ApiModel(value = "org-example-spring-daos-mysql-auth-table-po-TDepartment")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-org.example.spring.daos.mysql.auth-table-po-TDepartment")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

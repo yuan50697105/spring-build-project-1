@@ -12,6 +12,7 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,5 +41,12 @@ public class TDepartmentRoleDaoImpl extends TkBaseDaoImpl<TDepartmentRole, TDepa
     @Override
     public List<TRole> listRolesByDepartmentId(Long id) {
         return baseMapper.listRolesByDepartmentId(id);
+    }
+
+    @Override
+    public boolean saveBatch(Collection<TDepartmentRole> entityList, int batchSize) {
+        List<Long> departmentIds = entityList.stream().map(TDepartmentRole::getDepartmentId).collect(Collectors.toList());
+        removeByDepartmentIds(departmentIds);
+        return super.saveBatch(entityList, batchSize);
     }
 }

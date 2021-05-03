@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
 @Mapper(config = BaseBuilder.class)
 public interface AuthClientBuilder {
     TDepartment createForSave(Department department);

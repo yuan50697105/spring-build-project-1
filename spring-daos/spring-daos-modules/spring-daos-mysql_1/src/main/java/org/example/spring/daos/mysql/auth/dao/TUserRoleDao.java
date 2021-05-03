@@ -16,5 +16,9 @@ public interface TUserRoleDao extends TkBaseDao<TUserRole, TUserRoleQuery> {
 
     boolean removeByUserIds(List<Long> userIds);
 
+    boolean deleteByUserId(Long id);
+
+    boolean deleteByUserIds(List<Long> ids);
+
     List<TRole> listByUserId(Long userId);
 }

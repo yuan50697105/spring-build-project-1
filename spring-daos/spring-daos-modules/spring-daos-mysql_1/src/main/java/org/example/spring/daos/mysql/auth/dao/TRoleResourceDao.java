@@ -14,9 +14,15 @@ public interface TRoleResourceDao extends TkBaseDao<TRoleResource, TRolePermissi
 
     boolean removeByRoleIds(List<Long> ids);
 
+    boolean deleteByRoleIds(List<Long> ids);
+
     boolean removeByRoleId(Long roleId);
+
+    boolean deleteByRoleId(Long roleId);
 
     List<TResource> listByRoleId(Long roleId);
 
-    boolean removeByPermissionIds(List<Long> permissionIds);
+    boolean removeByResourceIds(List<Long> resourceIds);
+
+    boolean deleteByResourceIds(List<Long> resourceIds);
 }

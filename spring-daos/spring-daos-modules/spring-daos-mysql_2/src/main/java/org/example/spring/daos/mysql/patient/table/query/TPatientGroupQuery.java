@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * t_patient_group_item
  */
-@ApiModel(value = "org-example-spring-daos-mysql-patient-table-po-TPatientGroupItem")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-patient-table-po-TPatientGroupItem")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

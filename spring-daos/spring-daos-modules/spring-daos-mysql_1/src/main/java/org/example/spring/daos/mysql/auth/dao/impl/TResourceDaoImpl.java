@@ -1,6 +1,7 @@
 package org.example.spring.daos.mysql.auth.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
 import lombok.AllArgsConstructor;
 import org.example.spring.daos.mysql.auth.dao.TResourceDao;
 import org.example.spring.daos.mysql.auth.mapper.TResourceMapper;
@@ -39,5 +40,10 @@ public class TResourceDaoImpl extends TkBaseDaoImpl<TResource, TResourceQuery, T
     @Override
     public List<Long> listResourceIdsByResourceIds(List<Long> resourceIds) {
         return lambdaQuery().select(IBaseEntity::getId).in(IBaseEntity::getId, resourceIds).list().stream().map(IBaseEntity::getId).collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean validateDelete(List<Long> ids, String... types) {
+        return SqlHelper.retBool(baseMapper.validateDelete(ids, types));
     }
 }
