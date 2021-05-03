@@ -211,8 +211,13 @@
                         <encoding>${maven.compiler.encoding}</encoding>
                         <fork>true</fork>
                         <meminitial>128m</meminitial>
-                        <maxmem>256m</maxmem>
+                        <maxmem>512m</maxmem>
                         <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
                             <path>
                                 <groupId>org.mapstruct</groupId>
                                 <artifactId>mapstruct-processor</artifactId>

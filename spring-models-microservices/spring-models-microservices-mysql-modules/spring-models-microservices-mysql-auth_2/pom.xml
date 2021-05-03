@@ -14,10 +14,7 @@
             <groupId>org.example.spring</groupId>
             <artifactId>spring-models-commons</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-daos-minio</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-daos-microservices-mysql-auth_2</artifactId>
