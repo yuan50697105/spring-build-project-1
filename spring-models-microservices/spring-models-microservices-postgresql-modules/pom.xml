@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-models-microservices</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.15</version>
+        <version>0.0.16-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,7 +14,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-models-microservices-dependencies</artifactId>
-                <version>0.0.15</version>
+                <version>0.0.16-SNAPSHOT</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
