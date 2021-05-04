@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.models.mysql.auth.builder.AuthModelBuilder;
+import org.example.spring.models.mysql.auth.builder.AuthModelClientBuilder;
 import org.example.spring.models.mysql.auth.client.entity.*;
 import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
 import org.example.spring.models.mysql.auth.entity.result.Account;
@@ -20,7 +21,7 @@ import java.util.List;
 @DubboService
 @AllArgsConstructor
 public class AccountClientImpl implements AccountClient {
-    private final AuthModelBuilder authBuilder;
+    private final AuthModelClientBuilder authBuilder;
     private final AccountRepository accountRepository;
 
     @Override
@@ -59,7 +60,7 @@ public class AccountClientImpl implements AccountClient {
         AccountDetailDto accountDetailDto = new AccountDetailDto();
         AccountDetails details = accountRepository.getDetailsById(id);
         accountDetailDto.setUser(authBuilder.buildAccountForDTO(details.getAccount()));
-        accountDetailDto.setRoles(authBuilder.buildAccountForDTO(details.getRoles()));
+        accountDetailDto.setRoles(authBuilder.buildAccountForDTORoles(details.getRoles()));
         return accountDetailDto;
     }
 

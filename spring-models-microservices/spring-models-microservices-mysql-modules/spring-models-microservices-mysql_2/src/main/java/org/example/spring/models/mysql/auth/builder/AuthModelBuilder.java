@@ -5,7 +5,6 @@ import org.example.spring.daos.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.daos.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
-import org.example.spring.models.mysql.auth.client.entity.*;
 import org.example.spring.models.mysql.auth.entity.dto.DepartmentNode;
 import org.example.spring.models.mysql.auth.entity.dto.ResourceNode;
 import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
@@ -16,7 +15,6 @@ import org.example.spring.models.mysql.auth.entity.result.Account;
 import org.example.spring.models.mysql.auth.entity.result.Department;
 import org.example.spring.models.mysql.auth.entity.result.Resource;
 import org.example.spring.models.mysql.auth.entity.result.Role;
-import org.example.spring.models.mysql.auth.entity.vo.AccountModelVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
@@ -64,10 +62,6 @@ public interface AuthModelBuilder {
 
     List<ResourceNode> buildPermissionToResourceNode(List<TResource> permissions);
 
-    @Mapping(target = "parentId", source = "pid")
-    @Mapping(target = "extra", ignore = true)
-    ResourceNode buildPermissionToResourceNode(TResource permissions);
-
     void copyDepartment(TDepartment department, @MappingTarget TDepartment tDepartment);
 
     Department buildDepartmentResult(TDepartment department);
@@ -90,19 +84,4 @@ public interface AuthModelBuilder {
     @Mapping(target = "createDate", ignore = true)
     TDepartmentRole buildDepartmentRole(Long departmentId, Long roleId);
 
-    AccountModelVo buildAccountAdd(AccountAddVo accountAddVo);
-
-    AccountModelVo buildAccountUpdate(AccountUpdateVo accountUpdateVo);
-
-    AccountDetailDto.UserDTO buildAccountForDTO(Account account);
-
-    List<AccountDetailDto.RoleDTO> buildAccountForDTO(List<Role> roles);
-
-    AccountQuery buildAccountQuery(AccountQueryVo queryDto);
-
-    AccountDto buildAccountDto(Account queryOne);
-
-    List<AccountDto> buildAccountDto(List<Account> queryTop);
-
-    IPageData<AccountDto> buildAccountDto(IPageData<Account> queryTop);
 }

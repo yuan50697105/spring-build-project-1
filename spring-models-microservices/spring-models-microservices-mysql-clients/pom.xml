@@ -11,6 +11,12 @@
 
     <artifactId>spring-models-microservices-mysql-clients</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-models-microservices-mysql-clients_1</module>
+        <module>spring-models-microservices-mysql-clients_2</module>
+        <module>spring-models-microservices-mysql-clients-auth_1</module>
+        <module>spring-models-microservices-mysql-clients-auth_2</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -22,4 +28,10 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-models-microservices-client-api</artifactId>
+        </dependency>
+    </dependencies>
 </project>
