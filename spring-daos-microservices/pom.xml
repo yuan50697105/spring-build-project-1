@@ -12,7 +12,7 @@
     <parent>
         <artifactId>spring-build-project-1</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.18</version>
+        <version>0.0.19-SNAPSHOT</version>
     </parent>
     <artifactId>spring-daos-microservices</artifactId>
     <packaging>pom</packaging>
@@ -21,14 +21,14 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.18</version>
+                <version>0.0.19-SNAPSHOT</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-dependencies</artifactId>
-                <version>0.0.18</version>
+                <version>0.0.19-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-launchers-microservices-modules</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.18</version>
+        <version>0.0.19-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
