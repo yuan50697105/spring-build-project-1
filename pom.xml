@@ -163,6 +163,7 @@
                 <directory>src\main\resources</directory>
                 <excludes>
                     <exclude>application.yml</exclude>
+                    <exclude>bootstrap.yml</exclude>
                     <exclude>docker-compose.yml</exclude>
                     <exclude>Dockerfile</exclude>
                     <exclude>logback.xml</exclude>
@@ -189,6 +190,7 @@
                                         <directory>src/main/resources</directory>
                                         <includes>
                                             <exclude>application.yml</exclude>
+                                            <exclude>bootstrap.yml</exclude>
                                             <exclude>docker-compose.yml</exclude>
                                             <exclude>Dockerfile</exclude>
                                             <exclude>logback.xml</exclude>
