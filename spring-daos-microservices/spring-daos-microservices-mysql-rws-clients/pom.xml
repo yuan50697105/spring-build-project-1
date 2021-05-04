@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-daos-microservices</artifactId>
         <groupId>org.example.spring</groupId>
@@ -7,14 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-daos-microservices-mysql-clients</artifactId>
+    <artifactId>spring-daos-microservices-mysql-rws-clients</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>spring-daos-microservices-mysql-clients_1</module>
-        <module>spring-daos-microservices-mysql-clients_2</module>
-        <module>spring-daos-microservices-mysql-clients-auth_1</module>
-        <module>spring-daos-microservices-mysql-clients-auth_2</module>
-    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>

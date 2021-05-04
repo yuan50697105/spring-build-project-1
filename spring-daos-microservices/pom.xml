@@ -9,6 +9,7 @@
         <module>spring-daos-microservices-mysql-clients</module>
         <module>spring-daos-microservices-postgresql-modules</module>
         <module>spring-daos-microservices-clickhouse-modules</module>
+        <module>spring-daos-microservices-mysql-rws-clients</module>
     </modules>
     <parent>
         <artifactId>spring-build-project-1</artifactId>
@@ -17,23 +18,5 @@
     </parent>
     <artifactId>spring-daos-microservices</artifactId>
     <packaging>pom</packaging>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.19-SNAPSHOT</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-daos-dependencies</artifactId>
-                <version>0.0.19-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>
