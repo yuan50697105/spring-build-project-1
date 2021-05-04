@@ -285,6 +285,7 @@
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <configuration>
                         <attach>false</attach>
+                        <classifier>boot</classifier>
                     </configuration>
                 </plugin>
                 <plugin>
