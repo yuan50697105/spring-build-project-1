@@ -37,6 +37,16 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-daos-microservices-mysql-auth-rws_1</artifactId>
+                <version>0.0.19-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-daos-microservices-mysql-auth-rws_2</artifactId>
+                <version>0.0.19-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-microservices-mysql-customer_1</artifactId>
                 <version>0.0.19-SNAPSHOT</version>
             </dependency>
