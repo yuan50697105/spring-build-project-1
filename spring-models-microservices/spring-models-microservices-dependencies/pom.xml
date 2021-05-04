@@ -77,6 +77,26 @@
                 <artifactId>spring-models-microservices-client-api</artifactId>
                 <version>0.0.17-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-models-microservices-mysql-clients_1</artifactId>
+                <version>0.0.17-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-models-microservices-mysql-clients_2</artifactId>
+                <version>0.0.17-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-models-microservices-mysql-clients-auth_1</artifactId>
+                <version>0.0.17-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-models-microservices-mysql-clients-auth_2</artifactId>
+                <version>0.0.17-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
