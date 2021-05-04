@@ -13,17 +13,19 @@
         <module>spring-daos-commons</module>
         <module>spring-daos-mysql_1</module>
         <module>spring-daos-mysql_2</module>
+        <module>spring-daos-mysql-rws_1</module>
+        <module>spring-daos-mysql-rws_2</module>
+        <module>spring-daos-postgresql_1</module>
+        <module>spring-daos-postgresql_2</module>
         <module>spring-daos-clickhouse_1</module>
         <module>spring-daos-clickhouse_2</module>
+        <module>spring-daos-doris_1</module>
+        <module>spring-daos-doris_2</module>
         <module>spring-daos-mongodb</module>
         <module>spring-daos-elasticsearch</module>
         <module>spring-daos-minio</module>
         <module>spring-daos-redis</module>
-        <module>spring-daos-postgresql_1</module>
-        <module>spring-daos-postgresql_2</module>
         <module>spring-daos-kylin</module>
-        <module>spring-daos-doris_1</module>
-        <module>spring-daos-doris_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
