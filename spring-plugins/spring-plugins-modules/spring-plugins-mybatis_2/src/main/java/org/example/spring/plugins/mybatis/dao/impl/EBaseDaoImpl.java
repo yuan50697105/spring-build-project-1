@@ -95,6 +95,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public List<T> queryTop(Q query) {
+        return queryTop(query,query.getSize());
+    }
+
+    @Override
     public Optional<T> queryFirst(Q query) {
         return queryTop(query, 1).stream().findFirst();
     }
