@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-daos-microservices</artifactId>
+        <artifactId>spring-daos-microservices-mysql-rws-clients</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.19-SNAPSHOT</version>
     </parent>
@@ -11,6 +11,10 @@
 
     <artifactId>spring-daos-microservices-mysql-rws-clients</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-daos-microservices-mysql-rws-clients_1</module>
+        <module>spring-daos-microservices-mysql-rws-clients_2</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
