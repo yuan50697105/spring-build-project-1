@@ -15,6 +15,7 @@
         <module>spring-models-microservices-mysql-modules</module>
         <module>spring-models-microservices-postgresql-modules</module>
         <module>spring-models-microservices-clickhouse-modules</module>
+        <module>spring-models-microservices-mysql-clients</module>
     </modules>
 
     <dependencyManagement>
