@@ -20,6 +20,13 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-daos-dependencies</artifactId>
+                <version>0.0.19-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-microservices-mysql-auth_1</artifactId>
                 <version>0.0.19-SNAPSHOT</version>
             </dependency>
@@ -76,6 +83,16 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-microservices-mysql_2</artifactId>
+                <version>0.0.19-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-daos-microservices-mysql-rws_1</artifactId>
+                <version>0.0.19-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-daos-microservices-mysql-rws_2</artifactId>
                 <version>0.0.19-SNAPSHOT</version>
             </dependency>
             <dependency>
