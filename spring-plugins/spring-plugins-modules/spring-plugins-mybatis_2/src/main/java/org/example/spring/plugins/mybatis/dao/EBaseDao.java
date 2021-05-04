@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
 
 /**
  * @author yuane
@@ -20,6 +21,12 @@ public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
     CompletableFuture<Optional<T>> getByIdOptAsync(Long id);
 
     List<T> queryList(Q query);
+
+    Stream<T> queryListStream(Q query);
+
+    Stream<T> queryTopStream(Q query);
+
+    Stream<T> queryListStreamWithPage(Q query);
 
     IPageData<T> queryPage(Q query);
 

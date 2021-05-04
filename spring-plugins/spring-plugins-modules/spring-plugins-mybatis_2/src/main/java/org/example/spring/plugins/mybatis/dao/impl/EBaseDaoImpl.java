@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
 
 /**
  * @author yuane
@@ -65,6 +66,21 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public Stream<T> queryListStream(Q query) {
+        return queryList(query).stream();
+    }
+
+    @Override
+    public Stream<T> queryTopStream(Q query) {
+        return queryTop(query).stream();
+    }
+
+    @Override
+    public Stream<T> queryListStreamWithPage(Q query) {
+        return Optional.ofNullable(queryPage(query)).orElse(null).getData().stream();
+    }
+
+    @Override
     public IPageData<T> queryPage(Q query) {
         Wrapper<T> wrapper = queryWrapper(query);
         if (wrapper == null) {
@@ -80,6 +96,7 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    @Deprecated
     public List<T> queryTop(Q query, Integer size) {
         Wrapper<T> wrapper = queryWrapper(query);
         if (wrapper == null) {
