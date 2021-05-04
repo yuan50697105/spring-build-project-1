@@ -30,5 +30,7 @@
     <modules>
         <module>spring-daos-microservices-mysql-clients_1</module>
         <module>spring-daos-microservices-mysql-clients_2</module>
+        <module>spring-daos-microservices-mysql-clients-auth_1</module>
+        <module>spring-daos-microservices-mysql-clients-auth_2</module>
     </modules>
 </project>
