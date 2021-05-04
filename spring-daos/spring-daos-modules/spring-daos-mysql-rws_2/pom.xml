@@ -16,7 +16,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-plugins-mybatis_2</artifactId>
+            <artifactId>spring-plugins-mybatis-rws_2</artifactId>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>

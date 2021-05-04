@@ -45,6 +45,16 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-daos-mysql-rws_1</artifactId>
+                <version>0.0.19-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-daos-mysql-rws_2</artifactId>
+                <version>0.0.19-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-clickhouse_1</artifactId>
                 <version>0.0.19-SNAPSHOT</version>
             </dependency>
