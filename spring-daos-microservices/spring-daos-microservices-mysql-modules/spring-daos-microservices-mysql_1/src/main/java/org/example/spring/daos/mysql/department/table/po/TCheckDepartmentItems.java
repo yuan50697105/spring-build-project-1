@@ -11,29 +11,29 @@ import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import java.io.Serializable;
 
 /**
-    * t_check_department_items
-    */
-@ApiModel(value="org-example-spring-daos-mysql-department-table-po-TCheckDepartmentItems")
+ * t_check_department_items
+ */
+@ApiModel(value = "org-example-spring-daos-mysql-department-table-po-TCheckDepartmentItems")
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class TCheckDepartmentItems extends IBaseEntity implements Serializable {
     /**
-    * code
-    */
-    @ApiModelProperty(value="code")
+     * code
+     */
+    @ApiModelProperty(value = "code")
     private String code;
 
     /**
-    * name
-    */
-    @ApiModelProperty(value="name")
+     * name
+     */
+    @ApiModelProperty(value = "name")
     private String name;
 
     /**
-    * checkItemId
-    */
-    @ApiModelProperty(value="checkItemId")
+     * checkItemId
+     */
+    @ApiModelProperty(value = "checkItemId")
     private String checkItemId;
 }

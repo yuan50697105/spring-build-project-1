@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * t_check_item
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-items-table-po-TCheckItem")
+@ApiModel(value = "org-example-spring-daos-mysql-items-table-po-TCheckItem")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
