@@ -4,8 +4,7 @@
     <modules>
         <module>spring-daos-microservices-dependencies</module>
         <module>spring-daos-microservices-mysql-modules</module>
-        <module>spring-daos-microservices-mysql-applications</module>
-        <module>spring-daos-microservices-mysql-launchers</module>
+        <module>spring-daos-microservices-mysql-clients</module>
         <module>spring-daos-microservices-postgresql-modules</module>
         <module>spring-daos-microservices-clickhouse-modules</module>
         <module>spring-daos-microservices-client-api</module>
