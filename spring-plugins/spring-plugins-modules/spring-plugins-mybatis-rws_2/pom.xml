@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-plugins-mybatis-sharding_2</artifactId>
+    <artifactId>spring-plugins-mybatis-rws_2</artifactId>
 
     <dependencies>
         <dependency>
