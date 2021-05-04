@@ -8,6 +8,7 @@ import org.example.spring.models.mysql.auth.entity.vo.AccountModelVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
@@ -18,8 +19,6 @@ public interface AuthModelClientBuilder {
     AccountModelVo buildAccountUpdate(AccountUpdateVo accountUpdateVo);
 
     AccountDetailDto.UserDTO buildAccountForDTO(Account account);
-
-    AccountDetailDto.UserDTO buildAccountForDTO(List<Role> roles);
 
     AccountQuery buildAccountQuery(AccountQueryVo queryDto);
 

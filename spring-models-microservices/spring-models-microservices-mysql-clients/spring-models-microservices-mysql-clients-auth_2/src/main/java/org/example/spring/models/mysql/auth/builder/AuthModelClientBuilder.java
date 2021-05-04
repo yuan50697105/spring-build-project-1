@@ -19,8 +19,6 @@ public interface AuthModelClientBuilder {
 
     AccountDetailDto.UserDTO buildAccountForDTO(Account account);
 
-    AccountDetailDto.UserDTO buildAccountForDTO(List<Role> roles);
-
     AccountQuery buildAccountQuery(AccountQueryVo queryDto);
 
     AccountDto buildAccountDto(Account queryOne);
