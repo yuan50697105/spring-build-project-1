@@ -8,7 +8,7 @@
     <parent>
         <artifactId>spring-build-project-1</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.19</version>
+        <version>0.0.20-SNAPSHOT</version>
     </parent>
     <artifactId>spring-applications-microservices</artifactId>
     <packaging>pom</packaging>
