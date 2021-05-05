@@ -8,7 +8,7 @@
     </parent>
     <groupId>org.example.spring</groupId>
     <artifactId>spring-build-project-1</artifactId>
-    <version>0.0.19</version>
+    <version>0.0.20-SNAPSHOT</version>
     <modules>
         <module>spring-build-tests</module>
         <module>spring-build-admin-server</module>
