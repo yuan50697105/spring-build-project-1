@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-launchers-micoservices-mysql-auth-rx_1</artifactId>
+    <artifactId>spring-launchers-microservices-mysql-auth-rx_1</artifactId>
 
     <dependencies>
         <dependency>
