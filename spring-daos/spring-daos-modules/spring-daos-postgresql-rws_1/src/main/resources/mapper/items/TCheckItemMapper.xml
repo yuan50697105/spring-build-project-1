@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.spring.daos.postgresql.items.mapper.TCheckItemMapper">
+    <resultMap id="BaseResultMap" type="org.example.spring.daos.postgresql.items.table.po.TCheckItem">
+        <!--@mbg.generated-->
+        <!--@Table t_check_item-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="create_id" jdbcType="BIGINT" property="createId"/>
+        <result column="update_id" jdbcType="BIGINT" property="updateId"/>
+        <result column="create_user" jdbcType="VARCHAR" property="createUser"/>
+        <result column="update_user" jdbcType="VARCHAR" property="updateUser"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="fee_item_id" jdbcType="BIGINT" property="feeItemId"/>
+        <result column="code" jdbcType="VARCHAR" property="code"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="lowest_value" jdbcType="NUMERIC" property="lowestValue"/>
+        <result column="highest_value" jdbcType="NUMERIC" property="highestValue"/>
+        <result column="yin_yang" jdbcType="VARCHAR" property="yinYang"/>
+        <result column="lis_code" jdbcType="VARCHAR" property="lisCode"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, create_id, update_id, create_user, update_user, create_date, update_date, fee_item_id,
+        code, "name", lowest_value, highest_value, yin_yang, lis_code
+    </sql>
+</mapper>

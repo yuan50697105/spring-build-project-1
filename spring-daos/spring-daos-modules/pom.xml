@@ -17,6 +17,8 @@
         <module>spring-daos-mysql-rws_2</module>
         <module>spring-daos-postgresql_1</module>
         <module>spring-daos-postgresql_2</module>
+        <module>spring-daos-postgresql-rws_1</module>
+        <module>spring-daos-postgresql-rws_2</module>
         <module>spring-daos-clickhouse_1</module>
         <module>spring-daos-clickhouse_2</module>
         <module>spring-daos-doris_1</module>
