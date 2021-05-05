@@ -16,6 +16,8 @@
         <module>spring-daos-microservices-mysql-rws-clients_2</module>
         <module>spring-daos-microservices-mysql-rws-clients-auth_1</module>
         <module>spring-daos-microservices-mysql-rws-clients-auth_2</module>
+        <module>spring-daos-microservices-mysql-rws-clients-patient_1</module>
+        <module>spring-daos-microservices-mysql-rws-clients-patient_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

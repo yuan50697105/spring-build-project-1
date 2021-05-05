@@ -27,6 +27,8 @@
         <module>spring-daos-microservices-mysql-rws_2</module>
         <module>spring-daos-microservices-mysql-auth-rws_1</module>
         <module>spring-daos-microservices-mysql-auth-rws_2</module>
+        <module>spring-daos-microservices-mysql-rws-patient_1</module>
+        <module>spring-daos-microservices-mysql-rws-patient_2</module>
     </modules>
     <dependencies>
         <dependency>
