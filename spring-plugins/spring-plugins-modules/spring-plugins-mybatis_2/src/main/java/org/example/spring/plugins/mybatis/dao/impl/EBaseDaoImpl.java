@@ -76,11 +76,6 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
-    public Stream<T> queryListStreamWithPage(Q query) {
-        return Optional.ofNullable(queryPage(query)).orElse(null).getData().stream();
-    }
-
-    @Override
     public IPageData<T> queryPage(Q query) {
         Wrapper<T> wrapper = queryWrapper(query);
         if (wrapper == null) {
@@ -113,7 +108,17 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
 
     @Override
     public List<T> queryTop(Q query) {
-        return queryTop(query,query.getSize());
+        Wrapper<T> wrapper = queryWrapper(query);
+        if (wrapper == null) {
+            PageHelper.startPage(1, query.getSize());
+            E example = query.toExample();
+            example = exampleAddOrder(query, example);
+            return baseMapper.selectByExample(example);
+        } else {
+            PageHelper.startPage(query.getPage(), query.getSize());
+            wrapper = wrapperAddOrder(query, wrapper);
+            return PageInfo.of(list(wrapper)).getList();
+        }
     }
 
     @Override

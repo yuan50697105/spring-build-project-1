@@ -76,11 +76,6 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
-    public Stream<T> queryListStreamWithPage(Q query) {
-        return Optional.ofNullable(queryPage(query)).orElse(null).getData().stream();
-    }
-
-    @Override
     public IPageData<T> queryPage(Q query) {
         Wrapper<T> wrapper = queryWrapper(query);
         if (wrapper == null) {

@@ -26,8 +26,6 @@ public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
 
     Stream<T> queryTopStream(Q query);
 
-    Stream<T> queryListStreamWithPage(Q query);
-
     IPageData<T> queryPage(Q query);
 
     List<T> queryTop(Q query, Integer size);
