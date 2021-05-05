@@ -2,7 +2,6 @@ package org.example.spring.daos.mysql.auth.client.impl;
 
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
-import org.example.spring.daos.mysql.auth.builder.AuthClientBuilder;
 import org.example.spring.daos.mysql.auth.client.ResourceDaoClient;
 import org.example.spring.daos.mysql.auth.dao.TResourceDao;
 import org.example.spring.daos.mysql.auth.entity.Resource;
