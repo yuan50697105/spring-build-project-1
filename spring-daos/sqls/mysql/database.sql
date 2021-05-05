@@ -1,4 +1,4 @@
-create table t_check_department
+create table if not exists t_check_department
 (
     id          bigint auto_increment comment 'id'
         primary key,
@@ -15,7 +15,7 @@ create table t_check_department
 )
     comment 't_check_department' charset = utf8mb4;
 
-create table t_check_department_items
+create table if not exists t_check_department_items
 (
     id            bigint auto_increment comment 'id'
         primary key,
@@ -31,7 +31,7 @@ create table t_check_department_items
 )
     comment 't_check_department_items' charset = utf8mb4;
 
-create table t_check_item
+create table if not exists t_check_item
 (
     id            bigint auto_increment comment 'id'
         primary key,
@@ -51,7 +51,7 @@ create table t_check_item
 )
     comment 't_check_item' charset = utf8mb4;
 
-create table t_customer_contract
+create table if not exists t_customer_contract
 (
     id           bigint auto_increment comment 'id'
         primary key,
@@ -71,7 +71,7 @@ create table t_customer_contract
 )
     comment 't_customer_contract' charset = utf8mb4;
 
-create table t_customer_info
+create table if not exists t_customer_info
 (
     id          bigint auto_increment comment 'id'
         primary key,
@@ -87,7 +87,26 @@ create table t_customer_info
 )
     comment 't_customer_info' charset = utf8mb4;
 
-create table t_department
+create table if not exists t_customer_order
+(
+    id            bigint auto_increment comment 'id'
+        primary key,
+    create_id     bigint         default -1                    null comment 'createId',
+    update_id     bigint         default -1                    null comment 'updateId',
+    create_user   varchar(50)    default ''                    null comment 'createUser',
+    update_user   varchar(50)    default ''                    null comment 'updateUser',
+    create_date   datetime       default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date   datetime       default '1000-01-01 00:00:00' null comment 'updateDate',
+    order_no      varchar(50)    default ''                    null comment 'orderNo',
+    customer_id   varchar(50)    default ''                    null comment 'customerId',
+    customer_code varchar(50)    default ''                    null comment 'customerCode',
+    customer_name varchar(50)    default ''                    null comment 'customerName',
+    total_amount  decimal(13, 4) default -1.0000               null comment 'totalAmount',
+    status        varchar(50)    default ''                    null comment 'status'
+)
+    comment 't_customer_order' charset = utf8mb4;
+
+create table if not exists t_department
 (
     id          bigint auto_increment comment 'id'
         primary key,
@@ -103,7 +122,7 @@ create table t_department
 )
     comment 't_department' charset = utf8mb4;
 
-create table t_department_role
+create table if not exists t_department_role
 (
     id            bigint auto_increment comment 'id'
         primary key,
@@ -118,7 +137,7 @@ create table t_department_role
 )
     comment 't_department_role' charset = utf8mb4;
 
-create table t_fee_item
+create table if not exists t_fee_item
 (
     id           bigint auto_increment comment 'id'
         primary key,
@@ -140,7 +159,7 @@ create table t_fee_item
 )
     comment 't_fee_item' charset = utf8mb4;
 
-create table t_meal
+create table if not exists t_meal
 (
     id           bigint auto_increment comment 'id'
         primary key,
@@ -159,7 +178,7 @@ create table t_meal
 )
     comment 't_meal' charset = utf8mb4;
 
-create table t_meal_fee_item
+create table if not exists t_meal_fee_item
 (
     id          bigint auto_increment comment 'id'
         primary key,
@@ -174,7 +193,7 @@ create table t_meal_fee_item
 )
     comment 't_meal_fee_item' charset = utf8mb4;
 
-create table t_patient
+create table if not exists t_patient
 (
     id            bigint auto_increment comment 'id'
         primary key,
@@ -203,7 +222,7 @@ create table t_patient
 )
     comment 't_patient' charset = utf8mb4;
 
-create table t_patient_check_item
+create table if not exists t_patient_check_item
 (
     id              bigint auto_increment comment 'id'
         primary key,
@@ -223,7 +242,7 @@ create table t_patient_check_item
 )
     comment 't_patient_check_item' charset = utf8mb4;
 
-create table t_patient_fee_item
+create table if not exists t_patient_fee_item
 (
     id              bigint auto_increment comment 'id'
         primary key,
@@ -247,7 +266,7 @@ create table t_patient_fee_item
 )
     comment 't_patient_fee_item' charset = utf8mb4;
 
-create table t_patient_group
+create table if not exists t_patient_group
 (
     id           bigint auto_increment comment 'id'
         primary key,
@@ -268,7 +287,7 @@ create table t_patient_group
 )
     comment 't_patient_group' charset = utf8mb4;
 
-create table t_patient_meal
+create table if not exists t_patient_meal
 (
     id           bigint auto_increment comment 'id'
         primary key,
@@ -292,7 +311,7 @@ create table t_patient_meal
 )
     comment 't_patient_meal' charset = utf8mb4;
 
-create table t_patient_team
+create table if not exists t_patient_team
 (
     id          bigint auto_increment comment 'id'
         primary key,
@@ -313,7 +332,7 @@ create table t_patient_team
 )
     comment 't_patient_team' charset = utf8mb4;
 
-create table t_patient_team_meal
+create table if not exists t_patient_team_meal
 (
     id           bigint auto_increment comment 'id'
         primary key,
@@ -337,7 +356,7 @@ create table t_patient_team_meal
 )
     comment 't_patient_team_meal' charset = utf8mb4;
 
-create table t_patient_team_meal_check_item
+create table if not exists t_patient_team_meal_check_item
 (
     id               bigint auto_increment comment 'id'
         primary key,
@@ -359,7 +378,7 @@ create table t_patient_team_meal_check_item
 )
     comment 't_patient_team_meal_check_item' charset = utf8mb4;
 
-create table t_patient_team_meal_fee_item
+create table if not exists t_patient_team_meal_fee_item
 (
     id            bigint auto_increment comment 'id'
         primary key,
@@ -383,7 +402,7 @@ create table t_patient_team_meal_fee_item
 )
     comment 't_patient_team_meal_fee_item' charset = utf8mb4;
 
-create table t_personal_report_check_items
+create table if not exists t_personal_report_check_items
 (
     id              bigint auto_increment comment 'id'
         primary key,
@@ -405,7 +424,7 @@ create table t_personal_report_check_items
 )
     comment 't_personal_report_check_items' charset = utf8mb4;
 
-create table t_personal_report_fee_items
+create table if not exists t_personal_report_fee_items
 (
     id            bigint auto_increment comment 'id'
         primary key,
@@ -422,7 +441,7 @@ create table t_personal_report_fee_items
 )
     comment 't_personal_report_fee_items' charset = utf8mb4;
 
-create table t_personal_report_info
+create table if not exists t_personal_report_info
 (
     id                bigint auto_increment comment 'id'
         primary key,
@@ -442,7 +461,7 @@ create table t_personal_report_info
 )
     comment 't_personal_report_info' charset = utf8mb4;
 
-create table t_personal_report_summary
+create table if not exists t_personal_report_summary
 (
     id          bigint auto_increment comment 'id'
         primary key,
@@ -457,7 +476,24 @@ create table t_personal_report_summary
 )
     comment 't_personal_report_summary' charset = utf8mb4;
 
-create table t_report_info
+create table if not exists t_potential_customers
+(
+    id          bigint auto_increment comment 'id'
+        primary key,
+    create_id   bigint      default -1                    null comment 'createId',
+    update_id   bigint      default -1                    null comment 'updateId',
+    create_user varchar(50) default ''                    null comment 'createUser',
+    update_user varchar(50) default ''                    null comment 'updateUser',
+    create_date datetime    default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date datetime    default '1000-01-01 00:00:00' null comment 'updateDate',
+    code        varchar(50) default ''                    null comment 'code',
+    name        varchar(50) default ''                    null comment 'name',
+    phone       varchar(50) default ''                    null comment 'phone',
+    level       varchar(50) default ''                    null comment 'level'
+)
+    comment 't_potential_customers' charset = utf8mb4;
+
+create table if not exists t_report_info
 (
     id           bigint auto_increment comment 'id'
         primary key,
@@ -477,7 +513,7 @@ create table t_report_info
 )
     comment 't_report_info' charset = utf8mb4;
 
-create table t_resource
+create table if not exists t_resource
 (
     id          bigint auto_increment comment 'id'
         primary key,
@@ -495,7 +531,7 @@ create table t_resource
 )
     comment 't_permission' charset = utf8mb4;
 
-create table t_role
+create table if not exists t_role
 (
     id          bigint auto_increment comment 'id'
         primary key,
@@ -509,7 +545,7 @@ create table t_role
 )
     comment 't_role' charset = utf8mb4;
 
-create table t_role_resource
+create table if not exists t_role_resource
 (
     id          bigint auto_increment comment 'id'
         primary key,
@@ -524,7 +560,26 @@ create table t_role_resource
 )
     comment 't_role_permission' charset = utf8mb4;
 
-create table t_seller_info
+create table if not exists t_sales_record
+(
+    id            bigint auto_increment comment 'id'
+        primary key,
+    create_id     bigint         default -1                    null comment 'createId',
+    update_id     bigint         default -1                    null comment 'updateId',
+    create_user   varchar(50)    default ''                    null comment 'createUser',
+    update_user   varchar(50)    default ''                    null comment 'updateUser',
+    create_date   datetime       default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date   datetime       default '1000-01-01 00:00:00' null comment 'updateDate',
+    seller_id     bigint         default -1                    null comment '销售员Id',
+    seller_code   varchar(50)    default ''                    null comment '销售员编号',
+    customer_id   bigint         default -1                    null comment '客户ID',
+    customer_code varchar(50)    default ''                    null comment '客户编号',
+    customer_name varchar(50)    default ''                    null comment '客户姓名',
+    amount        decimal(13, 4) default -1.0000               null comment '金额'
+)
+    comment '销售记录' charset = utf8mb4;
+
+create table if not exists t_seller_info
 (
     id          bigint auto_increment comment 'id'
         primary key,
@@ -543,7 +598,7 @@ create table t_seller_info
 )
     comment 't_seller_info' charset = utf8mb4;
 
-create table t_template_info
+create table if not exists t_template_info
 (
     id          bigint auto_increment comment 'id'
         primary key,
@@ -561,7 +616,7 @@ create table t_template_info
 )
     comment 't_template_info' charset = utf8mb4;
 
-create table t_user
+create table if not exists t_user
 (
     id          bigint auto_increment comment 'id'
         primary key,
@@ -590,7 +645,7 @@ create index t_user_name_index
 create index t_user_username_index
     on t_user (username);
 
-create table t_user_role
+create table if not exists t_user_role
 (
     id          bigint auto_increment comment 'id'
         primary key,
