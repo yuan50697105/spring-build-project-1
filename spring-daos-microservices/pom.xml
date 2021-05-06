@@ -15,7 +15,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.20</version>
+        <version>0.0.21-SNAPSHOT</version>
     </parent>
     <artifactId>spring-daos-microservices</artifactId>
     <packaging>pom</packaging>
