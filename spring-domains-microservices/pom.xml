@@ -7,7 +7,7 @@
         <module>spring-domains-microservices-postgresql-modules</module>
     </modules>
     <parent>
-        <artifactId>spring-build-project-1</artifactId>
+        <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.20-SNAPSHOT</version>
     </parent>

@@ -7,7 +7,7 @@
         <version>2.4.5</version>
     </parent>
     <groupId>org.example.spring</groupId>
-    <artifactId>spring-build-project-1</artifactId>
+    <artifactId>spring-build-project</artifactId>
     <version>0.0.20-SNAPSHOT</version>
     <modules>
         <module>spring-build-tests</module>
