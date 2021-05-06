@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-daos-microservices-mysql-rws-clients</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.21-SNAPSHOT</version>
+        <version>0.0.21</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
