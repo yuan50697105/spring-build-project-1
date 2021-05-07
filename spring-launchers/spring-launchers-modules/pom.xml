@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-launchers</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.22</version>
+        <version>0.0.23-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,7 +22,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-launchers-dependencies</artifactId>
-                <version>0.0.22</version>
+                <version>0.0.23-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
