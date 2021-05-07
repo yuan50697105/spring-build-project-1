@@ -9,7 +9,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.22-SNAPSHOT</version>
+        <version>0.0.22</version>
     </parent>
     <artifactId>spring-domains-microservices</artifactId>
     <packaging>pom</packaging>
