@@ -12,11 +12,11 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-commons</artifactId>
+            <artifactId>spring-domains-services-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-models-microservices-mysql-patient_2</artifactId>
+            <artifactId>spring-domains-repositories-microservices-mysql-patient_2</artifactId>
         </dependency>
         <!--        <dependency>-->
         <!--            <groupId>org.example.spring</groupId>-->

@@ -14,12 +14,12 @@
         <module>spring-build-admin-server</module>
         <module>spring-plugins</module>
         <module>spring-daos</module>
-        <module>spring-models</module>
-        <module>spring-domains</module>
+        <module>spring-domains-repositories</module>
+        <module>spring-domains-services</module>
         <module>spring-applications</module>
         <module>spring-launchers</module>
         <module>spring-daos-microservices</module>
-        <module>spring-models-microservices</module>
+        <module>spring-domains-repositories-microservices</module>
         <module>spring-domains-microservices</module>
         <module>spring-applications-microservices</module>
         <module>spring-launchers-microservices</module>

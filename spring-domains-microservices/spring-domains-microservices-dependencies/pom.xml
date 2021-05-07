@@ -20,7 +20,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-models-microservices-dependencies</artifactId>
+                <artifactId>spring-domains-repositories-microservices-dependencies</artifactId>
                 <version>0.0.22-SNAPSHOT</version>
                 <scope>import</scope>
                 <type>pom</type>
@@ -57,7 +57,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-models-microservices-mysql-auth_1</artifactId>
+                <artifactId>spring-domains-repositories-microservices-mysql-auth_1</artifactId>
                 <version>0.0.22-SNAPSHOT</version>
             </dependency>
             <dependency>

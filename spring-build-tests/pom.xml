@@ -24,7 +24,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-dependencies</artifactId>
+                <artifactId>spring-domains-services-dependencies</artifactId>
                 <version>0.0.22-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -45,7 +45,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-models-dependencies</artifactId>
+                <artifactId>spring-domains-repositories-dependencies</artifactId>
                 <version>0.0.22-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>

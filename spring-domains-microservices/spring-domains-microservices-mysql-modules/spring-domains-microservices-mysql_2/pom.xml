@@ -12,7 +12,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-commons</artifactId>
+            <artifactId>spring-domains-services-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
@@ -28,7 +28,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-models-microservices-mysql_2</artifactId>
+            <artifactId>spring-domains-repositories-microservices-mysql_2</artifactId>
         </dependency>
         <!--        <dependency>-->
         <!--            <groupId>org.example.spring</groupId>-->

@@ -20,7 +20,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-service_1</artifactId>
+            <artifactId>spring-domains-services_1</artifactId>
         </dependency>
     </dependencies>
 

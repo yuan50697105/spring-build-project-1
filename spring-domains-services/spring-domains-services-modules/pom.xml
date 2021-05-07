@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-domains-services</artifactId>
+        <groupId>org.example.spring</groupId>
+        <version>0.0.22-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-domains-services-modules</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-domains-services-commons</module>
+        <module>spring-domains-services_1</module>
+        <module>spring-domains-services_2</module>
+        <module>spring-domains-services-mysql_1</module>
+        <module>spring-domains-services-mysql_2</module>
+        <module>spring-domains-services-postgresql_1</module>
+        <module>spring-domains-services-postgresql_2</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-services-dependencies</artifactId>
+                <version>0.0.22-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
