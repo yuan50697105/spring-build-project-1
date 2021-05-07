@@ -212,8 +212,8 @@
                         <target>${maven.compiler.target}</target>
                         <encoding>${maven.compiler.encoding}</encoding>
                         <!-- <fork>true</fork> -->
-                        <meminitial>128m</meminitial>
-                        <maxmem>512m</maxmem>
+                        <!-- <meminitial>128m</meminitial> -->
+                        <!-- <maxmem>512m</maxmem> -->
                         <annotationProcessorPaths>
                             <path>
                                 <groupId>org.projectlombok</groupId>
@@ -232,8 +232,8 @@
                             </path>
                         </annotationProcessorPaths>
                         <!-- due to problem in maven-compiler-plugin, for verbose mode add showWarnings -->
-                        <showWarnings>true</showWarnings>
-                        <compilerArgs>
+                        <!-- <showWarnings>true</showWarnings> -->
+                        <!-- <compilerArgs>
                             <arg>
                                 -Amapstruct.suppressGeneratorTimestamp=true
                             </arg>
@@ -243,7 +243,7 @@
                             <arg>
                                 -Amapstruct.verbose=true
                             </arg>
-                        </compilerArgs>
+                        </compilerArgs> -->
                     </configuration>
                 </plugin>
                 <plugin>
