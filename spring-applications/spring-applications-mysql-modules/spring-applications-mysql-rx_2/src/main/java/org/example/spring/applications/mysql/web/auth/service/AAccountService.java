@@ -1,6 +1,7 @@
 package org.example.spring.applications.mysql.web.auth.service;
 
-import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
+
+import org.example.spring.applications.mysql.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
 import org.example.spring.models.mysql.auth.entity.result.Account;
 import org.example.spring.models.mysql.auth.entity.result.AccountDetails;

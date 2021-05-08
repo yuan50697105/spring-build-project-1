@@ -1,15 +1,16 @@
-package org.example.spring.applications.web.auth.service.impl;
+package org.example.spring.applications.mysql.web.auth.service.impl;
+
 
 import cn.hutool.core.lang.Validator;
 import lombok.AllArgsConstructor;
-import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
-import org.example.spring.applications.web.auth.service.AAccountService;
-import org.example.spring.domains.postgresql.auth.service.AccountService;
+import org.example.spring.applications.mysql.web.auth.entity.PhoneMessageDTO;
+import org.example.spring.applications.mysql.web.auth.service.AAccountService;
+import org.example.spring.domains.mysql.auth.service.AccountService;
 import org.example.spring.models.commons.enumerate.UserStatus;
-import org.example.spring.models.postgresql.auth.entity.query.AccountQuery;
-import org.example.spring.models.postgresql.auth.entity.result.Account;
-import org.example.spring.models.postgresql.auth.entity.result.AccountDetails;
-import org.example.spring.models.postgresql.auth.entity.vo.AccountModelVo;
+import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
+import org.example.spring.models.mysql.auth.entity.result.Account;
+import org.example.spring.models.mysql.auth.entity.result.AccountDetails;
+import org.example.spring.models.mysql.auth.entity.vo.AccountModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
