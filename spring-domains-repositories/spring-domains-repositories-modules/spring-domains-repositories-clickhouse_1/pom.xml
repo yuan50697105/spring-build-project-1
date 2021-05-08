@@ -19,10 +19,6 @@
             <groupId>org.example.spring</groupId>
             <artifactId>spring-daos-clickhouse_1</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-daos-minio</artifactId>
-        </dependency>
     </dependencies>
 
 </project>

@@ -70,7 +70,21 @@
                 <artifactId>spring-domains-repositories-clickhouse_2</artifactId>
                 <version>0.0.23-SNAPSHOT</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-repositories-doris_1</artifactId>
+                <version>0.0.23-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-repositories-doris_2</artifactId>
+                <version>0.0.23-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-repositories-kylin</artifactId>
+                <version>0.0.23-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

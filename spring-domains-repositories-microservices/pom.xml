@@ -16,6 +16,10 @@
         <module>spring-domains-repositories-microservices-postgresql-modules</module>
         <module>spring-domains-repositories-microservices-clickhouse-modules</module>
         <module>spring-domains-repositories-microservices-mysql-clients</module>
+        <module>spring-domains-repositories-microservices-doris-modules</module>
+        <module>spring-domains-repositories-microservices-kylin-modules</module>
+        <module>spring-domains-repositories-microservices-mongodb-modules</module>
+        <module>spring-domains-repositories-microservices-elasticsearch-modules</module>
     </modules>
 
     <dependencyManagement>

@@ -19,6 +19,9 @@
         <module>spring-domains-repositories-postgresql_2</module>
         <module>spring-domains-repositories-clickhouse_1</module>
         <module>spring-domains-repositories-clickhouse_2</module>
+        <module>spring-domains-repositories-doris_1</module>
+        <module>spring-domains-repositories-doris_2</module>
+        <module>spring-domains-repositories-kylin</module>
     </modules>
     <dependencyManagement>
         <dependencies>

@@ -11,6 +11,9 @@
         <module>spring-daos-microservices-postgresql-modules</module>
         <module>spring-daos-microservices-postgresql-rws-modules</module>
         <module>spring-daos-microservices-clickhouse-modules</module>
+        <module>spring-daos-microservices-doris-modules</module>
+        <module>spring-daos-microservices-mongodb-modules</module>
+        <module>spring-daos-microservices-elasticsearch-modules</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
