@@ -1,4 +1,4 @@
-package org.example.spring.applications.web.auth.controller;
+package org.example.spring.applications.mysql.web.auth.controller;
 
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;

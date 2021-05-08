@@ -1,13 +1,14 @@
 package org.example.spring.applications.web.auth.controller;
 
+
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.auth.service.DepartmentService;
-import org.example.spring.models.auth.entity.query.DepartmentQuery;
-import org.example.spring.models.auth.entity.result.Department;
-import org.example.spring.models.auth.entity.result.DepartmentDetails;
-import org.example.spring.models.auth.entity.vo.DepartmentModelVo;
+import org.example.spring.domains.mysql.auth.service.DepartmentService;
+import org.example.spring.models.mysql.auth.entity.query.DepartmentQuery;
+import org.example.spring.models.mysql.auth.entity.result.Department;
+import org.example.spring.models.mysql.auth.entity.result.DepartmentDetails;
+import org.example.spring.models.mysql.auth.entity.vo.DepartmentModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

@@ -9,11 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-domains-repositories-doris_1</artifactId>
+    <artifactId>spring-domains-repositories-doris_2</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.example.spring</groupId>
+            <groupId>org.example.spring</groupId>   
             <artifactId>spring-domains-repositories-commons</artifactId>
             <version>0.0.23-SNAPSHOT</version>
         </dependency>

@@ -1,4 +1,4 @@
-package org.example.spring.applications.web.auth.entity;
+package org.example.spring.applications.mysql.web.auth.entity;
 
 import lombok.Data;
 
