@@ -1,4 +1,4 @@
-package org.example.spring.applications.mysql.web;
+package org.example.spring.applications.web;
 
 import org.springframework.context.annotation.Configuration;
 
