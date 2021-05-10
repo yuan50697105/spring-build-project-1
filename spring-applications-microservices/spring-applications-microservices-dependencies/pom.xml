@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-applications-microservices</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.25-SNAPSHOT</version>
+        <version>0.0.25</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -21,29 +21,29 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microservices-dependencies</artifactId>
-                <version>0.0.25-SNAPSHOT</version>
+                <version>0.0.25</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-microservices-mysql-auth-rx_1</artifactId>
-                <version>0.0.25-SNAPSHOT</version>
+                <version>0.0.25</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-microservices-mysql-auth-rx_2</artifactId>
-                <version>0.0.25-SNAPSHOT</version>
+                <version>0.0.25</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-microservices-mysql-auth_1</artifactId>
-                <version>0.0.25-SNAPSHOT</version>
+                <version>0.0.25</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-microservices-mysql-auth_2</artifactId>
-                <version>0.0.25-SNAPSHOT</version>
+                <version>0.0.25</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
