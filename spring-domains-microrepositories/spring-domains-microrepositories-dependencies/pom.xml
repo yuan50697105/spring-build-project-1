@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-domains-microrepositories</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.25</version>
+        <version>0.0.26-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,88 +14,88 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-dependencies</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-microservices-dependencies</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-mysql-auth_1</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-mysql-auth_2</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-mysql-customer_1</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-mysql-customer_2</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-mysql-patient_1</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-mysql-patient_2</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-mysql_1</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-mysql_2</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-client-api</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-mysql-clients_1</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-mysql-clients_2</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-mysql-clients-auth_1</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-microrepositories-mysql-clients-auth_2</artifactId>
-                <version>0.0.25</version>
+                <version>0.0.26-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

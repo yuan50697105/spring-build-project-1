@@ -5,7 +5,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.25</version>
+        <version>0.0.26-SNAPSHOT</version>
     </parent>
 
     <artifactId>spring-build-admin-server</artifactId>
