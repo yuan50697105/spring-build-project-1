@@ -22,7 +22,6 @@
         <module>spring-domains-repositories-microservices</module>
         <module>spring-domains-microservices</module>
         <module>spring-applications-microservices</module>
-        <module>spring-launchers-microservices</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
