@@ -28,7 +28,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-repositories-microservices-mysql_1</artifactId>
+            <artifactId>spring-domains-microrepositories-mysql_1</artifactId>
         </dependency>
         <!--        <dependency>-->
         <!--            <groupId>org.example.spring</groupId>-->

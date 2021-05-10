@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-domains-microrepositories</artifactId>
+        <groupId>org.example.spring</groupId>
+        <version>0.0.25-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-domains-microrepositories-mysql-modules</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-domains-microrepositories-mysql-auth_1</module>
+        <module>spring-domains-microrepositories-mysql-auth_2</module>
+        <module>spring-domains-microrepositories-mysql-customer_1</module>
+        <module>spring-domains-microrepositories-mysql-customer_2</module>
+        <module>spring-domains-microrepositories-mysql-patient_1</module>
+        <module>spring-domains-microrepositories-mysql-patient_2</module>
+        <module>spring-domains-microrepositories-mysql_1</module>
+        <module>spring-domains-microrepositories-mysql_2</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-microrepositories-dependencies</artifactId>
+                <version>0.0.25-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-domains-microrepositories-client-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-daos-minio</artifactId>
+        </dependency>
+    </dependencies>
+</project>

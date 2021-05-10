@@ -4,6 +4,7 @@
     <modules>
         <module>spring-applications-microservices-dependencies</module>
         <module>spring-applications-microservices-mysql-modules</module>
+        <module>spring-applications-microservices-client-api</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
