@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-domains-repositories</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.24-SNAPSHOT</version>
+        <version>0.0.25-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -28,7 +28,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-dependencies</artifactId>
-                <version>0.0.24-SNAPSHOT</version>
+                <version>0.0.25-SNAPSHOT</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
