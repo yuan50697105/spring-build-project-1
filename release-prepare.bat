@@ -1,0 +1,1 @@
+call mvn release:prepare-with-pom -B -fn
