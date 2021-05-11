@@ -1,10 +1,10 @@
 package org.example.spring.applications.web.auth.service;
 
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
-import org.example.spring.models.auth.entity.query.AccountQuery;
-import org.example.spring.models.auth.entity.result.Account;
-import org.example.spring.models.auth.entity.result.AccountDetails;
-import org.example.spring.models.auth.entity.vo.AccountModelVo;
+import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
+import org.example.spring.models.mysql.auth.entity.result.Account;
+import org.example.spring.models.mysql.auth.entity.result.AccountDetails;
+import org.example.spring.models.mysql.auth.entity.vo.AccountModelVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
