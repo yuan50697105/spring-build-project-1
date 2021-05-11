@@ -1,7 +1,6 @@
-package org.example.spring.applications.web.auth.service;
+package org.example.spring.domains.mysql.auth.service;
 
-
-import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
+import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
 import org.example.spring.models.mysql.auth.entity.result.Account;
 import org.example.spring.models.mysql.auth.entity.result.AccountDetails;
@@ -10,10 +9,10 @@ import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 
-public interface AAccountService {
+public interface AccountService {
     IPageData<Account> queryPage(AccountQuery query);
 
-    List<Account> queryList(AccountQuery withSize);
+    List<Account> queryList(AccountQuery query);
 
     Account queryOne(AccountQuery query);
 
@@ -23,9 +22,7 @@ public interface AAccountService {
 
     void update(AccountModelVo formVo);
 
-    void delete(List<Long> list);
+    void delete(List<Long> ids);
 
-    void updateStatus(String status, List<Long> list);
-
-    void sendMessage(PhoneMessageDTO phoneMessageDTO);
+    void updateStatusByIds(UserStatus status, List<Long> ids);
 }
