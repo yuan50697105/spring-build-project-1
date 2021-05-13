@@ -13,35 +13,24 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-daos-commons</artifactId>
+            <artifactId>spring-micro-daos-mysql-rws-commons_1</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-plugins-mybatis-rws_1</artifactId>
+            <artifactId>spring-micro-daos-mysql-rws-auth_1</artifactId>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-daos-mysql-rws-customer_1</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-daos-mysql-rws-items_1</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-cache</artifactId>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-daos-mysql-rws-patient_1</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.github.liuanxin</groupId>
-            <artifactId>mybatis-redis-cache</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-        </dependency>
-
-
     </dependencies>
 
 </project>

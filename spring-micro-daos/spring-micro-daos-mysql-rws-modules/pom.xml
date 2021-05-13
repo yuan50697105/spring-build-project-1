@@ -21,12 +21,20 @@
         </dependencies>
     </dependencyManagement>
     <modules>
+        <module>spring-micro-daos-mysql-rws-commons_1</module>
+        <module>spring-micro-daos-mysql-rws-commons_2</module>
         <module>spring-micro-daos-mysql-rws_1</module>
         <module>spring-micro-daos-mysql-rws_2</module>
         <module>spring-micro-daos-mysql-rws-auth_1</module>
         <module>spring-micro-daos-mysql-rws-auth_2</module>
         <module>spring-micro-daos-mysql-rws-patient_1</module>
         <module>spring-micro-daos-mysql-rws-patient_2</module>
+        <module>spring-micro-daos-mysql-rws-customer_1</module>
+        <module>spring-micro-daos-mysql-rws-customer_2</module>
+        <module>spring-micro-daos-mysql-rws-items_1</module>
+        <module>spring-micro-daos-mysql-rws-items_2</module>
+        <module>spring-micro-daos-mysql-rws-report_1</module>
+        <module>spring-micro-daos-mysql-rws-report_2</module>
     </modules>
     <dependencies>
         <dependency>

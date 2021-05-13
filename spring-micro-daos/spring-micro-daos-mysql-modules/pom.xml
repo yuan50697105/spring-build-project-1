@@ -10,6 +10,10 @@
     <artifactId>spring-micro-daos-mysql-modules</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>spring-micro-daos-mysql-commons_1</module>
+        <module>spring-micro-daos-mysql-commons_2</module>
+        <module>spring-micro-daos-mysql_1</module>
+        <module>spring-micro-daos-mysql_2</module>
         <module>spring-micro-daos-mysql-auth_1</module>
         <module>spring-micro-daos-mysql-auth_2</module>
         <module>spring-micro-daos-mysql-customer_1</module>
@@ -22,8 +26,7 @@
         <module>spring-micro-daos-mysql-report_2</module>
         <module>spring-micro-daos-mysql-bill_1</module>
         <module>spring-micro-daos-mysql-bill_2</module>
-        <module>spring-micro-daos-mysql_1</module>
-        <module>spring-micro-daos-mysql_2</module>
+
     </modules>
     <dependencyManagement>
         <dependencies>
