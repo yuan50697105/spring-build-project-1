@@ -23,8 +23,8 @@
     <modules>
         <module>spring-micro-daos-mysql-rws_1</module>
         <module>spring-micro-daos-mysql-rws_2</module>
-        <module>spring-micro-daos-mysql-auth-rws_1</module>
-        <module>spring-micro-daos-mysql-auth-rws_2</module>
+        <module>spring-micro-daos-mysql-rws-auth_1</module>
+        <module>spring-micro-daos-mysql-rws-auth_2</module>
         <module>spring-micro-daos-mysql-rws-patient_1</module>
         <module>spring-micro-daos-mysql-rws-patient_2</module>
     </modules>
