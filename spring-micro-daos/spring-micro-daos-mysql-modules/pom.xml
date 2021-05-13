@@ -18,10 +18,12 @@
         <module>spring-micro-daos-mysql-items_2</module>
         <module>spring-micro-daos-mysql-patient_1</module>
         <module>spring-micro-daos-mysql-patient_2</module>
-        <module>spring-micro-daos-mysql_1</module>
-        <module>spring-micro-daos-mysql_2</module>
         <module>spring-micro-daos-mysql-report_1</module>
         <module>spring-micro-daos-mysql-report_2</module>
+        <module>spring-micro-daos-mysql-bill_1</module>
+        <module>spring-micro-daos-mysql-bill_2</module>
+        <module>spring-micro-daos-mysql_1</module>
+        <module>spring-micro-daos-mysql_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

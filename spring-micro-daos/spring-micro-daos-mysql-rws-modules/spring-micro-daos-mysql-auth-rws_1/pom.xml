@@ -35,15 +35,11 @@
         <dependency>
             <groupId>com.github.liuanxin</groupId>
             <artifactId>mybatis-redis-cache</artifactId>
-            <version>1.2.7</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.github.chris2018998</groupId>
-            <artifactId>beecp-spring-boot-starter</artifactId>
-        </dependency>
+
     </dependencies>
 </project>

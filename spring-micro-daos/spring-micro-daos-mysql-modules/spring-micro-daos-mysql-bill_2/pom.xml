@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-daos-modules</artifactId>
+        <artifactId>spring-micro-daos-mysql-modules</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.26-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-daos-clickhouse_1</artifactId>
+    <artifactId>spring-micro-daos-mysql-bill_2</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
@@ -15,11 +16,11 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-plugins-mybatis_1</artifactId>
+            <artifactId>spring-plugins-mybatis_2</artifactId>
         </dependency>
         <dependency>
-            <groupId>ru.yandex.clickhouse</groupId>
-            <artifactId>clickhouse-jdbc</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -38,6 +39,7 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
         </dependency>
+
 
     </dependencies>
 
