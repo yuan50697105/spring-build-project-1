@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>spring-micro-daos-dependencies</module>
+        <module>spring-micro-daos-client-api</module>
+        <module>spring-micro-daos-mysql-modules</module>
+        <module>spring-micro-daos-mysql-rws-modules</module>
+        <module>spring-micro-daos-mysql-clients</module>
+        <module>spring-micro-daos-mysql-rws-clients</module>
+        <module>spring-micro-daos-postgresql-modules</module>
+        <module>spring-micro-daos-postgresql-rws-modules</module>
+        <module>spring-micro-daos-clickhouse-modules</module>
+        <module>spring-micro-daos-doris-modules</module>
+        <module>spring-micro-daos-mongodb-modules</module>
+        <module>spring-micro-daos-elasticsearch-modules</module>
+    </modules>
+    <parent>
+        <artifactId>spring-build-project</artifactId>
+        <groupId>org.example.spring</groupId>
+        <version>0.0.26-SNAPSHOT</version>
+    </parent>
+    <artifactId>spring-micro-daos</artifactId>
+    <packaging>pom</packaging>
+
+</project>

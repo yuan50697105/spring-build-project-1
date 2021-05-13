@@ -18,10 +18,10 @@
         <module>spring-domains-services</module>
         <module>spring-applications</module>
         <module>spring-launchers</module>
-        <module>spring-daos-microservices</module>
-        <module>spring-domains-microrepositories</module>
-        <module>spring-domains-microservices</module>
-        <module>spring-applications-microservices</module>
+        <module>spring-micro-daos</module>
+        <module>spring-domains-micro-repositories</module>
+        <module>spring-domains-micro-services</module>
+        <module>spring-micro-applications</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
