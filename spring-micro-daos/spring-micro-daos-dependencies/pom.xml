@@ -230,6 +230,26 @@
                 <artifactId>spring-micro-daos-mysql-rws-clients-patient_2</artifactId>
                 <version>0.0.27-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-rws-report_1</artifactId>
+                <version>0.0.27-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-rws-report_2</artifactId>
+                <version>0.0.27-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-rws-bill_1</artifactId>
+                <version>0.0.27-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-rws-bill_2</artifactId>
+                <version>0.0.27-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
