@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-daos-mysql-rws-modules</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.26-SNAPSHOT</version>
+        <version>0.0.26</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
