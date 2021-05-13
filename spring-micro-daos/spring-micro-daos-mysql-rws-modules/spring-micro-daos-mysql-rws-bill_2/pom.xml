@@ -8,12 +8,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-micro-daos-mysql-rws-bill_1</artifactId>
+    <artifactId>spring-micro-daos-mysql-rws-bill_2</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-mysql-rws-commons_1</artifactId>
+            <artifactId>spring-micro-daos-mysql-rws-commons_2</artifactId>
         </dependency>
     </dependencies>
 </project>
