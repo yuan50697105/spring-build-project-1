@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-domains-micro-services</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.27</version>
+        <version>0.0.28-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,61 +14,61 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-dependencies</artifactId>
-                <version>0.0.27</version>
+                <version>0.0.28-SNAPSHOT</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
-                <version>0.0.27</version>
+                <version>0.0.28-SNAPSHOT</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-mysql-auth_1</artifactId>
-                <version>0.0.27</version>
+                <version>0.0.28-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-mysql-auth_2</artifactId>
-                <version>0.0.27</version>
+                <version>0.0.28-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-mysql-customer_1</artifactId>
-                <version>0.0.27</version>
+                <version>0.0.28-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-mysql-customer_2</artifactId>
-                <version>0.0.27</version>
+                <version>0.0.28-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-mysql-patient_1</artifactId>
-                <version>0.0.27</version>
+                <version>0.0.28-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-mysql-patient_2</artifactId>
-                <version>0.0.27</version>
+                <version>0.0.28-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-mysql-auth_1</artifactId>
-                <version>0.0.27</version>
+                <version>0.0.28-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-mysql_1</artifactId>
-                <version>0.0.27</version>
+                <version>0.0.28-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-mysql_2</artifactId>
-                <version>0.0.27</version>
+                <version>0.0.28-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
