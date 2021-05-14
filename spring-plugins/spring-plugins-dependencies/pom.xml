@@ -236,7 +236,12 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
-                <version>${druid-spring-boot-starter.version}</version>
+                <version>${druid-datasource}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid-datasource}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.chris2018998</groupId>
@@ -361,32 +366,32 @@
         <mybatis-plus.version>3.4.2</mybatis-plus.version>
         <jsqlparser.version>4.0</jsqlparser.version>
         <mybatis-plus-batch-spring-boot-starter.version>1.2</mybatis-plus-batch-spring-boot-starter.version>
-        <hutool-all.version>5.6.4</hutool-all.version>
-        <cos_api.version>5.6.39</cos_api.version>
+        <hutool-all.version>5.6.5</hutool-all.version>
+        <cos_api.version>5.6.40</cos_api.version>
         <minio-spring-boot-starter.version>1.0.1.RELEASE</minio-spring-boot-starter.version>
         <qcloudcos-spring-boot-starter.version>1.0.1</qcloudcos-spring-boot-starter.version>
         <rocketmq-spring-boot-starter.version>2.2.0</rocketmq-spring-boot-starter.version>
-        <dynamic-datasource-spring-boot-starter.version>3.3.2</dynamic-datasource-spring-boot-starter.version>
+        <dynamic-datasource-spring-boot-starter.version>3.3.3</dynamic-datasource-spring-boot-starter.version>
         <knife4j-dependencies.version>3.0.2</knife4j-dependencies.version>
         <clickhouse-jdbc.version>0.3.1</clickhouse-jdbc.version>
         <p6spy-spring-boot-starter.version>1.7.1</p6spy-spring-boot-starter.version>
         <wx-java.version>4.0.8.B</wx-java.version>
         <payment-spring-boot-starter.version>1.0.10.RELEASE</payment-spring-boot-starter.version>
-        <druid-spring-boot-starter.version>1.2.6</druid-spring-boot-starter.version>
+        <druid-datasource>1.2.6</druid-datasource>
         <beecp-spring-boot-starter.version>1.5.5</beecp-spring-boot-starter.version>
         <IJPay-All.version>2.7.4</IJPay-All.version>
         <nacos-spring.version>0.2.7</nacos-spring.version>
         <apollo-client.version>1.8.0</apollo-client.version>
-        <redisson-spring-boot-starter.version>3.15.4</redisson-spring-boot-starter.version>
+        <redisson-spring-boot-starter.version>3.15.5</redisson-spring-boot-starter.version>
         <core.version>3.4.1</core.version>
         <SnowFlake-spring-boot-starter.version>2.0.1</SnowFlake-spring-boot-starter.version>
         <fastjson.version>1.2.76</fastjson.version>
         <sharding-jdbc.version>4.1.1</sharding-jdbc.version>
         <seata.version>1.4.2</seata.version>
-        <sagacity-sqltoy-starter.version>4.18.18</sagacity-sqltoy-starter.version>
+        <sagacity-sqltoy-starter.version>4.18.20</sagacity-sqltoy-starter.version>
         <easyjdbc-spring-boot-starter.version>2.0.4</easyjdbc-spring-boot-starter.version>
-        <dubbo-spring-boot-starter.version>2.7.10</dubbo-spring-boot-starter.version>
-        <rxjava.version>3.0.13-RC2</rxjava.version>
+        <dubbo-spring-boot-starter.version>2.7.11</dubbo-spring-boot-starter.version>
+        <rxjava.version>3.0.13-RC4</rxjava.version>
         <mybatis-spring-boot-starter.version>2.1.4</mybatis-spring-boot-starter.version>
         <kylin-jdbc.version>4.0.0-beta</kylin-jdbc.version>
         <mybatis-redis-cache.version>1.2.7</mybatis-redis-cache.version>

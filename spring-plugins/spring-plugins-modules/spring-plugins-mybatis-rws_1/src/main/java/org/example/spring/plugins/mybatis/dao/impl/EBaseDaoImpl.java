@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.ReflectionKit;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
 import com.github.pagehelper.PageHelper;
@@ -55,7 +56,7 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     @Override
     public List<T> queryList(Q query) {
         Wrapper<T> wrapper = queryWrapper(query);
-        if (wrapper == null) {
+        if (wrapper == null || wrapper.equals(Wrappers.emptyWrapper())) {
             E example = query.toExample();
             example = exampleAddOrder(query, example);
             return baseMapper.selectByExample(example);
@@ -78,7 +79,7 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     @Override
     public IPageData<T> queryPage(Q query) {
         Wrapper<T> wrapper = queryWrapper(query);
-        if (wrapper == null) {
+        if (wrapper == null || wrapper.equals(Wrappers.emptyWrapper())) {
             PageHelper.startPage(query.getPage(), query.getSize());
             E example = query.toExample();
             example = exampleAddOrder(query, example);
@@ -93,44 +94,25 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     @Override
     @Deprecated
     public List<T> queryTop(Q query, Integer size) {
-        Wrapper<T> wrapper = queryWrapper(query);
-        if (wrapper == null) {
-            PageHelper.startPage(1, size);
-            E example = query.toExample();
-            example = exampleAddOrder(query, example);
-            return baseMapper.selectByExample(example);
-        } else {
-            PageHelper.startPage(query.getPage(), query.getSize());
-            wrapper = wrapperAddOrder(query, wrapper);
-            return PageInfo.of(list(wrapper)).getList();
-        }
+        return queryTop((Q) query.withSize(size));
     }
 
     @Override
     public List<T> queryTop(Q query) {
-        Wrapper<T> wrapper = queryWrapper(query);
-        if (wrapper == null) {
-            PageHelper.startPage(1, query.getSize());
-            E example = query.toExample();
-            example = exampleAddOrder(query, example);
-            return baseMapper.selectByExample(example);
-        } else {
-            PageHelper.startPage(query.getPage(), query.getSize());
-            wrapper = wrapperAddOrder(query, wrapper);
-            return PageInfo.of(list(wrapper)).getList();
-        }
+
+        return queryPage((Q) query.withPage(1)).getData();
     }
 
     @Override
     public Optional<T> queryFirst(Q query) {
-        return queryTop(query, 1).stream().findFirst();
+        return queryTop((Q) query.withPage(1).withSize(1)).stream().findFirst();
     }
 
 
     @Override
     public T queryOne(Q query) {
         Wrapper<T> wrapper = queryWrapper(query);
-        if (wrapper == null) {
+        if (wrapper == null || wrapper.equals(Wrappers.emptyWrapper())) {
             PageHelper.startPage(query.getPage(), query.getSize());
             E example = query.toExample();
             return baseMapper.selectOneByExample(example);
@@ -141,14 +123,7 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
 
     @Override
     public Optional<T> queryOneOpt(Q query) {
-        Wrapper<T> wrapper = queryWrapper(query);
-        if (wrapper == null) {
-            PageHelper.startPage(query.getPage(), query.getSize());
-            E example = query.toExample();
-            return Optional.ofNullable(baseMapper.selectOneByExample(example));
-        } else {
-            return Optional.ofNullable(getOne(wrapper));
-        }
+        return Optional.ofNullable(queryOne(query));
     }
 
     protected E exampleAddOrder(Q query, E example) {

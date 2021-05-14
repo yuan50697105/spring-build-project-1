@@ -18,6 +18,21 @@ public class BaseQuery extends BaseEntity {
         return this;
     }
 
+    public BaseQuery withPage(Integer page) {
+        setPage(page);
+        return this;
+    }
+
+    public BaseQuery withOrder(String order) {
+        setOrder(order);
+        return this;
+    }
+
+    public BaseQuery withOrderType(OrderTypeEnum orderType) {
+        setOrderType(orderType);
+        return this;
+    }
+
     public void addDefault() {
         this.page = ObjectUtil.isNotEmpty(this.page) ? this.page : 1;
         this.size = ObjectUtil.isNotEmpty(this.size) ? this.size : 20;
