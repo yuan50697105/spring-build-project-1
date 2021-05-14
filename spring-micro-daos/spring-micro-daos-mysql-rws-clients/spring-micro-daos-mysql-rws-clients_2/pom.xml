@@ -12,7 +12,19 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-daos-mysql-rws-clients-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-daos-mysql-rws_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-daos-mysql-rws-clients-auth_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-daos-mysql-rws-clients-patient_2</artifactId>
         </dependency>
     </dependencies>
 

@@ -1,8 +1,12 @@
 package org.example.spring.daos.mysql.bill.table.enumerate;
 
 import cn.hutool.core.util.EnumUtil;
+import lombok.Getter;
+
+import java.util.Optional;
 
 
+@Getter
 public enum BillLogType {
     /**
      * 付款
@@ -27,15 +31,15 @@ public enum BillLogType {
         return EnumUtil.likeValueOf(BillLogType.class, value);
     }
 
-    public String getValue() {
-        return value;
+    public static String getValue(String value) {
+        return Optional.ofNullable(get(value)).map(BillLogType::getValue).orElse(null);
     }
 
-    public String getCode() {
-        return code;
+    public static String getCode(String code) {
+        return Optional.ofNullable(get(code)).map(BillLogType::getCode).orElse(null);
     }
 
-    public String getName() {
-        return name;
+    public static String getName(String name) {
+        return Optional.ofNullable(get(name)).map(BillLogType::getName).orElse(null);
     }
 }

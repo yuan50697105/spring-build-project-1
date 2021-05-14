@@ -1,7 +1,11 @@
 package org.example.spring.daos.mysql.bill.table.enumerate;
 
 import cn.hutool.core.util.EnumUtil;
+import lombok.Getter;
 
+import java.util.Optional;
+
+@Getter
 public enum BillSubInfoStatus {
     PENDING_PAYMENT("1", "待付款"),
     PAID("2", "已付款"),
@@ -20,11 +24,12 @@ public enum BillSubInfoStatus {
         return EnumUtil.likeValueOf(BillSubInfoStatus.class, value);
     }
 
-    public String getValue() {
-        return value;
+    public static String getValue(String value) {
+        return Optional.ofNullable(get(value)).map(BillSubInfoStatus::getValue).orElse(null);
     }
 
-    public String getName() {
-        return name;
+
+    public static String getName(String name) {
+        return Optional.ofNullable(get(name)).map(BillSubInfoStatus::getName).orElse(null);
     }
 }
