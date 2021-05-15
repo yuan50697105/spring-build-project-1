@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.example.spring.daos.mysql.auth.table.enumerate.TUserStatus;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
 import javax.persistence.Table;
@@ -48,6 +49,8 @@ public class TUser extends IBaseEntity implements Serializable {
 
     /**
      * 状态
+     *
+     * @see TUserStatus
      */
     @ApiModelProperty(value = "状态")
     private String status;
