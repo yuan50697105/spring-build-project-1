@@ -1,7 +1,7 @@
 package org.example.spring.daos.mysql.auth.dao.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.auth.dao.UserResourceDao;
+import org.example.spring.daos.mysql.auth.dao.TUserResourceDao;
 import org.example.spring.daos.mysql.auth.mapper.UserResourceMapper;
 import org.example.spring.daos.mysql.auth.table.po.TResource;
 import org.springframework.stereotype.Repository;
@@ -12,11 +12,11 @@ import java.util.List;
 @Repository
 @AllArgsConstructor
 @Transactional
-public class UserResourceDaoImpl implements UserResourceDao {
+public class TUserResourceDaoImpl implements TUserResourceDao {
     private final UserResourceMapper userResourceMapper;
 
     @Override
-    public List<TResource> listPermissionByUserId(Long userId) {
+    public List<TResource> listResourceByUserId(Long userId) {
         return userResourceMapper.listPermissionByUserId(userId);
     }
 }

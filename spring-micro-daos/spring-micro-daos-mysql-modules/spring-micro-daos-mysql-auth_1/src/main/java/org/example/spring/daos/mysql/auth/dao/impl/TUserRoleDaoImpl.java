@@ -3,7 +3,7 @@ package org.example.spring.daos.mysql.auth.dao.impl;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.auth.builder.UserRoleBuilder;
+import org.example.spring.daos.mysql.auth.builder.TUserRoleBuilder;
 import org.example.spring.daos.mysql.auth.dao.TUserRoleDao;
 import org.example.spring.daos.mysql.auth.mapper.TRoleMapper;
 import org.example.spring.daos.mysql.auth.mapper.TUserMapper;
@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Transactional
 public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, TUserRoleMapper> implements TUserRoleDao {
-    private final UserRoleBuilder builder;
+    private final TUserRoleBuilder builder;
     private final TUserMapper userMapper;
     private final TRoleMapper roleMapper;
 
