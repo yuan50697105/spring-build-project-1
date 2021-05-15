@@ -62,7 +62,7 @@ public class RoleDaoClientImpl implements RoleDaoClient {
     @Override
     public List<RoleVo> list(RoleQuery query) {
         TRoleQuery roleQuery = authClientBuilder.createForQuery(query);
-        List<TRole> list = roleDao.queryTop(roleQuery, roleQuery.getSize());
+        List<TRole> list = roleDao.queryTop(roleQuery);
         return authClientBuilder.createForGetRole(list);
 
     }

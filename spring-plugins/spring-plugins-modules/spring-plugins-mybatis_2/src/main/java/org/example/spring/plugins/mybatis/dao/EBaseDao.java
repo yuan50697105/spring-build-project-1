@@ -20,14 +20,17 @@ public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
 
     List<T> queryList(Q query);
 
+    List<T> selectList(Q query);
+
     Stream<T> queryListStream(Q query);
+
+    Stream<T> selectListStream(Q query);
 
     Stream<T> queryTopStream(Q query);
 
     IPageData<T> queryPage(Q query);
 
-    @Deprecated
-    List<T> queryTop(Q query, Integer size);
+    IPageData<T> selectPage(Q query);
 
     List<T> queryTop(Q query);
 
@@ -38,6 +41,8 @@ public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
     T queryOne(Q query);
 
     Optional<T> queryOneOpt(Q query);
+
+    Optional<T> selectOneOpt(Q query);
 
     boolean update(T t);
 

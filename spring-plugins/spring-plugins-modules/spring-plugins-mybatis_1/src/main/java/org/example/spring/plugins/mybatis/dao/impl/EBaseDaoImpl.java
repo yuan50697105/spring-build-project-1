@@ -17,14 +17,12 @@ import org.example.spring.plugins.mybatis.dao.EBaseDao;
 import org.example.spring.plugins.mybatis.entity.query.EBaseQuery;
 import org.example.spring.plugins.mybatis.entity.result.IPageResult;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
-import org.springframework.scheduling.annotation.Async;
 
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 /**
@@ -61,13 +59,27 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public List<T> selectList(Q query) {
+        return queryList(query);
+    }
+
+    @Override
     public Stream<T> queryListStream(Q query) {
         return queryList(query).stream();
     }
 
     @Override
+    public Stream<T> selectListStream(Q query) {
+        return queryListStream(query);
+    }
+
+    @Override
     public Stream<T> queryTopStream(Q query) {
         return queryTop(query).stream();
+    }
+
+    public Stream<T> selectTopStream(Q query) {
+        return queryTopStream(query);
     }
 
     @Override
@@ -86,15 +98,17 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
-    @Deprecated
-    public List<T> queryTop(Q query, Integer size) {
-        return queryTop((Q) query.withSize(size));
+    public IPageData<T> selectPage(Q query) {
+        return queryPage(query);
     }
 
     @Override
     public List<T> queryTop(Q query) {
-
         return queryPage((Q) query.withPage(1)).getData();
+    }
+
+    public List<T> selectTop(Q query) {
+        return queryTop(query);
     }
 
     @Override
@@ -102,11 +116,18 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
         return queryTop((Q) query.withPage(1).withSize(1)).stream().findFirst();
     }
 
+    public Optional<T> selectFirstOpt(Q query) {
+        return queryFirstOpt(query);
+    }
+
     @Override
     public T queryFirst(Q query) {
         return queryFirstOpt(query).orElse(null);
     }
 
+    public T selectFirst(Q query) {
+        return queryFirst(query);
+    }
 
     @Override
     public T queryOne(Q query) {
@@ -120,9 +141,18 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
         }
     }
 
+    public T selectOne(Q query) {
+        return queryOne(query);
+    }
+
     @Override
     public Optional<T> queryOneOpt(Q query) {
         return Optional.ofNullable(queryOne(query));
+    }
+
+    @Override
+    public Optional<T> selectOneOpt(Q query) {
+        return queryOneOpt(query);
     }
 
     protected E exampleAddOrder(Q query, E example) {

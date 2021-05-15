@@ -69,7 +69,7 @@ public class SalesRecordRepositoryImpl extends IBaseRepositoryImpl<SalesRecord, 
     @Override
     public List<SalesRecord> queryList(SalesRecordQuery salesRecordQuery) {
         TSalesRecordQuery query = customerModelBuilder.buildCustomerSalesRecordQuery(salesRecordQuery);
-        List<TSalesRecord> data = salesRecordDao.queryTop(query, query.getSize());
+        List<TSalesRecord> data = salesRecordDao.queryTop(query);
         return customerModelBuilder.buildCustomerSalesRecord(data);
     }
 
