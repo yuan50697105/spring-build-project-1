@@ -19,6 +19,12 @@
         <module>spring-micro-daos-mysql-clients-patient_2</module>
         <module>spring-micro-daos-mysql-clients-customer_1</module>
         <module>spring-micro-daos-mysql-clients-customer_2</module>
+        <module>spring-micro-daos-mysql-clients-items_1</module>
+        <module>spring-micro-daos-mysql-clients-items_2</module>
+        <module>spring-micro-daos-mysql-clients-bill_1</module>
+        <module>spring-micro-daos-mysql-clients-bill_2</module>
+        <module>spring-micro-daos-mysql-clients-report_1</module>
+        <module>spring-micro-daos-mysql-clients-report_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

@@ -217,6 +217,36 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-clients-items_1</artifactId>
+                <version>0.0.28-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-clients-items_2</artifactId>
+                <version>0.0.28-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-clients-bill_1</artifactId>
+                <version>0.0.28-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-clients-bill_2</artifactId>
+                <version>0.0.28-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-clients-report_1</artifactId>
+                <version>0.0.28-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-clients-report_2</artifactId>
+                <version>0.0.28-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-mysql-rws-clients-commons</artifactId>
                 <version>0.0.28-SNAPSHOT</version>
             </dependency>
