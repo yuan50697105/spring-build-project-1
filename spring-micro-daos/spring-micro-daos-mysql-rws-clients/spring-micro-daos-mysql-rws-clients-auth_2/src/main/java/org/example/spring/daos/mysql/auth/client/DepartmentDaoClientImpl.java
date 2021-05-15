@@ -75,13 +75,13 @@ public class DepartmentDaoClientImpl implements DepartmentDaoClient {
 
     @Override
     public List<DepartmentVo> list(DepartmentQuery query) {
-        List<TDepartment> list = departmentDao.queryTop(authClientBuilder.createForQuery(query), query.getSize());
+        List<TDepartment> list = departmentDao.queryTop(authClientBuilder.createForQuery(query));
         return authClientBuilder.createForGetDepartment(list);
     }
 
     @Override
     public Optional<DepartmentVo> one(DepartmentQuery query) {
-        Optional<TDepartment> optional = departmentDao.queryFirst(authClientBuilder.createForQuery(query));
+        Optional<TDepartment> optional = departmentDao.queryFirstOpt(authClientBuilder.createForQuery(query));
         return Optional.ofNullable(authClientBuilder.createForGetDepartment(optional.orElse(null)));
     }
 

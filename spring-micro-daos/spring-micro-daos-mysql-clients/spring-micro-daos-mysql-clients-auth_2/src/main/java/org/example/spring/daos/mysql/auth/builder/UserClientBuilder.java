@@ -13,6 +13,7 @@ import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -30,9 +31,10 @@ public interface UserClientBuilder {
 
     List<RoleDTO> buildRoleDTO(List<TRoleDTO> tRoleDTO);
 
+    @Mapping(target = "roleIds", ignore = true)
     UserDTO buildUserDTO(TUserDTO userDTO);
 
-    List<UserDTO> buildListDTO(List<TUserDTO> userDTOS);
+    List<UserDTO> buildListDTOs(List<TUserDTO> userDTOS);
 
     Stream<UserDTO> buildDTOStream(Stream<TUserDTO> dtoStream);
 

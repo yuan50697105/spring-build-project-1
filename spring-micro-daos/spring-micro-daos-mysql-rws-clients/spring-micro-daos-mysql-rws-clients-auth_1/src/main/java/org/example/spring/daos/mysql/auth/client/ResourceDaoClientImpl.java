@@ -65,7 +65,7 @@ public class ResourceDaoClientImpl implements ResourceDaoClient {
     @Override
     public List<ResourceVo> list(ResourceQuery query) {
         TResourceQuery resourceQuery = authClientBuilder.createForQuery(query);
-        List<TResource> resourceList = resourceDao.queryTop(resourceQuery, resourceQuery.getSize());
+        List<TResource> resourceList = resourceDao.queryTop(resourceQuery);
         return authClientBuilder.createForGetResource(resourceList);
     }
 

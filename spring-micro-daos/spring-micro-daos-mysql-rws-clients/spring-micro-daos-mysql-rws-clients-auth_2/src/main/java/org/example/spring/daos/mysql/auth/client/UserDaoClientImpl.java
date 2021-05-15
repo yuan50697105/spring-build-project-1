@@ -2,15 +2,23 @@ package org.example.spring.daos.mysql.auth.client;
 
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
+import org.example.spring.daos.mysql.auth.builder.TRoleBuilder;
+import org.example.spring.daos.mysql.auth.builder.TUserBuilder;
+import org.example.spring.daos.mysql.auth.builder.TUserRoleBuilder;
 import org.example.spring.daos.mysql.auth.builder.UserClientBuilder;
+import org.example.spring.daos.mysql.auth.dao.TRoleDao;
 import org.example.spring.daos.mysql.auth.dao.TUserDao;
 import org.example.spring.daos.mysql.auth.dao.TUserRoleDao;
-import org.example.spring.daos.mysql.auth.entity.vo.UserVo;
 import org.example.spring.daos.mysql.auth.entity.dto.UserDTO;
+import org.example.spring.daos.mysql.auth.entity.dto.UserRoleDTO;
 import org.example.spring.daos.mysql.auth.entity.query.UserQuery;
+import org.example.spring.daos.mysql.auth.entity.vo.UserVo;
+import org.example.spring.daos.mysql.auth.table.dto.TRoleDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.daos.mysql.auth.table.po.TRole;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
-import org.example.spring.daos.mysql.auth.table.po.TUserRole;
 import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
+import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,28 +31,31 @@ import java.util.stream.Stream;
 @AllArgsConstructor
 public class UserDaoClientImpl implements UserDaoClient {
     private final UserClientBuilder builder;
+    private final TUserBuilder userBuilder;
+    private final TUserRoleBuilder userRoleBuilder;
+    private final TRoleBuilder roleBuilder;
     private final TUserDao userDao;
+    private final TRoleDao roleDao;
     private final TUserRoleDao userRoleDao;
 
 
     @Override
-    public void save(UserVo userVo) {
-        TUser entity = builder.build(userVo);
+    public void save(UserVo user) {
+        TUserVo userVo = builder.buildVO(user);
+        TUser entity = userVo.toUser();
         userDao.save(entity);
-        List<TUserRole> entityList = builder.build(userVo.getRoleIds(), entity.getId());
-        userRoleDao.saveBatch(entityList);
+        userRoleDao.saveBatch(userVo.toRoles(entity.getId()));
     }
 
     @Override
-    public void update(UserVo userVo) {
+    public void update(UserVo user) {
+        TUserVo userVo = builder.buildVO(user);
         Optional<TUser> optional = userDao.getByIdOpt(userVo.getId());
         if (optional.isPresent()) {
             TUser tUser = optional.get();
-            tUser.copy(builder.build(userVo));
-            tUser.setUsername(null);
-            tUser.setPassword(null);
+            tUser = userVo.toUserForUpdate(tUser);
             userDao.updateById(tUser);
-            userRoleDao.saveBatch(builder.build(userVo.getRoleIds(), userVo.getId()));
+            userRoleDao.saveBatch(userVo.toRoles(tUser.getId()));
         }
     }
 
@@ -61,61 +72,94 @@ public class UserDaoClientImpl implements UserDaoClient {
 
     @Override
     public UserDTO get(Long id) {
-        return builder.build(userDao.getById(id));
+        TUser tUser = userDao.getById(id);
+        TUserDTO userDTO = userBuilder.buildUser(tUser);
+        return builder.build(userDTO);
     }
+
 
     @Override
     public Optional<UserDTO> getOpt(Long id) {
-        return Optional.ofNullable(builder.build(userDao.getById(id)));
+        return Optional.ofNullable(get(id));
     }
 
     @Override
-    public UserDTO getDetails(Long id) {
-        UserDTO details = new UserDTO();
-        details.setUser(builder.buildDetails(userDao.getById(id)));
-        details.setRoles(builder.buildRoleDetails(userRoleDao.listRolesByUserId(id)));
+    public UserRoleDTO getDetails(Long id) {
+        UserRoleDTO details = builder.buildUser(userDao.getById(id));
+        List<TRole> tRoles = userRoleDao.listByUserId(id);
+        List<TRoleDTO> tRoleDTO = roleBuilder.buildRoleDTO(tRoles);
+        details.setRoles(builder.buildRoleDTO(tRoleDTO));
         return details;
     }
 
     @Override
-    public Optional<UserDTO> queryOneByQueryOpt(UserQuery query) {
+    public Optional<UserRoleDTO> getDetailsOpt(Long id) {
+        return Optional.ofNullable(getDetails(id));
+    }
+
+    @Override
+    public UserDTO queryOneByQuery(UserQuery query) {
         TUserQuery userQuery = builder.build(query);
-        Optional<TUser> optional = userDao.queryFirst(userQuery);
-        return Optional.ofNullable(builder.build(optional.orElse(null)));
+        TUser tUser = userDao.queryOne(userQuery);
+        TUserDTO userDTO = userBuilder.buildUser(tUser);
+        return builder.buildUserDTO(userDTO);
+    }
+
+    @Override
+    public Optional<UserDTO> queryOneByQueryOpt(UserQuery query) {
+        return Optional.ofNullable(queryOneByQuery(query));
+    }
+
+    @Override
+    public UserDTO queryFirstByQuery(UserQuery query) {
+        TUserQuery userQuery = builder.build(query);
+        TUser tUser = userDao.queryFirst(userQuery);
+        TUserDTO userDTO = userBuilder.buildUser(tUser);
+        return builder.buildUserDTO(userDTO);
+    }
+
+    @Override
+    public Optional<UserDTO> queryFirstByQueryOpt(UserQuery query) {
+        return Optional.ofNullable(queryFirstByQuery(query));
     }
 
     @Override
     public List<UserDTO> queryListByQuery(UserQuery query) {
         TUserQuery userQuery = builder.build(query);
-        List<TUser> list = userDao.queryTop(userQuery, userQuery.getSize());
-        return builder.buildList(list);
+        List<TUser> list = userDao.queryList(userQuery);
+        List<TUserDTO> userDTOS = userBuilder.buildUsers(list);
+        return builder.buildListDTOs(userDTOS);
     }
 
     @Override
     public List<UserDTO> queryTopByQuery(UserQuery query) {
         TUserQuery userQuery = builder.build(query);
         List<TUser> list = userDao.queryTop(userQuery);
-        return builder.buildList(list);
+        List<TUserDTO> userDTOS = userBuilder.buildUsers(list);
+        return builder.buildListDTOs(userDTOS);
     }
 
     @Override
     public Stream<UserDTO> queryListStreamByQuery(UserQuery query) {
         TUserQuery userQuery = builder.build(query);
         Stream<TUser> stream = userDao.queryListStream(userQuery);
-        return builder.buildStream(stream);
+        Stream<TUserDTO> dtoStream = userBuilder.buildUserStream(stream);
+        return builder.buildDTOStream(dtoStream);
     }
 
     @Override
     public Stream<UserDTO> queryTopStreamByQuery(UserQuery query) {
         TUserQuery userQuery = builder.build(query);
         Stream<TUser> stream = userDao.queryTopStream(userQuery);
-        return builder.buildStream(stream);
+        Stream<TUserDTO> dtoStream = userBuilder.buildUserStream(stream);
+        return builder.buildDTOStream(dtoStream);
     }
 
     @Override
     public IPageData<UserDTO> queryPageByQuery(UserQuery query) {
         TUserQuery userQuery = builder.build(query);
         IPageData<TUser> list = userDao.queryPage(userQuery);
-        return builder.buildPage(list);
+        IPageData<TUserDTO> pageData = userBuilder.buildUsers(list);
+        return builder.buildPageDTO(pageData);
     }
 }

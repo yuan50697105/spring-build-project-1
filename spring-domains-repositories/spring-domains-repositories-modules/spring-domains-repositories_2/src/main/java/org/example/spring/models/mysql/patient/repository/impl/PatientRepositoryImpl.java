@@ -165,8 +165,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     @Override
     public Patient queryOne(PatientQuery patientQuery) {
         TPatientQuery query = patientModelBuilder.buildPatientQuery(patientQuery);
-        Optional<TPatient> optional = patientDao.queryFirst(query);
-        TPatient patient = optional.orElse(new Patient());
+        TPatient patient = patientDao.queryFirst(query);
         return patientModelBuilder.buildPatientResult(patient);
     }
 

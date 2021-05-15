@@ -10,13 +10,15 @@
     <artifactId>spring-micro-daos-mysql-rws-clients</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>spring-micro-daos-mysql-rws-clients-commons</module>
         <module>spring-micro-daos-mysql-rws-clients_1</module>
         <module>spring-micro-daos-mysql-rws-clients_2</module>
         <module>spring-micro-daos-mysql-rws-clients-auth_1</module>
         <module>spring-micro-daos-mysql-rws-clients-auth_2</module>
         <module>spring-micro-daos-mysql-rws-clients-patient_1</module>
         <module>spring-micro-daos-mysql-rws-clients-patient_2</module>
-        <module>spring-micro-daos-mysql-rws-clients-commons</module>
+        <module>spring-micro-daos-mysql-rws-clients-bill_1</module>
+        <module>spring-micro-daos-mysql-rws-clients-bill_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

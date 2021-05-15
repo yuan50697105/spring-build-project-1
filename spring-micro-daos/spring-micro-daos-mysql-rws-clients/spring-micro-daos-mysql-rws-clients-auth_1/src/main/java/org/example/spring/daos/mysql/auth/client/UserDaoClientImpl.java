@@ -128,7 +128,7 @@ public class UserDaoClientImpl implements UserDaoClient {
         TUserQuery userQuery = builder.build(query);
         List<TUser> list = userDao.queryList(userQuery);
         List<TUserDTO> userDTOS = userBuilder.buildUsers(list);
-        return builder.buildListDTO(userDTOS);
+        return builder.buildListDTOs(userDTOS);
     }
 
     @Override
@@ -136,7 +136,7 @@ public class UserDaoClientImpl implements UserDaoClient {
         TUserQuery userQuery = builder.build(query);
         List<TUser> list = userDao.queryTop(userQuery);
         List<TUserDTO> userDTOS = userBuilder.buildUsers(list);
-        return builder.buildListDTO(userDTOS);
+        return builder.buildListDTOs(userDTOS);
     }
 
     @Override

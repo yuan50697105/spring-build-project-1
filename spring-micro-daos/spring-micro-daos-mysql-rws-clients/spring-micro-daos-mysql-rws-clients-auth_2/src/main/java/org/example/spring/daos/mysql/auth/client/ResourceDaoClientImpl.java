@@ -58,14 +58,14 @@ public class ResourceDaoClientImpl implements ResourceDaoClient {
     @Override
     public Optional<ResourceVo> get(ResourceQuery query) {
         TResourceQuery resourceQuery = authClientBuilder.createForQuery(query);
-        Optional<TResource> optional = resourceDao.queryFirst(resourceQuery);
+        Optional<TResource> optional = resourceDao.queryFirstOpt(resourceQuery);
         return Optional.ofNullable(authClientBuilder.createForGetResource(optional.orElse(null)));
     }
 
     @Override
     public List<ResourceVo> list(ResourceQuery query) {
         TResourceQuery resourceQuery = authClientBuilder.createForQuery(query);
-        List<TResource> resourceList = resourceDao.queryTop(resourceQuery, resourceQuery.getSize());
+        List<TResource> resourceList = resourceDao.queryTop(resourceQuery);
         return authClientBuilder.createForGetResource(resourceList);
     }
 
