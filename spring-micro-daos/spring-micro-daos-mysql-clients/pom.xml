@@ -17,6 +17,8 @@
         <module>spring-micro-daos-mysql-clients-auth_2</module>
         <module>spring-micro-daos-mysql-clients-patient_1</module>
         <module>spring-micro-daos-mysql-clients-patient_2</module>
+        <module>spring-micro-daos-mysql-clients-customer_1</module>
+        <module>spring-micro-daos-mysql-clients-customer_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

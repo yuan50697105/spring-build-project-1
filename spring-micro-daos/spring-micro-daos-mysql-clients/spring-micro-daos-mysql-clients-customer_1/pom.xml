@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-micro-daos-mysql-clients_2</artifactId>
+    <artifactId>spring-micro-daos-mysql-clients-customer_1</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
@@ -15,19 +15,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-mysql_2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-mysql-clients-auth_2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-mysql-clients-patient_2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-mysql-clients-customer_2</artifactId>
+            <artifactId>spring-micro-daos-mysql-customer_1</artifactId>
         </dependency>
     </dependencies>
 

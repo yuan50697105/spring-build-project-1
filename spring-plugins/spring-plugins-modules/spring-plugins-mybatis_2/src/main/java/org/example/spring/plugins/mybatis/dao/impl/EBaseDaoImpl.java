@@ -48,12 +48,6 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
-    @Async
-    public CompletableFuture<Optional<T>> getByIdOptAsync(Long id) {
-        return CompletableFuture.completedFuture(getByIdOpt(id));
-    }
-
-    @Override
     public List<T> queryList(Q query) {
         Wrapper<T> wrapper = queryWrapper(query);
         if (wrapper == null || wrapper.equals(Wrappers.emptyWrapper())) {

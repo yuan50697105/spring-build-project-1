@@ -18,8 +18,6 @@ import java.util.stream.Stream;
 public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
     Optional<T> getByIdOpt(Long id);
 
-    CompletableFuture<Optional<T>> getByIdOptAsync(Long id);
-
     List<T> queryList(Q query);
 
     Stream<T> queryListStream(Q query);
