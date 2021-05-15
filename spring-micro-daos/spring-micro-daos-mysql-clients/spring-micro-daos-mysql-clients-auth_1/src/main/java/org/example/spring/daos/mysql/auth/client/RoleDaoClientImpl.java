@@ -5,7 +5,7 @@ import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.auth.builder.AuthClientBuilder;
 import org.example.spring.daos.mysql.auth.dao.TRoleDao;
 import org.example.spring.daos.mysql.auth.dao.TRoleResourceDao;
-import org.example.spring.daos.mysql.auth.entity.Role;
+import org.example.spring.daos.mysql.auth.entity.vo.RoleVo;
 import org.example.spring.daos.mysql.auth.entity.query.RoleQuery;
 import org.example.spring.daos.mysql.auth.table.po.TRole;
 import org.example.spring.daos.mysql.auth.table.query.TRoleQuery;
@@ -24,20 +24,20 @@ public class RoleDaoClientImpl implements RoleDaoClient {
     private final TRoleResourceDao roleResourceDao;
 
     @Override
-    public void save(Role role) {
-        TRole entity = authClientBuilder.createForSave(role);
+    public void save(RoleVo roleVo) {
+        TRole entity = authClientBuilder.createForSave(roleVo);
         roleDao.save(entity);
-        roleResourceDao.saveNew(entity.getId(), role.getResourceIds());
+        roleResourceDao.saveNew(entity.getId(), roleVo.getResourceIds());
     }
 
     @Override
-    public void update(Role role) {
-        Optional<TRole> optional = roleDao.getByIdOpt(role.getId());
+    public void update(RoleVo roleVo) {
+        Optional<TRole> optional = roleDao.getByIdOpt(roleVo.getId());
         if (optional.isPresent()) {
             TRole tRole = optional.get();
-            tRole.copy(authClientBuilder.createForSave(role));
+            tRole.copy(authClientBuilder.createForSave(roleVo));
             roleDao.updateById(tRole);
-            roleResourceDao.saveNew(role.getId(), role.getResourceIds());
+            roleResourceDao.saveNew(roleVo.getId(), roleVo.getResourceIds());
         }
     }
 
@@ -48,19 +48,19 @@ public class RoleDaoClientImpl implements RoleDaoClient {
     }
 
     @Override
-    public Role get(Long id) {
+    public RoleVo get(Long id) {
         return authClientBuilder.createForGetRole(roleDao.getById(id));
     }
 
     @Override
-    public Optional<Role> get(RoleQuery query) {
+    public Optional<RoleVo> get(RoleQuery query) {
         TRoleQuery roleQuery = authClientBuilder.createForQuery(query);
-        Optional<TRole> tRole = roleDao.queryFirst(roleQuery);
+        Optional<TRole> tRole = roleDao.queryFirstOpt(roleQuery);
         return Optional.ofNullable(authClientBuilder.createForGetRole(tRole.orElse(null)));
     }
 
     @Override
-    public List<Role> list(RoleQuery query) {
+    public List<RoleVo> list(RoleQuery query) {
         TRoleQuery roleQuery = authClientBuilder.createForQuery(query);
         List<TRole> list = roleDao.queryTop(roleQuery, roleQuery.getSize());
         return authClientBuilder.createForGetRole(list);
@@ -68,7 +68,7 @@ public class RoleDaoClientImpl implements RoleDaoClient {
     }
 
     @Override
-    public IPageData<Role> data(RoleQuery query) {
+    public IPageData<RoleVo> data(RoleQuery query) {
         TRoleQuery roleQuery = authClientBuilder.createForQuery(query);
         IPageData<TRole> list = roleDao.queryPage(roleQuery);
         return authClientBuilder.createForGetRole(list);

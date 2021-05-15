@@ -172,6 +172,11 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-clients-commons</artifactId>
+                <version>0.0.28-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-mysql-clients_1</artifactId>
                 <version>0.0.28-SNAPSHOT</version>
             </dependency>

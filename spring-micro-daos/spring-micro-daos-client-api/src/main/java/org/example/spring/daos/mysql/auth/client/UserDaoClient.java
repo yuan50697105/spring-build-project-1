@@ -1,7 +1,8 @@
 package org.example.spring.daos.mysql.auth.client;
 
-import org.example.spring.daos.mysql.auth.entity.User;
-import org.example.spring.daos.mysql.auth.entity.details.UserDetails;
+import org.example.spring.daos.mysql.auth.entity.dto.UserRoleDTO;
+import org.example.spring.daos.mysql.auth.entity.vo.UserVo;
+import org.example.spring.daos.mysql.auth.entity.dto.UserDTO;
 import org.example.spring.daos.mysql.auth.entity.query.UserQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.cloud.openfeign.SpringQueryMap;
@@ -14,10 +15,10 @@ import java.util.stream.Stream;
 @RequestMapping("user")
 public interface UserDaoClient {
     @PostMapping
-    void save(@RequestBody User user);
+    void save(@RequestBody UserVo userVo);
 
     @PutMapping
-    void update(User user);
+    void update(UserVo userVo);
 
     @PutMapping("/{status}")
     void updateStatusByIds(@PathVariable String status, List<Long> ids);
@@ -26,29 +27,37 @@ public interface UserDaoClient {
     void delete(List<Long> ids);
 
     @GetMapping("/{id}/details")
-    UserDetails getDetails(@PathVariable Long id);
+    UserDTO getDetails(@PathVariable Long id);
 
     @GetMapping("/{id}")
-    User get(@PathVariable Long id);
+    UserDTO get(@PathVariable Long id);
 
     @GetMapping("opt/{id}")
-    Optional<User> getOpt(@PathVariable Long id);
+    Optional<UserDTO> getOpt(@PathVariable Long id);
+
+    Optional<UserRoleDTO> getDetailsOpt(Long id);
+
+    UserDTO queryOneByQuery(UserQuery query);
 
     @GetMapping("get")
-    Optional<User> getByQuery(@SpringQueryMap UserQuery query);
+    Optional<UserDTO> queryOneByQueryOpt(@SpringQueryMap UserQuery query);
+
+    UserDTO queryFirstByQuery(UserQuery query);
+
+    Optional<UserDTO> queryFirstByQueryOpt(UserQuery query);
 
     @GetMapping("list")
-    List<User> listByQuery(UserQuery query);
+    List<UserDTO> queryListByQuery(UserQuery query);
 
     @GetMapping("top")
-    List<User> topByQuery(@SpringQueryMap UserQuery query);
+    List<UserDTO> queryTopByQuery(@SpringQueryMap UserQuery query);
 
     @GetMapping("list/stream")
-    Stream<User> listStreamByQuery(@SpringQueryMap UserQuery query);
+    Stream<UserDTO> queryListStreamByQuery(@SpringQueryMap UserQuery query);
 
     @GetMapping("top/stream")
-    Stream<User> topStreamByQuery(@SpringQueryMap UserQuery query);
+    Stream<UserDTO> queryTopStreamByQuery(@SpringQueryMap UserQuery query);
 
     @GetMapping("data")
-    IPageData<User> dataByQuery(@SpringQueryMap UserQuery query);
+    IPageData<UserDTO> queryPageByQuery(@SpringQueryMap UserQuery query);
 }

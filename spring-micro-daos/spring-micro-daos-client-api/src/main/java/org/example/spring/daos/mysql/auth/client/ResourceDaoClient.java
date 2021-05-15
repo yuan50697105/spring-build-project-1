@@ -1,6 +1,6 @@
 package org.example.spring.daos.mysql.auth.client;
 
-import org.example.spring.daos.mysql.auth.entity.Resource;
+import org.example.spring.daos.mysql.auth.entity.vo.ResourceVo;
 import org.example.spring.daos.mysql.auth.entity.query.ResourceQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.cloud.openfeign.SpringQueryMap;
@@ -12,24 +12,24 @@ import java.util.Optional;
 @RequestMapping("resource")
 public interface ResourceDaoClient {
     @PostMapping
-    void save(@RequestBody Resource resource);
+    void save(@RequestBody ResourceVo resourceVo);
 
     @PutMapping
-    void update(@RequestBody Resource resource);
+    void update(@RequestBody ResourceVo resourceVo);
 
     @DeleteMapping
     void delete(List<Long> ids);
 
     @GetMapping("/{id}")
-    Resource get(@PathVariable Long id);
+    ResourceVo get(@PathVariable Long id);
 
     @GetMapping
-    Optional<Resource> get(@SpringQueryMap ResourceQuery query);
+    Optional<ResourceVo> get(@SpringQueryMap ResourceQuery query);
 
     @GetMapping("list")
-    List<Resource> list(@SpringQueryMap ResourceQuery query);
+    List<ResourceVo> list(@SpringQueryMap ResourceQuery query);
 
     @GetMapping
-    IPageData<Resource> data(@SpringQueryMap ResourceQuery query);
+    IPageData<ResourceVo> data(@SpringQueryMap ResourceQuery query);
 
 }

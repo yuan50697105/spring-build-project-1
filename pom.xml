@@ -158,7 +158,7 @@
     </dependencies>
     <build>
         <resources>
-            <resource>
+            <resourceVo>
                 <directory>src\main\resources</directory>
                 <excludes>
                     <exclude>application.yml</exclude>
@@ -167,7 +167,7 @@
                     <exclude>Dockerfile</exclude>
                     <exclude>logback.xml</exclude>
                 </excludes>
-            </resource>
+            </resourceVo>
         </resources>
         <pluginManagement>
             <plugins>
@@ -190,7 +190,7 @@
                             <configuration>
                                 <outputDirectory>${project.build.directory}</outputDirectory>
                                 <resources>
-                                    <resource>
+                                    <resourceVo>
                                         <directory>src/main/resources</directory>
                                         <includes>
                                             <exclude>application.yml</exclude>
@@ -200,7 +200,7 @@
                                             <exclude>logback.xml</exclude>
                                         </includes>
                                         <filtering>true</filtering>
-                                    </resource>
+                                    </resourceVo>
                                 </resources>
                                 <encoding>UTF-8</encoding>
                             </configuration>

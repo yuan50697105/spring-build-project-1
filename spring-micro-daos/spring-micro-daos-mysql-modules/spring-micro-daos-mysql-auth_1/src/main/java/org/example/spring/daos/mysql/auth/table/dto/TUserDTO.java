@@ -11,6 +11,10 @@ import java.io.Serializable;
 @Data
 public class TUserDTO extends TUser implements Serializable {
 
+    public TUserDTO() {
+
+    }
+
     @Override
     public String getStatus() {
         return TUserStatus.getName(super.getStatus());

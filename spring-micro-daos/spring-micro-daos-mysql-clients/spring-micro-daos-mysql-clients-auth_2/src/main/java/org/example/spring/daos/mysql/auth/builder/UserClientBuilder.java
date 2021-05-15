@@ -1,43 +1,40 @@
 package org.example.spring.daos.mysql.auth.builder;
 
-import org.example.spring.daos.mysql.auth.entity.User;
-import org.example.spring.daos.mysql.auth.entity.details.UserDetails;
+import org.example.spring.daos.mysql.auth.entity.dto.RoleDTO;
+import org.example.spring.daos.mysql.auth.entity.dto.UserDTO;
+import org.example.spring.daos.mysql.auth.entity.dto.UserRoleDTO;
 import org.example.spring.daos.mysql.auth.entity.query.UserQuery;
-import org.example.spring.daos.mysql.auth.table.po.TRole;
+import org.example.spring.daos.mysql.auth.entity.vo.UserVo;
+import org.example.spring.daos.mysql.auth.table.dto.TRoleDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
-import org.example.spring.daos.mysql.auth.table.po.TUserRole;
 import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
+import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
 @Mapper(config = BaseBuilder.class)
 public interface UserClientBuilder {
-    TUser build(User user);
 
-    default List<TUserRole> build(List<Long> roleIds, Long userId) {
-        ArrayList<TUserRole> list = new ArrayList<>(roleIds.size());
-        for (Long roleId : roleIds) {
-            list.add(new TUserRole(userId, roleId));
-        }
-        return list;
-    }
-
-    User build(TUser byId);
+    UserDTO build(TUserDTO byId);
 
     TUserQuery build(UserQuery query);
 
-    List<User> buildList(List<TUser> list);
+    TUserVo buildVO(UserVo userVo);
 
-    IPageData<User> buildPage(IPageData<TUser> list);
+    UserRoleDTO buildUser(TUser byId);
 
-    Stream<User> buildStream(Stream<TUser> queryListStream);
+    List<RoleDTO> buildRoleDTO(List<TRoleDTO> tRoleDTO);
 
-    List<UserDetails.Role> buildRoleDetails(List<TRole> listRolesByUserId);
+    UserDTO buildUserDTO(TUserDTO userDTO);
 
-    UserDetails.User buildDetails(TUser byId);
+    List<UserDTO> buildListDTO(List<TUserDTO> userDTOS);
+
+    Stream<UserDTO> buildDTOStream(Stream<TUserDTO> dtoStream);
+
+    IPageData<UserDTO> buildPageDTO(IPageData<TUserDTO> pageData);
 }

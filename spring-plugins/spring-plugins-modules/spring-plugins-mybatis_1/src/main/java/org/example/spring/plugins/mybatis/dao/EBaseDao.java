@@ -33,7 +33,9 @@ public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
 
     List<T> queryTop(Q query);
 
-    Optional<T> queryFirst(Q query);
+    Optional<T> queryFirstOpt(Q query);
+
+    T queryFirst(Q query);
 
     T queryOne(Q query);
 

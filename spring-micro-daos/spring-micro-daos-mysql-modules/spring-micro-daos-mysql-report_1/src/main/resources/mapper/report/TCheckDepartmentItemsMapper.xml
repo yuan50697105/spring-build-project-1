@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.example.spring.daos.mysql.department.mapper.TCheckDepartmentItemsMapper">
-    <resultMap id="BaseResultMap" type="org.example.spring.daos.mysql.department.table.po.TCheckDepartmentItems">
+<mapper namespace="org.example.spring.daos.mysql.departmentVo.mapper.TCheckDepartmentItemsMapper">
+    <resultMap id="BaseResultMap" type="org.example.spring.daos.mysql.departmentVo.table.po.TCheckDepartmentItems">
         <!--@mbg.generated-->
         <!--@Table t_check_department_items-->
         <id column="id" jdbcType="BIGINT" property="id"/>

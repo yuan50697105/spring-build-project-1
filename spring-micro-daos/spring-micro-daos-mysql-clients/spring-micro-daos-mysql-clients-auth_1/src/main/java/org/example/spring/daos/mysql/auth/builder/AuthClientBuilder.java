@@ -1,9 +1,9 @@
 package org.example.spring.daos.mysql.auth.builder;
 
-import org.example.spring.daos.mysql.auth.entity.Department;
-import org.example.spring.daos.mysql.auth.entity.Resource;
-import org.example.spring.daos.mysql.auth.entity.Role;
-import org.example.spring.daos.mysql.auth.entity.User;
+import org.example.spring.daos.mysql.auth.entity.vo.DepartmentVo;
+import org.example.spring.daos.mysql.auth.entity.vo.ResourceVo;
+import org.example.spring.daos.mysql.auth.entity.vo.RoleVo;
+import org.example.spring.daos.mysql.auth.entity.vo.UserVo;
 import org.example.spring.daos.mysql.auth.entity.query.DepartmentQuery;
 import org.example.spring.daos.mysql.auth.entity.query.ResourceQuery;
 import org.example.spring.daos.mysql.auth.entity.query.RoleQuery;
@@ -25,19 +25,19 @@ import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
 public interface AuthClientBuilder {
-    TDepartment createForSave(Department department);
+    TDepartment createForSave(DepartmentVo departmentVo);
 
-    default void copy(Department department, TDepartment tDepartment) {
-        if (department != null) {
-            tDepartment.copy(department);
+    default void copy(DepartmentVo departmentVo, TDepartment tDepartment) {
+        if (departmentVo != null) {
+            tDepartment.copy(departmentVo);
         }
     }
 
-    Department createForGetDepartment(TDepartment department);
+    DepartmentVo createForGetDepartment(TDepartment department);
 
-    List<Department> createForGetDepartment(List<TDepartment> list);
+    List<DepartmentVo> createForGetDepartment(List<TDepartment> list);
 
-    IPageData<Department> createForGetDepartment(IPageData<TDepartment> data);
+    IPageData<DepartmentVo> createForGetDepartment(IPageData<TDepartment> data);
 
     @Mapping(target = "withSize", ignore = true)
     TDepartmentQuery createForQuery(DepartmentQuery query);
@@ -55,19 +55,19 @@ public interface AuthClientBuilder {
         }
     }
 
-    TResource createForSave(Resource resource);
+    TResource createForSave(ResourceVo resourceVo);
 
     @Mapping(target = "withSize", ignore = true)
     TResourceQuery createForQuery(ResourceQuery query);
 
-    Resource createForGetResource(TResource resource);
+    ResourceVo createForGetResource(TResource resource);
 
-    List<Resource> createForGetResource(List<TResource> queryTop);
+    List<ResourceVo> createForGetResource(List<TResource> queryTop);
 
 
-    IPageData<Resource> createForGetResource(IPageData<TResource> data);
+    IPageData<ResourceVo> createForGetResource(IPageData<TResource> data);
 
-    TUser createForSave(User user);
+    TUser createForSave(UserVo userVo);
 
     @SuppressWarnings("unchecked")
     default List<TUserRole> createForSaveUserRole(List<Long> roleIds, Long userId) {
@@ -82,21 +82,21 @@ public interface AuthClientBuilder {
         }
     }
 
-    User createForGetUser(TUser user);
+    UserVo createForGetUser(TUser user);
 
     TUserQuery createForQuery(UserQuery query);
 
-    List<User> createForGetUser(List<TUser> queryTop);
+    List<UserVo> createForGetUser(List<TUser> queryTop);
 
-    IPageData<User> createForGetUser(IPageData<TUser> queryTop);
+    IPageData<UserVo> createForGetUser(IPageData<TUser> queryTop);
 
-    TRole createForSave(Role role);
+    TRole createForSave(RoleVo roleVo);
 
-    Role createForGetRole(TRole tRole);
+    RoleVo createForGetRole(TRole tRole);
 
     TRoleQuery createForQuery(RoleQuery query);
 
-    List<Role> createForGetRole(List<TRole> queryTop);
+    List<RoleVo> createForGetRole(List<TRole> queryTop);
 
-    IPageData<Role> createForGetRole(IPageData<TRole> list);
+    IPageData<RoleVo> createForGetRole(IPageData<TRole> list);
 }

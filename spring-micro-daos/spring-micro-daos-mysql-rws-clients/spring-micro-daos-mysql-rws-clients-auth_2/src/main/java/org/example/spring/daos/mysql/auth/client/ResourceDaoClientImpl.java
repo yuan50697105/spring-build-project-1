@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.auth.builder.AuthClientBuilder;
 import org.example.spring.daos.mysql.auth.dao.TResourceDao;
-import org.example.spring.daos.mysql.auth.entity.Resource;
+import org.example.spring.daos.mysql.auth.entity.vo.ResourceVo;
 import org.example.spring.daos.mysql.auth.entity.query.ResourceQuery;
 import org.example.spring.daos.mysql.auth.table.po.TResource;
 import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;
@@ -25,16 +25,16 @@ public class ResourceDaoClientImpl implements ResourceDaoClient {
     private final TResourceDao resourceDao;
 
     @Override
-    public void save(Resource resource) {
-        resourceDao.save(authClientBuilder.createForSave(resource));
+    public void save(ResourceVo resourceVo) {
+        resourceDao.save(authClientBuilder.createForSave(resourceVo));
     }
 
     @Override
-    public void update(Resource resource) {
-        Optional<TResource> optional = resourceDao.getByIdOpt(resource.getId());
+    public void update(ResourceVo resourceVo) {
+        Optional<TResource> optional = resourceDao.getByIdOpt(resourceVo.getId());
         if (optional.isPresent()) {
             TResource tResource = optional.get();
-            tResource.copy(authClientBuilder.createForSave(resource));
+            tResource.copy(authClientBuilder.createForSave(resourceVo));
             resourceDao.updateById(tResource);
         }
     }
@@ -51,26 +51,26 @@ public class ResourceDaoClientImpl implements ResourceDaoClient {
     }
 
     @Override
-    public Resource get(Long id) {
+    public ResourceVo get(Long id) {
         return authClientBuilder.createForGetResource(resourceDao.getById(id));
     }
 
     @Override
-    public Optional<Resource> get(ResourceQuery query) {
+    public Optional<ResourceVo> get(ResourceQuery query) {
         TResourceQuery resourceQuery = authClientBuilder.createForQuery(query);
         Optional<TResource> optional = resourceDao.queryFirst(resourceQuery);
         return Optional.ofNullable(authClientBuilder.createForGetResource(optional.orElse(null)));
     }
 
     @Override
-    public List<Resource> list(ResourceQuery query) {
+    public List<ResourceVo> list(ResourceQuery query) {
         TResourceQuery resourceQuery = authClientBuilder.createForQuery(query);
         List<TResource> resourceList = resourceDao.queryTop(resourceQuery, resourceQuery.getSize());
         return authClientBuilder.createForGetResource(resourceList);
     }
 
     @Override
-    public IPageData<Resource> data(ResourceQuery query) {
+    public IPageData<ResourceVo> data(ResourceQuery query) {
         TResourceQuery resourceQuery = authClientBuilder.createForQuery(query);
         IPageData<TResource> pageData = resourceDao.queryPage(resourceQuery);
         return authClientBuilder.createForGetResource(pageData);

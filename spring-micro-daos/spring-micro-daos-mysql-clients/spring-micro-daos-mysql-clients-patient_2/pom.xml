@@ -11,6 +11,10 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-daos-mysql-clients-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-daos-mysql-patient_2</artifactId>
         </dependency>
     </dependencies>

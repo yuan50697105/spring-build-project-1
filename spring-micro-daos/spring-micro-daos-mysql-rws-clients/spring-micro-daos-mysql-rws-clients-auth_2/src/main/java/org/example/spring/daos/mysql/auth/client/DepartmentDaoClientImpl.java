@@ -5,7 +5,7 @@ import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.auth.builder.AuthClientBuilder;
 import org.example.spring.daos.mysql.auth.dao.TDepartmentDao;
 import org.example.spring.daos.mysql.auth.dao.TDepartmentRoleDao;
-import org.example.spring.daos.mysql.auth.entity.Department;
+import org.example.spring.daos.mysql.auth.entity.vo.DepartmentVo;
 import org.example.spring.daos.mysql.auth.entity.query.DepartmentQuery;
 import org.example.spring.daos.mysql.auth.table.po.TDepartment;
 import org.example.spring.daos.mysql.auth.table.po.TDepartmentRole;
@@ -28,22 +28,22 @@ public class DepartmentDaoClientImpl implements DepartmentDaoClient {
 
     @Override
     @Transactional
-    public void save(Department department) {
-        TDepartment tDepartment = authClientBuilder.createForSave(department);
+    public void save(DepartmentVo departmentVo) {
+        TDepartment tDepartment = authClientBuilder.createForSave(departmentVo);
         departmentDao.save(tDepartment);
-        List<TDepartmentRole> departmentRoles = authClientBuilder.createForSaveDepartmentRole(department.getRoleIds(), tDepartment.getId());
+        List<TDepartmentRole> departmentRoles = authClientBuilder.createForSaveDepartmentRole(departmentVo.getRoleIds(), tDepartment.getId());
         departmentRoleDao.saveBatch(departmentRoles);
     }
 
     @Override
     @Transactional
-    public void update(Department department) {
-        Optional<TDepartment> optional = departmentDao.getByIdOpt(department.getId());
+    public void update(DepartmentVo departmentVo) {
+        Optional<TDepartment> optional = departmentDao.getByIdOpt(departmentVo.getId());
         if (optional.isPresent()) {
             TDepartment tDepartment = optional.get();
-            authClientBuilder.copy(department, tDepartment);
+            authClientBuilder.copy(departmentVo, tDepartment);
             departmentDao.updateById(tDepartment);
-            departmentRoleDao.saveBatch(authClientBuilder.createForSaveDepartmentRole(department.getRoleIds(), tDepartment.getId()));
+            departmentRoleDao.saveBatch(authClientBuilder.createForSaveDepartmentRole(departmentVo.getRoleIds(), tDepartment.getId()));
         }
     }
 
@@ -62,25 +62,25 @@ public class DepartmentDaoClientImpl implements DepartmentDaoClient {
     }
 
     @Override
-    public Department get(Long id) {
+    public DepartmentVo get(Long id) {
         TDepartment department = departmentDao.getById(id);
         return authClientBuilder.createForGetDepartment(department);
     }
 
     @Override
-    public IPageData<Department> data(DepartmentQuery query) {
+    public IPageData<DepartmentVo> data(DepartmentQuery query) {
         IPageData<TDepartment> data = departmentDao.queryPage(authClientBuilder.createForQuery(query));
         return authClientBuilder.createForGetDepartment(data);
     }
 
     @Override
-    public List<Department> list(DepartmentQuery query) {
+    public List<DepartmentVo> list(DepartmentQuery query) {
         List<TDepartment> list = departmentDao.queryTop(authClientBuilder.createForQuery(query), query.getSize());
         return authClientBuilder.createForGetDepartment(list);
     }
 
     @Override
-    public Optional<Department> one(DepartmentQuery query) {
+    public Optional<DepartmentVo> one(DepartmentQuery query) {
         Optional<TDepartment> optional = departmentDao.queryFirst(authClientBuilder.createForQuery(query));
         return Optional.ofNullable(authClientBuilder.createForGetDepartment(optional.orElse(null)));
     }

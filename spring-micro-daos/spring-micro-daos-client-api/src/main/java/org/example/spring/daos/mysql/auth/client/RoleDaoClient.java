@@ -1,6 +1,6 @@
 package org.example.spring.daos.mysql.auth.client;
 
-import org.example.spring.daos.mysql.auth.entity.Role;
+import org.example.spring.daos.mysql.auth.entity.vo.RoleVo;
 import org.example.spring.daos.mysql.auth.entity.query.RoleQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.cloud.openfeign.SpringQueryMap;
@@ -13,24 +13,24 @@ import java.util.Optional;
 public interface RoleDaoClient {
 
     @PostMapping
-    void save(@RequestBody Role Role);
+    void save(@RequestBody RoleVo RoleVo);
 
     @PutMapping
-    void update(Role Role);
+    void update(RoleVo RoleVo);
 
     @DeleteMapping
     void delete(List<Long> ids);
 
     @GetMapping("/{id}")
-    Role get(@PathVariable Long id);
+    RoleVo get(@PathVariable Long id);
 
     @GetMapping("get")
-    Optional<Role> get(@SpringQueryMap RoleQuery query);
+    Optional<RoleVo> get(@SpringQueryMap RoleQuery query);
 
     @GetMapping("list")
-    List<Role> list(RoleQuery query);
+    List<RoleVo> list(RoleQuery query);
 
     @GetMapping("data")
-    IPageData<Role> data(RoleQuery query);
+    IPageData<RoleVo> data(RoleQuery query);
 
 }
