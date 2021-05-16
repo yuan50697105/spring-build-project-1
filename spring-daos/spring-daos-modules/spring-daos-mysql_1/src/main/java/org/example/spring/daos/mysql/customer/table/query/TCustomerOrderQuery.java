@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.example.spring.daos.mysql.customer.table.enumerate.TCustomerOrderStatus;
 import org.example.spring.daos.mysql.customer.table.po.TCustomerOrder;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
@@ -61,4 +62,12 @@ public class TCustomerOrderQuery extends TkBaseQuery<TCustomerOrder> implements 
      */
     @AndEqualTo
     private String status;
+
+    public String getStatus() {
+        return TCustomerOrderStatus.getValue(status);
+    }
+
+    public void setStatus(String status) {
+        this.status = TCustomerOrderStatus.getValue(status);
+    }
 }

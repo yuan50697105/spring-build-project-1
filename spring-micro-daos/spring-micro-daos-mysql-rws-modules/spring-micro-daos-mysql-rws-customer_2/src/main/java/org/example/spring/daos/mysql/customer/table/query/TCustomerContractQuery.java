@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.example.spring.daos.mysql.customer.table.enumerate.TCustomerContractStatus;
 import org.example.spring.daos.mysql.customer.table.po.TCustomerContract;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
@@ -61,4 +62,12 @@ public class TCustomerContractQuery extends TkBaseQuery<TCustomerContract> imple
     @ApiModelProperty(value = "合同状态")
     @AndEqualTo
     private String status;
+
+    public String getStatus() {
+        return TCustomerContractStatus.getValue(status);
+    }
+
+    public void setStatus(String status) {
+        this.status = TCustomerContractStatus.getValue(status);
+    }
 }
