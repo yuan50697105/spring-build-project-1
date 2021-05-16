@@ -167,4 +167,9 @@ public class TRoleRepositoryImpl implements TRoleRepository {
     public IPageData<TRoleDTO> queryPage(TRoleQuery query) {
         return roleBuilder.buildRole(roleDao.queryPage(query));
     }
+
+    @Override
+    public List<TRoleDTO> queryListByUserId(Long userId) {
+        return roleBuilder.buildRoleDTO(roleDao.queryListByUserId(userId));
+    }
 }

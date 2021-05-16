@@ -10,4 +10,6 @@ public interface TRoleDao extends TkBaseDao<TRole, TRoleQuery> {
     List<Long> listRoleIdsByRoleIdsOrRoleName(List<Long> roleIds, List<String> roleName);
 
     List<Long> listRoleIdsByRoleIds(List<Long> roleIds);
+
+    List<TRole> queryListByUserId(Long userId);
 }

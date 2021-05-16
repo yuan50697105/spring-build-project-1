@@ -3,7 +3,6 @@ package org.example.spring.daos.mysql.auth.client;
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.auth.builder.DepartmentClientBuilder;
-import org.example.spring.daos.mysql.auth.dao.TDepartmentDao;
 import org.example.spring.daos.mysql.auth.entity.dto.DepartmentDTO;
 import org.example.spring.daos.mysql.auth.entity.query.DepartmentQuery;
 import org.example.spring.daos.mysql.auth.entity.vo.DepartmentVo;
@@ -23,7 +22,6 @@ import java.util.Optional;
 @Transactional
 public class DepartmentDaoClientImpl implements DepartmentDaoClient {
     private final DepartmentClientBuilder departmentClientBuilder;
-    private final TDepartmentDao departmentDao;
     private final TDepartmentRepository departmentRepository;
     @Override
     @Transactional
@@ -45,7 +43,7 @@ public class DepartmentDaoClientImpl implements DepartmentDaoClient {
     }
 
     private void validateDepartment(List<Long> ids) {
-        if (departmentDao.validateDelete(ids)) {
+        if (departmentRepository.validateDelete(ids)) {
             throw new ValidationException("存在子级部门，不能删除");
         }
     }

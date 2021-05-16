@@ -5,8 +5,10 @@ import org.example.spring.daos.mysql.auth.builder.TUserBuilder;
 import org.example.spring.daos.mysql.auth.builder.TUserRoleBuilder;
 import org.example.spring.daos.mysql.auth.dao.TUserDao;
 import org.example.spring.daos.mysql.auth.dao.TUserRoleDao;
+import org.example.spring.daos.mysql.auth.repository.TRoleRepository;
 import org.example.spring.daos.mysql.auth.repository.TUserRepository;
 import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
 import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
 import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
@@ -161,8 +163,15 @@ public class TUserRepositoryImpl implements TUserRepository {
         return null;
     }
 
+    private final TRoleRepository roleRepository;
+
     @Override
     public IPageData<TUserDTO> queryPage(TUserQuery query) {
         return null;
+    }
+
+    @Override
+    public TUserRoleDTO getDetails(Long id) {
+        return userBuilder.buildUser(get(id),roleRepository.queryListByUserId(id) );
     }
 }

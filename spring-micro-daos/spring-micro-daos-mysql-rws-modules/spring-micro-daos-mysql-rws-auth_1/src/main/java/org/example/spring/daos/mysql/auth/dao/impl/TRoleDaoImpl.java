@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
 import org.example.spring.daos.mysql.auth.dao.TRoleDao;
 import org.example.spring.daos.mysql.auth.mapper.TRoleMapper;
+import org.example.spring.daos.mysql.auth.mapper.TRoleQueryMapper;
 import org.example.spring.daos.mysql.auth.table.po.TRole;
 import org.example.spring.daos.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Transactional
 public class TRoleDaoImpl extends TkBaseDaoImpl<TRole, TRoleQuery, TRoleMapper> implements TRoleDao {
+    private final TRoleQueryMapper roleQueryMapper;
     @Override
     protected Wrapper<TRole> queryWrapper(TRoleQuery tRoleQuery) {
         return null;
@@ -35,6 +37,11 @@ public class TRoleDaoImpl extends TkBaseDaoImpl<TRole, TRoleQuery, TRoleMapper> 
     @Override
     public List<Long> listRoleIdsByRoleIds(List<Long> roleIds) {
         return lambdaQuery().in(IBaseEntity::getId, roleIds).list().stream().map(IBaseEntity::getId).distinct().sorted().collect(Collectors.toList());
+    }
+
+    @Override
+    public List<TRole> queryListByUserId(Long userId) {
+        return roleQueryMapper.queryListByUserId(userId);
     }
 
 }

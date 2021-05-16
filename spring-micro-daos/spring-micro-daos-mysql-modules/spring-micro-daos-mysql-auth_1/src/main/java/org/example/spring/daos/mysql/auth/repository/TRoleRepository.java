@@ -59,5 +59,7 @@ public interface TRoleRepository {
     IPageData<TRoleDTO> selectPage(TRoleQuery query);
 
     IPageData<TRoleDTO> queryPage(TRoleQuery query);
+
+    List<TRoleDTO> queryListByUserId(Long userId);
 }
 

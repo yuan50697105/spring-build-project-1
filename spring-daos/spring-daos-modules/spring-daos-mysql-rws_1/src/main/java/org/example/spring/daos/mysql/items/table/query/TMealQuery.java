@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.example.spring.daos.mysql.items.table.enumerate.TMealType;
 import org.example.spring.daos.mysql.items.table.po.TMeal;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
@@ -44,4 +45,12 @@ public class TMealQuery extends TkBaseQuery<TMeal> implements Serializable, Myba
     @ApiModelProperty(value = "type")
     @AndEqualTo
     private String type;
+
+    public String getType() {
+        return TMealType.getValue(type);
+    }
+
+    public void setType(String type) {
+        this.type = TMealType.getValue(type);
+    }
 }

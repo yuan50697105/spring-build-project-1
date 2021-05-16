@@ -1,6 +1,7 @@
 package org.example.spring.daos.mysql.auth.repository;
 
 import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
 import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -59,5 +60,7 @@ public interface TUserRepository {
     IPageData<TUserDTO> selectPage(TUserQuery query);
 
     IPageData<TUserDTO> queryPage(TUserQuery query);
+
+    TUserRoleDTO getDetails(Long id);
 }
 
