@@ -170,6 +170,6 @@ public class TRoleRepositoryImpl implements TRoleRepository {
 
     @Override
     public List<TRoleDTO> queryListByUserId(Long userId) {
-        return roleBuilder.buildRoleDTO(roleDao.queryListByUserId(userId));
+        return roleBuilder.buildRole(roleDao.queryListByUserId(userId));
     }
 }

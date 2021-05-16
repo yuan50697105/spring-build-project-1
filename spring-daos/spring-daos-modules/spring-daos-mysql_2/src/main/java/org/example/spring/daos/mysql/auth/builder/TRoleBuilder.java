@@ -17,8 +17,6 @@ public interface TRoleBuilder {
 
     TRole buildRole(TRoleVo tRoleVo);
 
-    List<TRoleDTO> buildRoleDTO(List<TRole> tRoles);
-
     void copy(TRole role, @MappingTarget TRole tRole);
 
     TRoleDTO buildRole(TRole byId);
