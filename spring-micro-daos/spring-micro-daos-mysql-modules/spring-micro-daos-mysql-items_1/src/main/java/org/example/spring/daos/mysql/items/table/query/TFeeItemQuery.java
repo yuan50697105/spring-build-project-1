@@ -7,6 +7,8 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndLessThanOrEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.daos.mysql.items.table.enumerate.Sex;
+import org.example.spring.daos.mysql.items.table.enumerate.TFeeItemType;
 import org.example.spring.daos.mysql.items.table.po.TFeeItem;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
@@ -64,4 +66,20 @@ public class TFeeItemQuery extends TkBaseQuery<TFeeItem> implements Serializable
      */
     @AndLessThanOrEqualTo
     private Integer ageEnd;
+
+    public String getType() {
+        return TFeeItemType.getValue(type);
+    }
+
+    public void setType(String type) {
+        this.type = TFeeItemType.getValue(type);
+    }
+
+    public String getSex() {
+        return Sex.getValue(sex);
+    }
+
+    public void setSex(String sex) {
+        this.sex = Sex.getValue(sex);
+    }
 }
