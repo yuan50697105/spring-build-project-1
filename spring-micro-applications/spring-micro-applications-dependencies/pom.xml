@@ -13,8 +13,15 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-dependencies</artifactId>
-                <version>0.0.22-SNAPSHOT</version>
+                <artifactId>spring-domains-services-dependencies</artifactId>
+                <version>0.0.28</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-repositories-dependencies</artifactId>
+                <version>0.0.28</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
