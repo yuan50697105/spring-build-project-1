@@ -50,6 +50,8 @@ public interface TCustomerContractRepository {
 
     List<TCustomerContractDTO> queryTop(TCustomerContractQuery query);
 
+    Stream<TCustomerContractDTO> queryTopStream(TCustomerContractQuery query);
+
     List<TCustomerContractDTO> selectTop(TCustomerContractQuery query);
 
     Stream<TCustomerContractDTO> selectTopStream(TCustomerContractQuery query);

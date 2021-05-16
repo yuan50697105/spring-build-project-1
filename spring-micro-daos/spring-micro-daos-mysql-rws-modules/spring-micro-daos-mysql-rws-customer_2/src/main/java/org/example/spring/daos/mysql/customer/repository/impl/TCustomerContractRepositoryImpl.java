@@ -134,6 +134,11 @@ public class TCustomerContractRepositoryImpl implements TCustomerContractReposit
     }
 
     @Override
+    public Stream<TCustomerContractDTO> queryTopStream(TCustomerContractQuery query) {
+        return customerContractBuilder.toDTO(customerContractDao.queryTopStream(query));
+    }
+
+    @Override
     public List<TCustomerContractDTO> selectTop(TCustomerContractQuery query) {
         return customerContractBuilder.toDTO(customerContractDao.selectTop(query));
     }

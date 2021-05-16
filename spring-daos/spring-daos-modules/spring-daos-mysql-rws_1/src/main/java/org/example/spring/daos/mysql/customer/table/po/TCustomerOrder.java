@@ -1,13 +1,13 @@
 package org.example.spring.daos.mysql.customer.table.po;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * t_customer_order
