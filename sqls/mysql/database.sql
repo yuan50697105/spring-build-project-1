@@ -1,3 +1,84 @@
+create table if not exists bill_info
+(
+    id                 bigint auto_increment comment 'id'
+        primary key,
+    create_id          bigint         default -1                    null comment 'createId',
+    update_id          bigint         default -1                    null comment 'updateId',
+    create_user        varchar(50)    default ''                    null comment 'createUser',
+    update_user        varchar(50)    default ''                    null comment 'updateUser',
+    create_date        datetime       default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date        datetime       default '1000-01-01 00:00:00' null comment 'updateDate',
+    order_no           varchar(50)    default ''                    null comment '订单号',
+    patient_code       varchar(50)    default ''                    null comment '体检号',
+    patient_id         varchar(50)    default ''                    null comment '体检人ID',
+    patient_name       varchar(50)    default ''                    null comment '体检人姓名',
+    patient_id_card_no varchar(50)    default ''                    null comment '体检人身份证号',
+    total_price        decimal(13, 4) default -1.0000               null comment '总价'
+)
+    comment 'bill_info' charset = utf8mb4;
+
+create table if not exists bill_items_info
+(
+    id           bigint auto_increment comment 'id'
+        primary key,
+    create_id    bigint         default -1                    null comment 'createId',
+    update_id    bigint         default -1                    null comment 'updateId',
+    create_user  varchar(50)    default ''                    null comment 'createUser',
+    update_user  varchar(50)    default ''                    null comment 'updateUser',
+    create_date  datetime       default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date  datetime       default '1000-01-01 00:00:00' null comment 'updateDate',
+    bill_id      varchar(50)    default ''                    null comment 'billId',
+    order_no     varchar(50)    default ''                    null comment 'orderNo',
+    sub_order_no varchar(50)    default ''                    null comment 'subOrderNo',
+    item_id      bigint         default -1                    null comment 'itemId',
+    item_name    varchar(50)    default ''                    null comment 'itemName',
+    item_price   decimal(13, 4) default -1.0000               null comment 'itemPrice',
+    num          decimal(13, 4) default -1.0000               null comment 'num',
+    total_price  decimal(13, 4) default -1.0000               null comment 'totalPrice'
+)
+    comment 'bill_items_info' charset = utf8mb4;
+
+create table if not exists bill_log
+(
+    id                   bigint auto_increment comment 'id'
+        primary key,
+    create_id            bigint         default -1                    null comment 'createId',
+    update_id            bigint         default -1                    null comment 'updateId',
+    create_user          varchar(50)    default ''                    null comment 'createUser',
+    update_user          varchar(50)    default ''                    null comment 'updateUser',
+    create_date          datetime       default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date          datetime       default '1000-01-01 00:00:00' null comment 'updateDate',
+    order_no             varchar(50)    default ''                    null comment '订单号',
+    patient_code         varchar(50)    default ''                    null comment '体检号',
+    patient_id           varchar(50)    default ''                    null comment 'patientId',
+    current_total_price  decimal(13, 4) default -1.0000               null comment '当前价格',
+    previous_total_price decimal(13, 4) default -1.0000               null comment '之前价格',
+    previous_id          bigint         default -1                    null comment '之前Id',
+    type                 varchar(50)    default ''                    null comment '类型
+     *
+     * @see  BillLogType'
+)
+    comment 'bill_log' charset = utf8mb4;
+
+create table if not exists bill_sub_info
+(
+    id           bigint auto_increment comment 'id'
+        primary key,
+    create_id    bigint         default -1                    null comment 'createId',
+    update_id    bigint         default -1                    null comment 'updateId',
+    create_user  varchar(50)    default ''                    null comment 'createUser',
+    update_user  varchar(50)    default ''                    null comment 'updateUser',
+    create_date  datetime       default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date  datetime       default '1000-01-01 00:00:00' null comment 'updateDate',
+    sub_order_no varchar(50)    default ''                    null comment '子单单号',
+    bill_id      varchar(50)    default ''                    null comment '总单ID',
+    order_no     varchar(50)    default ''                    null comment '总单单号',
+    total_price  decimal(13, 4) default -1.0000               null comment '总价',
+    status       varchar(50)    default ''                    null comment '状态
+     * @see BillSubInfoStatus'
+)
+    comment 'bill_sub_info' charset = utf8mb4;
+
 create table if not exists t_check_department
 (
     id          bigint auto_increment comment 'id'
@@ -253,7 +334,7 @@ create table if not exists t_patient_fee_item
     create_date     datetime       default '1000-01-01 00:00:00' null comment 'createDate',
     update_date     datetime       default '1000-01-01 00:00:00' null comment 'updateDate',
     patient_id      bigint         default -1                    null comment 'patientId',
-    fee_item_id     varchar(50)    default ''                    null comment 'feeItemId',
+    fee_item_id     bigint         default -1                    null comment 'feeItemId',
     fee_item_code   varchar(50)    default ''                    null comment 'feeItemCode',
     fee_item_name   varchar(50)    default ''                    null comment 'feeItemName',
     meal_id         bigint         default -1                    null comment 'mealId',
@@ -280,10 +361,10 @@ create table if not exists t_patient_group
     name         varchar(50) default ''                    null comment 'name',
     customer_id  bigint      default -1                    null comment 'customerId',
     team_id      bigint      default -1                    null comment 'groupId',
-    person_num   int         default -1                    null comment 'personNum',
     team_meal_id bigint      default -1                    null comment 'teamMealId',
     meal_id      bigint      default -1                    null comment 'mealId',
-    meal_name    varchar(50) default ''                    null comment 'mealName'
+    meal_name    varchar(50) default ''                    null comment 'mealName',
+    person_num   int         default -1                    null comment 'personNum'
 )
     comment 't_patient_group' charset = utf8mb4;
 
@@ -336,23 +417,23 @@ create table if not exists t_patient_team_meal
 (
     id           bigint auto_increment comment 'id'
         primary key,
-    create_id    bigint         default -1                    not null comment 'createId',
-    update_id    bigint         default -1                    not null comment 'updateId',
-    create_user  varchar(50)    default ''                    not null comment 'createUser',
-    update_user  varchar(50)    default ''                    not null comment 'updateUser',
-    create_date  datetime       default '1000-01-01 00:00:00' not null comment 'createDate',
-    update_date  datetime       default '1000-01-01 00:00:00' not null comment 'updateDate',
-    patient_id   bigint         default -1                    not null comment '体检者ID',
-    team_id      bigint         default -1                    not null comment 'teamId',
-    team_code    varchar(50)    default ''                    not null comment 'teamCode',
-    team_name    varchar(50)    default ''                    not null comment 'teamName',
-    meal_type    varchar(50)    default ''                    not null comment 'mealType',
-    meal_id      bigint         default -1                    not null comment 'mealId',
-    meal_code    varchar(50)    default ''                    not null comment 'mealCode',
-    meal_name    varchar(50)    default ''                    not null comment 'mealName',
-    price        decimal(13, 4) default -1.0000               not null comment 'price',
-    dis_price    decimal(13, 4) default -1.0000               not null comment 'disPrice',
-    market_price decimal(13, 4) default -1.0000               not null comment 'marketPrice'
+    create_id    bigint         default -1                    null comment 'createId',
+    update_id    bigint         default -1                    null comment 'updateId',
+    create_user  varchar(50)    default ''                    null comment 'createUser',
+    update_user  varchar(50)    default ''                    null comment 'updateUser',
+    create_date  datetime       default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date  datetime       default '1000-01-01 00:00:00' null comment 'updateDate',
+    patient_id   bigint         default -1                    null comment '体检者ID',
+    team_id      bigint         default -1                    null comment 'teamId',
+    team_code    varchar(50)    default ''                    null comment 'teamCode',
+    team_name    varchar(50)    default ''                    null comment 'teamName',
+    meal_type    varchar(50)    default ''                    null comment 'mealType',
+    meal_id      bigint         default -1                    null comment 'mealId',
+    meal_code    varchar(50)    default ''                    null comment 'mealCode',
+    meal_name    varchar(50)    default ''                    null comment 'mealName',
+    price        decimal(13, 4) default -1.0000               null comment 'price',
+    dis_price    decimal(13, 4) default -1.0000               null comment 'disPrice',
+    market_price decimal(13, 4) default -1.0000               null comment 'marketPrice'
 )
     comment 't_patient_team_meal' charset = utf8mb4;
 
@@ -497,19 +578,19 @@ create table if not exists t_report_info
 (
     id           bigint auto_increment comment 'id'
         primary key,
-    create_id    bigint      default -1                    not null comment 'createId',
-    update_id    bigint      default -1                    not null comment 'updateId',
-    create_user  varchar(50) default ''                    not null comment 'createUser',
-    update_user  varchar(50) default ''                    not null comment 'updateUser',
-    create_date  datetime    default '1000-01-01 00:00:00' not null comment 'createDate',
-    update_date  datetime    default '1000-01-01 00:00:00' not null comment 'updateDate',
-    code         varchar(50) default ''                    not null comment '报告编号',
-    patient_id   bigint      default -1                    not null comment '体检ID',
-    patient_code varchar(50) default ''                    not null comment '体检号',
-    name         varchar(50) default ''                    not null comment '人员姓名',
-    bucket_name  varchar(50) default ''                    not null comment '对象名称',
-    file_name    varchar(50) default ''                    not null comment '文件名称',
-    versions     int         default -1                    not null comment 'versions'
+    create_id    bigint      default -1                    null comment 'createId',
+    update_id    bigint      default -1                    null comment 'updateId',
+    create_user  varchar(50) default ''                    null comment 'createUser',
+    update_user  varchar(50) default ''                    null comment 'updateUser',
+    create_date  datetime    default '1000-01-01 00:00:00' null comment 'createDate',
+    update_date  datetime    default '1000-01-01 00:00:00' null comment 'updateDate',
+    code         varchar(50) default ''                    null comment '报告编号',
+    patient_id   bigint      default -1                    null comment '体检ID',
+    patient_code varchar(50) default ''                    null comment '体检号',
+    name         varchar(50) default ''                    null comment '人员姓名',
+    bucket_name  varchar(50) default ''                    null comment '对象名称',
+    file_name    varchar(50) default ''                    null comment '文件名称',
+    versions     int         default -1                    null comment 'versions'
 )
     comment 't_report_info' charset = utf8mb4;
 
@@ -529,7 +610,7 @@ create table if not exists t_resource
     pid         bigint      default -1                    null comment 'pid',
     weight      int         default -1                    null comment 'weight'
 )
-    comment 't_permission' charset = utf8mb4;
+    comment 't_resource' charset = utf8mb4;
 
 create table if not exists t_role
 (
@@ -558,7 +639,7 @@ create table if not exists t_role_resource
     role_id     bigint      default -1                    null comment 'roleId',
     resource_id bigint      default -1                    null comment 'permissionId'
 )
-    comment 't_role_permission' charset = utf8mb4;
+    comment 't_role_resource' charset = utf8mb4;
 
 create table if not exists t_sales_record
 (
@@ -577,7 +658,7 @@ create table if not exists t_sales_record
     customer_name varchar(50)    default ''                    null comment '客户姓名',
     amount        decimal(13, 4) default -1.0000               null comment '金额'
 )
-    comment '销售记录' charset = utf8mb4;
+    comment 't_sales_record' charset = utf8mb4;
 
 create table if not exists t_seller_info
 (
@@ -629,21 +710,11 @@ create table if not exists t_user
     username    varchar(50) default ''                    null comment '用户名',
     name        varchar(50) default ''                    null comment '姓名',
     password    varchar(50) default ''                    null comment '密码',
-    status      varchar(50) default ''                    null comment '状态'
+    status      varchar(50) default ''                    null comment '状态
+     *
+     * @see TUserStatus'
 )
     comment 't_user' charset = utf8mb4;
-
-create index t_user_id_name_index
-    on t_user (id, name);
-
-create index t_user_id_username_index
-    on t_user (id, username);
-
-create index t_user_name_index
-    on t_user (name);
-
-create index t_user_username_index
-    on t_user (username);
 
 create table if not exists t_user_role
 (
