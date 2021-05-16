@@ -9,6 +9,10 @@ import org.example.spring.daos.mysql.items.table.query.TCheckItemQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.weekend.WeekendSqls;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Repository
 @AllArgsConstructor
@@ -17,5 +21,20 @@ public class TCheckItemDaoImpl extends TkBaseDaoImpl<TCheckItem, TCheckItemQuery
     @Override
     protected Wrapper<TCheckItem> queryWrapper(TCheckItemQuery tCheckItemQuery) {
         return null;
+    }
+
+    @Override
+    public boolean deleteByFeeItemIds(List<Long> ids) {
+        return deleteByExample(exampleBuilder().where(WeekendSqls.<TCheckItem>custom().andIn(TCheckItem::getFeeItemId, ids)).build());
+    }
+
+    @Override
+    public boolean deleteByFeeItemIds(Long... ids) {
+        return deleteByFeeItemIds(Arrays.asList(ids));
+    }
+
+    @Override
+    public boolean deleteByFeeItemId(Long id) {
+        return deleteByExample(exampleBuilder().where(WeekendSqls.<TCheckItem>custom().andEqualTo(TCheckItem::getFeeItemId, id)).build());
     }
 }
