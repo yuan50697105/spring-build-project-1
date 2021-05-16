@@ -15,7 +15,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-mysql-rws-clients-report_2</artifactId>
+            <artifactId>spring-micro-daos-mysql-rws-report_2</artifactId>
         </dependency>
     </dependencies>
 
