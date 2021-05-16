@@ -18,6 +18,7 @@ import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.weekend.Weekend;
 import tk.mybatis.mapper.weekend.WeekendSqls;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -78,6 +79,28 @@ public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, T
     @Override
     public List<TRole> listRolesByUserId(Long userId) {
         return baseMapper.listRolesByUserId(userId);
+    }
+
+    @Override
+    public boolean removeByRoleId(Long roleId) {
+        Example.Builder where = Weekend.builder(entityClass).where(WeekendSqls.<TUserRole>custom().andEqualTo(TUserRole::getRoleId, roleId));
+        return SqlHelper.retBool(baseMapper.deleteByExample(where.build()));
+    }
+
+    @Override
+    public boolean deleteByRoleId(Long roleId) {
+        return removeByRoleId(roleId);
+    }
+
+    @Override
+    public boolean removeByRoleIds(List<Long> ids) {
+        Example.Builder where = Weekend.builder(entityClass).where(WeekendSqls.<TUserRole>custom().andIn(TUserRole::getRoleId, ids));
+        return SqlHelper.retBool(baseMapper.deleteByExample(where.build()));
+    }
+
+    @Override
+    public boolean deleteByRoleIds(List<Long> ids) {
+        return removeByRoleIds(ids);
     }
 
     @Override

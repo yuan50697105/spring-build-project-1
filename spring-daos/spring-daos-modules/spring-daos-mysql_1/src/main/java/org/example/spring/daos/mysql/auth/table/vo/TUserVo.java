@@ -36,6 +36,6 @@ public class TUserVo extends TUser implements Serializable {
     }
 
     public TUser toUserForUpdate(TUser user) {
-        return TUserBuilder.INSTANCE.copy(this,user);
+        return null;
     }
 }

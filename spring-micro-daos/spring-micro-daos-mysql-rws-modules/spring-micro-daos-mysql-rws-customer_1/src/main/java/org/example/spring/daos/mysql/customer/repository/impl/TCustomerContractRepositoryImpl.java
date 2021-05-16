@@ -30,11 +30,6 @@ public class TCustomerContractRepositoryImpl implements TCustomerContractReposit
 
 
     @Override
-    public void insert(TCustomerContractVo vo) {
-         customerContractDao.insert(customerContractBuilder.toPo(vo));
-    }
-
-    @Override
     public void update(TCustomerContractVo vo) {
         TCustomerContract customerContract = customerContractBuilder.toPo(vo);
         Optional<TCustomerContract> optional = customerContractDao.getByIdOpt(customerContract.getId());

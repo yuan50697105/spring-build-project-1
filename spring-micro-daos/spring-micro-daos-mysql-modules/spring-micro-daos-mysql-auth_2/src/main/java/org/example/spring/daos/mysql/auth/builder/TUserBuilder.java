@@ -22,7 +22,9 @@ public interface TUserBuilder {
     @Mapping(target = "username", ignore = true)
     @Mapping(target = "password", ignore = true)
     @Mapping(target = "status", ignore = true)
-    TUser copy(TUserVo tUserVo, @MappingTarget TUser user);
+    void copy(TUserVo tUserVo, @MappingTarget TUser user);
+
+    void copy(TUser tUser, @MappingTarget TUser user);
 
     TUserDTO buildUser(TUser byId);
 
@@ -31,4 +33,6 @@ public interface TUserBuilder {
     Stream<TUserDTO> buildUserStream(Stream<TUser> stream);
 
     IPageData<TUserDTO> buildUsers(IPageData<TUser> list);
+
+    Stream<TUserDTO> buildUsers(Stream<TUser> queryListStream);
 }

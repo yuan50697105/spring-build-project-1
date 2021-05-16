@@ -12,8 +12,6 @@ import java.util.stream.Stream;
 public interface TCustomerContractRepository {
     void save(TCustomerContractVo vo);
 
-    void insert(TCustomerContractVo vo);
-
     void update(TCustomerContractVo vo);
 
     void delete(Long id);
