@@ -7,7 +7,7 @@ import cn.hutool.core.lang.tree.parser.NodeParser;
 import lombok.AllArgsConstructor;
 import org.example.spring.daos.mysql.auth.dao.TResourceDao;
 import org.example.spring.daos.mysql.auth.dao.TRoleResourceDao;
-import org.example.spring.daos.mysql.auth.dao.UserResourceDao;
+import org.example.spring.daos.mysql.auth.dao.TUserResourceDao;
 import org.example.spring.daos.mysql.auth.table.po.TResource;
 import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
@@ -32,7 +32,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
     private final TResourceDao resourceDao;
     private final TRoleResourceDao roleResourceDao;
     private final AuthModelBuilder authModelBuilder;
-    private final UserResourceDao userResourceDao;
+    private final TUserResourceDao TUserResourceDao;
 
     @Override
     public Long saveWithId(ResourceModelVo resourceModelVo) {
@@ -99,7 +99,7 @@ public class ResourceRepositoryImpl extends IBaseRepositoryImpl<Resource, Resour
 
     @Override
     public List<Tree<Long>> listAllResourceByUserId(Long userId) {
-        List<TResource> permissions = userResourceDao.listPermissionByUserId(userId);
+        List<TResource> permissions = TUserResourceDao.listResourceByUserId(userId);
         List<ResourceNode> resourceNodes = authModelBuilder.buildPermissionToResourceNode(permissions);
         return TreeUtil.build(resourceNodes, 0L, getNodeParser());
     }

@@ -12,12 +12,24 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-           <artifactId>spring-domains-repositories-commons</artifactId>
+            <artifactId>spring-domains-repositories-commons</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-daos-mysql_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-domains-micro-repositories-mysql-auth_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-domains-micro-repositories-mysql-customer_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-domains-micro-repositories-mysql-patient_2</artifactId>
         </dependency>
     </dependencies>
 

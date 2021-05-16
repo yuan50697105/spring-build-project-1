@@ -135,7 +135,7 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
     @Override
     public PatientTeamMeal queryOne(PatientTeamMealQuery patientTeamMealQuery) {
         TPatientTeamMealQuery query = patientModelBuilder.buildPatientTeamMealQuery(patientTeamMealQuery);
-        TPatientTeamMeal meal = patientTeamMealDao.queryFirst(query).orElse(new TPatientTeamMeal());
+        TPatientTeamMeal meal = patientTeamMealDao.queryFirstOpt(query).orElse(new TPatientTeamMeal());
         return patientModelBuilder.buildPatientTeamMealResult(meal);
     }
 }

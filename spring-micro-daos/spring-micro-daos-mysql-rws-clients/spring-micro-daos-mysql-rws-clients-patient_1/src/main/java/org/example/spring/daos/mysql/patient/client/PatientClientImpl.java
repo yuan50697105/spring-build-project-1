@@ -69,7 +69,7 @@ public class PatientClientImpl implements PatientClient {
     @Override
     public Patient get(PatientQuery query) {
         TPatientQuery build = patientClientBuilder.build(query);
-        TPatient patient = patientDao.queryFirst(build).orElse(null);
+        TPatient patient = patientDao.queryFirst(build);
         return patientClientBuilder.build(patient);
     }
 

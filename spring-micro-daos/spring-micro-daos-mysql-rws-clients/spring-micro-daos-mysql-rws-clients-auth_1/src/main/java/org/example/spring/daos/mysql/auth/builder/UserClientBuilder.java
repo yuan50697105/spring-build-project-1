@@ -13,7 +13,6 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 @Mapper(config = BaseBuilder.class)
 public interface UserClientBuilder {
@@ -23,12 +22,6 @@ public interface UserClientBuilder {
     TUserQuery build(UserQuery query);
 
     TUserVo buildVO(UserVo userVo);
-
-    List<UserDTO> buildListDTOs(List<TUserDTO> userDTOS);
-
-    Stream<UserDTO> buildDTOStream(Stream<TUserDTO> dtoStream);
-
-    IPageData<UserDTO> buildPageDTO(IPageData<TUserDTO> pageData);
 
     UserRoleDTO buildUserDetails(TUserRoleDTO details);
 
