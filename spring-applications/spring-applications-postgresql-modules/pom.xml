@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-applications</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.28-SNAPSHOT</version>
+        <version>0.0.28</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,7 +22,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-dependencies</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>

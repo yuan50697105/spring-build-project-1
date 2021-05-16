@@ -173,6 +173,6 @@ public class TMealRepositoryImpl implements TMealRepository {
     public TMealFeeItemDTO getDetails(Long id) {
         TMealDTO tMealDTO = get(id);
         List<TFeeItemDTO> items = feeItemRepository.queryListByMealId(id);
-        return mealBuilder.build(tMealDTO, );
+        return mealBuilder.build(tMealDTO, items);
     }
 }

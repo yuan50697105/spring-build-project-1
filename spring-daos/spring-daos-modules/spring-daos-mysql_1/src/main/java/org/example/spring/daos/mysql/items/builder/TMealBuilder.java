@@ -1,6 +1,8 @@
 package org.example.spring.daos.mysql.items.builder;
 
+import org.example.spring.daos.mysql.items.table.dto.TFeeItemDTO;
 import org.example.spring.daos.mysql.items.table.dto.TMealDTO;
+import org.example.spring.daos.mysql.items.table.dto.TMealFeeItemDTO;
 import org.example.spring.daos.mysql.items.table.po.TMeal;
 import org.example.spring.daos.mysql.items.table.vo.TMealVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
@@ -24,4 +26,6 @@ public interface TMealBuilder {
     List<TMealDTO> build(List<TMeal> queryList);
 
     IPageData<TMealDTO> build(IPageData<TMeal> selectPage);
+
+    TMealFeeItemDTO build(TMealDTO tMealDTO, List<TFeeItemDTO> items);
 }

@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-domains-repositories</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.28-SNAPSHOT</version>
+        <version>0.0.28</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,76 +14,76 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-dependencies</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                <artifactId>spring-domains-repositories-commons</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories_1</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories_2</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-mysql_1</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-mysql_2</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-postgresql_1</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-postgresql_2</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-clickhouse_1</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-clickhouse_2</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-doris_1</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-doris_2</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-kylin</artifactId>
-                <version>0.0.28-SNAPSHOT</version>
+                <version>0.0.28</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
