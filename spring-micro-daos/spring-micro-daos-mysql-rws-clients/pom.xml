@@ -19,6 +19,12 @@
         <module>spring-micro-daos-mysql-rws-clients-patient_2</module>
         <module>spring-micro-daos-mysql-rws-clients-bill_1</module>
         <module>spring-micro-daos-mysql-rws-clients-bill_2</module>
+        <module>spring-micro-daos-mysql-rws-clients-customer_1</module>
+        <module>spring-micro-daos-mysql-rws-clients-customer_2</module>
+        <module>spring-micro-daos-mysql-rws-clients-items_1</module>
+        <module>spring-micro-daos-mysql-rws-clients-items_2</module>
+        <module>spring-micro-daos-mysql-rws-clients-report_1</module>
+        <module>spring-micro-daos-mysql-rws-clients-report_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

@@ -300,6 +300,36 @@
                 <artifactId>spring-micro-daos-mysql-rws-bill_2</artifactId>
                 <version>0.0.28</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-rws-clients-customer_1</artifactId>
+                <version>0.0.28</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-rws-clients-customer_2</artifactId>
+                <version>0.0.28</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-rws-clients-items_1</artifactId>
+                <version>0.0.28</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-rws-clients-items_2</artifactId>
+                <version>0.0.28</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-rws-clients-report_1</artifactId>
+                <version>0.0.28</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-rws-clients-report_2</artifactId>
+                <version>0.0.28</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
