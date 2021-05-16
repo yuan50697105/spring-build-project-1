@@ -105,6 +105,7 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
         return queryPage((Q) query.withPage(1)).getData();
     }
 
+    @Override
     public List<T> selectTop(Q query) {
         return queryTop(query);
     }
