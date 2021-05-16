@@ -17,12 +17,10 @@ import org.example.spring.plugins.mybatis.dao.EBaseDao;
 import org.example.spring.plugins.mybatis.entity.query.EBaseQuery;
 import org.example.spring.plugins.mybatis.entity.result.IPageResult;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
+import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
@@ -233,13 +231,23 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
-    public boolean deleteByMap(Map<String, Object> map) {
-        return removeByMap(map);
+    public boolean delete(Q q) {
+        return remove(q);
     }
 
     @Override
-    public boolean delete(Q q) {
-        return remove(q);
+    public boolean remove(Example example) {
+        return SqlHelper.retBool(baseMapper.deleteByExample(example));
+    }
+
+    @Override
+    public boolean delete(Example example) {
+        return remove(example);
+    }
+
+    @Override
+    public boolean deleteByMap(Map<String, Object> map) {
+        return removeByMap(map);
     }
 
     @Override
@@ -250,6 +258,16 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     @Override
     public boolean deleteByIds(Collection<? extends Serializable> ids) {
         return removeByIds(ids);
+    }
+
+    @Override
+    public boolean removeByIds(Serializable... ids) {
+        return removeByIds(Arrays.asList(ids));
+    }
+
+    @Override
+    public boolean deleteByIds(Serializable... ids) {
+        return deleteByIds(Arrays.asList(ids));
     }
 
     public boolean isNotEmpty(Object object) {

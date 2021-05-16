@@ -3,13 +3,13 @@ package org.example.spring.plugins.mybatis.dao;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.mybatis.entity.query.EBaseQuery;
+import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 /**
@@ -66,6 +66,12 @@ public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
 
     boolean insertSetColumnsBatch(List<T> list);
 
+    boolean remove(Example example);
+
+    boolean delete(Example example);
+
+    boolean removeByIds(Serializable... ids);
+
     boolean deleteByMap(Map<String, Object> map);
 
     boolean delete(Q q);
@@ -73,4 +79,6 @@ public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
     boolean deleteById(Serializable id);
 
     boolean deleteByIds(Collection<? extends Serializable> ids);
+
+    boolean deleteByIds(Serializable... ids);
 }
