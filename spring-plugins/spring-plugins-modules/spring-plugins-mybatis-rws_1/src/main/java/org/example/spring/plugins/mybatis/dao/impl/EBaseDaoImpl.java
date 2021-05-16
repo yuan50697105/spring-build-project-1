@@ -76,6 +76,7 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
         return queryTop(query).stream();
     }
 
+    @Override
     public Stream<T> selectTopStream(Q query) {
         return queryTopStream(query);
     }
@@ -115,6 +116,7 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
         return queryTop((Q) query.withPage(1).withSize(1)).stream().findFirst();
     }
 
+    @Override
     public Optional<T> selectFirstOpt(Q query) {
         return queryFirstOpt(query);
     }
@@ -124,6 +126,7 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
         return queryFirstOpt(query).orElse(null);
     }
 
+    @Override
     public T selectFirst(Q query) {
         return queryFirst(query);
     }
@@ -140,6 +143,7 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
         }
     }
 
+    @Override
     public T selectOne(Q query) {
         return queryOne(query);
     }
