@@ -59,5 +59,7 @@ public interface TDepartmentRepository {
     IPageData<TDepartmentDTO> selectPage(TDepartmentQuery query);
 
     IPageData<TDepartmentDTO> queryPage(TDepartmentQuery query);
+
+    boolean validateDelete(List<Long> ids);
 }
 

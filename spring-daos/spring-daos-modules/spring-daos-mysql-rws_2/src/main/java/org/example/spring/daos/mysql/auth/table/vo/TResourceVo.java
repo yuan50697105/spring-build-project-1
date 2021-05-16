@@ -2,7 +2,6 @@ package org.example.spring.daos.mysql.auth.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.auth.builder.TResourceBuilder;
 import org.example.spring.daos.mysql.auth.table.enumerate.TResourceType;
 import org.example.spring.daos.mysql.auth.table.po.TResource;
 
@@ -24,10 +23,6 @@ public class TResourceVo extends TResource implements Serializable {
     @Override
     public String getType() {
         return TResourceType.getValue(super.getType());
-    }
-
-    public TResource toResource() {
-        return TResourceBuilder.INSTANCE.buildResource(this);
     }
 
 }

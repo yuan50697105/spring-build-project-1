@@ -1,5 +1,6 @@
 package org.example.spring.daos.mysql.auth.client;
 
+import org.example.spring.daos.mysql.auth.entity.dto.DepartmentDTO;
 import org.example.spring.daos.mysql.auth.entity.vo.DepartmentVo;
 import org.example.spring.daos.mysql.auth.entity.query.DepartmentQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -21,14 +22,14 @@ public interface DepartmentDaoClient {
     void delete(List<Long> ids);
 
     @GetMapping("/{id}")
-    DepartmentVo get(@PathVariable Long id);
+    DepartmentDTO get(@PathVariable Long id);
 
     @GetMapping
-    IPageData<DepartmentVo> data(@SpringQueryMap DepartmentQuery query);
+    IPageData<DepartmentDTO> data(@SpringQueryMap DepartmentQuery query);
 
     @GetMapping("list")
-    List<DepartmentVo> list(@SpringQueryMap DepartmentQuery query);
+    List<DepartmentDTO> list(@SpringQueryMap DepartmentQuery query);
 
     @GetMapping("one")
-    Optional<DepartmentVo> one(@SpringQueryMap DepartmentQuery query);
+    Optional<DepartmentDTO> one(@SpringQueryMap DepartmentQuery query);
 }

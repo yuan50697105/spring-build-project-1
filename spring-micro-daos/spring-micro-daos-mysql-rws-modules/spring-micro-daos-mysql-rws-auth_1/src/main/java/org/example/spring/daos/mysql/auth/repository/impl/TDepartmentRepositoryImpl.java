@@ -165,4 +165,9 @@ public class TDepartmentRepositoryImpl implements TDepartmentRepository {
     public IPageData<TDepartmentDTO> queryPage(TDepartmentQuery query) {
         return departmentBuilder.toDTO(departmentDao.queryPage(query));
     }
+
+    @Override
+    public boolean validateDelete(List<Long> ids) {
+        return departmentDao.validateDelete(ids);
+    }
 }

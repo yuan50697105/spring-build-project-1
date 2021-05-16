@@ -26,12 +26,16 @@ public class TUserVo extends TUser implements Serializable {
         super.setStatus(TUserStatus.getValue(status));
     }
 
-    public List<TUserRole> toRole(Long userId) {
+    public List<TUserRole> toRoles(Long userId) {
         TUserRoleBuilder instance = TUserRoleBuilder.INSTANCE;
         return instance.buildRoles(userId, roleIds);
     }
 
     public TUser toUser() {
-        return TUserBuilder.INSTANCE.builidUser(this);
+        return TUserBuilder.INSTANCE.buildUser(this);
+    }
+
+    public TUser toUserForUpdate(TUser user) {
+        return null;
     }
 }
