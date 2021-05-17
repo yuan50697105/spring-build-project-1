@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 public class TBillItemsInfo extends IBaseEntity {
     private String billId;
     private String orderNo;
+    private Long subBillId;
     private String subOrderNo;
     private Long itemId;
     private String itemName;

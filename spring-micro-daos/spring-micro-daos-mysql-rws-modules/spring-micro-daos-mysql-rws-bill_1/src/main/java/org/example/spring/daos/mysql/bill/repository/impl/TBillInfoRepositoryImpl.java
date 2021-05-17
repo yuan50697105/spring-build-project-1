@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import org.example.spring.daos.mysql.bill.builder.TBillInfoBuilder;
 import org.example.spring.daos.mysql.bill.dao.TBillInfoDao;
 import org.example.spring.daos.mysql.bill.repository.TBillInfoRepository;
+import org.example.spring.daos.mysql.bill.repository.TBillSubInfoRepository;
 import org.example.spring.daos.mysql.bill.table.dto.TBillInfoDTO;
+import org.example.spring.daos.mysql.bill.table.dto.TBillInfoDetailsDTO;
 import org.example.spring.daos.mysql.bill.table.po.TBillInfo;
 import org.example.spring.daos.mysql.bill.table.query.TBillInfoQuery;
 import org.example.spring.daos.mysql.bill.table.vo.TBillInfoVo;
@@ -23,6 +25,8 @@ import java.util.stream.Stream;
 public class TBillInfoRepositoryImpl implements TBillInfoRepository {
     private final TBillInfoBuilder billInfoBuilder;
     private final TBillInfoDao billInfoDao;
+    private final TBillSubInfoRepository billSubInfoRepository;
+
 
     @Override
     public void save(TBillInfoVo vo) {
@@ -155,5 +159,10 @@ public class TBillInfoRepositoryImpl implements TBillInfoRepository {
     @Override
     public IPageData<TBillInfoDTO> queryPage(TBillInfoQuery query) {
         return billInfoBuilder.build(billInfoDao.queryPage(query));
+    }
+
+    @Override
+    public TBillInfoDetailsDTO getDetails(Long id) {
+        return billInfoBuilder.build(get(id),billSubInfoRepository.queryDetailsListByBillId(id));
     }
 }

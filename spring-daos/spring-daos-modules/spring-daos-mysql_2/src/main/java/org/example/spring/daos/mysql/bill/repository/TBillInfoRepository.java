@@ -1,6 +1,7 @@
 package org.example.spring.daos.mysql.bill.repository;
 
 import org.example.spring.daos.mysql.bill.table.dto.TBillInfoDTO;
+import org.example.spring.daos.mysql.bill.table.dto.TBillInfoDetailsDTO;
 import org.example.spring.daos.mysql.bill.table.query.TBillInfoQuery;
 import org.example.spring.daos.mysql.bill.table.vo.TBillInfoVo;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -59,5 +60,7 @@ public interface TBillInfoRepository {
     IPageData<TBillInfoDTO> selectPage(TBillInfoQuery query);
 
     IPageData<TBillInfoDTO> queryPage(TBillInfoQuery query);
+
+    TBillInfoDetailsDTO getDetails(Long id);
 
 }

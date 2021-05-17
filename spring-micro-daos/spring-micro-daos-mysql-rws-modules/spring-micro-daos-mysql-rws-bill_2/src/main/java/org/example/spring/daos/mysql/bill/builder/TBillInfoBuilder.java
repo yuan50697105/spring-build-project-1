@@ -1,6 +1,8 @@
 package org.example.spring.daos.mysql.bill.builder;
 
 import org.example.spring.daos.mysql.bill.table.dto.TBillInfoDTO;
+import org.example.spring.daos.mysql.bill.table.dto.TBillInfoDetailsDTO;
+import org.example.spring.daos.mysql.bill.table.dto.TBillSubInfoDetailsDTO;
 import org.example.spring.daos.mysql.bill.table.po.TBillInfo;
 import org.example.spring.daos.mysql.bill.table.vo.TBillInfoVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
@@ -24,4 +26,6 @@ public interface TBillInfoBuilder {
     List<TBillInfoDTO> build(List<TBillInfo> queryList);
 
     IPageData<TBillInfoDTO> build(IPageData<TBillInfo> queryPage);
+
+    TBillInfoDetailsDTO build(TBillInfoDTO tBillInfoDTO, List<TBillSubInfoDetailsDTO> subs);
 }

@@ -156,4 +156,14 @@ public class TBillItemsInfoRepositoryImpl implements TBillItemsInfoRepository {
     public IPageData<TBillItemsInfoDTO> queryPage(TBillItemsInfoQuery query) {
         return billItemsInfoBuilder.build(billItemsInfoDao.queryPage(query));
     }
+
+    @Override
+    public List<TBillItemsInfoDTO> queryListBySubId(Long subId) {
+        return billItemsInfoBuilder.build(billItemsInfoDao.queryListBySubId(subId));
+    }
+
+    @Override
+    public List<TBillItemsInfoDTO> queryListByBillId(Long billId) {
+        return billItemsInfoBuilder.build(billItemsInfoDao.queryListByBillId(billId));
+    }
 }

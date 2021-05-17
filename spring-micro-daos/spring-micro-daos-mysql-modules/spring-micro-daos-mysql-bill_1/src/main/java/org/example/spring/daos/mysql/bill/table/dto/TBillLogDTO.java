@@ -9,14 +9,6 @@ import org.example.spring.daos.mysql.bill.table.po.TBillLog;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class TBillLogDTO extends TBillLog {
-    public TBillLogDTO(TBillLog TBillLog) {
-        BeanUtil.copyProperties(TBillLog, this);
-        setType(TBillLog.getType());
-    }
-
-    public TBillLog toPo() {
-        return BeanUtil.toBean(this, TBillLog.class);
-    }
 
     @Override
     public String getType() {

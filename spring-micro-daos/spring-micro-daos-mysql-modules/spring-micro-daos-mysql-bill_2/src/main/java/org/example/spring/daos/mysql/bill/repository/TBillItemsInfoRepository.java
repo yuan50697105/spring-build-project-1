@@ -60,4 +60,7 @@ public interface TBillItemsInfoRepository {
 
     IPageData<TBillItemsInfoDTO> queryPage(TBillItemsInfoQuery query);
 
+    List<TBillItemsInfoDTO> queryListBySubId(Long subId);
+
+    List<TBillItemsInfoDTO> queryListByBillId(Long billId);
 }
