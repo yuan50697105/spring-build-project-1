@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.patient;
+package org.example.spring.daos.mysql;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
