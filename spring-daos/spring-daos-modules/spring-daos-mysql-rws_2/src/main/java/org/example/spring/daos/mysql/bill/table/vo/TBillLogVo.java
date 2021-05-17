@@ -4,18 +4,18 @@ import cn.hutool.core.bean.BeanUtil;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.bill.table.enumerate.BillLogType;
-import org.example.spring.daos.mysql.bill.table.po.BillLog;
+import org.example.spring.daos.mysql.bill.table.po.TBillLog;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BillLogVo extends BillLog {
-    public BillLogVo(BillLog billLog) {
-        BeanUtil.copyProperties(billLog, this);
-        setType(billLog.getType());
+public class TBillLogVo extends TBillLog {
+    public TBillLogVo(TBillLog TBillLog) {
+        BeanUtil.copyProperties(TBillLog, this);
+        setType(TBillLog.getType());
     }
 
-    public BillLog toPo() {
-        return BeanUtil.toBean(this, BillLog.class);
+    public TBillLog toPo() {
+        return BeanUtil.toBean(this, TBillLog.class);
     }
 
     @Override

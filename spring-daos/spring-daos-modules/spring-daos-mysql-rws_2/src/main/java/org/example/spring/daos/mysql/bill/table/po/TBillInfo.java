@@ -2,17 +2,13 @@ package org.example.spring.daos.mysql.bill.table.po;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.bill.table.enumerate.BillLogType;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
 import java.math.BigDecimal;
 
-/**
- * 总单日志
- */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BillLog extends IBaseEntity {
+public class TBillInfo extends IBaseEntity {
     /**
      * 订单号
      */
@@ -21,23 +17,21 @@ public class BillLog extends IBaseEntity {
      * 体检号
      */
     private String patientCode;
+    /**
+     * 体检人ID
+     */
     private String patientId;
     /**
-     * 当前价格
+     * 体检人姓名
      */
-    private BigDecimal currentTotalPrice;
+    private String patientName;
     /**
-     * 之前价格
+     * 体检人身份证号
      */
-    private BigDecimal previousTotalPrice;
+    private String patientIdCardNo;
     /**
-     * 之前Id
+     * 总价
      */
-    private Long previousId;
-    /**
-     * 类型
-     *
-     * @see  BillLogType
-     */
-    private String type;
+    private BigDecimal totalPrice;
+
 }

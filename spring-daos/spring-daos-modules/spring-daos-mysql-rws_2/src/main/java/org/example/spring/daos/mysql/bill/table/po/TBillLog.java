@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BillLog extends IBaseEntity {
+public class TBillLog extends IBaseEntity {
     /**
      * 订单号
      */
