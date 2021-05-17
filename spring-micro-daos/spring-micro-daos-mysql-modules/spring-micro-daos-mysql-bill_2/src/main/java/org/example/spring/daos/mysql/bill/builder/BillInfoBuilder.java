@@ -1,10 +1,9 @@
 package org.example.spring.daos.mysql.bill.builder;
 
-import org.example.spring.daos.mysql.bill.table.dto.BillInfoDTO;
-import org.example.spring.daos.mysql.bill.table.po.BillInfo;
+import org.example.spring.daos.mysql.bill.table.dto.TBillInfoDTO;
+import org.example.spring.daos.mysql.bill.table.po.TBillInfo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
 
 import static org.mapstruct.factory.Mappers.getMapper;
 
@@ -12,5 +11,5 @@ import static org.mapstruct.factory.Mappers.getMapper;
 public interface BillInfoBuilder {
     BillInfoBuilder INSTANCE = getMapper(BillInfoBuilder.class);
 
-    BillInfo toPo(BillInfoDTO billInfoDTO);
+    TBillInfo toPo(TBillInfoDTO billInfoDTO);
 }
