@@ -1,6 +1,7 @@
 package org.example.spring.daos.mysql.bill.client;
 
 import org.example.spring.daos.mysql.bill.entity.dto.BillSubInfoDTO;
+import org.example.spring.daos.mysql.bill.entity.dto.BillSubInfoDetailsDTO;
 import org.example.spring.daos.mysql.bill.entity.query.BillSubInfoQuery;
 import org.example.spring.daos.mysql.bill.entity.vo.BillSubInfoVo;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@RequestMapping("bill/items/info/dao")
+@RequestMapping("bill/sub/info/dao")
 public interface BillSubInfoDaoClient {
     @PostMapping
     void save(@RequestBody BillSubInfoVo vo);
@@ -28,7 +29,14 @@ public interface BillSubInfoDaoClient {
     @GetMapping("/{id}")
     BillSubInfoDTO get(@PathVariable Long id);
 
-    Optional<BillSubInfoDTO> getOpt(Long id);
+    @GetMapping("getOpt/{id}")
+    Optional<BillSubInfoDTO> getOpt(@PathVariable Long id);
+
+    @GetMapping("getDetails/{id}")
+    BillSubInfoDetailsDTO getDetails(@PathVariable Long id);
+
+    @GetMapping("getDetailsOpt/{id}")
+    Optional<BillSubInfoDetailsDTO> getDetailsOpt(@PathVariable Long id);
 
     @GetMapping("query/one")
     BillSubInfoDTO queryOne(@SpringQueryMap BillSubInfoQuery query);

@@ -9,14 +9,6 @@ import org.example.spring.daos.mysql.bill.table.po.TBillSubInfo;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class TBillSubInfoVo extends TBillSubInfo {
-    public TBillSubInfoVo(TBillSubInfo TBillSubInfo) {
-        BeanUtil.copyProperties(TBillSubInfo, this);
-        setStatus(TBillSubInfo.getStatus());
-    }
-
-    public TBillSubInfo toPo() {
-        return BeanUtil.toBean(this, TBillSubInfo.class);
-    }
 
     @Override
     public String getStatus() {

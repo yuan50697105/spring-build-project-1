@@ -29,6 +29,9 @@ public interface BillInfoDaoClient {
     @GetMapping("/{id}")
     BillInfoDTO get(@PathVariable Long id);
 
+    @GetMapping("getOpt/{id}")
+    Optional<BillInfoDTO> getOpt(@PathVariable Long id);
+
     @GetMapping("/{id}/details")
     BillInfoDetailsDTO getDetails(@PathVariable Long id);
 

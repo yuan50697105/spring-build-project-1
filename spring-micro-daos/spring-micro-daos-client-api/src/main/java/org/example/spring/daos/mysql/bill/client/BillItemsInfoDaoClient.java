@@ -28,7 +28,8 @@ public interface BillItemsInfoDaoClient {
     @GetMapping("/{id}")
     BillItemsInfoDTO get(@PathVariable Long id);
 
-    Optional<BillItemsInfoDTO> getOpt(Long id);
+    @GetMapping("getOpt/{id}")
+    Optional<BillItemsInfoDTO> getOpt(@PathVariable Long id);
 
     @GetMapping("query/one")
     BillItemsInfoDTO queryOne(@SpringQueryMap BillItemsInfoQuery query);
