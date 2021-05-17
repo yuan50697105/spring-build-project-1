@@ -18,9 +18,6 @@ public class IPageData<T> extends BaseEntity {
     private Long totalPages;
     private Long totalRowNum;
 
-//    public IPageData() {
-//    }
-
     public IPageData(List<T> data, Long page, Long size, Long totalPage, Long totalRowNum) {
         this.data = data;
         this.stream = data.stream();

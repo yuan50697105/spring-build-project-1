@@ -68,6 +68,18 @@ public interface BillInfoDaoClient {
     @GetMapping("select/stream")
     Stream<BillInfoDTO> selectStream(@SpringQueryMap BillInfoQuery query);
 
+    @GetMapping("query/top")
+    List<BillInfoDTO> queryTop(@SpringQueryMap BillInfoQuery query);
+
+    @GetMapping("select/top")
+    List<BillInfoDTO> selectTop(@SpringQueryMap BillInfoQuery query);
+
+    @GetMapping("query/top/stream")
+    Stream<BillInfoDTO> queryTopStream(@SpringQueryMap BillInfoQuery query);
+
+    @GetMapping("select/top/stream")
+    Stream<BillInfoDTO> selectTopStream(@SpringQueryMap BillInfoQuery query);
+
     @GetMapping("query/page")
     IPageData<BillInfoDTO> queryPage(@SpringQueryMap BillInfoQuery query);
 
