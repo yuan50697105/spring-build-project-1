@@ -22,7 +22,7 @@ import java.util.stream.Stream;
 @DubboService
 @AllArgsConstructor
 @Transactional
-public class PatientClientImpl implements PatientClient {
+public class PatientDaoClientImpl implements PatientDaoClient {
     private final PatientClientBuilder patientClientBuilder;
     private final TPatientDao patientDao;
 

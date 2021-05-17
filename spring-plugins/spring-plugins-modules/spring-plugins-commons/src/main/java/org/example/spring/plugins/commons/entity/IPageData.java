@@ -4,11 +4,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class IPageData<T> extends BaseEntity {
     private List<T> data;
+    private Stream<T> stream;
     private Long page;
     private Long size;
     private Long totalPages;
@@ -19,6 +21,7 @@ public class IPageData<T> extends BaseEntity {
 
     public IPageData(List<T> data, Long page, Long size, Long totalPage, Long totalRowNum) {
         this.data = data;
+        this.stream = data.stream();
         this.page = page;
         this.size = size;
         this.totalPages = totalPage;
@@ -26,26 +29,14 @@ public class IPageData<T> extends BaseEntity {
     }
 
     protected IPageData(List<T> data, Integer page, Integer size, Integer totalPage, Integer totalRowNum) {
-        this.data = data;
-        this.page = Long.valueOf(page);
-        this.size = Long.valueOf(size);
-        this.totalPages = Long.valueOf(totalPage);
-        this.totalRowNum = Long.valueOf(totalRowNum);
+        this(data, Long.valueOf(page), Long.valueOf(size), Long.valueOf(totalPage), Long.valueOf(totalRowNum));
     }
 
     protected IPageData(List<T> data, Integer page, Integer size, Long totalPage, Long totalRowNum) {
-        this.data = data;
-        this.page = Long.valueOf(page);
-        this.size = Long.valueOf(size);
-        this.totalPages = totalPage;
-        this.totalRowNum = totalRowNum;
+        this(data,Long.valueOf(page),Long.valueOf(size),totalPage,totalRowNum)
     }
 
     protected IPageData(List<T> data, Integer page, Integer size, Integer totalPages, Long totalRowNum) {
-        this.data = data;
-        this.page = Long.valueOf(page);
-        this.size = Long.valueOf(size);
-        this.totalPages = Long.valueOf(totalPages);
-        this.totalRowNum = totalRowNum;
+        this(data, Long.valueOf(page), Long.valueOf(size), Long.valueOf(totalPages), totalRowNum);
     }
 }

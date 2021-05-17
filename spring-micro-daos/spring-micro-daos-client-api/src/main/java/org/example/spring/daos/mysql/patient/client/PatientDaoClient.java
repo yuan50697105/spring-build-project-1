@@ -4,11 +4,13 @@ import org.example.spring.daos.mysql.patient.entity.Patient;
 import org.example.spring.daos.mysql.patient.entity.PatientDetails;
 import org.example.spring.daos.mysql.patient.entity.PatientQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 import java.util.stream.Stream;
 
-public interface PatientClient {
+@RequestMapping("patient")
+public interface PatientDaoClient {
     void save(Patient patient);
 
     void update(Patient patient);

@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@RequestMapping("user")
+@RequestMapping("user/dao")
 public interface UserDaoClient {
     @PostMapping
     void save(@RequestBody UserVo userVo);

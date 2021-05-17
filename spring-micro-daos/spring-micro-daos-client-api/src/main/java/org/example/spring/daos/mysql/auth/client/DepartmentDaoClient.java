@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RequestMapping("department")
+@RequestMapping("department/dao")
 public interface DepartmentDaoClient {
     @PostMapping
     void save(@RequestBody DepartmentVo departmentVo);

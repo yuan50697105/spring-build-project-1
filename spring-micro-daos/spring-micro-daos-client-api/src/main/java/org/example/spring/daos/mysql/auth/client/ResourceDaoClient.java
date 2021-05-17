@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RequestMapping("resource")
+@RequestMapping("resource/dao")
 public interface ResourceDaoClient {
     @PostMapping
     void save(@RequestBody ResourceVo resourceVo);

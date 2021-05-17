@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RequestMapping("role")
+@RequestMapping("role/dao")
 public interface RoleDaoClient {
 
     @PostMapping
