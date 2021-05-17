@@ -33,7 +33,7 @@ public class IPageData<T> extends BaseEntity {
     }
 
     protected IPageData(List<T> data, Integer page, Integer size, Long totalPage, Long totalRowNum) {
-        this(data,Long.valueOf(page),Long.valueOf(size),totalPage,totalRowNum)
+        this(data, Long.valueOf(page), Long.valueOf(size), totalPage, totalRowNum);
     }
 
     protected IPageData(List<T> data, Integer page, Integer size, Integer totalPages, Long totalRowNum) {
