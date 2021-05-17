@@ -1,5 +1,6 @@
 package org.example.spring.plugins.commons.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -10,6 +11,7 @@ import java.util.stream.Stream;
 @Data
 public class IPageData<T> extends BaseEntity {
     private List<T> data;
+    @JsonIgnore
     private Stream<T> stream;
     private Long page;
     private Long size;
