@@ -9,11 +9,4 @@ import org.example.spring.daos.mysql.bill.table.po.TBillInfo;
 @Data
 public class TBillInfoVo extends TBillInfo {
 
-    public TBillInfoVo(TBillInfo TBillInfo) {
-        BeanUtil.copyProperties(TBillInfo, this);
-    }
-
-    public TBillInfo toPo() {
-        return BeanUtil.toBean(this, TBillInfo.class);
-    }
 }

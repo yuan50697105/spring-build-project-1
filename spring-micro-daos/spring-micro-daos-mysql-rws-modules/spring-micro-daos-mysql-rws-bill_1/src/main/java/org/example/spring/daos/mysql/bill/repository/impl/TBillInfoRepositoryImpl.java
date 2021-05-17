@@ -31,126 +31,129 @@ public class TBillInfoRepositoryImpl implements TBillInfoRepository {
 
     @Override
     public void update(TBillInfoVo vo) {
-        TBillInfo TBillInfo = billInfoBuilder.build(vo);
-        Optional<TBillInfo> optional = billInfoDao.getByIdOpt(TBillInfo.getId());
+        TBillInfo billInfo = billInfoBuilder.build(vo);
+        Optional<TBillInfo> optional = billInfoDao.getByIdOpt(billInfo.getId());
         if (optional.isPresent()) {
-            TBillInfo TBillInfo1 = optional.get();
-            CompareUtils.equals(TBillInfo, TBillInfo1)
+            TBillInfo tBillInfo = optional.get();
+            if (!CompareUtils.equals(billInfo, tBillInfo)) {
+                billInfoBuilder.copy(billInfo, tBillInfo);
+                billInfoDao.update(tBillInfo);
+            }
         }
     }
 
     @Override
     public void delete(Long id) {
-
+        throw new RuntimeException("不支持删除");
     }
 
     @Override
     public void delete(Long... ids) {
-
+        throw new RuntimeException("不支持删除");
     }
 
     @Override
     public void delete(List<Long> ids) {
-
+        throw new RuntimeException("不支持删除");
     }
 
     @Override
     public TBillInfoDTO get(Long id) {
-        return null;
+        return billInfoBuilder.build(billInfoDao.getById(id));
     }
 
     @Override
     public Optional<TBillInfoDTO> getOpt(Long id) {
-        return Optional.empty();
+        return Optional.ofNullable(get(id));
     }
 
     @Override
     public TBillInfoDTO queryOne(TBillInfoQuery query) {
-        return null;
+        return billInfoBuilder.build(billInfoDao.queryOne(query));
     }
 
     @Override
     public TBillInfoDTO selectOne(TBillInfoQuery query) {
-        return null;
+        return billInfoBuilder.build(billInfoDao.selectOne(query));
     }
 
     @Override
     public Optional<TBillInfoDTO> selectOneOpt(TBillInfoQuery query) {
-        return Optional.empty();
+        return Optional.ofNullable(queryOne(query));
     }
 
     @Override
     public Optional<TBillInfoDTO> queryOneOpt(TBillInfoQuery query) {
-        return Optional.empty();
+        return Optional.ofNullable(selectOne(query));
     }
 
     @Override
     public TBillInfoDTO queryFirst(TBillInfoQuery query) {
-        return null;
+        return billInfoBuilder.build(billInfoDao.queryFirst(query));
     }
 
     @Override
     public Optional<TBillInfoDTO> queryFirstOpt(TBillInfoQuery query) {
-        return Optional.empty();
+        return Optional.ofNullable(queryFirst(query));
     }
 
     @Override
     public TBillInfoDTO selectFirst(TBillInfoQuery query) {
-        return null;
+        return billInfoBuilder.build(billInfoDao.selectFirst(query));
     }
 
     @Override
     public Optional<TBillInfoDTO> selectFirstOpt(TBillInfoQuery query) {
-        return Optional.empty();
+        return Optional.ofNullable(selectFirst(query));
     }
 
     @Override
     public List<TBillInfoDTO> queryList(TBillInfoQuery query) {
-        return null;
+        return billInfoBuilder.build(billInfoDao.queryList(query));
     }
 
     @Override
     public List<TBillInfoDTO> selectList(TBillInfoQuery query) {
-        return null;
+        return billInfoBuilder.build(billInfoDao.selectList(query));
     }
 
     @Override
     public Stream<TBillInfoDTO> queryStream(TBillInfoQuery query) {
-        return null;
+        return queryList(query).stream();
     }
 
     @Override
     public Stream<TBillInfoDTO> selectStream(TBillInfoQuery query) {
-        return null;
+        return selectList(query).stream();
     }
 
     @Override
     public List<TBillInfoDTO> queryTop(TBillInfoQuery query) {
-        return null;
+        return billInfoBuilder.build(billInfoDao.queryTop(query));
     }
 
     @Override
     public Stream<TBillInfoDTO> queryTopStream(TBillInfoQuery query) {
-        return null;
+        return queryTop(query).stream();
     }
 
     @Override
     public List<TBillInfoDTO> selectTop(TBillInfoQuery query) {
-        return null;
+        return billInfoBuilder.build(billInfoDao.selectTop(query));
     }
 
     @Override
     public Stream<TBillInfoDTO> selectTopStream(TBillInfoQuery query) {
-        return null;
+        return selectTop(query).stream();
     }
 
     @Override
     public IPageData<TBillInfoDTO> selectPage(TBillInfoQuery query) {
-        return null;
+        return billInfoBuilder.build(billInfoDao.selectPage(query));
     }
 
     @Override
     public IPageData<TBillInfoDTO> queryPage(TBillInfoQuery query) {
-        return null;
+        return billInfoBuilder.build(billInfoDao.queryPage(query));
     }
 }
