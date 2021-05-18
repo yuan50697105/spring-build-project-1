@@ -4,8 +4,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.auth.table.po.TResource;
+import org.example.spring.daos.mysql.table.enumerate.TResourceType;
 import org.example.spring.models.commons.entity.IModelVo;
-import org.example.spring.models.commons.enumerate.ResourceType;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -46,7 +46,7 @@ public class ResourceModelVo extends IModelVo {
     public TResource getResource() {
         TResource resource = new TResource();
         resource.setName(name);
-        resource.setType(ResourceType.get(type).getValue());
+        resource.setType(TResourceType.getValue(type));
         resource.setUrl(url);
         resource.setPid(pid);
         resource.setWeight(weight);

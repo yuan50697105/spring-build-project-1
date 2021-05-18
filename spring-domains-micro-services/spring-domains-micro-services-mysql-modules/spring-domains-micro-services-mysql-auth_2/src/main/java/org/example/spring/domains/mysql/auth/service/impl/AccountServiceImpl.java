@@ -1,6 +1,7 @@
 package org.example.spring.domains.mysql.auth.service.impl;
 
 import lombok.AllArgsConstructor;
+import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.domains.mysql.auth.service.AccountService;
 import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
 import org.example.spring.models.mysql.auth.entity.result.Account;
@@ -55,7 +56,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void updateStatusByIds(UserStatus status, List<Long> ids) {
+    public void updateStatusByIds(TUserStatus status, List<Long> ids) {
         accountRepository.updateStatus(status, ids);
     }
 }

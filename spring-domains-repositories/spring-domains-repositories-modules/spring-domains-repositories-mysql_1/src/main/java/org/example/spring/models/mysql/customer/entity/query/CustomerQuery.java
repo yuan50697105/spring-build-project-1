@@ -2,6 +2,7 @@ package org.example.spring.models.mysql.customer.entity.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.daos.mysql.table.enumerate.TCustomerType;
 import org.example.spring.models.commons.enumerate.CustomerType;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
@@ -15,10 +16,10 @@ public class CustomerQuery extends BaseQuery {
     private String type;
 
     public String getType() {
-        return Optional.ofNullable(CustomerType.get(type)).map(CustomerType::getValue).orElse(null);
+        return TCustomerType.getValue(type);
     }
 
     public void setType(String type) {
-        this.type = Optional.ofNullable(CustomerType.get(type)).map(CustomerType::getValue).orElse(null);
+        this.type = TCustomerType.getValue(type);
     }
 }

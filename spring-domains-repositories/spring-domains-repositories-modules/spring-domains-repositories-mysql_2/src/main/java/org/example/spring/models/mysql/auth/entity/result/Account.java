@@ -4,10 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
-import org.example.spring.models.commons.enumerate.UserStatus;
+import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 
 import java.io.Serializable;
-import java.util.Optional;
 
 /**
  * @author yuane
@@ -21,6 +20,7 @@ public class Account extends TUser implements Serializable {
 
     @Override
     public String getStatus() {
-        return Optional.ofNullable(UserStatus.get(super.getStatus())).map(UserStatus::getName).orElse(null);
+        return TUserStatus.getName(super.getStatus());
     }
+
 }

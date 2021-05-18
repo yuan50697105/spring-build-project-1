@@ -3,6 +3,7 @@ package org.example.spring.models.mysql.customer.entity.query;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.daos.mysql.table.enumerate.TCustomerContractStatus;
 import org.example.spring.models.commons.enumerate.CustomerContractStatus;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
@@ -42,10 +43,10 @@ public class CustomerContractQuery extends BaseQuery implements Serializable {
     private String status;
 
     public String getStatus() {
-        return Optional.ofNullable(CustomerContractStatus.get(status)).map(CustomerContractStatus::getValue).orElse(null);
+        return TCustomerContractStatus.getValue(status);
     }
 
     public void setStatus(String status) {
-        this.status = Optional.ofNullable(CustomerContractStatus.get(status)).map(CustomerContractStatus::getValue).orElse(null);
+        this.status = TCustomerContractStatus.getValue(status);
     }
 }

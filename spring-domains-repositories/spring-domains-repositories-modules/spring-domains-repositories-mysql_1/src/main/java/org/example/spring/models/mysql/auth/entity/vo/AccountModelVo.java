@@ -8,8 +8,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
+import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.models.commons.entity.IModelVo;
-import org.example.spring.models.commons.enumerate.UserStatus;
 
 import javax.validation.ValidationException;
 import java.util.ArrayList;
@@ -58,7 +58,7 @@ public class AccountModelVo extends IModelVo {
     @JsonIgnore
     public TUser getUserForSave() {
         TUser tUser = new TUser();
-        tUser.setStatus(UserStatus.Normal.getValue());
+        tUser.setStatus(TUserStatus.NORMAL.getValue());
         tUser.setUsername(username);
         tUser.setName(name);
         tUser.setPassword(password);

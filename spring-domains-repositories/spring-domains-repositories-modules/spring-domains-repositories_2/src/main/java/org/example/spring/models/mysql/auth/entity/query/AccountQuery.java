@@ -2,6 +2,7 @@ package org.example.spring.models.mysql.auth.entity.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
@@ -16,6 +17,6 @@ public class AccountQuery extends BaseQuery implements Serializable {
     private String status;
 
     public String getStatus() {
-        return Optional.ofNullable(UserStatus.get(status)).map(UserStatus::getValue).orElse(null);
+        return TUserStatus.getValue(status);
     }
 }

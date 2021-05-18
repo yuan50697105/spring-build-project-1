@@ -5,8 +5,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.customer.table.po.TSellerInfo;
+import org.example.spring.daos.mysql.table.enumerate.TSellerInfoStatus;
 import org.example.spring.models.commons.entity.IModelVo;
-import org.example.spring.models.commons.enumerate.SellerInfoStatus;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -52,7 +52,7 @@ public class SellerInfoFormVo extends IModelVo {
         sellerInfoVo.setAge(age);
         sellerInfoVo.setPhone(phone);
         sellerInfoVo.setAddress(address);
-        sellerInfoVo.setStatus(SellerInfoStatus.NORMAL.getValue());
+        sellerInfoVo.setStatus(TSellerInfoStatus.WORK.getValue());
         return sellerInfoVo;
     }
 }

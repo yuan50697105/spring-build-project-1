@@ -76,7 +76,7 @@ public class SalesRecordRepositoryImpl extends IBaseRepositoryImpl<SalesRecord, 
     @Override
     public SalesRecord queryOne(SalesRecordQuery salesRecordQuery) {
         TSalesRecordQuery query = customerModelBuilder.buildCustomerSalesRecordQuery(salesRecordQuery);
-        TSalesRecord data = salesRecordDao.queryFirst(query);
+        TSalesRecord data = salesRecordDao.queryFirstOpt(query).orElse(null);
         return customerModelBuilder.buildCustomerSalesRecord(data);
     }
 }

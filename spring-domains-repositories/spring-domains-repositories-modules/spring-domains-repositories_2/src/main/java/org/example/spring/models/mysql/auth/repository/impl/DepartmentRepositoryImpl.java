@@ -124,8 +124,8 @@ public class DepartmentRepositoryImpl extends IBaseRepositoryImpl<Department, De
     @Override
     public Department queryOne(DepartmentQuery departmentQuery) {
         TDepartmentQuery query = authModelBuilder.buildDepartmentQuery(departmentQuery);
-        TDepartment data = departmentDao.queryFirst(query);
-        return authModelBuilder.buildDepartmentResult(data);
+        Optional<TDepartment> data = departmentDao.queryFirstOpt(query);
+        return authModelBuilder.buildDepartmentResult(data.orElse(new Department()));
     }
 
     @Override
