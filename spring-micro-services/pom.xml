@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.example.spring</groupId>
         <artifactId>spring-build-project</artifactId>
-        <version>0.0.30-SNAPSHOT</version>
+        <version>0.0.30</version>
     </parent>
     <artifactId>spring-micro-services</artifactId>
-    <version>0.0.30-SNAPSHOT</version>
+    <version>0.0.30</version>
     <packaging>pom</packaging>
     <modules>
         <module>spring-micro-services-commons</module>
