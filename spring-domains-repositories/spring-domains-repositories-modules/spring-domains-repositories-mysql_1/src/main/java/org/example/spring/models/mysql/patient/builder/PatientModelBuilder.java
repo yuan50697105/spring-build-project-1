@@ -5,6 +5,7 @@ import org.example.spring.daos.mysql.patient.table.query.TPatientGroupQuery;
 import org.example.spring.daos.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.daos.mysql.patient.table.query.TPatientTeamMealQuery;
 import org.example.spring.daos.mysql.patient.table.query.TPatientTeamQuery;
+import org.example.spring.daos.mysql.patient.table.vo.*;
 import org.example.spring.models.mysql.patient.entity.query.PatientGroupQuery;
 import org.example.spring.models.mysql.patient.entity.query.PatientQuery;
 import org.example.spring.models.mysql.patient.entity.query.PatientTeamMealQuery;
@@ -33,9 +34,9 @@ public interface PatientModelBuilder {
 
     TPatientGroup buildPatientGroup(TPatientGroupVo item);
 
-    TPatientTeam buildPatientTeam(PatientTeamVo teamVo);
+    TPatientTeam buildPatientTeam(TPatientTeamVo teamVo);
 
-    void copyPatientTeam(PatientTeamVo team, @MappingTarget TPatientTeam tPatientTeam);
+    void copyPatientTeam(TPatientTeamVo team, @MappingTarget TPatientTeam tPatientTeam);
 
     PatientTeam buildPatientTeamResult(TPatientTeam team);
 
@@ -55,9 +56,9 @@ public interface PatientModelBuilder {
 
     List<PatientGroup> buildPatientGroupResult(List<TPatientGroup> data);
 
-    TPatientTeamMeal buildPatientTeamMeal(PatientTeamMealVo meal);
+    TPatientTeamMeal buildPatientTeamMeal(TPatientTeamMealVo meal);
 
-    void copyPatientTeamMeal(PatientTeamMealVo meal, @MappingTarget TPatientTeamMeal patientTeamMeal);
+    void copyPatientTeamMeal(TPatientTeamMealVo meal, @MappingTarget TPatientTeamMeal patientTeamMeal);
 
     TPatientTeamMealQuery buildPatientTeamMealQuery(PatientTeamMealQuery patientTeamMealQuery);
 
@@ -67,9 +68,9 @@ public interface PatientModelBuilder {
 
     IPageData<PatientTeamMeal> buildPatientTeamMealResult(IPageData<TPatientTeamMeal> meal);
 
-    TPatientTeamMealFeeItem buildPatientTeamMealFeeItem(PatientTeamMealFeeItemVo feeItemVo);
+    TPatientTeamMealFeeItem buildPatientTeamMealFeeItem(TPatientTeamMealFeeItemVo feeItemVo);
 
-    TPatientTeamMealCheckItem buildPatientTeamMealCheckItem(PatientTeamMealCheckItemVo checkItem);
+    TPatientTeamMealCheckItem buildPatientTeamMealCheckItem(TPatientTeamMealCheckItemVo checkItem);
 
     List<PatientTeamMealFeeItem> buildPatientTeamMealFeeItemResult(List<TPatientTeamMealFeeItem> listByTeamMealId);
 

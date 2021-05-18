@@ -5,8 +5,12 @@ import lombok.SneakyThrows;
 import org.example.spring.daos.mysql.patient.dao.*;
 import org.example.spring.daos.mysql.patient.table.po.*;
 import org.example.spring.daos.mysql.patient.table.query.TPatientQuery;
+import org.example.spring.daos.mysql.patient.table.vo.TPatientCheckItemVo;
+import org.example.spring.daos.mysql.patient.table.vo.TPatientFeeItemVo;
+import org.example.spring.daos.mysql.patient.table.vo.TPatientVo;
 import org.example.spring.daos.mysql.table.enumerate.FeeItemType;
 import org.example.spring.daos.mysql.table.enumerate.ItemSource;
+import org.example.spring.daos.mysql.table.enumerate.TPatientType;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.mysql.patient.builder.PatientModelBuilder;
 import org.example.spring.models.mysql.patient.entity.query.PatientQuery;
@@ -166,7 +170,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     @SneakyThrows
     private void addExtra(TPatient entity) {
-        if (ObjectUtil.isNotEmpty(entity.getType()) && PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
+        if (ObjectUtil.isNotEmpty(entity.getType()) && TPatientType.get(entity.getType()).equals(TPatientType.TEAM)) {
             Future<Boolean> validateGroup = executor.submit(validateGroup(entity));
             Future<Boolean> validateTeam = executor.submit(validateTeam(entity));
             Future<Optional<TPatientGroup>> group = executor.submit(getGroupOpt(entity));
@@ -188,7 +192,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     @SneakyThrows
     private void updateExtra(TPatient entity) {
-        if (ObjectUtil.isNotEmpty(entity.getType()) && PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
+        if (ObjectUtil.isNotEmpty(entity.getType()) && TPatientType.get(entity.getType()).equals(TPatientType.TEAM)) {
             Future<Boolean> validateGroup = executor.submit(validateGroup(entity));
             Future<Boolean> validateTeam = executor.submit(validateTeam(entity));
             Future<Optional<TPatientGroup>> group = executor.submit(getGroupOpt(entity));

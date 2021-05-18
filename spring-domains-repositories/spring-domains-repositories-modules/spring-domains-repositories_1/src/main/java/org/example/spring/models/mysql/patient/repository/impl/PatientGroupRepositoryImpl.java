@@ -5,8 +5,8 @@ import org.example.spring.daos.mysql.patient.dao.TPatientDao;
 import org.example.spring.daos.mysql.patient.dao.TPatientGroupDao;
 import org.example.spring.daos.mysql.patient.table.po.TPatientGroup;
 import org.example.spring.daos.mysql.patient.table.query.TPatientGroupQuery;
-import org.example.spring.daos.mysql.patient.table.vo.PatientGroupVo;
-import org.example.spring.daos.mysql.patient.table.vo.PatientTeamMealVo;
+import org.example.spring.daos.mysql.patient.table.vo.TPatientGroupVo;
+import org.example.spring.daos.mysql.patient.table.vo.TPatientTeamMealVo;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.mysql.patient.builder.PatientModelBuilder;
 import org.example.spring.models.mysql.patient.entity.query.PatientGroupQuery;
@@ -22,7 +22,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.ThreadPoolExecutor;
 
 @Repository
 @AllArgsConstructor
@@ -32,11 +31,10 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     private final PatientModelBuilder patientModelBuilder;
     private final TPatientGroupDao patientGroupDao;
     private final TPatientDao patientDao;
-    private final ThreadPoolExecutor executor;
 
     @Override
     public Long saveWithId(final PatientGroupFormVo patientGroupFormVo) {
-        PatientGroupVo group = patientGroupFormVo.getGroup();
+        TPatientGroupVo group = patientGroupFormVo.getGroup();
         TPatientGroup entity = patientModelBuilder.buildPatientGroup(group);
         setExtra(patientGroupFormVo, entity);
         patientGroupDao.save(entity);
@@ -44,7 +42,7 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     }
 
     private void setExtra(PatientGroupFormVo patientGroupFormVo, TPatientGroup entity) {
-        PatientTeamMealVo meal = patientGroupFormVo.getMeal();
+        TPatientTeamMealVo meal = patientGroupFormVo.getMeal();
         entity.setMealId(meal.getMealId());
         entity.setTeamMealId(meal.getId());
         entity.setMealName(meal.getMealName());
@@ -53,7 +51,7 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     @Override
     public void update(PatientGroupFormVo patientGroupFormVo) {
         Long id = patientGroupFormVo.getId();
-        PatientGroupVo group = patientGroupFormVo.getGroup();
+        TPatientGroupVo group = patientGroupFormVo.getGroup();
         Optional<TPatientGroup> optional = patientGroupDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TPatientGroup tPatientGroup = optional.get();

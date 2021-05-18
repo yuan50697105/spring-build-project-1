@@ -7,7 +7,7 @@ import org.example.spring.daos.mysql.patient.dao.TPatientMealDao;
 import org.example.spring.daos.mysql.patient.dao.TPatientTeamDao;
 import org.example.spring.daos.mysql.patient.table.po.TPatientTeam;
 import org.example.spring.daos.mysql.patient.table.query.TPatientTeamQuery;
-import org.example.spring.daos.mysql.patient.table.vo.PatientTeamVo;
+import org.example.spring.daos.mysql.patient.table.vo.TPatientTeamVo;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.mysql.patient.builder.PatientModelBuilder;
 import org.example.spring.models.mysql.patient.entity.query.PatientTeamQuery;
@@ -36,16 +36,14 @@ public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, 
     private final TPatientGroupDao patientGroupDao;
     private final TPatientDao patientDao;
     private final TPatientMealDao patientMealDao;
-    private ThreadPoolExecutor taskExecutor;
 
     @PostConstruct
     public void init() {
-        this.taskExecutor = new ThreadPoolExecutor(2, 10, 10L, TimeUnit.SECONDS, new LinkedBlockingDeque<>(100));
     }
 
     @Override
     public Long saveWithId(PatientTeamFormVo patientTeamFormVo) {
-        PatientTeamVo group = patientTeamFormVo.getTeam();
+        TPatientTeamVo group = patientTeamFormVo.getTeam();
         TPatientTeam entity = patientModelBuilder.buildPatientTeam(group);
         patientTeamDao.save(entity);
         return entity.getId();
@@ -54,7 +52,7 @@ public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, 
     @Override
     public void update(PatientTeamFormVo patientTeamFormVo) {
         Long id = patientTeamFormVo.getId();
-        PatientTeamVo team = patientTeamFormVo.getTeam();
+        TPatientTeamVo team = patientTeamFormVo.getTeam();
         Optional<TPatientTeam> optional = patientTeamDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TPatientTeam tPatientTeam = optional.get();

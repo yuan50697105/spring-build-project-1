@@ -9,9 +9,9 @@ import org.example.spring.daos.mysql.patient.table.po.TPatientTeamMeal;
 import org.example.spring.daos.mysql.patient.table.po.TPatientTeamMealCheckItem;
 import org.example.spring.daos.mysql.patient.table.po.TPatientTeamMealFeeItem;
 import org.example.spring.daos.mysql.patient.table.query.TPatientTeamMealQuery;
-import org.example.spring.daos.mysql.patient.table.vo.PatientTeamMealCheckItemVo;
-import org.example.spring.daos.mysql.patient.table.vo.PatientTeamMealFeeItemVo;
-import org.example.spring.daos.mysql.patient.table.vo.PatientTeamMealVo;
+import org.example.spring.daos.mysql.patient.table.vo.TPatientTeamMealCheckItemVo;
+import org.example.spring.daos.mysql.patient.table.vo.TPatientTeamMealFeeItemVo;
+import org.example.spring.daos.mysql.patient.table.vo.TPatientTeamMealVo;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.mysql.patient.builder.PatientModelBuilder;
 import org.example.spring.models.mysql.patient.entity.query.PatientTeamMealQuery;
@@ -39,7 +39,7 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
 
     @Override
     public Long saveWithId(final PatientTeamMealFormVo patientTeamMealFormVo) {
-        PatientTeamMealVo meal = patientTeamMealFormVo.getMeal();
+        TPatientTeamMealVo meal = patientTeamMealFormVo.getMeal();
         final TPatientTeamMeal patientTeamMeal = patientModelBuilder.buildPatientTeamMeal(meal);
         patientTeamMealDao.save(patientTeamMeal);
         if (ObjectUtil.isNotEmpty(patientTeamMealFormVo.getFeeItems())) {
@@ -51,7 +51,7 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
     private void saveFeeItem(TPatientTeamMeal patientTeamMeal, List<PatientTeamMealFeeItemFormVo> feeItemFormVos) {
         if (ObjectUtil.isNotEmpty(feeItemFormVos)) {
             for (final PatientTeamMealFeeItemFormVo feeItemFormVo : feeItemFormVos) {
-                PatientTeamMealFeeItemVo patientTeamMealFeeItemVo = feeItemFormVo.getFeeItem();
+                TPatientTeamMealFeeItemVo patientTeamMealFeeItemVo = feeItemFormVo.getFeeItem();
                 final TPatientTeamMealFeeItem entity = patientModelBuilder.buildPatientTeamMealFeeItem(patientTeamMealFeeItemVo);
                 setMealFeeItem(patientTeamMeal, entity);
                 patientTeamMealFeeItemDao.save(entity);
@@ -62,8 +62,8 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
         }
     }
 
-    private void saveCheckItem(TPatientTeamMealFeeItem entity, List<PatientTeamMealCheckItemVo> checkItems) {
-        for (PatientTeamMealCheckItemVo checkItem : checkItems) {
+    private void saveCheckItem(TPatientTeamMealFeeItem entity, List<TPatientTeamMealCheckItemVo> checkItems) {
+        for (TPatientTeamMealCheckItemVo checkItem : checkItems) {
             TPatientTeamMealCheckItem patientTeamMealCheckItem = patientModelBuilder.buildPatientTeamMealCheckItem(checkItem);
             setMealCheckItem(entity, patientTeamMealCheckItem);
             patientTeamMealCheckItemDao.save(patientTeamMealCheckItem);
