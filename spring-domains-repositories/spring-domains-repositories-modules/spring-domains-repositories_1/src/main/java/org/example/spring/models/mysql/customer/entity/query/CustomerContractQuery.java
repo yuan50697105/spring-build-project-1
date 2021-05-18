@@ -4,12 +4,10 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.table.enumerate.TCustomerContractStatus;
-import org.example.spring.models.commons.enumerate.CustomerContractStatus;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Optional;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

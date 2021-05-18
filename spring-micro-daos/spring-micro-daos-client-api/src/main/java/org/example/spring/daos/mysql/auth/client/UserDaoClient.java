@@ -1,9 +1,9 @@
 package org.example.spring.daos.mysql.auth.client;
 
-import org.example.spring.daos.mysql.auth.entity.dto.UserRoleDTO;
-import org.example.spring.daos.mysql.auth.entity.vo.UserVo;
 import org.example.spring.daos.mysql.auth.entity.dto.UserDTO;
+import org.example.spring.daos.mysql.auth.entity.dto.UserRoleDTO;
 import org.example.spring.daos.mysql.auth.entity.query.UserQuery;
+import org.example.spring.daos.mysql.auth.entity.vo.UserVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.*;

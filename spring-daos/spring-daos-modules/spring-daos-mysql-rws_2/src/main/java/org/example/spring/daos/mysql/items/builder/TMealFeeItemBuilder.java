@@ -6,7 +6,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Mapper(config = BaseBuilder.class)

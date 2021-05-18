@@ -1,6 +1,6 @@
 package org.example.spring.plugins.oss.minio.impl;
 
-import io.minio.*;
+import io.minio.MinioClient;
 import io.minio.http.Method;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;

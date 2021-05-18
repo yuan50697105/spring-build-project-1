@@ -2,8 +2,8 @@ package org.example.spring.daos.mysql.bill.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.table.enumerate.BillSubInfoStatus;
 import org.example.spring.daos.mysql.bill.table.po.TBillSubInfo;
+import org.example.spring.daos.mysql.table.enumerate.BillSubInfoStatus;
 
 import java.io.Serializable;
 

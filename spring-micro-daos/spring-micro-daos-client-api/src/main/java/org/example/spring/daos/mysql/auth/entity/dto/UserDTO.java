@@ -2,7 +2,6 @@ package org.example.spring.daos.mysql.auth.entity.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.auth.entity.vo.UserVo;
 import org.example.spring.daos.mysql.commons.entity.CommonsEntity;
 
 import java.io.Serializable;

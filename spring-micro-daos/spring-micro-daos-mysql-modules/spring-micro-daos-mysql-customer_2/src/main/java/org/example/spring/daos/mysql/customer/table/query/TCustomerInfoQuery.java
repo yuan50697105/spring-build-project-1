@@ -9,8 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.daos.mysql.table.enumerate.TCustomerInfoType;
 import org.example.spring.daos.mysql.customer.table.po.TCustomerInfo;
+import org.example.spring.daos.mysql.table.enumerate.TCustomerInfoType;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 

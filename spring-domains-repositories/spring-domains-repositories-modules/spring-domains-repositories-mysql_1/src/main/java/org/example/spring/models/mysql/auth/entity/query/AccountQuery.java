@@ -3,11 +3,9 @@ package org.example.spring.models.mysql.auth.entity.query;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
 import java.io.Serializable;
-import java.util.Optional;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

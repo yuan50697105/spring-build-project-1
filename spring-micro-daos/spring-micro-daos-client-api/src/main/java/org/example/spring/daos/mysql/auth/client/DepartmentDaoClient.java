@@ -1,8 +1,8 @@
 package org.example.spring.daos.mysql.auth.client;
 
 import org.example.spring.daos.mysql.auth.entity.dto.DepartmentDTO;
-import org.example.spring.daos.mysql.auth.entity.vo.DepartmentVo;
 import org.example.spring.daos.mysql.auth.entity.query.DepartmentQuery;
+import org.example.spring.daos.mysql.auth.entity.vo.DepartmentVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.*;

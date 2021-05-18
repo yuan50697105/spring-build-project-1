@@ -18,7 +18,6 @@ import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.weekend.Weekend;
 import tk.mybatis.mapper.weekend.WeekendSqls;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;

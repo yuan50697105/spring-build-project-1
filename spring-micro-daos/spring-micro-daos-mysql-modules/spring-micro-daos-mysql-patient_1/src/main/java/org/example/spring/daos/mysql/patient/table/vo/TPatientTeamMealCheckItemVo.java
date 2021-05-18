@@ -2,8 +2,8 @@ package org.example.spring.daos.mysql.patient.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.table.enumerate.ItemSource;
 import org.example.spring.daos.mysql.patient.table.po.TPatientTeamMealCheckItem;
+import org.example.spring.daos.mysql.table.enumerate.ItemSource;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

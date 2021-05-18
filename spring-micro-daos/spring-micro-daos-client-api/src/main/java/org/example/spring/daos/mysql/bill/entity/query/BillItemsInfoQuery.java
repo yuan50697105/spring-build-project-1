@@ -2,7 +2,6 @@ package org.example.spring.daos.mysql.bill.entity.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.commons.entity.CommonsEntity;
 import org.example.spring.daos.mysql.commons.entity.CommonsQuery;
 
 import java.io.Serializable;

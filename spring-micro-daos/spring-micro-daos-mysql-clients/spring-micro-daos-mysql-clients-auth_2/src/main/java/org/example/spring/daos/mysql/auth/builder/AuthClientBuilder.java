@@ -1,13 +1,13 @@
 package org.example.spring.daos.mysql.auth.builder;
 
-import org.example.spring.daos.mysql.auth.entity.vo.DepartmentVo;
-import org.example.spring.daos.mysql.auth.entity.vo.ResourceVo;
-import org.example.spring.daos.mysql.auth.entity.vo.RoleVo;
-import org.example.spring.daos.mysql.auth.entity.vo.UserVo;
 import org.example.spring.daos.mysql.auth.entity.query.DepartmentQuery;
 import org.example.spring.daos.mysql.auth.entity.query.ResourceQuery;
 import org.example.spring.daos.mysql.auth.entity.query.RoleQuery;
 import org.example.spring.daos.mysql.auth.entity.query.UserQuery;
+import org.example.spring.daos.mysql.auth.entity.vo.DepartmentVo;
+import org.example.spring.daos.mysql.auth.entity.vo.ResourceVo;
+import org.example.spring.daos.mysql.auth.entity.vo.RoleVo;
+import org.example.spring.daos.mysql.auth.entity.vo.UserVo;
 import org.example.spring.daos.mysql.auth.table.po.*;
 import org.example.spring.daos.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;

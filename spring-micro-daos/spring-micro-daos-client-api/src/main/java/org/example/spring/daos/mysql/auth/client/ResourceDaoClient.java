@@ -1,7 +1,7 @@
 package org.example.spring.daos.mysql.auth.client;
 
-import org.example.spring.daos.mysql.auth.entity.vo.ResourceVo;
 import org.example.spring.daos.mysql.auth.entity.query.ResourceQuery;
+import org.example.spring.daos.mysql.auth.entity.vo.ResourceVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.*;

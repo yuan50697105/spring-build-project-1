@@ -6,8 +6,8 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.table.enumerate.BillSubInfoStatus;
 import org.example.spring.daos.mysql.bill.table.po.TBillSubInfo;
+import org.example.spring.daos.mysql.table.enumerate.BillSubInfoStatus;
 import org.example.spring.plugins.mybatis.entity.query.TkExtQuery;
 import tk.mybatis.mapper.entity.Example;
 

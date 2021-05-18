@@ -5,7 +5,6 @@ import org.example.spring.daos.mysql.items.table.query.TCheckItemQuery;
 import org.example.spring.daos.mysql.items.table.vo.TCheckItemVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;

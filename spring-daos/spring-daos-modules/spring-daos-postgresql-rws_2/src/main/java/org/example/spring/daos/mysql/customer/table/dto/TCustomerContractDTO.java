@@ -2,8 +2,8 @@ package org.example.spring.daos.mysql.customer.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.table.enumerate.TCustomerContractStatus;
 import org.example.spring.daos.mysql.customer.table.po.TCustomerContract;
+import org.example.spring.daos.mysql.table.enumerate.TCustomerContractStatus;
 
 import java.io.Serializable;
 

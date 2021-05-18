@@ -2,8 +2,8 @@ package org.example.spring.daos.mysql.customer.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.table.enumerate.TCustomerInfoType;
 import org.example.spring.daos.mysql.customer.table.po.TCustomerInfo;
+import org.example.spring.daos.mysql.table.enumerate.TCustomerInfoType;
 
 import java.io.Serializable;
 

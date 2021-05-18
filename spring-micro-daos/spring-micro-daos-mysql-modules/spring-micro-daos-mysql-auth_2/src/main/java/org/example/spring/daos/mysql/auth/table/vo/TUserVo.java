@@ -4,9 +4,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.auth.builder.TUserBuilder;
 import org.example.spring.daos.mysql.auth.builder.TUserRoleBuilder;
-import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
 import org.example.spring.daos.mysql.auth.table.po.TUserRole;
+import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 
 import java.io.Serializable;
 import java.util.List;

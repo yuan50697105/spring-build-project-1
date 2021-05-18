@@ -11,7 +11,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
