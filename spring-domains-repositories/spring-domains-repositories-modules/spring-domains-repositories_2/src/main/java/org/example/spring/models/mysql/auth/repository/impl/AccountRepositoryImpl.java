@@ -114,7 +114,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
     }
 
     @Override
-    public void updateStats(TUserStatus status, List<Long> ids) {
+    public void updateStatus(TUserStatus status, List<Long> ids) {
         userDao.updateStatusByIds(status.getValue(), ids);
     }
 

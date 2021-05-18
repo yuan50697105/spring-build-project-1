@@ -10,5 +10,5 @@ import org.example.spring.models.mysql.auth.entity.vo.AccountModelVo;
 import java.util.List;
 
 public interface AccountRepository extends IBaseRepository<Account, AccountModelVo, AccountDetails, AccountQuery> {
-    void updateStats(TUserStatus status, List<Long> ids);
+    void updateStatusByIds(TUserStatus status, List<Long> ids);
 }

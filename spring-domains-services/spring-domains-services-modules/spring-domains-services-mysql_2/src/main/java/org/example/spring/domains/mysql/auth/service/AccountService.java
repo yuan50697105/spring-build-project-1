@@ -24,5 +24,5 @@ public interface AccountService {
 
     void delete(List<Long> ids);
 
-    void updateStatusByIs(TUserStatus status, List<Long> ids);
+    void updateStatusByIds(TUserStatus status, List<Long> ids);
 }
