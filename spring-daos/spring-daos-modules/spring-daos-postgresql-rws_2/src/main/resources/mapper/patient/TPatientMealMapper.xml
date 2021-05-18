@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.example.spring.daos.postgresql.patient.mapper.TPatientMealMapper">
-    <resultMap id="BaseResultMap" type="org.example.spring.daos.postgresql.patient.table.po.TPatientMeal">
+<mapper namespace="org.example.spring.daos.mysql.patient.mapper.TPatientMealMapper">
+    <resultMap id="BaseResultMap" type="org.example.spring.daos.mysql.patient.table.po.TPatientMeal">
         <!--@mbg.generated-->
         <!--@Table t_patient_meal-->
         <id column="id" jdbcType="BIGINT" property="id"/>
@@ -19,9 +19,9 @@
         <result column="team_meal_id" jdbcType="BIGINT" property="teamMealId"/>
         <result column="meal_code" jdbcType="VARCHAR" property="mealCode"/>
         <result column="meal_name" jdbcType="VARCHAR" property="mealName"/>
-        <result column="price" jdbcType="NUMERIC" property="price"/>
-        <result column="dis_price" jdbcType="NUMERIC" property="disPrice"/>
-        <result column="market_price" jdbcType="NUMERIC" property="marketPrice"/>
+        <result column="price" jdbcType="DECIMAL" property="price"/>
+        <result column="dis_price" jdbcType="DECIMAL" property="disPrice"/>
+        <result column="market_price" jdbcType="DECIMAL" property="marketPrice"/>
     </resultMap>
     <sql id="Base_Column_List">
         <!--@mbg.generated-->

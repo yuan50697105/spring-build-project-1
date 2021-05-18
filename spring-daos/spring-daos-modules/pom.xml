@@ -10,7 +10,6 @@
     <artifactId>spring-daos-modules</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-daos-commons</module>
         <module>spring-daos-mysql_1</module>
         <module>spring-daos-mysql_2</module>
         <module>spring-daos-mysql-rws_1</module>

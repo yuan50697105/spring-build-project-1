@@ -10,6 +10,7 @@
     <artifactId>spring-daos</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>spring-daos-commons</module>
         <module>spring-daos-modules</module>
         <module>spring-daos-dependencies</module>
     </modules>
