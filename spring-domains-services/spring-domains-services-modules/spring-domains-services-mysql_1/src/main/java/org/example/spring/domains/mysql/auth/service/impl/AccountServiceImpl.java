@@ -3,7 +3,6 @@ package org.example.spring.domains.mysql.auth.service.impl;
 import lombok.AllArgsConstructor;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.domains.mysql.auth.service.AccountService;
-import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
 import org.example.spring.models.mysql.auth.entity.result.Account;
 import org.example.spring.models.mysql.auth.entity.result.AccountDetails;
