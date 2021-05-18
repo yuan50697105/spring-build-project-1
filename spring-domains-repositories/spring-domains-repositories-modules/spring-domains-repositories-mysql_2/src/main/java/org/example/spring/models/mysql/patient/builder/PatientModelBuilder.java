@@ -76,7 +76,7 @@ public interface PatientModelBuilder {
 
     TPatientFeeItem buildPatientFeeItem(TPatientFeeItemVo patientFeeItemVo);
 
-    TPatientMeal buildPatientMeal(PatientMealVo meal);
+    TPatientMeal buildPatientMeal(TPatientMealVo meal);
 
     TPatientCheckItem buildPatientCheckItem(TPatientCheckItemVo checkItem);
 
