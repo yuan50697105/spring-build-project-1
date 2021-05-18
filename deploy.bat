@@ -1,1 +1,1 @@
-call mvn clean deploy -P d -B -U 
+call mvn clean deploy -P d -B -fae
