@@ -1,5 +1,6 @@
 package org.example.spring.daos.mysql.bill.client;
 
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.bill.builder.BillSubInfoClientBuilder;
@@ -23,21 +24,25 @@ public class BillSubInfoDaoClientImpl implements BillSubInfoDaoClient {
     private final TBillSubInfoRepository billSubInfoRepository;
 
     @Override
+    @GlobalTransactional
     public void save(BillSubInfoVo vo) {
         billSubInfoRepository.save(billSubInfoClientBuilder.build(vo));
     }
 
     @Override
+    @GlobalTransactional
     public void update(BillSubInfoVo vo) {
         billSubInfoRepository.update(billSubInfoClientBuilder.build(vo));
     }
 
     @Override
+    @GlobalTransactional
     public void delete(Long id) {
         throw new RuntimeException("不支持");
     }
 
     @Override
+    @GlobalTransactional
     public void delete(List<Long> ids) {
         throw new RuntimeException("不支持");
     }
