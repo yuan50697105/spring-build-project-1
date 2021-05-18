@@ -27,6 +27,13 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
+                <version>0.0.29-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                <artifactId>spring-domains-repositories-commons</artifactId>
                 <version>0.0.29-SNAPSHOT</version>
             </dependency>

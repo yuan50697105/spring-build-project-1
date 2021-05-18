@@ -12,7 +12,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-repositories-commons</artifactId>
+            <artifactId>spring-plugins-commons</artifactId>
         </dependency>
     </dependencies>
 
