@@ -5,9 +5,9 @@ import lombok.SneakyThrows;
 import org.example.spring.daos.mysql.patient.dao.*;
 import org.example.spring.daos.mysql.patient.table.po.*;
 import org.example.spring.daos.mysql.patient.table.query.TPatientQuery;
-import org.example.spring.daos.mysql.patient.table.vo.PatientCheckItemVo;
-import org.example.spring.daos.mysql.patient.table.vo.PatientFeeItemVo;
-import org.example.spring.daos.mysql.patient.table.vo.PatientVo;
+import org.example.spring.daos.mysql.patient.table.vo.TPatientCheckItemVo;
+import org.example.spring.daos.mysql.patient.table.vo.TPatientFeeItemVo;
+import org.example.spring.daos.mysql.patient.table.vo.TPatientVo;
 import org.example.spring.models.commons.enumerate.FeeItemType;
 import org.example.spring.models.commons.enumerate.ItemSource;
 import org.example.spring.models.commons.enumerate.PatientType;
@@ -64,7 +64,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     @Override
     public Long saveWithId(final PatientFormVo patientFormVo) {
-        PatientVo patient = patientFormVo.getPatient();
+        TPatientVo patient = patientFormVo.getPatient();
         final TPatient entity = patientModelBuilder.buildPatient(patient);
         addExtra(entity);
         patientDao.save(entity);
@@ -91,8 +91,8 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     private void saveFeeItem(TPatient entity, List<PatientFeeItemFormVo> feeItems, String source, String type) {
         for (final PatientFeeItemFormVo feeItem : feeItems) {
-            PatientFeeItemVo patientFeeItemVo = feeItem.getFeeItem();
-            final TPatientFeeItem tPatientFeeItem = patientModelBuilder.buildPatientFeeItem(patientFeeItemVo);
+            TPatientFeeItemVo TPatientFeeItemVo = feeItem.getFeeItem();
+            final TPatientFeeItem tPatientFeeItem = patientModelBuilder.buildPatientFeeItem(TPatientFeeItemVo);
             tPatientFeeItem.setPatientId(entity.getId());
             tPatientFeeItem.setSource(source);
             tPatientFeeItem.setType(type);
@@ -103,8 +103,8 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         }
     }
 
-    private void saveCheckItem(TPatientFeeItem tPatientFeeItem, List<PatientCheckItemVo> checkItems, String source) {
-        for (PatientCheckItemVo checkItem : checkItems) {
+    private void saveCheckItem(TPatientFeeItem tPatientFeeItem, List<TPatientCheckItemVo> checkItems, String source) {
+        for (TPatientCheckItemVo checkItem : checkItems) {
             TPatientCheckItem entity = patientModelBuilder.buildPatientCheckItem(checkItem);
             entity.setPatientId(tPatientFeeItem.getPatientId());
             entity.setFeeItemId(tPatientFeeItem.getFeeItemId());
@@ -117,7 +117,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     @Override
     public void update(PatientFormVo patientFormVo) {
         Long id = patientFormVo.getId();
-        PatientVo patient = patientFormVo.getPatient();
+        TPatientVo patient = patientFormVo.getPatient();
         Optional<TPatient> optional = patientDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TPatient tPatient = optional.get();

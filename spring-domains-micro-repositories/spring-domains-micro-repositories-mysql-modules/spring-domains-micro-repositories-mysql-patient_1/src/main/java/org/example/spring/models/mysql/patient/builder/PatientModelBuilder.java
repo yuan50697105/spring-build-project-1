@@ -20,9 +20,9 @@ import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
 public interface PatientModelBuilder {
-    TPatient buildPatient(PatientVo patient);
+    TPatient buildPatient(TPatientVo patient);
 
-    void copyPatient(PatientVo patient, @MappingTarget TPatient tPatient);
+    void copyPatient(TPatientVo patient, @MappingTarget TPatient tPatient);
 
     TPatientQuery buildPatientQuery(PatientQuery patientQuery);
 
@@ -32,11 +32,11 @@ public interface PatientModelBuilder {
 
     List<Patient> buildPatientResult(List<TPatient> data);
 
-    TPatientGroup buildPatientGroup(PatientGroupVo item);
+    TPatientGroup buildPatientGroup(TPatientGroupVo item);
 
-    TPatientTeam buildPatientTeam(PatientTeamVo teamVo);
+    TPatientTeam buildPatientTeam(TPatientTeamVo teamVo);
 
-    void copyPatientTeam(PatientTeamVo team, @MappingTarget TPatientTeam tPatientTeam);
+    void copyPatientTeam(TPatientTeamVo team, @MappingTarget TPatientTeam tPatientTeam);
 
     PatientTeam buildPatientTeamResult(TPatientTeam team);
 
@@ -46,7 +46,7 @@ public interface PatientModelBuilder {
 
     List<PatientTeam> buildPatientTeamResult(List<TPatientTeam> data);
 
-    void copyPatientGroup(PatientGroupVo group, @MappingTarget TPatientGroup tPatientGroup);
+    void copyPatientGroup(TPatientGroupVo group, @MappingTarget TPatientGroup tPatientGroup);
 
     PatientGroup buildPatientGroupResult(TPatientGroup group);
 
@@ -56,9 +56,9 @@ public interface PatientModelBuilder {
 
     List<PatientGroup> buildPatientGroupResult(List<TPatientGroup> data);
 
-    TPatientTeamMeal buildPatientTeamMeal(PatientTeamMealVo meal);
+    TPatientTeamMeal buildPatientTeamMeal(TPatientTeamMealVo meal);
 
-    void copyPatientTeamMeal(PatientTeamMealVo meal, @MappingTarget TPatientTeamMeal patientTeamMeal);
+    void copyPatientTeamMeal(TPatientTeamMealVo meal, @MappingTarget TPatientTeamMeal patientTeamMeal);
 
     TPatientTeamMealQuery buildPatientTeamMealQuery(PatientTeamMealQuery patientTeamMealQuery);
 
@@ -68,17 +68,17 @@ public interface PatientModelBuilder {
 
     IPageData<PatientTeamMeal> buildPatientTeamMealResult(IPageData<TPatientTeamMeal> meal);
 
-    TPatientTeamMealFeeItem buildPatientTeamMealFeeItem(PatientTeamMealFeeItemVo feeItemVo);
+    TPatientTeamMealFeeItem buildPatientTeamMealFeeItem(TPatientTeamMealFeeItemVo feeItemVo);
 
-    TPatientTeamMealCheckItem buildPatientTeamMealCheckItem(PatientTeamMealCheckItemVo checkItem);
+    TPatientTeamMealCheckItem buildPatientTeamMealCheckItem(TPatientTeamMealCheckItemVo checkItem);
 
     List<PatientTeamMealFeeItem> buildPatientTeamMealFeeItemResult(List<TPatientTeamMealFeeItem> listByTeamMealId);
 
-    TPatientFeeItem buildPatientFeeItem(PatientFeeItemVo patientFeeItemVo);
+    TPatientFeeItem buildPatientFeeItem(TPatientFeeItemVo TPatientFeeItemVo);
 
-    TPatientMeal buildPatientMeal(PatientMealVo meal);
+    TPatientMeal buildPatientMeal(TPatientMealVo meal);
 
-    TPatientCheckItem buildPatientCheckItem(PatientCheckItemVo checkItem);
+    TPatientCheckItem buildPatientCheckItem(TPatientCheckItemVo checkItem);
 
 
 }
