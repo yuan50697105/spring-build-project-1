@@ -2,7 +2,6 @@ package org.example.spring.models.mysql.auth.client.entity;
 
 import lombok.Data;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.models.commons.enumerate.UserStatus;
 
 import java.util.List;
 

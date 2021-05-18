@@ -7,7 +7,7 @@ import org.example.spring.daos.mysql.auth.dao.TUserDao;
 import org.example.spring.daos.mysql.auth.dao.TUserRoleDao;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
 import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
-import org.example.spring.models.commons.enumerate.UserStatus;
+import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.mysql.auth.builder.AuthModelBuilder;
 import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
@@ -113,7 +113,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
     }
 
     @Override
-    public void updateStatus(UserStatus status, List<Long> ids) {
+    public void updateStatus(TUserStatus status, List<Long> ids) {
         userDao.updateStatusByIds(status.getValue(), ids);
     }
 

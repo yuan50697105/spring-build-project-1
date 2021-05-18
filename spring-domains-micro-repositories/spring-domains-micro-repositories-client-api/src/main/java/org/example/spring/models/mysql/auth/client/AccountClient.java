@@ -1,6 +1,6 @@
 package org.example.spring.models.mysql.auth.client;
 
-import org.example.spring.models.commons.enumerate.UserStatus;
+import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.models.mysql.auth.client.entity.*;
 import org.example.spring.plugins.commons.entity.IPageData;
 
@@ -13,9 +13,9 @@ public interface AccountClient {
 
     void update(AccountUpdateVo accountUpdateVo);
 
-    void updateStatus(UserStatus status, List<Long> ids);
+    void updateStatus(TUserStatus status, List<Long> ids);
 
-    void updateStatus(UserStatus status, Long... ids);
+    void updateStatus(TUserStatus status, Long... ids);
 
     void delete(List<Long> ids);
 

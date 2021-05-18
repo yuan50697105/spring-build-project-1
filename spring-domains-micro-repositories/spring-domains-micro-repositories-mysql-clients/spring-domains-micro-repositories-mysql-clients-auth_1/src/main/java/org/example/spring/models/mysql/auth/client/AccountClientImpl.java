@@ -2,7 +2,7 @@ package org.example.spring.models.mysql.auth.client;
 
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
-import org.example.spring.models.commons.enumerate.UserStatus;
+import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.models.mysql.auth.builder.AuthModelClientBuilder;
 import org.example.spring.models.mysql.auth.client.entity.*;
 import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
@@ -35,12 +35,12 @@ public class AccountClientImpl implements AccountClient {
     }
 
     @Override
-    public void updateStatus(UserStatus status, List<Long> ids) {
+    public void updateStatus(TUserStatus status, List<Long> ids) {
         accountRepository.updateStatus(status, ids);
     }
 
     @Override
-    public void updateStatus(UserStatus status, Long... ids) {
+    public void updateStatus(TUserStatus status, Long... ids) {
         updateStatus(status, Arrays.asList(ids));
     }
 

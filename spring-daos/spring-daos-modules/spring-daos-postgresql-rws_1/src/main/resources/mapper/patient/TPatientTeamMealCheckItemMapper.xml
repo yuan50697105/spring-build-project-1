@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.example.spring.daos.postgresql.patient.mapper.TPatientTeamMealCheckItemMapper">
+<mapper namespace="org.example.spring.daos.mysql.patient.mapper.TPatientTeamMealCheckItemMapper">
     <resultMap id="BaseResultMap"
-               type="org.example.spring.daos.postgresql.patient.table.po.TPatientTeamMealCheckItem">
+               type="org.example.spring.daos.mysql.patient.table.po.TPatientTeamMealCheckItem">
         <!--@mbg.generated-->
         <!--@Table t_patient_team_meal_check_item-->
         <id column="id" jdbcType="BIGINT" property="id"/>
@@ -26,6 +26,6 @@
         <!--@mbg.generated-->
         id, create_id, update_id, create_user, update_user, create_date, update_date, team_id,
         meal_id, team_meal_id, fee_item_id, team_fee_item_id, check_item_id, check_item_code,
-        check_item_name, "source"
+        check_item_name, `source`
     </sql>
 </mapper>

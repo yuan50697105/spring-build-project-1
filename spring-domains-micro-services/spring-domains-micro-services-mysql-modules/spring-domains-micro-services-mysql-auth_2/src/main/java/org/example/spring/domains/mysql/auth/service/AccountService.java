@@ -1,6 +1,5 @@
 package org.example.spring.domains.mysql.auth.service;
 
-import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
 import org.example.spring.models.mysql.auth.entity.result.Account;
 import org.example.spring.models.mysql.auth.entity.result.AccountDetails;

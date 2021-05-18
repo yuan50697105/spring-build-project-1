@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.example.spring.daos.postgresql.patient.mapper.TPatientGroupMapper">
-    <resultMap id="BaseResultMap" type="org.example.spring.daos.postgresql.patient.table.po.TPatientGroup">
+<mapper namespace="org.example.spring.daos.mysql.patient.mapper.TPatientGroupMapper">
+    <resultMap id="BaseResultMap" type="org.example.spring.daos.mysql.patient.table.po.TPatientGroup">
         <!--@mbg.generated-->
         <!--@Table t_patient_group-->
         <id column="id" jdbcType="BIGINT" property="id"/>
@@ -15,15 +15,15 @@
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="customer_id" jdbcType="BIGINT" property="customerId"/>
         <result column="team_id" jdbcType="BIGINT" property="teamId"/>
+        <result column="person_num" jdbcType="INTEGER" property="personNum"/>
         <result column="team_meal_id" jdbcType="BIGINT" property="teamMealId"/>
         <result column="meal_id" jdbcType="BIGINT" property="mealId"/>
         <result column="meal_name" jdbcType="VARCHAR" property="mealName"/>
-        <result column="person_num" jdbcType="INTEGER" property="personNum"/>
     </resultMap>
     <sql id="Base_Column_List">
         <!--@mbg.generated-->
         id, create_id, update_id, create_user, update_user, create_date, update_date, code,
-        "name", customer_id, team_id, team_meal_id, meal_id, meal_name, person_num
+        `name`, customer_id, team_id, person_num, team_meal_id, meal_id, meal_name
     </sql>
 
     <select id="existById" resultType="boolean">

@@ -2,7 +2,7 @@ package org.example.spring.daos.mysql.bill.table.po;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.bill.table.enumerate.BillLogType;
+import org.example.spring.daos.mysql.table.enumerate.BillLogType;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
 import java.math.BigDecimal;

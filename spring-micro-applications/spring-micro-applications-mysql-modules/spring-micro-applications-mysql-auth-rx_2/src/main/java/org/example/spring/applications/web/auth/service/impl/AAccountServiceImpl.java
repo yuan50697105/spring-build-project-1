@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.domains.mysql.auth.service.AccountService;
-import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
 import org.example.spring.models.mysql.auth.entity.result.Account;
 import org.example.spring.models.mysql.auth.entity.result.AccountDetails;
