@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.daos.mysql.table.enumerate.TCustomerContractStatus;
 import org.example.spring.daos.postgresql.customer.table.po.TCustomerContract;
 import org.example.spring.models.commons.entity.IModelVo;
-import org.example.spring.models.commons.enumerate.CustomerContractStatus;
 
 import java.util.Date;
 
@@ -44,7 +44,7 @@ public class CustomerContractModelVo extends IModelVo {
         customerContract.setCode(code);
         customerContract.setName(name);
         customerContract.setCustomerId(customerId);
-        customerContract.setStatus(CustomerContractStatus.CONTRACT_ADDITION.getValue());
+        customerContract.setStatus(TCustomerContractStatus.UNSIGNED.getValue());
         return customerContract;
     }
 

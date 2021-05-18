@@ -2,15 +2,15 @@ package org.example.spring.models.postgresql.patient.repository.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.SneakyThrows;
+import org.example.spring.daos.mysql.table.enumerate.FeeItemType;
+import org.example.spring.daos.mysql.table.enumerate.ItemSource;
+import org.example.spring.daos.mysql.table.enumerate.TPatientType;
 import org.example.spring.daos.postgresql.patient.dao.*;
 import org.example.spring.daos.postgresql.patient.table.po.*;
 import org.example.spring.daos.postgresql.patient.table.query.TPatientQuery;
 import org.example.spring.daos.postgresql.patient.table.vo.PatientCheckItemVo;
 import org.example.spring.daos.postgresql.patient.table.vo.PatientFeeItemVo;
 import org.example.spring.daos.postgresql.patient.table.vo.PatientVo;
-import org.example.spring.models.commons.enumerate.FeeItemType;
-import org.example.spring.models.commons.enumerate.ItemSource;
-import org.example.spring.models.commons.enumerate.PatientType;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.postgresql.patient.builder.PatientModelBuilder;
 import org.example.spring.models.postgresql.patient.entity.query.PatientQuery;
@@ -73,7 +73,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         }
         if (ObjectUtil.isNotEmpty(patientFormVo.getFeeItems())) {
             executor.execute(() -> {
-                saveFeeItem(entity, patientFormVo.getFeeItems(), ItemSource.OPTIONAL.getValue(), FeeItemType.PERSONAL.getValue());
+                saveFeeItem(entity, patientFormVo.getFeeItems(), ItemSource.OPTIONAL.getValue(), FeeItemType.COMMON.getValue());
             });
         }
         return entity.getId();
@@ -82,7 +82,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     private void saveMealItem(final TPatient entity, final PatientMealFormVo meal) {
         TPatientMeal patientMeal = patientModelBuilder.buildPatientMeal(meal.getMeal());
         patientMealDao.save(patientMeal);
-        executor.execute(() -> saveFeeItem(entity, meal.getItems(), ItemSource.MEAL.getValue(), FeeItemType.PERSONAL.getValue()));
+        executor.execute(() -> saveFeeItem(entity, meal.getItems(), ItemSource.MEAL.getValue(), FeeItemType.COMMON.getValue()));
     }
 
     private void savePersonalCheckItem(PatientFeeItemFormVo feeItem, TPatientFeeItem tPatientFeeItem) {
@@ -172,7 +172,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     @SneakyThrows
     private void addExtra(TPatient entity) {
-        if (ObjectUtil.isNotEmpty(entity.getType()) && PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
+        if (ObjectUtil.isNotEmpty(entity.getType()) && TPatientType.get(entity.getType()).equals(TPatientType.TEAM)) {
             Future<Boolean> validateGroup = executor.submit(validateGroup(entity));
             Future<Boolean> validateTeam = executor.submit(validateTeam(entity));
             Future<Optional<TPatientGroup>> group = executor.submit(getGroupOpt(entity));
@@ -194,7 +194,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     @SneakyThrows
     private void updateExtra(TPatient entity) {
-        if (ObjectUtil.isNotEmpty(entity.getType()) && PatientType.get(entity.getType()).equals(PatientType.TEAM)) {
+        if (ObjectUtil.isNotEmpty(entity.getType()) && TPatientType.get(entity.getType()).equals(TPatientType.TEAM)) {
             Future<Boolean> validateGroup = executor.submit(validateGroup(entity));
             Future<Boolean> validateTeam = executor.submit(validateTeam(entity));
             Future<Optional<TPatientGroup>> group = executor.submit(getGroupOpt(entity));
