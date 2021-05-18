@@ -46,7 +46,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-daos-commons</artifactId>
+            <artifactId>spring-micro-daos-commons</artifactId>
         </dependency>
     </dependencies>
 </project>

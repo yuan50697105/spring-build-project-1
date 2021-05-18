@@ -3,6 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>spring-domains-micro-services-dependencies</module>
+        <module>spring-domains-micro-services-commons</module>
         <module>spring-domains-micro-services-mysql-modules</module>
         <module>spring-domains-micro-services-postgresql-modules</module>
     </modules>

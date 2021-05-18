@@ -12,7 +12,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-plugins-commons</artifactId>
+            <artifactId>spring-micro-daos-commons</artifactId>
         </dependency>
     </dependencies>
 

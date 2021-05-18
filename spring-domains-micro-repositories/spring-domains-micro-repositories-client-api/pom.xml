@@ -8,6 +8,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-domains-micro-repositories-client-api</artifactId>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
+                <version>0.0.29-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
@@ -16,10 +27,6 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-plugins-commons</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-daos-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>io.reactivex.rxjava3</groupId>
@@ -35,7 +42,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-           <artifactId>spring-domains-repositories-commons</artifactId>
+            <artifactId>spring-domains-micro-repositories-commons</artifactId>
         </dependency>
     </dependencies>
 

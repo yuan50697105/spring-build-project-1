@@ -2,7 +2,7 @@ package org.example.spring.daos.mysql.items.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.items.table.enumerate.TMealType;
+import org.example.spring.daos.mysql.table.enumerate.TMealType;
 import org.example.spring.daos.mysql.items.table.po.TMeal;
 
 import java.io.Serializable;

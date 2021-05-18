@@ -10,6 +10,7 @@
     <artifactId>spring-domains-micro-repositories-mysql-clients</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>spring-domains-micro-repositories-mysql-clients-commons</module>
         <module>spring-domains-micro-repositories-mysql-clients_1</module>
         <module>spring-domains-micro-repositories-mysql-clients_2</module>
         <module>spring-domains-micro-repositories-mysql-clients-auth_1</module>

@@ -20,6 +20,11 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-services-commons</artifactId>
+                <version>0.0.29-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-mysql-auth_1</artifactId>
                 <version>0.0.29-SNAPSHOT</version>
             </dependency>

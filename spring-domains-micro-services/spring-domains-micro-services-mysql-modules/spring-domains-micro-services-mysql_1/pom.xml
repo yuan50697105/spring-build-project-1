@@ -12,10 +12,6 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-services-commons</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
             <artifactId>spring-domains-micro-services-mysql-auth_1</artifactId>
         </dependency>
         <dependency>

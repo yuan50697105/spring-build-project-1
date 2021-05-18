@@ -27,6 +27,16 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-commons</artifactId>
+                <version>0.0.29-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-mysql-clients-commons</artifactId>
+                <version>0.0.29-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-mysql-auth_1</artifactId>
                 <version>0.0.29-SNAPSHOT</version>
             </dependency>

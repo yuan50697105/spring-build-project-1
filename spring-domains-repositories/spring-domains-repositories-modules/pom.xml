@@ -10,7 +10,6 @@
     <artifactId>spring-domains-repositories-modules</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-domains-repositories-commons</module>
         <module>spring-domains-repositories_1</module>
         <module>spring-domains-repositories_2</module>
         <module>spring-domains-repositories-mysql_1</module>
@@ -34,4 +33,10 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-domains-repositories-commons</artifactId>
+        </dependency>
+    </dependencies>
 </project>

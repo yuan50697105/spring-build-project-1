@@ -10,10 +10,6 @@
     <artifactId>spring-domains-micro-repositories-mysql_1</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-           <artifactId>spring-domains-repositories-commons</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.example.spring</groupId>

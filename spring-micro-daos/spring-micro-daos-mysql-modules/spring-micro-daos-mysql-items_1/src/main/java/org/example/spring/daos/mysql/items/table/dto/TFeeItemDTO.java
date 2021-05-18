@@ -2,8 +2,8 @@ package org.example.spring.daos.mysql.items.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.items.table.enumerate.Sex;
-import org.example.spring.daos.mysql.items.table.enumerate.TFeeItemType;
+import org.example.spring.daos.mysql.table.enumerate.Sex;
+import org.example.spring.daos.mysql.table.enumerate.TFeeItemType;
 import org.example.spring.daos.mysql.items.table.po.TFeeItem;
 
 import java.io.Serializable;

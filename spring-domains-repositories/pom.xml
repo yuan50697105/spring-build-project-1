@@ -10,6 +10,7 @@
     <artifactId>spring-domains-repositories</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>spring-domains-repositories-commons</module>
         <module>spring-domains-repositories-modules</module>
         <module>spring-domains-repositories-dependencies</module>
     </modules>

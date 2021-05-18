@@ -33,11 +33,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-micro-repositories-client-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-daos-minio</artifactId>
+            <artifactId>spring-domains-micro-repositories-commons</artifactId>
         </dependency>
     </dependencies>
 </project>
