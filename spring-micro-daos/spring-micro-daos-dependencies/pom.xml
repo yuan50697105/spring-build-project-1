@@ -105,6 +105,16 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-department_1</artifactId>
+                <version>0.0.30-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-department_2</artifactId>
+                <version>0.0.30-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-mysql-rws-commons_1</artifactId>
                 <version>0.0.30-SNAPSHOT</version>
             </dependency>
@@ -161,6 +171,16 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-mysql-rws-customer_2</artifactId>
+                <version>0.0.30-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-rws-department_1</artifactId>
+                <version>0.0.30-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mysql-rws-department_2</artifactId>
                 <version>0.0.30-SNAPSHOT</version>
             </dependency>
             <dependency>

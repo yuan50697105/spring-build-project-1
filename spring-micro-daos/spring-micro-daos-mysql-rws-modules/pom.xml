@@ -37,6 +37,8 @@
         <module>spring-micro-daos-mysql-rws-report_2</module>
         <module>spring-micro-daos-mysql-rws-bill_1</module>
         <module>spring-micro-daos-mysql-rws-bill_2</module>
+        <module>spring-micro-daos-mysql-rws-department_1</module>
+        <module>spring-micro-daos-mysql-rws-department_2</module>
     </modules>
     <dependencies>
         <dependency>
