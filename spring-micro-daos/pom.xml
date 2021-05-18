@@ -19,7 +19,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.29-SNAPSHOT</version>
+        <version>0.0.29</version>
     </parent>
     <artifactId>spring-micro-daos</artifactId>
     <packaging>pom</packaging>
