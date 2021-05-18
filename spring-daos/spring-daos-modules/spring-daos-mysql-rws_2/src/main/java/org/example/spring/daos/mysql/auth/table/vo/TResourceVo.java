@@ -2,7 +2,7 @@ package org.example.spring.daos.mysql.auth.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.auth.table.enumerate.TResourceType;
+import org.example.spring.daos.mysql.table.enumerate.TResourceType;
 import org.example.spring.daos.mysql.auth.table.po.TResource;
 
 import java.io.Serializable;

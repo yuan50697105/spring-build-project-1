@@ -4,8 +4,8 @@ import cn.hutool.core.lang.Validator;
 import lombok.AllArgsConstructor;
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
+import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.domains.postgresql.auth.service.AccountService;
-import org.example.spring.models.commons.enumerate.UserStatus;
 import org.example.spring.models.postgresql.auth.entity.query.AccountQuery;
 import org.example.spring.models.postgresql.auth.entity.result.Account;
 import org.example.spring.models.postgresql.auth.entity.result.AccountDetails;
@@ -60,7 +60,7 @@ public class AAccountServiceImpl implements AAccountService {
 
     @Override
     public void updateStatus(String status, List<Long> list) {
-        UserStatus userStatus = UserStatus.get(status);
+        TUserStatus userStatus = TUserStatus.get(status);
         if (Validator.isNotEmpty(userStatus)) {
             accountService.updateStatusByIds(userStatus, list);
         } else {

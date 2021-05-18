@@ -5,12 +5,9 @@ import lombok.SneakyThrows;
 import org.example.spring.daos.mysql.patient.dao.*;
 import org.example.spring.daos.mysql.patient.table.po.*;
 import org.example.spring.daos.mysql.patient.table.query.TPatientQuery;
-import org.example.spring.daos.mysql.patient.table.vo.PatientCheckItemVo;
-import org.example.spring.daos.mysql.patient.table.vo.PatientFeeItemVo;
-import org.example.spring.daos.mysql.patient.table.vo.PatientVo;
-import org.example.spring.models.commons.enumerate.FeeItemType;
-import org.example.spring.models.commons.enumerate.ItemSource;
-import org.example.spring.models.commons.enumerate.PatientType;
+import org.example.spring.daos.mysql.patient.table.vo.*;
+import org.example.spring.daos.mysql.table.enumerate.FeeItemType;
+import org.example.spring.daos.mysql.table.enumerate.ItemSource;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.models.mysql.patient.builder.PatientModelBuilder;
 import org.example.spring.models.mysql.patient.entity.query.PatientQuery;
@@ -64,7 +61,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     @Override
     public Long saveWithId(final PatientFormVo patientFormVo) {
-        PatientVo patient = patientFormVo.getPatient();
+        TPatientVo patient = patientFormVo.getPatient();
         final TPatient entity = patientModelBuilder.buildPatient(patient);
         addExtra(entity);
         patientDao.save(entity);
@@ -72,9 +69,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
             executor.execute(() -> saveMealItem(entity, patientFormVo.getMeal()));
         }
         if (ObjectUtil.isNotEmpty(patientFormVo.getFeeItems())) {
-            executor.execute(() -> {
-                saveFeeItem(entity, patientFormVo.getFeeItems(), ItemSource.OPTIONAL.getValue(), FeeItemType.PERSONAL.getValue());
-            });
+            executor.execute(() -> saveFeeItem(entity, patientFormVo.getFeeItems(), ItemSource.OPTIONAL.getValue(), FeeItemType.COMMON.getValue()));
         }
         return entity.getId();
     }
@@ -82,7 +77,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     private void saveMealItem(final TPatient entity, final PatientMealFormVo meal) {
         TPatientMeal patientMeal = patientModelBuilder.buildPatientMeal(meal.getMeal());
         patientMealDao.save(patientMeal);
-        executor.execute(() -> saveFeeItem(entity, meal.getItems(), ItemSource.MEAL.getValue(), FeeItemType.PERSONAL.getValue()));
+        executor.execute(() -> saveFeeItem(entity, meal.getItems(), ItemSource.MEAL.getValue(), FeeItemType.COMMON.getValue()));
     }
 
     private void savePersonalCheckItem(PatientFeeItemFormVo feeItem, TPatientFeeItem tPatientFeeItem) {
@@ -91,7 +86,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     private void saveFeeItem(TPatient entity, List<PatientFeeItemFormVo> feeItems, String source, String type) {
         for (final PatientFeeItemFormVo feeItem : feeItems) {
-            PatientFeeItemVo patientFeeItemVo = feeItem.getFeeItem();
+            TPatientFeeItemVo patientFeeItemVo = feeItem.getFeeItem();
             final TPatientFeeItem tPatientFeeItem = patientModelBuilder.buildPatientFeeItem(patientFeeItemVo);
             tPatientFeeItem.setPatientId(entity.getId());
             tPatientFeeItem.setSource(source);
@@ -103,8 +98,8 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
         }
     }
 
-    private void saveCheckItem(TPatientFeeItem tPatientFeeItem, List<PatientCheckItemVo> checkItems, String source) {
-        for (PatientCheckItemVo checkItem : checkItems) {
+    private void saveCheckItem(TPatientFeeItem tPatientFeeItem, List<TPatientCheckItemVo> checkItems, String source) {
+        for (TPatientCheckItemVo checkItem : checkItems) {
             TPatientCheckItem entity = patientModelBuilder.buildPatientCheckItem(checkItem);
             entity.setPatientId(tPatientFeeItem.getPatientId());
             entity.setFeeItemId(tPatientFeeItem.getFeeItemId());
@@ -117,7 +112,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     @Override
     public void update(PatientFormVo patientFormVo) {
         Long id = patientFormVo.getId();
-        PatientVo patient = patientFormVo.getPatient();
+        TPatientVo patient = patientFormVo.getPatient();
         Optional<TPatient> optional = patientDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TPatient tPatient = optional.get();

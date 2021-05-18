@@ -20,9 +20,9 @@ import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
 public interface PatientModelBuilder {
-    TPatient buildPatient(PatientVo patient);
+    TPatient buildPatient(TPatientVo patient);
 
-    void copyPatient(PatientVo patient, @MappingTarget TPatient tPatient);
+    void copyPatient(TPatientVo patient, @MappingTarget TPatient tPatient);
 
     TPatientQuery buildPatientQuery(PatientQuery patientQuery);
 
@@ -32,7 +32,7 @@ public interface PatientModelBuilder {
 
     List<Patient> buildPatientResult(List<TPatient> data);
 
-    TPatientGroup buildPatientGroup(PatientGroupVo item);
+    TPatientGroup buildPatientGroup(TPatientGroupVo item);
 
     TPatientTeam buildPatientTeam(PatientTeamVo teamVo);
 
@@ -46,7 +46,7 @@ public interface PatientModelBuilder {
 
     List<PatientTeam> buildPatientTeamResult(List<TPatientTeam> data);
 
-    void copyPatientGroup(PatientGroupVo group, @MappingTarget TPatientGroup tPatientGroup);
+    void copyPatientGroup(TPatientGroupVo group, @MappingTarget TPatientGroup tPatientGroup);
 
     PatientGroup buildPatientGroupResult(TPatientGroup group);
 
@@ -74,11 +74,11 @@ public interface PatientModelBuilder {
 
     List<PatientTeamMealFeeItem> buildPatientTeamMealFeeItemResult(List<TPatientTeamMealFeeItem> listByTeamMealId);
 
-    TPatientFeeItem buildPatientFeeItem(PatientFeeItemVo patientFeeItemVo);
+    TPatientFeeItem buildPatientFeeItem(TPatientFeeItemVo patientFeeItemVo);
 
     TPatientMeal buildPatientMeal(PatientMealVo meal);
 
-    TPatientCheckItem buildPatientCheckItem(PatientCheckItemVo checkItem);
+    TPatientCheckItem buildPatientCheckItem(TPatientCheckItemVo checkItem);
 
 
 }

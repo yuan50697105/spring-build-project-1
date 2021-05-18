@@ -10,10 +10,10 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class PatientGroupFormVo extends IModelVo {
-    private PatientGroupVo group;
-    private PatientTeamMealVo meal;
-    private List<PatientTeamMealFeeItemVo> feeItems;
-    private List<PatientTeamMealCheckItemVo> checkItems;
-    private List<PatientVo> patients;
+    private TPatientGroupVo group;
+    private TPatientTeamMealVo meal;
+    private List<TPatientTeamMealFeeItemVo> feeItems;
+    private List<TPatientTeamMealCheckItemVo> checkItems;
+    private List<TPatientVo> patients;
 
 }
