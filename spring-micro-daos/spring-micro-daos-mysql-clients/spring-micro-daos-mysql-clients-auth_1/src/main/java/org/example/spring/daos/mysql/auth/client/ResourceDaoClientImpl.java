@@ -1,15 +1,15 @@
 package org.example.spring.daos.mysql.auth.client;
 
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.auth.builder.AuthClientBuilder;
 import org.example.spring.daos.mysql.auth.dao.TResourceDao;
-import org.example.spring.daos.mysql.auth.entity.vo.ResourceVo;
 import org.example.spring.daos.mysql.auth.entity.query.ResourceQuery;
+import org.example.spring.daos.mysql.auth.entity.vo.ResourceVo;
 import org.example.spring.daos.mysql.auth.table.po.TResource;
 import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.ValidationException;
@@ -19,12 +19,12 @@ import java.util.Optional;
 @RestController
 @DubboService
 @AllArgsConstructor
-@Transactional
 public class ResourceDaoClientImpl implements ResourceDaoClient {
     private final AuthClientBuilder authClientBuilder;
     private final TResourceDao resourceDao;
 
     @Override
+    @GlobalTransactional
     public void save(ResourceVo resourceVo) {
         resourceDao.save(authClientBuilder.createForSave(resourceVo));
     }
@@ -40,6 +40,7 @@ public class ResourceDaoClientImpl implements ResourceDaoClient {
     }
 
     @Override
+    @GlobalTransactional
     public void delete(List<Long> ids) {
         validateDelete(ids);
     }

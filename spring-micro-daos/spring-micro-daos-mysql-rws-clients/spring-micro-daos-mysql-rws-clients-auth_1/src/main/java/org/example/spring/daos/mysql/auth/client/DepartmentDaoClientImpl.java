@@ -1,5 +1,6 @@
 package org.example.spring.daos.mysql.auth.client;
 
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.auth.builder.DepartmentClientBuilder;
@@ -9,7 +10,6 @@ import org.example.spring.daos.mysql.auth.entity.vo.DepartmentVo;
 import org.example.spring.daos.mysql.auth.repository.TDepartmentRepository;
 import org.example.spring.daos.mysql.auth.table.dto.TDepartmentDTO;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.ValidationException;
@@ -19,24 +19,25 @@ import java.util.Optional;
 @RestController
 @DubboService
 @AllArgsConstructor
-@Transactional
 public class DepartmentDaoClientImpl implements DepartmentDaoClient {
     private final DepartmentClientBuilder departmentClientBuilder;
     private final TDepartmentRepository departmentRepository;
+
     @Override
-    @Transactional
+    @GlobalTransactional
     public void save(DepartmentVo departmentVo) {
         departmentRepository.save(departmentClientBuilder.build(departmentVo));
     }
 
     @Override
-    @Transactional
+    @GlobalTransactional
     public void update(DepartmentVo departmentVo) {
         departmentRepository.update(departmentClientBuilder.build(departmentVo));
     }
 
 
     @Override
+    @GlobalTransactional
     public void delete(List<Long> ids) {
         validateDepartment(ids);
         departmentRepository.delete(ids);

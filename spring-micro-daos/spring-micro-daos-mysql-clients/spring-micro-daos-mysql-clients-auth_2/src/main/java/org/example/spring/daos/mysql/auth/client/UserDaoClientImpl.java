@@ -1,5 +1,6 @@
 package org.example.spring.daos.mysql.auth.client;
 
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.auth.builder.UserClientBuilder;
@@ -25,19 +26,28 @@ public class UserDaoClientImpl implements UserDaoClient {
     private final TUserRepository userRepository;
 
     @Override
+    @GlobalTransactional
     public void save(UserVo user) {
         userRepository.save(builder.buildVO(user));
 
     }
 
     @Override
+    @GlobalTransactional
     public void updateStatusByIds(String status, List<Long> ids) {
         userDao.updateStatusByIds(status, ids);
     }
 
     @Override
+    @GlobalTransactional
     public void update(UserVo user) {
         userRepository.update(builder.buildVO(user));
+    }
+
+    @Override
+    @GlobalTransactional
+    public void delete(List<Long> ids) {
+        userRepository.delete(ids);
     }
 
     @Override
@@ -49,11 +59,6 @@ public class UserDaoClientImpl implements UserDaoClient {
     @Override
     public Optional<UserDTO> getOpt(Long id) {
         return Optional.ofNullable(get(id));
-    }
-
-    @Override
-    public void delete(List<Long> ids) {
-        userRepository.delete(ids);
     }
 
     @Override

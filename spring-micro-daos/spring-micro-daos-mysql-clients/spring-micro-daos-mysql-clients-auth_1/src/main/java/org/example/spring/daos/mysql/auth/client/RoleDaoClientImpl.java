@@ -1,12 +1,13 @@
 package org.example.spring.daos.mysql.auth.client;
 
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.auth.builder.AuthClientBuilder;
 import org.example.spring.daos.mysql.auth.dao.TRoleDao;
 import org.example.spring.daos.mysql.auth.dao.TRoleResourceDao;
-import org.example.spring.daos.mysql.auth.entity.vo.RoleVo;
 import org.example.spring.daos.mysql.auth.entity.query.RoleQuery;
+import org.example.spring.daos.mysql.auth.entity.vo.RoleVo;
 import org.example.spring.daos.mysql.auth.table.po.TRole;
 import org.example.spring.daos.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -24,6 +25,7 @@ public class RoleDaoClientImpl implements RoleDaoClient {
     private final TRoleResourceDao roleResourceDao;
 
     @Override
+    @GlobalTransactional
     public void save(RoleVo roleVo) {
         TRole entity = authClientBuilder.createForSave(roleVo);
         roleDao.save(entity);
@@ -31,6 +33,7 @@ public class RoleDaoClientImpl implements RoleDaoClient {
     }
 
     @Override
+    @GlobalTransactional
     public void update(RoleVo roleVo) {
         Optional<TRole> optional = roleDao.getByIdOpt(roleVo.getId());
         if (optional.isPresent()) {
@@ -42,6 +45,7 @@ public class RoleDaoClientImpl implements RoleDaoClient {
     }
 
     @Override
+    @GlobalTransactional
     public void delete(List<Long> ids) {
         roleDao.deleteByIds(ids);
         roleResourceDao.removeByRoleIds(ids);
