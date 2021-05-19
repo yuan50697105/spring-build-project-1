@@ -12,9 +12,9 @@
         <module>spring-micro-daos-postgresql-modules</module>
         <module>spring-micro-daos-postgresql-rws-modules</module>
         <module>spring-micro-daos-clickhouse-modules</module>
-        <module>spring-micro-daos-doris-modules</module>
-        <module>spring-micro-daos-mongodb-modules</module>
-        <module>spring-micro-daos-elasticsearch-modules</module>
+        <module>spring-micro-daos-doris</module>
+        <module>spring-micro-daos-mongodb</module>
+        <module>spring-micro-daos-elasticsearch</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>

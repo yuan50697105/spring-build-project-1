@@ -14,6 +14,10 @@
             <artifactId>spring-micro-daos-client-api</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-daos-commons</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
