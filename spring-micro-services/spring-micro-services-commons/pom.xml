@@ -9,12 +9,10 @@
     <artifactId>spring-micro-services-commons</artifactId>
     <version>0.0.32-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-plugins-commons</artifactId>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-plugins-commons</artifactId>
+        </dependency>
+    </dependencies>
 </project>
