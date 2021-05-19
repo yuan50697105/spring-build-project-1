@@ -6,7 +6,7 @@
         <module>spring-micro-daos-client-api</module>
         <module>spring-micro-daos-commons</module>
         <module>spring-micro-daos-mysql</module>
-        <module>spring-micro-daos-mysql-rws-modules</module>
+        <module>spring-micro-daos-mysql-rws</module>
         <module>spring-micro-daos-mysql-clients</module>
         <module>spring-micro-daos-mysql-rws-clients</module>
         <module>spring-micro-daos-postgresql-modules</module>
