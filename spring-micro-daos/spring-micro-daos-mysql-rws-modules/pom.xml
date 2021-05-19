@@ -21,6 +21,7 @@
         </dependencies>
     </dependencyManagement>
     <modules>
+        <module>spring-micro-daos-mysql-rws-dependencies</module>
         <module>spring-micro-daos-mysql-rws-commons_1</module>
         <module>spring-micro-daos-mysql-rws-commons_2</module>
         <module>spring-micro-daos-mysql-rws_1</module>
