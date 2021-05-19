@@ -2,7 +2,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-micro-daos-mysql-modules</artifactId>
+        <artifactId>spring-micro-daos-mysql</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.31-SNAPSHOT</version>
     </parent>
