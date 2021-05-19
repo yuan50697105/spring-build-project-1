@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 /**
  * @author yuane
  */
-public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IService<T> {
+public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IBaseDao<T,Q> {
     Optional<T> getByIdOpt(Long id);
 
     List<T> queryList(Q query);
