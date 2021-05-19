@@ -30,9 +30,15 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
     public void update(VO vo) {
         Optional<T> optional = dao.getByIdOpt(vo.getId());
         if (optional.isPresent()) {
-            T t = optional.get();
-            converter.copy(vo, t);
-            dao.update(t);
+            dao.updateSelective(converter.buildPo(vo));
+        }
+    }
+
+    @Override
+    public void updateNull(VO vo) {
+        Optional<T> optional = dao.getByIdOpt(vo.getId());
+        if (optional.isPresent()) {
+            dao.update(converter.buildPo(vo));
         }
     }
 
