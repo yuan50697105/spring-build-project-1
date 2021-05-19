@@ -4,7 +4,6 @@
         <artifactId>spring-micro-daos-mysql-rws-modules</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.31-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
