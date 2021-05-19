@@ -24,6 +24,7 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-services-commons</artifactId>
+            <version>0.0.32-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
