@@ -10,6 +10,7 @@
     <artifactId>spring-micro-daos-mysql-modules</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>spring-micro-daos-mysql-dependencies</module>
         <module>spring-micro-daos-mysql-commons_1</module>
         <module>spring-micro-daos-mysql-commons_2</module>
         <module>spring-micro-daos-mysql_1</module>
