@@ -158,7 +158,7 @@ public class TBillSubInfoRepositoryImpl implements TBillSubInfoRepository {
 
     @Override
     public List<TBillSubInfoDetailsDTO> queryDetailsListByBillId(Long billId) {
-        List<TBillSubInfoDTO> billSubInfoDTOS= billSubInfoBuilder.build(billSubInfoDao.queryDetailsListByBillId(billId));
+        List<TBillSubInfoDTO> billSubInfoDTOS = billSubInfoBuilder.build(billSubInfoDao.queryDetailsListByBillId(billId));
         List<TBillItemsInfoDTO> billItemsInfoDTOS = billItemsInfoRepository.queryListByBillId(billId);
         return billSubInfoBuilder.build2(billSubInfoDTOS, billItemsInfoDTOS);
     }

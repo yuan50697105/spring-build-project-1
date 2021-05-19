@@ -29,6 +29,7 @@ public class TUserRepositoryImpl implements TUserRepository {
     private final TUserRoleDao userRoleDao;
     private final TUserBuilder userBuilder;
     private final TUserRoleBuilder userRoleBuilder;
+    private final TRoleRepository roleRepository;
 
     @Override
     public void save(TUserVo vo) {
@@ -163,8 +164,6 @@ public class TUserRepositoryImpl implements TUserRepository {
         return null;
     }
 
-    private final TRoleRepository roleRepository;
-
     @Override
     public IPageData<TUserDTO> queryPage(TUserQuery query) {
         return null;
@@ -172,6 +171,6 @@ public class TUserRepositoryImpl implements TUserRepository {
 
     @Override
     public TUserRoleDTO getDetails(Long id) {
-        return userBuilder.buildUser(get(id),roleRepository.queryListByUserId(id) );
+        return userBuilder.buildUser(get(id), roleRepository.queryListByUserId(id));
     }
 }

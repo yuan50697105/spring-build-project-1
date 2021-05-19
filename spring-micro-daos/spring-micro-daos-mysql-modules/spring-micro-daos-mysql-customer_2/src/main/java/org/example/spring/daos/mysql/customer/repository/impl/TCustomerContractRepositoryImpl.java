@@ -25,7 +25,7 @@ public class TCustomerContractRepositoryImpl implements TCustomerContractReposit
 
     @Override
     public void save(TCustomerContractVo vo) {
-         customerContractDao.save(customerContractBuilder.toPo(vo));
+        customerContractDao.save(customerContractBuilder.toPo(vo));
     }
 
 

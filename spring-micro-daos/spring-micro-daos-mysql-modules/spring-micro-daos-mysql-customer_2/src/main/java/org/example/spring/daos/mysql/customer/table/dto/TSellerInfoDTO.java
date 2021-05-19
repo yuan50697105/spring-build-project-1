@@ -8,5 +8,5 @@ import java.io.Serializable;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TSellerInfoDTO  extends TSellerInfo implements Serializable {
+public class TSellerInfoDTO extends TSellerInfo implements Serializable {
 }

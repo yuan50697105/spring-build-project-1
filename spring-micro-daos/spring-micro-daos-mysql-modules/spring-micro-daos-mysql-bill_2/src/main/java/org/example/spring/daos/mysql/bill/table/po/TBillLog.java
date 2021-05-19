@@ -37,7 +37,7 @@ public class TBillLog extends IBaseEntity {
     /**
      * 类型
      *
-     * @see  BillLogType
+     * @see BillLogType
      */
     private String type;
 }

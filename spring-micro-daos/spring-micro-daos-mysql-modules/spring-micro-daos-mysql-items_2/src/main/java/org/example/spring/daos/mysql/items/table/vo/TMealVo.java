@@ -12,6 +12,7 @@ import java.util.List;
 @Data
 public class TMealVo extends TMeal implements Serializable {
     private List<Long> feeItemIds;
+
     @Override
     public String getType() {
         return TMealType.getValue(super.getType());

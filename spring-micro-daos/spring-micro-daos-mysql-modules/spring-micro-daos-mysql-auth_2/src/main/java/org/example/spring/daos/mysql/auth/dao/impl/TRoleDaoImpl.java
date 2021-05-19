@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 @Transactional
 public class TRoleDaoImpl extends TkBaseDaoImpl<TRole, TRoleQuery, TRoleMapper> implements TRoleDao {
     private final TRoleQueryMapper roleQueryMapper;
+
     @Override
     protected Wrapper<TRole> queryWrapper(TRoleQuery tRoleQuery) {
         return null;

@@ -28,6 +28,7 @@ public class TBillSubInfo extends IBaseEntity {
     private BigDecimal totalPrice;
     /**
      * 状态
+     *
      * @see BillSubInfoStatus
      */
     private String status;
