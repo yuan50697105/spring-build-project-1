@@ -14,4 +14,15 @@
         <module>spring-micro-services-dependencies</module>
         <module>spring-micro-services-modules</module>
     </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-plugins-dependencies</artifactId>
+                <version>0.0.31-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
