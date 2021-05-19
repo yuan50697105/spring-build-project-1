@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-applications</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.31-SNAPSHOT</version>
+        <version>0.0.32-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,99 +14,99 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-dependencies</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications_1</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications_2</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-async_1</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-async_2</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-rx_1</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-rx_2</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-mysql_1</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-mysql_2</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-mysql-async_1</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-mysql-async_2</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-mysql-rx_1</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-mysql-rx_2</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-postgresql_1</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-postgresql_2</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-postgresql-async_1</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-postgresql-async_2</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-postgresql-rx_1</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-postgresql-rx_2</artifactId>
-                <version>0.0.31-SNAPSHOT</version>
+                <version>0.0.32-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
