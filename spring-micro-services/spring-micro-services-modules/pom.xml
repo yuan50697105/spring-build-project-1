@@ -4,17 +4,17 @@
     <parent>
         <groupId>org.example.spring</groupId>
         <artifactId>spring-micro-services</artifactId>
-        <version>0.0.31</version>
+        <version>0.0.31-SNAPSHOT</version>
     </parent>
     <artifactId>spring-micro-services-modules</artifactId>
-    <version>0.0.31</version>
+    <version>0.0.31-SNAPSHOT</version>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-dependencies</artifactId>
-                <version>0.0.31</version>
+                <version>0.0.31-SNAPSHOT</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>

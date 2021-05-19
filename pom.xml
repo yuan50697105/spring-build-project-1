@@ -8,7 +8,7 @@
     </parent>
     <groupId>org.example.spring</groupId>
     <artifactId>spring-build-project</artifactId>
-    <version>0.0.31</version>
+    <version>0.0.31-SNAPSHOT</version>
     <modules>
         <module>spring-build-tests</module>
         <module>spring-build-admin-server</module>
@@ -344,7 +344,7 @@
     <scm>
         <developerConnection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</developerConnection>
         <connection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</connection>
-        <tag>v0.0.31</tag>
+        <tag>v0.0.31-SNAPSHOT</tag>
     </scm>
     <profiles>
         <profile>
