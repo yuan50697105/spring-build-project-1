@@ -19,30 +19,37 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-daos-mysql-auth_2</artifactId>
+            <version>0.0.31-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-daos-mysql-bill_2</artifactId>
+            <version>0.0.31-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-daos-mysql-customer_2</artifactId>
+            <version>0.0.31-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-daos-mysql-items_2</artifactId>
+            <version>0.0.31-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-daos-mysql-patient_2</artifactId>
+            <version>0.0.31-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-daos-mysql-report_2</artifactId>
+            <version>0.0.31-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-daos-mysql-department_2</artifactId>
+            <version>0.0.31-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
