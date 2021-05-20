@@ -20,7 +20,6 @@
         <module>spring-applications</module>
         <module>spring-launchers</module>
         <module>spring-micro-daos</module>
-        <module>spring-micro-services</module>
         <module>spring-domains-micro-repositories</module>
         <module>spring-domains-micro-services</module>
         <module>spring-micro-applications</module>
@@ -151,12 +150,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>2.9</version>
-            <type>maven-plugin</type>
-        </dependency>
     </dependencies>
     <build>
         <resources>
@@ -167,7 +160,7 @@
                     <exclude>bootstrap.yml</exclude>
                     <exclude>docker-compose.yml</exclude>
                     <exclude>Dockerfile</exclude>
-                    <exclude>logback.xml</exclude>
+                    <!-- <exclude>logback.xml</exclude> -->
                 </excludes>
             </resource>
         </resources>
@@ -199,7 +192,7 @@
                                             <exclude>bootstrap.yml</exclude>
                                             <exclude>docker-compose.yml</exclude>
                                             <exclude>Dockerfile</exclude>
-                                            <exclude>logback.xml</exclude>
+                                            <!-- <exclude>logback.xml</exclude> -->
                                         </includes>
                                         <filtering>true</filtering>
                                     </resourceVo>
@@ -217,7 +210,7 @@
                         <source>${maven.compiler.source}</source>
                         <target>${maven.compiler.target}</target>
                         <encoding>${maven.compiler.encoding}</encoding>
-                        <!-- <fork>true</fork> -->
+                        <fork>true</fork>
                         <!-- <meminitial>128m</meminitial> -->
                         <!-- <maxmem>512m</maxmem> -->
                         <annotationProcessorPaths>
