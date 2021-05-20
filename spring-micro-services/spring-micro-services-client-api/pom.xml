@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <modules>
-        <module>spring-micro-services-register-service_1</module>
-        <module>spring-micro-services-register-service_2</module>
-        <module>spring-micro-services-service_1</module>
-        <module>spring-micro-services-service_2</module>
-    </modules>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>org.example.spring</groupId>
         <artifactId>spring-micro-services</artifactId>
+        <groupId>org.example.spring</groupId>
         <version>0.0.33.1-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-micro-services-modules</artifactId>
-    <version>0.0.33.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-micro-services-client-api</artifactId>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -30,6 +25,14 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-services-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-dubbo</artifactId>
         </dependency>
     </dependencies>
 </project>
