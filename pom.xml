@@ -251,7 +251,7 @@
                     <version>2.8.2</version>
                     <configuration>
                         <deployAtEnd>true</deployAtEnd>
-                        <uniqueVersion>false</uniqueVersion>
+                        <uniqueVersion>true</uniqueVersion>
                         <updateReleaseInfo>true</updateReleaseInfo>
                     </configuration>
                 </plugin>
@@ -271,7 +271,7 @@
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useEditMode>false</useEditMode>
-                        <arguments>-Pd</arguments>
+                        <arguments>-Pd -T 1C</arguments>
                         <commitByProject>false</commitByProject>
                         <autoResolveSnapshots>all</autoResolveSnapshots>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
