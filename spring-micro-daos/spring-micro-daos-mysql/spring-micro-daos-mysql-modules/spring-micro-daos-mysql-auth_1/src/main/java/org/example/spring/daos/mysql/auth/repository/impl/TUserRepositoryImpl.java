@@ -40,14 +40,13 @@ public class TUserRepositoryImpl implements TUserRepository {
 
     @Override
     public void update(TUserVo vo) {
-        TUser user = userBuilder.buildUser(vo);
-        Optional<TUser> optional = userDao.getByIdOpt(user.getId());
+        Optional<TUser> optional = userDao.getByIdOpt(vo.getId());
         if (optional.isPresent()) {
             TUser tUser = optional.get();
-            userBuilder.copy(user, tUser);
+            userBuilder.copy(vo, tUser);
             userDao.update(tUser);
-            userRoleDao.deleteByUserId(user.getId());
-            userRoleDao.saveBatch(userRoleBuilder.buildRoles(user.getId(), vo.getRoleIds()));
+            userRoleDao.deleteByUserId(vo.getId());
+            userRoleDao.saveBatch(userRoleBuilder.buildRoles(vo.getId(), vo.getRoleIds()));
         }
     }
 
@@ -171,6 +170,8 @@ public class TUserRepositoryImpl implements TUserRepository {
 
     @Override
     public TUserRoleDTO getDetails(Long id) {
-        return userBuilder.buildUser(get(id), roleRepository.queryListByUserId(id));
+        TUserRoleDTO userRoleDTO = userBuilder.buildUser2(get(id));
+        userRoleDTO.setRoles(roleRepository.queryListByUserId(id));
+        return userRoleDTO;
     }
 }
