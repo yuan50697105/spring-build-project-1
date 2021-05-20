@@ -9,6 +9,7 @@
         <module>spring-micro-daos-mysql-rws</module>
         <module>spring-micro-daos-mysql-clients</module>
         <module>spring-micro-daos-mysql-rws-clients</module>
+        <module>spring-micro-daos-msg-clients</module>
         <module>spring-micro-daos-postgresql</module>
         <module>spring-micro-daos-postgresql-rws</module>
         <module>spring-micro-daos-clickhouse</module>
