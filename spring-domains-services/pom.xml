@@ -10,9 +10,40 @@
     <artifactId>spring-domains-services</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>spring-domains-services-commons</module>
         <module>spring-domains-services-modules</module>
         <module>spring-domains-services-dependencies</module>
     </modules>
-
-
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-plugins-dependencies</artifactId>
+                <version>0.0.33.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-repositories-dependencies</artifactId>
+                <version>0.0.33.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-services-dependencies</artifactId>
+                <version>0.0.33.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-dependencies</artifactId>
+                <version>0.0.33.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

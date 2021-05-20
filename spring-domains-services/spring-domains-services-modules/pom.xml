@@ -10,7 +10,6 @@
     <artifactId>spring-domains-services-modules</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-domains-services-commons</module>
         <module>spring-domains-services_1</module>
         <module>spring-domains-services_2</module>
         <module>spring-domains-services-mysql_1</module>
