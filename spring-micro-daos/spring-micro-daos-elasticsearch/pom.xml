@@ -8,6 +8,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-micro-daos-elasticsearch</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-micro-daos-elasticsearch-commons</module>
+        <module>spring-micro-daos-elasticsearch-dependencies</module>
+        <module>spring-micro-daos-elasticsearch-modules</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>

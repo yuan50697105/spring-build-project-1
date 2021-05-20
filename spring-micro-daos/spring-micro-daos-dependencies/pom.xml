@@ -44,6 +44,34 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-clickhouse-dependencies</artifactId>
+                <version>0.0.33.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-doris-dependencies</artifactId>
+                <version>0.0.33.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-elasticsearch-dependencies</artifactId>
+                <version>0.0.33.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mongodb-dependencies</artifactId>
+                <version>0.0.33.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-mysql-clients-dependencies</artifactId>
                 <version>0.0.33.1-SNAPSHOT</version>
                 <type>pom</type>

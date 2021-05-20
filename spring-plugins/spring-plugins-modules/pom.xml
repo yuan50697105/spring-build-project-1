@@ -22,6 +22,7 @@
         <module>spring-plugins-oss-minio</module>
         <module>spring-plugins-wx</module>
         <module>spring-plugins-payment</module>
+        <module>spring-plugins-mongodb</module>
     </modules>
     <dependencyManagement>
         <dependencies>
