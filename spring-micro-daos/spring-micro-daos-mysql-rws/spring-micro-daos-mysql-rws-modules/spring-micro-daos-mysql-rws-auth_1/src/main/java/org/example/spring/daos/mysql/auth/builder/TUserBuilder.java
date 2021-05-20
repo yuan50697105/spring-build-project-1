@@ -1,6 +1,5 @@
 package org.example.spring.daos.mysql.auth.builder;
 
-import org.example.spring.daos.mysql.auth.table.dto.TRoleDTO;
 import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
@@ -16,22 +15,18 @@ import java.util.stream.Stream;
 
 @Mapper(config = BaseBuilder.class)
 public interface TUserBuilder {
-    TUserBuilder INSTANCE = Mappers.getMapper(TUserBuilder.class);
+    TUserBuilder instance = Mappers.getMapper(TUserBuilder.class);
 
-    TUser buildUser(TUserVo tUserVo);
+    TUser buildUser(TUserVo vo);
 
-    @Mapping(target = "username", ignore = true)
-    @Mapping(target = "password", ignore = true)
-    @Mapping(target = "status", ignore = true)
-    void copy(TUserVo tUserVo, @MappingTarget TUser user);
-
-    void copy(TUser tUser, @MappingTarget TUser user);
+    void copy(TUserVo vo, @MappingTarget TUser tUser);
 
     TUserDTO buildUser(TUser byId);
 
-    List<TUserDTO> buildUsers(List<TUser> list);
+    List<TUserDTO> buildUsers(List<TUser> queryList);
 
     Stream<TUserDTO> buildUsers(Stream<TUser> queryListStream);
 
-    TUserRoleDTO buildUser(TUserDTO tUserDTO, List<TRoleDTO> roles);
+    @Mapping(target = "roles", ignore = true)
+    TUserRoleDTO buildUser2(TUserDTO tUserDTO);
 }

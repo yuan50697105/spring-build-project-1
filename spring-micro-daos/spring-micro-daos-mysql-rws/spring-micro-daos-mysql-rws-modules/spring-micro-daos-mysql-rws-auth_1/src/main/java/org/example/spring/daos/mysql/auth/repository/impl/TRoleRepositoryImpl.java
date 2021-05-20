@@ -37,13 +37,12 @@ public class TRoleRepositoryImpl implements TRoleRepository {
 
     @Override
     public void update(TRoleVo vo) {
-        TRole role = roleBuilder.buildRole(vo);
-        Optional<TRole> optional = roleDao.getByIdOpt(role.getId());
+        Optional<TRole> optional = roleDao.getByIdOpt(vo.getId());
         if (optional.isPresent()) {
             TRole tRole = optional.get();
-            roleBuilder.copy(role, tRole);
+            roleBuilder.copy(vo, tRole);
             roleDao.update(tRole);
-            roleResourceDao.saveUpdate(role.getId(), vo.getResourceIds());
+            roleResourceDao.saveUpdate(vo.getId(), vo.getResourceIds());
         }
     }
 

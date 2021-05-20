@@ -17,7 +17,10 @@ import java.util.stream.Stream;
 
 @Mapper(config = BaseBuilder.class)
 public interface TResourceBuilder {
-    TResourceBuilder INSTANCE = Mappers.getMapper(TResourceBuilder.class);
+    TResourceBuilder instance = Mappers.getMapper(TResourceBuilder.class);
+
+    @Mapping(target = "resources", ignore = true)
+    TRoleResourceDTO toDetails(TRoleDTO roleDTO);
 
     TResource toPo(TResourceVo vo);
 
@@ -27,9 +30,7 @@ public interface TResourceBuilder {
 
     List<TResourceDTO> toDTO(List<TResource> queryList);
 
-    Stream<TResourceDTO> toDTO(Stream<TResource> selectListStream);
+    Stream<TResourceDTO> toDTO(Stream<TResource> queryListStream);
 
     IPageData<TResourceDTO> toDTO(IPageData<TResource> queryPage);
-
-    TRoleResourceDTO toDetails(TRoleDTO roleDTO);
 }

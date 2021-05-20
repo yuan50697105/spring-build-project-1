@@ -79,6 +79,8 @@ public class TDepartment2RepositoryImpl extends IBaseRepositoryImpl<TDepartment,
 
     @Override
     public TDepartmentRoleDTO getDetails(Long id) {
-        return departmentBuilder.toDTO(get(id), role2Repository.queryListByDepartmentId(id));
+        TDepartmentRoleDTO departmentRoleDTO = departmentBuilder.toDTO(get(id));
+        departmentRoleDTO.setRoles(role2Repository.queryListByDepartmentId(id));
+        return departmentRoleDTO;
     }
 }
