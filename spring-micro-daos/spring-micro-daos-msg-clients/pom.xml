@@ -13,6 +13,9 @@
         <module>spring-micro-daos-msg-clients-commons</module>
         <module>spring-micro-daos-msg-clients-dependencies</module>
         <module>spring-micro-daos-msg-clients-modules</module>
+        <module>spring-micro-daos-msg-clients-rabbit</module>
+        <module>spring-micro-daos-msg-clients-rockect</module>
+        <module>spring-micro-daos-msg-clients-kafka</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -37,7 +40,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-daos-commons</artifactId>
+                <artifactId>spring-micro-daos-client-api</artifactId>
                 <version>0.0.33-SNAPSHOT</version>
             </dependency>
         </dependencies>
