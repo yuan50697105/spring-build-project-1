@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
 import lombok.AllArgsConstructor;
 import org.example.spring.daos.mysql.auth.dao.TResourceDao;
 import org.example.spring.daos.mysql.auth.mapper.TResourceMapper;
+import org.example.spring.daos.mysql.auth.mapper.TResourceQueryMapper;
 import org.example.spring.daos.mysql.auth.table.po.TResource;
 import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Transactional
 public class TResourceDaoImpl extends TkBaseDaoImpl<TResource, TResourceQuery, TResourceMapper> implements TResourceDao {
+    private final TResourceQueryMapper resourceQueryMapper;
     @Override
     protected Wrapper<TResource> queryWrapper(TResourceQuery tResourceQuery) {
         return null;
@@ -45,5 +47,10 @@ public class TResourceDaoImpl extends TkBaseDaoImpl<TResource, TResourceQuery, T
     @Override
     public boolean validateDelete(List<Long> ids, String... types) {
         return SqlHelper.retBool(baseMapper.validateDelete(ids, types));
+    }
+
+    @Override
+    public List<TResource> queryListByRoleId(Long roleId) {
+        return resourceQueryMapper.queryListByRoleId(roleId);
     }
 }

@@ -45,4 +45,9 @@ public class TRoleDaoImpl extends TkBaseDaoImpl<TRole, TRoleQuery, TRoleMapper> 
         return roleQueryMapper.queryListByUserId(userId);
     }
 
+    @Override
+    public List<TRole> queryListByDepartmentId(Long departmentId) {
+        return roleQueryMapper.queryListByDepartmentId(departmentId);
+    }
+
 }

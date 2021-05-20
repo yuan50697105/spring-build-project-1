@@ -12,8 +12,15 @@ import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 @AllArgsConstructor
 @Transactional
 public class TResource2RepositoryImpl extends IBaseRepositoryImpl<TResource, TResourceDTO, TResourceVo, TResourceQuery, TResourceConverter, TResourceDao> implements TResource2Repository {
+    @Override
+    public List<TResourceDTO> queryListByRoleId(Long roleId) {
+        return converter.buildDTOS(dao.queryListByRoleId(roleId));
+    }
+
 }

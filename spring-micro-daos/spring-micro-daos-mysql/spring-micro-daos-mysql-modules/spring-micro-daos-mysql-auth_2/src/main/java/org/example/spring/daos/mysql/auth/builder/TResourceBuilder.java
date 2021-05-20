@@ -1,6 +1,8 @@
 package org.example.spring.daos.mysql.auth.builder;
 
 import org.example.spring.daos.mysql.auth.table.dto.TResourceDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TRoleDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TRoleResourceDTO;
 import org.example.spring.daos.mysql.auth.table.po.TResource;
 import org.example.spring.daos.mysql.auth.table.vo.TResourceVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
@@ -27,4 +29,6 @@ public interface TResourceBuilder {
     Stream<TResourceDTO> toDTO(Stream<TResource> selectListStream);
 
     IPageData<TResourceDTO> toDTO(IPageData<TResource> queryPage);
+
+    TRoleResourceDTO toDTO(TRoleDTO roleDTO, List<TResourceDTO> resources);
 }

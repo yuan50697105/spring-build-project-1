@@ -14,4 +14,6 @@ public interface TResourceDao extends TkBaseDao<TResource, TResourceQuery> {
     List<Long> listResourceIdsByResourceIds(List<Long> resourceIds);
 
     boolean validateDelete(List<Long> ids, String... types);
+
+    List<TResource> queryListByRoleId(Long roleId);
 }

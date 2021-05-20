@@ -6,5 +6,8 @@ import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.daos.mysql.auth.table.vo.TResourceVo;
 import org.example.spring.plugins.mybatis.repository.IBaseRepository;
 
+import java.util.List;
+
 public interface TResource2Repository extends IBaseRepository<TResource, TResourceDTO, TResourceVo, TResourceQuery> {
+    List<TResourceDTO> queryListByRoleId(Long id);
 }

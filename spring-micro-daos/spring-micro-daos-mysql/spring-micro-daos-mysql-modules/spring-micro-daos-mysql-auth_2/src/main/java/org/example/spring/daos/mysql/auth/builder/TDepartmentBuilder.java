@@ -1,6 +1,8 @@
 package org.example.spring.daos.mysql.auth.builder;
 
 import org.example.spring.daos.mysql.auth.table.dto.TDepartmentDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TDepartmentRoleDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TRoleDTO;
 import org.example.spring.daos.mysql.auth.table.po.TDepartment;
 import org.example.spring.daos.mysql.auth.table.vo.TDepartmentVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
@@ -27,4 +29,6 @@ public interface TDepartmentBuilder {
     Stream<TDepartmentDTO> toDTO(Stream<TDepartment> queryListStream);
 
     IPageData<TDepartmentDTO> toDTO(IPageData<TDepartment> queryPage);
+
+    TDepartmentRoleDTO toDTO(TDepartmentDTO tDepartmentDTO, List<TRoleDTO> roles);
 }
