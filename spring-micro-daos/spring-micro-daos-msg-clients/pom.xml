@@ -35,6 +35,11 @@
                 <artifactId>spring-micro-daos-commons</artifactId>
                 <version>0.0.33-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-commons</artifactId>
+                <version>0.0.33-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
