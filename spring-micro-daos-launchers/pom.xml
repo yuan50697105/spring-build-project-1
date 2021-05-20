@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <parent>
-        <artifactId>spring-micro-daos</artifactId>
         <groupId>org.example.spring</groupId>
+        <artifactId>spring-build-project</artifactId>
         <version>0.0.33.1-SNAPSHOT</version>
     </parent>
     <artifactId>spring-micro-daos-launchers</artifactId>
@@ -13,14 +13,7 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-daos-mysql-clients-dependencies</artifactId>
-                <version>0.0.33.1-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-daos-mysql-rws-clients-dependencies</artifactId>
+                <artifactId>spring-micro-daos-dependencies</artifactId>
                 <version>0.0.33.1-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
