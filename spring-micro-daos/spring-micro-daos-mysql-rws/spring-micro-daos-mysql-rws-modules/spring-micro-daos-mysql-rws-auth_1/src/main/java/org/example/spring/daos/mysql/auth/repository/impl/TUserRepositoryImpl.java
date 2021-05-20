@@ -160,12 +160,12 @@ public class TUserRepositoryImpl implements TUserRepository {
 
     @Override
     public IPageData<TUserDTO> selectPage(TUserQuery query) {
-        return null;
+        return userBuilder.buildUsers(userDao.selectPage(query));
     }
 
     @Override
     public IPageData<TUserDTO> queryPage(TUserQuery query) {
-        return null;
+        return userBuilder.buildUsers(userDao.queryPage(query));
     }
 
     @Override

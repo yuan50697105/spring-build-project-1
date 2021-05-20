@@ -8,6 +8,7 @@ import org.example.spring.plugins.mybatis.entity.query.IBaseQuery;
 import org.example.spring.plugins.mybatis.repository.IBaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,18 +29,22 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
 
     @Override
     public void update(VO vo) {
-        Optional<T> optional = dao.getByIdOpt(vo.getId());
-        if (optional.isPresent()) {
-            dao.updateSelective(converter.buildPo(vo));
-        }
+        dao.updateSelective(converter.buildPo(vo));
     }
 
     @Override
     public void updateNull(VO vo) {
-        Optional<T> optional = dao.getByIdOpt(vo.getId());
-        if (optional.isPresent()) {
-            dao.update(converter.buildPo(vo));
-        }
+        dao.update(converter.buildPo(vo));
+    }
+
+    @Override
+    public void update(VO vo, Q q) {
+        dao.updateSelective(converter.buildPo(vo), q);
+    }
+
+    @Override
+    public void updateNull(VO vo, Q q) {
+        dao.update(converter.buildPo(vo), q);
     }
 
     @Override
@@ -55,6 +60,21 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
     @Override
     public void delete(List<Long> ids) {
         dao.deleteByIds(ids);
+    }
+
+    @Override
+    public void remove(Long id) {
+        dao.removeById(id);
+    }
+
+    @Override
+    public void remove(Long... ids) {
+        dao.removeByIds(ids);
+    }
+
+    @Override
+    public void remove(List<Long> ids) {
+        dao.removeByIds(ids);
     }
 
     @Override

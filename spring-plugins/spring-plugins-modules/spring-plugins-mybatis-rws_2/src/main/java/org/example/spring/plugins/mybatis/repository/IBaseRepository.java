@@ -16,11 +16,21 @@ public interface IBaseRepository<T extends IBaseEntity, DTO extends T, VO extend
 
     void updateNull(VO vo);
 
+    void update(VO vo, Q q);
+
+    void updateNull(VO vo, Q q);
+
     void delete(Long id);
 
     void delete(Long... ids);
 
     void delete(List<Long> ids);
+
+    void remove(Long id);
+
+    void remove(Long... ids);
+
+    void remove(List<Long> ids);
 
     DTO get(Long id);
 

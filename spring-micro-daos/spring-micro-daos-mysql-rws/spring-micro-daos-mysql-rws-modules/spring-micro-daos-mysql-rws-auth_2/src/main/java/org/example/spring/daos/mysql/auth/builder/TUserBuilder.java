@@ -5,6 +5,7 @@ import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
 import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
@@ -29,4 +30,6 @@ public interface TUserBuilder {
 
     @Mapping(target = "roles", ignore = true)
     TUserRoleDTO buildUser2(TUserDTO tUserDTO);
+
+    IPageData<TUserDTO> buildUsers(IPageData<TUser> selectPage);
 }
