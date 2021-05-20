@@ -33,6 +33,8 @@ public class TRole2RepositoryImpl extends IBaseRepositoryImpl<TRole, TRoleDTO, T
 
     @Override
     public TRoleResourceDTO getDetails(Long id) {
-        return resourceBuilder.toDTO(get(id), resource2Repository.queryListByRoleId(id));
+        TRoleResourceDTO roleResourceDTO = resourceBuilder.toDetails(get(id));
+        roleResourceDTO.setResources(resource2Repository.queryListByRoleId(id));
+        return roleResourceDTO;
     }
 }

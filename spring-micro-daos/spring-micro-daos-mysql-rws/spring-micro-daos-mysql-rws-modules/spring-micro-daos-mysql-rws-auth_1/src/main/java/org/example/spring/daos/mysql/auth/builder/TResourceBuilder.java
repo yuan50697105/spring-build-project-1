@@ -8,6 +8,7 @@ import org.example.spring.daos.mysql.auth.table.vo.TResourceVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
@@ -30,5 +31,5 @@ public interface TResourceBuilder {
 
     IPageData<TResourceDTO> toDTO(IPageData<TResource> queryPage);
 
-    TRoleResourceDTO toDTO(TRoleDTO roleDTO, List<TResourceDTO> resources);
+    TRoleResourceDTO toDetails(TRoleDTO roleDTO);
 }
