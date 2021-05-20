@@ -1,2 +1,1 @@
-echo off 
-call mvn clean compile -fae
+call mvn clean compile -fae -U -T 1C
