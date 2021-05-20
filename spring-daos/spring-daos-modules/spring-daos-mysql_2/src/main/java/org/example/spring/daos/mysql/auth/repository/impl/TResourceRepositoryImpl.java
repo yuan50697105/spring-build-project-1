@@ -30,11 +30,10 @@ public class TResourceRepositoryImpl implements TResourceRepository {
 
     @Override
     public void update(TResourceVo vo) {
-        TResource resource = resourceBuilder.toPo(vo);
-        Optional<TResource> optional = resourceDao.getByIdOpt(resource.getId());
+        Optional<TResource> optional = resourceDao.getByIdOpt(vo.getId());
         if (optional.isPresent()) {
             TResource tResource = optional.get();
-            resourceBuilder.copy(resource, tResource);
+            resourceBuilder.copy(vo, tResource);
             resourceDao.update(tResource);
         }
     }

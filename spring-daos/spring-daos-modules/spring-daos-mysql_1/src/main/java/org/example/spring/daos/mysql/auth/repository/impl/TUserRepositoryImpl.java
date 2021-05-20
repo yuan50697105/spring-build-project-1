@@ -29,6 +29,7 @@ public class TUserRepositoryImpl implements TUserRepository {
     private final TUserRoleDao userRoleDao;
     private final TUserBuilder userBuilder;
     private final TUserRoleBuilder userRoleBuilder;
+    private final TRoleRepository roleRepository;
 
     @Override
     public void save(TUserVo vo) {
@@ -39,14 +40,13 @@ public class TUserRepositoryImpl implements TUserRepository {
 
     @Override
     public void update(TUserVo vo) {
-        TUser user = userBuilder.buildUser(vo);
-        Optional<TUser> optional = userDao.getByIdOpt(user.getId());
+        Optional<TUser> optional = userDao.getByIdOpt(vo.getId());
         if (optional.isPresent()) {
             TUser tUser = optional.get();
-            userBuilder.copy(user, tUser);
+            userBuilder.copy(vo, tUser);
             userDao.update(tUser);
-            userRoleDao.deleteByUserId(user.getId());
-            userRoleDao.saveBatch(userRoleBuilder.buildRoles(user.getId(), vo.getRoleIds()));
+            userRoleDao.deleteByUserId(vo.getId());
+            userRoleDao.saveBatch(userRoleBuilder.buildRoles(vo.getId(), vo.getRoleIds()));
         }
     }
 
@@ -163,8 +163,6 @@ public class TUserRepositoryImpl implements TUserRepository {
         return null;
     }
 
-    private final TRoleRepository roleRepository;
-
     @Override
     public IPageData<TUserDTO> queryPage(TUserQuery query) {
         return null;
@@ -172,6 +170,8 @@ public class TUserRepositoryImpl implements TUserRepository {
 
     @Override
     public TUserRoleDTO getDetails(Long id) {
-        return userBuilder.buildUser(get(id),roleRepository.queryListByUserId(id) );
+        TUserRoleDTO userRoleDTO = userBuilder.buildUser2(get(id));
+        userRoleDTO.setRoles(roleRepository.queryListByUserId(id));
+        return userRoleDTO;
     }
 }

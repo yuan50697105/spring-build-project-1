@@ -163,6 +163,6 @@ public class TBillInfoRepositoryImpl implements TBillInfoRepository {
 
     @Override
     public TBillInfoDetailsDTO getDetails(Long id) {
-        return billInfoBuilder.build(get(id),billSubInfoRepository.queryDetailsListByBillId(id));
+        return billInfoBuilder.build(get(id), billSubInfoRepository.queryDetailsListByBillId(id));
     }
 }

@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 @Transactional
 public class TRoleDaoImpl extends TkBaseDaoImpl<TRole, TRoleQuery, TRoleMapper> implements TRoleDao {
     private final TRoleQueryMapper roleQueryMapper;
+
     @Override
     protected Wrapper<TRole> queryWrapper(TRoleQuery tRoleQuery) {
         return null;
@@ -42,6 +43,11 @@ public class TRoleDaoImpl extends TkBaseDaoImpl<TRole, TRoleQuery, TRoleMapper> 
     @Override
     public List<TRole> queryListByUserId(Long userId) {
         return roleQueryMapper.queryListByUserId(userId);
+    }
+
+    @Override
+    public List<TRole> queryListByDepartmentId(Long departmentId) {
+        return roleQueryMapper.queryListByDepartmentId(departmentId);
     }
 
 }

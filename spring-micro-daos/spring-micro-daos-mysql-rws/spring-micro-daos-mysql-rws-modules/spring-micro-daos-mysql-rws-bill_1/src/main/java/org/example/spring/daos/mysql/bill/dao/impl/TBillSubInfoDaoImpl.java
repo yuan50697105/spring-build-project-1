@@ -17,6 +17,7 @@ import java.util.List;
 @Transactional
 public class TBillSubInfoDaoImpl extends TkExtDaoImpl<TBillSubInfo, TBillSubInfoQuery, TBillSubInfoMapper> implements TBillSubInfoDao {
     private final TBillSubInfoQueryMapper billSubInfoQueryMapper;
+
     @Override
     public List<TBillSubInfo> queryDetailsListByBillId(Long billId) {
         return billSubInfoQueryMapper.queryDetailsListByBillId(billId);

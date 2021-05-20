@@ -9,6 +9,6 @@ import java.util.List;
 
 @Mapper
 @CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class, readWrite = false, blocking = true, flushInterval = 2000)
-public interface UserResourceMapper {
-    List<TResource> listPermissionByUserId(Long userId);
+public interface TResourceQueryMapper {
+    List<TResource> queryListByRoleId(Long roleId);
 }

@@ -28,18 +28,12 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
 
     @Override
     public void update(VO vo) {
-        Optional<T> optional = dao.getByIdOpt(vo.getId());
-        if (optional.isPresent()) {
-            dao.updateSelective(converter.buildPo(vo));
-        }
+        dao.updateSelective(converter.buildPo(vo));
     }
 
     @Override
     public void updateNull(VO vo) {
-        Optional<T> optional = dao.getByIdOpt(vo.getId());
-        if (optional.isPresent()) {
-            dao.update(converter.buildPo(vo));
-        }
+        dao.update(converter.buildPo(vo));
     }
 
     @Override
@@ -55,6 +49,21 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
     @Override
     public void delete(List<Long> ids) {
         dao.deleteByIds(ids);
+    }
+
+    @Override
+    public void remove(Long id) {
+        dao.removeById(id);
+    }
+
+    @Override
+    public void remove(Long... ids) {
+        dao.removeByIds(ids);
+    }
+
+    @Override
+    public void remove(List<Long> ids) {
+        dao.removeByIds(ids);
     }
 
     @Override
