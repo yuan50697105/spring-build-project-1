@@ -20,6 +20,7 @@
         <module>spring-applications</module>
         <module>spring-launchers</module>
         <module>spring-micro-daos</module>
+        <module>spring-micro-services</module>
         <module>spring-domains-micro-repositories</module>
         <module>spring-domains-micro-services</module>
         <module>spring-micro-applications</module>
