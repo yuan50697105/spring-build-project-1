@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-domains-micro-repositories-postgresql-modules</artifactId>
+    <artifactId>spring-domains-micro-repositories-doris</artifactId>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>
@@ -20,4 +20,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
 </project>

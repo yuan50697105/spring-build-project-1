@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-domains-micro-repositories-mongodb-modules</artifactId>
+    <artifactId>spring-domains-micro-repositories-postgresql</artifactId>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>

@@ -13,14 +13,14 @@
         <module>spring-domains-micro-repositories-commons</module>
         <module>spring-domains-micro-repositories-dependencies</module>
         <module>spring-domains-micro-repositories-client-api</module>
-        <module>spring-domains-micro-repositories-mysql-modules</module>
-        <module>spring-domains-micro-repositories-postgresql-modules</module>
-        <module>spring-domains-micro-repositories-clickhouse-modules</module>
+        <module>spring-domains-micro-repositories-mysql</module>
+        <module>spring-domains-micro-repositories-postgresql</module>
+        <module>spring-domains-micro-repositories-clickhouse</module>
         <module>spring-domains-micro-repositories-mysql-clients</module>
-        <module>spring-domains-micro-repositories-doris-modules</module>
-        <module>spring-domains-micro-repositories-kylin-modules</module>
-        <module>spring-domains-micro-repositories-mongodb-modules</module>
-        <module>spring-domains-micro-repositories-elasticsearch-modules</module>
+        <module>spring-domains-micro-repositories-doris</module>
+        <module>spring-domains-micro-repositories-kylin</module>
+        <module>spring-domains-micro-repositories-mongodb</module>
+        <module>spring-domains-micro-repositories-elasticsearch</module>
     </modules>
 
     <dependencyManagement>
