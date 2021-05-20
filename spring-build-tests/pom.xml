@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.32-SNAPSHOT</version>
+        <version>0.0.32</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -18,42 +18,42 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-dependencies</artifactId>
-                <version>0.0.32-SNAPSHOT</version>
+                <version>0.0.32</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-dependencies</artifactId>
-                <version>0.0.32-SNAPSHOT</version>
+                <version>0.0.32</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-dependencies</artifactId>
-                <version>0.0.32-SNAPSHOT</version>
+                <version>0.0.32</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-launchers-dependencies</artifactId>
-                <version>0.0.32-SNAPSHOT</version>
+                <version>0.0.32</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-dependencies</artifactId>
-                <version>0.0.32-SNAPSHOT</version>
+                <version>0.0.32</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.32-SNAPSHOT</version>
+                <version>0.0.32</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
