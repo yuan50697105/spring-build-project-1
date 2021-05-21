@@ -358,6 +358,11 @@
                 <artifactId>mybatis-redis-cache</artifactId>
                 <version>${mybatis-redis-cache.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.ceph</groupId>
+                <artifactId>libcephfs</artifactId>
+                <version>${ceph.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <properties>
@@ -372,7 +377,7 @@
         <jsqlparser.version>4.0</jsqlparser.version>
         <mybatis-plus-batch-spring-boot-starter.version>1.2</mybatis-plus-batch-spring-boot-starter.version>
         <hutool-all.version>5.6.5</hutool-all.version>
-        <cos_api.version>5.6.42</cos_api.version>
+        <cos_api.version>5.6.41</cos_api.version>
         <minio-spring-boot-starter.version>1.0.1.RELEASE</minio-spring-boot-starter.version>
         <qcloudcos-spring-boot-starter.version>1.0.1</qcloudcos-spring-boot-starter.version>
         <rocketmq-spring-boot-starter.version>2.2.0</rocketmq-spring-boot-starter.version>
@@ -400,5 +405,6 @@
         <mybatis-spring-boot-starter.version>2.1.4</mybatis-spring-boot-starter.version>
         <kylin-jdbc.version>4.0.0-beta</kylin-jdbc.version>
         <mybatis-redis-cache.version>1.2.7</mybatis-redis-cache.version>
+        <ceph.version>0.80.5</ceph.version>
     </properties>
 </project>
