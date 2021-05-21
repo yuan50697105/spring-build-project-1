@@ -16,7 +16,9 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class DAccountDTO extends TUserDTO implements Serializable {
+    @Override
     @JsonIgnore
-    private String password;
-
+    public String getPassword() {
+        return super.getPassword();
+    }
 }
