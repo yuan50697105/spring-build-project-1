@@ -8,8 +8,9 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
-import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.models.commons.entity.IModelVo;
+import org.example.spring.daos.mysql.auth.table.po.TUserRole;
+import org.example.spring.models.mysql.auth.entity.result.Account;
+import org.example.spring.plugins.commons.entity.ICommonsEntity;
 
 import javax.validation.ValidationException;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import java.util.Set;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class AccountModelVo extends IModelVo {
+public class AccountModelVo extends Account {
     private static final long serialVersionUID = 587049309938653406L;
 
     /**
@@ -57,17 +58,21 @@ public class AccountModelVo extends IModelVo {
 
     @JsonIgnore
     public TUser getUserForSave() {
-        TUser tUser = new TUser();
-        tUser.setStatus(TUserStatus.NORMAL.getValue());
-        tUser.setUsername(username);
-        tUser.setName(name);
-        tUser.setPassword(password);
-        return tUser;
+        return BeanUtil.toBean(this, TUser.class);
     }
 
     @JsonIgnore
     public TUser getUserForUpdate() {
         return BeanUtil.toBean(this, TUser.class, CopyOptions.create().ignoreNullValue().setIgnoreProperties("password", "username"));
+    }
+
+    public List<TUserRole> getUserRoles() {
+        List<Long> roleIds = this.getRoleIds();
+        ArrayList<TUserRole> tUserRoles = new ArrayList<>(roleIds.size());
+        for (Long roleId : roleIds) {
+            tUserRoles.add(new TUserRole(getId(), roleId));
+        }
+        return tUserRoles;
     }
 
 

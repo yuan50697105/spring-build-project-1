@@ -22,6 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.ThreadPoolExecutor;
 
 @Repository
 @AllArgsConstructor
@@ -31,6 +32,7 @@ public class PatientGroupRepositoryImpl extends IBaseRepositoryImpl<PatientGroup
     private final PatientModelBuilder patientModelBuilder;
     private final TPatientGroupDao patientGroupDao;
     private final TPatientDao patientDao;
+    private final ThreadPoolExecutor executor;
 
     @Override
     public Long saveWithId(final PatientGroupFormVo patientGroupFormVo) {

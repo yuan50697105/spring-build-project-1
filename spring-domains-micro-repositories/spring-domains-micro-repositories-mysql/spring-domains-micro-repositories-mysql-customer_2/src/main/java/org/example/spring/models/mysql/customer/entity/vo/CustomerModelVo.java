@@ -5,11 +5,11 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.customer.table.po.TCustomerInfo;
-import org.example.spring.models.commons.entity.IModelVo;
+import org.example.spring.models.commons.entity.ICommonsEntity;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CustomerModelVo extends IModelVo {
+public class CustomerModelVo extends ICommonsEntity {
 
     /**
      * 编号

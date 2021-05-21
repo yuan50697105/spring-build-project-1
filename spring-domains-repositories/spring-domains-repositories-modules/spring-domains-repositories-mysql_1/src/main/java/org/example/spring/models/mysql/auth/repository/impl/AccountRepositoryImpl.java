@@ -45,7 +45,6 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
         final Long userId = account.getId();
         if (ObjectUtil.isNotEmpty(accountModelVo.getRoleIds())) {
             executor.execute(() -> saveUserRole(userId, accountModelVo.getRoleIds()));
-//            executor.submit();
         }
         return userId;
     }
@@ -114,7 +113,7 @@ public class AccountRepositoryImpl extends IBaseRepositoryImpl<Account, AccountM
     }
 
     @Override
-    public void updateStats(TUserStatus status, List<Long> ids) {
+    public void updateStatus(TUserStatus status, List<Long> ids) {
         userDao.updateStatusByIds(status.getValue(), ids);
     }
 

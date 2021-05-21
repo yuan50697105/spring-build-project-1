@@ -12,7 +12,7 @@ import org.example.spring.daos.mysql.table.enumerate.FeeItemType;
 import org.example.spring.daos.mysql.table.enumerate.ItemSource;
 import org.example.spring.daos.mysql.table.enumerate.TPatientType;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
-import org.example.spring.models.mysql.patient.builder.PatientModelBuilder;
+import org.example.spring.models.mysql.patient.builder.PatientBuilder;
 import org.example.spring.models.mysql.patient.entity.query.PatientQuery;
 import org.example.spring.models.mysql.patient.entity.result.Patient;
 import org.example.spring.models.mysql.patient.entity.result.PatientDetails;
@@ -44,7 +44,7 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
     private final TPatientMealDao patientMealDao;
     private final TPatientFeeItemDao patientFeeItemDao;
     private final TPatientCheckItemDao patientCheckItemDao;
-    private final PatientModelBuilder patientModelBuilder;
+    private final PatientBuilder patientModelBuilder;
     private final ThreadPoolExecutor executor;
 
     public PatientRepositoryImpl(TPatientTeamDao patientTeamDao,

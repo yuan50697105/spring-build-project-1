@@ -60,11 +60,7 @@ public interface AuthModelBuilder {
     IPageData<Resource> buildResourceResult(IPageData<TResource> data);
 
 
-    List<ResourceNode> buildPermissionToResrouceNode(List<TResource> permissions);
-
-    @Mapping(target = "parentId", source = "pid")
-    @Mapping(target = "extra", ignore = true)
-    ResourceNode buildPermissionToResrouceNode(TResource permissions);
+    List<ResourceNode> buildPermissionToResourceNode(List<TResource> permissions);
 
     void copyDepartment(TDepartment department, @MappingTarget TDepartment tDepartment);
 
@@ -87,4 +83,5 @@ public interface AuthModelBuilder {
     @Mapping(target = "createId", ignore = true)
     @Mapping(target = "createDate", ignore = true)
     TDepartmentRole buildDepartmentRole(Long departmentId, Long roleId);
+
 }

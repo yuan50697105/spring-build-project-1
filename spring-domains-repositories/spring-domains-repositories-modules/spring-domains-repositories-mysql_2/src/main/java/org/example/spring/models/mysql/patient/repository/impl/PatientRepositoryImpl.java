@@ -72,7 +72,9 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
             executor.execute(() -> saveMealItem(entity, patientFormVo.getMeal()));
         }
         if (ObjectUtil.isNotEmpty(patientFormVo.getFeeItems())) {
-            executor.execute(() -> saveFeeItem(entity, patientFormVo.getFeeItems(), ItemSource.OPTIONAL.getValue(), FeeItemType.COMMON.getValue()));
+            executor.execute(() -> {
+                saveFeeItem(entity, patientFormVo.getFeeItems(), ItemSource.OPTIONAL.getValue(), FeeItemType.COMMON.getValue());
+            });
         }
         return entity.getId();
     }
@@ -89,8 +91,8 @@ public class PatientRepositoryImpl extends IBaseRepositoryImpl<Patient, PatientF
 
     private void saveFeeItem(TPatient entity, List<PatientFeeItemFormVo> feeItems, String source, String type) {
         for (final PatientFeeItemFormVo feeItem : feeItems) {
-            TPatientFeeItemVo patientFeeItemVo = feeItem.getFeeItem();
-            final TPatientFeeItem tPatientFeeItem = patientModelBuilder.buildPatientFeeItem(patientFeeItemVo);
+            TPatientFeeItemVo TPatientFeeItemVo = feeItem.getFeeItem();
+            final TPatientFeeItem tPatientFeeItem = patientModelBuilder.buildPatientFeeItem(TPatientFeeItemVo);
             tPatientFeeItem.setPatientId(entity.getId());
             tPatientFeeItem.setSource(source);
             tPatientFeeItem.setType(type);

@@ -9,7 +9,6 @@ import org.example.spring.daos.mysql.patient.table.po.TPatientTeam;
 import org.example.spring.daos.mysql.patient.table.query.TPatientTeamQuery;
 import org.example.spring.daos.mysql.patient.table.vo.TPatientTeamVo;
 import org.example.spring.models.commons.repository.impl.IBaseRepositoryImpl;
-import org.example.spring.models.mysql.patient.builder.PatientModelBuilder;
 import org.example.spring.models.mysql.patient.entity.query.PatientTeamQuery;
 import org.example.spring.models.mysql.patient.entity.result.PatientTeam;
 import org.example.spring.models.mysql.patient.entity.result.PatientTeamDetails;

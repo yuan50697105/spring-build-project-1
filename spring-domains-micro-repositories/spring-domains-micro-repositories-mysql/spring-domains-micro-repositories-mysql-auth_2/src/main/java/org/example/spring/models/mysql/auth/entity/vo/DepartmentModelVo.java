@@ -4,13 +4,13 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.auth.table.po.TDepartment;
-import org.example.spring.models.commons.entity.IModelVo;
+import org.example.spring.plugins.commons.entity.ICommonsEntity;
 
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class DepartmentModelVo extends IModelVo {
+public class DepartmentModelVo extends ICommonsEntity {
     private static final long serialVersionUID = -4189657877498124246L;
 
     /**

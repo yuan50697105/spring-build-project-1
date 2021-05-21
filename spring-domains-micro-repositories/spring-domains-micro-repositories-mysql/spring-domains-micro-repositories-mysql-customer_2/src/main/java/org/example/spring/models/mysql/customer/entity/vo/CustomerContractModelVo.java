@@ -6,13 +6,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.customer.table.po.TCustomerContract;
 import org.example.spring.daos.mysql.table.enumerate.TCustomerContractStatus;
-import org.example.spring.models.commons.entity.IModelVo;
+import org.example.spring.models.commons.entity.ICommonsEntity;
 
 import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CustomerContractModelVo extends IModelVo {
+public class CustomerContractModelVo extends ICommonsEntity {
 
     /**
      * 合同编号

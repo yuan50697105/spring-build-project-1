@@ -9,7 +9,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
 import org.example.spring.daos.mysql.auth.table.po.TUserRole;
-import org.example.spring.models.commons.entity.IModelVo;
+import org.example.spring.models.mysql.auth.entity.result.Account;
+import org.example.spring.plugins.commons.entity.ICommonsEntity;
 
 import javax.validation.ValidationException;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import java.util.Set;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class AccountModelVo extends IModelVo {
+public class AccountModelVo extends Account {
     private static final long serialVersionUID = 587049309938653406L;
 
     /**

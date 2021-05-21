@@ -22,5 +22,4 @@ public class Account extends TUser implements Serializable {
     public String getStatus() {
         return TUserStatus.getName(super.getStatus());
     }
-
 }

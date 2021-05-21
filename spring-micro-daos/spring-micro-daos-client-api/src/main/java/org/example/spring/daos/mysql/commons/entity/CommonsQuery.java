@@ -18,8 +18,6 @@ public class CommonsQuery extends BaseQuery {
     private String updateUser;
     private Date createDateStart;
     private Date createDateEnd;
-    private Integer version;
-    private Integer isDelete;
 
 
 }

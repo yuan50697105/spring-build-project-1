@@ -1,6 +1,6 @@
 package org.example.spring.models.commons.repository;
 
-import org.example.spring.models.commons.entity.IModelVo;
+import org.example.spring.plugins.commons.entity.ICommonsEntity;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
@@ -11,7 +11,7 @@ import java.util.Optional;
  * @author yuane
  */
 @SuppressWarnings("UnusedReturnValue")
-public interface IBaseRepository<T, V extends IModelVo, D, Q extends BaseQuery> {
+public interface IBaseRepository<T extends ICommonsEntity, V extends T, D extends T, Q extends BaseQuery> {
 
     void save(V v);
 

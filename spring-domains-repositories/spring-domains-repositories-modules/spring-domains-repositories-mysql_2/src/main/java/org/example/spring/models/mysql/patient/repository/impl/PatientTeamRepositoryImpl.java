@@ -36,9 +36,11 @@ public class PatientTeamRepositoryImpl extends IBaseRepositoryImpl<PatientTeam, 
     private final TPatientGroupDao patientGroupDao;
     private final TPatientDao patientDao;
     private final TPatientMealDao patientMealDao;
+    private ThreadPoolExecutor taskExecutor;
 
     @PostConstruct
     public void init() {
+        this.taskExecutor = new ThreadPoolExecutor(2, 10, 10L, TimeUnit.SECONDS, new LinkedBlockingDeque<>(100));
     }
 
     @Override

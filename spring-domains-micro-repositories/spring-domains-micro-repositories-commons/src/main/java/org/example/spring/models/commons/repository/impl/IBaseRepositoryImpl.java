@@ -1,7 +1,7 @@
 package org.example.spring.models.commons.repository.impl;
 
-import org.example.spring.models.commons.entity.IModelVo;
 import org.example.spring.models.commons.repository.IBaseRepository;
+import org.example.spring.plugins.commons.entity.ICommonsEntity;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.Optional;
  * @author yuane
  */
 @SuppressWarnings({"SpringJavaAutowiredMembersInspection", "unused"})
-public abstract class IBaseRepositoryImpl<T, V extends IModelVo, D, Q extends BaseQuery> implements IBaseRepository<T, V, D, Q> {
+public abstract class IBaseRepositoryImpl<T extends ICommonsEntity, V extends T, D extends T, Q extends BaseQuery> implements IBaseRepository<T, V, D, Q> {
     @Override
     public void save(V v) {
         saveWithId(v);

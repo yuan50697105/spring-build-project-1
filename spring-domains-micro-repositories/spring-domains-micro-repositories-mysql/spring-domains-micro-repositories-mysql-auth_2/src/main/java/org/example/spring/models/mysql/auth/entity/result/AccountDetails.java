@@ -7,9 +7,8 @@ import java.io.Serializable;
 import java.util.List;
 
 @Data
-public class AccountDetails implements Serializable {
+public class AccountDetails  extends Account implements Serializable {
     private static final long serialVersionUID = -3696634452174847099L;
-    private Account account;
     private List<Role> roles;
     private List<Tree<Long>> resources;
 

@@ -51,8 +51,8 @@ public class PatientTeamMealRepositoryImpl extends IBaseRepositoryImpl<PatientTe
     private void saveFeeItem(TPatientTeamMeal patientTeamMeal, List<PatientTeamMealFeeItemFormVo> feeItemFormVos) {
         if (ObjectUtil.isNotEmpty(feeItemFormVos)) {
             for (final PatientTeamMealFeeItemFormVo feeItemFormVo : feeItemFormVos) {
-                TPatientTeamMealFeeItemVo patientTeamMealFeeItemVo = feeItemFormVo.getFeeItem();
-                final TPatientTeamMealFeeItem entity = patientModelBuilder.buildPatientTeamMealFeeItem(patientTeamMealFeeItemVo);
+                TPatientTeamMealFeeItemVo TPatientTeamMealFeeItemVo = feeItemFormVo.getFeeItem();
+                final TPatientTeamMealFeeItem entity = patientModelBuilder.buildPatientTeamMealFeeItem(TPatientTeamMealFeeItemVo);
                 setMealFeeItem(patientTeamMeal, entity);
                 patientTeamMealFeeItemDao.save(entity);
                 if (ObjectUtil.isNotEmpty(feeItemFormVo.getCheckItems())) {

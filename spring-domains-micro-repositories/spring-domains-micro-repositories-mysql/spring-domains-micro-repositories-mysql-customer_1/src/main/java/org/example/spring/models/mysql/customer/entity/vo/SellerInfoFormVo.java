@@ -6,11 +6,11 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.daos.mysql.customer.table.po.TSellerInfo;
 import org.example.spring.daos.mysql.table.enumerate.TSellerInfoStatus;
-import org.example.spring.models.commons.entity.IModelVo;
+import org.example.spring.models.commons.entity.ICommonsEntity;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class SellerInfoFormVo extends IModelVo {
+public class SellerInfoFormVo extends ICommonsEntity {
 
 
     /**
