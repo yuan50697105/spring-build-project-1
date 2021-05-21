@@ -1,1 +1,1 @@
-call mvn clean install -fae
+call mvn clean install -fae -npr
