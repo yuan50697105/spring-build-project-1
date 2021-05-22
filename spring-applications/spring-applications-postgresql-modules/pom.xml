@@ -12,10 +12,6 @@
     <modules>
         <module>spring-applications-postgresql_1</module>
         <module>spring-applications-postgresql_2</module>
-        <module>spring-applications-postgresql-async_1</module>
-        <module>spring-applications-postgresql-async_2</module>
-        <module>spring-applications-postgresql-rx_1</module>
-        <module>spring-applications-postgresql-rx_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

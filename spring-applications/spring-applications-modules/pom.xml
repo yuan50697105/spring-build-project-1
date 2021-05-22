@@ -12,10 +12,6 @@
     <modules>
         <module>spring-applications_1</module>
         <module>spring-applications_2</module>
-        <module>spring-applications-async_1</module>
-        <module>spring-applications-async_2</module>
-        <module>spring-applications-rx_1</module>
-        <module>spring-applications-rx_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

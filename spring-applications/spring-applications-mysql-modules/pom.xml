@@ -12,10 +12,6 @@
     <modules>
         <module>spring-applications-mysql_1</module>
         <module>spring-applications-mysql_2</module>
-        <module>spring-applications-mysql-async_1</module>
-        <module>spring-applications-mysql-async_2</module>
-        <module>spring-applications-mysql-rx_1</module>
-        <module>spring-applications-mysql-rx_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
