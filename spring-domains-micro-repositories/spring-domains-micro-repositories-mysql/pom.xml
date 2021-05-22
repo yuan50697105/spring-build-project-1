@@ -10,23 +10,31 @@
     <artifactId>spring-domains-micro-repositories-mysql</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-domains-micro-repositories-mysql-auth_1</module>
-        <module>spring-domains-micro-repositories-mysql-auth_2</module>
-        <module>spring-domains-micro-repositories-mysql-customer_1</module>
-        <module>spring-domains-micro-repositories-mysql-customer_2</module>
-        <module>spring-domains-micro-repositories-mysql-patient_1</module>
-        <module>spring-domains-micro-repositories-mysql-patient_2</module>
-        <module>spring-domains-micro-repositories-mysql_1</module>
-        <module>spring-domains-micro-repositories-mysql_2</module>
+
+        <module>spring-domains-micro-repositories-mysql-commons</module>
+        <module>spring-domains-micro-repositories-mysql-modules</module>
+        <module>spring-domains-micro-repositories-mysql-dependencies</module>
     </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
+                <artifactId>spring-micro-daos-dependencies</artifactId>
                 <version>0.0.33.4-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-plugins-dependencies</artifactId>
+                <version>0.0.33.4-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-commons</artifactId>
+                <version>0.0.33.4-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -37,4 +37,9 @@ public class TRole2RepositoryImpl extends IBaseRepositoryImpl<TRole, TRoleDTO, T
         roleResourceDTO.setResources(resource2Repository.queryListByRoleId(id));
         return roleResourceDTO;
     }
+
+    @Override
+    public List<TRoleDTO> queryListByUserId(Long id) {
+        return roleBuilder.buildRole(dao.queryListByUserId(id));
+    }
 }

@@ -13,4 +13,6 @@ public interface TRole2Repository extends IBaseRepository<TRole, TRoleDTO, TRole
     List<TRoleDTO> queryListByDepartmentId(Long departmentId);
 
     TRoleResourceDTO getDetails(Long id);
+
+    List<TRoleDTO> queryListByUserId(Long id);
 }
