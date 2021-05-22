@@ -13,6 +13,13 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-launchers-tasks-dependencies</artifactId>
+                <version>0.0.33.2-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-dependencies</artifactId>
                 <version>0.0.33.2-SNAPSHOT</version>
                 <type>pom</type>
@@ -30,26 +37,6 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-launchers-admin-rx_1</artifactId>
-                <version>0.0.33.2-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-launchers-admin-rx_2</artifactId>
-                <version>0.0.33.2-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-launchers-admin-async_1</artifactId>
-                <version>0.0.33.2-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-launchers-admin-async_2</artifactId>
-                <version>0.0.33.2-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
                 <artifactId>spring-launchers-mysql_1</artifactId>
                 <version>0.0.33.2-SNAPSHOT</version>
             </dependency>
@@ -58,26 +45,7 @@
                 <artifactId>spring-launchers-mysql_2</artifactId>
                 <version>0.0.33.2-SNAPSHOT</version>
             </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-launchers-mysql-rx_1</artifactId>
-                <version>0.0.33.2-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-launchers-mysql-rx_2</artifactId>
-                <version>0.0.33.2-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-launchers-mysql-async_1</artifactId>
-                <version>0.0.33.2-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-launchers-mysql-async_2</artifactId>
-                <version>0.0.33.2-SNAPSHOT</version>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

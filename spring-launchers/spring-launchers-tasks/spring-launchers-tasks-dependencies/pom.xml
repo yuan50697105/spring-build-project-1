@@ -13,13 +13,6 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-launchers-dependencies</artifactId>
-                <version>0.0.33.2-SNAPSHOT</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-tasks-dependencies</artifactId>
                 <version>0.0.33.2-SNAPSHOT</version>
                 <scope>import</scope>

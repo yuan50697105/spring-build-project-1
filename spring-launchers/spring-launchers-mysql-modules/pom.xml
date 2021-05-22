@@ -12,10 +12,6 @@
     <modules>
         <module>spring-launchers-mysql_1</module>
         <module>spring-launchers-mysql_2</module>
-        <module>spring-launchers-mysql-async_1</module>
-        <module>spring-launchers-mysql-async_2</module>
-        <module>spring-launchers-mysql-rx_1</module>
-        <module>spring-launchers-mysql-rx_2</module>
     </modules>
 
     <dependencyManagement>

@@ -12,10 +12,6 @@
     <modules>
         <module>spring-launchers-admin_1</module>
         <module>spring-launchers-admin_2</module>
-        <module>spring-launchers-admin-async_1</module>
-        <module>spring-launchers-admin-async_2</module>
-        <module>spring-launchers-admin-rx_1</module>
-        <module>spring-launchers-admin-rx_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
