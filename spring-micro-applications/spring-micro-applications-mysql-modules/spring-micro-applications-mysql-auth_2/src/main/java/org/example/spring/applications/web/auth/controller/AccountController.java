@@ -5,10 +5,10 @@ import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
-import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
-import org.example.spring.models.mysql.auth.entity.result.Account;
-import org.example.spring.models.mysql.auth.entity.result.AccountDetails;
-import org.example.spring.models.mysql.auth.entity.vo.AccountModelVo;
+import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -24,50 +24,51 @@ public class AccountController {
     private final AAccountService accountService;
 
     @GetMapping
-    public Result<IPageData<Account>> queryPage(AccountQuery query) {
-        IPageData<Account> data = accountService.queryPage(query);
+    public Result<IPageData<DAccountDTO>> queryPage(DAccountQuery query) {
+        IPageData<DAccountDTO> data = accountService.queryPage(query);
         return R.success(data.getTotalRowNum(), data);
     }
 
     @GetMapping("list/{size}")
-    public Result<List<Account>> queryList(AccountQuery query, @PathVariable int size) {
-        List<Account> data = accountService.queryList((AccountQuery) query.withSize(size));
+    public Result<List<DAccountDTO>> queryList(DAccountQuery query, @PathVariable int size) {
+        List<DAccountDTO> data = accountService.queryList((DAccountQuery) query.withSize(size));
         return R.success((long) data.size(), data);
     }
 
     @GetMapping("list")
-    public Result<List<Account>> queryList(AccountQuery query) {
-        List<Account> data = accountService.queryList(query);
+    public Result<List<DAccountDTO>> queryList(DAccountQuery query) {
+        List<DAccountDTO> data = accountService.queryList(query);
         return R.success((long) data.size(), data);
     }
 
     @GetMapping("one")
-    public Result<Account> queryOne(AccountQuery query) {
-        Account data = accountService.queryOne(query);
+    public Result<DAccountDTO> queryOne(DAccountQuery query) {
+        DAccountDTO data = accountService.queryOne(query);
         return R.success(data);
     }
 
     @GetMapping("{id}")
-    public Result<AccountDetails> get(@PathVariable Long id) {
-        AccountDetails data = accountService.get(id);
+    public Result<DAccountRoleDetailsDTO> get(@PathVariable Long id) {
+        DAccountRoleDetailsDTO data = accountService.get(id);
         return R.success(data);
     }
 
     @PostMapping
-    public Result<?> save(@RequestBody AccountModelVo formVo) {
+    public Result<?> save(@RequestBody DAccountVo formVo) {
         accountService.save(formVo);
         return R.success();
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody AccountModelVo formVo) {
+    public Result<?> update(@RequestBody DAccountVo formVo) {
         accountService.update(formVo);
         return R.success();
     }
 
     @PutMapping("{id}")
-    public Result<?> update(@RequestBody AccountModelVo formVo, @PathVariable Long id) {
-        accountService.update((AccountModelVo) formVo.withId(id));
+    public Result<?> update(@RequestBody DAccountVo formVo, @PathVariable Long id) {
+        formVo.setId(id);
+        accountService.update(formVo);
         return R.success();
     }
 
