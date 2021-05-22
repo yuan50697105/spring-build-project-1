@@ -5,8 +5,8 @@ import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.models.mysql.auth.builder.AccountClientBuilder;
 import org.example.spring.models.mysql.auth.client.entity.*;
-import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
-import org.example.spring.models.mysql.auth.entity.result.Account;
+import org.example.spring.models.mysql.auth.entity.query.DAccountQuery;
+import org.example.spring.models.mysql.auth.entity.result.DAccountDTO;
 import org.example.spring.models.mysql.auth.entity.result.DAccountRoleDetailsDTO;
 import org.example.spring.models.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.models.mysql.auth.repository.DAccountRepository;
@@ -66,22 +66,22 @@ public class AccountClientImpl implements AccountClient {
 
     @Override
     public AccountDto get(AccountQueryVo queryDto) {
-        AccountQuery q = authBuilder.buildAccountQuery(queryDto);
-        return authBuilder.buildAccountDto(accountRepository.queryOne(q));
+        DAccountQuery q = authBuilder.buildAccountQuery(queryDto);
+        return authBuilder.buildAccountDto(accountRepository.one(q));
     }
 
     @Override
     public List<AccountDto> list(AccountQueryVo queryVo) {
-        AccountQuery query = authBuilder.buildAccountQuery(queryVo);
-        List<Account> queryTop = accountRepository.queryTop(query, query.getSize());
+        DAccountQuery query = authBuilder.buildAccountQuery(queryVo);
+        List<DAccountDTO> queryTop = accountRepository.top(query);
         return authBuilder.buildAccountDto(queryTop);
     }
 
     @Override
     public IPageData<AccountDto> data(AccountQueryVo queryVo) {
-        AccountQuery query = authBuilder.buildAccountQuery(queryVo);
-        IPageData<Account> queryTop = accountRepository.queryPage(query);
-        return authBuilder.buildAccountDto(queryTop);
+        DAccountQuery query = authBuilder.buildAccountQuery(queryVo);
+        IPageData<DAccountDTO> page = accountRepository.page(query);
+        return authBuilder.buildAccountDto(page);
     }
 
 }

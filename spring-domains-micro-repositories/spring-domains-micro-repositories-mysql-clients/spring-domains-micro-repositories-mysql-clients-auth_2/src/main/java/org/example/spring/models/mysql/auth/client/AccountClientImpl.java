@@ -3,13 +3,13 @@ package org.example.spring.models.mysql.auth.client;
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.models.mysql.auth.builder.AuthModelClientBuilder;
+import org.example.spring.models.mysql.auth.builder.AccountClientBuilder;
 import org.example.spring.models.mysql.auth.client.entity.*;
-import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
-import org.example.spring.models.mysql.auth.entity.result.Account;
-import org.example.spring.models.mysql.auth.entity.result.AccountDetails;
-import org.example.spring.models.mysql.auth.entity.vo.AccountModelVo;
-import org.example.spring.models.mysql.auth.repository.AccountRepository;
+import org.example.spring.models.mysql.auth.entity.query.DAccountQuery;
+import org.example.spring.models.mysql.auth.entity.result.DAccountDTO;
+import org.example.spring.models.mysql.auth.entity.result.DAccountRoleDetailsDTO;
+import org.example.spring.models.mysql.auth.entity.vo.DAccountVo;
+import org.example.spring.models.mysql.auth.repository.DAccountRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,23 +20,24 @@ import java.util.List;
 @DubboService
 @AllArgsConstructor
 public class AccountClientImpl implements AccountClient {
-    private final AuthModelClientBuilder authBuilder;
-    private final AccountRepository accountRepository;
+    private final AccountClientBuilder authBuilder;
+    private final DAccountRepository accountRepository;
 
     @Override
     public void save(AccountAddVo accountAddVo) {
-        AccountModelVo accountModelVo = authBuilder.buildAccountAdd(accountAddVo);
-        accountRepository.save(accountModelVo);
+        DAccountVo accountVo = authBuilder.buildAccountAdd(accountAddVo);
+        accountRepository.save(accountVo);
     }
 
     @Override
     public void update(AccountUpdateVo accountUpdateVo) {
-        accountRepository.update(authBuilder.buildAccountUpdate(accountUpdateVo));
+        DAccountVo accountVo = authBuilder.buildAccountUpdate(accountUpdateVo);
+        accountRepository.update(accountVo);
     }
 
     @Override
     public void updateStatus(TUserStatus status, List<Long> ids) {
-        accountRepository.updateStatus(status, ids);
+
     }
 
     @Override
@@ -57,30 +58,30 @@ public class AccountClientImpl implements AccountClient {
     @Override
     public AccountDetailDto get(Long id) {
         AccountDetailDto accountDetailDto = new AccountDetailDto();
-        AccountDetails details = accountRepository.getDetailsById(id);
-        accountDetailDto.setUser(authBuilder.buildAccountForDTO(details.getAccount()));
-        accountDetailDto.setRoles(authBuilder.buildAccountForDTORoles(details.getRoles()));
+        DAccountRoleDetailsDTO details = accountRepository.getDetails(id);
+        accountDetailDto.setUser(authBuilder.buildUserDTO(details));
+        accountDetailDto.setRoles(authBuilder.buildRoleDTOS(details.getRoles()));
         return accountDetailDto;
     }
 
     @Override
     public AccountDto get(AccountQueryVo queryDto) {
-        AccountQuery q = authBuilder.buildAccountQuery(queryDto);
-        return authBuilder.buildAccountDto(accountRepository.queryOne(q));
+        DAccountQuery q = authBuilder.buildAccountQuery(queryDto);
+        return authBuilder.buildAccountDto(accountRepository.one(q));
     }
 
     @Override
     public List<AccountDto> list(AccountQueryVo queryVo) {
-        AccountQuery query = authBuilder.buildAccountQuery(queryVo);
-        List<Account> queryTop = accountRepository.queryTop(query, query.getSize());
+        DAccountQuery query = authBuilder.buildAccountQuery(queryVo);
+        List<DAccountDTO> queryTop = accountRepository.top(query);
         return authBuilder.buildAccountDto(queryTop);
     }
 
     @Override
     public IPageData<AccountDto> data(AccountQueryVo queryVo) {
-        AccountQuery query = authBuilder.buildAccountQuery(queryVo);
-        IPageData<Account> queryTop = accountRepository.queryPage(query);
-        return authBuilder.buildAccountDto(queryTop);
+        DAccountQuery query = authBuilder.buildAccountQuery(queryVo);
+        IPageData<DAccountDTO> page = accountRepository.page(query);
+        return authBuilder.buildAccountDto(page);
     }
 
 }
