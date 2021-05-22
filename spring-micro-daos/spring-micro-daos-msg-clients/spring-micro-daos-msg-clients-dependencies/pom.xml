@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-daos-msg-clients</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.33.2</version>
+        <version>0.0.33.3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,22 +14,22 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-msg-clients-commons</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-msg-clients-rabbit</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-msg-clients-rockect</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-msg-clients-kafka</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

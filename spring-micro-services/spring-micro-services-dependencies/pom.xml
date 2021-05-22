@@ -4,36 +4,36 @@
     <parent>
         <groupId>org.example.spring</groupId>
         <artifactId>spring-micro-services</artifactId>
-        <version>0.0.33.2</version>
+        <version>0.0.33.3-SNAPSHOT</version>
     </parent>
     <artifactId>spring-micro-services-dependencies</artifactId>
-    <version>0.0.33.2</version>
+    <version>0.0.33.3-SNAPSHOT</version>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-commons</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-client-api</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-client-commons</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-register-service_1</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-register-service_2</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

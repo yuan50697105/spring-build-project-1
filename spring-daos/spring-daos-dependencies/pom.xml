@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-daos</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.33.2</version>
+        <version>0.0.33.3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,94 +14,94 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-commons</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-elasticsearch</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-mongodb</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-mysql_1</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-mysql_2</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-mysql-rws_1</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-mysql-rws_2</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-postgresql_1</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-postgresql_2</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-postgresql-rws_1</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-postgresql-rws_2</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-clickhouse_1</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-clickhouse_2</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-kylin</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-doris_1</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-doris_2</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-minio</artifactId>
-                <version>0.0.33.2</version>
+                <version>0.0.33.3-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
