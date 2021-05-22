@@ -10,14 +10,10 @@
     <artifactId>spring-domains-micro-repositories-mysql</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-domains-micro-repositories-mysql-auth_1</module>
-        <module>spring-domains-micro-repositories-mysql-auth_2</module>
-        <module>spring-domains-micro-repositories-mysql-customer_1</module>
-        <module>spring-domains-micro-repositories-mysql-customer_2</module>
-        <module>spring-domains-micro-repositories-mysql-patient_1</module>
-        <module>spring-domains-micro-repositories-mysql-patient_2</module>
-        <module>spring-domains-micro-repositories-mysql_1</module>
-        <module>spring-domains-micro-repositories-mysql_2</module>
+
+        <module>spring-domains-micro-repositories-mysql-commons</module>
+        <module>spring-domains-micro-repositories-mysql-modules</module>
+        <module>spring-domains-micro-repositories-mysql-dependencies</module>
     </modules>
     <dependencyManagement>
         <dependencies>

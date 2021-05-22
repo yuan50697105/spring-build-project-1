@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-domains-micro-repositories-mysql</artifactId>
+        <groupId>org.example.spring</groupId>
+        <version>0.0.33.4-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-domains-micro-repositories-mysql-modules</artifactId>
+    <modules>
+        <module>spring-domains-micro-repositories-mysql-auth_1</module>
+        <module>spring-domains-micro-repositories-mysql-auth_2</module>
+        <module>spring-domains-micro-repositories-mysql-customer_1</module>
+        <module>spring-domains-micro-repositories-mysql-customer_2</module>
+        <module>spring-domains-micro-repositories-mysql-patient_1</module>
+        <module>spring-domains-micro-repositories-mysql-patient_2</module>
+        <module>spring-domains-micro-repositories-mysql_1</module>
+        <module>spring-domains-micro-repositories-mysql_2</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-mysql-dependencies</artifactId>
+                <version>0.0.33.4-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-domains-micro-repositories-mysql-commons</artifactId>
+            <version>0.0.33.4-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</project>
