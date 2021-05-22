@@ -42,13 +42,7 @@ public class ResourceDaoClientImpl implements ResourceDaoClient {
     @Override
     @GlobalTransactional
     public void delete(List<Long> ids) {
-        validateDelete(ids);
-    }
-
-    private void validateDelete(List<Long> ids) {
-        if (resourceDao.validateDelete(ids)) {
-            throw new ValidationException("存在下级菜单");
-        }
+        resourceDao.deleteByIds(ids);
     }
 
     @Override
