@@ -8,7 +8,7 @@
     </parent>
     <groupId>org.example.spring</groupId>
     <artifactId>spring-build-project</artifactId>
-    <version>0.0.33.3</version>
+    <version>0.0.33.4-SNAPSHOT</version>
     <modules>
         <module>spring-build-tests</module>
         <module>spring-build-admin-server</module>
@@ -278,16 +278,6 @@
                         <autoResolveSnapshots>all</autoResolveSnapshots>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
                     </configuration>
-                    <executions>
-                        <execution>
-                            <id>release-deploy</id>
-                            <phase>deploy</phase>
-                            <goals>
-                                <goal>prepare</goal>
-                                <goal>perform</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
