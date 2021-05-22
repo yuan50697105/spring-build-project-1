@@ -1,10 +1,9 @@
 package org.example.spring.domains.services.mysql.auth.service;
 
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.domains.repositories.mysql.auth.entity.po.DAccount;
 import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
 import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDTO;
 import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
@@ -17,7 +16,7 @@ public interface DAccountService {
 
     DAccountDTO queryOne(DAccountQuery query);
 
-    DAccountRoleDetailsDTO get(Long id);
+    DAccountRoleDTO get(Long id);
 
     void save(DAccountVo formVo);
 

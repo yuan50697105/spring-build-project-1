@@ -1,7 +1,8 @@
 package org.example.spring.daos.mysql.auth.converter;
 
 import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
-import org.example.spring.daos.mysql.auth.table.dto.TUserDetailsDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TUserRoleResourceDTO;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
 import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
 import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
@@ -17,5 +18,8 @@ public interface TUserConverter extends IBaseConverter<TUser, TUserDTO, TUserVo,
 
     @Mapping(target = "roles", ignore = true)
     @Mapping(target = "resources", ignore = true)
-    TUserDetailsDTO buildDTO2(TUserDTO tUserDTO);
+    TUserRoleResourceDTO buildDTO2(TUserDTO tUserDTO);
+
+    @Mapping(target = "roles", ignore = true)
+    TUserRoleDTO buildDTO3(TUserDTO tUserDTO);
 }

@@ -1,1 +1,1 @@
-call mvn release:prepare-with-pom -fae
+call mvn release:prepare -fae

@@ -1,173 +1,86 @@
 package org.example.spring.daos.mysql.auth.repository.impl;
 
-import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.auth.builder.TDepartmentBuilder;
-import org.example.spring.daos.mysql.auth.builder.TDepartmentRoleBuilder;
+import org.example.spring.daos.mysql.auth.converter.TDepartmentConverter;
 import org.example.spring.daos.mysql.auth.dao.TDepartmentDao;
 import org.example.spring.daos.mysql.auth.dao.TDepartmentRoleDao;
 import org.example.spring.daos.mysql.auth.repository.TDepartmentRepository;
+import org.example.spring.daos.mysql.auth.repository.TRoleRepository;
 import org.example.spring.daos.mysql.auth.table.dto.TDepartmentDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TDepartmentRoleDTO;
 import org.example.spring.daos.mysql.auth.table.po.TDepartment;
+import org.example.spring.daos.mysql.auth.table.po.TDepartmentRole;
 import org.example.spring.daos.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.daos.mysql.auth.table.vo.TDepartmentVo;
-import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 @Repository
 @Transactional
-@AllArgsConstructor
-public class TDepartmentRepositoryImpl implements TDepartmentRepository {
+public class TDepartmentRepositoryImpl extends IBaseRepositoryImpl<TDepartment, TDepartmentDTO, TDepartmentVo, TDepartmentQuery, TDepartmentConverter, TDepartmentDao> implements TDepartmentRepository {
     private final TDepartmentDao departmentDao;
-    private final TDepartmentRoleBuilder departmentRoleBuilder;
-    private final TDepartmentBuilder departmentBuilder;
     private final TDepartmentRoleDao departmentRoleDao;
+    private final TRoleRepository role2Repository;
 
-    @Override
-    public void save(TDepartmentVo vo) {
-        TDepartment entity = departmentBuilder.toPo(vo);
-        departmentDao.save(entity);
-        departmentRoleBuilder.buildRoles(entity.getId(), vo.getRoleIds());
+    public TDepartmentRepositoryImpl(TDepartmentDao departmentDao, TDepartmentRoleDao departmentRoleDao, TRoleRepository role2Repository) {
+        this.departmentDao = departmentDao;
+        this.departmentRoleDao = departmentRoleDao;
+        this.role2Repository = role2Repository;
     }
 
     @Override
-    public void update(TDepartmentVo vo) {
-        TDepartment department = departmentBuilder.toPo(vo);
-        Optional<TDepartment> optional = departmentDao.getByIdOpt(department.getId());
+    public void save(TDepartmentVo tDepartmentVo) {
+        TDepartment department = converter.department(tDepartmentVo);
+        departmentDao.save(department);
+        List<TDepartmentRole> roleList = converter.roles(department.getId(), tDepartmentVo.getRoleIds());
+        departmentRoleDao.saveBatch(roleList);
+    }
+
+    @Override
+    public void update(TDepartmentVo tDepartmentVo) {
+        Long id = tDepartmentVo.getId();
+        List<Long> roleIds = tDepartmentVo.getRoleIds();
+        Optional<TDepartment> optional = departmentDao.getByIdOpt(id);
         if (optional.isPresent()) {
             TDepartment tDepartment = optional.get();
-            departmentBuilder.copy(department, tDepartment);
-            departmentDao.update(tDepartment);
-            departmentRoleDao.removeByDepartmentId(department.getId());
-            departmentRoleDao.saveBatch(departmentRoleBuilder.buildRoles(department.getId(), vo.getRoleIds()));
+            converter.departmentCopy(tDepartmentVo, tDepartment);
+            departmentDao.updateSelective(tDepartment);
+            departmentRoleDao.removeByDepartmentId(id);
+            departmentRoleDao.saveBatch(converter.roles(id, roleIds));
         }
     }
 
+
     @Override
     public void delete(Long id) {
+        departmentDao.validateDelete(Collections.singletonList(id));
         departmentDao.deleteById(id);
         departmentRoleDao.removeByDepartmentId(id);
     }
 
     @Override
     public void delete(Long... ids) {
-        departmentDao.removeByIds(ids);
+        departmentDao.validateDelete(Arrays.asList(ids));
+        departmentDao.deleteByIds(ids);
         departmentRoleDao.removeByDepartmentIds(Arrays.asList(ids));
     }
 
     @Override
     public void delete(List<Long> ids) {
+        departmentDao.validateDelete(ids);
         departmentDao.deleteByIds(ids);
         departmentRoleDao.removeByDepartmentIds(ids);
     }
 
     @Override
-    public TDepartmentDTO get(Long id) {
-        return departmentBuilder.toDTO(departmentDao.getById(id));
-    }
-
-    @Override
-    public Optional<TDepartmentDTO> getOpt(Long id) {
-        return Optional.ofNullable(get(id));
-    }
-
-    @Override
-    public TDepartmentDTO queryOne(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.queryOne(query));
-    }
-
-    @Override
-    public TDepartmentDTO selectOne(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.selectOne(query));
-    }
-
-    @Override
-    public Optional<TDepartmentDTO> selectOneOpt(TDepartmentQuery query) {
-        return Optional.ofNullable(selectOne(query));
-    }
-
-    @Override
-    public Optional<TDepartmentDTO> queryOneOpt(TDepartmentQuery query) {
-        return Optional.ofNullable(queryOne(query));
-    }
-
-    @Override
-    public TDepartmentDTO queryFirst(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.queryFirst(query));
-    }
-
-    @Override
-    public Optional<TDepartmentDTO> queryFirstOpt(TDepartmentQuery query) {
-        return Optional.ofNullable(queryFirst(query));
-    }
-
-    @Override
-    public TDepartmentDTO selectFirst(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.selectFirst(query));
-    }
-
-    @Override
-    public Optional<TDepartmentDTO> selectFirstOpt(TDepartmentQuery query) {
-        return Optional.ofNullable(selectFirst(query));
-    }
-
-    @Override
-    public List<TDepartmentDTO> queryList(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.queryList(query));
-    }
-
-    @Override
-    public List<TDepartmentDTO> selectList(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.selectList(query));
-    }
-
-    @Override
-    public Stream<TDepartmentDTO> queryStream(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.queryListStream(query));
-    }
-
-    @Override
-    public Stream<TDepartmentDTO> selectStream(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.selectListStream(query));
-    }
-
-    @Override
-    public List<TDepartmentDTO> queryTop(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.queryTop(query));
-    }
-
-    @Override
-    public List<TDepartmentDTO> selectTop(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.selectTop(query));
-    }
-
-    @Override
-    public Stream<TDepartmentDTO> queryTopStream(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.queryTopStream(query));
-    }
-
-    @Override
-    public Stream<TDepartmentDTO> selectTopStream(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.queryTopStream(query));
-    }
-
-    @Override
-    public IPageData<TDepartmentDTO> selectPage(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.selectPage(query));
-    }
-
-    @Override
-    public IPageData<TDepartmentDTO> queryPage(TDepartmentQuery query) {
-        return departmentBuilder.toDTO(departmentDao.queryPage(query));
-    }
-
-    @Override
-    public boolean validateDelete(List<Long> ids) {
-        return departmentDao.validateDelete(ids);
+    public TDepartmentRoleDTO getDetails(Long id) {
+        TDepartmentRoleDTO departmentRoleDTO = converter.department(get(id));
+        departmentRoleDTO.setRoles(role2Repository.queryListByDepartmentId(id));
+        return departmentRoleDTO;
     }
 }

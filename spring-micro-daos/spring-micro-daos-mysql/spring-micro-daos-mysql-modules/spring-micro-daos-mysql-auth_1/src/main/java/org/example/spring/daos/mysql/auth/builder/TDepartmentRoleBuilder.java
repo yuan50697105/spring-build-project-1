@@ -10,7 +10,7 @@ import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
 public interface TDepartmentRoleBuilder {
-    TDepartmentRoleBuilder instance = Mappers.getMapper(TDepartmentRoleBuilder.class);
+    TDepartmentRoleBuilder INSTANCE = Mappers.getMapper(TDepartmentRoleBuilder.class);
 
     default List<TDepartmentRole> buildRoles(Long departmentId, List<Long> roleIds) {
         ArrayList<TDepartmentRole> departmentRoles = new ArrayList<>(roleIds.size());

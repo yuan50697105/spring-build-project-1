@@ -2,7 +2,6 @@ package org.example.spring.daos.mysql.auth.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.auth.builder.TRoleResourceBuilder;
 import org.example.spring.daos.mysql.auth.dao.TRoleResourceDao;
 import org.example.spring.daos.mysql.auth.mapper.TRoleResourceMapper;
 import org.example.spring.daos.mysql.auth.table.po.TResource;
@@ -20,22 +19,10 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Transactional
 public class TRoleResourceDaoImpl extends TkBaseDaoImpl<TRoleResource, TRolePermissionQuery, TRoleResourceMapper> implements TRoleResourceDao {
-    private final TRoleResourceBuilder roleResourceBuilder;
 
     @Override
     protected Wrapper<TRoleResource> queryWrapper(TRolePermissionQuery tRolePermissionQuery) {
         return null;
-    }
-
-    @Override
-    public boolean saveNew(Long roleId, List<Long> permissionIds) {
-        return saveBatch(roleResourceBuilder.buildRoleResources(roleId, permissionIds));
-    }
-
-    @Override
-    public boolean saveUpdate(Long id, List<Long> permissionIds) {
-        removeByRoleId(id);
-        return saveNew(id, permissionIds);
     }
 
     @Override

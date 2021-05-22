@@ -3,10 +3,7 @@ package org.example.spring.daos.mysql.auth.dao.impl;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.auth.builder.TUserRoleBuilder;
 import org.example.spring.daos.mysql.auth.dao.TUserRoleDao;
-import org.example.spring.daos.mysql.auth.mapper.TRoleMapper;
-import org.example.spring.daos.mysql.auth.mapper.TUserMapper;
 import org.example.spring.daos.mysql.auth.mapper.TUserRoleMapper;
 import org.example.spring.daos.mysql.auth.table.po.TRole;
 import org.example.spring.daos.mysql.auth.table.po.TUserRole;
@@ -26,9 +23,6 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Transactional
 public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, TUserRoleMapper> implements TUserRoleDao {
-    private final TUserRoleBuilder builder;
-    private final TUserMapper userMapper;
-    private final TRoleMapper roleMapper;
 
     @Override
     protected Wrapper<TUserRole> queryWrapper(TUserRoleQuery tUserRoleQuery) {
@@ -39,13 +33,6 @@ public class TUserRoleDaoImpl extends TkBaseDaoImpl<TUserRole, TUserRoleQuery, T
     @Override
     public List<Long> listRoleIdsByUserId(Long userId) {
         return lambdaQuery().eq(TUserRole::getUserId, userId).list().stream().map(TUserRole::getRoleId).distinct().sorted().collect(Collectors.toList());
-    }
-
-    @Override
-    @Transactional
-    public boolean updateUserRole(Long id, List<Long> existRoleIds) {
-        removeByUserId(id);
-        return saveBatch(builder.buildRoles(id, existRoleIds));
     }
 
     @Override

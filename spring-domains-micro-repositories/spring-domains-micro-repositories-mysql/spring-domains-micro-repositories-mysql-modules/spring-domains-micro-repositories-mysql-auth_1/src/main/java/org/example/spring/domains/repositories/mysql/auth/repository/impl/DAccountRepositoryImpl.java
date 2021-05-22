@@ -1,125 +1,23 @@
 package org.example.spring.domains.repositories.mysql.auth.repository.impl;
 
-
-import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.auth.repository.TUserRepository;
-import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
-import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
-import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
-import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.domains.repositories.mysql.auth.builder.DAccountBuilder;
-import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
+import org.example.spring.daos.mysql.auth.repository.TResource2Repository;
+import org.example.spring.daos.mysql.auth.repository.TRole2Repository;
+import org.example.spring.daos.mysql.auth.repository.impl.TUser2RepositoryImpl;
 import org.example.spring.domains.repositories.mysql.auth.repository.DAccountRepository;
-import org.example.spring.plugins.commons.entity.IPageData;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
-import java.util.List;
-
 @Repository
-@AllArgsConstructor
 @Transactional
-public class DAccountRepositoryImpl implements DAccountRepository {
-    private final DAccountBuilder accountBuilder;
-    private final TUserRepository userRepository;
+@Primary
+public class DAccountRepositoryImpl extends TUser2RepositoryImpl implements DAccountRepository {
+    private final TRole2Repository role2Repository;
+    private final TResource2Repository resource2Repository;
 
-    @Override
-    public void save(DAccountVo account) {
-        userRepository.save(accountBuilder.build(account));
-    }
-
-    @Override
-    public void update(DAccountVo account) {
-        userRepository.update(accountBuilder.build(account));
-    }
-
-    @Override
-    public void updateStatus(TUserStatus status, Long id) {
-        DAccountVo vo = new DAccountVo();
-        vo.setStatus(status.getValue());
-        vo.setId(id);
-        update(vo);
-    }
-
-    @Override
-    public void updateStatus(TUserStatus status, Long... ids) {
-        updateStatus(status,Arrays.asList(ids));
-    }
-
-    @Override
-    public void updateStatus(TUserStatus status, List<Long> ids) {
-        for (Long id : ids) {
-            DAccountVo vo = new DAccountVo();
-            vo.setStatus(status.getValue());
-            vo.setId(id);
-            updateStatus(status, id);
-        }
-    }
-
-    @Override
-    public void delete(Long id) {
-        userRepository.delete(id);
-    }
-
-    @Override
-    public void delete(Long... ids) {
-        userRepository.delete(ids);
-    }
-
-    @Override
-    public void delete(List<Long> ids) {
-        userRepository.delete(ids);
-    }
-
-    @Override
-    public DAccountDTO get(Long id) {
-        return accountBuilder.build(userRepository.get(id));
-    }
-
-    @Override
-    public DAccountRoleDTO getWithRole(Long id) {
-        TUserRoleDTO details = userRepository.getDetails(id);
-        DAccountRoleDTO accountDetailsDTO = accountBuilder.build3(details);
-        accountDetailsDTO.setRoles(accountBuilder.buildRoles2(details.getRoles()));
-        return accountDetailsDTO;
-    }
-
-    @Override
-    public List<DAccountDTO> list(DAccountQuery query) {
-        TUserQuery buildQuery = accountBuilder.buildQuery(query);
-        List<TUserDTO> queryList = userRepository.queryList(buildQuery);
-        return accountBuilder.build(queryList);
-    }
-
-    @Override
-    public List<DAccountDTO> top(DAccountQuery query) {
-        TUserQuery buildQuery = accountBuilder.buildQuery(query);
-        List<TUserDTO> queryList = userRepository.queryTop(buildQuery);
-        return accountBuilder.build(queryList);
-    }
-
-    @Override
-    public DAccountDTO first(DAccountQuery query) {
-        TUserQuery buildQuery = accountBuilder.buildQuery(query);
-        TUserDTO dto = userRepository.queryFirst(buildQuery);
-        return accountBuilder.build(dto);
-    }
-
-    @Override
-    public DAccountDTO one(DAccountQuery query) {
-        TUserQuery buildQuery = accountBuilder.buildQuery(query);
-        TUserDTO dto = userRepository.queryOne(buildQuery);
-        return accountBuilder.build(dto);
-    }
-
-    @Override
-    public IPageData<DAccountDTO> page(DAccountQuery query) {
-        TUserQuery buildQuery = accountBuilder.buildQuery(query);
-        IPageData<TUserDTO> dto = userRepository.queryPage(buildQuery);
-        return accountBuilder.build(dto);
+    public DAccountRepositoryImpl(TRole2Repository role2Repository, TResource2Repository resource2Repository) {
+        super(role2Repository, resource2Repository);
+        this.role2Repository = role2Repository;
+        this.resource2Repository = resource2Repository;
     }
 }

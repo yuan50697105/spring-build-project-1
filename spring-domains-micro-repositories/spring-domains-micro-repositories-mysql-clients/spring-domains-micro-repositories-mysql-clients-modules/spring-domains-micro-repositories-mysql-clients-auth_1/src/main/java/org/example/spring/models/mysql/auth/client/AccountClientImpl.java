@@ -5,7 +5,7 @@ import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
 import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDTO;
 import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.domains.repositories.mysql.auth.repository.DAccountRepository;
 import org.example.spring.models.mysql.auth.builder.AccountClientBuilder;
@@ -58,9 +58,9 @@ public class AccountClientImpl implements AccountClient {
     @Override
     public AccountDetailDto get(Long id) {
         AccountDetailDto accountDetailDto = new AccountDetailDto();
-        DAccountRoleDetailsDTO details = accountRepository.getDetails(id);
-        accountDetailDto.setUser(authBuilder.buildUserDTO(details));
-        accountDetailDto.setRoles(authBuilder.buildRoleDTOS(details.getRoles()));
+        DAccountRoleDTO accountRoleDTO = accountRepository.getWithRole(id);
+        accountDetailDto.setUser(authBuilder.buildUserDTO(accountRoleDTO));
+        accountDetailDto.setRoles(authBuilder.buildRoleDTOS(accountRoleDTO.getRoles()));
         return accountDetailDto;
     }
 

@@ -1,11 +1,11 @@
 package org.example.spring.daos.mysql.auth.builder;
 
+import org.example.spring.daos.mysql.auth.table.dto.TRoleDTO;
 import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
 import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
@@ -16,20 +16,22 @@ import java.util.stream.Stream;
 
 @Mapper(config = BaseBuilder.class)
 public interface TUserBuilder {
-    TUserBuilder instance = Mappers.getMapper(TUserBuilder.class);
+    TUserBuilder INSTANCE = Mappers.getMapper(TUserBuilder.class);
 
-    TUser buildUser(TUserVo vo);
+    TUser buildUser(TUserVo tUserVo);
 
-    void copy(TUserVo vo, @MappingTarget TUser tUser);
+    @Mapping(target = "username", ignore = true)
+    @Mapping(target = "password", ignore = true)
+    @Mapping(target = "status", ignore = true)
+    void copy(TUserVo tUserVo, @MappingTarget TUser user);
+
+    void copy(TUser tUser, @MappingTarget TUser user);
 
     TUserDTO buildUser(TUser byId);
 
-    List<TUserDTO> buildUsers(List<TUser> queryList);
+    List<TUserDTO> buildUsers(List<TUser> list);
 
     Stream<TUserDTO> buildUsers(Stream<TUser> queryListStream);
 
-    @Mapping(target = "roles", ignore = true)
-    TUserRoleDTO buildUser2(TUserDTO tUserDTO);
-
-    IPageData<TUserDTO> buildUsers(IPageData<TUser> selectPage);
+    TUserRoleDTO buildUser(TUserDTO tUserDTO, List<TRoleDTO> roles);
 }

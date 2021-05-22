@@ -1,4 +1,6 @@
 package org.example.spring.domains.repositories.mysql.auth.repository;
 
-public interface DDepartmentRepository {
+import org.example.spring.daos.mysql.auth.repository.TDepartment2Repository;
+
+public interface DDepartmentRepository extends TDepartment2Repository {
 }

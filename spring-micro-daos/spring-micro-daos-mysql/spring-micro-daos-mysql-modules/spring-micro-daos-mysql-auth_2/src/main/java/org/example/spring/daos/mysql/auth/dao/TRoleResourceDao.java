@@ -8,9 +8,6 @@ import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import java.util.List;
 
 public interface TRoleResourceDao extends TkBaseDao<TRoleResource, TRolePermissionQuery> {
-    boolean saveNew(Long id, List<Long> permissionIds);
-
-    boolean saveUpdate(Long id, List<Long> permissionIds);
 
     boolean removeByRoleIds(List<Long> ids);
 

@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
 import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDTO;
 import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
-import org.example.spring.domains.repositories.mysql.auth.repository.DAccountRepository;
+import org.example.spring.domains.repositories.mysql.auth.repository.DAccount2Repository;
 import org.example.spring.domains.services.mysql.auth.service.DAccountService;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
@@ -19,8 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @Transactional
 public class DAccountServiceImpl implements DAccountService {
-    private final DAccountRepository accountRepository;
-
+    private final DAccount2Repository account2Repository;
 
     @Override
     public IPageData<DAccountDTO> queryPage(DAccountQuery query) {
@@ -38,28 +37,33 @@ public class DAccountServiceImpl implements DAccountService {
     }
 
     @Override
-    public DAccountRoleDetailsDTO get(Long id) {
+    public DAccountRoleDTO get(Long id) {
         return null;
     }
 
 
     @Override
     public void save(DAccountVo formVo) {
-
+        account2Repository.save(formVo);
     }
 
     @Override
     public void update(DAccountVo formVo) {
-
+        account2Repository.update(formVo);
     }
 
     @Override
     public void delete(List<Long> ids) {
-        accountRepository.delete(ids);
+        account2Repository.delete(ids);
     }
 
     @Override
     public void updateStatus(TUserStatus status, List<Long> ids) {
-        accountRepository.updateStatus(status, ids);
+        ids.forEach(id -> {
+            DAccountVo vo = new DAccountVo();
+            vo.setId(id);
+            vo.setStatus(status.getValue());
+            update(vo);
+        });
     }
 }

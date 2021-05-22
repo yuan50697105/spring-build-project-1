@@ -16,13 +16,13 @@ public class TResourceVo extends TResource implements Serializable {
     }
 
     @Override
-    public void setType(String type) {
-        super.setType(TResourceType.getValue(type));
+    public String getType() {
+        return TResourceType.getValue(super.getType());
     }
 
     @Override
-    public String getType() {
-        return TResourceType.getValue(super.getType());
+    public void setType(String type) {
+        super.setType(TResourceType.getValue(type));
     }
 
 }

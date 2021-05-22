@@ -13,15 +13,15 @@ import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
 public interface TRoleBuilder {
-    TRoleBuilder instance = Mappers.getMapper(TRoleBuilder.class);
+    TRoleBuilder INSTANCE = Mappers.getMapper(TRoleBuilder.class);
 
-    List<TRoleDTO> buildRole(List<TRole> queryListByDepartmentId);
+    TRole buildRole(TRoleVo tRoleVo);
 
-    TRole buildRole(TRoleVo vo);
-
-    void copy(TRoleVo vo, @MappingTarget TRole tRole);
+    void copy(TRole role, @MappingTarget TRole tRole);
 
     TRoleDTO buildRole(TRole byId);
+
+    List<TRoleDTO> buildRole(List<TRole> queryList);
 
     IPageData<TRoleDTO> buildRole(IPageData<TRole> selectPage);
 }
