@@ -212,7 +212,7 @@
                         <source>${maven.compiler.source}</source>
                         <target>${maven.compiler.target}</target>
                         <encoding>${maven.compiler.encoding}</encoding>
-                        <fork>true</fork>
+                        <!-- <fork>true</fork> -->
                         <!-- <meminitial>128m</meminitial> -->
                         <!-- <maxmem>512m</maxmem> -->
                         <annotationProcessorPaths>
