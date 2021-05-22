@@ -28,8 +28,8 @@
     </modules>
     <packaging>pom</packaging>
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <spring-boot.version>2.5.0</spring-boot.version>
         <spring-cloud.version>2020.0.2</spring-cloud.version>
@@ -252,7 +252,7 @@
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>2.8.2</version>
                     <configuration>
-                        <deployAtEnd>true</deployAtEnd>
+                        <deployAtEnd>false</deployAtEnd>
                         <uniqueVersion>true</uniqueVersion>
                         <updateReleaseInfo>true</updateReleaseInfo>
                     </configuration>
@@ -262,7 +262,7 @@
                     <artifactId>maven-install-plugin</artifactId>
                     <version>2.5.2</version>
                     <configuration>
-                        <installAtEnd>true</installAtEnd>
+                        <installAtEnd>false</installAtEnd>
                         <updateReleaseInfo>true</updateReleaseInfo>
                     </configuration>
                 </plugin>

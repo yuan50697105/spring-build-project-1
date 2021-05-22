@@ -5,7 +5,6 @@ import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
 import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
 import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleResourceDTO;
 import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
