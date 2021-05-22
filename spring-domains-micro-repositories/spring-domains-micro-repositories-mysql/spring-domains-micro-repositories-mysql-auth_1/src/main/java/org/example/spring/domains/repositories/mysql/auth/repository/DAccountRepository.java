@@ -4,8 +4,8 @@ package org.example.spring.domains.repositories.mysql.auth.repository;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
 import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDetailsDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleResourceDTO;
 import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
@@ -21,7 +21,6 @@ public interface DAccountRepository {
     void updateStatus(TUserStatus status, Long... ids);
 
     void updateStatus(TUserStatus status, List<Long> ids);
-
     void delete(Long id);
 
     void delete(Long... ids);
@@ -30,9 +29,7 @@ public interface DAccountRepository {
 
     DAccountDTO get(Long id);
 
-    DAccountRoleDetailsDTO getDetails(Long id);
-
-    DAccountDetailsDTO getAllDetails(Long id);
+    DAccountRoleDTO getWithRole(Long id);
 
     List<DAccountDTO> list(DAccountQuery query);
 
