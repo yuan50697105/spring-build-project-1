@@ -3,14 +3,12 @@ package org.example.spring.models.mysql.auth.client;
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.models.mysql.auth.builder.AuthModelClientBuilder;
+import org.example.spring.models.mysql.auth.builder.AccountClientBuilder;
 import org.example.spring.models.mysql.auth.client.entity.*;
 import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
 import org.example.spring.models.mysql.auth.entity.result.Account;
-import org.example.spring.models.mysql.auth.entity.result.AccountDetails;
-import org.example.spring.models.mysql.auth.entity.vo.AccountModelVo;
+import org.example.spring.models.mysql.auth.entity.result.DAccountRoleDetailsDTO;
 import org.example.spring.models.mysql.auth.entity.vo.DAccountVo;
-import org.example.spring.models.mysql.auth.repository.AccountRepository;
 import org.example.spring.models.mysql.auth.repository.DAccountRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +20,7 @@ import java.util.List;
 @DubboService
 @AllArgsConstructor
 public class AccountClientImpl implements AccountClient {
-    private final AuthModelClientBuilder authBuilder;
+    private final AccountClientBuilder authBuilder;
     private final DAccountRepository accountRepository;
 
     @Override
@@ -60,9 +58,9 @@ public class AccountClientImpl implements AccountClient {
     @Override
     public AccountDetailDto get(Long id) {
         AccountDetailDto accountDetailDto = new AccountDetailDto();
-        AccountDetails details = accountRepository.getDetailsById(id);
-        accountDetailDto.setUser(authBuilder.buildAccountForDTO(details.getAccount()));
-        accountDetailDto.setRoles(authBuilder.buildAccountForDTORoles(details.getRoles()));
+        DAccountRoleDetailsDTO details = accountRepository.getDetails(id);
+        accountDetailDto.setUser(authBuilder.buildUserDTO(details));
+        accountDetailDto.setRoles(authBuilder.buildRoleDTOS(details.getRoles()));
         return accountDetailDto;
     }
 
