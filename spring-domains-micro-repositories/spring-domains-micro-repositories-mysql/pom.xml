@@ -19,10 +19,22 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
+                <artifactId>spring-micro-daos-dependencies</artifactId>
                 <version>0.0.33.4-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-plugins-dependencies</artifactId>
+                <version>0.0.33.4-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-commons</artifactId>
+                <version>0.0.33.4-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
