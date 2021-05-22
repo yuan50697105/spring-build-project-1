@@ -3,7 +3,6 @@ package org.example.spring.domains.services.mysql.auth.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.domains.repositories.mysql.auth.entity.po.DAccount;
 import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
 import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
 import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
@@ -34,7 +33,7 @@ public class DAccountServiceImpl implements DAccountService {
     }
 
     @Override
-    public DAccount queryOne(DAccountQuery query) {
+    public DAccountDTO queryOne(DAccountQuery query) {
         return null;
     }
 

@@ -15,7 +15,7 @@ public interface DAccountService {
 
     List<DAccountDTO> queryList(DAccountQuery query);
 
-    DAccount queryOne(DAccountQuery query);
+    DAccountDTO queryOne(DAccountQuery query);
 
     DAccountRoleDetailsDTO get(Long id);
 

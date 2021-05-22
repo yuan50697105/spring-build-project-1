@@ -56,11 +56,8 @@
         </dependency>
     </dependencies>
     <modules>
-        <module>spring-micro-applications-mysql-auth-rx_1</module>
-        <module>spring-micro-applications-mysql-auth-rx_2</module>
         <module>spring-micro-applications-mysql-auth_1</module>
         <module>spring-micro-applications-mysql-auth_2</module>
-        <module>spring-micro-applications-mysql-auth-rx-api</module>
         <module>spring-micro-applications-mysql-auth-api</module>
     </modules>
 </project>
