@@ -1,4 +1,4 @@
-package org.example.spring.models.mysql.auth.entity.query;
+package org.example.spring.domains.repositories.mysql.auth.entity.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

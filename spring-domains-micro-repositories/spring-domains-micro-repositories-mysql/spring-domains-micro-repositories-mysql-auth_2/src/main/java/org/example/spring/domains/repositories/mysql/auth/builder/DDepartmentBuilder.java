@@ -1,4 +1,4 @@
-package org.example.spring.models.mysql.auth.builder;
+package org.example.spring.domains.repositories.mysql.auth.builder;
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.mapstruct.Mapper;

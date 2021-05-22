@@ -1,8 +1,9 @@
-package org.example.spring.models.mysql.auth.entity.result;
+package org.example.spring.domains.repositories.mysql.auth.entity.result;
 
 import cn.hutool.core.lang.tree.Tree;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
 
 import java.io.Serializable;
 import java.util.List;

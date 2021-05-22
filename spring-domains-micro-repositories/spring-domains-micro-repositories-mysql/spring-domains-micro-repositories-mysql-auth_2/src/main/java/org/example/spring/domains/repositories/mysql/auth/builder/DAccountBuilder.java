@@ -1,16 +1,16 @@
-package org.example.spring.models.mysql.auth.builder;
+package org.example.spring.domains.repositories.mysql.auth.builder;
 
 import org.example.spring.daos.mysql.auth.table.dto.TRoleDTO;
 import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
 import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
-import org.example.spring.models.mysql.auth.entity.query.DAccountQuery;
-import org.example.spring.models.mysql.auth.entity.result.DAccountDTO;
-import org.example.spring.models.mysql.auth.entity.result.DAccountDetailsDTO;
-import org.example.spring.models.mysql.auth.entity.result.DAccountRoleDetailsDTO;
-import org.example.spring.models.mysql.auth.entity.result.DRoleDTO;
-import org.example.spring.models.mysql.auth.entity.vo.DAccountVo;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDetailsDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DRoleDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
+import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;

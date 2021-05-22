@@ -1,4 +1,4 @@
-package org.example.spring.models.mysql.auth.entity.result;
+package org.example.spring.domains.repositories.mysql.auth.entity.result;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;

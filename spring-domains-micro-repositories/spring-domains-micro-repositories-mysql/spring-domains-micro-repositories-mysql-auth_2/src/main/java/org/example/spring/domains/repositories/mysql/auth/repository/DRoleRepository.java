@@ -1,4 +1,4 @@
-package org.example.spring.models.mysql.auth.repository;
+package org.example.spring.domains.repositories.mysql.auth.repository;
 
 public interface DRoleRepository {
 }

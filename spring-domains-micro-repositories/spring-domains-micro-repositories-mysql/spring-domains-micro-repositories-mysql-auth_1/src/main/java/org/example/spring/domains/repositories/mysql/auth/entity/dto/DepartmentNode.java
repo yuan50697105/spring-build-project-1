@@ -1,4 +1,4 @@
-package org.example.spring.models.mysql.auth.entity.dto;
+package org.example.spring.domains.repositories.mysql.auth.entity.dto;
 
 import cn.hutool.core.lang.tree.TreeNode;
 import lombok.Data;

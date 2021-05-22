@@ -1,12 +1,12 @@
-package org.example.spring.models.mysql.auth.repository;
+package org.example.spring.domains.repositories.mysql.auth.repository;
 
 
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.models.mysql.auth.entity.query.DAccountQuery;
-import org.example.spring.models.mysql.auth.entity.result.DAccountDTO;
-import org.example.spring.models.mysql.auth.entity.result.DAccountDetailsDTO;
-import org.example.spring.models.mysql.auth.entity.result.DAccountRoleDetailsDTO;
-import org.example.spring.models.mysql.auth.entity.vo.DAccountVo;
+import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDetailsDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
