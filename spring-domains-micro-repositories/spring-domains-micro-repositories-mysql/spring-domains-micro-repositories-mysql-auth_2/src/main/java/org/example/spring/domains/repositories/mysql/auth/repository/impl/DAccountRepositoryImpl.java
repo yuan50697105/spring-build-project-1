@@ -1,4 +1,4 @@
-package org.example.spring.models.mysql.auth.repository.impl;
+package org.example.spring.domains.repositories.mysql.auth.repository.impl;
 
 
 import lombok.AllArgsConstructor;
@@ -10,8 +10,7 @@ import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.domains.repositories.mysql.auth.builder.DAccountBuilder;
 import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
 import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDetailsDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDTO;
 import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.domains.repositories.mysql.auth.repository.DAccountRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -82,17 +81,9 @@ public class DAccountRepositoryImpl implements DAccountRepository {
     }
 
     @Override
-    public DAccountRoleDetailsDTO getDetails(Long id) {
+    public DAccountRoleDTO getWithRole(Long id) {
         TUserRoleDTO details = userRepository.getDetails(id);
-        DAccountRoleDetailsDTO accountDetailsDTO = accountBuilder.build3(details);
-        accountDetailsDTO.setRoles(accountBuilder.buildRoles2(details.getRoles()));
-        return accountDetailsDTO;
-    }
-
-    @Override
-    public DAccountDetailsDTO getAllDetails(Long id) {
-        TUserRoleDTO details = userRepository.getDetails(id);
-        DAccountDetailsDTO accountDetailsDTO = accountBuilder.build2(details);
+        DAccountRoleDTO accountDetailsDTO = accountBuilder.build3(details);
         accountDetailsDTO.setRoles(accountBuilder.buildRoles2(details.getRoles()));
         return accountDetailsDTO;
     }

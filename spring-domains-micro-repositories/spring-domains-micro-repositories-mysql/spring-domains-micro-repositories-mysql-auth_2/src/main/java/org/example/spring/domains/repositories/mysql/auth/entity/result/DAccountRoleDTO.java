@@ -8,6 +8,6 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class DAccountRoleDetailsDTO extends DAccountDTO implements Serializable {
+public class DAccountRoleDTO extends DAccountDTO implements Serializable {
     private List<DRoleDTO> roles;
 }
