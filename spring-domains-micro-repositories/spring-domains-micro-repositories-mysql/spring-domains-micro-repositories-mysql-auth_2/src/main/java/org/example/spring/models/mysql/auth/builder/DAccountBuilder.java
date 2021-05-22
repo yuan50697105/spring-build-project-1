@@ -8,6 +8,7 @@ import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.models.mysql.auth.entity.query.DAccountQuery;
 import org.example.spring.models.mysql.auth.entity.result.DAccountDTO;
 import org.example.spring.models.mysql.auth.entity.result.DAccountDetailsDTO;
+import org.example.spring.models.mysql.auth.entity.result.DAccountRoleDetailsDTO;
 import org.example.spring.models.mysql.auth.entity.result.DRoleDTO;
 import org.example.spring.models.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
@@ -36,4 +37,6 @@ public interface DAccountBuilder {
     List<DAccountDTO> build(List<TUserDTO> queryList);
 
     IPageData<DAccountDTO> build(IPageData<TUserDTO> dto);
+
+    DAccountRoleDetailsDTO build3(TUserRoleDTO details);
 }

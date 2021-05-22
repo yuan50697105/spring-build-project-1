@@ -9,7 +9,9 @@ import org.example.spring.models.mysql.auth.entity.query.AccountQuery;
 import org.example.spring.models.mysql.auth.entity.result.Account;
 import org.example.spring.models.mysql.auth.entity.result.AccountDetails;
 import org.example.spring.models.mysql.auth.entity.vo.AccountModelVo;
+import org.example.spring.models.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.models.mysql.auth.repository.AccountRepository;
+import org.example.spring.models.mysql.auth.repository.DAccountRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,22 +23,23 @@ import java.util.List;
 @AllArgsConstructor
 public class AccountClientImpl implements AccountClient {
     private final AuthModelClientBuilder authBuilder;
-    private final AccountRepository accountRepository;
+    private final DAccountRepository accountRepository;
 
     @Override
     public void save(AccountAddVo accountAddVo) {
-        AccountModelVo accountModelVo = authBuilder.buildAccountAdd(accountAddVo);
-        accountRepository.save(accountModelVo);
+        DAccountVo accountVo = authBuilder.buildAccountAdd(accountAddVo);
+        accountRepository.save(accountVo);
     }
 
     @Override
     public void update(AccountUpdateVo accountUpdateVo) {
-        accountRepository.update(authBuilder.buildAccountUpdate(accountUpdateVo));
+        DAccountVo accountVo = authBuilder.buildAccountUpdate(accountUpdateVo);
+        accountRepository.update(accountVo);
     }
 
     @Override
     public void updateStatus(TUserStatus status, List<Long> ids) {
-        accountRepository.updateStatus(status, ids);
+
     }
 
     @Override

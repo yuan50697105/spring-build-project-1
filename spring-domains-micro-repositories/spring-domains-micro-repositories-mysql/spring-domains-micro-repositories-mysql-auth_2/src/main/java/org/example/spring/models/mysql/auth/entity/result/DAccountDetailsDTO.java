@@ -9,8 +9,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class DAccountDetailsDTO extends DAccountDTO implements Serializable {
-    private List<DRoleDTO> roles;
+public class DAccountDetailsDTO extends DAccountRoleDetailsDTO implements Serializable {
     private List<Tree<Long>> resources;
 
 }
