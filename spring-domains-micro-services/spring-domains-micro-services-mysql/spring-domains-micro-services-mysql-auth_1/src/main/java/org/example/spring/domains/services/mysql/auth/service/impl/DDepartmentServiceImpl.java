@@ -1,12 +1,12 @@
-package org.example.spring.domains.service.mysql.auth.impl;
+package org.example.spring.domains.services.mysql.auth.service.impl;
 
 
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.service.mysql.auth.DDepartmentService;
-import org.example.spring.models.mysql.auth.entity.query.DDepartmentQuery;
-import org.example.spring.models.mysql.auth.entity.result.DDepartmentDTO;
-import org.example.spring.models.mysql.auth.entity.vo.DDepartmentVo;
-import org.example.spring.models.mysql.auth.repository.DDepartmentRepository;
+import org.example.spring.domains.repositories.mysql.auth.entity.query.DDepartmentQuery;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DDepartmentDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.vo.DDepartmentVo;
+import org.example.spring.domains.repositories.mysql.auth.repository.DDepartmentRepository;
+import org.example.spring.domains.services.mysql.auth.service.DDepartmentService;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

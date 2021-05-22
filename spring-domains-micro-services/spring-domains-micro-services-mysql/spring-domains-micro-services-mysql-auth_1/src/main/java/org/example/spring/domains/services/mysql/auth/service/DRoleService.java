@@ -1,9 +1,9 @@
-package org.example.spring.domains.service.mysql.auth;
+package org.example.spring.domains.services.mysql.auth.service;
 
-import org.example.spring.models.mysql.auth.entity.query.DRoleQuery;
-import org.example.spring.models.mysql.auth.entity.result.DRoleDTO;
-import org.example.spring.models.mysql.auth.entity.result.DRoleDetailsDTO;
-import org.example.spring.models.mysql.auth.entity.vo.DRoleVo;
+import org.example.spring.domains.repositories.mysql.auth.entity.query.DRoleQuery;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DRoleDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DRoleDetailsDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.vo.DRoleVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;

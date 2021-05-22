@@ -1,12 +1,12 @@
-package org.example.spring.domains.service.mysql.auth.impl;
+package org.example.spring.domains.services.mysql.auth.service.impl;
 
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.service.mysql.auth.DResourceService;
-import org.example.spring.models.mysql.auth.entity.query.DResourceQuery;
-import org.example.spring.models.mysql.auth.entity.result.DResourceDTO;
-import org.example.spring.models.mysql.auth.entity.vo.DResourceVo;
-import org.example.spring.models.mysql.auth.repository.DResourceRepository;
+import org.example.spring.domains.repositories.mysql.auth.entity.query.DResourceQuery;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DResourceDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.vo.DResourceVo;
+import org.example.spring.domains.repositories.mysql.auth.repository.DResourceRepository;
+import org.example.spring.domains.services.mysql.auth.service.DResourceService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

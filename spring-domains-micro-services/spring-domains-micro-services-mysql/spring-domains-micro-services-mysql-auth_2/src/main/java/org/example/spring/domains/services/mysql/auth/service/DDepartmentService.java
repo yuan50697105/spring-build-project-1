@@ -1,8 +1,8 @@
-package org.example.spring.domains.service.mysql.auth;
+package org.example.spring.domains.services.mysql.auth.service;
 
-import org.example.spring.models.mysql.auth.entity.query.DDepartmentQuery;
-import org.example.spring.models.mysql.auth.entity.result.DDepartmentDTO;
-import org.example.spring.models.mysql.auth.entity.vo.DDepartmentVo;
+import org.example.spring.domains.repositories.mysql.auth.entity.query.DDepartmentQuery;
+import org.example.spring.domains.repositories.mysql.auth.entity.result.DDepartmentDTO;
+import org.example.spring.domains.repositories.mysql.auth.entity.vo.DDepartmentVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
