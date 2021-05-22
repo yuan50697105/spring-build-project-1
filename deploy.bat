@@ -1,1 +1,2 @@
-call mvn clean deploy -P d -B -fae -T 1C -U
+call mvn clean deploy 
+call git push --tag

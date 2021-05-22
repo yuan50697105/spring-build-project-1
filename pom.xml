@@ -273,11 +273,21 @@
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useEditMode>false</useEditMode>
-                        <arguments>-Pd</arguments>
+                        <arguments>-Pd -U -T 1C -fn</arguments>
                         <commitByProject>false</commitByProject>
                         <autoResolveSnapshots>all</autoResolveSnapshots>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <id>release-deploy</id>
+                            <phase>deploy</phase>
+                            <goals>
+                                <goal>prepare</goal>
+                                <goal>perform</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
