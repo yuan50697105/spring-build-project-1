@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import org.example.spring.daos.mysql.auth.table.dto.TDepartmentDTO;
 import org.example.spring.daos.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.daos.mysql.auth.table.vo.TDepartmentVo;
-import org.example.spring.domains.repositories.mysql.auth.entity.query.DDepartmentQuery;
 import org.example.spring.domains.repositories.mysql.auth.repository.DDepartmentRepository;
 import org.example.spring.domains.services.mysql.auth.service.DDepartmentService;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -21,13 +20,13 @@ public class DDepartmentServiceImpl implements DDepartmentService {
     private final DDepartmentRepository departmentRepository;
 
     @Override
-    public void save(TDepartmentVo formVo) {
-        departmentRepository.save(formVo);
+    public void save(TDepartmentVo vo) {
+        departmentRepository.save(vo);
     }
 
     @Override
-    public void update(TDepartmentVo formVo) {
-        departmentRepository.update(formVo);
+    public void update(TDepartmentVo vo) {
+        departmentRepository.update(vo);
     }
 
     @Override
@@ -41,12 +40,12 @@ public class DDepartmentServiceImpl implements DDepartmentService {
     }
 
     @Override
-    public List<TDepartmentDTO> selectList(DDepartmentQuery query) {
+    public List<TDepartmentDTO> selectList(TDepartmentQuery query) {
         return departmentRepository.queryTop(query);
     }
 
     @Override
-    public TDepartmentDTO selectOne(DDepartmentQuery query) {
+    public TDepartmentDTO selectOne(TDepartmentQuery query) {
         return departmentRepository.queryFirst(query);
     }
 

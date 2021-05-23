@@ -1,14 +1,12 @@
 package org.example.spring.domains.services.mysql.auth.service.impl;
 
 
-import lombok.AllArgsConstructor;
 import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.daos.mysql.auth.table.dto.TUserRoleResourceDTO;
 import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
 import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
 import org.example.spring.domains.repositories.mysql.auth.repository.DAccountRepository;
 import org.example.spring.domains.services.mysql.auth.service.DAccountService;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -32,12 +30,12 @@ public class DAccountServiceImpl implements DAccountService {
     }
 
     @Override
-    public List<TUserDTO> queryList(DAccountQuery query) {
+    public List<TUserDTO> queryList(TUserQuery query) {
         return accountRepository.queryTop(query);
     }
 
     @Override
-    public TUserDTO queryOne(DAccountQuery query) {
+    public TUserDTO queryOne(TUserQuery query) {
         return accountRepository.queryFirst(query);
     }
 
@@ -57,13 +55,13 @@ public class DAccountServiceImpl implements DAccountService {
     }
 
     @Override
-    public void save(TUserVo formVo) {
-        accountRepository.save(formVo);
+    public void save(TUserVo vo) {
+        accountRepository.save(vo);
     }
 
     @Override
-    public void update(TUserVo formVo) {
-        accountRepository.update(formVo);
+    public void update(TUserVo vo) {
+        accountRepository.update(vo);
     }
 
     @Override

@@ -2,8 +2,8 @@ package org.example.spring.domains.services.mysql.auth.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.daos.mysql.auth.table.dto.TRoleDTO;
+import org.example.spring.daos.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.daos.mysql.auth.table.vo.TRoleVo;
-import org.example.spring.domains.repositories.mysql.auth.entity.query.DRoleQuery;
 import org.example.spring.domains.repositories.mysql.auth.repository.DRoleRepository;
 import org.example.spring.domains.services.mysql.auth.service.DRoleService;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -19,17 +19,17 @@ public class DRoleServiceImpl implements DRoleService {
     private final DRoleRepository roleRepository;
 
     @Override
-    public IPageData<TRoleDTO> queryPage(DRoleQuery query) {
+    public IPageData<TRoleDTO> queryPage(TRoleQuery query) {
         return roleRepository.queryPage(query);
     }
 
     @Override
-    public List<TRoleDTO> queryList(DRoleQuery query) {
+    public List<TRoleDTO> queryList(TRoleQuery query) {
         return roleRepository.queryTop(query);
     }
 
     @Override
-    public TRoleDTO queryOne(DRoleQuery query) {
+    public TRoleDTO queryOne(TRoleQuery query) {
         return roleRepository.queryFirst(query);
     }
 

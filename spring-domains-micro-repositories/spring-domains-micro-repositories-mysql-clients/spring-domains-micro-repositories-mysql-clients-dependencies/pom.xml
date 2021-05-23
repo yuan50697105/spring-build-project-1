@@ -16,6 +16,26 @@
                 <artifactId>spring-domains-micro-repositories-mysql-clients-commons</artifactId>
                 <version>0.0.33.5-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-mysql-clients-auth_1</artifactId>
+                <version>0.0.33.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-mysql-clients-auth_2</artifactId>
+                <version>0.0.33.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-mysql-clients_1</artifactId>
+                <version>0.0.33.5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-mysql-clients_2</artifactId>
+                <version>0.0.33.5-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

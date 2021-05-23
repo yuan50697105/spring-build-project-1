@@ -34,13 +34,13 @@ public class DResourceServiceImpl implements DResourceService {
     }
 
     @Override
-    public void save(TResourceVo formVo) {
-        resourceRepository.save(formVo);
+    public void save(TResourceVo vo) {
+        resourceRepository.save(vo);
     }
 
     @Override
-    public void update(TResourceVo formVo) {
-        resourceRepository.update(formVo);
+    public void update(TResourceVo vo) {
+        resourceRepository.update(vo);
     }
 
     @Override

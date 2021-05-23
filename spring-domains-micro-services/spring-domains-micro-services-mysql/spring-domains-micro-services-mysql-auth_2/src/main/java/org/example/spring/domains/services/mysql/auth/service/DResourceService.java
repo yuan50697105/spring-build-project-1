@@ -14,9 +14,9 @@ public interface DResourceService {
 
     TResourceDTO get(Long id);
 
-    void save(TResourceVo formVo);
+    void save(TResourceVo vo);
 
-    void update(TResourceVo formVo);
+    void update(TResourceVo vo);
 
     void delete(List<Long> ids);
 

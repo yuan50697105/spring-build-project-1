@@ -2,6 +2,7 @@ package org.example.spring.daos.mysql.bill.builder;
 
 import org.example.spring.daos.mysql.bill.entity.dto.BillItemsInfoDTO;
 import org.example.spring.daos.mysql.bill.entity.query.BillItemsInfoQuery;
+import org.example.spring.daos.mysql.bill.entity.vo.BillInfoVo;
 import org.example.spring.daos.mysql.bill.entity.vo.BillItemsInfoVo;
 import org.example.spring.daos.mysql.bill.table.dto.TBillItemsInfoDTO;
 import org.example.spring.daos.mysql.bill.table.query.TBillItemsInfoQuery;
@@ -26,4 +27,6 @@ public interface BillItemsInfoClientBuilder {
     List<BillItemsInfoDTO> build(List<TBillItemsInfoDTO> queryList);
 
     IPageData<BillItemsInfoDTO> build(IPageData<TBillItemsInfoDTO> queryPage);
+
+    TBillItemsInfoVo build(BillInfoVo vo);
 }
