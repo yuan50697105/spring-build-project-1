@@ -2,9 +2,9 @@ package org.example.spring.domains.services.mysql.auth.service.impl;
 
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.repositories.mysql.auth.entity.query.DResourceQuery;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DResourceDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.vo.DResourceVo;
+import org.example.spring.daos.mysql.auth.table.dto.TResourceDTO;
+import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;
+import org.example.spring.daos.mysql.auth.table.vo.TResourceVo;
 import org.example.spring.domains.repositories.mysql.auth.repository.DResourceRepository;
 import org.example.spring.domains.services.mysql.auth.service.DResourceService;
 import org.springframework.stereotype.Service;
@@ -20,30 +20,41 @@ public class DResourceServiceImpl implements DResourceService {
 
     @Override
     public List<Tree<Long>> listResourceByUserId(Long id) {
+        return resourceRepository.queryListByUserId(id);
+    }
+
+    @Override
+    public List<Tree<Long>> selectTreeList(TResourceQuery query) {
         return null;
     }
 
     @Override
-    public List<Tree<Long>> selectTreeList(DResourceQuery query) {
-        return null;
+    public TResourceDTO get(Long id) {
+        return resourceRepository.get(id);
     }
 
     @Override
-    public DResourceDTO get(Long id) {
-        return null;
+    public void save(TResourceVo formVo) {
+        resourceRepository.save(formVo);
     }
 
     @Override
-    public void save(DResourceVo formVo) {
-
-    }
-
-    @Override
-    public void update(DResourceVo formVo) {
+    public void update(TResourceVo formVo) {
+        resourceRepository.update(formVo);
     }
 
     @Override
     public void delete(List<Long> ids) {
+        resourceRepository.delete(ids);
+    }
 
+    @Override
+    public void delete(Long... ids) {
+        resourceRepository.delete(ids);
+    }
+
+    @Override
+    public void delete(Long id) {
+        resourceRepository.delete(id);
     }
 }

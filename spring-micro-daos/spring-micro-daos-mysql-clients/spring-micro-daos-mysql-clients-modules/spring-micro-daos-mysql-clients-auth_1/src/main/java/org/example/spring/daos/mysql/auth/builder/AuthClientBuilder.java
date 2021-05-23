@@ -13,6 +13,7 @@ import org.example.spring.daos.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.daos.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
+import org.example.spring.daos.mysql.auth.table.vo.TRoleVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
@@ -67,21 +68,6 @@ public interface AuthClientBuilder {
 
     IPageData<ResourceVo> createForGetResource(IPageData<TResource> data);
 
-    TUser createForSave(UserVo userVo);
-
-    @SuppressWarnings("unchecked")
-    default List<TUserRole> createForSaveUserRole(List<Long> roleIds, Long userId) {
-        if (roleIds != null && userId != null) {
-            ArrayList<TUserRole> userRoles = new ArrayList<>(roleIds.size());
-            for (Long roleId : roleIds) {
-                userRoles.add(new TUserRole(userId, roleId));
-            }
-            return userRoles;
-        } else {
-            return Collections.EMPTY_LIST;
-        }
-    }
-
     UserVo createForGetUser(TUser user);
 
     TUserQuery createForQuery(UserQuery query);
@@ -99,4 +85,6 @@ public interface AuthClientBuilder {
     List<RoleVo> createForGetRole(List<TRole> queryTop);
 
     IPageData<RoleVo> createForGetRole(IPageData<TRole> list);
+
+    TRoleVo build(RoleVo roleVo);
 }

@@ -2,11 +2,13 @@ package org.example.spring.domains.services.mysql.auth.service.impl;
 
 
 import lombok.AllArgsConstructor;
+import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TUserRoleResourceDTO;
+import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
+import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.domains.repositories.mysql.auth.repository.DAccountRepository;
 import org.example.spring.domains.services.mysql.auth.service.DAccountService;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -16,41 +18,52 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 @Transactional
 public class DAccountServiceImpl implements DAccountService {
     private final DAccountRepository accountRepository;
 
-
-    @Override
-    public IPageData<DAccountDTO> queryPage(DAccountQuery query) {
-        return null;
+    public DAccountServiceImpl(DAccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
     }
 
     @Override
-    public List<DAccountDTO> queryList(DAccountQuery query) {
-        return null;
+    public IPageData<TUserDTO> queryPage(TUserQuery query) {
+        return accountRepository.queryPage(query);
     }
 
     @Override
-    public DAccountDTO queryOne(DAccountQuery query) {
-        return null;
+    public List<TUserDTO> queryList(DAccountQuery query) {
+        return accountRepository.queryTop(query);
     }
 
     @Override
-    public DAccountRoleDetailsDTO get(Long id) {
-        return null;
-    }
-
-
-    @Override
-    public void save(DAccountVo formVo) {
-
+    public TUserDTO queryOne(DAccountQuery query) {
+        return accountRepository.queryFirst(query);
     }
 
     @Override
-    public void update(DAccountVo formVo) {
+    public TUserDTO get(Long id) {
+        return accountRepository.get(id);
+    }
 
+    @Override
+    public TUserRoleDTO getWithRole(Long id) {
+        return accountRepository.getWithRole(id);
+    }
+
+    @Override
+    public TUserRoleResourceDTO getWithRoleAndResource(Long id) {
+        return accountRepository.getWithRoleAndResource(id);
+    }
+
+    @Override
+    public void save(TUserVo formVo) {
+        accountRepository.save(formVo);
+    }
+
+    @Override
+    public void update(TUserVo formVo) {
+        accountRepository.update(formVo);
     }
 
     @Override
@@ -59,7 +72,21 @@ public class DAccountServiceImpl implements DAccountService {
     }
 
     @Override
+    public void delete(Long... ids) {
+        accountRepository.delete(ids);
+    }
+    @Override
+    public void delete(Long id) {
+        accountRepository.delete(id);
+    }
+
+    @Override
     public void updateStatus(TUserStatus status, List<Long> ids) {
-        accountRepository.updateStatus(status, ids);
+        ids.forEach(id -> {
+            TUserVo vo = new TUserVo();
+            vo.setId(id);
+            vo.setStatus(status.getValue());
+            update(vo);
+        });
     }
 }

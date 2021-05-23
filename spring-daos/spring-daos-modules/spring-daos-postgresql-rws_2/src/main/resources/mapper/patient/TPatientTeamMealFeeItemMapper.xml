@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.example.spring.daos.mysql.patient.mapper.TPatientTeamMealFeeItemMapper">
+<mapper namespace="org.example.spring.daos.postgresql.patient.mapper.TPatientTeamMealFeeItemMapper">
     <resultMap id="BaseResultMap"
-               type="org.example.spring.daos.mysql.patient.table.po.TPatientTeamMealFeeItem">
+               type="org.example.spring.daos.postgresql.patient.table.po.TPatientTeamMealFeeItem">
         <!--@mbg.generated-->
         <!--@Table t_patient_team_meal_fee_item-->
         <id column="id" jdbcType="BIGINT" property="id"/>
@@ -18,9 +18,9 @@
         <result column="fee_item_id" jdbcType="BIGINT" property="feeItemId"/>
         <result column="fee_item_code" jdbcType="VARCHAR" property="feeItemCode"/>
         <result column="fee_item_name" jdbcType="VARCHAR" property="feeItemName"/>
-        <result column="price" jdbcType="DECIMAL" property="price"/>
-        <result column="dis_price" jdbcType="DECIMAL" property="disPrice"/>
-        <result column="market_price" jdbcType="DECIMAL" property="marketPrice"/>
+        <result column="price" jdbcType="NUMERIC" property="price"/>
+        <result column="dis_price" jdbcType="NUMERIC" property="disPrice"/>
+        <result column="market_price" jdbcType="NUMERIC" property="marketPrice"/>
         <result column="source" jdbcType="VARCHAR" property="source"/>
         <result column="type" jdbcType="VARCHAR" property="type"/>
     </resultMap>
@@ -28,6 +28,6 @@
         <!--@mbg.generated-->
         id, create_id, update_id, create_user, update_user, create_date, update_date, team_id,
         team_meal_id, meal_id, fee_item_id, fee_item_code, fee_item_name, price, dis_price,
-        market_price, `source`, `type`
+        market_price, "source", "type"
     </sql>
 </mapper>

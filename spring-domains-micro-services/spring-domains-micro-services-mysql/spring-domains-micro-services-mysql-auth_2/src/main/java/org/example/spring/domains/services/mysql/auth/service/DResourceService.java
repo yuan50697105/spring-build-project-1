@@ -1,22 +1,26 @@
 package org.example.spring.domains.services.mysql.auth.service;
 
 import cn.hutool.core.lang.tree.Tree;
-import org.example.spring.domains.repositories.mysql.auth.entity.query.DResourceQuery;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DResourceDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.vo.DResourceVo;
+import org.example.spring.daos.mysql.auth.table.dto.TResourceDTO;
+import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;
+import org.example.spring.daos.mysql.auth.table.vo.TResourceVo;
 
 import java.util.List;
 
 public interface DResourceService {
     List<Tree<Long>> listResourceByUserId(Long id);
 
-    List<Tree<Long>> selectTreeList(DResourceQuery query);
+    List<Tree<Long>> selectTreeList(TResourceQuery query);
 
-    DResourceDTO get(Long id);
+    TResourceDTO get(Long id);
 
-    void save(DResourceVo formVo);
+    void save(TResourceVo formVo);
 
-    void update(DResourceVo formVo);
+    void update(TResourceVo formVo);
 
     void delete(List<Long> ids);
+
+    void delete(Long... ids);
+
+    void delete(Long id);
 }

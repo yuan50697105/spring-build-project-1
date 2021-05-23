@@ -1,4 +1,6 @@
 package org.example.spring.domains.repositories.mysql.auth.repository;
 
-public interface DRoleRepository {
+import org.example.spring.daos.mysql.auth.repository.TRoleRepository;
+
+public interface DRoleRepository extends TRoleRepository {
 }

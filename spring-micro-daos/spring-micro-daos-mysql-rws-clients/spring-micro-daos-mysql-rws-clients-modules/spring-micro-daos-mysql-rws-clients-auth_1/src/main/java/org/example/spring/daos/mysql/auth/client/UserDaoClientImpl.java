@@ -63,7 +63,7 @@ public class UserDaoClientImpl implements UserDaoClient {
 
     @Override
     public UserRoleDTO getDetails(Long id) {
-        return builder.buildUserDetails(userRepository.getDetails(id));
+        return builder.buildUserDetails(userRepository.getWithRole(id));
     }
 
     @Override
