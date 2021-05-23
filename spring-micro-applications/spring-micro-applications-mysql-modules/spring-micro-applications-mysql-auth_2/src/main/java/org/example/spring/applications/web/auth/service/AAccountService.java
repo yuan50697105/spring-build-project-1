@@ -1,26 +1,26 @@
 package org.example.spring.applications.web.auth.service;
 
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
+import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
+import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
+import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 
 public interface AAccountService {
-    IPageData<DAccountDTO> queryPage(DAccountQuery query);
+    IPageData<TUserDTO> queryPage(TUserQuery query);
 
-    List<DAccountDTO> queryList(DAccountQuery withSize);
+    List<TUserDTO> queryList(TUserQuery withSize);
 
-    DAccountDTO queryOne(DAccountQuery query);
+    TUserDTO queryOne(TUserQuery query);
 
-    DAccountRoleDetailsDTO get(Long id);
+    TUserDTO get(Long id);
 
-    void save(DAccountVo formVo);
+    void save(TUserVo formVo);
 
-    void update(DAccountVo formVo);
+    void update(TUserVo formVo);
 
     void delete(List<Long> list);
 

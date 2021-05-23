@@ -1,28 +1,38 @@
 package org.example.spring.domains.services.mysql.auth.service;
 
+import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
+import org.example.spring.daos.mysql.auth.table.dto.TUserRoleResourceDTO;
+import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
+import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 
 public interface DAccountService {
-    IPageData<DAccountDTO> queryPage(DAccountQuery query);
 
-    List<DAccountDTO> queryList(DAccountQuery query);
+    IPageData<TUserDTO> queryPage(TUserQuery query);
 
-    DAccountDTO queryOne(DAccountQuery query);
+    List<TUserDTO> queryList(TUserQuery query);
 
-    DAccountRoleDTO get(Long id);
+    TUserDTO queryOne(TUserQuery query);
 
-    void save(DAccountVo formVo);
+    TUserDTO get(Long id);
 
-    void update(DAccountVo formVo);
+    TUserRoleDTO getWithRole(Long id);
+
+    TUserRoleResourceDTO getWithRoleAndResource(Long id);
+
+    void save(TUserVo vo);
+
+    void update(TUserVo vo);
 
     void delete(List<Long> ids);
+
+    void delete(Long... ids);
+
+    void delete(Long id);
 
     void updateStatus(TUserStatus status, List<Long> ids);
 }

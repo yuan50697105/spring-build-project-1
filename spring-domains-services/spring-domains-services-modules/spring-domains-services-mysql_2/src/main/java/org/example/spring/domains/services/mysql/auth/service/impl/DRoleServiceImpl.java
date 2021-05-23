@@ -1,10 +1,9 @@
 package org.example.spring.domains.services.mysql.auth.service.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.repositories.mysql.auth.entity.query.DRoleQuery;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DRoleDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DRoleDetailsDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.vo.DRoleVo;
+import org.example.spring.daos.mysql.auth.table.dto.TRoleDTO;
+import org.example.spring.daos.mysql.auth.table.query.TRoleQuery;
+import org.example.spring.daos.mysql.auth.table.vo.TRoleVo;
 import org.example.spring.domains.repositories.mysql.auth.repository.DRoleRepository;
 import org.example.spring.domains.services.mysql.auth.service.DRoleService;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -20,48 +19,48 @@ public class DRoleServiceImpl implements DRoleService {
     private final DRoleRepository roleRepository;
 
     @Override
-    public IPageData<DRoleDTO> queryPage(DRoleQuery query) {
-        return null;
+    public IPageData<TRoleDTO> queryPage(TRoleQuery query) {
+        return roleRepository.queryPage(query);
     }
 
     @Override
-    public List<DRoleDTO> queryList(DRoleQuery query) {
-        return null;
+    public List<TRoleDTO> queryList(TRoleQuery query) {
+        return roleRepository.queryTop(query);
     }
 
     @Override
-    public DRoleDTO queryOne(DRoleQuery query) {
-        return null;
+    public TRoleDTO queryOne(TRoleQuery query) {
+        return roleRepository.queryFirst(query);
     }
 
     @Override
-    public DRoleDetailsDTO get(Long id) {
-        return null;
+    public TRoleDTO get(Long id) {
+        return roleRepository.get(id);
     }
 
     @Override
-    public void save(DRoleVo vo) {
-
+    public void save(TRoleVo vo) {
+        roleRepository.save(vo);
     }
 
     @Override
-    public void update(DRoleVo vo) {
-
+    public void update(TRoleVo vo) {
+        roleRepository.update(vo);
     }
 
     @Override
     public void delete(List<Long> ids) {
-
+        roleRepository.delete(ids);
     }
 
     @Override
     public void delete(Long... ids) {
-
+        roleRepository.delete(ids);
     }
 
     @Override
     public void delete(Long id) {
-
+        roleRepository.delete(id);
     }
 
 

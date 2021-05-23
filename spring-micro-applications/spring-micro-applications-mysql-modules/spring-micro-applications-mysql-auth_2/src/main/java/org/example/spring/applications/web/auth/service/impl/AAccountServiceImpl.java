@@ -4,11 +4,11 @@ import cn.hutool.core.lang.Validator;
 import lombok.AllArgsConstructor;
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
+import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
+import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.domains.repositories.mysql.auth.entity.query.DAccountQuery;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DAccountRoleDetailsDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.vo.DAccountVo;
+import org.example.spring.domains.services.mysql.auth.service.DAccountService;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,38 +17,41 @@ import javax.validation.ValidationException;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 @Transactional
 public class AAccountServiceImpl implements AAccountService {
-    private final org.example.spring.domains.services.mysql.auth.service.DAccountService accountService;
+    private final DAccountService accountService;
+
+    public AAccountServiceImpl(DAccountService accountService) {
+        this.accountService = accountService;
+    }
 
     @Override
-    public IPageData<DAccountDTO> queryPage(DAccountQuery query) {
+    public IPageData<TUserDTO> queryPage(TUserQuery query) {
         return accountService.queryPage(query);
     }
 
     @Override
-    public List<DAccountDTO> queryList(DAccountQuery withSize) {
+    public List<TUserDTO> queryList(TUserQuery withSize) {
         return accountService.queryList(withSize);
     }
 
     @Override
-    public DAccountDTO queryOne(DAccountQuery query) {
+    public TUserDTO queryOne(TUserQuery query) {
         return accountService.queryOne(query);
     }
 
     @Override
-    public DAccountRoleDetailsDTO get(Long id) {
+    public TUserDTO get(Long id) {
         return accountService.get(id);
     }
 
     @Override
-    public void save(DAccountVo formVo) {
+    public void save(TUserVo formVo) {
         accountService.save(formVo);
     }
 
     @Override
-    public void update(DAccountVo formVo) {
+    public void update(TUserVo formVo) {
         accountService.update(formVo);
     }
 

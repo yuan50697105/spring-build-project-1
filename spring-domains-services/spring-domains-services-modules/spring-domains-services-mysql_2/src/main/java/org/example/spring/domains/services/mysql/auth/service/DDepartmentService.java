@@ -1,25 +1,25 @@
 package org.example.spring.domains.services.mysql.auth.service;
 
-import org.example.spring.domains.repositories.mysql.auth.entity.query.DDepartmentQuery;
-import org.example.spring.domains.repositories.mysql.auth.entity.result.DDepartmentDTO;
-import org.example.spring.domains.repositories.mysql.auth.entity.vo.DDepartmentVo;
+import org.example.spring.daos.mysql.auth.table.dto.TDepartmentDTO;
+import org.example.spring.daos.mysql.auth.table.query.TDepartmentQuery;
+import org.example.spring.daos.mysql.auth.table.vo.TDepartmentVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 
 public interface DDepartmentService {
 
-    void save(DDepartmentVo formVo);
+    void save(TDepartmentVo vo);
 
-    void update(DDepartmentVo formVo);
+    void update(TDepartmentVo vo);
 
     void delete(List<Long> ids);
 
-    IPageData<DDepartmentDTO> selectPage(DDepartmentQuery query);
+    IPageData<TDepartmentDTO> selectPage(TDepartmentQuery query);
 
-    List<DDepartmentDTO> selectList(DDepartmentQuery query);
+    List<TDepartmentDTO> selectList(TDepartmentQuery query);
 
-    DDepartmentDTO selectOne(DDepartmentQuery query);
+    TDepartmentDTO selectOne(TDepartmentQuery query);
 
-    DDepartmentDTO get(Long id);
+    TDepartmentDTO get(Long id);
 }
