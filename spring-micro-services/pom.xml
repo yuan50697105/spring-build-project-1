@@ -4,24 +4,24 @@
     <parent>
         <groupId>org.example.spring</groupId>
         <artifactId>spring-build-project</artifactId>
-        <version>0.0.33.5</version>
+        <version>0.0.33.6-SNAPSHOT</version>
     </parent>
     <artifactId>spring-micro-services</artifactId>
-    <version>0.0.33.5</version>
+    <version>0.0.33.6-SNAPSHOT</version>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <artifactId>spring-plugins-dependencies</artifactId>
                 <groupId>org.example.spring</groupId>
-                <version>0.0.33.5</version>
+                <version>0.0.33.6-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-dependencies</artifactId>
-                <version>0.0.33.5</version>
+                <version>0.0.33.6-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

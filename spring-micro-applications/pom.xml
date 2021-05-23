@@ -10,7 +10,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.33.5</version>
+        <version>0.0.33.6-SNAPSHOT</version>
     </parent>
     <artifactId>spring-micro-applications</artifactId>
     <packaging>pom</packaging>
@@ -19,21 +19,21 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.33.5</version>
+                <version>0.0.33.6-SNAPSHOT</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-dependencies</artifactId>
-                <version>0.0.33.5</version>
+                <version>0.0.33.6-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-dependencies</artifactId>
-                <version>0.0.33.5</version>
+                <version>0.0.33.6-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
