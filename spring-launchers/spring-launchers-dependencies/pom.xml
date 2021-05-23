@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-launchers</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.33.6</version>
+        <version>0.0.33.7-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,29 +14,29 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-dependencies</artifactId>
-                <version>0.0.33.6</version>
+                <version>0.0.33.7-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-launchers-admin_1</artifactId>
-                <version>0.0.33.6</version>
+                <version>0.0.33.7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-launchers-admin_2</artifactId>
-                <version>0.0.33.6</version>
+                <version>0.0.33.7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-launchers-mysql_1</artifactId>
-                <version>0.0.33.6</version>
+                <version>0.0.33.7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-launchers-mysql_2</artifactId>
-                <version>0.0.33.6</version>
+                <version>0.0.33.7-SNAPSHOT</version>
             </dependency>
 
         </dependencies>
