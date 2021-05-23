@@ -15,19 +15,12 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
+            <artifactId>spring-domains-micro-repositories-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
             <artifactId>spring-plugins-commons</artifactId>
         </dependency>
     </dependencies>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-repositories-dependencies</artifactId>
-                <version>0.0.33.5-SNAPSHOT</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>

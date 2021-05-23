@@ -11,8 +11,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-           <artifactId>spring-domains-repositories-commons</artifactId>
-            <version>0.0.33.5-SNAPSHOT</version>
+            <artifactId>spring-domains-micro-repositories-mysql_2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>

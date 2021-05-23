@@ -14,5 +14,30 @@
         <module>spring-domains-repositories-modules</module>
         <module>spring-domains-repositories-dependencies</module>
     </modules>
+    <dependencyManagement>
+        <dependencies>
 
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-plugins-dependencies</artifactId>
+                <version>0.0.33.5-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-daos-dependencies</artifactId>
+                <version>0.0.33.5-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
+                <version>0.0.33.5-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
