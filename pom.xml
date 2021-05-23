@@ -354,7 +354,7 @@
                         <version>2.10.4</version>
                         <configuration>
                             <encoding>${maven.compiler.encoding}</encoding>
-                            <aggregate>true</aggregate>
+                            <!-- <aggregate>fa</aggregate> -->
                             <charset>${maven.compiler.encoding}</charset>
                             <docencoding>${maven.compiler.encoding}</docencoding>
                         </configuration>
