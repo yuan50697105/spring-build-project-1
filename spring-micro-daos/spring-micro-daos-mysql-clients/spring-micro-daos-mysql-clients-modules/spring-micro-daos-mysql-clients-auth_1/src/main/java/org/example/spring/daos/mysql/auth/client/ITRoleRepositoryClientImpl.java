@@ -3,10 +3,7 @@ package org.example.spring.daos.mysql.auth.client;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
-import org.example.spring.daos.mysql.auth.builder.AuthClientBuilder;
-import org.example.spring.daos.mysql.auth.converter.TRoleClientConverter;
-import org.example.spring.daos.mysql.auth.dao.TRoleDao;
-import org.example.spring.daos.mysql.auth.dao.TRoleResourceDao;
+import org.example.spring.daos.mysql.auth.converter.TRoleRepositoryClientConverter;
 import org.example.spring.daos.mysql.auth.entity.query.RoleQuery;
 import org.example.spring.daos.mysql.auth.entity.vo.RoleVo;
 import org.example.spring.daos.mysql.auth.repository.TRoleRepository;
@@ -23,23 +20,19 @@ import java.util.Optional;
 @DubboService
 @AllArgsConstructor
 public class ITRoleRepositoryClientImpl implements IRoleRepositoryClient {
-    private final AuthClientBuilder authClientBuilder;
-    private final TRoleDao roleDao;
-    private final TRoleResourceDao roleResourceDao;
     private final TRoleRepository roleRepository;
-    private final TRoleClientConverter roleClientConverter;
-
+    private final TRoleRepositoryClientConverter converter
     @Override
     @GlobalTransactional
     public void save(RoleVo roleVo) {
-        TRoleVo vo = roleClientConverter.build(roleVo);
+        TRoleVo vo = converter.build(roleVo);
         roleRepository.save(vo);
     }
 
     @Override
     @GlobalTransactional
     public void update(RoleVo roleVo) {
-        TRoleVo vo = roleClientConverter.build(roleVo);
+        TRoleVo vo = converter.build(roleVo);
         roleRepository.save(vo);
     }
 
@@ -51,7 +44,7 @@ public class ITRoleRepositoryClientImpl implements IRoleRepositoryClient {
 
     @Override
     public RoleVo get(Long id) {
-        return authClientBuilder.createForGetRole(roleDao.getById(id));
+        return converter.build(roleDao.getById(id));
     }
 
     @Override

@@ -1,5 +1,6 @@
 package org.example.spring.daos.mysql.auth.client;
 
+import org.example.spring.daos.mysql.auth.entity.dto.RoleDTO;
 import org.example.spring.daos.mysql.auth.entity.query.RoleQuery;
 import org.example.spring.daos.mysql.auth.entity.vo.RoleVo;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -22,7 +23,7 @@ public interface IRoleRepositoryClient {
     void delete(List<Long> ids);
 
     @GetMapping("/{id}")
-    RoleVo get(@PathVariable Long id);
+    RoleDTO get(@PathVariable Long id);
 
     @GetMapping("get")
     Optional<RoleVo> get(@SpringQueryMap RoleQuery query);

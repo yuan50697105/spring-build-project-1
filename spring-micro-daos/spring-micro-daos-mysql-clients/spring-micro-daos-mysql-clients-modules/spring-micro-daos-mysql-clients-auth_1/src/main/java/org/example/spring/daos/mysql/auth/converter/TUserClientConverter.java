@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.auth.builder;
+package org.example.spring.daos.mysql.auth.converter;
 
 import org.example.spring.daos.mysql.auth.entity.dto.UserDTO;
 import org.example.spring.daos.mysql.auth.entity.dto.UserRoleDTO;
@@ -11,21 +11,23 @@ import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
-public interface UserClientBuilder {
+public interface TUserClientConverter {
+    TUserClientConverter instance = Mappers.getMapper(TUserClientConverter.class);
 
-    UserDTO build(TUserDTO byId);
+    TUserVo build(UserVo user);
+
+    UserDTO build(TUserDTO tUserDTO);
 
     TUserQuery build(UserQuery query);
-
-    TUserVo buildVO(UserVo userVo);
-
-    UserRoleDTO buildUserDetails(TUserRoleDTO details);
 
     List<UserDTO> build(List<TUserDTO> queryList);
 
     IPageData<UserDTO> build(IPageData<TUserDTO> queryPage);
+
+    UserRoleDTO buildDetails(TUserRoleDTO withRole);
 }

@@ -39,14 +39,7 @@ public class ITDepartmentRepositoryClientImpl implements IDepartmentRepositoryCl
     @Override
     @GlobalTransactional
     public void delete(List<Long> ids) {
-        validateDepartment(ids);
         departmentRepository.delete(ids);
-    }
-
-    private void validateDepartment(List<Long> ids) {
-        if (departmentRepository.validateDelete(ids)) {
-            throw new ValidationException("存在子级部门，不能删除");
-        }
     }
 
     @Override

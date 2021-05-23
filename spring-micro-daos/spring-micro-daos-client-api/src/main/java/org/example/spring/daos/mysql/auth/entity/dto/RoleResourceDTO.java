@@ -9,7 +9,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class UserRoleResourceDTO extends UserRoleDTO implements Serializable {
+public class RoleResourceDTO extends RoleDTO implements Serializable {
     private List<ResourceDTO> resources;
-    private List<Tree<Long>> resourceTree;
+    private List<Tree<Long>> resourcesTree;
 }
