@@ -9,17 +9,6 @@
 
     <artifactId>spring-micro-applications-mysql</artifactId>
     <packaging>pom</packaging>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-applications-dependencies</artifactId>
-                <version>0.0.33.5-SNAPSHOT</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     <modules>
         <module>spring-micro-applications-mysql-commons</module>
         <module>spring-micro-applications-mysql-modules</module>
