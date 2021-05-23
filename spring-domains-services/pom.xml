@@ -32,14 +32,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-services-dependencies</artifactId>
-                <version>0.0.33.5-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-daos-dependencies</artifactId>
+                <artifactId>spring-domains-micro-services-dependencies</artifactId>
                 <version>0.0.33.5-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>

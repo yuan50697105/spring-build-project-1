@@ -10,8 +10,8 @@
     <artifactId>spring-applications-mysql_1</artifactId>
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-applications-mysql_1</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>

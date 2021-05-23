@@ -8,17 +8,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-micro-applications-client-api</artifactId>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-applications-dependencies</artifactId>
-                <version>0.0.33.5-SNAPSHOT</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>io.reactivex.rxjava3</groupId>
@@ -42,11 +31,11 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-services-commons</artifactId>
+            <artifactId>spring-domains-micro-services-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-repositories-commons</artifactId>
+            <artifactId>spring-domains-micro-repositories-commons</artifactId>
         </dependency>
     </dependencies>
 

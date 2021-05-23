@@ -28,5 +28,11 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-domains-services-commons</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

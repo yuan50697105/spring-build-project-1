@@ -3,30 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-micro-applications</artifactId>
+        <artifactId>spring-micro-applications-mysql-clients</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.33.5-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-micro-applications-dependencies</artifactId>
+    <artifactId>spring-micro-applications-mysql-clients-dependencies</artifactId>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>
-<!--            <dependency>-->
-<!--                <groupId>org.example.spring</groupId>-->
-<!--                <artifactId>spring-micro-applications-mysql-dependencies</artifactId>-->
-<!--                <version>0.0.33.5-SNAPSHOT</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-applications-mysql-clients-dependencies</artifactId>
+                <artifactId>spring-micro-applications-mysql-clients-commons</artifactId>
                 <version>0.0.33.5-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
+
 </project>
