@@ -39,4 +39,10 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-daos-commons</artifactId>
+        </dependency>
+    </dependencies>
 </project>
