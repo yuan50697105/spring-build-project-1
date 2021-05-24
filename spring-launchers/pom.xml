@@ -16,4 +16,22 @@
         <module>spring-launchers-postgresql-modules</module>
         <module>spring-launchers-tasks</module>
     </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <artifactId>spring-build-micro-dependencies</artifactId>
+                <groupId>org.example.spring</groupId>
+                <version>0.0.35.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <artifactId>spring-build-dependencies</artifactId>
+                <groupId>org.example.spring</groupId>
+                <version>0.0.35.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
