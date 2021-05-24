@@ -9,6 +9,10 @@
 
     <artifactId>spring-micro-daos-clickhouse-modules</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-micro-daos-clickhouse-modules_1</module>
+        <module>spring-micro-daos-clickhouse-modules_2</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>

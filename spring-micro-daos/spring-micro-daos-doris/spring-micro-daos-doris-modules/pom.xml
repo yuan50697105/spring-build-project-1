@@ -9,6 +9,10 @@
 
     <artifactId>spring-micro-daos-doris-modules</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-micro-daos-doris-modules_1</module>
+        <module>spring-micro-daos-doris-modules_2</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>

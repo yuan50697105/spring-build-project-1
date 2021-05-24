@@ -44,6 +44,34 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-postgresql-dependencies</artifactId>
+                <version>0.0.35.1-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-postgresql-rws-dependencies</artifactId>
+                <version>0.0.35.1-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mssql-dependencies</artifactId>
+                <version>0.0.35.1-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-mssql-rws-dependencies</artifactId>
+                <version>0.0.35.1-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-clickhouse-dependencies</artifactId>
                 <version>0.0.35.1-SNAPSHOT</version>
                 <type>pom</type>

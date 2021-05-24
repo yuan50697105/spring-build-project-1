@@ -20,6 +20,16 @@
                 <artifactId>spring-micro-daos-doris-commons_2</artifactId>
                 <version>0.0.35.1-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-doris_1</artifactId>
+                <version>0.0.35.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-doris_2</artifactId>
+                <version>0.0.35.1-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

@@ -9,6 +9,9 @@
 
     <artifactId>spring-micro-daos-elasticsearch-modules</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-micro-daos-elasticsearch-all</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>

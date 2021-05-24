@@ -30,5 +30,10 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-daos-commons</artifactId>
+        </dependency>
+    </dependencies>
 </project>
