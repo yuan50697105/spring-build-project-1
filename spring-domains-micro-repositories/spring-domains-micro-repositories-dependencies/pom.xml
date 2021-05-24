@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-domains-micro-repositories</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.35.1</version>
+        <version>0.0.35.2-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,58 +14,58 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.35.1</version>
+                <version>0.0.35.2-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-dependencies</artifactId>
-                <version>0.0.35.1</version>
+                <version>0.0.35.2-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-commons</artifactId>
-                <version>0.0.35.1</version>
+                <version>0.0.35.2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-mysql-clients-commons</artifactId>
-                <version>0.0.35.1</version>
+                <version>0.0.35.2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-mysql-dependencies</artifactId>
-                <version>0.0.35.1</version>
+                <version>0.0.35.2-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-client-api</artifactId>
-                <version>0.0.35.1</version>
+                <version>0.0.35.2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-mysql-clients_1</artifactId>
-                <version>0.0.35.1</version>
+                <version>0.0.35.2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-mysql-clients_2</artifactId>
-                <version>0.0.35.1</version>
+                <version>0.0.35.2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-mysql-clients-auth_1</artifactId>
-                <version>0.0.35.1</version>
+                <version>0.0.35.2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-mysql-clients-auth_2</artifactId>
-                <version>0.0.35.1</version>
+                <version>0.0.35.2-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
