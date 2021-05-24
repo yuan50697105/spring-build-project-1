@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-daos-mysql-rws</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.35.1-SNAPSHOT</version>
+        <version>0.0.35.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -18,7 +18,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-mysql-rws-dependencies</artifactId>
-                <version>0.0.35.1-SNAPSHOT</version>
+                <version>0.0.35.1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
