@@ -9,11 +9,7 @@
 
     <artifactId>spring-micro-daos-mysql-report_1</artifactId>
     <dependencies>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-mysql-commons_1</artifactId>
-            <version>0.0.35.1-SNAPSHOT</version>
-        </dependency>
+
     </dependencies>
 
 

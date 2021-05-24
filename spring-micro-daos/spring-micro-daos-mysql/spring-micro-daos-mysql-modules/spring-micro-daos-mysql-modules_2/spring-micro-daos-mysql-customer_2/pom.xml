@@ -10,10 +10,5 @@
     <artifactId>spring-micro-daos-mysql-customer_2</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-mysql-commons_2</artifactId>
-            <version>0.0.35.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 </project>
