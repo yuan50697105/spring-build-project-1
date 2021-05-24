@@ -12,6 +12,8 @@
         <module>spring-micro-daos-msg-clients</module>
         <module>spring-micro-daos-postgresql</module>
         <module>spring-micro-daos-postgresql-rws</module>
+        <module>spring-micro-daos-mssql</module>
+        <module>spring-micro-daos-mssql-rws</module>
         <module>spring-micro-daos-clickhouse</module>
         <module>spring-micro-daos-doris</module>
         <module>spring-micro-daos-mongodb</module>
