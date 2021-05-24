@@ -1,2 +1,2 @@
-call mvn release:prepare release:perform -B -Pd -fn -U -T 1C
+call mvn release:prepare release:perform -fn -U -T 0.5C
 call git push --tag

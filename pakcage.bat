@@ -1,1 +1,1 @@
-call mvn clean package -T 1C -fn
+call mvn clean package -T 0.5C -fn -U

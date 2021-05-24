@@ -366,8 +366,8 @@
                                     <goal>jar</goal>
                                 </goals>
                                 <configuration>
-            	
-                                    <additionalJOption>-Xdoclint:none</additionalJOption>
+                                    <doclint>none</doclint>
+                                    <!-- <additionalJOption>-Xdoclint:none</additionalJOption> -->
                                 </configuration>
                             </execution>
                         </executions>
