@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-daos-clickhouse</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.35.2-SNAPSHOT</version>
+        <version>0.0.35-M2-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,22 +14,22 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-clickhouse-commons_1</artifactId>
-                <version>0.0.35.2-SNAPSHOT</version>
+                <version>0.0.35-M2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-clickhouse-commons_2</artifactId>
-                <version>0.0.35.2-SNAPSHOT</version>
+                <version>0.0.35-M2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-clickhouse_1</artifactId>
-                <version>0.0.35.2-SNAPSHOT</version>
+                <version>0.0.35-M2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-clickhouse_2</artifactId>
-                <version>0.0.35.2-SNAPSHOT</version>
+                <version>0.0.35-M2-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
