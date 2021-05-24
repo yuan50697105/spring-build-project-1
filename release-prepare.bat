@@ -1,1 +1,1 @@
-call mvn release:prepare -fae
+call mvn release:prepare-with-pom -fae -T 0.5C 
