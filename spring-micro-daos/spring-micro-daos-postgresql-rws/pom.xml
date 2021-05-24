@@ -9,6 +9,12 @@
 
     <artifactId>spring-micro-daos-postgresql-rws</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-micro-daos-postgresql-rws-dependencies</module>
+        <module>spring-micro-daos-postgresql-rws-modules</module>
+        <module>spring-micro-daos-postgresql-rws-commons_1</module>
+        <module>spring-micro-daos-postgresql-rws-commons_2</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -26,6 +32,10 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-daos-commons</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.reactivex.rxjava3</groupId>
             <artifactId>rxjava</artifactId>
