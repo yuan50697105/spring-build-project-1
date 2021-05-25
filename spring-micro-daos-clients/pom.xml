@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.example.spring</groupId>
         <artifactId>spring-build-project</artifactId>
-        <version>0.0.35-M3</version>
+        <version>0.0.35-M4-SNAPSHOT</version>
     </parent>
     <artifactId>spring-micro-daos-clients</artifactId>
-    <version>0.0.35-M3</version>
+    <version>0.0.35-M4-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
         <module>spring-micro-daos-clients-dependencies</module>
@@ -19,7 +19,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-dependencies</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>

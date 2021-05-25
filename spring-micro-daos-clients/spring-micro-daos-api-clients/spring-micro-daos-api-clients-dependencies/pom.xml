@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-daos-api-clients</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.35-M3</version>
+        <version>0.0.35-M4-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,12 +14,12 @@
             <dependency>
                 <artifactId>spring-micro-daos-api-clients-api</artifactId>
                 <groupId>org.example.spring</groupId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <artifactId>spring-micro-daos-api-clients-mysql-dependencies</artifactId>
                 <groupId>org.example.spring</groupId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

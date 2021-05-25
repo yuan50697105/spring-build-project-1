@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-daos-api-clients-mysql</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.35-M3</version>
+        <version>0.0.35-M4-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,147 +14,147 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-commons</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-auth_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws-auth_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-auth_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws-auth_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-bill_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws-bill_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-bill_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws-bill_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-customer_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws-customer_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-customer_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws-customer_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-items_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws-items_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-items_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws-items_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-patient_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws-patient_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-patient_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws-patient_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-report_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws-report_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-report_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws-report_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws_1</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-mysql-rws_2</artifactId>
-                <version>0.0.35-M3</version>
+                <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
