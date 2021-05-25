@@ -2,17 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <modules>
-        <module>spring-micro-daos-clients-api</module>
-        <module>spring-micro-daos-clients-commons</module>
-        <module>spring-micro-daos-clients-dependencies</module>
-        <module>spring-micro-daos-clients-modules</module>
+        <module>spring-micro-daos-clients-launchers-mysql_1</module>
+        <module>spring-micro-daos-clients-launchers-mysql_2</module>
+        <module>spring-micro-daos-clients-launchers-mysql-auth_1</module>
+        <module>spring-micro-daos-clients-launchers-mysql-auth_2</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.35-M4-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-micro-daos-clients</artifactId>
+    <artifactId>spring-micro-daos-clients-launchers</artifactId>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>
@@ -30,6 +30,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-clients-dependencies</artifactId>
+                <version>0.0.35-M4-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -42,4 +49,26 @@
             <artifactId>spring-micro-daos-commons</artifactId>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
