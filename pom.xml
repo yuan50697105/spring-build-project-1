@@ -342,7 +342,6 @@
     <scm>
         <developerConnection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</developerConnection>
         <connection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</connection>
-        <tag>v0.0.33.4</tag>
     </scm>
     <profiles>
         <profile>
@@ -350,13 +349,12 @@
             <build>
                 <plugins>
                     <!--配置生成Javadoc包-->
-                    <plugin>
+                    <!-- <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>3.3.0</version>
                         <configuration>
                             <encoding>${maven.compiler.encoding}</encoding>
-                            <!-- <aggregate>fa</aggregate> -->
                             <charset>${maven.compiler.encoding}</charset>
                             <docencoding>${maven.compiler.encoding}</docencoding>
                         </configuration>
@@ -369,11 +367,10 @@
                                 </goals>
                                 <configuration>
                                     <doclint>none</doclint>
-                                    <!-- <additionalJOption>-Xdoclint:none</additionalJOption> -->
                                 </configuration>
                             </execution>
                         </executions>
-                    </plugin>
+                    </plugin> -->
 
                     <!--配置生成源码包-->
                     <plugin>
