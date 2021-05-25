@@ -10,7 +10,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.35-M3-SNAPSHOT</version>
+        <version>0.0.35-M3</version>
     </parent>
     <artifactId>spring-domains-micro-services</artifactId>
     <packaging>pom</packaging>
@@ -19,33 +19,33 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.35-M3-SNAPSHOT</version>
+                <version>0.0.35-M3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
-                <version>0.0.35-M3-SNAPSHOT</version>
+                <version>0.0.35-M3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-dependencies</artifactId>
-                <version>0.0.35-M3-SNAPSHOT</version>
+                <version>0.0.35-M3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-dependencies</artifactId>
-                <version>0.0.35-M3-SNAPSHOT</version>
+                <version>0.0.35-M3</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-clients-dependencies</artifactId>
-                <version>0.0.35-M3-SNAPSHOT</version>
+                <version>0.0.35-M3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

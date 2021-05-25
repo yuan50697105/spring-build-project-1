@@ -4,18 +4,18 @@
     <parent>
         <groupId>org.example.spring</groupId>
         <artifactId>spring-micro-daos-clients</artifactId>
-        <version>0.0.35-M3-SNAPSHOT</version>
+        <version>0.0.35-M3</version>
     </parent>
     <groupId>org.example.spring</groupId>
     <artifactId>spring-micro-daos-clients-dependencies</artifactId>
-    <version>0.0.35-M3-SNAPSHOT</version>
+    <version>0.0.35-M3</version>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-api-clients-dependencies</artifactId>
-                <version>0.0.35-M3-SNAPSHOT</version>
+                <version>0.0.35-M3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
