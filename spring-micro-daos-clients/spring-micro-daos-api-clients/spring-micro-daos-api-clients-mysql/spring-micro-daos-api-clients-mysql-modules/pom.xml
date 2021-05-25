@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-micro-daos-api-clients-mysql</artifactId>
+        <groupId>org.example.spring</groupId>
+        <version>0.0.35-M3-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-micro-daos-api-clients-mysql-modules</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-micro-daos-api-clients-mysql-modules_1</module>
+        <module>spring-micro-daos-api-clients-mysql-modules_2</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-api-clients-mysql-dependencies</artifactId>
+                <version>0.0.35-M3-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-daos-api-clients-mysql-commons</artifactId>
+        </dependency>
+    </dependencies>
+</project>

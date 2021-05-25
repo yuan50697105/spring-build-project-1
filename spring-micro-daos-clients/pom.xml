@@ -6,7 +6,6 @@
         <artifactId>spring-build-project</artifactId>
         <version>0.0.35-M3-SNAPSHOT</version>
     </parent>
-    <groupId>org.example.spring</groupId>
     <artifactId>spring-micro-daos-clients</artifactId>
     <version>0.0.35-M3-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -15,4 +14,15 @@
         <module>spring-micro-daos-api-clients</module>
         <module>spring-micro-daos-msg-clients</module>
     </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-daos-dependencies</artifactId>
+                <version>0.0.35-M3-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

@@ -10,4 +10,9 @@
     <artifactId>spring-micro-daos-api-clients</artifactId>
     <version>0.0.35-M3-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-micro-daos-api-clients-api</module>
+        <module>spring-micro-daos-api-clients-mysql</module>
+        <module>spring-micro-daos-api-clients-dependencies</module>
+    </modules>
 </project>
