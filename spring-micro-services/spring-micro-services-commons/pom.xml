@@ -13,9 +13,5 @@
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-daos-commons</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-client-api</artifactId>
-        </dependency>
     </dependencies>
 </project>

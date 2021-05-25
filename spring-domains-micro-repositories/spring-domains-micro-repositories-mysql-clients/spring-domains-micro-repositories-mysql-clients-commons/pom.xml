@@ -8,17 +8,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-domains-micro-repositories-mysql-clients-commons</artifactId>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
     <dependencies>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

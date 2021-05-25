@@ -32,5 +32,9 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-dubbo</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-daos-api-clients-api</artifactId>
+        </dependency>
     </dependencies>
 </project>

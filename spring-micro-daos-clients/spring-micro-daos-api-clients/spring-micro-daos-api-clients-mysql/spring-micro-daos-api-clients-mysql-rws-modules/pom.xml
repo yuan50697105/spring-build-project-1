@@ -29,7 +29,19 @@
         </dependency>
     </dependencies>
     <modules>
-        <module>spring-micro-daos-api-clients-mysql-rws-modules_1</module>
-        <module>spring-micro-daos-api-clients-mysql-rws-modules_2</module>
+        <module>spring-micro-daos-api-clients-mysql-rws_1</module>
+        <module>spring-micro-daos-api-clients-mysql-rws-auth_1</module>
+        <module>spring-micro-daos-api-clients-mysql-rws-bill_1</module>
+        <module>spring-micro-daos-api-clients-mysql-rws-customer_1</module>
+        <module>spring-micro-daos-api-clients-mysql-rws-items_1</module>
+        <module>spring-micro-daos-api-clients-mysql-rws-patient_1</module>
+        <module>spring-micro-daos-api-clients-mysql-rws-report_1</module>
+        <module>spring-micro-daos-api-clients-mysql-rws_2</module>
+        <module>spring-micro-daos-api-clients-mysql-rws-auth_2</module>
+        <module>spring-micro-daos-api-clients-mysql-rws-bill_2</module>
+        <module>spring-micro-daos-api-clients-mysql-rws-customer_2</module>
+        <module>spring-micro-daos-api-clients-mysql-rws-items_2</module>
+        <module>spring-micro-daos-api-clients-mysql-rws-patient_2</module>
+        <module>spring-micro-daos-api-clients-mysql-rws-report_2</module>
     </modules>
 </project>

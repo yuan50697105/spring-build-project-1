@@ -22,7 +22,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-client-api</artifactId>
+            <artifactId>spring-micro-daos-api-clients-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
