@@ -11,7 +11,7 @@
     <parent>
         <artifactId>spring-micro-daos</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.35</version>
+        <version>0.0.36-M1-SNAPSHOT</version>
     </parent>
     <artifactId>spring-micro-daos-mssql</artifactId>
     <packaging>pom</packaging>
@@ -20,12 +20,12 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-commons</artifactId>
-                <version>0.0.35</version>
+                <version>0.0.36-M1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.35</version>
+                <version>0.0.36-M1-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

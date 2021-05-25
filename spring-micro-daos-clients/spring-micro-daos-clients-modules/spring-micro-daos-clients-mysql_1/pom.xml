@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-daos-clients-modules</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.35</version>
+        <version>0.0.36-M1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,7 +16,7 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-daos-clients-mysql-auth_1</artifactId>
-            <version>0.0.35</version>
+            <version>0.0.36-M1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
