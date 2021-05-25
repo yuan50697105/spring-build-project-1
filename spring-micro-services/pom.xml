@@ -25,20 +25,12 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-daos-clients-dependencies</artifactId>
-                <version>0.0.35-M4-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
     <modules>
         <module>spring-micro-services-commons</module>
         <module>spring-micro-services-modules</module>
         <module>spring-micro-services-dependencies</module>
-        <module>spring-micro-services-client-api</module>
         <module>spring-micro-services-client-commons</module>
     </modules>
 </project>
