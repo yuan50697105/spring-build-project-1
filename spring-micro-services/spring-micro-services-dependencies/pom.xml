@@ -17,16 +17,6 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-services-client-api</artifactId>
-                <version>0.0.35-M4-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-services-client-commons</artifactId>
-                <version>0.0.35-M4-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-register-service_1</artifactId>
                 <version>0.0.35-M4-SNAPSHOT</version>
             </dependency>

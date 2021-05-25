@@ -31,6 +31,5 @@
         <module>spring-micro-services-commons</module>
         <module>spring-micro-services-modules</module>
         <module>spring-micro-services-dependencies</module>
-        <module>spring-micro-services-client-commons</module>
     </modules>
 </project>

@@ -11,10 +11,6 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-services-client-commons</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-services-register-service_2</artifactId>
         </dependency>
     </dependencies>
