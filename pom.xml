@@ -23,6 +23,10 @@
         <module>spring-micro-daos-clients</module>
         <module>spring-micro-daos-clients-launchers</module>
         <module>spring-micro-services</module>
+        <module>spring-micro-services-clients</module>
+        <module>spring-micro-services-clients-launchers</module>
+        <module>spring-domains-services-clients</module>
+        <module>spring-domains-services-clients-launchers</module>
         <module>spring-domains-micro-repositories</module>
         <module>spring-domains-micro-repositories-clients</module>
         <module>spring-domains-micro-repositories-clients-launchers</module>
@@ -32,8 +36,8 @@
     </modules>
     <packaging>pom</packaging>
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <spring-boot.version>2.5.0</spring-boot.version>
         <spring-cloud.version>2020.0.2</spring-cloud.version>
