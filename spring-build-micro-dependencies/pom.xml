@@ -13,7 +13,7 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-daos-dependencies</artifactId>
+                <artifactId>spring-micro-repositories-dependencies</artifactId>
                 <version>0.0.36-M3-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>

@@ -11,7 +11,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-commons</artifactId>
+            <artifactId>spring-micro-repositories-commons</artifactId>
         </dependency>
     </dependencies>
 

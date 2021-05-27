@@ -44,7 +44,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-clients-commons</artifactId>
+            <artifactId>spring-micro-repositories-clients-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>

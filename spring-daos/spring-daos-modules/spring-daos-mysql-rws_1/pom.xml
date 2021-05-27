@@ -12,7 +12,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-mysql-rws_1</artifactId>
+            <artifactId>spring-micro-repositories-mysql-rws_1</artifactId>
         </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.example.spring</groupId>-->

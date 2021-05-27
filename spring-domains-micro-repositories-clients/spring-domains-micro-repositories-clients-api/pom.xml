@@ -20,7 +20,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-daos-clients-api</artifactId>
+            <artifactId>spring-micro-repositories-clients-api</artifactId>
         </dependency>
     </dependencies>
 

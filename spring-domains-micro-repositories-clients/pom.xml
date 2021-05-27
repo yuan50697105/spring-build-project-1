@@ -33,7 +33,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-daos-clients-dependencies</artifactId>
+                <artifactId>spring-micro-repositories-clients-dependencies</artifactId>
                 <version>0.0.36-M3-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
