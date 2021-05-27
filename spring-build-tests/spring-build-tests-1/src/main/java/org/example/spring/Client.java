@@ -1,39 +1,35 @@
 package org.example.spring;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import tk.mybatis.mapper.entity.Example;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+import java.util.Map;
 
+@SpringBootApplication
 public class Client {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-//        Constructor<User> constructor = User.class.getConstructor(Long.class, Boolean.class);
-//        User user = constructor.newInstance(1L, true);
-//        System.out.println("user = " + user);
-//        Constructor<Aa> constructor = Aa.class.getConstructor(Class.class);
-//        Aa aa = constructor.newInstance(User.class);
-//        System.out.println("aa.getAClass() = " + aa.getAClass());
-        Constructor<Example> constructor = Example.class.getConstructor(Class.class);
-        Example example = constructor.newInstance(User.class);
-        System.out.println("example = " + example);
+        SpringApplication.run(Client.class, args);
     }
 
+    @Bean
+    public CommandLineRunner runner() {
+        return new CommandLineRunner() {
+            @Autowired
+            private List<TestService> testService;
+            @Autowired
+            private Map<String, TestService> testServiceMap;
+            @Override
+            public void run(String... args) throws Exception {
 
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class User {
-        private long id;
-        private boolean aa;
-    }
-
-    @Data
-    @AllArgsConstructor
-    public static class Aa {
-        private Class<?> aClass;
+                testService.stream().peek(testService1 -> System.out.println("testService1 = " + testService1)).forEach(TestService::test);
+                testServiceMap.entrySet().stream().peek(entry-> System.out.println("entry = " + entry)).map(Map.Entry::getValue).forEach(TestService::test);
+            }
+        };
     }
 
 

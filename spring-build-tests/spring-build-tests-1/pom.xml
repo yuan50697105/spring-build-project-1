@@ -10,8 +10,8 @@
     <artifactId>spring-build-tests-1</artifactId>
     <dependencies>
         <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-plugins-mybatis_1</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
 
