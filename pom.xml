@@ -46,7 +46,7 @@
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
         <spring-cloud-huawei.version>1.5.8-Hoxton</spring-cloud-huawei.version>
         <api-boot.version>2.3.4</api-boot.version>
-        <yue-library.version>2.1.0</yue-library.version>
+        <yue-library.version>j8.2.3.0</yue-library.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <aliyun-spring-boot-dependencies.version>1.0.0</aliyun-spring-boot-dependencies.version>
         <spring-boot-admin-dependencies.version>2.4.1</spring-boot-admin-dependencies.version>
