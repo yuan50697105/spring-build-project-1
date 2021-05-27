@@ -5,37 +5,44 @@
     <parent>
         <groupId>org.example.spring</groupId>
         <artifactId>spring-build-project</artifactId>
-        <version>0.0.33.5-SNAPSHOT</version>
+        <version>0.0.36-M3-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-build-micro-dependencies</artifactId>
+    <artifactId>spring-build-dependencies</artifactId>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-micro-dependencies</artifactId>
-                <version>0.0.33.5-SNAPSHOT</version>
+                <version>0.0.36-M3-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-daos-dependencies</artifactId>
-                <version>0.0.33.5-SNAPSHOT</version>
+                <version>0.0.36-M3-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-dependencies</artifactId>
-                <version>0.0.33.5-SNAPSHOT</version>
+                <version>0.0.36-M3-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-dependencies</artifactId>
-                <version>0.0.33.5-SNAPSHOT</version>
+                <version>0.0.36-M3-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-applications-dependencies</artifactId>
+                <version>0.0.36-M3-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
