@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-daos-mssql-rws</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M2</version>
+        <version>0.0.36-M3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,32 +14,32 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-mssql-rws-commons_1</artifactId>
-                <version>0.0.36-M2</version>
+                <version>0.0.36-M3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-mssql-rws-commons_2</artifactId>
-                <version>0.0.36-M2</version>
+                <version>0.0.36-M3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-mssql-rws_1</artifactId>
-                <version>0.0.36-M2</version>
+                <version>0.0.36-M3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-mssql-rws_2</artifactId>
-                <version>0.0.36-M2</version>
+                <version>0.0.36-M3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-mssql-rws-auth_1</artifactId>
-                <version>0.0.36-M2</version>
+                <version>0.0.36-M3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-daos-mssql-rws-auth_2</artifactId>
-                <version>0.0.36-M2</version>
+                <version>0.0.36-M3-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
