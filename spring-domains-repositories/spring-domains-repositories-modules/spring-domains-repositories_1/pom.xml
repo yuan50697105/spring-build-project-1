@@ -11,11 +11,11 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-daos-mysql_1</artifactId>
+            <artifactId>spring-repositories-mysql_1</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-daos-minio</artifactId>
+            <artifactId>spring-repositories-minio</artifactId>
         </dependency>
     </dependencies>
 </project>

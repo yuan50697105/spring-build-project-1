@@ -17,7 +17,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-daos-clickhouse_1</artifactId>
+            <artifactId>spring-repositories-clickhouse_1</artifactId>
         </dependency>
     </dependencies>
 

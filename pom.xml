@@ -13,7 +13,7 @@
         <module>spring-build-tests</module>
         <module>spring-build-admin-server</module>
         <module>spring-plugins</module>
-        <module>spring-daos</module>
+        <module>spring-repositories</module>
         <module>spring-services</module>
         <module>spring-domains-repositories</module>
         <module>spring-domains-services</module>

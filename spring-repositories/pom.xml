@@ -7,16 +7,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-domains-repositories</artifactId>
+    <artifactId>spring-repositories</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-domains-repositories-commons</module>
-        <module>spring-domains-repositories-modules</module>
-        <module>spring-domains-repositories-dependencies</module>
+        <module>spring-repositories-commons</module>
+        <module>spring-repositories-modules</module>
+        <module>spring-repositories-dependencies</module>
     </modules>
     <dependencyManagement>
         <dependencies>
-
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
@@ -26,14 +25,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-repositories-dependencies</artifactId>
-                <version>0.0.36-M3-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
+                <artifactId>spring-micro-repositories-dependencies</artifactId>
                 <version>0.0.36-M3-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>

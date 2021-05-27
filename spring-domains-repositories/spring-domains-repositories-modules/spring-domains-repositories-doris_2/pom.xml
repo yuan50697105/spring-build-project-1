@@ -17,7 +17,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-daos-doris_2</artifactId>
+            <artifactId>spring-repositories-doris_2</artifactId>
         </dependency>
     </dependencies>
 

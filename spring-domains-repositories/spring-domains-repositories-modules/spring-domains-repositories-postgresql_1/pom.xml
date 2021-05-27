@@ -17,11 +17,11 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-daos-postgresql_1</artifactId>
+            <artifactId>spring-repositories-postgresql_1</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-daos-minio</artifactId>
+            <artifactId>spring-repositories-minio</artifactId>
         </dependency>
     </dependencies>
 
