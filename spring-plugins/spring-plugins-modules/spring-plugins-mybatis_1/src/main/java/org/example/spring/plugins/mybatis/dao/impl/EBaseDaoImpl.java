@@ -270,6 +270,16 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public boolean updateBatchById(List<T> list) {
+        return SqlHelper.retBool(baseMapper.updateBatchById(list));
+    }
+
+    @Override
+    public boolean modifyBatchById(List<T> list) {
+        return updateBatchById(list);
+    }
+
+    @Override
     public boolean updateNotNullColumnsBatchById(List<T> listForUpdate) {
         return SqlHelper.retBool(baseMapper.updateNotNullColumnsBatchById(listForUpdate));
     }
@@ -297,6 +307,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     @Override
     public boolean insertNotNullColumnsBatch(List<T> list) {
         return SqlHelper.retBool(baseMapper.insertNotNullColumnsBatch(list));
+    }
+
+    @Override
+    public boolean insertBatch(List<T> list) {
+        return SqlHelper.retBool(baseMapper.insertBatch(list));
     }
 
     @Override

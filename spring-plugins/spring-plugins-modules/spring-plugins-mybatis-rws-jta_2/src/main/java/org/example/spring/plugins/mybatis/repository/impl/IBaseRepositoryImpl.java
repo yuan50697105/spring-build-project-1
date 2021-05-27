@@ -8,7 +8,6 @@ import org.example.spring.plugins.mybatis.entity.query.IBaseQuery;
 import org.example.spring.plugins.mybatis.repository.IBaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 import java.util.Optional;

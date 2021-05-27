@@ -61,6 +61,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public List<T> searchList(Q query) {
+        return queryList(query);
+    }
+
+    @Override
     public Stream<T> queryListStream(Q query) {
         return queryList(query).stream();
     }
@@ -71,12 +76,22 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public Stream<T> searchListStream(Q query) {
+        return queryListStream(query);
+    }
+
+    @Override
     public Stream<T> queryTopStream(Q query) {
         return queryTop(query).stream();
     }
 
     @Override
     public Stream<T> selectTopStream(Q query) {
+        return queryTopStream(query);
+    }
+
+    @Override
+    public Stream<T> searchTopStream(Q query) {
         return queryTopStream(query);
     }
 
@@ -101,12 +116,22 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public IPageData<T> searchPage(Q query) {
+        return queryPage(query);
+    }
+
+    @Override
     public List<T> queryTop(Q query) {
         return queryPage((Q) query.withPage(1)).getData();
     }
 
     @Override
     public List<T> selectTop(Q query) {
+        return queryTop(query);
+    }
+
+    @Override
+    public List<T> searchTop(Q query) {
         return queryTop(query);
     }
 
@@ -121,12 +146,22 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public Optional<T> searchFirstOpt(Q query) {
+        return queryFirstOpt(query);
+    }
+
+    @Override
     public T queryFirst(Q query) {
         return queryFirstOpt(query).orElse(null);
     }
 
     @Override
     public T selectFirst(Q query) {
+        return queryFirst(query);
+    }
+
+    @Override
+    public T searchFirst(Q query) {
         return queryFirst(query);
     }
 
@@ -148,6 +183,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public T searchOne(Q query) {
+        return queryOne(query);
+    }
+
+    @Override
     public Optional<T> queryOneOpt(Q query) {
         return Optional.ofNullable(queryOne(query));
     }
@@ -155,6 +195,16 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     @Override
     public Optional<T> selectOneOpt(Q query) {
         return queryOneOpt(query);
+    }
+
+    @Override
+    public Optional<T> searchOneOpt(Q query) {
+        return queryOneOpt(query);
+    }
+
+    @Override
+    public boolean modifyById(T t) {
+        return updateById(t);
     }
 
     protected E exampleAddOrder(Q query, E example) {
@@ -185,8 +235,28 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public boolean modify(T t) {
+        return update(t);
+    }
+
+    @Override
+    public boolean updateNull(T t) {
+        return SqlHelper.retBool(baseMapper.updateByPrimaryKey(t));
+    }
+
+    @Override
+    public boolean modifyNull(T t) {
+        return updateNull(t);
+    }
+
+    @Override
     public boolean updateSelective(T t) {
         return SqlHelper.retBool(baseMapper.updateByPrimaryKeySelective(t));
+    }
+
+    @Override
+    public boolean modifySelective(T t) {
+        return updateSelective(t);
     }
 
     @Override
@@ -200,13 +270,33 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public boolean updateBatchById(List<T> list) {
+        return SqlHelper.retBool(baseMapper.updateBatchById(list));
+    }
+
+    @Override
+    public boolean modifyBatchById(List<T> list) {
+        return updateBatchById(list);
+    }
+
+    @Override
     public boolean updateNotNullColumnsBatchById(List<T> listForUpdate) {
         return SqlHelper.retBool(baseMapper.updateNotNullColumnsBatchById(listForUpdate));
     }
 
     @Override
+    public boolean modifyNotNullColumnsBatchById(List<T> listForUpdate) {
+        return updateNotNullColumnsBatchById(listForUpdate);
+    }
+
+    @Override
     public boolean updateSetColumnsBatchById(List<T> list) {
         return SqlHelper.retBool(baseMapper.updateSetColumnsBatchById(list));
+    }
+
+    @Override
+    public boolean modifySetColumnsBatchById(List<T> list) {
+        return updateSetColumnsBatchById(list);
     }
 
     @Override
@@ -217,6 +307,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     @Override
     public boolean insertNotNullColumnsBatch(List<T> list) {
         return SqlHelper.retBool(baseMapper.insertNotNullColumnsBatch(list));
+    }
+
+    @Override
+    public boolean insertBatch(List<T> list) {
+        return SqlHelper.retBool(baseMapper.insertBatch(list));
     }
 
     @Override
