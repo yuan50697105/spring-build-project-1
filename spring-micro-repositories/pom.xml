@@ -16,7 +16,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M3</version>
+        <version>0.0.36-M4-SNAPSHOT</version>
     </parent>
     <artifactId>spring-micro-repositories</artifactId>
     <packaging>pom</packaging>
