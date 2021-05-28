@@ -5,7 +5,7 @@
         <module>spring-micro-repositories-clients-api</module>
         <module>spring-micro-repositories-clients-commons</module>
         <module>spring-micro-repositories-clients-dependencies</module>
-        <module>spring-micro-repositories-clients-modules</module>
+        <module>spring-micro-repositories-clients-mysql</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>

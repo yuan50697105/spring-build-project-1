@@ -14,9 +14,20 @@
         <module>spring-domains-micro-repositories-clients-mysql_2</module>
         <module>spring-domains-micro-repositories-clients-mysql-auth_1</module>
         <module>spring-domains-micro-repositories-clients-mysql-auth_2</module>
+        <module>spring-domains-micro-repositories-clients-mysql-rpc_1</module>
+        <module>spring-domains-micro-repositories-clients-mysql-rpc_2</module>
+        <module>spring-domains-micro-repositories-clients-mysql-auth-rpc_1</module>
+        <module>spring-domains-micro-repositories-clients-mysql-auth-rpc_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
+                <version>0.0.36-M4-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-clients-dependencies</artifactId>
