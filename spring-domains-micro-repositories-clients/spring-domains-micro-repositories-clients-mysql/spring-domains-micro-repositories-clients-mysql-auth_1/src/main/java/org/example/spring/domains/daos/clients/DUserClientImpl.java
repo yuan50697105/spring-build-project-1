@@ -73,41 +73,41 @@ public class DUserClientImpl implements DUserDaoClients {
 
     @Override
     public CUserDto first(CUserQuery query) {
-        return null;
+        return userDaoClients.first(query);
     }
 
     @Override
     public Optional<CUserDto> firstOpt(CUserQuery query) {
-        return Optional.empty();
+        return Optional.ofNullable(first(query));
     }
 
     @Override
     public Optional<CUserRoleDto> getWithRoleOpt(Long id) {
-        return Optional.empty();
+        return Optional.ofNullable(getWithRole(id));
     }
 
     @Override
     public List<CUserDto> list(CUserQuery query) {
-        return null;
+        return userDaoClients.list(query);
     }
 
     @Override
     public Stream<CUserDto> listStream(CUserQuery query) {
-        return null;
+        return userDaoClients.listStream(query);
     }
 
     @Override
     public List<CUserDto> top(CUserQuery query) {
-        return null;
+        return userDaoClients.top(query);
     }
 
     @Override
     public Stream<CUserDto> topStream(CUserQuery query) {
-        return null;
+        return userDaoClients.topStream(query);
     }
 
     @Override
     public IPageData<CUserDto> data(CUserQuery query) {
-        return null;
+        return userDaoClients.data(query);
     }
 }
