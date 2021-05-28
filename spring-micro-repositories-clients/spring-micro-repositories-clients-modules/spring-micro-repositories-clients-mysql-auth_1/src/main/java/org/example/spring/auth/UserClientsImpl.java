@@ -17,7 +17,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 @RestController
-@DubboService
+@DubboService(interfaceClass = UserDaoClients.class)
 @GlobalTransactional
 public class UserClientsImpl implements UserDaoClients {
 

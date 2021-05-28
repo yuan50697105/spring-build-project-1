@@ -9,8 +9,11 @@ import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
 import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
+
+import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
 public interface UserClientsConverter {
@@ -25,4 +28,8 @@ public interface UserClientsConverter {
     CUserRoleDto buildWithRole(TUserRoleDTO withRole);
 
     TUserQuery build(CUserQuery query);
+
+    List<CUserDto> build(List<TUserDTO> dto);
+
+    IPageData<CUserDto> build(IPageData<TUserDTO> dto);
 }

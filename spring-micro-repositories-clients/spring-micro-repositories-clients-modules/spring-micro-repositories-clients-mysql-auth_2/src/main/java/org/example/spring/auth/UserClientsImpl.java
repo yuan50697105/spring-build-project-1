@@ -6,6 +6,8 @@ import org.example.spring.auth.converter.UserClientsConverter;
 import org.example.spring.daos.clients.auth.api.UserDaoClients;
 import org.example.spring.daos.clients.auth.entity.*;
 import org.example.spring.daos.mysql.auth.repository.TUserRepository;
+import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
 import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +17,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 @RestController
-@DubboService
+@DubboService(interfaceClass = UserDaoClients.class)
 @GlobalTransactional
 public class UserClientsImpl implements UserDaoClients {
 
@@ -67,51 +69,61 @@ public class UserClientsImpl implements UserDaoClients {
 
     @Override
     public CUserDto one(CUserQuery query) {
-        return userClientsConverter.build(userRepository.queryOne(userClientsConverter.build(query)));
+        TUserQuery userQuery = userClientsConverter.build(query);
+        TUserDTO dto = userRepository.queryOne(userQuery);
+        return userClientsConverter.build(dto);
     }
 
     @Override
     public Optional<CUserDto> oneOpt(CUserQuery query) {
-        return Optional.empty();
+        return Optional.ofNullable(one(query));
     }
 
     @Override
     public CUserDto first(CUserQuery query) {
-        return null;
+        TUserQuery userQuery = userClientsConverter.build(query);
+        TUserDTO dto = userRepository.queryFirst(userQuery);
+        return userClientsConverter.build(dto);
     }
 
     @Override
     public Optional<CUserDto> firstOpt(CUserQuery query) {
-        return Optional.empty();
+        return Optional.ofNullable(first(query));
     }
 
     @Override
     public Optional<CUserRoleDto> getWithRoleOpt(Long id) {
-        return Optional.empty();
+        return Optional.of(getWithRole(id));
     }
 
     @Override
     public List<CUserDto> list(CUserQuery query) {
-        return null;
+        TUserQuery userQuery = userClientsConverter.build(query);
+        List<TUserDTO> dto = userRepository.queryList(userQuery);
+        return userClientsConverter.build(dto);
     }
 
     @Override
     public Stream<CUserDto> listStream(CUserQuery query) {
-        return null;
+        return list(query).stream();
     }
 
     @Override
     public List<CUserDto> top(CUserQuery query) {
-        return null;
+        TUserQuery userQuery = userClientsConverter.build(query);
+        List<TUserDTO> dto = userRepository.queryTop(userQuery);
+        return userClientsConverter.build(dto);
     }
 
     @Override
     public Stream<CUserDto> topStream(CUserQuery query) {
-        return null;
+        return top(query).stream();
     }
 
     @Override
     public IPageData<CUserDto> data(CUserQuery query) {
-        return null;
+        TUserQuery userQuery = userClientsConverter.build(query);
+        IPageData<TUserDTO> dto = userRepository.queryPage(userQuery);
+        return userClientsConverter.build(dto);
     }
 }
