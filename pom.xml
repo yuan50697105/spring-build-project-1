@@ -35,16 +35,16 @@
         <module>spring-micro-applications-launchers</module>
         <module>spring-cloud-micro-repositories</module>
         <module>spring-cloud-micro-repositories-clients</module>
-        <module>spring-cloud-micro-repositories-clients-lauchers</module>
+        <module>spring-cloud-micro-repositories-clients-launchers</module>
         <module>spring-cloud-micro-services</module>
         <module>spring-cloud-micro-services-clients</module>
-        <module>spring-cloud-micro-services-clients-lauchers</module>
+        <module>spring-cloud-micro-services-clients-launchers</module>
         <module>spring-cloud-domains-micro-repositories</module>
         <module>spring-cloud-domains-micro-repositories-clients</module>
-        <module>spring-cloud-domains-micro-repositories-clients-lauchers</module>
+        <module>spring-cloud-domains-micro-repositories-clients-launchers</module>
         <module>spring-cloud-micro-servicess</module>
         <module>spring-cloud-micro-services-clients</module>
-        <module>spring-cloud-micro-services-clients-lauchers</module>
+        <module>spring-cloud-micro-services-clients-launchers</module>
         <module>spring-cloud-repositories</module>
         <module>spring-cloud-repositories-clients</module>
         <module>spring-cloud-repositories-clients-launchers</module>
@@ -61,11 +61,13 @@
         <module>spring-cloud-domains-services-clients-launchers</module>
         <module>spring-cloud-domains-services</module>
         <module>spring-cloud-domains-services-clients</module>
-        <module>spring-cloud-domains-services-clients-lauchers</module>
+        <module>spring-cloud-domains-services-clients-launchers</module>
         <module>spring-cloud-applications</module>
         <module>spring-cloud-applications-launchers</module>
         <module>spring-build-micro-dependencies</module>
         <module>spring-build-dependencies</module>
+        <module>spring-cloud-build-micro-dependencies</module>
+        <module>spring-cloud-build-dependencies</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
