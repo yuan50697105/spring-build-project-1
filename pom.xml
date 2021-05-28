@@ -42,9 +42,6 @@
         <module>spring-cloud-domains-micro-repositories</module>
         <module>spring-cloud-domains-micro-repositories-clients</module>
         <module>spring-cloud-domains-micro-repositories-clients-launchers</module>
-        <module>spring-cloud-micro-servicess</module>
-        <module>spring-cloud-micro-services-clients</module>
-        <module>spring-cloud-micro-services-clients-launchers</module>
         <module>spring-cloud-repositories</module>
         <module>spring-cloud-repositories-clients</module>
         <module>spring-cloud-repositories-clients-launchers</module>
@@ -52,13 +49,9 @@
         <module>spring-cloud-services-clients</module>
         <module>spring-cloud-services-clients-launchers</module>
         <module>spring-cloud-micro-applications</module>
-        <module>spring-micro-applications-launchers</module>
         <module>spring-cloud-domains-repositories</module>
         <module>spring-cloud-domains-repositories-clients</module>
         <module>spring-cloud-domains-repositories-clients-launchers</module>
-        <module>spring-cloud-domains-services</module>
-        <module>spring-cloud-domains-services-clients</module>
-        <module>spring-cloud-domains-services-clients-launchers</module>
         <module>spring-cloud-domains-services</module>
         <module>spring-cloud-domains-services-clients</module>
         <module>spring-cloud-domains-services-clients-launchers</module>
