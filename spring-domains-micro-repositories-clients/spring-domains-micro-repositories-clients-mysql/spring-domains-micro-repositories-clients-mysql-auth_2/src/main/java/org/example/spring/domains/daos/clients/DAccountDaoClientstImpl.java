@@ -3,7 +3,7 @@ package org.example.spring.domains.daos.clients;
 
 import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.dubbo.config.annotation.DubboService;
-import org.example.spring.damains.daos.clients.auth.api.DUserDaoClients;
+import org.example.spring.damains.daos.clients.auth.api.DAccountDaoClients;
 import org.example.spring.daos.clients.auth.entity.CUserDto;
 import org.example.spring.daos.clients.auth.entity.CUserQuery;
 import org.example.spring.daos.clients.auth.entity.CUserRoleDto;
@@ -17,12 +17,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@DubboService(interfaceClass = DUserDaoClients.class)
+@DubboService(interfaceClass = DAccountDaoClients.class)
 @RestController
 @Primary
 @GlobalTransactional
-public class DUserClientImpl implements DUserDaoClients {
+public class DAccountDaoClientstImpl implements DAccountDaoClients {
     private DAccountRepository accountRepository;
+
     @Override
     public CUserVo save(CUserVo vo) {
         return null;
