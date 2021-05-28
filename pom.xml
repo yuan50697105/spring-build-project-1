@@ -25,8 +25,6 @@
         <module>spring-micro-services</module>
         <module>spring-micro-services-clients</module>
         <module>spring-micro-services-clients-launchers</module>
-        <module>spring-domains-services-clients</module>
-        <module>spring-domains-services-clients-launchers</module>
         <module>spring-domains-micro-repositories</module>
         <module>spring-domains-micro-repositories-clients</module>
         <module>spring-domains-micro-repositories-clients-launchers</module>
@@ -34,20 +32,7 @@
         <module>spring-domains-micro-services-clients</module>
         <module>spring-domains-micro-services-clients-launchers</module>
         <module>spring-micro-applications</module>
-        <module>spring-cloud-applications</module>
-        <module>spring-cloud-applications-clients</module>
-        <module>spring-cloud-repositories</module>
-        <module>spring-cloud-repositories-clients</module>
-        <module>spring-cloud-repositories-clients-launchers</module>
-        <module>spring-cloud-services</module>
-        <module>spring-cloud-services-clients</module>
-        <module>spring-cloud-services-clients-launchers</module>
-        <module>spring-cloud-domains-repositories</module>
-        <module>spring-cloud-domains-repositories-clients</module>
-        <module>spring-cloud-domains-repositories-clients-launchers</module>
-        <module>spring-cloud-domains-services</module>
-        <module>spring-cloud-domains-services-clients</module>
-        <module>spring-cloud-domains-services-clients-launchers</module>
+        <module>spring-micro-applications-launchers</module>
         <module>spring-cloud-micro-repositories</module>
         <module>spring-cloud-micro-repositories-clients</module>
         <module>spring-cloud-micro-repositories-clients-lauchers</module>
@@ -57,9 +42,28 @@
         <module>spring-cloud-domains-micro-repositories</module>
         <module>spring-cloud-domains-micro-repositories-clients</module>
         <module>spring-cloud-domains-micro-repositories-clients-lauchers</module>
+        <module>spring-cloud-micro-servicess</module>
+        <module>spring-cloud-micro-services-clients</module>
+        <module>spring-cloud-micro-services-clients-lauchers</module>
+        <module>spring-cloud-repositories</module>
+        <module>spring-cloud-repositories-clients</module>
+        <module>spring-cloud-repositories-clients-launchers</module>
+        <module>spring-cloud-services</module>
+        <module>spring-cloud-services-clients</module>
+        <module>spring-cloud-services-clients-launchers</module>
+        <module>spring-cloud-micro-applications</module>
+        <module>spring-micro-applications-launchers</module>
+        <module>spring-cloud-domains-repositories</module>
+        <module>spring-cloud-domains-repositories-clients</module>
+        <module>spring-cloud-domains-repositories-clients-launchers</module>
+        <module>spring-cloud-domains-services</module>
+        <module>spring-cloud-domains-services-clients</module>
+        <module>spring-cloud-domains-services-clients-launchers</module>
         <module>spring-cloud-domains-services</module>
         <module>spring-cloud-domains-services-clients</module>
         <module>spring-cloud-domains-services-clients-lauchers</module>
+        <module>spring-cloud-applications</module>
+        <module>spring-cloud-applications-launchers</module>
         <module>spring-build-micro-dependencies</module>
         <module>spring-build-dependencies</module>
     </modules>
@@ -380,8 +384,8 @@
     <scm>
         <developerConnection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</developerConnection>
         <connection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</connection>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
     <profiles>
         <profile>
             <id>d</id>

@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-cloud-services-clients-launchers</artifactId>
+    <artifactId>spring-cloud-micro-applications-launchers</artifactId>
     <packaging>pom</packaging>
 
 
