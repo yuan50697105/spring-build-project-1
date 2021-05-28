@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-domains-micro-repositories</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M3-SNAPSHOT</version>
+        <version>0.0.36-M3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,21 +14,21 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.36-M3-SNAPSHOT</version>
+                <version>0.0.36-M3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-dependencies</artifactId>
-                <version>0.0.36-M3-SNAPSHOT</version>
+                <version>0.0.36-M3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-commons</artifactId>
-                <version>0.0.36-M3-SNAPSHOT</version>
+                <version>0.0.36-M3</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
@@ -38,7 +38,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-mysql-dependencies</artifactId>
-                <version>0.0.36-M3-SNAPSHOT</version>
+                <version>0.0.36-M3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
