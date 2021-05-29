@@ -12,11 +12,6 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-repositories-commons</artifactId>
-            <version>0.0.36-M4-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-kylin</artifactId>
         </dependency>
     </dependencies>
