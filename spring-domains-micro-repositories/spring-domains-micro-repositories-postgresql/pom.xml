@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-domains-micro-repositories</artifactId>
         <groupId>org.example.spring</groupId>
@@ -9,15 +10,40 @@
 
     <artifactId>spring-domains-micro-repositories-postgresql</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-domains-micro-repositories-postgresql-dependencies</module>
+        <module>spring-domains-micro-repositories-postgresql-commons_1</module>
+        <module>spring-domains-micro-repositories-postgresql-modules_1</module>
+        <module>spring-domains-micro-repositories-postgresql-commons_2</module>
+        <module>spring-domains-micro-repositories-postgresql-modules_2</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
+                <artifactId>spring-micro-repositories-dependencies</artifactId>
                 <version>0.0.36-M4-SNAPSHOT</version>
-                <scope>import</scope>
                 <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-plugins-dependencies</artifactId>
+                <version>0.0.36-M4-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-commons</artifactId>
+                <version>0.0.36-M4-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-domains-micro-repositories-commons</artifactId>
+        </dependency>
+    </dependencies>
 </project>
