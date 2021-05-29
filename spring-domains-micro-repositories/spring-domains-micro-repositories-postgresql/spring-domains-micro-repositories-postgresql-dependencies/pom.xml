@@ -23,6 +23,16 @@
                 <artifactId>spring-domains-micro-repositories-postgresql-commons_2</artifactId>
                 <version>0.0.36-M4-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-postgresql_1</artifactId>
+                <version>0.0.36-M4-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-repositories-postgresql_2</artifactId>
+                <version>0.0.36-M4-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

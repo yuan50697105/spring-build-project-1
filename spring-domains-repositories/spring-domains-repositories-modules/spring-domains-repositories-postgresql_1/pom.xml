@@ -10,6 +10,7 @@
     <artifactId>spring-domains-repositories-postgresql_1</artifactId>
 
     <dependencies>
+
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-postgresql_1</artifactId>
