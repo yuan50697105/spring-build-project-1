@@ -44,29 +44,12 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-repositories-client-api</artifactId>
-                <version>0.0.35-M4-SNAPSHOT</version>
+                <artifactId>spring-domains-micro-repositories-postgresql-dependencies</artifactId>
+                <version>0.0.36-M4-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-repositories-mysql-clients_1</artifactId>
-                <version>0.0.35-M4-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-repositories-mysql-clients_2</artifactId>
-                <version>0.0.35-M4-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-repositories-mysql-clients-auth_1</artifactId>
-                <version>0.0.35-M4-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-repositories-mysql-clients-auth_2</artifactId>
-                <version>0.0.35-M4-SNAPSHOT</version>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
