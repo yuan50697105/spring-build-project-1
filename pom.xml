@@ -39,13 +39,11 @@
         <module>spring-cloud-repositories-clients</module>
         <module>spring-cloud-repositories-clients-launchers</module>
         <module>spring-cloud-services</module>
-        <module>spring-cloud-services</module>
         <module>spring-cloud-services-clients</module>
         <module>spring-cloud-services-clients-launchers</module>
         <module>spring-cloud-domains-repositories</module>
         <module>spring-cloud-domains-repositories-clients</module>
         <module>spring-cloud-domains-repositories-clients-launchers</module>
-        <module>spring-cloud-domains-services</module>
         <module>spring-cloud-domains-services</module>
         <module>spring-cloud-domains-services-clients</module>
         <module>spring-cloud-domains-services-clients-launchers</module>
