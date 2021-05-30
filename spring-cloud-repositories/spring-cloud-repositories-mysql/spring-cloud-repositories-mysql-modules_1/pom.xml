@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-build-project</artifactId>
+        <artifactId>spring-cloud-repositories-mysql</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.36-M4-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-cloud-repositories</artifactId>
+    <artifactId>spring-cloud-repositories-mysql-modules_1</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-cloud-repositories-dependencies</module>
-        <module>spring-cloud-repositories-mysql</module>
+        <module>spring-cloud-repositories-mysql_1</module>
     </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-dependencies</artifactId>
+                <artifactId>spring-cloud-repositories-mysql-dependencies</artifactId>
                 <version>0.0.36-M4-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -27,7 +28,9 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-commons</artifactId>
+            <artifactId>spring-cloud-repositories-mysql-commons_1</artifactId>
         </dependency>
     </dependencies>
+
+
 </project>
