@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-clickhouse</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M4-SNAPSHOT</version>
+        <version>0.0.36-M4</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,22 +14,22 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clickhouse-commons_1</artifactId>
-                <version>0.0.36-M4-SNAPSHOT</version>
+                <version>0.0.36-M4</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clickhouse-commons_2</artifactId>
-                <version>0.0.36-M4-SNAPSHOT</version>
+                <version>0.0.36-M4</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clickhouse_1</artifactId>
-                <version>0.0.36-M4-SNAPSHOT</version>
+                <version>0.0.36-M4</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clickhouse_2</artifactId>
-                <version>0.0.36-M4-SNAPSHOT</version>
+                <version>0.0.36-M4</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
