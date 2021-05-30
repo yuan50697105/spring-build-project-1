@@ -1,4 +1,4 @@
-package org.example.spring.plugins.commons.entity.vo;
+package org.example.spring.plugins.commons.entity.dto;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.StringSerializer;
@@ -9,8 +9,6 @@ import org.example.spring.plugins.commons.entity.ICommonsEntity;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class ICommonsResult extends ICommonsEntity {
-    @JsonSerialize(using = StringSerializer.class)
-    private Long id;
+public class ICommonsDto extends ICommonsEntity {
 
 }
