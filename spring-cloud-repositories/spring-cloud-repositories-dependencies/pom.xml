@@ -11,5 +11,15 @@
 
     <artifactId>spring-cloud-repositories-dependencies</artifactId>
     <packaging>pom</packaging>
-
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-cloud-repositories-mysql-dependencies</artifactId>
+                <version>0.0.36-M4-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
