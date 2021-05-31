@@ -13,12 +13,8 @@
         <module>spring-micro-repositories-postgresql-dependencies</module>
         <module>spring-micro-repositories-postgresql-commons_1</module>
         <module>spring-micro-repositories-postgresql-commons_2</module>
-        <module>spring-micro-repositories-postgresql-rws-commons_1</module>
-        <module>spring-micro-repositories-postgresql-rws-commons_2</module>
         <module>spring-micro-repositories-postgresql-modules_1</module>
         <module>spring-micro-repositories-postgresql-modules_2</module>
-        <module>spring-micro-repositories-postgresql-rws-modules_1</module>
-        <module>spring-micro-repositories-postgresql-rws-modules_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

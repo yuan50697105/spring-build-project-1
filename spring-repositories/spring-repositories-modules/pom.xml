@@ -12,12 +12,10 @@
     <modules>
         <module>spring-repositories-mysql_1</module>
         <module>spring-repositories-mysql_2</module>
-        <module>spring-repositories-mysql-rws_1</module>
-        <module>spring-repositories-mysql-rws_2</module>
         <module>spring-repositories-postgresql_1</module>
         <module>spring-repositories-postgresql_2</module>
-        <module>spring-repositories-postgresql-rws_1</module>
-        <module>spring-repositories-postgresql-rws_2</module>
+        <module>spring-repositories-oracle_1</module>
+        <module>spring-repositories-oracle_2</module>
         <module>spring-repositories-clickhouse_1</module>
         <module>spring-repositories-clickhouse_2</module>
         <module>spring-repositories-doris_1</module>

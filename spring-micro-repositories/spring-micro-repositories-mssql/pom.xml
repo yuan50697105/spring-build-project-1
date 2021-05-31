@@ -5,10 +5,6 @@
         <module>spring-micro-repositories-mssql-dependencies</module>
         <module>spring-micro-repositories-mssql-commons_1</module>
         <module>spring-micro-repositories-mssql-commons_2</module>
-        <module>spring-micro-repositories-mssql-rws-commons_1</module>
-        <module>spring-micro-repositories-mssql-rws-commons_2</module>
-        <module>spring-micro-repositories-mssql-rws-modules_1</module>
-        <module>spring-micro-repositories-mssql-rws-modules_2</module>
         <module>spring-micro-repositories-mssql-modules_1</module>
         <module>spring-micro-repositories-mssql-modules_2</module>
     </modules>

@@ -23,16 +23,6 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-mssql-rws-commons_1</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-mssql-rws-commons_2</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql_1</artifactId>
                 <version>0.0.36-M5-SNAPSHOT</version>
             </dependency>
@@ -43,32 +33,12 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-mssql-rws_1</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-mssql-rws_2</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-auth_1</artifactId>
                 <version>0.0.36-M5-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-auth_2</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-mssql-rws-auth_1</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-mssql-rws-auth_2</artifactId>
                 <version>0.0.36-M5-SNAPSHOT</version>
             </dependency>
         </dependencies>
