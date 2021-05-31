@@ -9,6 +9,34 @@
 
     <artifactId>spring-micro-repositories-oracle</artifactId>
     <packaging>pom</packaging>
-    
-
+    <modules>
+        <module>spring-micro-repositories-oracle-dependencies</module>
+        <module>spring-micro-repositories-oracle-commons_1</module>
+        <module>spring-micro-repositories-oracle-commons_2</module>
+        <module>spring-micro-repositories-oracle-modules_1</module>
+        <module>spring-micro-repositories-oracle-modules_2</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-plugins-dependencies</artifactId>
+                <version>0.0.36-M5-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-commons</artifactId>
+                <version>0.0.36-M5-SNAPSHOT</version>
+                <scope>compile</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-commons</artifactId>
+        </dependency>
+    </dependencies>
 </project>
