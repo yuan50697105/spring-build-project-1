@@ -187,7 +187,7 @@
                     <exclude>bootstrap.yml</exclude>
                     <exclude>docker-compose.yml</exclude>
                     <exclude>Dockerfile</exclude>
-                    <!-- <exclude>logback.xml</exclude> -->
+                    <exclude>logback.xml</exclude> 
                 </excludes>
             </resource>
         </resources> -->
@@ -198,7 +198,7 @@
                     <artifactId>jgitflow-maven-plugin</artifactId>
                     <version>1.0-m8</version>
                 </plugin>
-                <!-- <plugin> -->
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>2.7</version>
