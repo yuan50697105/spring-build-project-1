@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-domains-micro-repositories-clients</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M5</version>
+        <version>0.0.36-M6-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -24,21 +24,21 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
-                <version>0.0.36-M5</version>
+                <version>0.0.36-M6-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-clients-dependencies</artifactId>
-                <version>0.0.36-M5</version>
+                <version>0.0.36-M6-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.36-M5</version>
+                <version>0.0.36-M6-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
