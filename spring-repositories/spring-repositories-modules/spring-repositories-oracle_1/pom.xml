@@ -10,6 +10,9 @@
     <artifactId>spring-repositories-oracle_1</artifactId>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-oracle_1</artifactId>
+        </dependency>
     </dependencies>
 </project>

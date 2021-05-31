@@ -47,6 +47,13 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-oracle-dependencies</artifactId>
+                <version>0.0.36-M5-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clickhouse-dependencies</artifactId>
                 <version>0.0.36-M5-SNAPSHOT</version>
                 <type>pom</type>
