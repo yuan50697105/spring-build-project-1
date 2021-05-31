@@ -25,6 +25,8 @@
         <module>spring-repositories-minio</module>
         <module>spring-repositories-redis</module>
         <module>spring-repositories-kylin</module>
+        <module>spring-repositories-mssql_1</module>
+        <module>spring-repositories-mssql_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
