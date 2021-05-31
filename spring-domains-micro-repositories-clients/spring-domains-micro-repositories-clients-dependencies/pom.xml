@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-domains-micro-repositories-clients</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M5-SNAPSHOT</version>
+        <version>0.0.36-M5</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,52 +14,52 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-clients-api</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
+                <version>0.0.36-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-clients-commons</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
+                <version>0.0.36-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-clients-mysql_1</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
+                <version>0.0.36-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-clients-mysql_2</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
+                <version>0.0.36-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-clients-mysql-rpc_1</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
+                <version>0.0.36-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-clients-mysql-rpc_2</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
+                <version>0.0.36-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-clients-mysql-auth_1</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
+                <version>0.0.36-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-clients-mysql-auth_2</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
+                <version>0.0.36-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-clients-mysql-auth-rpc_1</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
+                <version>0.0.36-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-repositories-clients-mysql-auth-rpc_2</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
+                <version>0.0.36-M5</version>
             </dependency>
 
 

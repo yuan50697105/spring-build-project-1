@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-elasticsearch</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M5-SNAPSHOT</version>
+        <version>0.0.36-M5</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -17,7 +17,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-elasticsearch-dependencies</artifactId>
-                <version>0.0.36-M5-SNAPSHOT</version>
+                <version>0.0.36-M5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
