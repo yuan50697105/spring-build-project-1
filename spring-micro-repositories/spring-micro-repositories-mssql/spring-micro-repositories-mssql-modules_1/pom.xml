@@ -12,6 +12,12 @@
     <modules>
         <module>spring-micro-repositories-mssql_1</module>
         <module>spring-micro-repositories-mssql-auth_1</module>
+        <module>spring-micro-repositories-mssql-bill_1</module>
+        <module>spring-micro-repositories-mssql-customer_1</module>
+        <module>spring-micro-repositories-mssql-department_1</module>
+        <module>spring-micro-repositories-mssql-items_1</module>
+        <module>spring-micro-repositories-mssql-patient_1</module>
+        <module>spring-micro-repositories-mssql-report_1</module>
     </modules>
     <dependencies>
         <dependency>
