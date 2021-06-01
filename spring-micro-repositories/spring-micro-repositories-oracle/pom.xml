@@ -39,4 +39,5 @@
             <artifactId>spring-micro-repositories-commons</artifactId>
         </dependency>
     </dependencies>
+    
 </project>
