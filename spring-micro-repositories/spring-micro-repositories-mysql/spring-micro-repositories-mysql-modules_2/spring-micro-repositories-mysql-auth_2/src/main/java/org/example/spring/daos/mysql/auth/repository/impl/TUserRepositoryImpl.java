@@ -11,9 +11,15 @@ import org.example.spring.daos.mysql.auth.table.dto.TUserRoleResourceDTO;
 import org.example.spring.daos.mysql.auth.table.po.TUser;
 import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
 import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
+import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 @Repository
 @Transactional
@@ -39,5 +45,20 @@ public class TUserRepositoryImpl extends IBaseRepositoryImpl<TUser, TUserDTO, TU
         TUserRoleDTO tUserRoleDTO = converter.buildDTO3(get(id));
         tUserRoleDTO.setRoles(roleRepository.queryListByUserId(id));
         return tUserRoleDTO;
+    }
+
+    @Override
+    public void updateStatus(TUserStatus status, List<Long> ids) {
+        dao.updateStatusByIds(status.getValue(), ids);
+    }
+
+    @Override
+    public void updateStatus(TUserStatus status, Long... ids) {
+        updateStatus(status, Arrays.asList(ids));
+    }
+
+    @Override
+    public void updateStatus(TUserStatus status, Long id) {
+        updateStatus(status, Collections.singletonList(id));
     }
 }
