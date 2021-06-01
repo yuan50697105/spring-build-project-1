@@ -17,12 +17,12 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-services-register-service_1</artifactId>
+                <artifactId>spring-micro-services-account-service-mysql_1</artifactId>
                 <version>0.0.36-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-services-register-service_2</artifactId>
+                <artifactId>spring-micro-services-account-service-mysql_2</artifactId>
                 <version>0.0.36-M6-SNAPSHOT</version>
             </dependency>
         </dependencies>
