@@ -6,7 +6,7 @@ import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.auth.UserClientsImpl;
 import org.example.spring.auth.converter.UserClientsConverter;
 import org.example.spring.damains.daos.clients.auth.api.DAccountDaoClients;
-import org.example.spring.daos.mysql.auth.repository.TUserRepository;
+import org.example.spring.repositories.mysql.auth.repository.TUserRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.RestController;
 

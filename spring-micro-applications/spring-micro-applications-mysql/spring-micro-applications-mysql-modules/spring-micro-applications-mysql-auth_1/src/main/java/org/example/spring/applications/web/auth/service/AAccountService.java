@@ -1,9 +1,9 @@
 package org.example.spring.applications.web.auth.service;
 
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
-import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
-import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
-import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
+import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
+import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;

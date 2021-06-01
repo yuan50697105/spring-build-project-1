@@ -1,1 +1,1 @@
-call mvn clean compile -fae -T 4
+call mvn clean compile -fae -T 1C
