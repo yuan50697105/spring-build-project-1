@@ -1,12 +1,12 @@
 package org.example.spring.repositories.postgres.patient.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
+import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.repositories.postgres.patient.dao.TPatientMealDao;
 import org.example.spring.repositories.postgres.patient.mapper.TPatientMealMapper;
 import org.example.spring.repositories.postgres.patient.table.po.TPatientMeal;
 import org.example.spring.repositories.postgres.patient.table.query.TPatientMealQuery;
-import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

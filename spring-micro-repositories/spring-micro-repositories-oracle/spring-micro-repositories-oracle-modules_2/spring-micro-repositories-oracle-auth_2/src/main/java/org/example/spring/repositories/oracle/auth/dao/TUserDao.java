@@ -1,8 +1,8 @@
 package org.example.spring.repositories.oracle.auth.dao;
 
+import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.repositories.oracle.auth.table.po.TUser;
 import org.example.spring.repositories.oracle.auth.table.query.TUserQuery;
-import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;
 

@@ -2,13 +2,13 @@ package org.example.spring.repositories.postgres.auth.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
+import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.repositories.postgres.auth.dao.TRoleResourceDao;
 import org.example.spring.repositories.postgres.auth.mapper.TRoleResourceMapper;
 import org.example.spring.repositories.postgres.auth.table.po.TResource;
 import org.example.spring.repositories.postgres.auth.table.po.TRoleResource;
 import org.example.spring.repositories.postgres.auth.table.query.TRolePermissionQuery;
-import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

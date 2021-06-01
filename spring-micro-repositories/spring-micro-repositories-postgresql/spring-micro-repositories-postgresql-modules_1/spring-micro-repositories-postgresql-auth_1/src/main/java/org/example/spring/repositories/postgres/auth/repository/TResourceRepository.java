@@ -1,11 +1,11 @@
 package org.example.spring.repositories.postgres.auth.repository;
 
 import cn.hutool.core.lang.tree.Tree;
+import org.example.spring.plugins.mybatis.repository.IBaseRepository;
 import org.example.spring.repositories.postgres.auth.table.dto.TResourceDTO;
 import org.example.spring.repositories.postgres.auth.table.po.TResource;
 import org.example.spring.repositories.postgres.auth.table.query.TResourceQuery;
 import org.example.spring.repositories.postgres.auth.table.vo.TResourceVo;
-import org.example.spring.plugins.mybatis.repository.IBaseRepository;
 
 import java.util.List;
 

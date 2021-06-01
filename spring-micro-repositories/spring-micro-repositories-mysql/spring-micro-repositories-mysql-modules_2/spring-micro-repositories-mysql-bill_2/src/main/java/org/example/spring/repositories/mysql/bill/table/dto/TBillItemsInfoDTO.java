@@ -3,7 +3,6 @@ package org.example.spring.repositories.mysql.bill.table.dto;
 import cn.hutool.core.bean.BeanUtil;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.bill.table.po.TBillItemsInfo;
 import org.example.spring.repositories.mysql.bill.table.po.TBillItemsInfo;
 
 @EqualsAndHashCode(callSuper = true)

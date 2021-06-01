@@ -1,10 +1,10 @@
 package org.example.spring.repositories.postgres.bill.repository;
 
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.postgres.bill.table.dto.TBillInfoDTO;
 import org.example.spring.repositories.postgres.bill.table.dto.TBillInfoDetailsDTO;
 import org.example.spring.repositories.postgres.bill.table.query.TBillInfoQuery;
 import org.example.spring.repositories.postgres.bill.table.vo.TBillInfoVo;
-import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 import java.util.Optional;

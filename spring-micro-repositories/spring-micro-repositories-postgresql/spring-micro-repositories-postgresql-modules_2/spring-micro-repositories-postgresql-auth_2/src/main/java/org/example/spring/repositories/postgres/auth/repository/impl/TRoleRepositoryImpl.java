@@ -1,5 +1,6 @@
 package org.example.spring.repositories.postgres.auth.repository.impl;
 
+import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.repositories.postgres.auth.converter.TRoleConverter;
 import org.example.spring.repositories.postgres.auth.dao.TRoleDao;
 import org.example.spring.repositories.postgres.auth.repository.TResourceRepository;
@@ -9,7 +10,6 @@ import org.example.spring.repositories.postgres.auth.table.dto.TRoleResourceDTO;
 import org.example.spring.repositories.postgres.auth.table.po.TRole;
 import org.example.spring.repositories.postgres.auth.table.query.TRoleQuery;
 import org.example.spring.repositories.postgres.auth.table.vo.TRoleVo;
-import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

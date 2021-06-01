@@ -8,6 +8,6 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TFeeCheckItemDTO extends TFeeItemDTO implements Serializable {
-    private List<TCheckItemDTO> items;
+public class TFeeCheckItemDTO extends org.example.spring.daos.mysql.items.table.dto.TFeeItemDTO implements Serializable {
+    private List<org.example.spring.daos.mysql.items.table.dto.TCheckItemDTO> items;
 }

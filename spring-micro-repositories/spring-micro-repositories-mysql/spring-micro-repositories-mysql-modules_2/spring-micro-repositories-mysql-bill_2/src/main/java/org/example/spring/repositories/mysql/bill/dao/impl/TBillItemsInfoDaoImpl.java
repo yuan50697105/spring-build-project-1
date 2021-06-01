@@ -1,7 +1,6 @@
 package org.example.spring.repositories.mysql.bill.dao.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.bill.dao.TBillItemsInfoDao;
 import org.example.spring.daos.mysql.bill.mapper.TBillItemsInfoMapper;
 import org.example.spring.daos.mysql.bill.mapper.TBillItemsInfoQueryMapper;
 import org.example.spring.daos.mysql.bill.table.po.TBillItemsInfo;

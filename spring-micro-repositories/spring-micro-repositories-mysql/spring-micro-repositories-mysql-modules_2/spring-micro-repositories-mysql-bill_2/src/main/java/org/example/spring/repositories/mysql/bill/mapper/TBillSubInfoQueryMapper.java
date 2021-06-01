@@ -4,7 +4,6 @@ import com.github.liuanxin.caches.MybatisRedisCache;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.example.spring.daos.mysql.bill.table.po.TBillSubInfo;
 import org.example.spring.repositories.mysql.bill.table.po.TBillSubInfo;
 
 import java.util.List;

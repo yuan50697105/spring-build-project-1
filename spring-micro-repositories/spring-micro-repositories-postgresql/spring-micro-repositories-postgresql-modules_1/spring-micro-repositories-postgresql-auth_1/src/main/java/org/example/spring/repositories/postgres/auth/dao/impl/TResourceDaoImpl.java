@@ -2,12 +2,12 @@ package org.example.spring.repositories.postgres.auth.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.example.spring.repositories.postgres.auth.dao.TResourceDao;
 import org.example.spring.repositories.postgres.auth.mapper.TResourceMapper;
 import org.example.spring.repositories.postgres.auth.mapper.TResourceQueryMapper;
 import org.example.spring.repositories.postgres.auth.table.po.TResource;
 import org.example.spring.repositories.postgres.auth.table.query.TResourceQuery;
-import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,6 +18,7 @@ import java.util.List;
 @Transactional
 public class TResourceDaoImpl extends TkBaseDaoImpl<TResource, TResourceQuery, TResourceMapper> implements TResourceDao {
     private final TResourceQueryMapper resourceQueryMapper;
+
     @Override
     protected Wrapper<TResource> queryWrapper(TResourceQuery tResourceQuery) {
         return null;

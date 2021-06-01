@@ -19,14 +19,6 @@ public enum TMealType {
         this.name = name;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public String getName() {
-        return name;
-    }
-
     public static TMealType get(String value) {
         return EnumUtil.likeValueOf(TMealType.class, value);
     }
@@ -37,5 +29,13 @@ public enum TMealType {
 
     public static String getName(String name) {
         return Optional.ofNullable(get(name)).map(TMealType::getName).orElse(null);
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getName() {
+        return name;
     }
 }

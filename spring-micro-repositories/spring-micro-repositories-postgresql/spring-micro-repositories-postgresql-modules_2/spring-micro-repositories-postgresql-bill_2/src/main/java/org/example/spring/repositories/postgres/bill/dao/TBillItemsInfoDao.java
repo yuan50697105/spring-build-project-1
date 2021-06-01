@@ -1,8 +1,8 @@
 package org.example.spring.repositories.postgres.bill.dao;
 
+import org.example.spring.plugins.mybatis.dao.TkExtDao;
 import org.example.spring.repositories.postgres.bill.table.po.TBillItemsInfo;
 import org.example.spring.repositories.postgres.bill.table.query.TBillItemsInfoQuery;
-import org.example.spring.plugins.mybatis.dao.TkExtDao;
 
 import java.util.List;
 

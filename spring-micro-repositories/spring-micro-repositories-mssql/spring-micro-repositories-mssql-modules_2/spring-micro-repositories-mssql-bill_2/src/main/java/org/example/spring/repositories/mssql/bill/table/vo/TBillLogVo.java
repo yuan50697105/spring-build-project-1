@@ -3,8 +3,8 @@ package org.example.spring.repositories.mssql.bill.table.vo;
 import cn.hutool.core.bean.BeanUtil;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.mssql.bill.table.po.TBillLog;
 import org.example.spring.daos.mysql.table.enumerate.BillLogType;
+import org.example.spring.repositories.mssql.bill.table.po.TBillLog;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

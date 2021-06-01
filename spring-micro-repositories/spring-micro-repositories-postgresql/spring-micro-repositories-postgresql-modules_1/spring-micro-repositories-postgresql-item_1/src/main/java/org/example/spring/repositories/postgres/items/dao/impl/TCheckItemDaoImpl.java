@@ -2,11 +2,11 @@ package org.example.spring.repositories.postgres.items.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.example.spring.repositories.postgres.items.dao.TCheckItemDao;
 import org.example.spring.repositories.postgres.items.mapper.TCheckItemMapper;
 import org.example.spring.repositories.postgres.items.table.po.TCheckItem;
 import org.example.spring.repositories.postgres.items.table.query.TCheckItemQuery;
-import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.weekend.WeekendSqls;

@@ -1,9 +1,9 @@
 package org.example.spring.repositories.oracle.auth.dao;
 
+import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.repositories.oracle.auth.table.po.TResource;
 import org.example.spring.repositories.oracle.auth.table.po.TRoleResource;
 import org.example.spring.repositories.oracle.auth.table.query.TRolePermissionQuery;
-import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;
 

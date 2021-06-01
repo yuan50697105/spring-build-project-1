@@ -1,6 +1,7 @@
 package org.example.spring.repositories.mssql.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.mssql.customer.builder.TCustomerContractBuilder;
 import org.example.spring.repositories.mssql.customer.dao.TCustomerContractDao;
 import org.example.spring.repositories.mssql.customer.repository.TCustomerContractRepository;
@@ -8,7 +9,6 @@ import org.example.spring.repositories.mssql.customer.table.dto.TCustomerContrac
 import org.example.spring.repositories.mssql.customer.table.po.TCustomerContract;
 import org.example.spring.repositories.mssql.customer.table.query.TCustomerContractQuery;
 import org.example.spring.repositories.mssql.customer.table.vo.TCustomerContractVo;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

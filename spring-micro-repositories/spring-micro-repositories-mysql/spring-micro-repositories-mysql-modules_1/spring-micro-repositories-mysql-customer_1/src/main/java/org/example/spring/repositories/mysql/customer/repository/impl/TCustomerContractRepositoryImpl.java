@@ -1,13 +1,6 @@
 package org.example.spring.repositories.mysql.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.customer.builder.TCustomerContractBuilder;
-import org.example.spring.daos.mysql.customer.dao.TCustomerContractDao;
-import org.example.spring.daos.mysql.customer.repository.TCustomerContractRepository;
-import org.example.spring.daos.mysql.customer.table.dto.TCustomerContractDTO;
-import org.example.spring.daos.mysql.customer.table.po.TCustomerContract;
-import org.example.spring.daos.mysql.customer.table.query.TCustomerContractQuery;
-import org.example.spring.daos.mysql.customer.table.vo.TCustomerContractVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.mysql.customer.builder.TCustomerContractBuilder;
 import org.example.spring.repositories.mysql.customer.dao.TCustomerContractDao;

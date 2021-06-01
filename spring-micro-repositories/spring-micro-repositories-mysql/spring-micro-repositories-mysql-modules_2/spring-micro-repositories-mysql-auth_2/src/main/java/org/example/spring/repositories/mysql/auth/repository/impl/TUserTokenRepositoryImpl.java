@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @AllArgsConstructor
-public class TUserTokenRepositoryImpl extends IBaseRepositoryImpl<TUserToken, TUserTokenDto, TUserTokenVo, TUserTokenQuery, TUserTokenConverter,TUserTokenDao > implements TUserTokenRepository {
+public class TUserTokenRepositoryImpl extends IBaseRepositoryImpl<TUserToken, TUserTokenDto, TUserTokenVo, TUserTokenQuery, TUserTokenConverter, TUserTokenDao> implements TUserTokenRepository {
 }

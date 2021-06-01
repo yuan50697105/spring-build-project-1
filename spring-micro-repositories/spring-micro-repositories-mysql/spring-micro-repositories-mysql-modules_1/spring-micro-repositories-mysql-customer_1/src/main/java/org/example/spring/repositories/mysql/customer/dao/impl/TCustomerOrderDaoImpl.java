@@ -2,7 +2,6 @@ package org.example.spring.repositories.mysql.customer.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.customer.dao.TCustomerOrderDao;
 import org.example.spring.daos.mysql.customer.mapper.TCustomerOrderMapper;
 import org.example.spring.daos.mysql.customer.table.po.TCustomerOrder;
 import org.example.spring.daos.mysql.customer.table.query.TCustomerOrderQuery;

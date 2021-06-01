@@ -1,9 +1,9 @@
 package org.example.spring.repositories.mssql.auth.dao;
 
+import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.repositories.mssql.auth.table.po.TResource;
 import org.example.spring.repositories.mssql.auth.table.po.TRoleResource;
 import org.example.spring.repositories.mssql.auth.table.query.TRolePermissionQuery;
-import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;
 

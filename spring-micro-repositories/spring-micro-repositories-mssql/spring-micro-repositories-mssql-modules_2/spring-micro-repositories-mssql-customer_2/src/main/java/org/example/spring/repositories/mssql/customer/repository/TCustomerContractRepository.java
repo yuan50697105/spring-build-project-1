@@ -1,9 +1,9 @@
 package org.example.spring.repositories.mssql.customer.repository;
 
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.mssql.customer.table.dto.TCustomerContractDTO;
 import org.example.spring.repositories.mssql.customer.table.query.TCustomerContractQuery;
 import org.example.spring.repositories.mssql.customer.table.vo.TCustomerContractVo;
-import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 import java.util.Optional;

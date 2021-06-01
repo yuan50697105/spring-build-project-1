@@ -18,14 +18,6 @@ public enum TFeeItemType {
         this.name = name;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public String getName() {
-        return name;
-    }
-
     public static TFeeItemType get(String value) {
         return EnumUtil.likeValueOf(TFeeItemType.class, value);
     }
@@ -36,5 +28,13 @@ public enum TFeeItemType {
 
     public static String getName(String name) {
         return Optional.ofNullable(get(name)).map(TFeeItemType::getName).orElse(null);
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getName() {
+        return name;
     }
 }

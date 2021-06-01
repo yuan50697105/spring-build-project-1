@@ -1,9 +1,9 @@
 package org.example.spring.repositories.postgres.auth.dao;
 
+import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.repositories.postgres.auth.table.po.TRole;
 import org.example.spring.repositories.postgres.auth.table.po.TUserRole;
 import org.example.spring.repositories.postgres.auth.table.query.TUserRoleQuery;
-import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;
 

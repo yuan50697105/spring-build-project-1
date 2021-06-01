@@ -2,8 +2,8 @@ package org.example.spring.repositories.mssql.auth.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.mssql.auth.table.po.TUserToken;
 import org.example.spring.daos.mysql.table.enumerate.TUserTokenStatus;
+import org.example.spring.repositories.mssql.auth.table.po.TUserToken;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

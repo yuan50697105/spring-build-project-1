@@ -1,8 +1,8 @@
 package org.example.spring.repositories.postgres.patient.dao;
 
+import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.repositories.postgres.patient.table.po.TPatientTeamMealFeeItem;
 import org.example.spring.repositories.postgres.patient.table.query.TPatientTeamMealFeeItemQuery;
-import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;
 

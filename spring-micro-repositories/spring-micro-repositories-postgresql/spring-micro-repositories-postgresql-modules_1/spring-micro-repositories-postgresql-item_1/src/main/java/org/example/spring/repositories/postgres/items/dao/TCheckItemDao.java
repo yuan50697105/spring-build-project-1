@@ -1,8 +1,8 @@
 package org.example.spring.repositories.postgres.items.dao;
 
+import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.repositories.postgres.items.table.po.TCheckItem;
 import org.example.spring.repositories.postgres.items.table.query.TCheckItemQuery;
-import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;
 

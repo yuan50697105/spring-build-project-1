@@ -2,7 +2,6 @@ package org.example.spring.repositories.mysql.patient.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.patient.dao.TPatientGroupDao;
 import org.example.spring.daos.mysql.patient.mapper.TPatientGroupMapper;
 import org.example.spring.daos.mysql.patient.table.po.TPatientGroup;
 import org.example.spring.daos.mysql.patient.table.query.TPatientGroupQuery;

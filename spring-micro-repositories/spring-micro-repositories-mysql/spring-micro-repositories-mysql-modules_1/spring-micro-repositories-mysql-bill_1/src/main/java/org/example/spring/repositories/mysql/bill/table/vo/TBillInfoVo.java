@@ -2,7 +2,6 @@ package org.example.spring.repositories.mysql.bill.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.bill.table.po.TBillInfo;
 import org.example.spring.repositories.mysql.bill.table.po.TBillInfo;
 
 @EqualsAndHashCode(callSuper = true)

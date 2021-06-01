@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-micro-repositories</artifactId>
         <groupId>org.example.spring</groupId>
@@ -39,34 +40,34 @@
             <artifactId>spring-micro-repositories-commons</artifactId>
         </dependency>
     </dependencies>
-<!--    <build>-->
-<!--        <plugins>-->
-<!--          <plugin>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-shade-plugin</artifactId>-->
-<!--            <version>2.4.3</version>-->
-<!--            <executions>-->
-<!--              <execution>-->
-<!--                <phase>package</phase>-->
-<!--                <goals>-->
-<!--                  <goal>shade</goal>-->
-<!--                </goals>-->
-<!--                <configuration>-->
-<!--                  <artifactSet>-->
-<!--                    <excludes>-->
-<!--                      <exclude>*:*</exclude>-->
-<!--                    </excludes>-->
-<!--                  </artifactSet>-->
-<!--                  <relocations>-->
-<!--                    <relocation>-->
-<!--                      <pattern>org.example.spring.daos.oracle</pattern>-->
-<!--                      <shadedPattern>org.example.spring.daos.oracle19</shadedPattern>-->
-<!--                    </relocation>-->
-<!--                  </relocations>-->
-<!--                </configuration>-->
-<!--              </execution>-->
-<!--            </executions>-->
-<!--          </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
+    <!--    <build>-->
+    <!--        <plugins>-->
+    <!--          <plugin>-->
+    <!--            <groupId>org.apache.maven.plugins</groupId>-->
+    <!--            <artifactId>maven-shade-plugin</artifactId>-->
+    <!--            <version>2.4.3</version>-->
+    <!--            <executions>-->
+    <!--              <execution>-->
+    <!--                <phase>package</phase>-->
+    <!--                <goals>-->
+    <!--                  <goal>shade</goal>-->
+    <!--                </goals>-->
+    <!--                <configuration>-->
+    <!--                  <artifactSet>-->
+    <!--                    <excludes>-->
+    <!--                      <exclude>*:*</exclude>-->
+    <!--                    </excludes>-->
+    <!--                  </artifactSet>-->
+    <!--                  <relocations>-->
+    <!--                    <relocation>-->
+    <!--                      <pattern>org.example.spring.daos.oracle</pattern>-->
+    <!--                      <shadedPattern>org.example.spring.daos.oracle19</shadedPattern>-->
+    <!--                    </relocation>-->
+    <!--                  </relocations>-->
+    <!--                </configuration>-->
+    <!--              </execution>-->
+    <!--            </executions>-->
+    <!--          </plugin>-->
+    <!--        </plugins>-->
+    <!--    </build>-->
 </project>

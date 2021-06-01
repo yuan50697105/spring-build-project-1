@@ -1,6 +1,7 @@
 package org.example.spring.repositories.mssql.items.repository.impl;
 
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.mssql.items.builder.TCheckItemBuilder;
 import org.example.spring.repositories.mssql.items.dao.TCheckItemDao;
 import org.example.spring.repositories.mssql.items.repository.TCheckItemRepository;
@@ -8,7 +9,6 @@ import org.example.spring.repositories.mssql.items.table.dto.TCheckItemDTO;
 import org.example.spring.repositories.mssql.items.table.po.TCheckItem;
 import org.example.spring.repositories.mssql.items.table.query.TCheckItemQuery;
 import org.example.spring.repositories.mssql.items.table.vo.TCheckItemVo;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

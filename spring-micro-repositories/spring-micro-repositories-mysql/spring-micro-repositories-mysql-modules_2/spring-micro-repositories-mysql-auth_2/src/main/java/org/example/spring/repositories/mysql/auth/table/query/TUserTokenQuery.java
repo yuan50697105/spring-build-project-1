@@ -10,8 +10,6 @@ import org.example.spring.daos.mysql.auth.table.po.TUserToken;
 import org.example.spring.plugins.mybatis.entity.query.TkExtQuery;
 import tk.mybatis.mapper.entity.Example;
 
-import java.util.Date;
-
 /**
  * 用户Token处理
  */

@@ -1,9 +1,9 @@
 package org.example.spring.repositories.postgres.items.repository;
 
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.postgres.items.table.dto.TCheckItemDTO;
 import org.example.spring.repositories.postgres.items.table.query.TCheckItemQuery;
 import org.example.spring.repositories.postgres.items.table.vo.TCheckItemVo;
-import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 import java.util.Optional;

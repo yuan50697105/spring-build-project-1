@@ -18,6 +18,7 @@ import java.util.List;
 @Transactional
 public class TResourceDaoImpl extends TkBaseDaoImpl<TResource, TResourceQuery, TResourceMapper> implements TResourceDao {
     private final TResourceQueryMapper resourceQueryMapper;
+
     @Override
     protected Wrapper<TResource> queryWrapper(TResourceQuery tResourceQuery) {
         return null;

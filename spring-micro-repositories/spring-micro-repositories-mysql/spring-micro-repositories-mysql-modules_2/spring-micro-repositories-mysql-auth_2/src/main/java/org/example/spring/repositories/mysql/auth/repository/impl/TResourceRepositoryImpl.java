@@ -29,7 +29,7 @@ public class TResourceRepositoryImpl extends IBaseRepositoryImpl<TResource, TRes
     @Override
     public List<Tree<Long>> queryListByUserId(Long id) {
         List<TResource> tResources = dao.queryListByUserId(id);
-        List<TResourceDTO> resourceDTOS=converter.buildDTOS(tResources);
+        List<TResourceDTO> resourceDTOS = converter.buildDTOS(tResources);
         return TreeUtil.build(resourceDTOS, 0L, resourceToTreeParser());
     }
 

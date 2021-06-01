@@ -16,13 +16,13 @@
     </select>
     <select id="queryListByDepartmentId" resultMap="role">
         select id,
-               create_id,
-               update_id,
-               create_user,
-               update_user,
-               create_date,
-               update_date,
-               name
+        create_id,
+        update_id,
+        create_user,
+        update_user,
+        create_date,
+        update_date,
+        name
         from t_role
         where id in (select role_id from t_department_role where department_id = #{departmentId,jdbcType=BIGINT})
     </select>

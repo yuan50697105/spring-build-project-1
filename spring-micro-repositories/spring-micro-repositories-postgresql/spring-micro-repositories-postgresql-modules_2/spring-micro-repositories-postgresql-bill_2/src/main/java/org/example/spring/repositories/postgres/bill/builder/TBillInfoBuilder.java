@@ -1,12 +1,12 @@
 package org.example.spring.repositories.postgres.bill.builder;
 
+import org.example.spring.plugins.commons.builder.BaseBuilder;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.postgres.bill.table.dto.TBillInfoDTO;
 import org.example.spring.repositories.postgres.bill.table.dto.TBillInfoDetailsDTO;
 import org.example.spring.repositories.postgres.bill.table.dto.TBillSubInfoDetailsDTO;
 import org.example.spring.repositories.postgres.bill.table.po.TBillInfo;
 import org.example.spring.repositories.postgres.bill.table.vo.TBillInfoVo;
-import org.example.spring.plugins.commons.builder.BaseBuilder;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;

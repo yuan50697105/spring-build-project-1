@@ -1,6 +1,7 @@
 package org.example.spring.repositories.mssql.items.repository.impl;
 
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.mssql.items.builder.TMealBuilder;
 import org.example.spring.repositories.mssql.items.builder.TMealFeeItemBuilder;
 import org.example.spring.repositories.mssql.items.dao.TMealDao;
@@ -13,7 +14,6 @@ import org.example.spring.repositories.mssql.items.table.dto.TMealFeeItemDTO;
 import org.example.spring.repositories.mssql.items.table.po.TMeal;
 import org.example.spring.repositories.mssql.items.table.query.TMealQuery;
 import org.example.spring.repositories.mssql.items.table.vo.TMealVo;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

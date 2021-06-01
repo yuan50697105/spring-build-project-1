@@ -1,8 +1,5 @@
 package org.example.spring.repositories.mysql.bill.repository;
 
-import org.example.spring.daos.mysql.bill.table.dto.TBillLogDTO;
-import org.example.spring.daos.mysql.bill.table.query.TBillLogQuery;
-import org.example.spring.daos.mysql.bill.table.vo.TBillLogVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.mysql.bill.table.dto.TBillLogDTO;
 import org.example.spring.repositories.mysql.bill.table.query.TBillLogQuery;

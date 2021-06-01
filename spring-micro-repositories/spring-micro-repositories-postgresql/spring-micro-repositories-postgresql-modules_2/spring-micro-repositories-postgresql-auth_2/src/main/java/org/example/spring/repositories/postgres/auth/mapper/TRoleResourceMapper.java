@@ -3,9 +3,9 @@ package org.example.spring.repositories.postgres.auth.mapper;
 import com.github.liuanxin.caches.MybatisRedisCache;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Mapper;
+import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 import org.example.spring.repositories.postgres.auth.table.po.TResource;
 import org.example.spring.repositories.postgres.auth.table.po.TRoleResource;
-import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 
 import java.util.List;
 

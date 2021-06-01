@@ -15,14 +15,6 @@ public enum Sex {
         this.name = name;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public String getName() {
-        return name;
-    }
-
     public static Sex get(String value) {
         return EnumUtil.likeValueOf(Sex.class, value);
     }
@@ -33,5 +25,13 @@ public enum Sex {
 
     public static String getName(String name) {
         return Optional.ofNullable(get(name)).map(Sex::getName).orElse(null);
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getName() {
+        return name;
     }
 }

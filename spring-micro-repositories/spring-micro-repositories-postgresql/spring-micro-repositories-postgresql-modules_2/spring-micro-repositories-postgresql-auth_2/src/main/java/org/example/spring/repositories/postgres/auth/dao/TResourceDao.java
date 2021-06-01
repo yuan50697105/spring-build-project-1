@@ -1,8 +1,8 @@
 package org.example.spring.repositories.postgres.auth.dao;
 
+import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.repositories.postgres.auth.table.po.TResource;
 import org.example.spring.repositories.postgres.auth.table.query.TResourceQuery;
-import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;
 

@@ -7,8 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.repositories.postgres.customer.table.po.TPotentialCustomers;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
+import org.example.spring.repositories.postgres.customer.table.po.TPotentialCustomers;
 import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;

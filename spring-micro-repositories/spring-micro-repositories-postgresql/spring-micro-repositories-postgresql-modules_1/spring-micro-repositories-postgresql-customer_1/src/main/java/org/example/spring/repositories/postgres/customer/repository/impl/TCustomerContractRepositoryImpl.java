@@ -1,6 +1,7 @@
 package org.example.spring.repositories.postgres.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.postgres.customer.builder.TCustomerContractBuilder;
 import org.example.spring.repositories.postgres.customer.dao.TCustomerContractDao;
 import org.example.spring.repositories.postgres.customer.repository.TCustomerContractRepository;
@@ -8,7 +9,6 @@ import org.example.spring.repositories.postgres.customer.table.dto.TCustomerCont
 import org.example.spring.repositories.postgres.customer.table.po.TCustomerContract;
 import org.example.spring.repositories.postgres.customer.table.query.TCustomerContractQuery;
 import org.example.spring.repositories.postgres.customer.table.vo.TCustomerContractVo;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

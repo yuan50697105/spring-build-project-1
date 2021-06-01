@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.daos.mysql.report.table.po.TReportInfo;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import org.example.spring.repositories.mysql.report.table.po.TReportInfo;
 import tk.mybatis.mapper.entity.Example;

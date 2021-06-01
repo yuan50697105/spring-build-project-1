@@ -8,6 +8,6 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TResourceRoleDTO extends TResourceDTO implements Serializable {
-    private List<TRoleDTO> roles;
+public class TResourceRoleDTO extends org.example.spring.daos.mysql.auth.table.dto.TResourceDTO implements Serializable {
+    private List<org.example.spring.daos.mysql.auth.table.dto.TRoleDTO> roles;
 }

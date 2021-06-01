@@ -1,8 +1,8 @@
 package org.example.spring.repositories.mssql.bill.dao;
 
+import org.example.spring.plugins.mybatis.dao.TkExtDao;
 import org.example.spring.repositories.mssql.bill.table.po.TBillSubInfo;
 import org.example.spring.repositories.mssql.bill.table.query.TBillSubInfoQuery;
-import org.example.spring.plugins.mybatis.dao.TkExtDao;
 
 import java.util.List;
 

@@ -1,13 +1,6 @@
 package org.example.spring.repositories.mysql.bill.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.bill.converter.TBillItemsInfoConverter;
-import org.example.spring.daos.mysql.bill.dao.TBillItemsInfoDao;
-import org.example.spring.daos.mysql.bill.repository.TBillItemsInfo2Repository;
-import org.example.spring.daos.mysql.bill.table.dto.TBillItemsInfoDTO;
-import org.example.spring.daos.mysql.bill.table.po.TBillItemsInfo;
-import org.example.spring.daos.mysql.bill.table.query.TBillItemsInfoQuery;
-import org.example.spring.daos.mysql.bill.table.vo.TBillItemsInfoVo;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.repositories.mysql.bill.converter.TBillItemsInfoConverter;
 import org.example.spring.repositories.mysql.bill.dao.TBillItemsInfoDao;

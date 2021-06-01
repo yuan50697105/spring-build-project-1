@@ -1,9 +1,5 @@
 package org.example.spring.repositories.mysql.bill.converter;
 
-import org.example.spring.daos.mysql.bill.table.dto.TBillItemsInfoDTO;
-import org.example.spring.daos.mysql.bill.table.po.TBillItemsInfo;
-import org.example.spring.daos.mysql.bill.table.query.TBillItemsInfoQuery;
-import org.example.spring.daos.mysql.bill.table.vo.TBillItemsInfoVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.mybatis.converter.IBaseConverter;
 import org.example.spring.repositories.mysql.bill.table.dto.TBillItemsInfoDTO;

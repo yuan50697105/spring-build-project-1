@@ -2,7 +2,6 @@ package org.example.spring.repositories.mysql.bill.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.bill.table.po.TBillLog;
 import org.example.spring.daos.mysql.table.enumerate.BillLogType;
 import org.example.spring.repositories.mysql.bill.table.po.TBillLog;
 

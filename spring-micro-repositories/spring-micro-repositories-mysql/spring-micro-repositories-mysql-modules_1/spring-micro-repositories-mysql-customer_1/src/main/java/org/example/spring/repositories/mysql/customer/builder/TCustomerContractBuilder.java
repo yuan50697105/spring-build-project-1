@@ -1,8 +1,5 @@
 package org.example.spring.repositories.mysql.customer.builder;
 
-import org.example.spring.daos.mysql.customer.table.dto.TCustomerContractDTO;
-import org.example.spring.daos.mysql.customer.table.po.TCustomerContract;
-import org.example.spring.daos.mysql.customer.table.vo.TCustomerContractVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.mysql.customer.table.dto.TCustomerContractDTO;

@@ -5,7 +5,6 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.report.table.po.TPersonalReportInfo;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import org.example.spring.repositories.mysql.report.table.po.TPersonalReportInfo;
 import tk.mybatis.mapper.entity.Example;

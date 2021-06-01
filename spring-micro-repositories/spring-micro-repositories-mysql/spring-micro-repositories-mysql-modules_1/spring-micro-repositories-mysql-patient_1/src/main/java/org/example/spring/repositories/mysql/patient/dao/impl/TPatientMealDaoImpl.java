@@ -1,7 +1,6 @@
 package org.example.spring.repositories.mysql.patient.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import org.example.spring.daos.mysql.patient.dao.TPatientMealDao;
 import org.example.spring.daos.mysql.patient.mapper.TPatientMealMapper;
 import org.example.spring.daos.mysql.patient.table.po.TPatientMeal;
 import org.example.spring.daos.mysql.patient.table.query.TPatientMealQuery;

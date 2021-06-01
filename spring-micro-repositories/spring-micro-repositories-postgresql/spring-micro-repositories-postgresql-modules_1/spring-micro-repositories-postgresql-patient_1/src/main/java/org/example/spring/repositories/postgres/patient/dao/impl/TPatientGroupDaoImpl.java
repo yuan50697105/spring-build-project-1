@@ -2,12 +2,12 @@ package org.example.spring.repositories.postgres.patient.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
+import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.repositories.postgres.patient.dao.TPatientGroupDao;
 import org.example.spring.repositories.postgres.patient.mapper.TPatientGroupMapper;
 import org.example.spring.repositories.postgres.patient.table.po.TPatientGroup;
 import org.example.spring.repositories.postgres.patient.table.query.TPatientGroupQuery;
-import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

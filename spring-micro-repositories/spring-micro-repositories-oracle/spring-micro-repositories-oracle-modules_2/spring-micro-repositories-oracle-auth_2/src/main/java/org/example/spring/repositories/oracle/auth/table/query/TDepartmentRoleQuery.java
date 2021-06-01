@@ -7,8 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.repositories.oracle.auth.table.po.TDepartmentRole;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
+import org.example.spring.repositories.oracle.auth.table.po.TDepartmentRole;
 import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;

@@ -1,7 +1,6 @@
 package org.example.spring.repositories.mysql.customer.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import org.example.spring.daos.mysql.customer.dao.TSalesRecordDao;
 import org.example.spring.daos.mysql.customer.mapper.TSalesRecordMapper;
 import org.example.spring.daos.mysql.customer.table.po.TSalesRecord;
 import org.example.spring.daos.mysql.customer.table.query.TSalesRecordQuery;

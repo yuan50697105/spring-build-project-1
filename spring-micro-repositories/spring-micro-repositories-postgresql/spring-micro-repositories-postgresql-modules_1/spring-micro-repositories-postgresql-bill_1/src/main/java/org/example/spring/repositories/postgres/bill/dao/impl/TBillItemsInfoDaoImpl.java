@@ -1,12 +1,12 @@
 package org.example.spring.repositories.postgres.bill.dao.impl;
 
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.mybatis.dao.impl.TkExtDaoImpl;
 import org.example.spring.repositories.postgres.bill.dao.TBillItemsInfoDao;
 import org.example.spring.repositories.postgres.bill.mapper.TBillItemsInfoMapper;
 import org.example.spring.repositories.postgres.bill.mapper.TBillItemsInfoQueryMapper;
 import org.example.spring.repositories.postgres.bill.table.po.TBillItemsInfo;
 import org.example.spring.repositories.postgres.bill.table.query.TBillItemsInfoQuery;
-import org.example.spring.plugins.mybatis.dao.impl.TkExtDaoImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

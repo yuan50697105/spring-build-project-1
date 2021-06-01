@@ -1,10 +1,10 @@
 package org.example.spring.repositories.postgres.items.repository;
 
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.postgres.items.table.dto.TMealDTO;
 import org.example.spring.repositories.postgres.items.table.dto.TMealFeeItemDTO;
 import org.example.spring.repositories.postgres.items.table.query.TMealQuery;
 import org.example.spring.repositories.postgres.items.table.vo.TMealVo;
-import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 import java.util.Optional;

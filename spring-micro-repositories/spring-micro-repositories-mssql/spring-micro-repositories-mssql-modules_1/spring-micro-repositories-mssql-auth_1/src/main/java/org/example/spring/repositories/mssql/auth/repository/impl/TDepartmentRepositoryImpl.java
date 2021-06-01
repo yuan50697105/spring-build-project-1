@@ -1,5 +1,6 @@
 package org.example.spring.repositories.mssql.auth.repository.impl;
 
+import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.repositories.mssql.auth.converter.TDepartmentConverter;
 import org.example.spring.repositories.mssql.auth.dao.TDepartmentDao;
 import org.example.spring.repositories.mssql.auth.dao.TDepartmentRoleDao;
@@ -11,7 +12,6 @@ import org.example.spring.repositories.mssql.auth.table.po.TDepartment;
 import org.example.spring.repositories.mssql.auth.table.po.TDepartmentRole;
 import org.example.spring.repositories.mssql.auth.table.query.TDepartmentQuery;
 import org.example.spring.repositories.mssql.auth.table.vo.TDepartmentVo;
-import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

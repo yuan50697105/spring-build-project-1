@@ -6,9 +6,9 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.postgres.bill.table.po.TBillLog;
 import org.example.spring.daos.mysql.table.enumerate.BillLogType;
 import org.example.spring.plugins.mybatis.entity.query.TkExtQuery;
+import org.example.spring.repositories.postgres.bill.table.po.TBillLog;
 import tk.mybatis.mapper.entity.Example;
 
 /**

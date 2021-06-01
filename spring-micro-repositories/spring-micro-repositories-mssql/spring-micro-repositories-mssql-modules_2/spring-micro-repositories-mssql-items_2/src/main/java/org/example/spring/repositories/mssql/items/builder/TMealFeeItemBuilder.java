@@ -1,7 +1,7 @@
 package org.example.spring.repositories.mssql.items.builder;
 
-import org.example.spring.repositories.mssql.items.table.po.TMealFeeItem;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
+import org.example.spring.repositories.mssql.items.table.po.TMealFeeItem;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

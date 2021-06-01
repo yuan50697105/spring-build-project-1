@@ -2,10 +2,6 @@ package org.example.spring.repositories.mysql.patient.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.patient.dao.TPatientDao;
-import org.example.spring.daos.mysql.patient.mapper.TPatientMapper;
-import org.example.spring.daos.mysql.patient.table.po.TPatient;
-import org.example.spring.daos.mysql.patient.table.query.TPatientQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.repositories.mysql.patient.dao.TPatientDao;

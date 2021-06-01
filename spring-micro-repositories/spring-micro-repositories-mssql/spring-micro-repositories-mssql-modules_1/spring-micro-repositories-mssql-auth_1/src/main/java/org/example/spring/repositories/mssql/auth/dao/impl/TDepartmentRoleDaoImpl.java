@@ -2,13 +2,13 @@ package org.example.spring.repositories.mssql.auth.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
+import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.example.spring.repositories.mssql.auth.dao.TDepartmentRoleDao;
 import org.example.spring.repositories.mssql.auth.mapper.TDepartmentRoleMapper;
 import org.example.spring.repositories.mssql.auth.table.po.TDepartmentRole;
 import org.example.spring.repositories.mssql.auth.table.po.TRole;
 import org.example.spring.repositories.mssql.auth.table.query.TDepartmentRoleQuery;
-import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
-import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

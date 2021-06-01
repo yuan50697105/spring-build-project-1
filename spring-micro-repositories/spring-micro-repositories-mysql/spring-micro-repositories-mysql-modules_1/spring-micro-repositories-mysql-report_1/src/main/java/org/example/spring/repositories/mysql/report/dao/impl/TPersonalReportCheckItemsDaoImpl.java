@@ -2,7 +2,6 @@ package org.example.spring.repositories.mysql.report.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.report.dao.TPersonalReportCheckItemsDao;
 import org.example.spring.daos.mysql.report.mapper.TPersonalReportCheckItemsMapper;
 import org.example.spring.daos.mysql.report.table.po.TPersonalReportCheckItems;
 import org.example.spring.daos.mysql.report.table.query.TPersonalReportCheckItemsQuery;

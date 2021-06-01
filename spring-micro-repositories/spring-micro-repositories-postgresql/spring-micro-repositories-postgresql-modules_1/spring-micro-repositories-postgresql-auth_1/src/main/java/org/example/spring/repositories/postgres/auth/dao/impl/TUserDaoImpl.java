@@ -3,11 +3,11 @@ package org.example.spring.repositories.postgres.auth.dao.impl;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.example.spring.repositories.postgres.auth.dao.TUserDao;
 import org.example.spring.repositories.postgres.auth.mapper.TUserMapper;
 import org.example.spring.repositories.postgres.auth.table.po.TUser;
 import org.example.spring.repositories.postgres.auth.table.query.TUserQuery;
-import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

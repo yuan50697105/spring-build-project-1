@@ -8,6 +8,6 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TRoleDepartmentDTO extends TRoleDTO implements Serializable {
-    private List<TDepartmentDTO> departments;
+public class TRoleDepartmentDTO extends org.example.spring.daos.mysql.auth.table.dto.TRoleDTO implements Serializable {
+    private List<org.example.spring.daos.mysql.auth.table.dto.TDepartmentDTO> departments;
 }

@@ -1,10 +1,10 @@
 package org.example.spring.repositories.postgres.customer.builder;
 
+import org.example.spring.plugins.commons.builder.BaseBuilder;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.postgres.customer.table.dto.TCustomerContractDTO;
 import org.example.spring.repositories.postgres.customer.table.po.TCustomerContract;
 import org.example.spring.repositories.postgres.customer.table.vo.TCustomerContractVo;
-import org.example.spring.plugins.commons.builder.BaseBuilder;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;

@@ -1,5 +1,7 @@
 package org.example.spring.repositories.mssql.auth.repository.impl;
 
+import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
+import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.repositories.mssql.auth.converter.TUserConverter;
 import org.example.spring.repositories.mssql.auth.dao.TUserDao;
 import org.example.spring.repositories.mssql.auth.repository.TResourceRepository;
@@ -11,8 +13,6 @@ import org.example.spring.repositories.mssql.auth.table.dto.TUserRoleResourceDTO
 import org.example.spring.repositories.mssql.auth.table.po.TUser;
 import org.example.spring.repositories.mssql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mssql.auth.table.vo.TUserVo;
-import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
-import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,5 +1,6 @@
 package org.example.spring.repositories.postgres.auth.repository.impl;
 
+import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.repositories.postgres.auth.converter.TDepartmentConverter;
 import org.example.spring.repositories.postgres.auth.dao.TDepartmentDao;
 import org.example.spring.repositories.postgres.auth.dao.TDepartmentRoleDao;
@@ -11,7 +12,6 @@ import org.example.spring.repositories.postgres.auth.table.po.TDepartment;
 import org.example.spring.repositories.postgres.auth.table.po.TDepartmentRole;
 import org.example.spring.repositories.postgres.auth.table.query.TDepartmentQuery;
 import org.example.spring.repositories.postgres.auth.table.vo.TDepartmentVo;
-import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

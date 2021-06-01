@@ -1,13 +1,13 @@
 package org.example.spring.repositories.mssql.auth.converter;
 
+import org.example.spring.plugins.commons.builder.BaseBuilder;
+import org.example.spring.plugins.mybatis.converter.IBaseConverter;
 import org.example.spring.repositories.mssql.auth.table.dto.TDepartmentDTO;
 import org.example.spring.repositories.mssql.auth.table.dto.TDepartmentRoleDTO;
 import org.example.spring.repositories.mssql.auth.table.po.TDepartment;
 import org.example.spring.repositories.mssql.auth.table.po.TDepartmentRole;
 import org.example.spring.repositories.mssql.auth.table.query.TDepartmentQuery;
 import org.example.spring.repositories.mssql.auth.table.vo.TDepartmentVo;
-import org.example.spring.plugins.commons.builder.BaseBuilder;
-import org.example.spring.plugins.mybatis.converter.IBaseConverter;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

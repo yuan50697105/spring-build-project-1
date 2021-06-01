@@ -1,6 +1,7 @@
 package org.example.spring.repositories.postgres.bill.repository.impl;
 
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.postgres.bill.builder.TBillSubInfoBuilder;
 import org.example.spring.repositories.postgres.bill.dao.TBillSubInfoDao;
 import org.example.spring.repositories.postgres.bill.repository.TBillItemsInfoRepository;
@@ -10,7 +11,6 @@ import org.example.spring.repositories.postgres.bill.table.dto.TBillSubInfoDTO;
 import org.example.spring.repositories.postgres.bill.table.dto.TBillSubInfoDetailsDTO;
 import org.example.spring.repositories.postgres.bill.table.query.TBillSubInfoQuery;
 import org.example.spring.repositories.postgres.bill.table.vo.TBillSubInfoVo;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
