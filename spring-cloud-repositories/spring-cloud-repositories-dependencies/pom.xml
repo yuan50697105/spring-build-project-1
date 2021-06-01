@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-cloud-repositories</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M6-SNAPSHOT</version>
+        <version>0.0.36-M6</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,7 +14,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-cloud-repositories-mysql-dependencies</artifactId>
-                <version>0.0.36-M6-SNAPSHOT</version>
+                <version>0.0.36-M6</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
