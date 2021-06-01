@@ -1,10 +1,10 @@
-package org.example.spring.daos.clickhouse.patient.dao.impl;
+package org.example.spring.repositories.clickhouse.patient.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import org.example.spring.daos.clickhouse.patient.dao.TPatientMealDao;
-import org.example.spring.daos.clickhouse.patient.mapper.TPatientMealMapper;
-import org.example.spring.daos.clickhouse.patient.table.po.TPatientMeal;
-import org.example.spring.daos.clickhouse.patient.table.query.TPatientMealQuery;
+import org.example.spring.repositories.clickhouse.patient.dao.TPatientMealDao;
+import org.example.spring.repositories.clickhouse.patient.mapper.TPatientMealMapper;
+import org.example.spring.repositories.clickhouse.patient.table.po.TPatientMeal;
+import org.example.spring.repositories.clickhouse.patient.table.query.TPatientMealQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;

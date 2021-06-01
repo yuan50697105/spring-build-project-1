@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.auth.table.po;
+package org.example.spring.repositories.mysql.auth.table.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
+import org.example.spring.repositories.mysql.table.enumerate.TUserStatus;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
 import javax.persistence.Table;
@@ -18,7 +18,7 @@ import java.io.Serializable;
  *
  * @author yuane
  */
-@ApiModel(value = "org-example-spring-daos-mysql-org.example.spring.daos.mysql.auth-table-po-TUser")
+@ApiModel(value = "org-example-spring-daos-mysql-org.example.spring.repositories.mysql.auth-table-po-TUser")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

@@ -1,9 +1,9 @@
-package org.example.spring.daos.clickhouse.customer.mapper;
+package org.example.spring.repositories.clickhouse.customer.mapper;
 
 import com.github.liuanxin.caches.MybatisRedisCache;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Mapper;
-import org.example.spring.daos.clickhouse.customer.table.po.TCustomerInfo;
+import org.example.spring.repositories.clickhouse.customer.table.po.TCustomerInfo;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
 
 @Mapper

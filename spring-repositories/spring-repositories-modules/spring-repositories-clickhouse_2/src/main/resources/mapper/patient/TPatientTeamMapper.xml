@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.example.spring.daos.clickhouse.patient.mapper.TPatientTeamMapper">
-    <resultMap id="BaseResultMap" type="org.example.spring.daos.clickhouse.patient.table.po.TPatientTeam">
+<mapper namespace="org.example.spring.repositories.clickhouse.patient.mapper.TPatientTeamMapper">
+    <resultMap id="BaseResultMap" type="org.example.spring.repositories.clickhouse.patient.table.po.TPatientTeam">
         <!--@mbg.generated-->
         <!--@Table t_patient_team-->
         <id column="id" jdbcType="BIGINT" property="id"/>

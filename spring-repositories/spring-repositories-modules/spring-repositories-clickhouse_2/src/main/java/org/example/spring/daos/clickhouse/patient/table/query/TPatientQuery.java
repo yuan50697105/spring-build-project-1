@@ -1,4 +1,4 @@
-package org.example.spring.daos.clickhouse.patient.table.query;
+package org.example.spring.repositories.clickhouse.patient.table.query;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
@@ -11,7 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.daos.clickhouse.patient.table.po.TPatient;
+import org.example.spring.repositories.clickhouse.patient.table.po.TPatient;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 

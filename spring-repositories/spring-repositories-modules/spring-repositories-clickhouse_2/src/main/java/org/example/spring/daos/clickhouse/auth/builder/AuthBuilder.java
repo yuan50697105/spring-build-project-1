@@ -1,7 +1,7 @@
-package org.example.spring.daos.clickhouse.auth.builder;
+package org.example.spring.repositories.clickhouse.auth.builder;
 
-import org.example.spring.daos.clickhouse.auth.table.po.TRoleResource;
-import org.example.spring.daos.clickhouse.auth.table.po.TUserRole;
+import org.example.spring.repositories.clickhouse.auth.table.po.TRoleResource;
+import org.example.spring.repositories.clickhouse.auth.table.po.TUserRole;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.mapstruct.Mapper;
 

@@ -3,12 +3,12 @@ package org.example.spring.auth;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.auth.converter.UserClientsConverter;
-import org.example.spring.daos.clients.auth.api.UserDaoClients;
-import org.example.spring.daos.clients.auth.entity.*;
-import org.example.spring.daos.mysql.auth.repository.TUserRepository;
-import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
-import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
-import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
+import org.example.spring.repositories.clients.auth.api.UserDaoClients;
+import org.example.spring.repositories.clients.auth.entity.*;
+import org.example.spring.repositories.mysql.auth.repository.TUserRepository;
+import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
+import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.web.bind.annotation.RestController;
 

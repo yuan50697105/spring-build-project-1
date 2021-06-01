@@ -60,8 +60,8 @@
     <!--                  </artifactSet>-->
     <!--                  <relocations>-->
     <!--                    <relocation>-->
-    <!--                      <pattern>org.example.spring.daos.oracle</pattern>-->
-    <!--                      <shadedPattern>org.example.spring.daos.oracle19</shadedPattern>-->
+    <!--                      <pattern>org.example.spring.repositories.oracle</pattern>-->
+    <!--                      <shadedPattern>org.example.spring.repositories.oracle19</shadedPattern>-->
     <!--                    </relocation>-->
     <!--                  </relocations>-->
     <!--                </configuration>-->

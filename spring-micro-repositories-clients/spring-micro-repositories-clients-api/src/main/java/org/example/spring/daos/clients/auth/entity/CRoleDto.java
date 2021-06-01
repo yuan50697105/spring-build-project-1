@@ -1,4 +1,4 @@
-package org.example.spring.daos.clients.auth.entity;
+package org.example.spring.repositories.clients.auth.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -595,5 +595,5 @@ create table t_user_token (
     token varchar(50) default '' null comment '秘钥内容',
     status varchar(50) default '' null comment '秘钥状态
      *
-     * @see org.example.spring.daos.mysql.table.enumerate.TUserTokenStatus'
+     * @see org.example.spring.repositories.mysql.table.enumerate.TUserTokenStatus'
 ) comment 't_user_token' charset = utf8mb4;

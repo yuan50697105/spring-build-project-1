@@ -2,9 +2,9 @@ package org.example.spring.domains.services.mysql.auth.service.impl;
 
 
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.auth.table.dto.TDepartmentDTO;
-import org.example.spring.daos.mysql.auth.table.query.TDepartmentQuery;
-import org.example.spring.daos.mysql.auth.table.vo.TDepartmentVo;
+import org.example.spring.repositories.mysql.auth.table.dto.TDepartmentDTO;
+import org.example.spring.repositories.mysql.auth.table.query.TDepartmentQuery;
+import org.example.spring.repositories.mysql.auth.table.vo.TDepartmentVo;
 import org.example.spring.domains.repositories.mysql.auth.repository.DDepartmentRepository;
 import org.example.spring.domains.services.mysql.auth.service.DDepartmentService;
 import org.example.spring.plugins.commons.entity.IPageData;

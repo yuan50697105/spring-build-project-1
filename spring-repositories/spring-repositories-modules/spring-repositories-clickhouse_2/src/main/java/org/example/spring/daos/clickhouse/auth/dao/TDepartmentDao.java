@@ -1,7 +1,7 @@
-package org.example.spring.daos.clickhouse.auth.dao;
+package org.example.spring.repositories.clickhouse.auth.dao;
 
-import org.example.spring.daos.clickhouse.auth.table.po.TDepartment;
-import org.example.spring.daos.clickhouse.auth.table.query.TDepartmentQuery;
+import org.example.spring.repositories.clickhouse.auth.table.po.TDepartment;
+import org.example.spring.repositories.clickhouse.auth.table.query.TDepartmentQuery;
 import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;

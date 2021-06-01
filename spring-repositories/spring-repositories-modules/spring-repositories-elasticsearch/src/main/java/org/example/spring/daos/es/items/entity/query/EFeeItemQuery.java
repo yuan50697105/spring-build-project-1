@@ -1,4 +1,4 @@
-package org.example.spring.daos.es.items.entity.query;
+package org.example.spring.repositories.es.items.entity.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

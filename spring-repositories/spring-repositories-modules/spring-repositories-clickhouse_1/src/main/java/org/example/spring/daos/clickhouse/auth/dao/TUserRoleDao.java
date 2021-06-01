@@ -1,8 +1,8 @@
-package org.example.spring.daos.clickhouse.auth.dao;
+package org.example.spring.repositories.clickhouse.auth.dao;
 
-import org.example.spring.daos.clickhouse.auth.table.po.TRole;
-import org.example.spring.daos.clickhouse.auth.table.po.TUserRole;
-import org.example.spring.daos.clickhouse.auth.table.query.TUserRoleQuery;
+import org.example.spring.repositories.clickhouse.auth.table.po.TRole;
+import org.example.spring.repositories.clickhouse.auth.table.po.TUserRole;
+import org.example.spring.repositories.clickhouse.auth.table.query.TUserRoleQuery;
 import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;

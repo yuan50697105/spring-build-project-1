@@ -1,9 +1,9 @@
 package org.example.spring.domains.repositories.mysql.auth.repository.impl;
 
-import org.example.spring.daos.mysql.auth.dao.TDepartmentDao;
-import org.example.spring.daos.mysql.auth.dao.TDepartmentRoleDao;
-import org.example.spring.daos.mysql.auth.repository.TRoleRepository;
-import org.example.spring.daos.mysql.auth.repository.impl.TDepartmentRepositoryImpl;
+import org.example.spring.repositories.mysql.auth.dao.TDepartmentDao;
+import org.example.spring.repositories.mysql.auth.dao.TDepartmentRoleDao;
+import org.example.spring.repositories.mysql.auth.repository.TRoleRepository;
+import org.example.spring.repositories.mysql.auth.repository.impl.TDepartmentRepositoryImpl;
 import org.example.spring.domains.repositories.mysql.auth.repository.DDepartmentRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;

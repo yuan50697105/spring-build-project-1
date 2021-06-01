@@ -1,4 +1,4 @@
-package org.example.spring.daos.clickhouse.customer.table.po;
+package org.example.spring.repositories.clickhouse.customer.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

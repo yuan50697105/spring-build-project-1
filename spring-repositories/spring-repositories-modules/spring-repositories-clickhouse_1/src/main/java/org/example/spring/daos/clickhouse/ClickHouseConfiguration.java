@@ -1,4 +1,4 @@
-package org.example.spring.daos.clickhouse;
+package org.example.spring.repositories.clickhouse;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
@@ -18,7 +18,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @Configuration
 @Import(ClickHouseConfiguration.MybatisCacheConfig.class)
 @ComponentScan
-@MapperScan(basePackages = "org.example.spring.daos.mysql.*.mapper")
+@MapperScan(basePackages = "org.example.spring.repositories.mysql.*.mapper")
 public class ClickHouseConfiguration {
     @Configuration
     @ConditionalOnClass({MybatisRedisCache.class, RedisTemplate.class})

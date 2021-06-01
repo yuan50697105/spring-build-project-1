@@ -2,7 +2,7 @@ package org.example.spring.domains.repositories.mysql.auth.entity.po;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.auth.table.po.TDepartment;
+import org.example.spring.repositories.mysql.auth.table.po.TDepartment;
 
 import java.io.Serializable;
 

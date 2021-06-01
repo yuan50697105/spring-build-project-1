@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.auth.table.po;
+package org.example.spring.repositories.mysql.auth.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -14,7 +14,7 @@ import java.io.Serializable;
 /**
  * t_role
  */
-@ApiModel(value = "org-example-spring-daos-mysql-org.example.spring.daos.mysql.auth-table-po-TRole")
+@ApiModel(value = "org-example-spring-daos-mysql-org.example.spring.repositories.mysql.auth-table-po-TRole")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

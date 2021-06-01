@@ -1,8 +1,8 @@
-package org.example.spring.daos.clients.auth.entity;
+package org.example.spring.repositories.clients.auth.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
+import org.example.spring.repositories.mysql.table.enumerate.TUserStatus;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

@@ -1,4 +1,4 @@
-package org.example.spring.daos.es.patient.entity.po;
+package org.example.spring.repositories.es.patient.entity.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

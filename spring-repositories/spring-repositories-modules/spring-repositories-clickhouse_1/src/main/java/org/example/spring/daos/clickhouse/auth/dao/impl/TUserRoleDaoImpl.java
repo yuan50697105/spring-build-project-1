@@ -1,14 +1,14 @@
-package org.example.spring.daos.clickhouse.auth.dao.impl;
+package org.example.spring.repositories.clickhouse.auth.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.clickhouse.auth.builder.AuthBuilder;
-import org.example.spring.daos.clickhouse.auth.dao.TUserRoleDao;
-import org.example.spring.daos.clickhouse.auth.mapper.TUserRoleMapper;
-import org.example.spring.daos.clickhouse.auth.table.po.TRole;
-import org.example.spring.daos.clickhouse.auth.table.po.TUserRole;
-import org.example.spring.daos.clickhouse.auth.table.query.TUserRoleQuery;
+import org.example.spring.repositories.clickhouse.auth.builder.AuthBuilder;
+import org.example.spring.repositories.clickhouse.auth.dao.TUserRoleDao;
+import org.example.spring.repositories.clickhouse.auth.mapper.TUserRoleMapper;
+import org.example.spring.repositories.clickhouse.auth.table.po.TRole;
+import org.example.spring.repositories.clickhouse.auth.table.po.TUserRole;
+import org.example.spring.repositories.clickhouse.auth.table.query.TUserRoleQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

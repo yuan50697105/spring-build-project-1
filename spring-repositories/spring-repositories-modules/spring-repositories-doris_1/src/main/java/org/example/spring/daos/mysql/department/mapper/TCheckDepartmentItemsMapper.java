@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.department.mapper;
+package org.example.spring.repositories.mysql.department.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 

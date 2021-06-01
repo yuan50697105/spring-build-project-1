@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.table.utils;
+package org.example.spring.repositories.mysql.table.utils;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.bean.copier.CopyOptions;

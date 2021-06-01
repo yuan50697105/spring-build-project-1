@@ -1,4 +1,4 @@
-package org.example.spring.daos.repository;
+package org.example.spring.repositories.repository;
 
 import org.example.spring.plugins.commons.entity.OssResponse;
 

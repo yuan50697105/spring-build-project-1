@@ -1,7 +1,7 @@
-package org.example.spring.daos.clients.auth.api;
+package org.example.spring.repositories.clients.auth.api;
 
-import org.example.spring.daos.clients.auth.constant.AuthClientConstants;
-import org.example.spring.daos.clients.auth.entity.*;
+import org.example.spring.repositories.clients.auth.constant.AuthClientConstants;
+import org.example.spring.repositories.clients.auth.entity.*;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.*;

@@ -1,11 +1,11 @@
-package org.example.spring.daos.clickhouse.customer.dao.impl;
+package org.example.spring.repositories.clickhouse.customer.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.clickhouse.customer.dao.TCustomerContractDao;
-import org.example.spring.daos.clickhouse.customer.mapper.TCustomerContractMapper;
-import org.example.spring.daos.clickhouse.customer.table.po.TCustomerContract;
-import org.example.spring.daos.clickhouse.customer.table.query.TCustomerContractQuery;
+import org.example.spring.repositories.clickhouse.customer.dao.TCustomerContractDao;
+import org.example.spring.repositories.clickhouse.customer.mapper.TCustomerContractMapper;
+import org.example.spring.repositories.clickhouse.customer.table.po.TCustomerContract;
+import org.example.spring.repositories.clickhouse.customer.table.query.TCustomerContractQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;

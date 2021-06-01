@@ -1,6 +1,6 @@
 package org.example.spring.domains.repositories.mysql.auth.repository.impl;
 
-import org.example.spring.daos.mysql.auth.repository.impl.TResourceRepositoryImpl;
+import org.example.spring.repositories.mysql.auth.repository.impl.TResourceRepositoryImpl;
 import org.example.spring.domains.repositories.mysql.auth.repository.DResourceRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;

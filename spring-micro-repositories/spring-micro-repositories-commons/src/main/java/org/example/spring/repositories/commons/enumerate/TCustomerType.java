@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.table.enumerate;
+package org.example.spring.repositories.mysql.table.enumerate;
 
 import cn.hutool.core.util.EnumUtil;
 import lombok.AllArgsConstructor;

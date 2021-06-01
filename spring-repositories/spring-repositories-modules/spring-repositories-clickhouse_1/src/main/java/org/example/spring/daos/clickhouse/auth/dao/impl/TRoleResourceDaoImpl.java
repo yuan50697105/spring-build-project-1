@@ -1,13 +1,13 @@
-package org.example.spring.daos.clickhouse.auth.dao.impl;
+package org.example.spring.repositories.clickhouse.auth.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.clickhouse.auth.builder.AuthBuilder;
-import org.example.spring.daos.clickhouse.auth.dao.TRoleResourceDao;
-import org.example.spring.daos.clickhouse.auth.mapper.TRoleResourceMapper;
-import org.example.spring.daos.clickhouse.auth.table.po.TResource;
-import org.example.spring.daos.clickhouse.auth.table.po.TRoleResource;
-import org.example.spring.daos.clickhouse.auth.table.query.TRolePermissionQuery;
+import org.example.spring.repositories.clickhouse.auth.builder.AuthBuilder;
+import org.example.spring.repositories.clickhouse.auth.dao.TRoleResourceDao;
+import org.example.spring.repositories.clickhouse.auth.mapper.TRoleResourceMapper;
+import org.example.spring.repositories.clickhouse.auth.table.po.TResource;
+import org.example.spring.repositories.clickhouse.auth.table.po.TRoleResource;
+import org.example.spring.repositories.clickhouse.auth.table.query.TRolePermissionQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;

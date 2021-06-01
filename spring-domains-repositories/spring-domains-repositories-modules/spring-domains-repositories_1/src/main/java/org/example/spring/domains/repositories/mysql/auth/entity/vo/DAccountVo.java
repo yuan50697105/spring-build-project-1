@@ -3,7 +3,7 @@ package org.example.spring.domains.repositories.mysql.auth.entity.vo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
+import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

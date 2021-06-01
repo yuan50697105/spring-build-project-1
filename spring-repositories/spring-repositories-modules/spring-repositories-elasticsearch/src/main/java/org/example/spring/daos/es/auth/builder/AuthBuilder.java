@@ -1,7 +1,7 @@
-package org.example.spring.daos.es.auth.builder;
+package org.example.spring.repositories.es.auth.builder;
 
-import org.example.spring.daos.es.auth.entity.po.ERoleResource;
-import org.example.spring.daos.es.auth.entity.po.EUserRole;
+import org.example.spring.repositories.es.auth.entity.po.ERoleResource;
+import org.example.spring.repositories.es.auth.entity.po.EUserRole;
 
 import java.util.ArrayList;
 import java.util.Iterator;

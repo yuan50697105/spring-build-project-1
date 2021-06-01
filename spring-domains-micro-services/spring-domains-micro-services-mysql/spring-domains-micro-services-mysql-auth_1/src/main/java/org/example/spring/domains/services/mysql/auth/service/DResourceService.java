@@ -1,9 +1,9 @@
 package org.example.spring.domains.services.mysql.auth.service;
 
 import cn.hutool.core.lang.tree.Tree;
-import org.example.spring.daos.mysql.auth.table.dto.TResourceDTO;
-import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;
-import org.example.spring.daos.mysql.auth.table.vo.TResourceVo;
+import org.example.spring.repositories.mysql.auth.table.dto.TResourceDTO;
+import org.example.spring.repositories.mysql.auth.table.query.TResourceQuery;
+import org.example.spring.repositories.mysql.auth.table.vo.TResourceVo;
 
 import java.util.List;
 

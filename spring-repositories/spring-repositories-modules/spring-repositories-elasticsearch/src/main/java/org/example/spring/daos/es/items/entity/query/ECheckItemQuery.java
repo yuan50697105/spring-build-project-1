@@ -1,4 +1,4 @@
-package org.example.spring.daos.es.items.entity.query;
+package org.example.spring.repositories.es.items.entity.query;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

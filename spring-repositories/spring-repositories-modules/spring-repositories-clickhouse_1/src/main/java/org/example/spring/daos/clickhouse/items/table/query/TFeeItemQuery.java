@@ -1,4 +1,4 @@
-package org.example.spring.daos.clickhouse.items.table.query;
+package org.example.spring.repositories.clickhouse.items.table.query;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
@@ -7,7 +7,7 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndLessThanOrEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.clickhouse.items.table.po.TFeeItem;
+import org.example.spring.repositories.clickhouse.items.table.po.TFeeItem;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 

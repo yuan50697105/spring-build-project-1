@@ -1,13 +1,13 @@
 package org.example.spring.auth.converter;
 
-import org.example.spring.daos.clients.auth.entity.CUserDto;
-import org.example.spring.daos.clients.auth.entity.CUserQuery;
-import org.example.spring.daos.clients.auth.entity.CUserRoleDto;
-import org.example.spring.daos.clients.auth.entity.CUserVo;
-import org.example.spring.daos.mysql.auth.table.dto.TUserDTO;
-import org.example.spring.daos.mysql.auth.table.dto.TUserRoleDTO;
-import org.example.spring.daos.mysql.auth.table.query.TUserQuery;
-import org.example.spring.daos.mysql.auth.table.vo.TUserVo;
+import org.example.spring.repositories.clients.auth.entity.CUserDto;
+import org.example.spring.repositories.clients.auth.entity.CUserQuery;
+import org.example.spring.repositories.clients.auth.entity.CUserRoleDto;
+import org.example.spring.repositories.clients.auth.entity.CUserVo;
+import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleDTO;
+import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
+import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;

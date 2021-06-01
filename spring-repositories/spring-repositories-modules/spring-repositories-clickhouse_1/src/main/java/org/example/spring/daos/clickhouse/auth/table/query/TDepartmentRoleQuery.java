@@ -1,4 +1,4 @@
-package org.example.spring.daos.clickhouse.auth.table.query;
+package org.example.spring.repositories.clickhouse.auth.table.query;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
 import io.swagger.annotations.ApiModel;
@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.daos.clickhouse.auth.table.po.TDepartmentRole;
+import org.example.spring.repositories.clickhouse.auth.table.po.TDepartmentRole;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 

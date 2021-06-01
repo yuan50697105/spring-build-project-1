@@ -1,9 +1,9 @@
-package org.example.spring.daos.clickhouse.auth.dao.impl;
+package org.example.spring.repositories.clickhouse.auth.dao.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.clickhouse.auth.dao.UserResourceDao;
-import org.example.spring.daos.clickhouse.auth.mapper.UserResourceMapper;
-import org.example.spring.daos.clickhouse.auth.table.po.TResource;
+import org.example.spring.repositories.clickhouse.auth.dao.UserResourceDao;
+import org.example.spring.repositories.clickhouse.auth.mapper.UserResourceMapper;
+import org.example.spring.repositories.clickhouse.auth.table.po.TResource;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

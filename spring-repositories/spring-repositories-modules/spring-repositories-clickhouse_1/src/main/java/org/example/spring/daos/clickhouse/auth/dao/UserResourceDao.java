@@ -1,6 +1,6 @@
-package org.example.spring.daos.clickhouse.auth.dao;
+package org.example.spring.repositories.clickhouse.auth.dao;
 
-import org.example.spring.daos.clickhouse.auth.table.po.TResource;
+import org.example.spring.repositories.clickhouse.auth.table.po.TResource;
 
 import java.util.List;
 
