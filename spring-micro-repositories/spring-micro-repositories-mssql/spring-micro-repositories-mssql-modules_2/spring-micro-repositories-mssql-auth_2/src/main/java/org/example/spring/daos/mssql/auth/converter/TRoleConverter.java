@@ -1,6 +1,8 @@
 package org.example.spring.daos.mssql.auth.converter;
 
-import org.example.spring.daos.mssql.auth.table.dto.TRoleDto;
+import org.example.spring.daos.mssql.auth.table.dto.TResourceDTO;
+import org.example.spring.daos.mssql.auth.table.dto.TRoleDTO;
+import org.example.spring.daos.mssql.auth.table.dto.TRoleResourceDTO;
 import org.example.spring.daos.mssql.auth.table.po.TRole;
 import org.example.spring.daos.mssql.auth.table.query.TRoleQuery;
 import org.example.spring.daos.mssql.auth.table.vo.TRoleVo;
@@ -9,7 +11,11 @@ import org.example.spring.plugins.mybatis.converter.IBaseConverter;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper(config = BaseBuilder.class)
-public interface TRoleConverter extends IBaseConverter<TRole, TRoleDto, TRoleVo, TRoleQuery> {
-    TRoleConverter CONVERTER = Mappers.getMapper(TRoleConverter.class);
+public interface TRoleConverter extends IBaseConverter<TRole, TRoleDTO, TRoleVo, TRoleQuery> {
+    TRoleConverter instance = Mappers.getMapper(TRoleConverter.class);
+
+    TRoleResourceDTO roleResources(TRole role, List<TResourceDTO> resources);
 }

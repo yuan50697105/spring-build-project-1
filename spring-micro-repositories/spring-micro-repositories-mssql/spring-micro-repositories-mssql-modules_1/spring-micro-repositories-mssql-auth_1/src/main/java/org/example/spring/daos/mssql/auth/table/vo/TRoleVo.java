@@ -11,4 +11,5 @@ import java.util.List;
 @Data
 public class TRoleVo extends TRole implements Serializable {
     private List<Long> resourceIds;
+
 }

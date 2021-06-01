@@ -11,4 +11,9 @@ import java.util.List;
 @Data
 public class TDepartmentVo extends TDepartment implements Serializable {
     private List<Long> roleIds;
+
+    public TDepartmentVo() {
+        setPid(0L);
+    }
+
 }

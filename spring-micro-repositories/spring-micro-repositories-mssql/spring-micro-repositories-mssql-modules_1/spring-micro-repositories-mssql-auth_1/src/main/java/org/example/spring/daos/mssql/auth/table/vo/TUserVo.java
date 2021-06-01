@@ -12,6 +12,7 @@ import java.util.List;
 @Data
 public class TUserVo extends TUser implements Serializable {
     private List<Long> roleIds;
+
     @Override
     public String getStatus() {
         return TUserStatus.getValue(super.getStatus());
@@ -21,4 +22,5 @@ public class TUserVo extends TUser implements Serializable {
     public void setStatus(String status) {
         super.setStatus(TUserStatus.getValue(status));
     }
+
 }

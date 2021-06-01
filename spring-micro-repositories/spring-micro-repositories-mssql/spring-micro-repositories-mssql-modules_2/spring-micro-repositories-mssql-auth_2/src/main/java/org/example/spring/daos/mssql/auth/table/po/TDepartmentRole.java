@@ -1,16 +1,19 @@
 package org.example.spring.daos.mssql.auth.table.po;
 
-import java.io.Serializable;
-import java.util.Date;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 
+import java.io.Serializable;
+
 /**
  * t_department_role
  */
+@ApiModel(value = "org-example-spring-infrastructures-mysql-org.example.spring.daos.mysql.auth-table-po-TDepartmentRole")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
@@ -20,10 +23,12 @@ public class TDepartmentRole extends IBaseEntity implements Serializable {
     /**
      * departmentId
      */
+    @ApiModelProperty(value = "departmentId")
     private Long departmentId;
 
     /**
      * roleId
      */
+    @ApiModelProperty(value = "roleId")
     private Long roleId;
 }

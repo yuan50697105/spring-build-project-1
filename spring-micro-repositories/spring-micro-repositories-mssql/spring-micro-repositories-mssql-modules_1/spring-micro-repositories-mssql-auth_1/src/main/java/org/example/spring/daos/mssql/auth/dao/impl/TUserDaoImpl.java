@@ -1,14 +1,35 @@
 package org.example.spring.daos.mssql.auth.dao.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
+import lombok.AllArgsConstructor;
 import org.example.spring.daos.mssql.auth.dao.TUserDao;
 import org.example.spring.daos.mssql.auth.mapper.TUserMapper;
 import org.example.spring.daos.mssql.auth.table.po.TUser;
 import org.example.spring.daos.mssql.auth.table.query.TUserQuery;
-import org.example.spring.plugins.mybatis.dao.impl.TkExtDaoImpl;
+import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
+@AllArgsConstructor
 @Transactional
-public class TUserDaoImpl extends TkExtDaoImpl<TUser, TUserQuery, TUserMapper> implements TUserDao {
+public class TUserDaoImpl extends TkBaseDaoImpl<TUser, TUserQuery, TUserMapper> implements TUserDao {
+    @Override
+    protected Wrapper<TUser> queryWrapper(TUserQuery tUserQuery) {
+        return null;
+    }
+
+    @Override
+    public boolean existByUsername(String username) {
+        return baseMapper.existByUsername(username);
+    }
+
+
+    @Override
+    public boolean updateStatusByIds(String status, List<Long> ids) {
+        return SqlHelper.retBool(baseMapper.updateStatusByIds(status, ids));
+    }
 }
