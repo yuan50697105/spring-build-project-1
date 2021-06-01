@@ -4,7 +4,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M6</version>
+        <version>0.0.36-M7-SNAPSHOT</version>
     </parent>
     <artifactId>spring-domains-micro-services-clients</artifactId>
     <packaging>pom</packaging>
