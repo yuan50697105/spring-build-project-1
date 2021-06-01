@@ -1,1 +1,1 @@
-call mvn clean package -fae -T 0.5C
+call mvn clean package -fae -T 4
