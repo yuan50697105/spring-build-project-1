@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.auth.table.query;
+package org.example.spring.repositories.mysql.auth.table.query;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.daos.mysql.auth.table.po.TResource;
+import org.example.spring.repositories.mysql.auth.table.po.TResource;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 
@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * t_permission
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-org.example.spring.daos.mysql.auth-table-po-TPermission")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-org.example.spring.repositories.mysql.auth-table-po-TPermission")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

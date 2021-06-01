@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.auth.table.dto;
+package org.example.spring.repositories.mysql.auth.table.dto;
 
 import cn.hutool.core.lang.tree.Tree;
 import lombok.Data;

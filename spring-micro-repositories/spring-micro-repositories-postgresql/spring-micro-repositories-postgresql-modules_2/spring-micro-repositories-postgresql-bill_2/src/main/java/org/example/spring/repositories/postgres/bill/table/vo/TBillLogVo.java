@@ -3,7 +3,7 @@ package org.example.spring.repositories.postgres.bill.table.vo;
 import cn.hutool.core.bean.BeanUtil;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.table.enumerate.BillLogType;
+import org.example.spring.repositories.mysql.table.enumerate.BillLogType;
 import org.example.spring.repositories.postgres.bill.table.po.TBillLog;
 
 @EqualsAndHashCode(callSuper = true)

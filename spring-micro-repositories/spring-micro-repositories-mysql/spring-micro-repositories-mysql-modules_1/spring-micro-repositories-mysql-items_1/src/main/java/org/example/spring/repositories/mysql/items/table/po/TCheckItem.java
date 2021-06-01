@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.items.table.po;
+package org.example.spring.repositories.mysql.items.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

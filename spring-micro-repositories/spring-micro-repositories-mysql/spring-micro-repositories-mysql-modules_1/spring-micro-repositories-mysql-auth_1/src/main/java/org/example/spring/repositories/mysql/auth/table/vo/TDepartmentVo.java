@@ -1,8 +1,8 @@
-package org.example.spring.daos.mysql.auth.table.vo;
+package org.example.spring.repositories.mysql.auth.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.auth.table.po.TDepartment;
+import org.example.spring.repositories.mysql.auth.table.po.TDepartment;
 
 import java.io.Serializable;
 import java.util.List;

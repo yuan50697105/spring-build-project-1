@@ -2,8 +2,8 @@ package org.example.spring.repositories.mssql.items.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.table.enumerate.Sex;
-import org.example.spring.daos.mysql.table.enumerate.TFeeItemType;
+import org.example.spring.repositories.mysql.table.enumerate.Sex;
+import org.example.spring.repositories.mysql.table.enumerate.TFeeItemType;
 import org.example.spring.repositories.mssql.items.table.po.TFeeItem;
 
 import java.io.Serializable;

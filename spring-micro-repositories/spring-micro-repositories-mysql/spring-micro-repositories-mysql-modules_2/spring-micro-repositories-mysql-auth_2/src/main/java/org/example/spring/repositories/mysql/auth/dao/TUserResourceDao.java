@@ -1,6 +1,6 @@
-package org.example.spring.daos.mysql.auth.dao;
+package org.example.spring.repositories.mysql.auth.dao;
 
-import org.example.spring.daos.mysql.auth.table.po.TResource;
+import org.example.spring.repositories.mysql.auth.table.po.TResource;
 
 import java.util.List;
 

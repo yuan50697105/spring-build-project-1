@@ -1,6 +1,6 @@
-package org.example.spring.daos.mysql.items.builder;
+package org.example.spring.repositories.mysql.items.builder;
 
-import org.example.spring.daos.mysql.items.table.po.TMealFeeItem;
+import org.example.spring.repositories.mysql.items.table.po.TMealFeeItem;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

@@ -2,7 +2,7 @@ package org.example.spring.repositories.postgres.auth.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.table.enumerate.TUserTokenStatus;
+import org.example.spring.repositories.mysql.table.enumerate.TUserTokenStatus;
 import org.example.spring.repositories.postgres.auth.table.po.TUserToken;
 
 @EqualsAndHashCode(callSuper = true)

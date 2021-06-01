@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.items.table.dto;
+package org.example.spring.repositories.mysql.items.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,6 +8,6 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TFeeCheckItemDTO extends org.example.spring.daos.mysql.items.table.dto.TFeeItemDTO implements Serializable {
-    private List<org.example.spring.daos.mysql.items.table.dto.TCheckItemDTO> items;
+public class TFeeCheckItemDTO extends org.example.spring.repositories.mysql.items.table.dto.TFeeItemDTO implements Serializable {
+    private List<org.example.spring.repositories.mysql.items.table.dto.TCheckItemDTO> items;
 }

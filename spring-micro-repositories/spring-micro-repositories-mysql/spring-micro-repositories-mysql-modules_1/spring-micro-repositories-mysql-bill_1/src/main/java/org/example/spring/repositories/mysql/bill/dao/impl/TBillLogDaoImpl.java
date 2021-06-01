@@ -1,9 +1,9 @@
 package org.example.spring.repositories.mysql.bill.dao.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.bill.mapper.TBillLogMapper;
-import org.example.spring.daos.mysql.bill.table.po.TBillLog;
-import org.example.spring.daos.mysql.bill.table.query.TBillLogQuery;
+import org.example.spring.repositories.mysql.bill.mapper.TBillLogMapper;
+import org.example.spring.repositories.mysql.bill.table.po.TBillLog;
+import org.example.spring.repositories.mysql.bill.table.query.TBillLogQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkExtDaoImpl;
 import org.example.spring.repositories.mysql.bill.dao.TBillLogDao;
 import org.springframework.stereotype.Repository;

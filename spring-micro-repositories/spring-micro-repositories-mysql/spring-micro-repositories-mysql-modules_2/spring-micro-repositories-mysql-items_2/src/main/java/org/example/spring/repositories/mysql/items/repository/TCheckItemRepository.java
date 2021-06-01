@@ -1,8 +1,8 @@
-package org.example.spring.daos.mysql.items.repository;
+package org.example.spring.repositories.mysql.items.repository;
 
-import org.example.spring.daos.mysql.items.table.dto.TCheckItemDTO;
-import org.example.spring.daos.mysql.items.table.query.TCheckItemQuery;
-import org.example.spring.daos.mysql.items.table.vo.TCheckItemVo;
+import org.example.spring.repositories.mysql.items.table.dto.TCheckItemDTO;
+import org.example.spring.repositories.mysql.items.table.query.TCheckItemQuery;
+import org.example.spring.repositories.mysql.items.table.vo.TCheckItemVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;

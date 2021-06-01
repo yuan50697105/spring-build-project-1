@@ -1,6 +1,6 @@
 package org.example.spring.repositories.oracle.auth.repository;
 
-import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
+import org.example.spring.repositories.mysql.table.enumerate.TUserStatus;
 import org.example.spring.plugins.mybatis.repository.IBaseRepository;
 import org.example.spring.repositories.oracle.auth.table.dto.TUserDTO;
 import org.example.spring.repositories.oracle.auth.table.dto.TUserRoleDTO;

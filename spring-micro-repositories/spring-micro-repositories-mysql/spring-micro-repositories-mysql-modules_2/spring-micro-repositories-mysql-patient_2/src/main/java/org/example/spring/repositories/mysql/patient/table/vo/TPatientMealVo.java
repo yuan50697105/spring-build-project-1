@@ -2,7 +2,7 @@ package org.example.spring.repositories.mysql.patient.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.table.enumerate.MealType;
+import org.example.spring.repositories.mysql.table.enumerate.MealType;
 import org.example.spring.repositories.mysql.patient.table.po.TPatientMeal;
 
 @EqualsAndHashCode(callSuper = true)

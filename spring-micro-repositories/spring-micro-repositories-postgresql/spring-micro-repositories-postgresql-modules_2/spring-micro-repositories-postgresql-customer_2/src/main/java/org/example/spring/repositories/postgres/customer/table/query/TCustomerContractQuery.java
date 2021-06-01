@@ -11,7 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.daos.mysql.table.enumerate.TCustomerContractStatus;
+import org.example.spring.repositories.mysql.table.enumerate.TCustomerContractStatus;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import org.example.spring.repositories.postgres.customer.table.po.TCustomerContract;
 import tk.mybatis.mapper.entity.Example;

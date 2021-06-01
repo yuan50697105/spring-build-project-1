@@ -1,14 +1,14 @@
-package org.example.spring.daos.mysql.auth.repository.impl;
+package org.example.spring.repositories.mysql.auth.repository.impl;
 
-import org.example.spring.daos.mysql.auth.converter.TRoleConverter;
-import org.example.spring.daos.mysql.auth.dao.TRoleDao;
-import org.example.spring.daos.mysql.auth.repository.TResourceRepository;
-import org.example.spring.daos.mysql.auth.repository.TRoleRepository;
-import org.example.spring.daos.mysql.auth.table.dto.TRoleDTO;
-import org.example.spring.daos.mysql.auth.table.dto.TRoleResourceDTO;
-import org.example.spring.daos.mysql.auth.table.po.TRole;
-import org.example.spring.daos.mysql.auth.table.query.TRoleQuery;
-import org.example.spring.daos.mysql.auth.table.vo.TRoleVo;
+import org.example.spring.repositories.mysql.auth.converter.TRoleConverter;
+import org.example.spring.repositories.mysql.auth.dao.TRoleDao;
+import org.example.spring.repositories.mysql.auth.repository.TResourceRepository;
+import org.example.spring.repositories.mysql.auth.repository.TRoleRepository;
+import org.example.spring.repositories.mysql.auth.table.dto.TRoleDTO;
+import org.example.spring.repositories.mysql.auth.table.dto.TRoleResourceDTO;
+import org.example.spring.repositories.mysql.auth.table.po.TRole;
+import org.example.spring.repositories.mysql.auth.table.query.TRoleQuery;
+import org.example.spring.repositories.mysql.auth.table.vo.TRoleVo;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

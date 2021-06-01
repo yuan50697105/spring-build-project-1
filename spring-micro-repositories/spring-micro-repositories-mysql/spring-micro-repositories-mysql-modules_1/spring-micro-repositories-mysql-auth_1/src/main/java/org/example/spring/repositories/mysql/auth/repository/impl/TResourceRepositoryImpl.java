@@ -1,16 +1,16 @@
-package org.example.spring.daos.mysql.auth.repository.impl;
+package org.example.spring.repositories.mysql.auth.repository.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.lang.tree.TreeUtil;
 import cn.hutool.core.lang.tree.parser.NodeParser;
-import org.example.spring.daos.mysql.auth.converter.TResourceConverter;
-import org.example.spring.daos.mysql.auth.dao.TResourceDao;
-import org.example.spring.daos.mysql.auth.repository.TResourceRepository;
-import org.example.spring.daos.mysql.auth.table.dto.TResourceDTO;
-import org.example.spring.daos.mysql.auth.table.po.TResource;
-import org.example.spring.daos.mysql.auth.table.query.TResourceQuery;
-import org.example.spring.daos.mysql.auth.table.vo.TResourceVo;
+import org.example.spring.repositories.mysql.auth.converter.TResourceConverter;
+import org.example.spring.repositories.mysql.auth.dao.TResourceDao;
+import org.example.spring.repositories.mysql.auth.repository.TResourceRepository;
+import org.example.spring.repositories.mysql.auth.table.dto.TResourceDTO;
+import org.example.spring.repositories.mysql.auth.table.po.TResource;
+import org.example.spring.repositories.mysql.auth.table.query.TResourceQuery;
+import org.example.spring.repositories.mysql.auth.table.vo.TResourceVo;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

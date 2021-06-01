@@ -2,10 +2,10 @@ package org.example.spring.repositories.mysql.customer.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.customer.dao.TCustomerContractDao;
-import org.example.spring.daos.mysql.customer.mapper.TCustomerContractMapper;
-import org.example.spring.daos.mysql.customer.table.po.TCustomerContract;
-import org.example.spring.daos.mysql.customer.table.query.TCustomerContractQuery;
+import org.example.spring.repositories.mysql.customer.dao.TCustomerContractDao;
+import org.example.spring.repositories.mysql.customer.mapper.TCustomerContractMapper;
+import org.example.spring.repositories.mysql.customer.table.po.TCustomerContract;
+import org.example.spring.repositories.mysql.customer.table.query.TCustomerContractQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;

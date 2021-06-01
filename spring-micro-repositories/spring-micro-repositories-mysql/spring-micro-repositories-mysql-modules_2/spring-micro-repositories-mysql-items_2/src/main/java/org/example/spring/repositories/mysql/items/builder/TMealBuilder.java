@@ -1,10 +1,10 @@
-package org.example.spring.daos.mysql.items.builder;
+package org.example.spring.repositories.mysql.items.builder;
 
-import org.example.spring.daos.mysql.items.table.dto.TFeeItemDTO;
-import org.example.spring.daos.mysql.items.table.dto.TMealDTO;
-import org.example.spring.daos.mysql.items.table.dto.TMealFeeItemDTO;
-import org.example.spring.daos.mysql.items.table.po.TMeal;
-import org.example.spring.daos.mysql.items.table.vo.TMealVo;
+import org.example.spring.repositories.mysql.items.table.dto.TFeeItemDTO;
+import org.example.spring.repositories.mysql.items.table.dto.TMealDTO;
+import org.example.spring.repositories.mysql.items.table.dto.TMealFeeItemDTO;
+import org.example.spring.repositories.mysql.items.table.po.TMeal;
+import org.example.spring.repositories.mysql.items.table.vo.TMealVo;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;

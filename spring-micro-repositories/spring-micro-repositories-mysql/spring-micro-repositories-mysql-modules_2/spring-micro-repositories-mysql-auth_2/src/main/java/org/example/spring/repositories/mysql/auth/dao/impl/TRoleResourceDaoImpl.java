@@ -1,12 +1,12 @@
-package org.example.spring.daos.mysql.auth.dao.impl;
+package org.example.spring.repositories.mysql.auth.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.auth.dao.TRoleResourceDao;
-import org.example.spring.daos.mysql.auth.mapper.TRoleResourceMapper;
-import org.example.spring.daos.mysql.auth.table.po.TResource;
-import org.example.spring.daos.mysql.auth.table.po.TRoleResource;
-import org.example.spring.daos.mysql.auth.table.query.TRolePermissionQuery;
+import org.example.spring.repositories.mysql.auth.dao.TRoleResourceDao;
+import org.example.spring.repositories.mysql.auth.mapper.TRoleResourceMapper;
+import org.example.spring.repositories.mysql.auth.table.po.TResource;
+import org.example.spring.repositories.mysql.auth.table.po.TRoleResource;
+import org.example.spring.repositories.mysql.auth.table.query.TRolePermissionQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
 import org.springframework.stereotype.Repository;

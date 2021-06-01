@@ -1,11 +1,11 @@
-package org.example.spring.daos.mysql.items.dao.impl;
+package org.example.spring.repositories.mysql.items.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.items.dao.TCheckItemDao;
-import org.example.spring.daos.mysql.items.mapper.TCheckItemMapper;
-import org.example.spring.daos.mysql.items.table.po.TCheckItem;
-import org.example.spring.daos.mysql.items.table.query.TCheckItemQuery;
+import org.example.spring.repositories.mysql.items.dao.TCheckItemDao;
+import org.example.spring.repositories.mysql.items.mapper.TCheckItemMapper;
+import org.example.spring.repositories.mysql.items.table.po.TCheckItem;
+import org.example.spring.repositories.mysql.items.table.query.TCheckItemQuery;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

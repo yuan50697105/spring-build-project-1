@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.auth.table.query;
+package org.example.spring.repositories.mysql.auth.table.query;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -6,7 +6,7 @@ import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.auth.table.po.TUserToken;
+import org.example.spring.repositories.mysql.auth.table.po.TUserToken;
 import org.example.spring.plugins.mybatis.entity.query.TkExtQuery;
 import tk.mybatis.mapper.entity.Example;
 
@@ -29,7 +29,7 @@ public class TUserTokenQuery extends TkExtQuery<TUserToken> implements MybatisEx
     /**
      * 秘钥状态
      *
-     * @see org.example.spring.daos.mysql.table.enumerate.TUserTokenStatus
+     * @see org.example.spring.repositories.mysql.table.enumerate.TUserTokenStatus
      */
     private String status;
 

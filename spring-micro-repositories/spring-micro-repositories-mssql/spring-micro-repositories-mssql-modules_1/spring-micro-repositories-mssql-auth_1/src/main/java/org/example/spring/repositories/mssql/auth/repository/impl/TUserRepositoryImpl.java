@@ -1,6 +1,6 @@
 package org.example.spring.repositories.mssql.auth.repository.impl;
 
-import org.example.spring.daos.mysql.table.enumerate.TUserStatus;
+import org.example.spring.repositories.mysql.table.enumerate.TUserStatus;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.repositories.mssql.auth.converter.TUserConverter;
 import org.example.spring.repositories.mssql.auth.dao.TUserDao;

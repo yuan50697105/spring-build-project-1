@@ -2,7 +2,7 @@ package org.example.spring.repositories.mssql.customer.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.daos.mysql.table.enumerate.TCustomerContractStatus;
+import org.example.spring.repositories.mysql.table.enumerate.TCustomerContractStatus;
 import org.example.spring.repositories.mssql.customer.table.po.TCustomerContract;
 
 import java.io.Serializable;

@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.auth.table.po;
+package org.example.spring.repositories.mysql.auth.table.po;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -35,7 +35,7 @@ public class TUserToken extends IBaseEntity {
     /**
      * 秘钥状态
      *
-     * @see org.example.spring.daos.mysql.table.enumerate.TUserTokenStatus
+     * @see org.example.spring.repositories.mysql.table.enumerate.TUserTokenStatus
      */
     private String status;
 }

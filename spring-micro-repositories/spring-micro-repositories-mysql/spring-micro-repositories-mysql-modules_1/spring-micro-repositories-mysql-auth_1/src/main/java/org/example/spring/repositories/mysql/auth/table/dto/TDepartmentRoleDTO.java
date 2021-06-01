@@ -1,4 +1,4 @@
-package org.example.spring.daos.mysql.auth.table.dto;
+package org.example.spring.repositories.mysql.auth.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,6 +8,6 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TDepartmentRoleDTO extends org.example.spring.daos.mysql.auth.table.dto.TDepartmentDTO implements Serializable {
-    private List<org.example.spring.daos.mysql.auth.table.dto.TRoleDTO> roles;
+public class TDepartmentRoleDTO extends org.example.spring.repositories.mysql.auth.table.dto.TDepartmentDTO implements Serializable {
+    private List<org.example.spring.repositories.mysql.auth.table.dto.TRoleDTO> roles;
 }

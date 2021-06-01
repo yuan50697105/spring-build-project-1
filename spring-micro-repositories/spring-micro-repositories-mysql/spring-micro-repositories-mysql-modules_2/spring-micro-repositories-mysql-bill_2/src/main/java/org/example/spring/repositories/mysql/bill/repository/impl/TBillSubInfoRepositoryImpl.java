@@ -1,7 +1,7 @@
 package org.example.spring.repositories.mysql.bill.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.daos.mysql.bill.repository.TBillSubInfoRepository;
+import org.example.spring.repositories.mysql.bill.repository.TBillSubInfoRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.mysql.bill.builder.TBillSubInfoBuilder;
 import org.example.spring.repositories.mysql.bill.dao.TBillSubInfoDao;

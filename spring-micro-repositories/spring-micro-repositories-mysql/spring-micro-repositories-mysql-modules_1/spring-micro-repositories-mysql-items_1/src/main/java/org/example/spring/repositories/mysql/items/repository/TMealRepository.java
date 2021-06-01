@@ -1,9 +1,9 @@
-package org.example.spring.daos.mysql.items.repository;
+package org.example.spring.repositories.mysql.items.repository;
 
-import org.example.spring.daos.mysql.items.table.dto.TMealDTO;
-import org.example.spring.daos.mysql.items.table.dto.TMealFeeItemDTO;
-import org.example.spring.daos.mysql.items.table.query.TMealQuery;
-import org.example.spring.daos.mysql.items.table.vo.TMealVo;
+import org.example.spring.repositories.mysql.items.table.dto.TMealDTO;
+import org.example.spring.repositories.mysql.items.table.dto.TMealFeeItemDTO;
+import org.example.spring.repositories.mysql.items.table.query.TMealQuery;
+import org.example.spring.repositories.mysql.items.table.vo.TMealVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
