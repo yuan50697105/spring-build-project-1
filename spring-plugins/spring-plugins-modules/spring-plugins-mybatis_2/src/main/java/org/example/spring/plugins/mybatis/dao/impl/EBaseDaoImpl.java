@@ -66,6 +66,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public List<T> findList(Q query) {
+        return queryList(query);
+    }
+
+    @Override
     public Stream<T> queryListStream(Q query) {
         return queryList(query).stream();
     }
@@ -77,6 +82,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
 
     @Override
     public Stream<T> searchListStream(Q query) {
+        return queryListStream(query);
+    }
+
+    @Override
+    public Stream<T> findListStream(Q query) {
         return queryListStream(query);
     }
 
@@ -93,6 +103,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     @Override
     public Stream<T> searchTopStream(Q query) {
         return queryTopStream(query);
+    }
+
+    @Override
+    public Stream<T> findTopStream(Q query) {
+        return findTopStream(query);
     }
 
     @Override
@@ -121,6 +136,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public IPageData<T> findPage(Q query) {
+        return queryPage(query);
+    }
+
+    @Override
     public List<T> queryTop(Q query) {
         return queryPage((Q) query.withPage(1)).getData();
     }
@@ -132,6 +152,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
 
     @Override
     public List<T> searchTop(Q query) {
+        return queryTop(query);
+    }
+
+    @Override
+    public List<T> findTop(Q query) {
         return queryTop(query);
     }
 
@@ -151,6 +176,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public Optional<T> findFirstOpt(Q query) {
+        return queryFirstOpt(query);
+    }
+
+    @Override
     public T queryFirst(Q query) {
         return queryFirstOpt(query).orElse(null);
     }
@@ -162,6 +192,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
 
     @Override
     public T searchFirst(Q query) {
+        return queryFirst(query);
+    }
+
+    @Override
+    public T findFirst(Q query) {
         return queryFirst(query);
     }
 
@@ -188,6 +223,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public T findOne(Q query) {
+        return queryOne(query);
+    }
+
+    @Override
     public Optional<T> queryOneOpt(Q query) {
         return Optional.ofNullable(queryOne(query));
     }
@@ -199,6 +239,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
 
     @Override
     public Optional<T> searchOneOpt(Q query) {
+        return queryOneOpt(query);
+    }
+
+    @Override
+    public Optional<T> findOneOpt(Q query) {
         return queryOneOpt(query);
     }
 

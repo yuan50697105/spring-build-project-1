@@ -12,13 +12,23 @@ public interface IBaseRepository<T extends IBaseEntity, DTO extends T, VO extend
 
     void save(VO vo);
 
+    void insert(VO vo);
+
     void update(VO vo);
 
     void updateNull(VO vo);
 
+    void modify(VO vo);
+
+    void modifyNull(VO vo);
+
     void update(VO vo, Q q);
 
     void updateNull(VO vo, Q q);
+
+    void modify(VO vo, Q q);
+
+    void modifyNull(VO vo, Q q);
 
     void delete(Long id);
 
@@ -69,4 +79,40 @@ public interface IBaseRepository<T extends IBaseEntity, DTO extends T, VO extend
     Stream<DTO> selectTopStream(Q q);
 
     IPageData<DTO> selectPage(Q q);
+
+    DTO searchOne(Q q);
+
+    Optional<DTO> searchOneOpt(Q q);
+
+    DTO searchFirst(Q q);
+
+    Optional<DTO> searchFirstOpt(Q q);
+
+    List<DTO> searchList(Q q);
+
+    Stream<DTO> searchStream(Q q);
+
+    List<DTO> searchTop(Q q);
+
+    Stream<DTO> searchTopStream(Q q);
+
+    IPageData<DTO> searchPage(Q q);
+
+    DTO findOne(Q q);
+
+    Optional<DTO> findOneOpt(Q q);
+
+    DTO findFirst(Q q);
+
+    Optional<DTO> findFirstOpt(Q q);
+
+    List<DTO> findList(Q q);
+
+    Stream<DTO> findStream(Q q);
+
+    List<DTO> findTop(Q q);
+
+    Stream<DTO> findTopStream(Q q);
+
+    IPageData<DTO> findPage(Q q);
 }
