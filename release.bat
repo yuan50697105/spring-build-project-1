@@ -1,3 +1,3 @@
 call mvn clean release:prepare release:perform -fn
-call mvn clean deploy -fae -Pd -T 0.5
+call mvn clean install -fae -Pd -T 4
 call git push --tag

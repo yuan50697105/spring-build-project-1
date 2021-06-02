@@ -1,1 +1,1 @@
-call mvn clean install -fae -T 4
+call mvn clean install -fae -T 4 -Pd
