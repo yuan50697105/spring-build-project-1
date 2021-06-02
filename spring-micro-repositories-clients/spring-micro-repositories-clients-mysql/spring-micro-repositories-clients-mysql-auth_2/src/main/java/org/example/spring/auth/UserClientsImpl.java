@@ -3,13 +3,16 @@ package org.example.spring.auth;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.auth.converter.UserClientsConverter;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.UserDaoClients;
-import org.example.spring.repositories.clients.auth.entity.*;
+import org.example.spring.repositories.commons.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.auth.dto.UserRoleDTO;
+import org.example.spring.repositories.commons.auth.query.UserQuery;
+import org.example.spring.repositories.commons.auth.vo.UserVo;
 import org.example.spring.repositories.mysql.auth.repository.TUserRepository;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -30,7 +33,7 @@ public class UserClientsImpl implements UserDaoClients {
     }
 
     @Override
-    public CUserVo save(CUserVo vo) {
+    public UserVo save(UserVo vo) {
         TUserVo build = userClientsConverter.build(vo);
         userRepository.save(build);
 
@@ -38,7 +41,7 @@ public class UserClientsImpl implements UserDaoClients {
     }
 
     @Override
-    public void update(CUserVo vo) {
+    public void update(UserVo vo) {
         userRepository.update(userClientsConverter.build(vo));
     }
 
@@ -53,77 +56,77 @@ public class UserClientsImpl implements UserDaoClients {
     }
 
     @Override
-    public CUserDto get(Long id) {
+    public UserDTO get(Long id) {
         return userClientsConverter.build(userRepository.get(id));
     }
 
     @Override
-    public Optional<CUserDto> getOpt(Long id) {
+    public Optional<UserDTO> getOpt(Long id) {
         return Optional.ofNullable(get(id));
     }
 
     @Override
-    public CUserRoleDto getWithRole(Long id) {
+    public UserRoleDTO getWithRole(Long id) {
         return userClientsConverter.buildWithRole(userRepository.getWithRole(id));
     }
 
     @Override
-    public CUserDto one(CUserQuery query) {
+    public UserDTO one(UserQuery query) {
         TUserQuery userQuery = userClientsConverter.build(query);
-        TUserDTO dto = userRepository.queryOne(userQuery);
-        return userClientsConverter.build(dto);
+        TUserDTO DTO = userRepository.queryOne(userQuery);
+        return userClientsConverter.build(DTO);
     }
 
     @Override
-    public Optional<CUserDto> oneOpt(CUserQuery query) {
+    public Optional<UserDTO> oneOpt(UserQuery query) {
         return Optional.ofNullable(one(query));
     }
 
     @Override
-    public CUserDto first(CUserQuery query) {
+    public UserDTO first(UserQuery query) {
         TUserQuery userQuery = userClientsConverter.build(query);
-        TUserDTO dto = userRepository.queryFirst(userQuery);
-        return userClientsConverter.build(dto);
+        TUserDTO DTO = userRepository.queryFirst(userQuery);
+        return userClientsConverter.build(DTO);
     }
 
     @Override
-    public Optional<CUserDto> firstOpt(CUserQuery query) {
+    public Optional<UserDTO> firstOpt(UserQuery query) {
         return Optional.ofNullable(first(query));
     }
 
     @Override
-    public Optional<CUserRoleDto> getWithRoleOpt(Long id) {
+    public Optional<UserRoleDTO> getWithRoleOpt(Long id) {
         return Optional.of(getWithRole(id));
     }
 
     @Override
-    public List<CUserDto> list(CUserQuery query) {
+    public List<UserDTO> list(UserQuery query) {
         TUserQuery userQuery = userClientsConverter.build(query);
-        List<TUserDTO> dto = userRepository.queryList(userQuery);
-        return userClientsConverter.build(dto);
+        List<TUserDTO> DTO = userRepository.queryList(userQuery);
+        return userClientsConverter.build(DTO);
     }
 
     @Override
-    public Stream<CUserDto> listStream(CUserQuery query) {
+    public Stream<UserDTO> listStream(UserQuery query) {
         return list(query).stream();
     }
 
     @Override
-    public List<CUserDto> top(CUserQuery query) {
+    public List<UserDTO> top(UserQuery query) {
         TUserQuery userQuery = userClientsConverter.build(query);
-        List<TUserDTO> dto = userRepository.queryTop(userQuery);
-        return userClientsConverter.build(dto);
+        List<TUserDTO> DTO = userRepository.queryTop(userQuery);
+        return userClientsConverter.build(DTO);
     }
 
     @Override
-    public Stream<CUserDto> topStream(CUserQuery query) {
+    public Stream<UserDTO> topStream(UserQuery query) {
         return top(query).stream();
     }
 
     @Override
-    public IPageData<CUserDto> data(CUserQuery query) {
+    public IPageData<UserDTO> data(UserQuery query) {
         TUserQuery userQuery = userClientsConverter.build(query);
-        IPageData<TUserDTO> dto = userRepository.queryPage(userQuery);
-        return userClientsConverter.build(dto);
+        IPageData<TUserDTO> DTO = userRepository.queryPage(userQuery);
+        return userClientsConverter.build(DTO);
     }
 }

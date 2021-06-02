@@ -4,12 +4,12 @@ package org.example.spring.domains.daos.clients;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.damains.daos.clients.auth.api.DAccountDaoClients;
-import org.example.spring.repositories.clients.auth.entity.CUserDto;
-import org.example.spring.repositories.clients.auth.entity.CUserQuery;
-import org.example.spring.repositories.clients.auth.entity.CUserRoleDto;
-import org.example.spring.repositories.clients.auth.entity.CUserVo;
 import org.example.spring.domains.repositories.mysql.auth.repository.DAccountRepository;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.commons.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.auth.dto.UserRoleDTO;
+import org.example.spring.repositories.commons.auth.query.UserQuery;
+import org.example.spring.repositories.commons.auth.vo.UserVo;
 import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,12 +25,12 @@ public class DAccountDaoClientstImpl implements DAccountDaoClients {
     private DAccountRepository accountRepository;
 
     @Override
-    public CUserVo save(CUserVo vo) {
+    public UserVo save(UserVo vo) {
         return null;
     }
 
     @Override
-    public void update(CUserVo vo) {
+    public void update(UserVo vo) {
 
     }
 
@@ -45,67 +45,67 @@ public class DAccountDaoClientstImpl implements DAccountDaoClients {
     }
 
     @Override
-    public CUserDto get(Long id) {
+    public UserDTO get(Long id) {
         return null;
     }
 
     @Override
-    public Optional<CUserDto> getOpt(Long id) {
+    public Optional<UserDTO> getOpt(Long id) {
         return Optional.empty();
     }
 
     @Override
-    public CUserRoleDto getWithRole(Long id) {
+    public UserRoleDTO getWithRole(Long id) {
         return null;
     }
 
     @Override
-    public CUserDto one(CUserQuery query) {
+    public UserDTO one(UserQuery query) {
         return null;
     }
 
     @Override
-    public Optional<CUserDto> oneOpt(CUserQuery query) {
+    public Optional<UserDTO> oneOpt(UserQuery query) {
         return Optional.empty();
     }
 
     @Override
-    public CUserDto first(CUserQuery query) {
+    public UserDTO first(UserQuery query) {
         return null;
     }
 
     @Override
-    public Optional<CUserDto> firstOpt(CUserQuery query) {
+    public Optional<UserDTO> firstOpt(UserQuery query) {
         return Optional.empty();
     }
 
     @Override
-    public Optional<CUserRoleDto> getWithRoleOpt(Long id) {
+    public Optional<UserRoleDTO> getWithRoleOpt(Long id) {
         return Optional.empty();
     }
 
     @Override
-    public List<CUserDto> list(CUserQuery query) {
+    public List<UserDTO> list(UserQuery query) {
         return null;
     }
 
     @Override
-    public Stream<CUserDto> listStream(CUserQuery query) {
+    public Stream<UserDTO> listStream(UserQuery query) {
         return null;
     }
 
     @Override
-    public List<CUserDto> top(CUserQuery query) {
+    public List<UserDTO> top(UserQuery query) {
         return null;
     }
 
     @Override
-    public Stream<CUserDto> topStream(CUserQuery query) {
+    public Stream<UserDTO> topStream(UserQuery query) {
         return null;
     }
 
     @Override
-    public IPageData<CUserDto> data(CUserQuery query) {
+    public IPageData<UserDTO> data(UserQuery query) {
         return null;
     }
 }

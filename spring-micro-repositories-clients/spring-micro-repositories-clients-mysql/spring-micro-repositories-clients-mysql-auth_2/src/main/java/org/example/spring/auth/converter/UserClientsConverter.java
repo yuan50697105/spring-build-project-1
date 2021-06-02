@@ -1,15 +1,15 @@
 package org.example.spring.auth.converter;
 
-import org.example.spring.repositories.clients.auth.entity.CUserDto;
-import org.example.spring.repositories.clients.auth.entity.CUserQuery;
-import org.example.spring.repositories.clients.auth.entity.CUserRoleDto;
-import org.example.spring.repositories.clients.auth.entity.CUserVo;
+import org.example.spring.plugins.commons.builder.BaseBuilder;
+import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.commons.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.auth.dto.UserRoleDTO;
+import org.example.spring.repositories.commons.auth.query.UserQuery;
+import org.example.spring.repositories.commons.auth.vo.UserVo;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
-import org.example.spring.plugins.commons.builder.BaseBuilder;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -19,17 +19,17 @@ import java.util.List;
 public interface UserClientsConverter {
     UserClientsConverter CONVERTER = Mappers.getMapper(UserClientsConverter.class);
 
-    TUserVo build(CUserVo vo);
+    TUserVo build(UserVo vo);
 
-    CUserVo convert(TUserVo build);
+    UserVo convert(TUserVo build);
 
-    CUserDto build(TUserDTO tUserDTO);
+    UserDTO build(TUserDTO tUserDTO);
 
-    CUserRoleDto buildWithRole(TUserRoleDTO withRole);
+    UserRoleDTO buildWithRole(TUserRoleDTO withRole);
 
-    TUserQuery build(CUserQuery query);
+    TUserQuery build(UserQuery query);
 
-    List<CUserDto> build(List<TUserDTO> dto);
+    List<UserDTO> build(List<TUserDTO> DTO);
 
-    IPageData<CUserDto> build(IPageData<TUserDTO> dto);
+    IPageData<UserDTO> build(IPageData<TUserDTO> DTO);
 }
