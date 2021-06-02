@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-mysql</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M7-SNAPSHOT</version>
+        <version>0.0.36-M7</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,92 +14,92 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-commons_1</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-commons_2</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-auth_1</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-auth_2</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-bill_1</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-bill_2</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-customer_1</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-customer_2</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-department_1</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-department_2</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-items_1</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-items_2</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-patient_1</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-patient_2</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-report_1</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-report_2</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql_1</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql_2</artifactId>
-                <version>0.0.36-M7-SNAPSHOT</version>
+                <version>0.0.36-M7</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
