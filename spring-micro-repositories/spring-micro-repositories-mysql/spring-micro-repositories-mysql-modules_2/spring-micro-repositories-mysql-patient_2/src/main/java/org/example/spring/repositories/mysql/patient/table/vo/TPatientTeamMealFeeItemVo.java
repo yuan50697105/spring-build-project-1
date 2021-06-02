@@ -2,9 +2,9 @@ package org.example.spring.repositories.mysql.patient.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.repositories.commons.enumerate.FeeItemType;
+import org.example.spring.repositories.commons.enumerate.ItemSource;
 import org.example.spring.repositories.mysql.patient.table.po.TPatientTeamMealFeeItem;
-import org.example.spring.repositories.mysql.table.enumerate.FeeItemType;
-import org.example.spring.repositories.mysql.table.enumerate.ItemSource;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

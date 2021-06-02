@@ -2,8 +2,8 @@ package org.example.spring.repositories.mysql.items.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.repositories.commons.enumerate.TMealType;
 import org.example.spring.repositories.mysql.items.table.po.TMeal;
-import org.example.spring.repositories.mysql.table.enumerate.TMealType;
 
 import java.io.Serializable;
 import java.util.List;

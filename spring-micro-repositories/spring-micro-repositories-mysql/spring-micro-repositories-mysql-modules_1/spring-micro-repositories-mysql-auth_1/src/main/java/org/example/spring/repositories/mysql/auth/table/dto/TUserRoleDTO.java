@@ -12,6 +12,6 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class TUserRoleDTO extends org.example.spring.repositories.mysql.auth.table.dto.TUserDTO implements Serializable {
-    private List<org.example.spring.repositories.mysql.auth.table.dto.TRoleDTO> roles;
+    private List<TRoleDTO> roles;
 
 }

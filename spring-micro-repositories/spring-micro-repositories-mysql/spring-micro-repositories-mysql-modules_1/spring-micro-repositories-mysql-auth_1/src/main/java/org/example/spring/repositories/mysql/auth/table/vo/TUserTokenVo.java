@@ -2,8 +2,8 @@ package org.example.spring.repositories.mysql.auth.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.repositories.commons.enumerate.TUserTokenStatus;
 import org.example.spring.repositories.mysql.auth.table.po.TUserToken;
-import org.example.spring.repositories.mysql.table.enumerate.TUserTokenStatus;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

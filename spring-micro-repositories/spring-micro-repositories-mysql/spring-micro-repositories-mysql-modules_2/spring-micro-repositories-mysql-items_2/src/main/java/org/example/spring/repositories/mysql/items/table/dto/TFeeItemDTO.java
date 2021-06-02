@@ -2,9 +2,9 @@ package org.example.spring.repositories.mysql.items.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.repositories.commons.enumerate.Sex;
+import org.example.spring.repositories.commons.enumerate.TFeeItemType;
 import org.example.spring.repositories.mysql.items.table.po.TFeeItem;
-import org.example.spring.repositories.mysql.table.enumerate.Sex;
-import org.example.spring.repositories.mysql.table.enumerate.TFeeItemType;
 
 import java.io.Serializable;
 
