@@ -1,4 +1,4 @@
-package org.example.spring.repositories.mysql.table.enumerate;
+package org.example.spring.repositories.commons.enumerate;
 
 import cn.hutool.core.util.EnumUtil;
 import lombok.Getter;
