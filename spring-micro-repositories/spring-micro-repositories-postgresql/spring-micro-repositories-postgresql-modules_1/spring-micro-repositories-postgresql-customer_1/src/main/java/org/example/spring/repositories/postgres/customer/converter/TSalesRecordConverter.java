@@ -1,11 +1,11 @@
-package org.example.spring.repositories.mysql.customer.converter;
+package org.example.spring.repositories.postgres.customer.converter;
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.mybatis.converter.IBaseConverter;
-import org.example.spring.repositories.mysql.customer.table.dto.TSalesRecordDTO;
-import org.example.spring.repositories.mysql.customer.table.po.TSalesRecord;
-import org.example.spring.repositories.mysql.customer.table.query.TSalesRecordQuery;
-import org.example.spring.repositories.mysql.customer.table.vo.TSalesRecordVo;
+import org.example.spring.repositories.postgres.customer.table.dto.TSalesRecordDTO;
+import org.example.spring.repositories.postgres.customer.table.po.TSalesRecord;
+import org.example.spring.repositories.postgres.customer.table.query.TSalesRecordQuery;
+import org.example.spring.repositories.postgres.customer.table.vo.TSalesRecordVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

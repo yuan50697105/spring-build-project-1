@@ -2,7 +2,7 @@ package org.example.spring.repositories.postgres.patient.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.mysql.table.enumerate.ItemSource;
+import org.example.spring.repositories.postgres.table.enumerate.ItemSource;
 import org.example.spring.repositories.postgres.patient.table.po.TPatientTeamMealCheckItem;
 
 @EqualsAndHashCode(callSuper = true)
