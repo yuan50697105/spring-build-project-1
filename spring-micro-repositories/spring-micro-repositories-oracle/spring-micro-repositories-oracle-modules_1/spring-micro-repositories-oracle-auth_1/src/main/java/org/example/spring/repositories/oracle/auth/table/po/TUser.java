@@ -7,8 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.repositories.mysql.table.enumerate.TUserStatus;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
+import org.example.spring.repositories.commons.enumerate.TUserStatus;
 
 import javax.persistence.Table;
 import java.io.Serializable;
@@ -18,7 +18,7 @@ import java.io.Serializable;
  *
  * @author yuane
  */
-@ApiModel(value = "org-example-spring-daos-mysql-org.example.spring.repositories.mysql.auth-table-po-TUser")
+@ApiModel(value = "org-example-spring-daos-mysql-org.example.spring.repositories.mssql.auth-table-po-TUser")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

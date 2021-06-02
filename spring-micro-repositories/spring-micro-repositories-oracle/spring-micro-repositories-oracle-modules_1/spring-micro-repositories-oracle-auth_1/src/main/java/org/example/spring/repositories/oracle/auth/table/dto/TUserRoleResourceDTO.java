@@ -9,7 +9,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TUserRoleResourceDTO extends TUserRoleDTO implements Serializable {
-    private List<TRoleDTO> roles;
+public class TUserRoleResourceDTO extends org.example.spring.repositories.oracle.auth.table.dto.TUserRoleDTO implements Serializable {
+    private List<org.example.spring.repositories.oracle.auth.table.dto.TRoleDTO> roles;
     private List<Tree<Long>> resources;
 }

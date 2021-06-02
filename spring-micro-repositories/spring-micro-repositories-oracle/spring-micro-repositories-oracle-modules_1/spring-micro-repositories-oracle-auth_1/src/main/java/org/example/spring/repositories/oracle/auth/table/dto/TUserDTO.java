@@ -2,7 +2,7 @@ package org.example.spring.repositories.oracle.auth.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.mysql.table.enumerate.TUserStatus;
+import org.example.spring.repositories.commons.enumerate.TUserStatus;
 import org.example.spring.repositories.oracle.auth.table.po.TUser;
 
 import java.io.Serializable;

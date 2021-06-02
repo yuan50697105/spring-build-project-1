@@ -12,6 +12,12 @@
     <modules>
         <module>spring-micro-repositories-oracle_1</module>
         <module>spring-micro-repositories-oracle-auth_1</module>
+        <module>spring-micro-repositories-oracle-bill_1</module>
+        <module>spring-micro-repositories-oracle-customer_1</module>
+        <module>spring-micro-repositories-oracle-department_1</module>
+        <module>spring-micro-repositories-oracle-items_1</module>
+        <module>spring-micro-repositories-oracle-patient_1</module>
+        <module>spring-micro-repositories-oracle-report_1</module>
     </modules>
     <dependencyManagement>
         <dependencies>

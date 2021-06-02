@@ -8,7 +8,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TRoleUserDTO extends TRoleDTO implements Serializable {
+public class TRoleUserDTO extends org.example.spring.repositories.oracle.auth.table.dto.TRoleDTO implements Serializable {
     private List<TUserDTO> users;
 
 }
