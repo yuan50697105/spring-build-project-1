@@ -9,5 +9,7 @@
     </parent>
     <artifactId>spring-micro-repositories-modules_2</artifactId>
     <packaging>pom</packaging>
-
+    <modules>
+        <module>spring-micro-repositories_2</module>
+    </modules>
 </project>
