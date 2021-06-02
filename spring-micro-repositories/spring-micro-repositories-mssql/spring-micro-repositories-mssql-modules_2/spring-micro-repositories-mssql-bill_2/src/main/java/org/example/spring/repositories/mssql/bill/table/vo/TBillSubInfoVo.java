@@ -2,7 +2,7 @@ package org.example.spring.repositories.mssql.bill.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.mysql.table.enumerate.BillSubInfoStatus;
+import org.example.spring.repositories.commons.enumerate.BillSubInfoStatus;
 import org.example.spring.repositories.mssql.bill.table.po.TBillSubInfo;
 
 @EqualsAndHashCode(callSuper = true)

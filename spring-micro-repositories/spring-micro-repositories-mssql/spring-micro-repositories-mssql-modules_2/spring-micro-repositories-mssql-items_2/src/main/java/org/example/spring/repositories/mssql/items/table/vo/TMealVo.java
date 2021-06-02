@@ -2,7 +2,7 @@ package org.example.spring.repositories.mssql.items.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.mysql.table.enumerate.TMealType;
+import org.example.spring.repositories.commons.enumerate.TMealType;
 import org.example.spring.repositories.mssql.items.table.po.TMeal;
 
 import java.io.Serializable;
