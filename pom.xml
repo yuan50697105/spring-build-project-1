@@ -297,7 +297,7 @@
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useEditMode>false</useEditMode>
-                        <arguments>-Pd -fn -T 4 -U</arguments>
+                        <arguments>-Pd -fn -T 1C -U</arguments>
                         <commitByProject>false</commitByProject>
                         <autoResolveSnapshots>all</autoResolveSnapshots>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
