@@ -1,6 +1,7 @@
 package org.example.spring.repositories.mysql.auth.repository.impl;
 
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.repositories.commons.enumerate.TUserStatus;
 import org.example.spring.repositories.mysql.auth.converter.TUserConverter;
 import org.example.spring.repositories.mysql.auth.dao.TUserDao;
 import org.example.spring.repositories.mysql.auth.repository.TResourceRepository;
@@ -12,7 +13,6 @@ import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleResourceDTO
 import org.example.spring.repositories.mysql.auth.table.po.TUser;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
-import org.example.spring.repositories.mysql.table.enumerate.TUserStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

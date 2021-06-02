@@ -1,13 +1,13 @@
 package org.example.spring.repositories.mysql.auth.repository;
 
 import org.example.spring.plugins.mybatis.repository.IBaseRepository;
+import org.example.spring.repositories.commons.enumerate.TUserStatus;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleResourceDTO;
 import org.example.spring.repositories.mysql.auth.table.po.TUser;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
-import org.example.spring.repositories.mysql.table.enumerate.TUserStatus;
 
 import java.util.List;
 
