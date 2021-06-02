@@ -23,8 +23,6 @@
         <module>spring-plugins-wx</module>
         <module>spring-plugins-payment</module>
         <module>spring-plugins-mongodb</module>
-        <module>spring-plugins-mybatis-rws-jta_1</module>
-        <module>spring-plugins-mybatis-rws-jta_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
