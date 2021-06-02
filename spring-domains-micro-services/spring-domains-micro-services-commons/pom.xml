@@ -4,7 +4,7 @@
     <parent>
         <artifactId>spring-domains-micro-services</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M9-SNAPSHOT</version>
+        <version>0.0.36-M9</version>
     </parent>
     <artifactId>spring-domains-micro-services-commons</artifactId>
 
