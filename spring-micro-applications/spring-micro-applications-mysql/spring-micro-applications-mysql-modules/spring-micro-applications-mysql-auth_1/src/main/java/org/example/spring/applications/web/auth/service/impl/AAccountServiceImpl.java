@@ -6,7 +6,7 @@ import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
-import org.example.spring.repositories.mysql.table.enumerate.TUserStatus;
+import org.example.spring.repositories.commons.enumerate.TUserStatus;
 import org.example.spring.domains.services.mysql.auth.service.DAccountService;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
