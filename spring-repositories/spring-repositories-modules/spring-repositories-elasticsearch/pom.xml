@@ -11,16 +11,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-repositories-commons</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-plugins-elasticsearch</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-repositories-minio</artifactId>
+            <artifactId>spring-micro-repositories-elasticsearch-all</artifactId>
         </dependency>
     </dependencies>
-
 </project>
