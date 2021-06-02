@@ -8,6 +8,6 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TRoleResourceDTO extends TRoleDTO implements Serializable {
+public class TRoleResourceDTO extends org.example.spring.repositories.postgres.auth.table.dto.TRoleDTO implements Serializable {
     private List<TResourceDTO> resources;
 }

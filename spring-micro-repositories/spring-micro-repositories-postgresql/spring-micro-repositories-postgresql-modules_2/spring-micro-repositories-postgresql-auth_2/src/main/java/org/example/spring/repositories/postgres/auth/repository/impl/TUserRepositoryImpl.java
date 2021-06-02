@@ -1,7 +1,7 @@
 package org.example.spring.repositories.postgres.auth.repository.impl;
 
-import org.example.spring.repositories.postgres.table.enumerate.TUserStatus;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
+import org.example.spring.repositories.commons.enumerate.TUserStatus;
 import org.example.spring.repositories.postgres.auth.converter.TUserConverter;
 import org.example.spring.repositories.postgres.auth.dao.TUserDao;
 import org.example.spring.repositories.postgres.auth.repository.TResourceRepository;

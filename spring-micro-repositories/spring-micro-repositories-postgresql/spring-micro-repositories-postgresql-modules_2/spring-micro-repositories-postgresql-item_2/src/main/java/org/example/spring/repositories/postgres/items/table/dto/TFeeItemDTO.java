@@ -2,8 +2,8 @@ package org.example.spring.repositories.postgres.items.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.postgres.table.enumerate.Sex;
-import org.example.spring.repositories.postgres.table.enumerate.TFeeItemType;
+import org.example.spring.repositories.commons.enumerate.Sex;
+import org.example.spring.repositories.commons.enumerate.TFeeItemType;
 import org.example.spring.repositories.postgres.items.table.po.TFeeItem;
 
 import java.io.Serializable;

@@ -9,8 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.repositories.postgres.table.enumerate.TCustomerInfoType;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
+import org.example.spring.repositories.commons.enumerate.TCustomerInfoType;
 import org.example.spring.repositories.postgres.customer.table.po.TCustomerInfo;
 import tk.mybatis.mapper.entity.Example;
 

@@ -2,7 +2,7 @@ package org.example.spring.repositories.postgres.items.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.postgres.table.enumerate.TMealType;
+import org.example.spring.repositories.commons.enumerate.TMealType;
 import org.example.spring.repositories.postgres.items.table.po.TMeal;
 
 import java.io.Serializable;

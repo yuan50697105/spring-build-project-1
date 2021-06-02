@@ -2,7 +2,7 @@ package org.example.spring.repositories.postgres.bill.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.mysql.table.enumerate.BillSubInfoStatus;
+import org.example.spring.repositories.commons.enumerate.BillSubInfoStatus;
 import org.example.spring.repositories.postgres.bill.table.po.TBillSubInfo;
 
 import java.io.Serializable;

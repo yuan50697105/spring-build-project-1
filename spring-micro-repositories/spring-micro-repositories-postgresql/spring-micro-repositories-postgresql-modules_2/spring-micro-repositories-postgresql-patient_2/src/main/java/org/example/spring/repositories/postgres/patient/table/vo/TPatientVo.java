@@ -2,8 +2,8 @@ package org.example.spring.repositories.postgres.patient.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.postgres.table.enumerate.Bear;
-import org.example.spring.repositories.postgres.table.enumerate.Marriage;
+import org.example.spring.repositories.commons.enumerate.Bear;
+import org.example.spring.repositories.commons.enumerate.Marriage;
 import org.example.spring.repositories.postgres.patient.table.po.TPatient;
 
 @EqualsAndHashCode(callSuper = true)

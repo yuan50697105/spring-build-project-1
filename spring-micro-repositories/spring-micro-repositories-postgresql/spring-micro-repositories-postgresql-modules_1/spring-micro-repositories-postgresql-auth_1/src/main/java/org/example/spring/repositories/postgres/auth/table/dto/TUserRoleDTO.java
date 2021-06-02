@@ -11,7 +11,7 @@ import java.util.List;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TUserRoleDTO extends TUserDTO implements Serializable {
+public class TUserRoleDTO extends org.example.spring.repositories.postgres.auth.table.dto.TUserDTO implements Serializable {
     private List<TRoleDTO> roles;
 
 }

@@ -2,7 +2,7 @@ package org.example.spring.repositories.postgres.patient.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.postgres.table.enumerate.FeeItemType;
+import org.example.spring.repositories.commons.enumerate.FeeItemType;
 import org.example.spring.repositories.postgres.patient.table.po.TPatientFeeItem;
 
 @EqualsAndHashCode(callSuper = true)

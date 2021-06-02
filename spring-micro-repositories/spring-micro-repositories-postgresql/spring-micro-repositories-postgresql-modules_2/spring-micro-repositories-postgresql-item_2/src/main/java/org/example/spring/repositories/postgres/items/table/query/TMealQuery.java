@@ -9,8 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.repositories.postgres.table.enumerate.TMealType;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
+import org.example.spring.repositories.commons.enumerate.TMealType;
 import org.example.spring.repositories.postgres.items.table.po.TMeal;
 import tk.mybatis.mapper.entity.Example;
 

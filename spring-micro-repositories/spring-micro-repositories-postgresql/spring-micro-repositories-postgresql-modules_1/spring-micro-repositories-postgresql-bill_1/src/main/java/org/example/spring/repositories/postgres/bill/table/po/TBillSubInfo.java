@@ -2,8 +2,8 @@ package org.example.spring.repositories.postgres.bill.table.po;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.postgres.table.enumerate.BillSubInfoStatus;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
+import org.example.spring.repositories.commons.enumerate.BillSubInfoStatus;
 
 import java.math.BigDecimal;
 
