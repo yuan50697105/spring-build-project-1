@@ -1,7 +1,7 @@
 package org.example.spring.services.mysql.account.service;
 
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
-import org.example.spring.repositories.commons.enumerate.TUserStatus;
 
 import java.util.List;
 
@@ -16,5 +16,9 @@ public interface AccountService {
 
     void delete(List<Long> ids);
 
-    void updateStatus(TUserStatus status, Long id);
+    void updateStatus(UserStatus status, Long id);
+
+    void updateStatus(UserStatus status, Long... ids);
+
+    void updateStaus(UserStatus status, List<Long> ids);
 }
