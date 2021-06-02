@@ -9,9 +9,4 @@ import java.util.List;
  */
 public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IBaseDao<T,Q> {
 
-    boolean updateBatchById(List<T> list);
-
-    boolean modifyBatchById(List<T> list);
-
-    boolean insertBatch(List<T> list);
 }

@@ -27,6 +27,11 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
     }
 
     @Override
+    public void insert(VO vo) {
+        save(vo);
+    }
+
+    @Override
     public void update(VO vo) {
         dao.updateSelective(converter.buildPo(vo));
     }
@@ -37,6 +42,16 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
     }
 
     @Override
+    public void modify(VO vo) {
+        update(vo);
+    }
+
+    @Override
+    public void modifyNull(VO vo) {
+        updateNull(vo);
+    }
+
+    @Override
     public void update(VO vo, Q q) {
         dao.updateSelective(converter.buildPo(vo), q);
     }
@@ -44,6 +59,16 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
     @Override
     public void updateNull(VO vo, Q q) {
         dao.update(converter.buildPo(vo), q);
+    }
+
+    @Override
+    public void modify(VO vo, Q q) {
+        update(vo,q);
+    }
+
+    @Override
+    public void modifyNull(VO vo, Q q) {
+        updateNull(vo,q);
     }
 
     @Override
@@ -180,6 +205,96 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
     public IPageData<DTO> selectPage(Q q) {
         IPageData<T> selectPage = dao.selectPage(q);
         return converter.buildDTOS(selectPage);
+    }
+
+    @Override
+    public DTO searchOne(Q q) {
+        return queryOne(q);
+    }
+
+    @Override
+    public Optional<DTO> searchOneOpt(Q q) {
+        return queryOneOpt(q);
+    }
+
+    @Override
+    public DTO searchFirst(Q q) {
+        return queryFirst(q);
+    }
+
+    @Override
+    public Optional<DTO> searchFirstOpt(Q q) {
+        return queryFirstOpt(q);
+    }
+
+    @Override
+    public List<DTO> searchList(Q q) {
+        return queryList(q);
+    }
+
+    @Override
+    public Stream<DTO> searchStream(Q q) {
+        return queryStream(q);
+    }
+
+    @Override
+    public List<DTO> searchTop(Q q) {
+        return queryTop(q);
+    }
+
+    @Override
+    public Stream<DTO> searchTopStream(Q q) {
+        return queryTopStream(q);
+    }
+
+    @Override
+    public IPageData<DTO> searchPage(Q q) {
+        return queryPage(q);
+    }
+
+    @Override
+    public DTO findOne(Q q) {
+        return queryOne(q);
+    }
+
+    @Override
+    public Optional<DTO> findOneOpt(Q q) {
+        return queryOneOpt(q);
+    }
+
+    @Override
+    public DTO findFirst(Q q) {
+        return queryFirst(q);
+    }
+
+    @Override
+    public Optional<DTO> findFirstOpt(Q q) {
+        return queryFirstOpt(q);
+    }
+
+    @Override
+    public List<DTO> findList(Q q) {
+        return queryList(q);
+    }
+
+    @Override
+    public Stream<DTO> findStream(Q q) {
+        return queryStream(q);
+    }
+
+    @Override
+    public List<DTO> findTop(Q q) {
+        return queryTop(q);
+    }
+
+    @Override
+    public Stream<DTO> findTopStream(Q q) {
+        return queryTopStream(q);
+    }
+
+    @Override
+    public IPageData<DTO> findPage(Q q) {
+        return queryPage(q);
     }
 
 

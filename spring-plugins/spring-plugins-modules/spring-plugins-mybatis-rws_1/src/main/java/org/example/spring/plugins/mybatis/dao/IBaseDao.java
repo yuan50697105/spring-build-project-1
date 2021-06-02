@@ -21,23 +21,7 @@ public interface IBaseDao<T, Q extends IBaseQuery> extends IService<T> {
 
     List<T> searchList(Q query);
 
-    Stream<T> queryListStream(Q query);
-
-    Stream<T> selectListStream(Q query);
-
-    Stream<T> searchListStream(Q query);
-
-    Stream<T> queryTopStream(Q query);
-
-    Stream<T> selectTopStream(Q query);
-
-    Stream<T> searchTopStream(Q query);
-
-    IPageData<T> queryPage(Q query);
-
-    IPageData<T> selectPage(Q query);
-
-    IPageData<T> searchPage(Q query);
+    List<T> findList(Q query);
 
     List<T> queryTop(Q query);
 
@@ -45,11 +29,40 @@ public interface IBaseDao<T, Q extends IBaseQuery> extends IService<T> {
 
     List<T> searchTop(Q query);
 
+    List<T> findTop(Q query);
+
+    Stream<T> queryListStream(Q query);
+
+    Stream<T> selectListStream(Q query);
+
+    Stream<T> searchListStream(Q query);
+
+    Stream<T> findListStream(Q query);
+
+    Stream<T> queryTopStream(Q query);
+
+    Stream<T> selectTopStream(Q query);
+
+    Stream<T> searchTopStream(Q query);
+
+    Stream<T> findTopStream(Q query);
+
+    IPageData<T> queryPage(Q query);
+
+    IPageData<T> selectPage(Q query);
+
+    IPageData<T> searchPage(Q query);
+
+    IPageData<T> findPage(Q query);
+
+
     Optional<T> queryFirstOpt(Q query);
 
     Optional<T> selectFirstOpt(Q query);
 
     Optional<T> searchFirstOpt(Q query);
+
+    Optional<T> findFirstOpt(Q query);
 
     T queryFirst(Q query);
 
@@ -57,17 +70,23 @@ public interface IBaseDao<T, Q extends IBaseQuery> extends IService<T> {
 
     T searchFirst(Q query);
 
+    T findFirst(Q query);
+
     T queryOne(Q query);
 
     T selectOne(Q query);
 
     T searchOne(Q query);
 
+    T findOne(Q query);
+
     Optional<T> queryOneOpt(Q query);
 
     Optional<T> selectOneOpt(Q query);
 
     Optional<T> searchOneOpt(Q query);
+
+    Optional<T> findOneOpt(Q query);
 
     boolean modifyById(T t);
 
@@ -122,4 +141,10 @@ public interface IBaseDao<T, Q extends IBaseQuery> extends IService<T> {
     boolean deleteByIds(Collection<? extends Serializable> ids);
 
     boolean deleteByIds(Serializable... ids);
+
+    boolean updateBatchById(List<T> list);
+
+    boolean modifyBatchById(List<T> list);
+
+    boolean insertBatch(List<T> list);
 }
