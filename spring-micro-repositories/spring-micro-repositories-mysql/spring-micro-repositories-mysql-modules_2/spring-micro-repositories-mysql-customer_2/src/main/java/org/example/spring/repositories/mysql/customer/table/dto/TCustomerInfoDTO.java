@@ -2,8 +2,8 @@ package org.example.spring.repositories.mysql.customer.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.mysql.table.enumerate.TCustomerInfoType;
 import org.example.spring.repositories.mysql.customer.table.po.TCustomerInfo;
+import org.example.spring.repositories.commons.enumerate.TCustomerInfoType;
 
 import java.io.Serializable;
 

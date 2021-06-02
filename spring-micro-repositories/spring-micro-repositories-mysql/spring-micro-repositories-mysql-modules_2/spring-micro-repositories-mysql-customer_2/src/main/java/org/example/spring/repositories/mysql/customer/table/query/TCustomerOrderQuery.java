@@ -9,8 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.repositories.mysql.table.enumerate.TCustomerOrderStatus;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
+import org.example.spring.repositories.commons.enumerate.TCustomerOrderStatus;
 import org.example.spring.repositories.mysql.customer.table.po.TCustomerOrder;
 import tk.mybatis.mapper.entity.Example;
 

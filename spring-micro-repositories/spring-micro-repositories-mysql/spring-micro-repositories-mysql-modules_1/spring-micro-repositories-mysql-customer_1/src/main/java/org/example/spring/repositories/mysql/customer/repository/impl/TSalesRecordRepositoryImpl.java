@@ -1,7 +1,6 @@
 package org.example.spring.repositories.mysql.customer.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.plugins.mybatis.repository.IBaseRepository;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.repositories.mysql.customer.converter.TSalesRecordConverter;
 import org.example.spring.repositories.mysql.customer.dao.TSalesRecordDao;

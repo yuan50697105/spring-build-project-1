@@ -7,10 +7,10 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndLessThanOrEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import org.example.spring.repositories.mysql.items.table.po.TFeeItem;
 import org.example.spring.repositories.mysql.table.enumerate.Sex;
 import org.example.spring.repositories.mysql.table.enumerate.TFeeItemType;
-import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;

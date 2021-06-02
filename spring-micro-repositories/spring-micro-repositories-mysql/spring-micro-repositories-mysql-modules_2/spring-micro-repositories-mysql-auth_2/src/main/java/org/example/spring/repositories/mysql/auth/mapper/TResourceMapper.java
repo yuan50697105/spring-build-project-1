@@ -4,8 +4,8 @@ import com.github.liuanxin.caches.MybatisRedisCache;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.example.spring.repositories.mysql.auth.table.po.TResource;
 import org.example.spring.plugins.mybatis.mapper.IBaseMapper;
+import org.example.spring.repositories.mysql.auth.table.po.TResource;
 
 import java.util.List;
 

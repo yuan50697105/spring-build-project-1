@@ -1,9 +1,9 @@
 package org.example.spring.repositories.mysql.auth.dao;
 
+import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.repositories.mysql.auth.table.po.TResource;
 import org.example.spring.repositories.mysql.auth.table.po.TRoleResource;
 import org.example.spring.repositories.mysql.auth.table.query.TRolePermissionQuery;
-import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;
 

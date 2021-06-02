@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.repositories.mysql.customer.converter.TCustomerInfoConverter;
 import org.example.spring.repositories.mysql.customer.dao.TCustomerInfoDao;
-import org.example.spring.repositories.mysql.customer.dao.impl.TCustomerInfoDaoImpl;
 import org.example.spring.repositories.mysql.customer.repository.TCustomerInfoRepository;
 import org.example.spring.repositories.mysql.customer.table.dto.TCustomerInfoDTO;
 import org.example.spring.repositories.mysql.customer.table.po.TCustomerInfo;

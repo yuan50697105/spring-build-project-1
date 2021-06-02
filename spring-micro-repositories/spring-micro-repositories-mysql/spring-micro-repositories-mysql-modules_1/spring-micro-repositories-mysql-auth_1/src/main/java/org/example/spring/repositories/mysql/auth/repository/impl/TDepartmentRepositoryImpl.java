@@ -1,5 +1,6 @@
 package org.example.spring.repositories.mysql.auth.repository.impl;
 
+import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.example.spring.repositories.mysql.auth.converter.TDepartmentConverter;
 import org.example.spring.repositories.mysql.auth.dao.TDepartmentDao;
 import org.example.spring.repositories.mysql.auth.dao.TDepartmentRoleDao;
@@ -11,7 +12,6 @@ import org.example.spring.repositories.mysql.auth.table.po.TDepartment;
 import org.example.spring.repositories.mysql.auth.table.po.TDepartmentRole;
 import org.example.spring.repositories.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TDepartmentVo;
-import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

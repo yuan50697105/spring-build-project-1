@@ -2,8 +2,8 @@ package org.example.spring.repositories.mysql.bill.table.po;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.mysql.table.enumerate.BillLogType;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
+import org.example.spring.repositories.commons.enumerate.BillLogType;
 
 import java.math.BigDecimal;
 

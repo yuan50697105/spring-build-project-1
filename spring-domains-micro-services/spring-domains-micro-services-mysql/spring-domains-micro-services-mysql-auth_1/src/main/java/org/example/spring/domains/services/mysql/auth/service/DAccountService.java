@@ -5,7 +5,7 @@ import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleResourceDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
-import org.example.spring.repositories.mysql.table.enumerate.TUserStatus;
+import org.example.spring.repositories.commons.enumerate.TUserStatus;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;

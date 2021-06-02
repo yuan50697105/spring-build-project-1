@@ -1,8 +1,8 @@
 package org.example.spring.repositories.mysql.auth.dao;
 
+import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.repositories.mysql.auth.table.po.TUser;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
-import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;
 

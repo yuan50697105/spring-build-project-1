@@ -2,7 +2,7 @@ package org.example.spring.repositories.clients.auth.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.mysql.table.enumerate.TUserStatus;
+import org.example.spring.repositories.commons.enumerate.TUserStatus;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

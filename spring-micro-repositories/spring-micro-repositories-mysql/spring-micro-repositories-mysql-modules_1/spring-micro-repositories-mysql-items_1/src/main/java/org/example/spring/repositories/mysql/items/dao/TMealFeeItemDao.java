@@ -1,8 +1,8 @@
 package org.example.spring.repositories.mysql.items.dao;
 
+import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 import org.example.spring.repositories.mysql.items.table.po.TMealFeeItem;
 import org.example.spring.repositories.mysql.items.table.query.TMealFeeItemQuery;
-import org.example.spring.plugins.mybatis.dao.TkBaseDao;
 
 import java.util.List;
 
