@@ -1,12 +1,12 @@
 package org.example.spring.domains.services.mysql.auth.service;
 
+import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleResourceDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
-import org.example.spring.repositories.commons.enumerate.TUserStatus;
-import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 
@@ -34,5 +34,5 @@ public interface DAccountService {
 
     void delete(Long id);
 
-    void updateStatus(TUserStatus status, List<Long> ids);
+    void updateStatus(UserStatus status, List<Long> ids);
 }
