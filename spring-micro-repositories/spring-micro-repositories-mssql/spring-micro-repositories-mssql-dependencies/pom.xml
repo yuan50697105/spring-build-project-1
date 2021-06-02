@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-mssql</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M8-SNAPSHOT</version>
+        <version>0.0.36-M8</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,92 +14,92 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-commons_1</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-commons_2</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql_1</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql_2</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-auth_1</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-auth_2</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-bill_1</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-bill_2</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-customer_1</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-customer_2</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-department_1</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-department_2</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-items_1</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-items_2</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-patient_1</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-patient_2</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-report_1</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-report_2</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

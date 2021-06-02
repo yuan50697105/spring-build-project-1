@@ -4,10 +4,10 @@
     <parent>
         <groupId>org.example.spring</groupId>
         <artifactId>spring-micro-services</artifactId>
-        <version>0.0.36-M8-SNAPSHOT</version>
+        <version>0.0.36-M8</version>
     </parent>
     <artifactId>spring-micro-services-commons</artifactId>
-    <version>0.0.36-M8-SNAPSHOT</version>
+    <version>0.0.36-M8</version>
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>

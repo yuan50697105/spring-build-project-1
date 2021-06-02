@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-mysql-modules_1</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M8-SNAPSHOT</version>
+        <version>0.0.36-M8</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

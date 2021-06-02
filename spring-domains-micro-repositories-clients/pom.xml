@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M8-SNAPSHOT</version>
+        <version>0.0.36-M8</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -20,21 +20,21 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-repositories-dependencies</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-dependencies</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

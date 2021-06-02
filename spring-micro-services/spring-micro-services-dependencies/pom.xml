@@ -4,26 +4,26 @@
     <parent>
         <groupId>org.example.spring</groupId>
         <artifactId>spring-micro-services</artifactId>
-        <version>0.0.36-M8-SNAPSHOT</version>
+        <version>0.0.36-M8</version>
     </parent>
     <artifactId>spring-micro-services-dependencies</artifactId>
-    <version>0.0.36-M8-SNAPSHOT</version>
+    <version>0.0.36-M8</version>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-commons</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-account-service-mysql_1</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-account-service-mysql_2</artifactId>
-                <version>0.0.36-M8-SNAPSHOT</version>
+                <version>0.0.36-M8</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
