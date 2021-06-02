@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
-import org.example.spring.repositories.commons.enumerate.TUserStatus;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 
 import javax.persistence.Table;
 import java.io.Serializable;
@@ -50,7 +50,7 @@ public class TUser extends IBaseEntity implements Serializable {
     /**
      * 状态
      *
-     * @see TUserStatus
+     * @see UserStatus
      */
     @ApiModelProperty(value = "状态")
     private String status;

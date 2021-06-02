@@ -12,7 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
-import org.example.spring.repositories.commons.enumerate.TCustomerContractStatus;
+import org.example.spring.repositories.commons.enumerate.CustomerContractStatus;
 import org.example.spring.repositories.postgres.customer.table.po.TCustomerContract;
 import tk.mybatis.mapper.entity.Example;
 
@@ -64,10 +64,10 @@ public class TCustomerContractQuery extends TkBaseQuery<TCustomerContract> imple
     private String status;
 
     public String getStatus() {
-        return TCustomerContractStatus.getValue(status);
+        return CustomerContractStatus.getValue(status);
     }
 
     public void setStatus(String status) {
-        this.status = TCustomerContractStatus.getValue(status);
+        this.status = CustomerContractStatus.getValue(status);
     }
 }

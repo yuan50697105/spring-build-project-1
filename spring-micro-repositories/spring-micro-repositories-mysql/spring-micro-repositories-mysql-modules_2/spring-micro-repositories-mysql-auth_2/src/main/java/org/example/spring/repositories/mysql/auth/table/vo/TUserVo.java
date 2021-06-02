@@ -2,7 +2,7 @@ package org.example.spring.repositories.mysql.auth.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.TUserStatus;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.mysql.auth.table.po.TUser;
 
 import java.io.Serializable;
@@ -15,12 +15,12 @@ public class TUserVo extends TUser implements Serializable {
 
     @Override
     public String getStatus() {
-        return TUserStatus.getValue(super.getStatus());
+        return UserStatus.getValue(super.getStatus());
     }
 
     @Override
     public void setStatus(String status) {
-        super.setStatus(TUserStatus.getValue(status));
+        super.setStatus(UserStatus.getValue(status));
     }
 
 }

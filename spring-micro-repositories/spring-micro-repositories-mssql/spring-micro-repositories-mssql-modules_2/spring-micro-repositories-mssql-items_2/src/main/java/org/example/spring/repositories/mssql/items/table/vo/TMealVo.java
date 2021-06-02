@@ -2,7 +2,7 @@ package org.example.spring.repositories.mssql.items.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.TMealType;
+import org.example.spring.repositories.commons.enumerate.MealType;
 import org.example.spring.repositories.mssql.items.table.po.TMeal;
 
 import java.io.Serializable;
@@ -15,11 +15,11 @@ public class TMealVo extends TMeal implements Serializable {
 
     @Override
     public String getType() {
-        return TMealType.getValue(super.getType());
+        return MealType.getValue(super.getType());
     }
 
     @Override
     public void setType(String type) {
-        super.setType(TMealType.getValue(type));
+        super.setType(MealType.getValue(type));
     }
 }

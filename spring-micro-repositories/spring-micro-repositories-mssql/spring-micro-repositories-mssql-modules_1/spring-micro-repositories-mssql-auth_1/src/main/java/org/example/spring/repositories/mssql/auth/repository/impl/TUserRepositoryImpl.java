@@ -1,7 +1,7 @@
 package org.example.spring.repositories.mssql.auth.repository.impl;
 
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
-import org.example.spring.repositories.commons.enumerate.TUserStatus;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.mssql.auth.converter.TUserConverter;
 import org.example.spring.repositories.mssql.auth.dao.TUserDao;
 import org.example.spring.repositories.mssql.auth.repository.TResourceRepository;
@@ -47,17 +47,17 @@ public class TUserRepositoryImpl extends IBaseRepositoryImpl<TUser, TUserDTO, TU
     }
 
     @Override
-    public void updateStatus(TUserStatus status, List<Long> ids) {
+    public void updateStatus(UserStatus status, List<Long> ids) {
         dao.updateStatusByIds(status.getValue(), ids);
     }
 
     @Override
-    public void updateStatus(TUserStatus status, Long... ids) {
+    public void updateStatus(UserStatus status, Long... ids) {
         updateStatus(status, Arrays.asList(ids));
     }
 
     @Override
-    public void updateStatus(TUserStatus status, Long id) {
+    public void updateStatus(UserStatus status, Long id) {
         updateStatus(status, Collections.singletonList(id));
     }
 }

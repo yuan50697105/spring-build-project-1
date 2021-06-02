@@ -10,7 +10,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
-import org.example.spring.repositories.commons.enumerate.TCustomerInfoType;
+import org.example.spring.repositories.commons.enumerate.CustomerInfoType;
 import org.example.spring.repositories.postgres.customer.table.po.TCustomerInfo;
 import tk.mybatis.mapper.entity.Example;
 
@@ -46,10 +46,10 @@ public class TCustomerInfoQuery extends TkBaseQuery<TCustomerInfo> implements Se
     private String type;
 
     public String getType() {
-        return TCustomerInfoType.getValue(type);
+        return CustomerInfoType.getValue(type);
     }
 
     public void setType(String type) {
-        this.type = TCustomerInfoType.getValue(type);
+        this.type = CustomerInfoType.getValue(type);
     }
 }

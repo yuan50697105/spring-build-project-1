@@ -2,7 +2,7 @@ package org.example.spring.repositories.postgres.customer.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.TCustomerOrderStatus;
+import org.example.spring.repositories.commons.enumerate.CustomerOrderStatus;
 import org.example.spring.repositories.postgres.customer.table.po.TCustomerOrder;
 
 import java.io.Serializable;
@@ -12,11 +12,11 @@ import java.io.Serializable;
 public class TCustomerOrderDTO extends TCustomerOrder implements Serializable {
     @Override
     public String getStatus() {
-        return TCustomerOrderStatus.getName(super.getStatus());
+        return CustomerOrderStatus.getName(super.getStatus());
     }
 
     @Override
     public void setStatus(String status) {
-        super.setStatus(TCustomerOrderStatus.getName(status));
+        super.setStatus(CustomerOrderStatus.getName(status));
     }
 }

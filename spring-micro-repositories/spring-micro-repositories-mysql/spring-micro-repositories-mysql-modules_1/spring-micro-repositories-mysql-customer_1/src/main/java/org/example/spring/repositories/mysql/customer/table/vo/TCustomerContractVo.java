@@ -2,7 +2,7 @@ package org.example.spring.repositories.mysql.customer.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.TCustomerContractStatus;
+import org.example.spring.repositories.commons.enumerate.CustomerContractStatus;
 import org.example.spring.repositories.mysql.customer.table.po.TCustomerContract;
 
 import java.io.Serializable;
@@ -12,11 +12,11 @@ import java.io.Serializable;
 public class TCustomerContractVo extends TCustomerContract implements Serializable {
     @Override
     public String getStatus() {
-        return TCustomerContractStatus.getValue(super.getStatus());
+        return CustomerContractStatus.getValue(super.getStatus());
     }
 
     @Override
     public void setStatus(String status) {
-        super.setStatus(TCustomerContractStatus.getValue(status));
+        super.setStatus(CustomerContractStatus.getValue(status));
     }
 }

@@ -2,7 +2,7 @@ package org.example.spring.repositories.mssql.customer.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.TCustomerContractStatus;
+import org.example.spring.repositories.commons.enumerate.CustomerContractStatus;
 import org.example.spring.repositories.mssql.customer.table.po.TCustomerContract;
 
 import java.io.Serializable;
@@ -12,11 +12,11 @@ import java.io.Serializable;
 public class TCustomerContractDTO extends TCustomerContract implements Serializable {
     @Override
     public String getStatus() {
-        return TCustomerContractStatus.getName(super.getStatus());
+        return CustomerContractStatus.getName(super.getStatus());
     }
 
     @Override
     public void setStatus(String status) {
-        super.setStatus(TCustomerContractStatus.getName(status));
+        super.setStatus(CustomerContractStatus.getName(status));
     }
 }

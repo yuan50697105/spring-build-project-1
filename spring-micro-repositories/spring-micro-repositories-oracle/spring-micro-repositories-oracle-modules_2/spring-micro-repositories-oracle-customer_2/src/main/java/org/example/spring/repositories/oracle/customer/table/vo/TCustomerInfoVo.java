@@ -2,7 +2,7 @@ package org.example.spring.repositories.oracle.customer.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.TCustomerInfoType;
+import org.example.spring.repositories.commons.enumerate.CustomerInfoType;
 import org.example.spring.repositories.oracle.customer.table.po.TCustomerInfo;
 
 import java.io.Serializable;
@@ -12,11 +12,11 @@ import java.io.Serializable;
 public class TCustomerInfoVo extends TCustomerInfo implements Serializable {
     @Override
     public String getType() {
-        return TCustomerInfoType.getValue(super.getType());
+        return CustomerInfoType.getValue(super.getType());
     }
 
     @Override
     public void setType(String type) {
-        super.setType(TCustomerInfoType.getValue(type));
+        super.setType(CustomerInfoType.getValue(type));
     }
 }

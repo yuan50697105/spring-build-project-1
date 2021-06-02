@@ -2,7 +2,7 @@ package org.example.spring.repositories.postgres.auth.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.TUserTokenStatus;
+import org.example.spring.repositories.commons.enumerate.UserTokenStatus;
 import org.example.spring.repositories.postgres.auth.table.po.TUserToken;
 
 @EqualsAndHashCode(callSuper = true)
@@ -10,6 +10,6 @@ import org.example.spring.repositories.postgres.auth.table.po.TUserToken;
 public class TUserTokenVo extends TUserToken {
     @Override
     public void setStatus(String status) {
-        super.setStatus(TUserTokenStatus.getValue(status));
+        super.setStatus(UserTokenStatus.getValue(status));
     }
 }

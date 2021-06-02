@@ -2,8 +2,8 @@ package org.example.spring.repositories.mssql.items.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.repositories.commons.enumerate.FeeItemType;
 import org.example.spring.repositories.commons.enumerate.Sex;
-import org.example.spring.repositories.commons.enumerate.TFeeItemType;
 import org.example.spring.repositories.mssql.items.table.po.TFeeItem;
 
 import java.io.Serializable;
@@ -23,11 +23,11 @@ public class TFeeItemVo extends TFeeItem implements Serializable {
 
     @Override
     public String getType() {
-        return TFeeItemType.getValue(super.getType());
+        return FeeItemType.getValue(super.getType());
     }
 
     @Override
     public void setType(String type) {
-        super.setType(TFeeItemType.getValue(type));
+        super.setType(FeeItemType.getValue(type));
     }
 }

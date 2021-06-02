@@ -8,8 +8,8 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
+import org.example.spring.repositories.commons.enumerate.FeeItemType;
 import org.example.spring.repositories.commons.enumerate.Sex;
-import org.example.spring.repositories.commons.enumerate.TFeeItemType;
 import org.example.spring.repositories.postgres.items.table.po.TFeeItem;
 import tk.mybatis.mapper.entity.Example;
 
@@ -68,11 +68,11 @@ public class TFeeItemQuery extends TkBaseQuery<TFeeItem> implements Serializable
     private Integer ageEnd;
 
     public String getType() {
-        return TFeeItemType.getValue(type);
+        return FeeItemType.getValue(type);
     }
 
     public void setType(String type) {
-        this.type = TFeeItemType.getValue(type);
+        this.type = FeeItemType.getValue(type);
     }
 
     public String getSex() {

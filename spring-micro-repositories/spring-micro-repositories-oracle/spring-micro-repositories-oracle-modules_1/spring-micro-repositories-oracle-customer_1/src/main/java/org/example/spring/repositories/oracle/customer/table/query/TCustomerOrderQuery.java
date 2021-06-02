@@ -10,7 +10,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
-import org.example.spring.repositories.commons.enumerate.TCustomerOrderStatus;
+import org.example.spring.repositories.commons.enumerate.CustomerOrderStatus;
 import org.example.spring.repositories.oracle.customer.table.po.TCustomerOrder;
 import tk.mybatis.mapper.entity.Example;
 
@@ -64,10 +64,10 @@ public class TCustomerOrderQuery extends TkBaseQuery<TCustomerOrder> implements 
     private String status;
 
     public String getStatus() {
-        return TCustomerOrderStatus.getValue(status);
+        return CustomerOrderStatus.getValue(status);
     }
 
     public void setStatus(String status) {
-        this.status = TCustomerOrderStatus.getValue(status);
+        this.status = CustomerOrderStatus.getValue(status);
     }
 }

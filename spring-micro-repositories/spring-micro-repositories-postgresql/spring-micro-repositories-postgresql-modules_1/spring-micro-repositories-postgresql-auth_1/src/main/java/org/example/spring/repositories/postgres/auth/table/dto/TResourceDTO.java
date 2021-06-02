@@ -2,7 +2,7 @@ package org.example.spring.repositories.postgres.auth.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.TResourceType;
+import org.example.spring.repositories.commons.enumerate.ResourceType;
 import org.example.spring.repositories.postgres.auth.table.po.TResource;
 
 import java.io.Serializable;
@@ -12,11 +12,11 @@ import java.io.Serializable;
 public class TResourceDTO extends TResource implements Serializable {
     @Override
     public String getType() {
-        return TResourceType.getName(super.getType());
+        return ResourceType.getName(super.getType());
     }
 
     @Override
     public void setType(String type) {
-        super.setType(TResourceType.getName(type));
+        super.setType(ResourceType.getName(type));
     }
 }

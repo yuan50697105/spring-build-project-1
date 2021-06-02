@@ -2,7 +2,7 @@ package org.example.spring.repositories.postgres.auth.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.TUserStatus;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.postgres.auth.table.po.TUser;
 
 import java.io.Serializable;
@@ -17,11 +17,11 @@ public class TUserDTO extends TUser implements Serializable {
 
     @Override
     public String getStatus() {
-        return TUserStatus.getName(super.getStatus());
+        return UserStatus.getName(super.getStatus());
     }
 
     @Override
     public void setStatus(String status) {
-        super.setStatus(TUserStatus.getName(status));
+        super.setStatus(UserStatus.getName(status));
     }
 }

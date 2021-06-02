@@ -10,7 +10,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
-import org.example.spring.repositories.commons.enumerate.TMealType;
+import org.example.spring.repositories.commons.enumerate.MealType;
 import org.example.spring.repositories.mysql.items.table.po.TMeal;
 import tk.mybatis.mapper.entity.Example;
 
@@ -47,10 +47,10 @@ public class TMealQuery extends TkBaseQuery<TMeal> implements Serializable, Myba
     private String type;
 
     public String getType() {
-        return TMealType.getValue(type);
+        return MealType.getValue(type);
     }
 
     public void setType(String type) {
-        this.type = TMealType.getValue(type);
+        this.type = MealType.getValue(type);
     }
 }

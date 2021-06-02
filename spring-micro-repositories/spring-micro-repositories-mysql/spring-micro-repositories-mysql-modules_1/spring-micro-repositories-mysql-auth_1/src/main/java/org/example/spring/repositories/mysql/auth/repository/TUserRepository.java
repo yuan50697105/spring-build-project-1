@@ -1,7 +1,7 @@
 package org.example.spring.repositories.mysql.auth.repository;
 
 import org.example.spring.plugins.mybatis.repository.IBaseRepository;
-import org.example.spring.repositories.commons.enumerate.TUserStatus;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleResourceDTO;
@@ -16,9 +16,9 @@ public interface TUserRepository extends IBaseRepository<TUser, TUserDTO, TUserV
 
     TUserRoleDTO getWithRole(Long id);
 
-    void updateStatus(TUserStatus status, List<Long> ids);
+    void updateStatus(UserStatus status, List<Long> ids);
 
-    void updateStatus(TUserStatus status, Long... ids);
+    void updateStatus(UserStatus status, Long... ids);
 
-    void updateStatus(TUserStatus status, Long id);
+    void updateStatus(UserStatus status, Long id);
 }
