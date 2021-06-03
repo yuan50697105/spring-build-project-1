@@ -12,7 +12,7 @@
     <parent>
         <artifactId>spring-micro-repositories</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M2</version>
+        <version>0.0.37-M3-SNAPSHOT</version>
     </parent>
     <artifactId>spring-micro-repositories-mssql</artifactId>
     <packaging>pom</packaging>
@@ -21,12 +21,12 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-commons</artifactId>
-                <version>0.0.37-M2</version>
+                <version>0.0.37-M3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.37-M2</version>
+                <version>0.0.37-M3-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
