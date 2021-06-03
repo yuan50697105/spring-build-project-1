@@ -1,15 +1,15 @@
 package org.example.spring.domains.services.mysql.auth.service.impl;
 
 
+import org.example.spring.domains.repositories.mysql.auth.repository.DAccountRepository;
+import org.example.spring.domains.services.mysql.auth.service.DAccountService;
+import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleResourceDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
-import org.example.spring.repositories.commons.enumerate.TUserStatus;
-import org.example.spring.domains.repositories.mysql.auth.repository.DAccountRepository;
-import org.example.spring.domains.services.mysql.auth.service.DAccountService;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -79,7 +79,7 @@ public class DAccountServiceImpl implements DAccountService {
     }
 
     @Override
-    public void updateStatus(TUserStatus status, List<Long> ids) {
+    public void updateStatus(UserStatus status, List<Long> ids) {
         ids.forEach(id -> {
             TUserVo vo = new TUserVo();
             vo.setId(id);
