@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 public interface CommonsRepository<T, V, D, Q> {
-    V save(V vo);
+    void save(V vo);
 
     void update(V vo);
 

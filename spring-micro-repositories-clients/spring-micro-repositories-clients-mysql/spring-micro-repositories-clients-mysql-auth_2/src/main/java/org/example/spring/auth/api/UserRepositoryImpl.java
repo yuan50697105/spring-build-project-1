@@ -1,14 +1,16 @@
-package org.example.spring.auth;
+package org.example.spring.auth.api;
 
-import org.example.spring.auth.converter.UserRepositortConverter;
+import org.example.spring.auth.converter.UserRepositoryConverter;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.UserRepository;
 import org.example.spring.repositories.commons.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.auth.dto.UserRoleDTO;
+import org.example.spring.repositories.commons.auth.dto.UserRoleResourceDTO;
 import org.example.spring.repositories.commons.auth.query.UserQuery;
 import org.example.spring.repositories.commons.auth.vo.UserVo;
 import org.example.spring.repositories.mysql.auth.repository.TUserRepository;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
 import org.springframework.stereotype.Repository;
@@ -21,24 +23,22 @@ import java.util.stream.Stream;
 public class UserRepositoryImpl implements UserRepository {
 
     private final TUserRepository userRepository;
-    private final UserRepositortConverter userRepositortConverter;
+    private final UserRepositoryConverter userRepositoryConverter;
 
-    public UserRepositoryImpl(TUserRepository userRepository, UserRepositortConverter userRepositortConverter) {
+    public UserRepositoryImpl(TUserRepository userRepository, UserRepositoryConverter userRepositoryConverter) {
         this.userRepository = userRepository;
-        this.userRepositortConverter = userRepositortConverter;
+        this.userRepositoryConverter = userRepositoryConverter;
     }
 
     @Override
-    public UserVo save(UserVo vo) {
-        TUserVo build = userRepositortConverter.build(vo);
+    public void save(UserVo vo) {
+        TUserVo build = userRepositoryConverter.build(vo);
         userRepository.save(build);
-
-        return userRepositortConverter.convert(build);
     }
 
     @Override
     public void update(UserVo vo) {
-        userRepository.update(userRepositortConverter.build(vo));
+        userRepository.update(userRepositoryConverter.build(vo));
     }
 
     @Override
@@ -58,7 +58,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public UserDTO get(Long id) {
-        return userRepositortConverter.build(userRepository.get(id));
+        return userRepositoryConverter.build(userRepository.get(id));
     }
 
     @Override
@@ -68,14 +68,17 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public UserRoleDTO getWithRole(Long id) {
-        return userRepositortConverter.buildWithRole(userRepository.getWithRole(id));
+        TUserRoleDTO tUserRoleDTO = userRepository.getWithRole(id);
+        UserRoleDTO userRoleDTO = userRepositoryConverter.buildWithRole(tUserRoleDTO);
+        userRoleDTO.setRoles(userRepositoryConverter.buildRole(tUserRoleDTO.getRoles()));
+        return userRoleDTO;
     }
 
     @Override
     public UserDTO one(UserQuery query) {
-        TUserQuery userQuery = userRepositortConverter.build(query);
+        TUserQuery userQuery = userRepositoryConverter.build(query);
         TUserDTO DTO = userRepository.queryOne(userQuery);
-        return userRepositortConverter.build(DTO);
+        return userRepositoryConverter.build(DTO);
     }
 
     @Override
@@ -85,9 +88,9 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public UserDTO first(UserQuery query) {
-        TUserQuery userQuery = userRepositortConverter.build(query);
+        TUserQuery userQuery = userRepositoryConverter.build(query);
         TUserDTO DTO = userRepository.queryFirst(userQuery);
-        return userRepositortConverter.build(DTO);
+        return userRepositoryConverter.build(DTO);
     }
 
     @Override
@@ -101,10 +104,27 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
+    public UserRoleResourceDTO getWithRoleResource(Long id) {
+//        TUserRoleResourceDTO tUserRoleResourceDTO = userRepository.getWithRoleAndResource(id);
+//        UserRoleResourceDTO userRoleResourceDTO = userRepositoryConverter.buildWithRoleResource(tUserRoleResourceDTO);
+//        userRoleResourceDTO.setRoles(userRepositoryConverter.buildRole(tUserRoleResourceDTO.getRoles()));
+//        if (ObjectUtil.isNotEmpty(tUserRoleResourceDTO.getResources())) {
+//            userRoleResourceDTO.setResources(userRepositoryConverter.buildResources(tUserRoleResourceDTO.getResources()));
+//        }
+//        return userRoleResourceDTO;
+        return null;
+    }
+
+    @Override
+    public Optional<UserRoleResourceDTO> getWithRoleResourceOpt(Long id) {
+        return Optional.ofNullable(getWithRoleResource(id));
+    }
+
+    @Override
     public List<UserDTO> list(UserQuery query) {
-        TUserQuery userQuery = userRepositortConverter.build(query);
+        TUserQuery userQuery = userRepositoryConverter.build(query);
         List<TUserDTO> DTO = userRepository.queryList(userQuery);
-        return userRepositortConverter.build(DTO);
+        return userRepositoryConverter.build(DTO);
     }
 
     @Override
@@ -114,9 +134,9 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public List<UserDTO> top(UserQuery query) {
-        TUserQuery userQuery = userRepositortConverter.build(query);
+        TUserQuery userQuery = userRepositoryConverter.build(query);
         List<TUserDTO> DTO = userRepository.queryTop(userQuery);
-        return userRepositortConverter.build(DTO);
+        return userRepositoryConverter.build(DTO);
     }
 
     @Override
@@ -126,8 +146,8 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public IPageData<UserDTO> data(UserQuery query) {
-        TUserQuery userQuery = userRepositortConverter.build(query);
+        TUserQuery userQuery = userRepositoryConverter.build(query);
         IPageData<TUserDTO> DTO = userRepository.queryPage(userQuery);
-        return userRepositortConverter.build(DTO);
+        return userRepositoryConverter.build(DTO);
     }
 }
