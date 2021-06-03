@@ -2,7 +2,7 @@ package org.example.spring.repositories.commons.items.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 import org.example.spring.repositories.commons.enumerate.FeeItemType;
 import org.example.spring.repositories.commons.enumerate.Sex;
 
@@ -15,7 +15,7 @@ import java.math.BigDecimal;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class FeeItemQuery extends BaseQuery {
+public class FeeItemQuery extends ICommonsQuery {
     /**
      * 项目编号
      */

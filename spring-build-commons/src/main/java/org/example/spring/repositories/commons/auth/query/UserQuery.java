@@ -2,11 +2,11 @@ package org.example.spring.repositories.commons.auth.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class UserQuery extends BaseQuery {
+public class UserQuery extends ICommonsQuery {
 
     /**
      * 用户名

@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 
 /**
  * t_report_info
@@ -16,7 +16,7 @@ import org.example.spring.plugins.commons.entity.query.BaseQuery;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReportInfoQuery extends BaseQuery {
+public class ReportInfoQuery extends ICommonsQuery {
     /**
      * 报告编号
      */

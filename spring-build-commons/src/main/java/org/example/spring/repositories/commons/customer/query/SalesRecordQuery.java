@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 
 import java.math.BigDecimal;
 
@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class SalesRecordQuery extends BaseQuery {
+public class SalesRecordQuery extends ICommonsQuery {
     /**
      * 销售员Id
      */

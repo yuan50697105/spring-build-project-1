@@ -2,11 +2,11 @@ package org.example.spring.repositories.commons.bill.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BillInfoQuery extends BaseQuery {
+public class BillInfoQuery extends ICommonsQuery {
     /**
      * 订单号
      */

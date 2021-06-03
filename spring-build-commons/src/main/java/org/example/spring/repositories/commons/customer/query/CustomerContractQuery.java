@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 import org.example.spring.repositories.commons.enumerate.CustomerContractStatus;
 
 import java.util.Date;
@@ -19,7 +19,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerContractQuery extends BaseQuery {
+public class CustomerContractQuery extends ICommonsQuery {
     private static final long serialVersionUID = 1L;
     /**
      * 合同编号

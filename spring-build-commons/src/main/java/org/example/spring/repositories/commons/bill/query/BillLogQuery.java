@@ -3,7 +3,7 @@ package org.example.spring.repositories.commons.bill.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 import org.example.spring.repositories.commons.enumerate.BillLogType;
 
 /**
@@ -11,7 +11,7 @@ import org.example.spring.repositories.commons.enumerate.BillLogType;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BillLogQuery extends BaseQuery {
+public class BillLogQuery extends ICommonsQuery {
     /**
      * 订单号
      */

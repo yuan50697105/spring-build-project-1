@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 
 /**
  * t_patient_team_meal_fee_item
@@ -16,7 +16,7 @@ import org.example.spring.plugins.commons.entity.query.BaseQuery;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class PatientTeamMealFeeItemQuery extends BaseQuery {
+public class PatientTeamMealFeeItemQuery extends ICommonsQuery {
     private static final long serialVersionUID = 1L;
     /**
      * teamId

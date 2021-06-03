@@ -2,14 +2,14 @@ package org.example.spring.repositories.commons.bill.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 
 /**
  * 订单项目
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BillItemsInfoQuery extends BaseQuery {
+public class BillItemsInfoQuery extends ICommonsQuery {
     private String billId;
     private String orderNo;
     private String subOrderNo;

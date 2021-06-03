@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 import org.example.spring.repositories.commons.enumerate.CustomerInfoType;
 
 /**
@@ -17,7 +17,7 @@ import org.example.spring.repositories.commons.enumerate.CustomerInfoType;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerInfoQuery extends BaseQuery {
+public class CustomerInfoQuery extends ICommonsQuery {
     private static final long serialVersionUID = 1L;
     /**
      * 编号

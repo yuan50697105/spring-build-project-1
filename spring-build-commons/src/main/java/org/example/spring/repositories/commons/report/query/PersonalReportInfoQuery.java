@@ -2,11 +2,11 @@ package org.example.spring.repositories.commons.report.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PersonalReportInfoQuery extends BaseQuery {
+public class PersonalReportInfoQuery extends ICommonsQuery {
     private Long patientId;
     private String patientName;
     private String patientIdNumber;

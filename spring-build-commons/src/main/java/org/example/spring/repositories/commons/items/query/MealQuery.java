@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 import org.example.spring.repositories.commons.enumerate.MealType;
 
 /**
@@ -17,7 +17,7 @@ import org.example.spring.repositories.commons.enumerate.MealType;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class MealQuery extends BaseQuery {
+public class MealQuery extends ICommonsQuery {
     /**
      * code
      */

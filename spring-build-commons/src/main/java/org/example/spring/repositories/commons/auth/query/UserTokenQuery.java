@@ -2,7 +2,7 @@ package org.example.spring.repositories.commons.auth.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.plugins.commons.entity.query.BaseQuery;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 import org.example.spring.repositories.commons.enumerate.UserTokenStatus;
 
 /**
@@ -10,7 +10,7 @@ import org.example.spring.repositories.commons.enumerate.UserTokenStatus;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class UserTokenQuery extends BaseQuery {
+public class UserTokenQuery extends ICommonsQuery {
     /**
      * 用户ID
      */
