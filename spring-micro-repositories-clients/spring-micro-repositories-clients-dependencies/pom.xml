@@ -28,12 +28,32 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres_1</artifactId>
+                <version>0.0.37-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres_2</artifactId>
+                <version>0.0.37-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mysql-auth_1</artifactId>
                 <version>0.0.37-M1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mysql-auth_2</artifactId>
+                <version>0.0.37-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-auth_1</artifactId>
+                <version>0.0.37-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-auth_2</artifactId>
                 <version>0.0.37-M1-SNAPSHOT</version>
             </dependency>
         </dependencies>
