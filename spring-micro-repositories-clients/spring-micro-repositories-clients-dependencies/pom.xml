@@ -13,11 +13,6 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-clients-api</artifactId>
-                <version>0.0.37-M1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-commons</artifactId>
                 <version>0.0.37-M1-SNAPSHOT</version>
             </dependency>

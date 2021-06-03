@@ -1,10 +1,8 @@
 package org.example.spring.auth;
 
-import io.seata.spring.annotation.GlobalTransactional;
-import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.auth.converter.UserClientsConverter;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.clients.auth.api.UserDaoClients;
+import org.example.spring.repositories.clients.auth.api.UserRepository;
 import org.example.spring.repositories.commons.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.auth.dto.UserRoleDTO;
 import org.example.spring.repositories.commons.auth.query.UserQuery;
@@ -13,21 +11,19 @@ import org.example.spring.repositories.mysql.auth.repository.TUserRepository;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@RestController
-@DubboService(interfaceClass = UserDaoClients.class)
-@GlobalTransactional
-public class UserClientsImpl implements UserDaoClients {
+@Repository
+public class UserRepositoryImpl implements UserRepository {
 
     private final TUserRepository userRepository;
     private final UserClientsConverter userClientsConverter;
 
-    public UserClientsImpl(TUserRepository userRepository, UserClientsConverter userClientsConverter) {
+    public UserRepositoryImpl(TUserRepository userRepository, UserClientsConverter userClientsConverter) {
         this.userRepository = userRepository;
         this.userClientsConverter = userClientsConverter;
     }
