@@ -20,6 +20,8 @@ public interface DDepartmentService {
 
     List<DepartmentDTO> selectList(DepartmentQuery query);
 
+    List<DepartmentDTO> selectTop(DepartmentQuery query);
+
     DepartmentDTO selectOne(DepartmentQuery query);
 
     DepartmentDTO get(Long id);

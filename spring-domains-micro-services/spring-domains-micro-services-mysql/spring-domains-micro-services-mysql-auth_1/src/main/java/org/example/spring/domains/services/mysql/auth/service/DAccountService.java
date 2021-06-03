@@ -16,6 +16,8 @@ public interface DAccountService {
 
     List<UserDTO> queryList(UserQuery query);
 
+    List<UserDTO> queryTop(UserQuery query);
+
     UserDTO queryOne(UserQuery query);
 
     UserDTO get(Long id);

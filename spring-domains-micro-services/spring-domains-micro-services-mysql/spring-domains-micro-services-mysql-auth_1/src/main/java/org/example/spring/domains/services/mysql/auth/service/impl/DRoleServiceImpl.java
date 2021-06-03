@@ -30,6 +30,11 @@ public class DRoleServiceImpl implements DRoleService {
     }
 
     @Override
+    public List<RoleDTO> queryTop(RoleQuery query) {
+        return roleRepository.top(query);
+    }
+
+    @Override
     public RoleDTO queryOne(RoleQuery query) {
         return roleRepository.first(query);
     }

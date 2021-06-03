@@ -1,9 +1,10 @@
 package org.example.spring.domains.services.mysql.auth.service;
 
-import org.example.spring.repositories.mysql.auth.table.dto.RoleDTO;
-import org.example.spring.repositories.mysql.auth.table.query.RoleQuery;
-import org.example.spring.repositories.mysql.auth.table.vo.RoleVo;
+
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.commons.auth.dto.RoleDTO;
+import org.example.spring.repositories.commons.auth.query.RoleQuery;
+import org.example.spring.repositories.commons.auth.vo.RoleVo;
 
 import java.util.List;
 
@@ -12,6 +13,8 @@ public interface DRoleService {
     IPageData<RoleDTO> queryPage(RoleQuery query);
 
     List<RoleDTO> queryList(RoleQuery query);
+
+    List<RoleDTO> queryTop(RoleQuery query);
 
     RoleDTO queryOne(RoleQuery query);
 

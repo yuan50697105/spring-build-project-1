@@ -45,6 +45,11 @@ public class DDepartmentServiceImpl implements DDepartmentService {
     }
 
     @Override
+    public List<DepartmentDTO> selectTop(DepartmentQuery query) {
+        return departmentRepository.top(query);
+    }
+
+    @Override
     public DepartmentDTO selectOne(DepartmentQuery query) {
         return departmentRepository.first(query);
     }

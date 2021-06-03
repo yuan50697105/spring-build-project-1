@@ -1,12 +1,13 @@
 package org.example.spring.domains.services.mysql.auth.service.impl;
 
+
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.services.mysql.auth.service.DRoleService;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.mysql.auth.repository.RoleRepository;
-import org.example.spring.repositories.mysql.auth.table.dto.RoleDTO;
-import org.example.spring.repositories.mysql.auth.table.query.RoleQuery;
-import org.example.spring.repositories.mysql.auth.table.vo.RoleVo;
+import org.example.spring.repositories.clients.auth.api.RoleRepository;
+import org.example.spring.repositories.commons.auth.dto.RoleDTO;
+import org.example.spring.repositories.commons.auth.query.RoleQuery;
+import org.example.spring.repositories.commons.auth.vo.RoleVo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,17 +21,22 @@ public class DRoleServiceImpl implements DRoleService {
 
     @Override
     public IPageData<RoleDTO> queryPage(RoleQuery query) {
-        return roleRepository.queryPage(query);
+        return roleRepository.data(query);
     }
 
     @Override
     public List<RoleDTO> queryList(RoleQuery query) {
-        return roleRepository.queryTop(query);
+        return roleRepository.top(query);
+    }
+
+    @Override
+    public List<RoleDTO> queryTop(RoleQuery query) {
+        return roleRepository.top(query);
     }
 
     @Override
     public RoleDTO queryOne(RoleQuery query) {
-        return roleRepository.queryFirst(query);
+        return roleRepository.first(query);
     }
 
     @Override

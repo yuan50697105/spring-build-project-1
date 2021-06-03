@@ -14,6 +14,8 @@ public interface DRoleService {
 
     List<RoleDTO> queryList(RoleQuery query);
 
+    List<RoleDTO> queryTop(RoleQuery query);
+
     RoleDTO queryOne(RoleQuery query);
 
     RoleDTO get(Long id);
