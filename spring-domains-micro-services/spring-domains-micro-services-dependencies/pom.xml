@@ -68,6 +68,46 @@
                 <artifactId>spring-domains-micro-services-mysql_2</artifactId>
                 <version>0.0.37-M1-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-services-postgresql_1</artifactId>
+                <version>0.0.37-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-services-postgresql_2</artifactId>
+                <version>0.0.37-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-services-postgresql-auth_1</artifactId>
+                <version>0.0.37-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-services-postgresql-auth_2</artifactId>
+                <version>0.0.37-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-services-postgresql-customer_1</artifactId>
+                <version>0.0.37-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-services-postgresql-customer_2</artifactId>
+                <version>0.0.37-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-services-postgresql-patient_1</artifactId>
+                <version>0.0.37-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-domains-micro-services-postgresql-patient_2</artifactId>
+                <version>0.0.37-M1-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

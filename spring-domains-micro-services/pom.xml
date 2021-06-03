@@ -6,6 +6,8 @@
         <module>spring-domains-micro-services-commons</module>
         <module>spring-domains-micro-services-mysql</module>
         <module>spring-domains-micro-services-postgresql</module>
+        <module>spring-domains-micro-services-modules_1</module>
+        <module>spring-domains-micro-services-modules_2</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>

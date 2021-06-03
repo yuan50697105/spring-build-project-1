@@ -9,6 +9,16 @@
 
     <artifactId>spring-domains-micro-services-postgresql</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-domains-micro-services-postgresql_1</module>
+        <module>spring-domains-micro-services-postgresql_2</module>
+        <module>spring-domains-micro-services-postgresql-auth_1</module>
+        <module>spring-domains-micro-services-postgresql-auth_2</module>
+        <module>spring-domains-micro-services-postgresql-customer_1</module>
+        <module>spring-domains-micro-services-postgresql-customer_2</module>
+        <module>spring-domains-micro-services-postgresql-patient_1</module>
+        <module>spring-domains-micro-services-postgresql-patient_2</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
