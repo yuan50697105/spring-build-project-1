@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-clients</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M11-SNAPSHOT</version>
+        <version>0.0.36</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,7 +12,7 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-clients-api</artifactId>
-            <version>0.0.36-M11-SNAPSHOT</version>
+            <version>0.0.36</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
