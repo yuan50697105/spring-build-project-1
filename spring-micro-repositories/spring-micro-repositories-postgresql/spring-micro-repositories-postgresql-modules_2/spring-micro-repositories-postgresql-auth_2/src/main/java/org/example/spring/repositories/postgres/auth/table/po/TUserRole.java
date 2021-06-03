@@ -14,7 +14,7 @@ import java.io.Serializable;
 /**
  * t_user_role
  */
-@ApiModel(value = "org-example-spring-daos-mysql-org.example.spring.repositories.postgres.auth-table-po-TUserRole")
+@ApiModel(value = "org-example-spring-daos-mysql-org.example.spring.repositories.mysql.auth-table-po-TUserRole")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

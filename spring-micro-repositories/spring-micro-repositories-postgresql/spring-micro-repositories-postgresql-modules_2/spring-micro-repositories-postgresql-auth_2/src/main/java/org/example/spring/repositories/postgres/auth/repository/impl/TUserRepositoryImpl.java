@@ -35,7 +35,7 @@ public class TUserRepositoryImpl extends IBaseRepositoryImpl<TUser, TUserDTO, TU
     public TUserRoleResourceDTO getWithRoleAndResource(Long id) {
         TUserRoleResourceDTO dto = converter.buildDTO2(get(id));
         dto.setRoles(roleRepository.queryListByUserId(id));
-        dto.setResources(resourceRepository.queryListByUserId(id));
+        dto.setResources(resourceRepository.queryTreeByUserId(id));
         return dto;
     }
 

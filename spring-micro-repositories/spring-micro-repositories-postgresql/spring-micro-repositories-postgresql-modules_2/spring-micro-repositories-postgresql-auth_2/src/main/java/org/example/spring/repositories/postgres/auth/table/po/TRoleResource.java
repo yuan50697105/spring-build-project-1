@@ -14,7 +14,7 @@ import java.io.Serializable;
 /**
  * t_role_permission
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-org.example.spring.repositories.postgres.auth-table-po-TRoleResource")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-org.example.spring.repositories.mysql.auth-table-po-TRoleResource")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
