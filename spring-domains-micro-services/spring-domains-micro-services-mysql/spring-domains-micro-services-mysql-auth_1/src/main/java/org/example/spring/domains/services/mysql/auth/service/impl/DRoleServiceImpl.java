@@ -1,12 +1,12 @@
 package org.example.spring.domains.services.mysql.auth.service.impl;
 
 import lombok.AllArgsConstructor;
+import org.example.spring.domains.services.mysql.auth.service.DRoleService;
+import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.mysql.auth.repository.TRoleRepository;
 import org.example.spring.repositories.mysql.auth.table.dto.TRoleDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TRoleVo;
-import org.example.spring.domains.repositories.mysql.auth.repository.DRoleRepository;
-import org.example.spring.domains.services.mysql.auth.service.DRoleService;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @Transactional
 public class DRoleServiceImpl implements DRoleService {
-    private final DRoleRepository roleRepository;
+    private final TRoleRepository roleRepository;
 
     @Override
     public IPageData<TRoleDTO> queryPage(TRoleQuery query) {

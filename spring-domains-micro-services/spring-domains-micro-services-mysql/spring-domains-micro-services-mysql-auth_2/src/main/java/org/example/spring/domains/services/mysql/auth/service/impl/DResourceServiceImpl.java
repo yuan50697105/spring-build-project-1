@@ -2,11 +2,11 @@ package org.example.spring.domains.services.mysql.auth.service.impl;
 
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
+import org.example.spring.domains.services.mysql.auth.service.DResourceService;
+import org.example.spring.repositories.mysql.auth.repository.TResourceRepository;
 import org.example.spring.repositories.mysql.auth.table.dto.TResourceDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TResourceVo;
-import org.example.spring.domains.repositories.mysql.auth.repository.DResourceRepository;
-import org.example.spring.domains.services.mysql.auth.service.DResourceService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +16,7 @@ import java.util.List;
 @Transactional
 @AllArgsConstructor
 public class DResourceServiceImpl implements DResourceService {
-    private final DResourceRepository resourceRepository;
+    private final TResourceRepository resourceRepository;
 
     @Override
     public List<Tree<Long>> listResourceByUserId(Long id) {

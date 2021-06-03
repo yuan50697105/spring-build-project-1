@@ -2,10 +2,10 @@ package org.example.spring.domains.services.mysql.auth.service.impl;
 
 
 import lombok.AllArgsConstructor;
+import org.example.spring.repositories.mysql.auth.repository.TDepartmentRepository;
 import org.example.spring.repositories.mysql.auth.table.dto.TDepartmentDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TDepartmentVo;
-import org.example.spring.domains.repositories.mysql.auth.repository.DDepartmentRepository;
 import org.example.spring.domains.services.mysql.auth.service.DDepartmentService;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @Transactional
 public class DDepartmentServiceImpl implements DDepartmentService {
-    private final DDepartmentRepository departmentRepository;
+    private final TDepartmentRepository departmentRepository;
 
     @Override
     public void save(TDepartmentVo vo) {

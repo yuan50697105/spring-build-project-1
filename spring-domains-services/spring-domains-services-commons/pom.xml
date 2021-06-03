@@ -11,7 +11,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-repositories-commons</artifactId>
+            <artifactId>spring-repositories-commons</artifactId>
         </dependency>
     </dependencies>
 

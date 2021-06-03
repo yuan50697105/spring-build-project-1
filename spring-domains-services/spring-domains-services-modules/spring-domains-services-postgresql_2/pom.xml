@@ -12,7 +12,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-repositories-postgresql_1</artifactId>
+            <artifactId>spring-repositories-postgresql_1</artifactId>
         </dependency>
     </dependencies>
 

@@ -15,7 +15,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-repositories-mysql_2</artifactId>
+            <artifactId>spring-repositories-mysql_2</artifactId>
         </dependency>
     </dependencies>
 

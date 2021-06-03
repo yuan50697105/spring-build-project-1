@@ -25,14 +25,14 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-repositories-dependencies</artifactId>
+                <artifactId>spring-domains-micro-services-dependencies</artifactId>
                 <version>0.0.37-M1-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-services-dependencies</artifactId>
+                <artifactId>spring-repositories-dependencies</artifactId>
                 <version>0.0.37-M1-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
