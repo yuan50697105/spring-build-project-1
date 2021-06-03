@@ -12,5 +12,7 @@ import java.util.List;
 public interface TResourceRepository extends IBaseRepository<TResource, TResourceDTO, TResourceVo, TResourceQuery> {
     List<TResourceDTO> queryListByRoleId(Long id);
 
-    List<Tree<Long>> queryListByUserId(Long id);
+    List<Tree<Long>> queryTreeByRoleId(Long roleId);
+
+    List<Tree<Long>> queryTreeByUserId(Long id);
 }
