@@ -3,12 +3,12 @@ package org.example.spring.applications.web.auth.service.impl;
 import cn.hutool.core.lang.Validator;
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
+import org.example.spring.domains.services.mysql.auth.service.DAccountService;
+import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
-import org.example.spring.repositories.commons.enumerate.TUserStatus;
-import org.example.spring.domains.services.mysql.auth.service.DAccountService;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -61,7 +61,7 @@ public class AAccountServiceImpl implements AAccountService {
 
     @Override
     public void updateStatus(String status, List<Long> list) {
-        TUserStatus userStatus = TUserStatus.get(status);
+        UserStatus userStatus = UserStatus.get(status);
         if (Validator.isNotEmpty(userStatus)) {
             accountService.updateStatus(userStatus, list);
         } else {
