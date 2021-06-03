@@ -297,7 +297,7 @@
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useEditMode>false</useEditMode>
-                        <arguments>-Pd -fn -T 1C -U</arguments>
+                        <arguments>-P source,doc -fn -T 1C -U</arguments>
                         <commitByProject>false</commitByProject>
                         <autoResolveSnapshots>all</autoResolveSnapshots>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
@@ -371,7 +371,7 @@
     </scm>
     <profiles>
         <profile>
-            <id>d</id>
+            <id>doc</id>
             <build>
                 <plugins>
                     <!--配置生成Javadoc包-->
@@ -397,7 +397,13 @@
                             </execution>
                         </executions>
                     </plugin>
-
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>source</id>
+            <build>
+                <plugins>
                     <!--配置生成源码包-->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>

@@ -1,2 +1,2 @@
-call mvn clean release:prepare release:perform -fn
+call mvn release:prepare release:perform
 call git push --tag

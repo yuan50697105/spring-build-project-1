@@ -1,1 +1,1 @@
-call mvn clean deploy -fae -Pd -T 1C
+call mvn clean deploy -fae -T 1C -P source,doc
