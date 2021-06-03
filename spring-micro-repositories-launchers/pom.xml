@@ -2,17 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <modules>
-        <module>spring-micro-repositories-clients-launchers-mysql_1</module>
-        <module>spring-micro-repositories-clients-launchers-mysql_2</module>
-        <module>spring-micro-repositories-clients-launchers-mysql-auth_1</module>
-        <module>spring-micro-repositories-clients-launchers-mysql-auth_2</module>
+        <module>spring-micro-repositories-launchers-mysql_1</module>
+        <module>spring-micro-repositories-launchers-mysql_2</module>
+        <module>spring-micro-repositories-launchers-mysql-auth_1</module>
+        <module>spring-micro-repositories-launchers-mysql-auth_2</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.37-M3-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-micro-repositories-clients-launchers</artifactId>
+    <artifactId>spring-micro-repositories-launchers</artifactId>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>

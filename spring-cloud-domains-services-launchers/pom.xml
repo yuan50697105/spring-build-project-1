@@ -3,10 +3,10 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.36-M6-SNAPSHOT</version>
+        <version>0.0.37-M3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-cloud-domains-services-clients-launchers</artifactId>
+    <artifactId>spring-cloud-domains-services-launchers</artifactId>
     <packaging>pom</packaging>
 </project>
