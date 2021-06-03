@@ -11,6 +11,9 @@
 
     <artifactId>spring-domains-micro-services-modules_1</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-domains-micro-services_1</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
