@@ -1,6 +1,6 @@
 package org.example.spring.auth;
 
-import org.example.spring.auth.converter.UserClientsConverter;
+import org.example.spring.auth.converter.UserRepositortConverter;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.UserRepository;
 import org.example.spring.repositories.commons.auth.dto.UserDTO;
@@ -13,6 +13,7 @@ import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
 import org.springframework.stereotype.Repository;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -21,29 +22,34 @@ import java.util.stream.Stream;
 public class UserRepositoryImpl implements UserRepository {
 
     private final TUserRepository userRepository;
-    private final UserClientsConverter userClientsConverter;
+    private final UserRepositortConverter userRepositortConverter;
 
-    public UserRepositoryImpl(TUserRepository userRepository, UserClientsConverter userClientsConverter) {
+    public UserRepositoryImpl(TUserRepository userRepository, UserRepositortConverter userRepositortConverter) {
         this.userRepository = userRepository;
-        this.userClientsConverter = userClientsConverter;
+        this.userRepositortConverter = userRepositortConverter;
     }
 
     @Override
     public UserVo save(UserVo vo) {
-        TUserVo build = userClientsConverter.build(vo);
+        TUserVo build = userRepositortConverter.build(vo);
         userRepository.save(build);
 
-        return userClientsConverter.convert(build);
+        return userRepositortConverter.convert(build);
     }
 
     @Override
     public void update(UserVo vo) {
-        userRepository.update(userClientsConverter.build(vo));
+        userRepository.update(userRepositortConverter.build(vo));
     }
 
     @Override
     public void delete(Long id) {
         userRepository.delete(id);
+    }
+
+    @Override
+    public void delete(Long... ids) {
+        userRepository.delete(ids);
     }
 
     @Override
@@ -53,7 +59,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public UserDTO get(Long id) {
-        return userClientsConverter.build(userRepository.get(id));
+        return userRepositortConverter.build(userRepository.get(id));
     }
 
     @Override
@@ -63,14 +69,14 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public UserRoleDTO getWithRole(Long id) {
-        return userClientsConverter.buildWithRole(userRepository.getWithRole(id));
+        return userRepositortConverter.buildWithRole(userRepository.getWithRole(id));
     }
 
     @Override
     public UserDTO one(UserQuery query) {
-        TUserQuery userQuery = userClientsConverter.build(query);
+        TUserQuery userQuery = userRepositortConverter.build(query);
         TUserDTO DTO = userRepository.queryOne(userQuery);
-        return userClientsConverter.build(DTO);
+        return userRepositortConverter.build(DTO);
     }
 
     @Override
@@ -80,9 +86,9 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public UserDTO first(UserQuery query) {
-        TUserQuery userQuery = userClientsConverter.build(query);
+        TUserQuery userQuery = userRepositortConverter.build(query);
         TUserDTO DTO = userRepository.queryFirst(userQuery);
-        return userClientsConverter.build(DTO);
+        return userRepositortConverter.build(DTO);
     }
 
     @Override
@@ -97,9 +103,9 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public List<UserDTO> list(UserQuery query) {
-        TUserQuery userQuery = userClientsConverter.build(query);
+        TUserQuery userQuery = userRepositortConverter.build(query);
         List<TUserDTO> DTO = userRepository.queryList(userQuery);
-        return userClientsConverter.build(DTO);
+        return userRepositortConverter.build(DTO);
     }
 
     @Override
@@ -109,9 +115,9 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public List<UserDTO> top(UserQuery query) {
-        TUserQuery userQuery = userClientsConverter.build(query);
+        TUserQuery userQuery = userRepositortConverter.build(query);
         List<TUserDTO> DTO = userRepository.queryTop(userQuery);
-        return userClientsConverter.build(DTO);
+        return userRepositortConverter.build(DTO);
     }
 
     @Override
@@ -121,8 +127,8 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public IPageData<UserDTO> data(UserQuery query) {
-        TUserQuery userQuery = userClientsConverter.build(query);
+        TUserQuery userQuery = userRepositortConverter.build(query);
         IPageData<TUserDTO> DTO = userRepository.queryPage(userQuery);
-        return userClientsConverter.build(DTO);
+        return userRepositortConverter.build(DTO);
     }
 }

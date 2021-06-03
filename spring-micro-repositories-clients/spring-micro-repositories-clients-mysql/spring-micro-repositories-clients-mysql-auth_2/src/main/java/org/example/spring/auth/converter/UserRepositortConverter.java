@@ -16,8 +16,8 @@ import org.mapstruct.factory.Mappers;
 import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
-public interface UserClientsConverter {
-    UserClientsConverter CONVERTER = Mappers.getMapper(UserClientsConverter.class);
+public interface UserRepositortConverter {
+    UserRepositortConverter CONVERTER = Mappers.getMapper(UserRepositortConverter.class);
 
     TUserVo build(UserVo vo);
 

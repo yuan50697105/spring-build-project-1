@@ -47,6 +47,11 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
+    public void delete(Long... ids) {
+        userRepository.delete(ids);
+    }
+
+    @Override
     public void delete(List<Long> ids) {
         userRepository.delete(ids);
     }
