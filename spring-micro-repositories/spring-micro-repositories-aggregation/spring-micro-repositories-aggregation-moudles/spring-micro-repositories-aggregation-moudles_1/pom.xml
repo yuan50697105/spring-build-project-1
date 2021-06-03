@@ -6,11 +6,11 @@
     </modules>
 
     <parent>
-        <artifactId>spring-micro-repositories</artifactId>
+        <artifactId>spring-micro-repositories-aggregation-moudles</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.37-M1-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-micro-repositories-modules_1</artifactId>
+    <artifactId>spring-micro-repositories-aggregation-moudles_1</artifactId>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>
