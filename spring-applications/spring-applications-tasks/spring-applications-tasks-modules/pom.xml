@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-applications-tasks</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.33.6</version>
+        <version>0.0.33</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,7 +14,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-applications-tasks-dependencies</artifactId>
-                <version>0.0.33.6</version>
+                <version>0.0.33</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>

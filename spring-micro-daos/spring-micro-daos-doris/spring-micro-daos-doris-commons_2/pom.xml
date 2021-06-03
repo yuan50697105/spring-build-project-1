@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-daos-doris</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.33.6</version>
+        <version>0.0.33</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
