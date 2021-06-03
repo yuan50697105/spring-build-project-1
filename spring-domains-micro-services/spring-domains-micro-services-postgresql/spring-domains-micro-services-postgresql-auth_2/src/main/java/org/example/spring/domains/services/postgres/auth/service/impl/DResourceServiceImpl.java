@@ -1,12 +1,13 @@
 package org.example.spring.domains.services.postgres.auth.service.impl;
 
+
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.services.postgres.auth.service.DResourceService;
-import org.example.spring.repositories.postgres.auth.repository.TResourceRepository;
-import org.example.spring.repositories.postgres.auth.table.dto.TResourceDTO;
-import org.example.spring.repositories.postgres.auth.table.query.TResourceQuery;
-import org.example.spring.repositories.postgres.auth.table.vo.TResourceVo;
+import org.example.spring.repositories.clients.auth.api.ResourceRepository;
+import org.example.spring.repositories.commons.auth.dto.ResourceDTO;
+import org.example.spring.repositories.commons.auth.query.ResourceQuery;
+import org.example.spring.repositories.commons.auth.vo.ResourceVo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,30 +17,30 @@ import java.util.List;
 @Transactional
 @AllArgsConstructor
 public class DResourceServiceImpl implements DResourceService {
-    private final TResourceRepository resourceRepository;
+    private final ResourceRepository resourceRepository;
 
     @Override
-    public List<Tree<Long>> listResourceByUserId(Long id) {
-        return resourceRepository.queryListByUserId(id);
-    }
-
-    @Override
-    public List<Tree<Long>> selectTreeList(TResourceQuery query) {
+    public List<Tree<Long>> queryTreeByUserId(Long id) {
         return null;
     }
 
     @Override
-    public TResourceDTO get(Long id) {
+    public List<Tree<Long>> selectTreeList(ResourceQuery query) {
+        return null;
+    }
+
+    @Override
+    public ResourceDTO get(Long id) {
         return resourceRepository.get(id);
     }
 
     @Override
-    public void save(TResourceVo vo) {
+    public void save(ResourceVo vo) {
         resourceRepository.save(vo);
     }
 
     @Override
-    public void update(TResourceVo vo) {
+    public void update(ResourceVo vo) {
         resourceRepository.update(vo);
     }
 

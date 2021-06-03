@@ -1,25 +1,28 @@
 package org.example.spring.domains.services.postgres.auth.service;
 
-import org.example.spring.repositories.postgres.auth.table.dto.TDepartmentDTO;
-import org.example.spring.repositories.postgres.auth.table.query.TDepartmentQuery;
-import org.example.spring.repositories.postgres.auth.table.vo.TDepartmentVo;
+
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.commons.auth.dto.DepartmentDTO;
+import org.example.spring.repositories.commons.auth.query.DepartmentQuery;
+import org.example.spring.repositories.commons.auth.vo.DepartmentVo;
 
 import java.util.List;
 
 public interface DDepartmentService {
 
-    void save(TDepartmentVo vo);
+    void save(DepartmentVo vo);
 
-    void update(TDepartmentVo vo);
+    void update(DepartmentVo vo);
 
     void delete(List<Long> ids);
 
-    IPageData<TDepartmentDTO> selectPage(TDepartmentQuery query);
+    IPageData<DepartmentDTO> selectPage(DepartmentQuery query);
 
-    List<TDepartmentDTO> selectList(TDepartmentQuery query);
+    List<DepartmentDTO> selectList(DepartmentQuery query);
 
-    TDepartmentDTO selectOne(TDepartmentQuery query);
+    List<DepartmentDTO> selectTop(DepartmentQuery query);
 
-    TDepartmentDTO get(Long id);
+    DepartmentDTO selectOne(DepartmentQuery query);
+
+    DepartmentDTO get(Long id);
 }

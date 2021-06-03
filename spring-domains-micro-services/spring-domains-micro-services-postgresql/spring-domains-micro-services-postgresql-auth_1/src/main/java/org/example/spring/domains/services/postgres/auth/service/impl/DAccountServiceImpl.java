@@ -3,13 +3,13 @@ package org.example.spring.domains.services.postgres.auth.service.impl;
 
 import org.example.spring.domains.services.postgres.auth.service.DAccountService;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.clients.auth.api.UserRepository;
+import org.example.spring.repositories.commons.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.auth.dto.UserRoleDTO;
+import org.example.spring.repositories.commons.auth.dto.UserRoleResourceDTO;
+import org.example.spring.repositories.commons.auth.query.UserQuery;
+import org.example.spring.repositories.commons.auth.vo.UserVo;
 import org.example.spring.repositories.commons.enumerate.UserStatus;
-import org.example.spring.repositories.postgres.auth.repository.TUserRepository;
-import org.example.spring.repositories.postgres.auth.table.dto.TUserDTO;
-import org.example.spring.repositories.postgres.auth.table.dto.TUserRoleDTO;
-import org.example.spring.repositories.postgres.auth.table.dto.TUserRoleResourceDTO;
-import org.example.spring.repositories.postgres.auth.table.query.TUserQuery;
-import org.example.spring.repositories.postgres.auth.table.vo.TUserVo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,49 +18,54 @@ import java.util.List;
 @Service
 @Transactional
 public class DAccountServiceImpl implements DAccountService {
-    private final TUserRepository userRepository;
+    private final UserRepository userRepository;
 
-    public DAccountServiceImpl(TUserRepository userRepository) {
+    public DAccountServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     @Override
-    public IPageData<TUserDTO> queryPage(TUserQuery query) {
-        return userRepository.queryPage(query);
+    public IPageData<UserDTO> queryPage(UserQuery query) {
+        return userRepository.data(query);
     }
 
     @Override
-    public List<TUserDTO> queryList(TUserQuery query) {
-        return userRepository.queryTop(query);
+    public List<UserDTO> queryList(UserQuery query) {
+        return userRepository.top(query);
     }
 
     @Override
-    public TUserDTO queryOne(TUserQuery query) {
-        return userRepository.queryFirst(query);
+    public List<UserDTO> queryTop(UserQuery query) {
+        return userRepository.top(query);
     }
 
     @Override
-    public TUserDTO get(Long id) {
+    public UserDTO queryOne(UserQuery query) {
+        return userRepository.first(query);
+    }
+
+    @Override
+    public UserDTO get(Long id) {
         return userRepository.get(id);
     }
 
     @Override
-    public TUserRoleDTO getWithRole(Long id) {
+    public UserRoleDTO getWithRole(Long id) {
         return userRepository.getWithRole(id);
     }
 
     @Override
-    public TUserRoleResourceDTO getWithRoleAndResource(Long id) {
-        return userRepository.getWithRoleAndResource(id);
+    public UserRoleResourceDTO getWithRoleAndResource(Long id) {
+        return userRepository.getWithRoleResource(id);
     }
 
     @Override
-    public void save(TUserVo vo) {
+    public void save(UserVo vo) {
         userRepository.save(vo);
     }
 
     @Override
-    public void update(TUserVo vo) {
+    public void update(UserVo vo) {
         userRepository.update(vo);
     }
 
@@ -81,7 +86,7 @@ public class DAccountServiceImpl implements DAccountService {
     @Override
     public void updateStatus(UserStatus status, List<Long> ids) {
         ids.forEach(id -> {
-            TUserVo vo = new TUserVo();
+            UserVo vo = new UserVo();
             vo.setId(id);
             vo.setStatus(status.getValue());
             update(vo);

@@ -1,12 +1,13 @@
 package org.example.spring.domains.services.postgres.auth.service.impl;
 
+
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.services.postgres.auth.service.DRoleService;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.postgres.auth.repository.TRoleRepository;
-import org.example.spring.repositories.postgres.auth.table.dto.TRoleDTO;
-import org.example.spring.repositories.postgres.auth.table.query.TRoleQuery;
-import org.example.spring.repositories.postgres.auth.table.vo.TRoleVo;
+import org.example.spring.repositories.clients.auth.api.RoleRepository;
+import org.example.spring.repositories.commons.auth.dto.RoleDTO;
+import org.example.spring.repositories.commons.auth.query.RoleQuery;
+import org.example.spring.repositories.commons.auth.vo.RoleVo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,35 +17,40 @@ import java.util.List;
 @AllArgsConstructor
 @Transactional
 public class DRoleServiceImpl implements DRoleService {
-    private final TRoleRepository roleRepository;
+    private final RoleRepository roleRepository;
 
     @Override
-    public IPageData<TRoleDTO> queryPage(TRoleQuery query) {
-        return roleRepository.queryPage(query);
+    public IPageData<RoleDTO> queryPage(RoleQuery query) {
+        return roleRepository.data(query);
     }
 
     @Override
-    public List<TRoleDTO> queryList(TRoleQuery query) {
-        return roleRepository.queryTop(query);
+    public List<RoleDTO> queryList(RoleQuery query) {
+        return roleRepository.top(query);
     }
 
     @Override
-    public TRoleDTO queryOne(TRoleQuery query) {
-        return roleRepository.queryFirst(query);
+    public List<RoleDTO> queryTop(RoleQuery query) {
+        return roleRepository.top(query);
     }
 
     @Override
-    public TRoleDTO get(Long id) {
+    public RoleDTO queryOne(RoleQuery query) {
+        return roleRepository.first(query);
+    }
+
+    @Override
+    public RoleDTO get(Long id) {
         return roleRepository.get(id);
     }
 
     @Override
-    public void save(TRoleVo vo) {
+    public void save(RoleVo vo) {
         roleRepository.save(vo);
     }
 
     @Override
-    public void update(TRoleVo vo) {
+    public void update(RoleVo vo) {
         roleRepository.update(vo);
     }
 

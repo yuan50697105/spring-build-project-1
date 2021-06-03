@@ -20,7 +20,7 @@ public class DResourceServiceImpl implements DResourceService {
     private final ResourceRepository resourceRepository;
 
     @Override
-    public List<Tree<Long>> lisResourceByUserId(Long id) {
+    public List<Tree<Long>> queryTreeByUserId(Long id) {
         return null;
     }
 

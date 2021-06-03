@@ -1,32 +1,34 @@
 package org.example.spring.domains.services.postgres.auth.service;
 
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.commons.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.auth.dto.UserRoleDTO;
+import org.example.spring.repositories.commons.auth.dto.UserRoleResourceDTO;
+import org.example.spring.repositories.commons.auth.query.UserQuery;
+import org.example.spring.repositories.commons.auth.vo.UserVo;
 import org.example.spring.repositories.commons.enumerate.UserStatus;
-import org.example.spring.repositories.postgres.auth.table.dto.TUserDTO;
-import org.example.spring.repositories.postgres.auth.table.dto.TUserRoleDTO;
-import org.example.spring.repositories.postgres.auth.table.dto.TUserRoleResourceDTO;
-import org.example.spring.repositories.postgres.auth.table.query.TUserQuery;
-import org.example.spring.repositories.postgres.auth.table.vo.TUserVo;
 
 import java.util.List;
 
 public interface DAccountService {
 
-    IPageData<TUserDTO> queryPage(TUserQuery query);
+    IPageData<UserDTO> queryPage(UserQuery query);
 
-    List<TUserDTO> queryList(TUserQuery query);
+    List<UserDTO> queryList(UserQuery query);
 
-    TUserDTO queryOne(TUserQuery query);
+    List<UserDTO> queryTop(UserQuery query);
 
-    TUserDTO get(Long id);
+    UserDTO queryOne(UserQuery query);
 
-    TUserRoleDTO getWithRole(Long id);
+    UserDTO get(Long id);
 
-    TUserRoleResourceDTO getWithRoleAndResource(Long id);
+    UserRoleDTO getWithRole(Long id);
 
-    void save(TUserVo vo);
+    UserRoleResourceDTO getWithRoleAndResource(Long id);
 
-    void update(TUserVo vo);
+    void save(UserVo vo);
+
+    void update(UserVo vo);
 
     void delete(List<Long> ids);
 

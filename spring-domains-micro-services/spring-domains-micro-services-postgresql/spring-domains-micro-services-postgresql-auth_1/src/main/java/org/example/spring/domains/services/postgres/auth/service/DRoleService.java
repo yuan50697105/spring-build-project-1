@@ -1,25 +1,28 @@
 package org.example.spring.domains.services.postgres.auth.service;
 
-import org.example.spring.repositories.postgres.auth.table.dto.TRoleDTO;
-import org.example.spring.repositories.postgres.auth.table.query.TRoleQuery;
-import org.example.spring.repositories.postgres.auth.table.vo.TRoleVo;
+
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.commons.auth.dto.RoleDTO;
+import org.example.spring.repositories.commons.auth.query.RoleQuery;
+import org.example.spring.repositories.commons.auth.vo.RoleVo;
 
 import java.util.List;
 
 public interface DRoleService {
 
-    IPageData<TRoleDTO> queryPage(TRoleQuery query);
+    IPageData<RoleDTO> queryPage(RoleQuery query);
 
-    List<TRoleDTO> queryList(TRoleQuery query);
+    List<RoleDTO> queryList(RoleQuery query);
 
-    TRoleDTO queryOne(TRoleQuery query);
+    List<RoleDTO> queryTop(RoleQuery query);
 
-    TRoleDTO get(Long id);
+    RoleDTO queryOne(RoleQuery query);
 
-    void save(TRoleVo vo);
+    RoleDTO get(Long id);
 
-    void update(TRoleVo vo);
+    void save(RoleVo vo);
+
+    void update(RoleVo vo);
 
     void delete(List<Long> ids);
 

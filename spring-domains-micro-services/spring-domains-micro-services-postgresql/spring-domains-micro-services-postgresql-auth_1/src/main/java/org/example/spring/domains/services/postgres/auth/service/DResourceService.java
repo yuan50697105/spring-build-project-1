@@ -1,22 +1,23 @@
 package org.example.spring.domains.services.postgres.auth.service;
 
+
 import cn.hutool.core.lang.tree.Tree;
-import org.example.spring.repositories.postgres.auth.table.dto.TResourceDTO;
-import org.example.spring.repositories.postgres.auth.table.query.TResourceQuery;
-import org.example.spring.repositories.postgres.auth.table.vo.TResourceVo;
+import org.example.spring.repositories.commons.auth.dto.ResourceDTO;
+import org.example.spring.repositories.commons.auth.query.ResourceQuery;
+import org.example.spring.repositories.commons.auth.vo.ResourceVo;
 
 import java.util.List;
 
 public interface DResourceService {
-    List<Tree<Long>> listResourceByUserId(Long id);
+    List<Tree<Long>> queryTreeByUserId(Long id);
 
-    List<Tree<Long>> selectTreeList(TResourceQuery query);
+    List<Tree<Long>> selectTreeList(ResourceQuery query);
 
-    TResourceDTO get(Long id);
+    ResourceDTO get(Long id);
 
-    void save(TResourceVo vo);
+    void save(ResourceVo vo);
 
-    void update(TResourceVo vo);
+    void update(ResourceVo vo);
 
     void delete(List<Long> ids);
 
