@@ -27,13 +27,6 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
-                <version>0.0.37-M1-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-dependencies</artifactId>
                 <version>0.0.37-M1-SNAPSHOT</version>
                 <type>pom</type>
