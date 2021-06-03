@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-applications-mysql</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M1</version>
+        <version>0.0.37-M2-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,27 +14,27 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-applications-mysql-commons</artifactId>
-                <version>0.0.37-M1</version>
+                <version>0.0.37-M2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-applications-mysql-auth_1</artifactId>
-                <version>0.0.37-M1</version>
+                <version>0.0.37-M2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-applications-mysql-auth_2</artifactId>
-                <version>0.0.37-M1</version>
+                <version>0.0.37-M2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-applications-mysql_1</artifactId>
-                <version>0.0.37-M1</version>
+                <version>0.0.37-M2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-applications-mysql_2</artifactId>
-                <version>0.0.37-M1</version>
+                <version>0.0.37-M2-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
