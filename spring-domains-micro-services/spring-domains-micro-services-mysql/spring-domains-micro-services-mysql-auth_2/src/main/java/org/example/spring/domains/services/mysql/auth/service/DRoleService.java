@@ -1,25 +1,25 @@
 package org.example.spring.domains.services.mysql.auth.service;
 
-import org.example.spring.repositories.mysql.auth.table.dto.TRoleDTO;
-import org.example.spring.repositories.mysql.auth.table.query.TRoleQuery;
-import org.example.spring.repositories.mysql.auth.table.vo.TRoleVo;
+import org.example.spring.repositories.mysql.auth.table.dto.RoleDTO;
+import org.example.spring.repositories.mysql.auth.table.query.RoleQuery;
+import org.example.spring.repositories.mysql.auth.table.vo.RoleVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 
 import java.util.List;
 
 public interface DRoleService {
 
-    IPageData<TRoleDTO> queryPage(TRoleQuery query);
+    IPageData<RoleDTO> queryPage(RoleQuery query);
 
-    List<TRoleDTO> queryList(TRoleQuery query);
+    List<RoleDTO> queryList(RoleQuery query);
 
-    TRoleDTO queryOne(TRoleQuery query);
+    RoleDTO queryOne(RoleQuery query);
 
-    TRoleDTO get(Long id);
+    RoleDTO get(Long id);
 
-    void save(TRoleVo vo);
+    void save(RoleVo vo);
 
-    void update(TRoleVo vo);
+    void update(RoleVo vo);
 
     void delete(List<Long> ids);
 

@@ -1,32 +1,32 @@
 package org.example.spring.domains.services.mysql.auth.service;
 
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.commons.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.auth.dto.UserRoleDTO;
+import org.example.spring.repositories.commons.auth.dto.UserRoleResourceDTO;
+import org.example.spring.repositories.commons.auth.query.UserQuery;
+import org.example.spring.repositories.commons.auth.vo.UserVo;
 import org.example.spring.repositories.commons.enumerate.UserStatus;
-import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
-import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleDTO;
-import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleResourceDTO;
-import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
-import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
 
 import java.util.List;
 
 public interface DAccountService {
 
-    IPageData<TUserDTO> queryPage(TUserQuery query);
+    IPageData<UserDTO> queryPage(UserQuery query);
 
-    List<TUserDTO> queryList(TUserQuery query);
+    List<UserDTO> queryList(UserQuery query);
 
-    TUserDTO queryOne(TUserQuery query);
+    UserDTO queryOne(UserQuery query);
 
-    TUserDTO get(Long id);
+    UserDTO get(Long id);
 
-    TUserRoleDTO getWithRole(Long id);
+    UserRoleDTO getWithRole(Long id);
 
-    TUserRoleResourceDTO getWithRoleAndResource(Long id);
+    UserRoleResourceDTO getWithRoleAndResource(Long id);
 
-    void save(TUserVo vo);
+    void save(UserVo vo);
 
-    void update(TUserVo vo);
+    void update(UserVo vo);
 
     void delete(List<Long> ids);
 
