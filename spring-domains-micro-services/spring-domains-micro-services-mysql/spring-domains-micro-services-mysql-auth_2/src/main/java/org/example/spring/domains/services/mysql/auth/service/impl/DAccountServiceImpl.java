@@ -35,6 +35,11 @@ public class DAccountServiceImpl implements DAccountService {
     }
 
     @Override
+    public List<UserDTO> queryTop(UserQuery query) {
+        return userRepository.top(query);
+    }
+
+    @Override
     public UserDTO queryOne(UserQuery query) {
         return userRepository.first(query);
     }
