@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-cloud-repositories-mysql</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M1-SNAPSHOT</version>
+        <version>0.0.37-M1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,12 +14,12 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-cloud-repositories-mysql-commons_1</artifactId>
-                <version>0.0.37-M1-SNAPSHOT</version>
+                <version>0.0.37-M1</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-cloud-repositories-mysql-commons_2</artifactId>
-                <version>0.0.37-M1-SNAPSHOT</version>
+                <version>0.0.37-M1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
