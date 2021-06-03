@@ -4,7 +4,6 @@
     <modules>
         <module>spring-micro-applications-client-api</module>
         <module>spring-micro-applications-mysql</module>
-        <module>spring-micro-applications-mysql-clients</module>
         <module>spring-micro-applications-dependencies</module>
     </modules>
     <parent>

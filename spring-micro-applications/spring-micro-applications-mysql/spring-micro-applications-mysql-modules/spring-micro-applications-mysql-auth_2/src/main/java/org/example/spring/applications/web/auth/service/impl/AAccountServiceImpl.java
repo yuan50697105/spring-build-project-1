@@ -1,14 +1,15 @@
 package org.example.spring.applications.web.auth.service.impl;
 
+
 import cn.hutool.core.lang.Validator;
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.domains.services.mysql.auth.service.DAccountService;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.commons.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.auth.query.UserQuery;
+import org.example.spring.repositories.commons.auth.vo.UserVo;
 import org.example.spring.repositories.commons.enumerate.UserStatus;
-import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
-import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
-import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,32 +26,32 @@ public class AAccountServiceImpl implements AAccountService {
     }
 
     @Override
-    public IPageData<TUserDTO> queryPage(TUserQuery query) {
+    public IPageData<UserDTO> queryPage(UserQuery query) {
         return accountService.queryPage(query);
     }
 
     @Override
-    public List<TUserDTO> queryList(TUserQuery withSize) {
+    public List<UserDTO> queryList(UserQuery withSize) {
         return accountService.queryList(withSize);
     }
 
     @Override
-    public TUserDTO queryOne(TUserQuery query) {
+    public UserDTO queryOne(UserQuery query) {
         return accountService.queryOne(query);
     }
 
     @Override
-    public TUserDTO get(Long id) {
+    public UserDTO get(Long id) {
         return accountService.get(id);
     }
 
     @Override
-    public void save(TUserVo formVo) {
+    public void save(UserVo formVo) {
         accountService.save(formVo);
     }
 
     @Override
-    public void update(TUserVo formVo) {
+    public void update(UserVo formVo) {
         accountService.update(formVo);
     }
 

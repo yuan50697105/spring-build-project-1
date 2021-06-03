@@ -1,25 +1,26 @@
 package org.example.spring.applications.web.auth.service;
 
+
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
-import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
-import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
-import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.commons.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.auth.query.UserQuery;
+import org.example.spring.repositories.commons.auth.vo.UserVo;
 
 import java.util.List;
 
 public interface AAccountService {
-    IPageData<TUserDTO> queryPage(TUserQuery query);
+    IPageData<UserDTO> queryPage(UserQuery query);
 
-    List<TUserDTO> queryList(TUserQuery withSize);
+    List<UserDTO> queryList(UserQuery withSize);
 
-    TUserDTO queryOne(TUserQuery query);
+    UserDTO queryOne(UserQuery query);
 
-    TUserDTO get(Long id);
+    UserDTO get(Long id);
 
-    void save(TUserVo formVo);
+    void save(UserVo formVo);
 
-    void update(TUserVo formVo);
+    void update(UserVo formVo);
 
     void delete(List<Long> list);
 
