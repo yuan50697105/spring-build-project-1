@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-clients</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M4-SNAPSHOT</version>
+        <version>0.0.37-M4</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,47 +14,47 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-commons</artifactId>
-                <version>0.0.37-M4-SNAPSHOT</version>
+                <version>0.0.37-M4</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mysql_1</artifactId>
-                <version>0.0.37-M4-SNAPSHOT</version>
+                <version>0.0.37-M4</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mysql_2</artifactId>
-                <version>0.0.37-M4-SNAPSHOT</version>
+                <version>0.0.37-M4</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-postgres_1</artifactId>
-                <version>0.0.37-M4-SNAPSHOT</version>
+                <version>0.0.37-M4</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-postgres_2</artifactId>
-                <version>0.0.37-M4-SNAPSHOT</version>
+                <version>0.0.37-M4</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mysql-auth_1</artifactId>
-                <version>0.0.37-M4-SNAPSHOT</version>
+                <version>0.0.37-M4</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mysql-auth_2</artifactId>
-                <version>0.0.37-M4-SNAPSHOT</version>
+                <version>0.0.37-M4</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-postgres-auth_1</artifactId>
-                <version>0.0.37-M4-SNAPSHOT</version>
+                <version>0.0.37-M4</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-postgres-auth_2</artifactId>
-                <version>0.0.37-M4-SNAPSHOT</version>
+                <version>0.0.37-M4</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
