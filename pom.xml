@@ -265,21 +265,21 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.8.2</version>
-                    <configuration>
-                        <deployAtEnd>false</deployAtEnd>
-                        <uniqueVersion>true</uniqueVersion>
-                        <updateReleaseInfo>true</updateReleaseInfo>
-                    </configuration>
+                    <!-- <version>2.8.2</version> -->
+                    <!-- <configuration> -->
+                    <!-- <deployAtEnd>false</deployAtEnd> -->
+                    <!-- <uniqueVersion>true</uniqueVersion> -->
+                    <!-- <updateReleaseInfo>true</updateReleaseInfo> -->
+                    <!-- </configuration> -->
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>3.0.0-M1</version>
-                    <configuration>
-                        <installAtEnd>false</installAtEnd>
-                        <updateReleaseInfo>true</updateReleaseInfo>
-                    </configuration>
+                    <!-- <version>3.0.0-M1</version> -->
+                    <!-- <configuration> -->
+                    <!-- <installAtEnd>false</installAtEnd> -->
+                    <!-- <updateReleaseInfo>true</updateReleaseInfo> -->
+                    <!-- </configuration> -->
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -288,11 +288,11 @@
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useEditMode>false</useEditMode>
-                        <arguments>-P source,doc -fn -U</arguments>
+                        <arguments>-P source,doc -fn -U -T 1C</arguments>
                         <commitByProject>false</commitByProject>
                         <autoResolveSnapshots>all</autoResolveSnapshots>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
-                        <preparationGoals>clean validate</preparationGoals>
+                        <!-- <preparationGoals>clean validate</preparationGoals> -->
                     </configuration>
                 </plugin>
                 <plugin>
@@ -316,7 +316,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <!-- <version>3.2.0</version> -->
                 </plugin>
             </plugins>
         </pluginManagement>
