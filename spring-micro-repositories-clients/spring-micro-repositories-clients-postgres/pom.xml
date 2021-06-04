@@ -10,19 +10,22 @@
     <artifactId>spring-micro-repositories-clients-postgres</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-micro-repositories-clients-postgres-auth_1</module>
-        <module>spring-micro-repositories-clients-postgres-auth_2</module>
-        <module>spring-micro-repositories-clients-postgres_1</module>
-        <module>spring-micro-repositories-clients-postgres_2</module>
+        <module>spring-micro-repositories-clients-postgres-modules</module>
+        <module>spring-micro-repositories-clients-postgres-dependencies</module>
     </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-clients-dependencies</artifactId>
+                <artifactId>spring-micro-repositories-dependencies</artifactId>
                 <version>0.0.37-M5-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-commons</artifactId>
+                <version>0.0.37-M5-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

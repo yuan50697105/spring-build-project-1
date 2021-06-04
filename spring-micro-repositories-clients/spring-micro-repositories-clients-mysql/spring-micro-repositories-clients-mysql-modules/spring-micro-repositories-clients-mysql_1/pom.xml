@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-micro-repositories-clients-mysql</artifactId>
+        <artifactId>spring-micro-repositories-clients-mysql-modules</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.37-M5-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-micro-repositories-clients-mysql-auth_2</artifactId>
+    <artifactId>spring-micro-repositories-clients-mysql_1</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-clients-commons</artifactId>
-            <version>0.0.37-M5-SNAPSHOT</version>
+            <artifactId>spring-micro-repositories-mysql_1</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-mysql-auth_2</artifactId>
+            <artifactId>spring-micro-repositories-clients-mysql-auth_1</artifactId>
+            <version>0.0.37-M5-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

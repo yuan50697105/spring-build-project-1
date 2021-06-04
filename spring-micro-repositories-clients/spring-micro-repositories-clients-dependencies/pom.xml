@@ -18,43 +18,17 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-clients-mysql_1</artifactId>
+                <artifactId>spring-micro-repositories-clients-mysql-dependencies</artifactId>
                 <version>0.0.37-M5-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-clients-mysql_2</artifactId>
+                <artifactId>spring-micro-repositories-clients-postgres-dependencies</artifactId>
                 <version>0.0.37-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-clients-postgres_1</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-clients-postgres_2</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-clients-mysql-auth_1</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-clients-mysql-auth_2</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-clients-postgres-auth_1</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-clients-postgres-auth_2</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
