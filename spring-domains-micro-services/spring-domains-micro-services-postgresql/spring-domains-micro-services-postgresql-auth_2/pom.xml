@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-domains-micro-services-postgresql-auth</artifactId>
+    <artifactId>spring-domains-micro-services-postgresql-auth_2</artifactId>
 
     <dependencies>
         <!--        <dependency>-->
@@ -16,7 +16,7 @@
         <!--        </dependency>-->
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-clients-postgres-auth</artifactId>
+            <artifactId>spring-micro-repositories-clients-postgres-auth_2</artifactId>
         </dependency>
     </dependencies>
 

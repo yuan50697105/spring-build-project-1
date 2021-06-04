@@ -12,6 +12,6 @@
     <modules>
         <module>spring-domains-micro-services-aggregation-dependencies</module>
         <module>spring-domains-micro-services-modules_1</module>
-        <module>spring-domains-micro-services-modules</module>
+        <module>spring-domains-micro-services-modules_2</module>
     </modules>
 </project>
