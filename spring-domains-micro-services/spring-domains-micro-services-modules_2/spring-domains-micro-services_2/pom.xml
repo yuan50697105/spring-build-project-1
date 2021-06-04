@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-domains-micro-services-modules_2</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M4</version>
+        <version>0.0.37-M5-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
