@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-domains-micro-services-clients</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M6</version>
+        <version>0.0.37-M7-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,26 +15,26 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-clients-commons</artifactId>
-                <version>0.0.37-M6</version>
+                <version>0.0.37-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-clients-mysql-dependencies</artifactId>
-                <version>0.0.37-M6</version>
+                <version>0.0.37-M7-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-clients-postgresql-dependencies</artifactId>
-                <version>0.0.37-M6</version>
+                <version>0.0.37-M7-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-clients-aggregation-dependencies</artifactId>
-                <version>0.0.37-M6</version>
+                <version>0.0.37-M7-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
