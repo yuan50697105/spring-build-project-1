@@ -7,6 +7,8 @@
         <module>spring-domains-micro-services-mysql</module>
         <module>spring-domains-micro-services-postgresql</module>
         <module>spring-domains-micro-services-aggregation</module>
+        <module>spring-domains-micro-services-mssql</module>
+        <module>spring-domains-micro-services-oracle</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>

@@ -12,7 +12,7 @@
     <dependencies>
 <!--        <dependency>-->
 <!--            <groupId>org.example.spring</groupId>-->
-<!--            <artifactId>spring-micro-repositories-mysql-auth_2</artifactId>-->
+<!--            <artifactId>spring-micro-repositories-mysql-auth</artifactId>-->
 <!--        </dependency>-->
         <dependency>
             <groupId>org.example.spring</groupId>

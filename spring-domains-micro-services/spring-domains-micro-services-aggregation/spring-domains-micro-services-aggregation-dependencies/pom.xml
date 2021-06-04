@@ -9,10 +9,7 @@
 
     <artifactId>spring-domains-micro-services-aggregation-dependencies</artifactId>
     <packaging>pom</packaging>
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -22,7 +19,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-services_2</artifactId>
+                <artifactId>spring-domains-micro-services</artifactId>
                 <version>0.0.37-M7-SNAPSHOT</version>
             </dependency>
         </dependencies>

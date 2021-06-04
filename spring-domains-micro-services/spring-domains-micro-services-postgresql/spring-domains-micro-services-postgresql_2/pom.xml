@@ -7,24 +7,24 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-domains-micro-services-postgresql_2</artifactId>
+    <artifactId>spring-domains-micro-services-postgresql</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-postgresql_2</artifactId>
+            <artifactId>spring-micro-repositories-postgresql</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-micro-services-postgresql-auth_2</artifactId>
+            <artifactId>spring-domains-micro-services-postgresql-auth</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-micro-services-postgresql-customer_2</artifactId>
+            <artifactId>spring-domains-micro-services-postgresql-customer</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-micro-services-postgresql-patient_2</artifactId>
+            <artifactId>spring-domains-micro-services-postgresql-patient</artifactId>
         </dependency>
     </dependencies>
 </project>

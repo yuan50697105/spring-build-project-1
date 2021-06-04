@@ -7,11 +7,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-domains-micro-services-postgresql-patient_2</artifactId>
+    <artifactId>spring-domains-micro-services-postgresql-patient</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-postgresql-patient_2</artifactId>
+            <artifactId>spring-micro-repositories-postgresql-patient</artifactId>
         </dependency>
     </dependencies>
 

@@ -23,7 +23,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-services-mysql-auth_2</artifactId>
+                <artifactId>spring-domains-micro-services-mysql-auth</artifactId>
                 <version>0.0.37-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -33,7 +33,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-services-mysql-customer_2</artifactId>
+                <artifactId>spring-domains-micro-services-mysql-customer</artifactId>
                 <version>0.0.37-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -43,7 +43,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-services-mysql-patient_2</artifactId>
+                <artifactId>spring-domains-micro-services-mysql-patient</artifactId>
                 <version>0.0.37-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -53,7 +53,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-services-mysql_2</artifactId>
+                <artifactId>spring-domains-micro-services-mysql</artifactId>
                 <version>0.0.37-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -63,7 +63,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-services-postgresql_2</artifactId>
+                <artifactId>spring-domains-micro-services-postgresql</artifactId>
                 <version>0.0.37-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -73,7 +73,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-services-postgresql-auth_2</artifactId>
+                <artifactId>spring-domains-micro-services-postgresql-auth</artifactId>
                 <version>0.0.37-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -83,7 +83,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-services-postgresql-customer_2</artifactId>
+                <artifactId>spring-domains-micro-services-postgresql-customer</artifactId>
                 <version>0.0.37-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -93,7 +93,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-services-postgresql-patient_2</artifactId>
+                <artifactId>spring-domains-micro-services-postgresql-patient</artifactId>
                 <version>0.0.37-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
