@@ -8,15 +8,14 @@ import org.example.spring.repositories.commons.auth.dto.DepartmentDTO;
 import org.example.spring.repositories.commons.auth.query.DepartmentQuery;
 import org.example.spring.repositories.commons.auth.vo.DepartmentVo;
 import org.example.spring.repositories.mysql.auth.repository.TDepartmentRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@Repository
+
 @AllArgsConstructor
-public class DepartmentRepositoryImpl implements DepartmentRepository {
+public abstract class DepartmentRepositoryImpl implements DepartmentRepository {
     private final DepartmentRepositoryConverter converter;
     private final TDepartmentRepository repository;
 

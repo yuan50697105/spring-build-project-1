@@ -13,14 +13,13 @@ import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
 import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@Repository
-public class UserRepositoryImpl implements UserRepository {
+
+public abstract class UserRepositoryImpl implements UserRepository {
 
     private final TUserRepository userRepository;
     private final UserRepositoryConverter userRepositoryConverter;
