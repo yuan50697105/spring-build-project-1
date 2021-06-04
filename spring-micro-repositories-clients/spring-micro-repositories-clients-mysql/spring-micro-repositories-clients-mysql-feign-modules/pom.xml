@@ -14,6 +14,8 @@
     <modules>
         <module>spring-micro-repositories-clients-mysql-auth-feign_1</module>
         <module>spring-micro-repositories-clients-mysql-auth-feign_2</module>
+        <module>spring-micro-repositories-clients-mysql-feign_1</module>
+        <module>spring-micro-repositories-clients-mysql-feign_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

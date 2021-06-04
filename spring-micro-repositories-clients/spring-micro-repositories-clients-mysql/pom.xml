@@ -23,6 +23,11 @@
                 <artifactId>spring-micro-repositories-clients-commons</artifactId>
                 <version>0.0.37-M5-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-dubbo</artifactId>
+                <version>0.0.37-M5-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -30,10 +35,15 @@
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-clients-commons</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-clients-dubbo</artifactId>
+        </dependency>
     </dependencies>
     <modules>
         <module>spring-micro-repositories-clients-mysql-dependencies</module>
         <module>spring-micro-repositories-clients-mysql-modules</module>
         <module>spring-micro-repositories-clients-mysql-feign-modules</module>
+        <module>spring-micro-repositories-clients-mysql-dubbo-modules</module>
     </modules>
 </project>

@@ -25,12 +25,42 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mysql-feign_1</artifactId>
+                <version>0.0.37-M5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mysql-feign_2</artifactId>
+                <version>0.0.37-M5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mysql-dubbo_1</artifactId>
+                <version>0.0.37-M5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mysql-dubbo_2</artifactId>
+                <version>0.0.37-M5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mysql-auth_1</artifactId>
                 <version>0.0.37-M5-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mysql-auth_2</artifactId>
+                <version>0.0.37-M5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mysql-auth-feign_1</artifactId>
+                <version>0.0.37-M5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mysql-auth-feign_2</artifactId>
                 <version>0.0.37-M5-SNAPSHOT</version>
             </dependency>
         </dependencies>

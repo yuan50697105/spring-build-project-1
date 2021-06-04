@@ -8,6 +8,7 @@ import org.example.spring.repositories.commons.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.auth.query.ResourceQuery;
 import org.example.spring.repositories.commons.auth.vo.ResourceVo;
 import org.example.spring.repositories.mysql.auth.repository.TResourceRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,7 +16,8 @@ import java.util.stream.Stream;
 
 
 @AllArgsConstructor
-public abstract class ResourceRepositoryImpl implements ResourceRepository {
+@Repository
+public  class ResourceRepositoryImpl implements ResourceRepository {
     private final ResourceRepositoryConverter converter;
     private final TResourceRepository repository;
 

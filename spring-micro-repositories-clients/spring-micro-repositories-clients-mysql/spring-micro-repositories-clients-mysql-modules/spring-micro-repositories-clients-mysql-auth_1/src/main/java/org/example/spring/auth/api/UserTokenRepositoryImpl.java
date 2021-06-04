@@ -11,6 +11,7 @@ import org.example.spring.repositories.mysql.auth.repository.TUserTokenRepositor
 import org.example.spring.repositories.mysql.auth.table.dto.TUserTokenDto;
 import org.example.spring.repositories.mysql.auth.table.query.TUserTokenQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TUserTokenVo;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,7 +19,8 @@ import java.util.stream.Stream;
 
 
 @AllArgsConstructor
-public abstract class UserTokenRepositoryImpl implements UserTokenRepository {
+@Repository
+public  class UserTokenRepositoryImpl implements UserTokenRepository {
     private final UserTokenRepositoryConverter converter;
     private final TUserTokenRepository repository;
 

@@ -9,6 +9,7 @@ import org.example.spring.repositories.commons.auth.query.RoleQuery;
 import org.example.spring.repositories.commons.auth.vo.RoleVo;
 import org.example.spring.repositories.mysql.auth.repository.TRoleRepository;
 import org.example.spring.repositories.mysql.auth.table.vo.TRoleVo;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +17,8 @@ import java.util.stream.Stream;
 
 
 @AllArgsConstructor
-public abstract class RoleRepositoryImpl implements RoleRepository {
+@Repository
+public  class RoleRepositoryImpl implements RoleRepository {
     private final RoleRepositoryConverter converter;
     private final TRoleRepository repository;
 
