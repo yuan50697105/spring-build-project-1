@@ -6,6 +6,7 @@
         <module>spring-micro-repositories-clients-dependencies</module>
         <module>spring-micro-repositories-clients-mysql</module>
         <module>spring-micro-repositories-clients-postgres</module>
+        <module>spring-micro-repositories-clients-feign</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>

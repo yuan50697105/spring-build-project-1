@@ -34,5 +34,6 @@
     <modules>
         <module>spring-micro-repositories-clients-mysql-dependencies</module>
         <module>spring-micro-repositories-clients-mysql-modules</module>
+        <module>spring-micro-repositories-clients-mysql-feign-modules</module>
     </modules>
 </project>
