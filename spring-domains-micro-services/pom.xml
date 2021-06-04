@@ -6,8 +6,7 @@
         <module>spring-domains-micro-services-commons</module>
         <module>spring-domains-micro-services-mysql</module>
         <module>spring-domains-micro-services-postgresql</module>
-        <module>spring-domains-micro-services-modules_1</module>
-        <module>spring-domains-micro-services-modules_2</module>
+        <module>spring-domains-micro-services-aggregation</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
@@ -18,6 +17,10 @@
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-commons</artifactId>
+            </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
@@ -36,6 +39,15 @@
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-dependencies</artifactId>
                 <version>0.0.37-M5-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-dependencies</artifactId>
+                <version>0.0.37-M5-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

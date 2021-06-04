@@ -7,5 +7,23 @@
         <version>0.0.37-M5-SNAPSHOT</version>
     </parent>
     <artifactId>spring-domains-micro-services-commons</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-commons</artifactId>
+            <version>0.0.37-M5-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-clients-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-plugins-commons</artifactId>
+        </dependency>
+    </dependencies>
 </project>
