@@ -13,13 +13,6 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-repositories-dependencies</artifactId>
-                <version>0.0.37-M1-SNAPSHOT</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-commons</artifactId>
                 <version>0.0.37-M5-SNAPSHOT</version>
             </dependency>
@@ -52,11 +45,6 @@
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-micro-services-mysql-patient_2</artifactId>
                 <version>0.0.37-M5-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-repositories-mysql-auth_1</artifactId>
-                <version>0.0.37-M1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
