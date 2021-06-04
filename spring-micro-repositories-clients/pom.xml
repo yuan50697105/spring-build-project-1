@@ -8,6 +8,9 @@
         <module>spring-micro-repositories-clients-postgres</module>
         <module>spring-micro-repositories-clients-feign</module>
         <module>spring-micro-repositories-clients-dubbo</module>
+        <module>spring-micro-repositories-clients-mssql</module>
+        <module>spring-micro-repositories-clients-oracle</module>
+        <module>spring-micro-repositories-clients-aggregation</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>

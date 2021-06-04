@@ -3,39 +3,40 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-micro-repositories-clients-mysql</artifactId>
+        <artifactId>spring-micro-repositories-clients</artifactId>
         <groupId>org.example.spring</groupId>
         <version>0.0.37-M5-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-micro-repositories-clients-mysql-dubbo-modules</artifactId>
+    <artifactId>spring-micro-repositories-clients-mssql</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>spring-micro-repositories-clients-mysql-dubbo_1</module>
-        <module>spring-micro-repositories-clients-mysql-dubbo_2</module>
-        <module>spring-micro-repositories-clients-mysql-auth-dubbo_1</module>
-        <module>spring-micro-repositories-clients-mysql-auth-dubbo_2</module>
-    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-clients-mysql-dependencies</artifactId>
+                <artifactId>spring-micro-repositories-dependencies</artifactId>
                 <version>0.0.37-M5-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-commons</artifactId>
+                <version>0.0.37-M5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-dubbo</artifactId>
+                <version>0.0.37-M5-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-dubbo</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-clients-dubbo</artifactId>
+            <artifactId>spring-micro-repositories-clients-commons</artifactId>
         </dependency>
     </dependencies>
+
 </project>

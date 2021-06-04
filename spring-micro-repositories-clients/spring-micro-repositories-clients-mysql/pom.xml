@@ -35,10 +35,6 @@
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-clients-commons</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-clients-dubbo</artifactId>
-        </dependency>
     </dependencies>
     <modules>
         <module>spring-micro-repositories-clients-mysql-dependencies</module>
