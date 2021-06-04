@@ -292,6 +292,7 @@
                         <commitByProject>false</commitByProject>
                         <autoResolveSnapshots>all</autoResolveSnapshots>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
+                        <preparationGoals>clean validate</preparationGoals>
                     </configuration>
                 </plugin>
                 <plugin>
