@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M5-SNAPSHOT</version>
+        <version>0.0.37-M5</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,7 +14,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <version>0.0.37-M5</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -22,75 +22,75 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-commons</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <version>0.0.37-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mysql-dependencies</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <version>0.0.37-M5</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-postgresql-dependencies</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <version>0.0.37-M5</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mssql-dependencies</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <version>0.0.37-M5</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-oracle-dependencies</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <version>0.0.37-M5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clickhouse-dependencies</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <version>0.0.37-M5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-doris-dependencies</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <version>0.0.37-M5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-elasticsearch-dependencies</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <version>0.0.37-M5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-mongodb-dependencies</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <version>0.0.37-M5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-kylin-dependencies</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <version>0.0.37-M5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-dependencies</artifactId>
-                <version>0.0.37-M5-SNAPSHOT</version>
+                <version>0.0.37-M5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
