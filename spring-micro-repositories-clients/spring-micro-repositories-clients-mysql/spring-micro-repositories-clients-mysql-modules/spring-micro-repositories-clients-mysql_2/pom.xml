@@ -11,8 +11,11 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-mysql_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-clients-mysql-auth_2</artifactId>
-            <version>0.0.37-M5-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

@@ -18,4 +18,15 @@
         <module>spring-micro-repositories-clients-postgres_1</module>
         <module>spring-micro-repositories-clients-postgres_2</module>
     </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-dependencies</artifactId>
+                <version>0.0.37-M5-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
