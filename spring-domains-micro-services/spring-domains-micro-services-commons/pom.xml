@@ -4,14 +4,14 @@
     <parent>
         <artifactId>spring-domains-micro-services</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M7-SNAPSHOT</version>
+        <version>0.0.37-M7</version>
     </parent>
     <artifactId>spring-domains-micro-services-commons</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-build-commons</artifactId>
-            <version>0.0.37-M7-SNAPSHOT</version>
+            <version>0.0.37-M7</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
