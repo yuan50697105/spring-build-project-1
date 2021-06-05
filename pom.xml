@@ -288,7 +288,7 @@
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useEditMode>false</useEditMode>
-                        <arguments>-P source,doc -fn -U -T 1C</arguments>
+                        <arguments>-P source,doc -fn</arguments>
                         <commitByProject>false</commitByProject>
                         <autoResolveSnapshots>all</autoResolveSnapshots>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
@@ -368,7 +368,7 @@
     <scm>
         <developerConnection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</developerConnection>
         <connection>scm:git:https://gitee.com/yuan50697105/spring-build-project-1.git</connection>
-        <tag>HEAD</tag>
+        <tag>v0.0.37-M7</tag>
     </scm>
     <profiles>
         <profile>
