@@ -28,17 +28,17 @@ public class AAccountServiceImpl extends DAccountServiceImpl implements AAccount
 
     @Override
     public IPageData<UserDTO> queryPage(UserQuery query) {
-        return accountService.queryPage(query);
+        return accountService.data(query);
     }
 
     @Override
     public List<UserDTO> queryList(UserQuery withSize) {
-        return accountService.queryList(withSize);
+        return accountService.list(withSize);
     }
 
     @Override
     public UserDTO queryOne(UserQuery query) {
-        return accountService.queryOne(query);
+        return accountService.one(query);
     }
 
     @Override

@@ -5,6 +5,7 @@ import cn.hutool.core.lang.Validator;
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.domains.services.mysql.auth.service.DAccountService;
+import org.example.spring.domains.services.mysql.auth.service.impl.DAccountServiceImpl;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.auth.query.UserQuery;
@@ -18,7 +19,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class AAccountServiceImpl implements AAccountService {
+public class AAccountServiceImpl extends DAccountServiceImpl implements AAccountService {
     private final DAccountService accountService;
 
     public AAccountServiceImpl(DAccountService accountService) {
@@ -27,17 +28,17 @@ public class AAccountServiceImpl implements AAccountService {
 
     @Override
     public IPageData<UserDTO> queryPage(UserQuery query) {
-        return accountService.queryPage(query);
+        return accountService.data(query);
     }
 
     @Override
     public List<UserDTO> queryList(UserQuery withSize) {
-        return accountService.queryList(withSize);
+        return accountService.list(withSize);
     }
 
     @Override
     public UserDTO queryOne(UserQuery query) {
-        return accountService.queryOne(query);
+        return accountService.one(query);
     }
 
     @Override
