@@ -5,6 +5,7 @@ import cn.hutool.core.lang.Validator;
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.domains.services.mysql.auth.service.DAccountService;
+import org.example.spring.domains.services.mysql.auth.service.impl.DAccountServiceImpl;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.auth.query.UserQuery;
@@ -18,7 +19,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class AAccountServiceImpl implements AAccountService {
+public class AAccountServiceImpl extends DAccountServiceImpl implements AAccountService {
     private final DAccountService accountService;
 
     public AAccountServiceImpl(DAccountService accountService) {

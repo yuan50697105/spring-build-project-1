@@ -4,6 +4,11 @@
     <modules>
         <module>spring-micro-applications-mysql</module>
         <module>spring-micro-applications-dependencies</module>
+        <module>spring-micro-applications-postgres</module>
+        <module>spring-micro-applications-commons</module>
+        <module>spring-micro-applications-mssql</module>
+        <module>spring-micro-applications-oracle</module>
+        <module>spring-micro-applications-aggregation</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
@@ -31,6 +36,13 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-services-dependencies</artifactId>
+                <version>0.0.37-M7-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-dependencies</artifactId>
                 <version>0.0.37-M7-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>

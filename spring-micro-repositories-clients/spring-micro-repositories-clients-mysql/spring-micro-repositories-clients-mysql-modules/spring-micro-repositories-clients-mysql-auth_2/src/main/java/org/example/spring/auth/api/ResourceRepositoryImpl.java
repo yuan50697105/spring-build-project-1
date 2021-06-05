@@ -1,5 +1,9 @@
 package org.example.spring.auth.api;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.lang.tree.Tree;
+import cn.hutool.core.lang.tree.TreeUtil;
+import cn.hutool.core.lang.tree.parser.NodeParser;
 import lombok.AllArgsConstructor;
 import org.example.spring.auth.converter.ResourceRepositoryConverter;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -8,9 +12,11 @@ import org.example.spring.repositories.commons.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.auth.query.ResourceQuery;
 import org.example.spring.repositories.commons.auth.vo.ResourceVo;
 import org.example.spring.repositories.mysql.auth.repository.TResourceRepository;
+import org.example.spring.repositories.mysql.auth.table.dto.TResourceDTO;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -99,5 +105,30 @@ public  class ResourceRepositoryImpl implements ResourceRepository {
     @Override
     public IPageData<ResourceDTO> data(ResourceQuery query) {
         return converter.build(repository.queryPage(converter.build(query)));
+    }
+
+    @Override
+    public List<Tree<Long>> queryTreeByUserId(Long id) {
+        return repository.queryTreeByUserId(id);
+    }
+
+    @Override
+    public List<Tree<Long>> queryTreeList(ResourceQuery query) {
+        List<TResourceDTO> tResourceDTOS = repository.queryList(converter.build(query));
+        TreeUtil.build(tResourceDTOS, 0L, getNodeParser());
+        return null;
+    }
+
+    private NodeParser<TResourceDTO, Long> getNodeParser() {
+        return new NodeParser<TResourceDTO, Long>() {
+            @Override
+            public void parse(TResourceDTO tResourceDTO, Tree<Long> tree) {
+                tree = converter.copyToTree(tResourceDTO);
+                Map<String, Object> map = BeanUtil.beanToMap(tResourceDTO);
+                for (Map.Entry<String, Object> entry : map.entrySet()) {
+                    tree.putExtra(entry.getKey(), entry.getValue());
+                }
+            }
+        };
     }
 }

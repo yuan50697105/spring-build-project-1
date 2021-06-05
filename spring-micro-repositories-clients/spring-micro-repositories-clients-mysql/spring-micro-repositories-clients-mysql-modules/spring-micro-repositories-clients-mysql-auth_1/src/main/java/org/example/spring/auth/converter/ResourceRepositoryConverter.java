@@ -1,5 +1,6 @@
 package org.example.spring.auth.converter;
 
+import cn.hutool.core.lang.tree.Tree;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.auth.dto.ResourceDTO;
@@ -9,6 +10,7 @@ import org.example.spring.repositories.mysql.auth.table.dto.TResourceDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TResourceVo;
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
@@ -29,4 +31,6 @@ public interface ResourceRepositoryConverter {
     IPageData<ResourceDTO> build(IPageData<TResourceDTO> queryPage);
 
     Stream<ResourceDTO> build(Stream<TResourceDTO> queryStream);
+
+    Tree<Long> copyToTree(TResourceDTO tResourceDTO);
 }

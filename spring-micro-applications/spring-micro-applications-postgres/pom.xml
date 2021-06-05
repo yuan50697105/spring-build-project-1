@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-micro-applications</artifactId>
+        <groupId>org.example.spring</groupId>
+        <version>0.0.37-M7-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-micro-applications-postgres</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-micro-applications-postgres-commons</module>
+        <module>spring-micro-applications-postgres-dependencies</module>
+        <module>spring-micro-applications-postgres-modules</module>
+    </modules>
+</project>

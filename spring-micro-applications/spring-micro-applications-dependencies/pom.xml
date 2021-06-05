@@ -13,7 +13,33 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-applications-commons</artifactId>
+                <version>0.0.37-M7-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-applications-mysql-dependencies</artifactId>
+                <version>0.0.37-M7-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-applications-postgres-dependencies</artifactId>
+                <version>0.0.37-M7-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-applications-oracle-dependencies</artifactId>
+                <version>0.0.37-M7-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-applications-mssql-dependencies</artifactId>
                 <version>0.0.37-M7-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
