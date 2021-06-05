@@ -1,14 +1,13 @@
 package org.example.spring.auth.api;
 
-import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
-import org.example.spring.auth.converter.ResourceRepositoryConverter;
+import org.example.spring.auth.converter.DepartmentRepositoryConverter;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.clients.auth.api.ResourceRepository;
-import org.example.spring.repositories.commons.auth.dto.ResourceDTO;
-import org.example.spring.repositories.commons.auth.query.ResourceQuery;
-import org.example.spring.repositories.commons.auth.vo.ResourceVo;
-import org.example.spring.repositories.postgres.auth.repository.TResourceRepository;
+import org.example.spring.repositories.clients.auth.api.DepartmentRepository;
+import org.example.spring.repositories.commons.auth.dto.DepartmentDTO;
+import org.example.spring.repositories.commons.auth.query.DepartmentQuery;
+import org.example.spring.repositories.commons.auth.vo.DepartmentVo;
+import org.example.spring.repositories.postgres.auth.repository.TDepartmentRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,17 +16,17 @@ import java.util.stream.Stream;
 
 @Repository
 @AllArgsConstructor
-public class ResourceRepositoryImpl implements ResourceRepository {
-    private final ResourceRepositoryConverter converter;
-    private final TResourceRepository repository;
+public class DepartmentRepositoryImpl implements DepartmentRepository {
+    private final DepartmentRepositoryConverter converter;
+    private final TDepartmentRepository repository;
 
     @Override
-    public void save(ResourceVo vo) {
+    public void save(DepartmentVo vo) {
         repository.save(converter.build(vo));
     }
 
     @Override
-    public void update(ResourceVo vo) {
+    public void update(DepartmentVo vo) {
         repository.update(converter.build(vo));
     }
 
@@ -47,67 +46,57 @@ public class ResourceRepositoryImpl implements ResourceRepository {
     }
 
     @Override
-    public ResourceDTO get(Long id) {
+    public DepartmentDTO get(Long id) {
         return converter.build(repository.get(id));
     }
 
     @Override
-    public Optional<ResourceDTO> getOpt(Long id) {
+    public Optional<DepartmentDTO> getOpt(Long id) {
         return Optional.ofNullable(get(id));
     }
 
     @Override
-    public ResourceDTO one(ResourceQuery query) {
+    public DepartmentDTO one(DepartmentQuery query) {
         return converter.build(repository.queryOne(converter.build(query)));
     }
 
     @Override
-    public Optional<ResourceDTO> oneOpt(ResourceQuery query) {
+    public Optional<DepartmentDTO> oneOpt(DepartmentQuery query) {
         return Optional.ofNullable(one(query));
     }
 
     @Override
-    public ResourceDTO first(ResourceQuery query) {
+    public DepartmentDTO first(DepartmentQuery query) {
         return converter.build(repository.queryFirst(converter.build(query)));
     }
 
     @Override
-    public Optional<ResourceDTO> firstOpt(ResourceQuery query) {
+    public Optional<DepartmentDTO> firstOpt(DepartmentQuery query) {
         return Optional.of(first(query));
     }
 
     @Override
-    public List<ResourceDTO> list(ResourceQuery query) {
+    public List<DepartmentDTO> list(DepartmentQuery query) {
         return converter.build(repository.queryList(converter.build(query)));
     }
 
     @Override
-    public Stream<ResourceDTO> listStream(ResourceQuery query) {
+    public Stream<DepartmentDTO> listStream(DepartmentQuery query) {
         return converter.build(repository.queryStream(converter.build(query)));
     }
 
     @Override
-    public List<ResourceDTO> top(ResourceQuery query) {
+    public List<DepartmentDTO> top(DepartmentQuery query) {
         return converter.build(repository.queryTop(converter.build(query)));
     }
 
     @Override
-    public Stream<ResourceDTO> topStream(ResourceQuery query) {
+    public Stream<DepartmentDTO> topStream(DepartmentQuery query) {
         return converter.build(repository.queryTopStream(converter.build(query)));
     }
 
     @Override
-    public IPageData<ResourceDTO> data(ResourceQuery query) {
+    public IPageData<DepartmentDTO> data(DepartmentQuery query) {
         return converter.build(repository.queryPage(converter.build(query)));
-    }
-
-    @Override
-    public List<Tree<Long>> queryTreeByUserId(Long id) {
-        return repository.queryTreeByUserId(id);
-    }
-
-    @Override
-    public List<Tree<Long>> queryTreeList(ResourceQuery query) {
-        return null;
     }
 }
