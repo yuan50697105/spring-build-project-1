@@ -3,9 +3,11 @@ package org.example.spring.domains.services.postgres.auth.service.impl;
 
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
+import org.example.spring.domains.services.impl.DServiceImpl;
 import org.example.spring.domains.services.postgres.auth.service.DResourceService;
 import org.example.spring.repositories.clients.auth.api.ResourceRepository;
 import org.example.spring.repositories.commons.auth.dto.ResourceDTO;
+import org.example.spring.repositories.commons.auth.po.Resource;
 import org.example.spring.repositories.commons.auth.query.ResourceQuery;
 import org.example.spring.repositories.commons.auth.vo.ResourceVo;
 import org.springframework.stereotype.Service;
@@ -16,46 +18,26 @@ import java.util.List;
 @Service
 @Transactional
 @AllArgsConstructor
-public class DResourceServiceImpl implements DResourceService {
-    private final ResourceRepository resourceRepository;
+public class DResourceServiceImpl extends DServiceImpl<Resource, ResourceVo, ResourceDTO, ResourceQuery, ResourceRepository> implements DResourceService {
 
     @Override
     public List<Tree<Long>> queryTreeByUserId(Long id) {
-        return null;
+        return repository.queryTreeByUserId(id);
+    }
+
+    @Override
+    public List<Tree<Long>> selectTreeByUserId(Long id) {
+        return repository.queryTreeByUserId(id);
     }
 
     @Override
     public List<Tree<Long>> selectTreeList(ResourceQuery query) {
-        return null;
+        return repository.queryTreeList(query);
     }
 
     @Override
-    public ResourceDTO get(Long id) {
-        return resourceRepository.get(id);
+    public List<Tree<Long>> queryTreeList(ResourceQuery query) {
+        return repository.queryTreeList(query);
     }
 
-    @Override
-    public void save(ResourceVo vo) {
-        resourceRepository.save(vo);
-    }
-
-    @Override
-    public void update(ResourceVo vo) {
-        resourceRepository.update(vo);
-    }
-
-    @Override
-    public void delete(List<Long> ids) {
-        resourceRepository.delete(ids);
-    }
-
-    @Override
-    public void delete(Long... ids) {
-        resourceRepository.delete(ids);
-    }
-
-    @Override
-    public void delete(Long id) {
-        resourceRepository.delete(id);
-    }
 }
