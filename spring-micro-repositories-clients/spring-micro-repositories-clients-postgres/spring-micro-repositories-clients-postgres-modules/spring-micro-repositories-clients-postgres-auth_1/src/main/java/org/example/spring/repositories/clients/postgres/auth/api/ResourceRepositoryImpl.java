@@ -1,10 +1,10 @@
-package org.example.spring.auth.api;
+package org.example.spring.repositories.clients.postgres.postgres.api;
 
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
-import org.example.spring.auth.converter.ResourceRepositoryConverter;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.ResourceRepository;
+import org.example.spring.repositories.clients.postgres.postgres.converter.ResourceRepositoryConverter;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.auth.query.ResourceQuery;
 import org.example.spring.repositories.commons.auth.vo.ResourceVo;
@@ -15,9 +15,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@Repository
+
 @AllArgsConstructor
-public class ResourceRepositoryImpl implements ResourceRepository {
+@Repository
+public  class ResourceRepositoryImpl implements ResourceRepository {
     private final ResourceRepositoryConverter converter;
     private final TResourceRepository repository;
 
@@ -108,6 +109,7 @@ public class ResourceRepositoryImpl implements ResourceRepository {
 
     @Override
     public List<Tree<Long>> queryTreeList(ResourceQuery query) {
-        return null;
+        return repository.queryTree(converter.build(query));
     }
+
 }

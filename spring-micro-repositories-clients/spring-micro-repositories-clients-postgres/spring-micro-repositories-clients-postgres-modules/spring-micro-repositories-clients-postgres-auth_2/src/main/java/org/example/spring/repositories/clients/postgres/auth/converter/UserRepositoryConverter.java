@@ -1,4 +1,4 @@
-package org.example.spring.auth.converter;
+package org.example.spring.repositories.clients.postgres.postgres.converter;
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;

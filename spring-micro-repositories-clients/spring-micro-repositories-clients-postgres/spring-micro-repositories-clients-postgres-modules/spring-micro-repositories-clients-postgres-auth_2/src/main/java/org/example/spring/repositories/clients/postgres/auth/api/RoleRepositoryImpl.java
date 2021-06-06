@@ -1,13 +1,14 @@
-package org.example.spring.repositories.clients.auth.api;
+package org.example.spring.repositories.clients.postgres.postgres.api;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.repositories.clients.auth.converter.RoleRepositoryConverter;
+import org.example.spring.repositories.clients.auth.api.RoleRepository;
+import org.example.spring.repositories.clients.postgres.postgres.converter.RoleRepositoryConverter;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.auth.dto.RoleDTO;
 import org.example.spring.repositories.commons.auth.query.RoleQuery;
 import org.example.spring.repositories.commons.auth.vo.RoleVo;
-import org.example.spring.repositories.mysql.auth.repository.TRoleRepository;
-import org.example.spring.repositories.mysql.auth.table.vo.TRoleVo;
+import org.example.spring.repositories.postgres.auth.repository.TRoleRepository;
+import org.example.spring.repositories.postgres.auth.table.vo.TRoleVo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

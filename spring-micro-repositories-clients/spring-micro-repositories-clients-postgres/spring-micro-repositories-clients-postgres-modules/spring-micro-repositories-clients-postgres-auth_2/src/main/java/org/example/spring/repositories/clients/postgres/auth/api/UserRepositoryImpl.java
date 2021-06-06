@@ -1,8 +1,8 @@
-package org.example.spring.auth.api;
+package org.example.spring.repositories.clients.postgres.postgres.api;
 
-import org.example.spring.auth.converter.UserRepositoryConverter;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.UserRepository;
+import org.example.spring.repositories.clients.postgres.postgres.converter.UserRepositoryConverter;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.auth.dto.UserRoleDTO;
 import org.example.spring.repositories.commons.auth.dto.UserRoleResourceDTO;
@@ -19,8 +19,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+
 @Repository
-public class UserRepositoryImpl implements UserRepository {
+public  class UserRepositoryImpl implements UserRepository {
 
     private final TUserRepository userRepository;
     private final UserRepositoryConverter userRepositoryConverter;

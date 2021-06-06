@@ -1,9 +1,9 @@
-package org.example.spring.auth.api;
+package org.example.spring.repositories.clients.postgres.postgres.api;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.auth.converter.RoleRepositoryConverter;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.RoleRepository;
+import org.example.spring.repositories.clients.postgres.postgres.converter.RoleRepositoryConverter;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.auth.dto.RoleDTO;
 import org.example.spring.repositories.commons.auth.query.RoleQuery;
 import org.example.spring.repositories.commons.auth.vo.RoleVo;
@@ -15,9 +15,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@Repository
+
 @AllArgsConstructor
-public class RoleRepositoryImpl implements RoleRepository {
+@Repository
+public  class RoleRepositoryImpl implements RoleRepository {
     private final RoleRepositoryConverter converter;
     private final TRoleRepository repository;
 

@@ -1,9 +1,9 @@
-package org.example.spring.auth.api;
+package org.example.spring.repositories.clients.postgres.postgres.api;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.auth.converter.UserTokenRepositoryConverter;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.UserTokenRepository;
+import org.example.spring.repositories.clients.postgres.postgres.converter.UserTokenRepositoryConverter;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.auth.dto.UserTokenDto;
 import org.example.spring.repositories.commons.auth.query.UserTokenQuery;
 import org.example.spring.repositories.commons.auth.vo.UserTokenVo;
@@ -17,9 +17,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@Repository
+
 @AllArgsConstructor
-public class UserTokenRepositoryImpl implements UserTokenRepository {
+@Repository
+public  class UserTokenRepositoryImpl implements UserTokenRepository {
     private final UserTokenRepositoryConverter converter;
     private final TUserTokenRepository repository;
 

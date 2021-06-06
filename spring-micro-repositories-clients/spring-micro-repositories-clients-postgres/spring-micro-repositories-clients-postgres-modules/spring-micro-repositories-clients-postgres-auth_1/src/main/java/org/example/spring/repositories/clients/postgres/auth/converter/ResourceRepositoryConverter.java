@@ -1,5 +1,6 @@
-package org.example.spring.auth.converter;
+package org.example.spring.repositories.clients.postgres.postgres.converter;
 
+import cn.hutool.core.lang.tree.Tree;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.auth.dto.ResourceDTO;
@@ -29,4 +30,6 @@ public interface ResourceRepositoryConverter {
     IPageData<ResourceDTO> build(IPageData<TResourceDTO> queryPage);
 
     Stream<ResourceDTO> build(Stream<TResourceDTO> queryStream);
+
+    Tree<Long> copyToTree(TResourceDTO tResourceDTO);
 }

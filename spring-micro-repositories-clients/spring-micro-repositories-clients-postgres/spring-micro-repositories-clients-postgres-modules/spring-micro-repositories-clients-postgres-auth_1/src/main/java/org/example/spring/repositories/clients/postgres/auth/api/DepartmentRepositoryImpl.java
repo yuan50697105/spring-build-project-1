@@ -1,12 +1,13 @@
-package org.example.spring.repositories.clients.auth.api;
+package org.example.spring.repositories.clients.postgres.postgres.api;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.repositories.clients.auth.converter.DepartmentRepositoryConverter;
+import org.example.spring.repositories.clients.auth.api.DepartmentRepository;
+import org.example.spring.repositories.clients.postgres.postgres.converter.DepartmentRepositoryConverter;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.auth.dto.DepartmentDTO;
 import org.example.spring.repositories.commons.auth.query.DepartmentQuery;
 import org.example.spring.repositories.commons.auth.vo.DepartmentVo;
-import org.example.spring.repositories.mysql.auth.repository.TDepartmentRepository;
+import org.example.spring.repositories.postgres.auth.repository.TDepartmentRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
