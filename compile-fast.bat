@@ -1,1 +1,0 @@
-call mvn clean compile -fae -T 1C
