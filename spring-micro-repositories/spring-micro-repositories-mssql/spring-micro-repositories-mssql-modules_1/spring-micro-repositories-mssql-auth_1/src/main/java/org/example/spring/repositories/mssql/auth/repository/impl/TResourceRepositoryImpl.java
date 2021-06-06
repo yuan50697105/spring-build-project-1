@@ -40,6 +40,11 @@ public class TResourceRepositoryImpl extends IBaseRepositoryImpl<TResource, TRes
         return TreeUtil.build(resourceDTOS, 0L, resourceToTreeParser());
     }
 
+    @Override
+    public List<Tree<Long>> queryTree(TResourceQuery query) {
+        return TreeUtil.build(queryList(query), 0L, resourceToTreeParser());
+    }
+
     private NodeParser<TResourceDTO, Long> resourceToTreeParser() {
         return (resource, tree) -> {
             tree.setParentId(resource.getPid());

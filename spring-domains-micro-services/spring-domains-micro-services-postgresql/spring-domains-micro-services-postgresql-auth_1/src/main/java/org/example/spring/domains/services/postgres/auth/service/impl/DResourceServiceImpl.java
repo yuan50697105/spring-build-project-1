@@ -20,6 +20,11 @@ public class DResourceServiceImpl implements DResourceService {
     private final ResourceRepository resourceRepository;
 
     @Override
+    public List<Tree<Long>> queryTreeByRoleId(Long roleId) {
+        return resourceRepository.queryTreeByRoleId(roleId);
+    }
+
+    @Override
     public List<Tree<Long>> queryTreeByUserId(Long id) {
         return null;
     }

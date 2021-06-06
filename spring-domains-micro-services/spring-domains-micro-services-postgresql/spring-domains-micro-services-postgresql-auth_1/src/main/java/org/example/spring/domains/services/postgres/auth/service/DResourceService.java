@@ -9,6 +9,8 @@ import org.example.spring.repositories.commons.auth.vo.ResourceVo;
 import java.util.List;
 
 public interface DResourceService {
+    List<Tree<Long>> queryTreeByRoleId(Long roleId);
+
     List<Tree<Long>> queryTreeByUserId(Long id);
 
     List<Tree<Long>> selectTreeList(ResourceQuery query);
