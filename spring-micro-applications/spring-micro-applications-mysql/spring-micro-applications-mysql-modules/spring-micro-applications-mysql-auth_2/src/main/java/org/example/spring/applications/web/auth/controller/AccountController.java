@@ -7,9 +7,9 @@ import lombok.AllArgsConstructor;
 import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
 import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.commons.auth.dto.UserDTO;
-import org.example.spring.repositories.commons.auth.query.UserQuery;
-import org.example.spring.repositories.commons.auth.vo.UserVo;
+import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.entity.auth.query.UserQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 

@@ -3,10 +3,10 @@ package org.example.spring.domains.services.mysql.auth.service;
 
 import cn.hutool.core.lang.tree.Tree;
 import org.example.spring.domains.services.DService;
-import org.example.spring.repositories.commons.auth.dto.ResourceDTO;
-import org.example.spring.repositories.commons.auth.po.Resource;
-import org.example.spring.repositories.commons.auth.query.ResourceQuery;
-import org.example.spring.repositories.commons.auth.vo.ResourceVo;
+import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
+import org.example.spring.repositories.commons.entity.auth.po.Resource;
+import org.example.spring.repositories.commons.entity.auth.query.ResourceQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.ResourceVo;
 
 import java.util.List;
 

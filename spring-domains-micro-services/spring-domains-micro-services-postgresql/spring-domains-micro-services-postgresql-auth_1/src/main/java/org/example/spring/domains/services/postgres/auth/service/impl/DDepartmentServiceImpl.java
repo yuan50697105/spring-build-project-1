@@ -4,11 +4,11 @@ import lombok.AllArgsConstructor;
 import org.example.spring.domains.services.impl.DServiceImpl;
 import org.example.spring.domains.services.postgres.auth.service.DDepartmentService;
 import org.example.spring.repositories.clients.auth.api.DepartmentRepository;
-import org.example.spring.repositories.commons.auth.dto.DepartmentDTO;
-import org.example.spring.repositories.commons.auth.dto.DepartmentRoleDTO;
-import org.example.spring.repositories.commons.auth.po.Department;
-import org.example.spring.repositories.commons.auth.query.DepartmentQuery;
-import org.example.spring.repositories.commons.auth.vo.DepartmentVo;
+import org.example.spring.repositories.commons.entity.auth.dto.DepartmentDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.DepartmentRoleDTO;
+import org.example.spring.repositories.commons.entity.auth.po.Department;
+import org.example.spring.repositories.commons.entity.auth.query.DepartmentQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.DepartmentVo;
 import org.springframework.stereotype.Service;
 
 @Service

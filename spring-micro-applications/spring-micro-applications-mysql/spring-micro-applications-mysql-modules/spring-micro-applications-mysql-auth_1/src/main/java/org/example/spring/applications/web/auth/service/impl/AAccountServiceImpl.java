@@ -7,9 +7,9 @@ import org.example.spring.applications.web.auth.service.AAccountService;
 import org.example.spring.domains.services.mysql.auth.service.DAccountService;
 import org.example.spring.domains.services.mysql.auth.service.impl.DAccountServiceImpl;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.commons.auth.dto.UserDTO;
-import org.example.spring.repositories.commons.auth.query.UserQuery;
-import org.example.spring.repositories.commons.auth.vo.UserVo;
+import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.entity.auth.query.UserQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
 import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +21,10 @@ import java.util.List;
 @Transactional
 public class AAccountServiceImpl extends DAccountServiceImpl implements AAccountService {
     private final DAccountService accountService;
+
+    public AAccountServiceImpl() {
+        this.accountService = new DAccountServiceImpl();
+    }
 
     public AAccountServiceImpl(DAccountService accountService) {
         this.accountService = accountService;

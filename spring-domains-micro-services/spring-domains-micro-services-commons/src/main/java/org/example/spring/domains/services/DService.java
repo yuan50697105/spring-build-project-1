@@ -1,13 +1,14 @@
 package org.example.spring.domains.services;
 
+import org.example.spring.plugins.commons.entity.ICommonsEntity;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.clients.commons.api.CommonsRepository;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public interface DService<T, V, D, Q>  {
+public interface DService<T extends ICommonsEntity, V extends T, D extends T, Q extends ICommonsQuery> {
 
     void save(V vo);
 

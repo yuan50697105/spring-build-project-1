@@ -1,14 +1,16 @@
 package org.example.spring.domains.services.impl;
 
 import org.example.spring.domains.services.DService;
+import org.example.spring.plugins.commons.entity.ICommonsEntity;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 import org.example.spring.repositories.clients.commons.api.CommonsRepository;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public abstract class DServiceImpl<T, V, D, Q, R extends CommonsRepository<T, V, D, Q>> implements DService<T, V, D, Q> {
+public abstract class DServiceImpl<T extends ICommonsEntity, V extends T, D extends T, Q extends ICommonsQuery, R extends CommonsRepository<T, V, D, Q>> implements DService<T, V, D, Q> {
     protected R repository;
 
     @Override

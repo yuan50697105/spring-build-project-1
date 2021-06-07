@@ -4,12 +4,12 @@ import lombok.AllArgsConstructor;
 import org.example.spring.domains.services.impl.DServiceImpl;
 import org.example.spring.domains.services.postgres.auth.service.DAccountService;
 import org.example.spring.repositories.clients.auth.api.UserRepository;
-import org.example.spring.repositories.commons.auth.dto.UserDTO;
-import org.example.spring.repositories.commons.auth.dto.UserRoleDTO;
-import org.example.spring.repositories.commons.auth.dto.UserRoleResourceDTO;
-import org.example.spring.repositories.commons.auth.po.User;
-import org.example.spring.repositories.commons.auth.query.UserQuery;
-import org.example.spring.repositories.commons.auth.vo.UserVo;
+import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.UserRoleDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.UserRoleResourceDTO;
+import org.example.spring.repositories.commons.entity.auth.po.User;
+import org.example.spring.repositories.commons.entity.auth.query.UserQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
 import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.springframework.stereotype.Service;
 
