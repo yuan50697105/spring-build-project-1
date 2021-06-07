@@ -1,11 +1,11 @@
-package org.example.spring.repositories.clients.postgres.postgres.converter;
+package org.example.spring.repositories.clients.postgres.auth.converter;
 
 import cn.hutool.core.lang.tree.Tree;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.commons.auth.dto.ResourceDTO;
-import org.example.spring.repositories.commons.auth.query.ResourceQuery;
-import org.example.spring.repositories.commons.auth.vo.ResourceVo;
+import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
+import org.example.spring.repositories.commons.entity.auth.query.ResourceQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.ResourceVo;
 import org.example.spring.repositories.postgres.auth.table.dto.TResourceDTO;
 import org.example.spring.repositories.postgres.auth.table.query.TResourceQuery;
 import org.example.spring.repositories.postgres.auth.table.vo.TResourceVo;

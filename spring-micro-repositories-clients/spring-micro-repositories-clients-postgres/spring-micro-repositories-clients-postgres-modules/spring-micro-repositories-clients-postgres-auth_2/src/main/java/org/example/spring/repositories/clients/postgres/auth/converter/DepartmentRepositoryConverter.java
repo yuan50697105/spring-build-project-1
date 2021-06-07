@@ -1,10 +1,11 @@
-package org.example.spring.repositories.clients.postgres.postgres.converter;
+package org.example.spring.repositories.clients.postgres.auth.converter;
+
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.commons.auth.dto.DepartmentDTO;
-import org.example.spring.repositories.commons.auth.query.DepartmentQuery;
-import org.example.spring.repositories.commons.auth.vo.DepartmentVo;
+import org.example.spring.repositories.commons.entity.auth.dto.DepartmentDTO;
+import org.example.spring.repositories.commons.entity.auth.query.DepartmentQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.DepartmentVo;
 import org.example.spring.repositories.postgres.auth.table.dto.TDepartmentDTO;
 import org.example.spring.repositories.postgres.auth.table.query.TDepartmentQuery;
 import org.example.spring.repositories.postgres.auth.table.vo.TDepartmentVo;

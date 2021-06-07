@@ -1,12 +1,12 @@
-package org.example.spring.repositories.clients.postgres.postgres.converter;
+package org.example.spring.repositories.clients.postgres.auth.converter;
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.commons.auth.dto.RoleDTO;
-import org.example.spring.repositories.commons.auth.dto.UserDTO;
-import org.example.spring.repositories.commons.auth.dto.UserRoleDTO;
-import org.example.spring.repositories.commons.auth.query.UserQuery;
-import org.example.spring.repositories.commons.auth.vo.UserVo;
+import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.UserRoleDTO;
+import org.example.spring.repositories.commons.entity.auth.query.UserQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
 import org.example.spring.repositories.postgres.auth.table.dto.TRoleDTO;
 import org.example.spring.repositories.postgres.auth.table.dto.TUserDTO;
 import org.example.spring.repositories.postgres.auth.table.dto.TUserRoleDTO;

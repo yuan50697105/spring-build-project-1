@@ -1,10 +1,11 @@
 package org.example.spring.repositories.clients.auth.mysql.converter;
 
+
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.commons.auth.dto.DepartmentDTO;
-import org.example.spring.repositories.commons.auth.query.DepartmentQuery;
-import org.example.spring.repositories.commons.auth.vo.DepartmentVo;
+import org.example.spring.repositories.commons.entity.auth.dto.DepartmentDTO;
+import org.example.spring.repositories.commons.entity.auth.query.DepartmentQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.DepartmentVo;
 import org.example.spring.repositories.mysql.auth.table.dto.TDepartmentDTO;
 import org.example.spring.repositories.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TDepartmentVo;

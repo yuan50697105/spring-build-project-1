@@ -1,19 +1,19 @@
 package org.example.spring.repositories.clients.auth.mysql.api;
 
+
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.DepartmentRepository;
 import org.example.spring.repositories.clients.auth.mysql.converter.DepartmentRepositoryConverter;
-import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.commons.auth.dto.DepartmentDTO;
-import org.example.spring.repositories.commons.auth.query.DepartmentQuery;
-import org.example.spring.repositories.commons.auth.vo.DepartmentVo;
+import org.example.spring.repositories.commons.entity.auth.dto.DepartmentDTO;
+import org.example.spring.repositories.commons.entity.auth.query.DepartmentQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.DepartmentVo;
 import org.example.spring.repositories.mysql.auth.repository.TDepartmentRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
-
 
 @AllArgsConstructor
 @Repository

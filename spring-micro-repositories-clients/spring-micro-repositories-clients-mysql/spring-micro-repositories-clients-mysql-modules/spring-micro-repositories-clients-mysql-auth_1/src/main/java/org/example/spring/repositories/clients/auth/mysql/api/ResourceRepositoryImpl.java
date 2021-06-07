@@ -1,20 +1,20 @@
 package org.example.spring.repositories.clients.auth.mysql.api;
 
+
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.ResourceRepository;
 import org.example.spring.repositories.clients.auth.mysql.converter.ResourceRepositoryConverter;
-import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.commons.auth.dto.ResourceDTO;
-import org.example.spring.repositories.commons.auth.query.ResourceQuery;
-import org.example.spring.repositories.commons.auth.vo.ResourceVo;
+import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
+import org.example.spring.repositories.commons.entity.auth.query.ResourceQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.ResourceVo;
 import org.example.spring.repositories.mysql.auth.repository.TResourceRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
-
 
 @AllArgsConstructor
 @Repository
