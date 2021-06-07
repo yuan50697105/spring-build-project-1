@@ -18,7 +18,7 @@ import java.io.Serializable;
  *
  * @author yuane
  */
-@ApiModel(value = "org-example-spring-daos-mysql-org.example.spring.repositories.mysql.auth-table-po-TUser")
+@ApiModel(value = "org-example-spring-daos-mysql-org.example.spring.repositories.postgres.auth-table-po-TUser")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

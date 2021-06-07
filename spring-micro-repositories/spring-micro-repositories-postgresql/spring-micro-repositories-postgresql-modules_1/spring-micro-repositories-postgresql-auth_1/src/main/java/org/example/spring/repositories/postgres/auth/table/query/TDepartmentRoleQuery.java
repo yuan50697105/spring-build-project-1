@@ -16,7 +16,7 @@ import java.io.Serializable;
 /**
  * t_department_role
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-org.example.spring.repositories.mysql.auth-table-po-TDepartmentRole")
+@ApiModel(value = "org-example-spring-infrastructures-mysql-org.example.spring.repositories.postgres.auth-table-po-TDepartmentRole")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
