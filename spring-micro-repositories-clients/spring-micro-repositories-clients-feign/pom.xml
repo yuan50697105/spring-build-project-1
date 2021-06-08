@@ -15,6 +15,11 @@
                 <artifactId>spring-micro-repositories-clients-commons</artifactId>
                 <version>0.0.37-M11-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-feign-api</artifactId>
+                <version>0.0.37-M11-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -29,6 +34,10 @@
         <dependency>
             <groupId>io.github.openfeign.form</groupId>
             <artifactId>feign-form-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-clients-feign-api</artifactId>
         </dependency>
     </dependencies>
 </project>

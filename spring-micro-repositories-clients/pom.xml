@@ -11,6 +11,7 @@
         <module>spring-micro-repositories-clients-mssql</module>
         <module>spring-micro-repositories-clients-oracle</module>
         <module>spring-micro-repositories-clients-aggregation</module>
+        <module>spring-micro-repositories-clients-feign-api</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
