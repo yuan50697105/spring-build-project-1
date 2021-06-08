@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-aggregation</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M10-SNAPSHOT</version>
+        <version>0.0.37-M10</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,12 +14,12 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories_1</artifactId>
-                <version>0.0.37-M10-SNAPSHOT</version>
+                <version>0.0.37-M10</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories_2</artifactId>
-                <version>0.0.37-M10-SNAPSHOT</version>
+                <version>0.0.37-M10</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
