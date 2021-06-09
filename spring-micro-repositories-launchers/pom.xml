@@ -10,6 +10,14 @@
         <module>spring-micro-repositories-launchers-postgres_2</module>
         <module>spring-micro-repositories-launchers-postgres-auth_1</module>
         <module>spring-micro-repositories-launchers-postgres-auth_2</module>
+        <module>spring-micro-repositories-launchers-mssql_1</module>
+        <module>spring-micro-repositories-launchers-mssql_2</module>
+        <module>spring-micro-repositories-launchers-mssql-auth_1</module>
+        <module>spring-micro-repositories-launchers-mssql-auth_2</module>
+        <module>spring-micro-repositories-launchers-oracle_1</module>
+        <module>spring-micro-repositories-launchers-oracle_2</module>
+        <module>spring-micro-repositories-launchers-oracle-auth_1</module>
+        <module>spring-micro-repositories-launchers-oracle-auth_2</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
