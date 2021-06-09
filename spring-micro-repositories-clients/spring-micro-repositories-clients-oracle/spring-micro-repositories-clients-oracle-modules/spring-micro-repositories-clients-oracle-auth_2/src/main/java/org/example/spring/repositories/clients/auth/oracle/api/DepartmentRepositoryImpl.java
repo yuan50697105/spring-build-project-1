@@ -1,7 +1,6 @@
 package org.example.spring.repositories.clients.auth.oracle.api;
 
 
-import lombok.AllArgsConstructor;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.DepartmentRepository;
 import org.example.spring.repositories.clients.auth.oracle.converter.DepartmentRepositoryConverter;
@@ -15,7 +14,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@AllArgsConstructor
 @Repository
 public  class DepartmentRepositoryImpl implements DepartmentRepository {
     private final DepartmentRepositoryConverter converter;

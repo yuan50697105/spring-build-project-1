@@ -1,10 +1,11 @@
 package org.example.spring.repositories.clients.auth.oracle.dubbo;
 
+
 import org.apache.dubbo.config.annotation.DubboService;
-import org.example.spring.repositories.clients.auth.mysql.api.ResourceRepositoryImpl;
-import org.example.spring.repositories.clients.auth.mysql.converter.ResourceRepositoryConverter;
+import org.example.spring.repositories.clients.auth.oracle.api.ResourceRepositoryImpl;
+import org.example.spring.repositories.clients.auth.oracle.converter.ResourceRepositoryConverter;
 import org.example.spring.repositories.clients.dubbo.auth.api.DubboResourceRepository;
-import org.example.spring.repositories.mysql.auth.repository.TResourceRepository;
+import org.example.spring.repositories.oracle.auth.repository.TResourceRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
