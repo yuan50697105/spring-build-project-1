@@ -42,9 +42,9 @@
         <module>spring-cloud-micro-services</module>
         <module>spring-cloud-micro-services-clients</module>
         <module>spring-cloud-micro-services-launchers</module>
-        <module>spring-cloud-domains-micro-services</module>
-        <module>spring-cloud-domains-micro-services-clients</module>
-        <module>spring-cloud-domains-micro-services-launchers</module>
+        <module>spring-cloud-micro-domains-services</module>
+        <module>spring-cloud-micro-domains-services-clients</module>
+        <module>spring-cloud-micro-domains-services-launchers</module>
         <module>spring-cloud-micro-applications</module>
         <module>spring-cloud-micro-applications-launchers</module>
         <module>spring-build-micro-dependencies</module>

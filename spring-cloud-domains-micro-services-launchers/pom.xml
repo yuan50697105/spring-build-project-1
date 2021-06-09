@@ -6,7 +6,7 @@
         <groupId>org.example.spring</groupId>
         <version>0.0.37-M13-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-cloud-domains-micro-services-launchers</artifactId>
+    <artifactId>spring-cloud-micro-domains-services-launchers</artifactId>
     <packaging>pom</packaging>
 
 </project>
