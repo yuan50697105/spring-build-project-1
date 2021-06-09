@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-micro-repositories-launchers</artifactId>
         <groupId>org.example.spring</groupId>
@@ -7,16 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-micro-repositories-launchers-mysql_1</artifactId>
+    <artifactId>spring-micro-repositories-launchers-postgres_2</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-clients-mysql-feign_1</artifactId>
+            <artifactId>spring-micro-repositories-clients-postgres-feign_2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-clients-mysql-dubbo_1</artifactId>
+            <artifactId>spring-micro-repositories-clients-postgres-dubbo_2</artifactId>
         </dependency>
     </dependencies>
 

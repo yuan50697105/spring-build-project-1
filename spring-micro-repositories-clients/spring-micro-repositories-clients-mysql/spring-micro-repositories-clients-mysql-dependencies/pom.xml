@@ -61,6 +61,16 @@
                 <artifactId>spring-micro-repositories-clients-mysql-auth-feign_2</artifactId>
                 <version>0.0.37-M12-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mysql-auth-dubbo_1</artifactId>
+                <version>0.0.37-M12-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mysql-auth-dubbo_2</artifactId>
+                <version>0.0.37-M12-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

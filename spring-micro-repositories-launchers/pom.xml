@@ -6,6 +6,10 @@
         <module>spring-micro-repositories-launchers-mysql_2</module>
         <module>spring-micro-repositories-launchers-mysql-auth_1</module>
         <module>spring-micro-repositories-launchers-mysql-auth_2</module>
+        <module>spring-micro-repositories-launchers-postgres_1</module>
+        <module>spring-micro-repositories-launchers-postgres_2</module>
+        <module>spring-micro-repositories-launchers-postgres-auth_1</module>
+        <module>spring-micro-repositories-launchers-postgres-auth_2</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
