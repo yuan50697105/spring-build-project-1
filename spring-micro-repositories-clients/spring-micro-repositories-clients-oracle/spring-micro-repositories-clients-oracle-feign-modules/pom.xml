@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-clients-oracle</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M12-SNAPSHOT</version>
+        <version>0.0.37-M12</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -20,14 +20,14 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-oracle-dependencies</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-feign</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

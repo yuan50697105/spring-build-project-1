@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-clients-mssql</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M12-SNAPSHOT</version>
+        <version>0.0.37-M12</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,62 +14,62 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mssql_1</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mssql_2</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mssql-feign_1</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mssql-feign_2</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mssql-dubbo_1</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mssql-dubbo_2</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mssql-auth_1</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mssql-auth_2</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mssql-auth-feign_1</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mssql-auth-feign_2</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mssql-auth-dubbo_1</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mssql-auth-dubbo_2</artifactId>
-                <version>0.0.37-M12-SNAPSHOT</version>
+                <version>0.0.37-M12</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
