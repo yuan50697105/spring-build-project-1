@@ -13,6 +13,7 @@
         <module>spring-micro-repositories-clients-postgres-modules</module>
         <module>spring-micro-repositories-clients-postgres-dependencies</module>
         <module>spring-micro-repositories-clients-postgres-feign-modules</module>
+        <module>spring-micro-repositories-clients-postgres-dubbo-modules</module>
     </modules>
     <dependencyManagement>
         <dependencies>

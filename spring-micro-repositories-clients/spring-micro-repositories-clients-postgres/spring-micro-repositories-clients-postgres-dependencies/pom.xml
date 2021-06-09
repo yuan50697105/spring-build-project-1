@@ -23,12 +23,52 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-feign_1</artifactId>
+                <version>0.0.37-M11-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-feign_2</artifactId>
+                <version>0.0.37-M11-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-dubbo_1</artifactId>
+                <version>0.0.37-M11-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-dubbo_2</artifactId>
+                <version>0.0.37-M11-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-postgres-auth_1</artifactId>
                 <version>0.0.37-M11-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-postgres-auth_2</artifactId>
+                <version>0.0.37-M11-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-auth-feign_1</artifactId>
+                <version>0.0.37-M11-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-auth-feign_2</artifactId>
+                <version>0.0.37-M11-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-auth-dubbo_1</artifactId>
+                <version>0.0.37-M11-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-auth-dubbo_2</artifactId>
                 <version>0.0.37-M11-SNAPSHOT</version>
             </dependency>
         </dependencies>

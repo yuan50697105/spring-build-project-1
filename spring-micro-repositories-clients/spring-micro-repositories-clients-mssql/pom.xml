@@ -9,6 +9,12 @@
 
     <artifactId>spring-micro-repositories-clients-mssql</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-micro-repositories-clients-mssql-dependencies</module>
+        <module>spring-micro-repositories-clients-mssql-modules</module>
+        <module>spring-micro-repositories-clients-mssql-feign-modules</module>
+        <module>spring-micro-repositories-clients-mssql-dubbo-modules</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -26,6 +32,11 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-dubbo</artifactId>
+                <version>0.0.37-M11-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-feign</artifactId>
                 <version>0.0.37-M11-SNAPSHOT</version>
             </dependency>
         </dependencies>

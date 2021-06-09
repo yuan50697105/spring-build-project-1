@@ -14,6 +14,8 @@
     <modules>
         <module>spring-micro-repositories-clients-postgres-auth-feign_1</module>
         <module>spring-micro-repositories-clients-postgres-auth-feign_2</module>
+        <module>spring-micro-repositories-clients-postgres-feign_1</module>
+        <module>spring-micro-repositories-clients-postgres-feign_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
