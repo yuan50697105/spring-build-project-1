@@ -9,7 +9,7 @@
     <parent>
         <artifactId>spring-micro-repositories-aggregation-modules</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M12</version>
+        <version>0.0.37-M13-SNAPSHOT</version>
     </parent>
     <artifactId>spring-micro-repositories-aggregation-modules_1</artifactId>
     <packaging>pom</packaging>
@@ -18,7 +18,7 @@
             <dependency>
                 <artifactId>spring-micro-repositories-dependencies</artifactId>
                 <groupId>org.example.spring</groupId>
-                <version>0.0.37-M12</version>
+                <version>0.0.37-M13-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-doris</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M12</version>
+        <version>0.0.37-M13-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,22 +13,22 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-doris-commons_1</artifactId>
-                <version>0.0.37-M12</version>
+                <version>0.0.37-M13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-doris-commons_2</artifactId>
-                <version>0.0.37-M12</version>
+                <version>0.0.37-M13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-doris_1</artifactId>
-                <version>0.0.37-M12</version>
+                <version>0.0.37-M13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-doris_2</artifactId>
-                <version>0.0.37-M12</version>
+                <version>0.0.37-M13-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

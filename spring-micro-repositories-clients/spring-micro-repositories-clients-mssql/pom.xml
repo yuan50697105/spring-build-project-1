@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-clients</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M12</version>
+        <version>0.0.37-M13-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -20,24 +20,24 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-dependencies</artifactId>
-                <version>0.0.37-M12</version>
+                <version>0.0.37-M13-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-commons</artifactId>
-                <version>0.0.37-M12</version>
+                <version>0.0.37-M13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-dubbo</artifactId>
-                <version>0.0.37-M12</version>
+                <version>0.0.37-M13-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-feign</artifactId>
-                <version>0.0.37-M12</version>
+                <version>0.0.37-M13-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
