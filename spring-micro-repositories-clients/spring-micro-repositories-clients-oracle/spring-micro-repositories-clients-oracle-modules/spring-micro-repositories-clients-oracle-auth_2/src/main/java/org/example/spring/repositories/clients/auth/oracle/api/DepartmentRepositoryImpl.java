@@ -14,10 +14,16 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+
 @Repository
 public  class DepartmentRepositoryImpl implements DepartmentRepository {
     private final DepartmentRepositoryConverter converter;
     private final TDepartmentRepository repository;
+
+    public DepartmentRepositoryImpl(DepartmentRepositoryConverter converter, TDepartmentRepository repository) {
+        this.converter = converter;
+        this.repository = repository;
+    }
 
     @Override
     public void save(DepartmentVo vo) {
