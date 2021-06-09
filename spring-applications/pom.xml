@@ -41,7 +41,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-micro-services-dependencies</artifactId>
+                <artifactId>spring-micro-domains-services-dependencies</artifactId>
                 <version>0.0.37-M13-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
