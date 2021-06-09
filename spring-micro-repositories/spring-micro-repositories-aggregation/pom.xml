@@ -10,7 +10,7 @@
     <artifactId>spring-micro-repositories-aggregation</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-micro-repositories-aggregation-moudles</module>
+        <module>spring-micro-repositories-aggregation-modules</module>
         <module>spring-micro-repositories-aggregation-dependencies</module>
     </modules>
 
