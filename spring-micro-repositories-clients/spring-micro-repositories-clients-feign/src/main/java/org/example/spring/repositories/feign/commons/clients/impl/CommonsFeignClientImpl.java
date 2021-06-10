@@ -7,7 +7,6 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 import org.example.spring.repositories.clients.commons.api.CommonsRepository;
 import org.example.spring.repositories.feign.commons.clients.CommonsFeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,8 +16,14 @@ import java.util.stream.Stream;
 @AllArgsConstructor
 public abstract class CommonsFeignClientImpl<T extends ICommonsEntity, V extends T, D extends T, Q extends ICommonsQuery, R extends CommonsRepository<T, V, D, Q>> implements CommonsFeignClient<T, V, D, Q> {
     private final R repository;
+
     @Override
     public void save(V vo) {
+        repository.save(vo);
+    }
+
+    @Override
+    public void save(List<V> vo) {
         repository.save(vo);
     }
 
@@ -28,13 +33,13 @@ public abstract class CommonsFeignClientImpl<T extends ICommonsEntity, V extends
     }
 
     @Override
-    public void delete(Long id) {
-        repository.delete(id);
+    public void update(List<V> vo) {
+        repository.update(vo);
     }
 
     @Override
-    public void delete(Long... ids) {
-        repository.delete(ids);
+    public void delete(Long id) {
+        repository.delete(id);
     }
 
     @Override
@@ -50,6 +55,16 @@ public abstract class CommonsFeignClientImpl<T extends ICommonsEntity, V extends
     @Override
     public Optional<D> getOpt(Long id) {
         return Optional.ofNullable(repository.get(id));
+    }
+
+    @Override
+    public List<D> listByIds(List<Long> ids) {
+        return repository.listByIds(ids);
+    }
+
+    @Override
+    public Stream<D> streamByIds(List<Long> ids) {
+        return repository.streamByIds(ids);
     }
 
     @Override

@@ -14,34 +14,35 @@ public interface CommonsFeignClient<T extends ICommonsEntity, V extends T, D ext
     @PostMapping("save")
     void save(@RequestBody V vo);
 
+    @PostMapping("save/batch")
+    void save(@RequestBody List<V> vo);
 
     @PutMapping("update")
-    void update(V vo);
+    void update(@RequestBody V vo);
 
+    @PutMapping("update/batch")
+    void update(@RequestBody List<V> vo);
 
     @DeleteMapping("delete/{id}")
     void delete(@PathVariable Long id);
 
-
-    @DeleteMapping("delete")
-    void delete(Long... ids);
-
-
     @DeleteMapping("delete/list")
     void delete(List<Long> ids);
-
 
     @GetMapping("get/{id}")
     D get(@PathVariable Long id);
 
-
     @GetMapping("get/opt/{id}")
     Optional<D> getOpt(@PathVariable Long id);
 
+    @GetMapping("list")
+    List<D> listByIds(@PathVariable List<Long> ids);
+
+    @GetMapping("stream")
+    Stream<D> streamByIds(@PathVariable List<Long> ids);
 
     @GetMapping("query/one")
     D one(@SpringQueryMap Q query);
-
 
     @GetMapping("query/one/opt")
     Optional<D> oneOpt(@SpringQueryMap Q query);
