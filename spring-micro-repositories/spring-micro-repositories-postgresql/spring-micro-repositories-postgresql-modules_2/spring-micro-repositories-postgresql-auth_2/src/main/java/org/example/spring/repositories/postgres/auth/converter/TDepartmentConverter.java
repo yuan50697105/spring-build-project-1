@@ -20,8 +20,6 @@ import java.util.List;
 public interface TDepartmentConverter extends IBaseConverter<TDepartment, TDepartmentDTO, TDepartmentVo, TDepartmentQuery> {
     TDepartmentConverter instance = Mappers.getMapper(TDepartmentConverter.class);
 
-    TDepartment department(TDepartmentVo tDepartmentVo);
-
     default List<TDepartmentRole> roles(Long id, List<Long> roleIds) {
         List<TDepartmentRole> departmentRoles = new ArrayList<>(roleIds.size());
         for (Long roleId : roleIds) {
@@ -42,5 +40,7 @@ public interface TDepartmentConverter extends IBaseConverter<TDepartment, TDepar
 
     void departmentCopy(TDepartmentVo tDepartmentVo, @MappingTarget TDepartment tDepartment);
 
-    TDepartmentRoleDTO department(TDepartmentDTO tDepartmentDTO);
+    @Mapping(target = "roles", ignore = true)
+    void copy(TDepartmentDTO departmentDTO, @MappingTarget TDepartmentRoleDTO departmentRoleDTO);
+
 }
