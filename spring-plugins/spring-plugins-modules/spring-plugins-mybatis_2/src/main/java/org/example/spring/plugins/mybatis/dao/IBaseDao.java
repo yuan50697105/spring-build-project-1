@@ -15,6 +15,13 @@ import java.util.stream.Stream;
 public interface IBaseDao<T, Q extends IBaseQuery> extends IService<T> {
     Optional<T> getByIdOpt(Long id);
 
+    List<T> listByIds(Long... ids);
+
+    Stream<T> streamByIds(Long... ids);
+
+    Stream<T> streamByIds(List<Long> ids);
+
+
     List<T> queryList(Q query);
 
     List<T> selectList(Q query);

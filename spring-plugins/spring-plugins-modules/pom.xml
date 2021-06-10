@@ -14,8 +14,6 @@
         <module>spring-plugins-web</module>
         <module>spring-plugins-mybatis_1</module>
         <module>spring-plugins-mybatis_2</module>
-        <module>spring-plugins-mybatis-rws_1</module>
-        <module>spring-plugins-mybatis-rws_2</module>
         <module>spring-plugins-elasticsearch</module>
         <module>spring-plugins-oss-aliyun</module>
         <module>spring-plugins-oss-tencent</module>

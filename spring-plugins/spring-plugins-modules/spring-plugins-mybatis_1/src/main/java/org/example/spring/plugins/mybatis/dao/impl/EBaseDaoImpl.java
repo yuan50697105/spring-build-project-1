@@ -28,11 +28,6 @@ import java.util.stream.Stream;
 @SuppressWarnings("unchecked")
 public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBaseMapper<T>> extends IBaseDaoImpl<T, Q, M> implements EBaseDao<T, Q, E> {
     @Override
-    public Optional<T> getByIdOpt(Long id) {
-        return Optional.ofNullable(getById(id));
-    }
-
-    @Override
     protected Class<T> currentMapperClass() {
         return (Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), 3);
     }
@@ -40,6 +35,26 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     @Override
     protected Class<T> currentModelClass() {
         return (Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), 0);
+    }
+
+    @Override
+    public Optional<T> getByIdOpt(Long id) {
+        return Optional.ofNullable(getById(id));
+    }
+
+    @Override
+    public List<T> listByIds(Long... ids) {
+        return listByIds(Arrays.asList(ids));
+    }
+
+    @Override
+    public Stream<T> streamByIds(Long... ids) {
+        return listByIds(ids).stream();
+    }
+
+    @Override
+    public Stream<T> streamByIds(List<Long> ids) {
+        return listByIds(ids).stream();
     }
 
     @Override
