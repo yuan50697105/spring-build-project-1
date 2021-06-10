@@ -25,17 +25,17 @@ import java.util.Optional;
 public class TDepartmentRepositoryImpl extends IBaseRepositoryImpl<TDepartment, TDepartmentDTO, TDepartmentVo, TDepartmentQuery, TDepartmentConverter, TDepartmentDao> implements TDepartmentRepository {
     private final TDepartmentDao departmentDao;
     private final TDepartmentRoleDao departmentRoleDao;
-    private final TRoleRepository role2Repository;
+    private final TRoleRepository roleRepository;
 
-    public TDepartmentRepositoryImpl(TDepartmentDao departmentDao, TDepartmentRoleDao departmentRoleDao, TRoleRepository role2Repository) {
+    public TDepartmentRepositoryImpl(TDepartmentDao departmentDao, TDepartmentRoleDao departmentRoleDao, TRoleRepository roleRepository) {
         this.departmentDao = departmentDao;
         this.departmentRoleDao = departmentRoleDao;
-        this.role2Repository = role2Repository;
+        this.roleRepository = roleRepository;
     }
 
     @Override
     public void save(TDepartmentVo tDepartmentVo) {
-        TDepartment department = converter.department(tDepartmentVo);
+        TDepartment department = converter.buildPo(tDepartmentVo);
         departmentDao.save(department);
         List<TDepartmentRole> roleList = converter.roles(department.getId(), tDepartmentVo.getRoleIds());
         departmentRoleDao.saveBatch(roleList);
@@ -79,8 +79,10 @@ public class TDepartmentRepositoryImpl extends IBaseRepositoryImpl<TDepartment, 
 
     @Override
     public TDepartmentRoleDTO getDetails(Long id) {
-        TDepartmentRoleDTO departmentRoleDTO = converter.department(get(id));
-        departmentRoleDTO.setRoles(role2Repository.queryListByDepartmentId(id));
+        TDepartmentDTO departmentDTO = get(id);
+        TDepartmentRoleDTO departmentRoleDTO = new TDepartmentRoleDTO();
+        converter.copy(departmentDTO, departmentRoleDTO);
+        departmentRoleDTO.setRoles(roleRepository.queryListByDepartmentId(id));
         return departmentRoleDTO;
     }
 }
