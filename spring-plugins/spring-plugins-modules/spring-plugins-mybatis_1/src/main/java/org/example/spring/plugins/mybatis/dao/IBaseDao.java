@@ -154,4 +154,12 @@ public interface IBaseDao<T, Q extends IBaseQuery> extends IService<T> {
     boolean modifyBatchById(List<T> list);
 
     boolean insertBatch(List<T> list);
+
+    boolean updateBatchSelective(List<T> list);
+
+    boolean updateBatchNull(List<T> list);
+
+    boolean saveSelective(T t);
+
+    boolean saveSelective(List<T> list);
 }

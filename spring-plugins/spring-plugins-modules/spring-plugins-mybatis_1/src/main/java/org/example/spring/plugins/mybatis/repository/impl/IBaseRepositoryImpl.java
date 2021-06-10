@@ -9,6 +9,8 @@ import org.example.spring.plugins.mybatis.repository.IBaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -27,8 +29,74 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
     }
 
     @Override
+    public void save(VO... vo) {
+        dao.saveBatch(converter.buildPo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void save(List<VO> vo) {
+        dao.saveBatch(converter.buildPo(vo));
+    }
+
+    @Override
+    public void saveSelective(VO vo) {
+        dao.saveSelective(converter.buildPo(vo));
+    }
+
+    @Override
+    public void saveSelective(VO... vo) {
+        dao.saveSelective(converter.buildPo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void saveSelective(List<VO> vo) {
+        dao.saveSelective(converter.buildPo(vo));
+    }
+
+    @Override
+    public void saveSetColumns(VO vo) {
+        dao.insertSetColumnsBatch(converter.buildPo(Collections.singletonList(vo)));
+    }
+
+    @Override
+    public void saveSetColumns(VO... vo) {
+        dao.insertSetColumnsBatch(converter.buildPo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void saveSetColumns(List<VO> vo) {
+        dao.insertSetColumnsBatch(converter.buildPo(vo));
+    }
+
+
+    @Override
     public void insert(VO vo) {
         save(vo);
+    }
+
+    @Override
+    public void insert(VO... vo) {
+        save(vo);
+    }
+
+    @Override
+    public void insert(List<VO> vo) {
+        save(vo);
+    }
+
+    @Override
+    public void insertSelective(VO vo) {
+        saveSelective(vo);
+    }
+
+    @Override
+    public void insertSelective(VO... vo) {
+        saveSelective(vo);
+    }
+
+    @Override
+    public void insertSelective(List<VO> vo) {
+        saveSelective(vo);
     }
 
     @Override
@@ -37,8 +105,28 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
     }
 
     @Override
+    public void update(VO... vo) {
+        dao.updateBatchById(converter.buildPo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void update(List<VO> vo) {
+        dao.updateBatchById(converter.buildPo(vo));
+    }
+
+    @Override
     public void updateNull(VO vo) {
-        dao.update(converter.buildPo(vo));
+        dao.updateNull(converter.buildPo(vo));
+    }
+
+    @Override
+    public void updateNull(VO... vo) {
+        dao.updateBatchNull(converter.buildPo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void updateNull(List<VO> vo) {
+        dao.updateBatchNull(converter.buildPo(vo));
     }
 
     @Override
@@ -47,7 +135,27 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
     }
 
     @Override
+    public void modify(VO... vo) {
+        update(vo);
+    }
+
+    @Override
+    public void modify(List<VO> vo) {
+        update(vo);
+    }
+
+    @Override
     public void modifyNull(VO vo) {
+        updateNull(vo);
+    }
+
+    @Override
+    public void modifyNull(VO... vo) {
+        updateNull(vo);
+    }
+
+    @Override
+    public void modifyNull(List<VO> vo) {
         updateNull(vo);
     }
 
@@ -105,6 +213,21 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
     public DTO get(Long id) {
         T dao = this.dao.getById(id);
         return converter.buildDTO(dao);
+    }
+
+    @Override
+    public Optional<DTO> getOpt(Long id) {
+        return Optional.ofNullable(get(id));
+    }
+
+    @Override
+    public List<DTO> listByIds(Long... ids) {
+        return converter.buildDTOS(dao.listByIds(ids));
+    }
+
+    @Override
+    public List<DTO> listByIds(List<Long> ids) {
+        return converter.buildDTOS(dao.listByIds(ids));
     }
 
     @Override

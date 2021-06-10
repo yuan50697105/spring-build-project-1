@@ -9,7 +9,25 @@ import java.util.stream.Stream;
 public interface CommonsRepository<T, V, D, Q> {
     void save(V vo);
 
+    void save(V... vo);
+
+    void save(List<V> vo);
+
     void update(V vo);
+
+    void update(V... vo);
+
+    void update(List<V> vo);
+
+    void update(V vo, Q q);
+
+    void updateNull(V vo);
+
+    void updateNull(V vo, Q q);
+
+    void updateNull(V... vo);
+
+    void updateNull(List<V> vo);
 
     void delete(Long id);
 
@@ -20,6 +38,14 @@ public interface CommonsRepository<T, V, D, Q> {
     D get(Long id);
 
     Optional<D> getOpt(Long id);
+
+    List<D> listByIds(Long... ids);
+
+    List<D> listByIds(List<Long> ids);
+
+    Stream<D> streamByIds(Long... ids);
+
+    Stream<D> streamByIds(List<Long> ids);
 
     D one(Q query);
 

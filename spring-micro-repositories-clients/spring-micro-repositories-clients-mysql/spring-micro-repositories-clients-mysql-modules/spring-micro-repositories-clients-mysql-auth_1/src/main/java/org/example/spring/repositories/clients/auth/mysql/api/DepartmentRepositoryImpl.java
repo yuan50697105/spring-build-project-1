@@ -27,8 +27,53 @@ public  class DepartmentRepositoryImpl implements DepartmentRepository {
     }
 
     @Override
+    public void save(DepartmentVo... vo) {
+        repository.save();
+    }
+
+    @Override
+    public void save(List<DepartmentVo> vo) {
+
+    }
+
+    @Override
     public void update(DepartmentVo vo) {
         repository.update(converter.build(vo));
+    }
+
+    @Override
+    public void update(DepartmentVo... vo) {
+
+    }
+
+    @Override
+    public void update(List<DepartmentVo> vo) {
+
+    }
+
+    @Override
+    public void update(DepartmentVo vo, DepartmentQuery departmentQuery) {
+
+    }
+
+    @Override
+    public void updateNull(DepartmentVo vo) {
+
+    }
+
+    @Override
+    public void updateNull(DepartmentVo vo, DepartmentQuery departmentQuery) {
+
+    }
+
+    @Override
+    public void updateNull(DepartmentVo... vo) {
+
+    }
+
+    @Override
+    public void updateNull(List<DepartmentVo> vo) {
+
     }
 
     @Override
@@ -54,6 +99,26 @@ public  class DepartmentRepositoryImpl implements DepartmentRepository {
     @Override
     public Optional<DepartmentDTO> getOpt(Long id) {
         return Optional.ofNullable(get(id));
+    }
+
+    @Override
+    public List<DepartmentDTO> listByIds(Long... ids) {
+        return null;
+    }
+
+    @Override
+    public List<DepartmentDTO> listByIds(List<Long> ids) {
+        return null;
+    }
+
+    @Override
+    public Stream<DepartmentDTO> streamByIds(Long... ids) {
+        return null;
+    }
+
+    @Override
+    public Stream<DepartmentDTO> streamByIds(List<Long> ids) {
+        return null;
     }
 
     @Override

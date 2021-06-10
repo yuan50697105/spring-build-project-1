@@ -132,11 +132,11 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
             PageHelper.startPage(query.getPage(), query.getSize());
             E example = query.toExample();
             example = exampleAddOrder(query, example);
-            return new IPageResult<>(PageInfo.of(baseMapper.selectByExample(example)));
+            return pageData(PageInfo.of(baseMapper.selectByExample(example)));
         } else {
             PageHelper.startPage(query.getPage(), query.getSize());
             wrapper = wrapperAddOrder(query, wrapper);
-            return new IPageResult<>(PageInfo.of(list(wrapper)));
+            return pageData(PageInfo.of(list(wrapper)));
         }
     }
 
@@ -375,13 +375,43 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
     }
 
     @Override
+    public boolean updateBatchSelective(List<T> list) {
+        return SqlHelper.retBool(list.stream().map(baseMapper::updateByPrimaryKeySelective).reduce(Integer::sum).orElse(0));
+    }
+
+    @Override
+    public boolean updateBatchNull(List<T> list) {
+        return SqlHelper.retBool(list.stream().map(baseMapper::updateByPrimaryKey).reduce(Integer::sum).orElse(0));
+    }
+
+    @Override
+    public boolean saveSelective(T t) {
+        return insertSelective(t);
+    }
+
+    @Override
+    public boolean saveSelective(List<T> list) {
+        return SqlHelper.retBool(list.stream().map(baseMapper::insertSelective).reduce(Integer::sum).orElse(0));
+    }
+
+    @Override
     public boolean insertSelective(T t) {
         return SqlHelper.retBool(baseMapper.insertSelective(t));
     }
 
     @Override
+    public boolean insertSelective(List<T> t) {
+        return SqlHelper.retBool(t.stream().map(baseMapper::insertSelective).reduce(Integer::sum).orElse(0));
+    }
+
+    @Override
     public boolean insert(T t) {
         return save(t);
+    }
+
+    @Override
+    public boolean insert(List<T> t) {
+        return SqlHelper.retBool(t.stream().map(baseMapper::insert).reduce(Integer::sum).orElse(0));
     }
 
     @Override
