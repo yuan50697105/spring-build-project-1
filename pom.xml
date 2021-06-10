@@ -30,10 +30,13 @@
         <module>spring-micro-applications</module>
         <module>spring-micro-applications-launchers</module>
         <module>spring-cloud-applications-launchers</module>
+        <module>spring-cloud-repositories</module>
         <module>spring-cloud-repositories-clients</module>
         <module>spring-cloud-repositories-launchers</module>
+        <module>spring-cloud-services</module>
         <module>spring-cloud-services-clients</module>
         <module>spring-cloud-services-launchers</module>
+        <module>spring-cloud-domains-services</module>
         <module>spring-cloud-domains-services-clients</module>
         <module>spring-cloud-domains-services-launchers</module>
         <module>spring-cloud-micro-repositories</module>
