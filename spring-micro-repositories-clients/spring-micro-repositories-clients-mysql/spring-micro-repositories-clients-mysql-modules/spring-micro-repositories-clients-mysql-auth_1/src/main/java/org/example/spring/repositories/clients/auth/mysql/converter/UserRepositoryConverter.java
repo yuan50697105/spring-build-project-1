@@ -22,7 +22,7 @@ import java.util.List;
 public interface UserRepositoryConverter {
     UserRepositoryConverter CONVERTER = Mappers.getMapper(UserRepositoryConverter.class);
 
-    TUserVo build(UserVo vo);
+    TUserVo buildVo(UserVo vo);
 
     UserVo convert(TUserVo build);
 
@@ -43,6 +43,8 @@ public interface UserRepositoryConverter {
 
 
     List<RoleDTO> buildRole(List<TRoleDTO> roles);
+
+    List<TUserVo> buildVo(List<UserVo> vo);
 
 //    List<Tree<Long>> buildResources(List<Tree<Long>> resources);
 }

@@ -11,29 +11,72 @@ import org.example.spring.repositories.commons.entity.auth.vo.UserTokenVo;
 import org.example.spring.repositories.postgres.auth.repository.TUserTokenRepository;
 import org.example.spring.repositories.postgres.auth.table.dto.TUserTokenDto;
 import org.example.spring.repositories.postgres.auth.table.query.TUserTokenQuery;
-import org.example.spring.repositories.postgres.auth.table.vo.TUserTokenVo;
 import org.springframework.stereotype.Repository;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
 @AllArgsConstructor
 @Repository
-public  class UserTokenRepositoryImpl implements UserTokenRepository {
+public class UserTokenRepositoryImpl implements UserTokenRepository {
     private final UserTokenRepositoryConverter converter;
     private final TUserTokenRepository repository;
 
     @Override
     public void save(UserTokenVo vo) {
-        TUserTokenVo tUserTokenVo = converter.build(vo);
-        repository.save(tUserTokenVo);
+        repository.save(converter.buildVo(vo));
+    }
+
+    @Override
+    public void save(UserTokenVo... vo) {
+        repository.save(converter.buildVo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void save(List<UserTokenVo> vo) {
+        repository.save(converter.buildVo(vo));
     }
 
     @Override
     public void update(UserTokenVo vo) {
-        TUserTokenVo tUserTokenVo = converter.build(vo);
-        repository.update(tUserTokenVo);
+        repository.update(converter.buildVo(vo));
+    }
+
+    @Override
+    public void update(UserTokenVo... vo) {
+        repository.update(converter.buildVo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void update(List<UserTokenVo> vo) {
+        repository.update(converter.buildVo(vo));
+    }
+
+    @Override
+    public void update(UserTokenVo vo, UserTokenQuery userTokenQuery) {
+        repository.update(converter.buildVo(vo), converter.buildQuery(userTokenQuery));
+    }
+
+    @Override
+    public void updateNull(UserTokenVo vo) {
+        repository.update(converter.buildVo(vo));
+    }
+
+    @Override
+    public void updateNull(UserTokenVo vo, UserTokenQuery userTokenQuery) {
+        repository.update(converter.buildVo(vo), converter.buildQuery(userTokenQuery));
+    }
+
+    @Override
+    public void updateNull(UserTokenVo... vo) {
+        repository.update(converter.buildVo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void updateNull(List<UserTokenVo> vo) {
+        repository.update(converter.buildVo(vo));
     }
 
     @Override
@@ -60,6 +103,26 @@ public  class UserTokenRepositoryImpl implements UserTokenRepository {
     @Override
     public Optional<UserTokenDto> getOpt(Long id) {
         return Optional.ofNullable(get(id));
+    }
+
+    @Override
+    public List<UserTokenDto> listByIds(Long... ids) {
+        return converter.buildDto(repository.listByIds(ids));
+    }
+
+    @Override
+    public List<UserTokenDto> listByIds(List<Long> ids) {
+        return converter.buildDto(repository.listByIds(ids));
+    }
+
+    @Override
+    public Stream<UserTokenDto> streamByIds(Long... ids) {
+        return listByIds(ids).stream();
+    }
+
+    @Override
+    public Stream<UserTokenDto> streamByIds(List<Long> ids) {
+        return listByIds(ids).stream();
     }
 
     @Override

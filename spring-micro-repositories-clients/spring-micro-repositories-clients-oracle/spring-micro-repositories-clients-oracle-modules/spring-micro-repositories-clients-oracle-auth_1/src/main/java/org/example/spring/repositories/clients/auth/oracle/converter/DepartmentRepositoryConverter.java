@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 public interface DepartmentRepositoryConverter {
     DepartmentRepositoryConverter CONVERTER = Mappers.getMapper(DepartmentRepositoryConverter.class);
 
-    TDepartmentVo build(DepartmentVo vo);
+    TDepartmentVo buildVo(DepartmentVo vo);
 
     DepartmentDTO build(TDepartmentDTO tDepartmentDTO);
 
@@ -30,4 +30,6 @@ public interface DepartmentRepositoryConverter {
     IPageData<DepartmentDTO> build(IPageData<TDepartmentDTO> queryPage);
 
     Stream<DepartmentDTO> build(Stream<TDepartmentDTO> queryStream);
+
+    List<TDepartmentVo> buildVo(List<DepartmentVo> list);
 }

@@ -1,5 +1,6 @@
 package org.example.spring.repositories.clients.auth.postgres.converter;
 
+
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.auth.dto.UserTokenDto;
@@ -17,7 +18,7 @@ import java.util.List;
 public interface UserTokenRepositoryConverter {
     UserTokenRepositoryConverter CONVERTER = Mappers.getMapper(UserTokenRepositoryConverter.class);
 
-    TUserTokenVo build(UserTokenVo vo);
+    TUserTokenVo buildVo(UserTokenVo vo);
 
     UserTokenDto buildDto(TUserTokenDto tUserTokenDto);
 
@@ -26,4 +27,7 @@ public interface UserTokenRepositoryConverter {
     List<UserTokenDto> buildDto(List<TUserTokenDto> tUserTokenDto);
 
     IPageData<UserTokenDto> buildDto(IPageData<TUserTokenDto> dtos);
+
+    List<TUserTokenVo> buildVo(List<UserTokenVo> vo);
+
 }

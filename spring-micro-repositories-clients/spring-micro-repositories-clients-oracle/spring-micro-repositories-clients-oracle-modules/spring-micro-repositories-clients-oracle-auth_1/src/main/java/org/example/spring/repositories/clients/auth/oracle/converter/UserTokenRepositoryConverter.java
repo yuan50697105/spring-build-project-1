@@ -17,7 +17,7 @@ import java.util.List;
 public interface UserTokenRepositoryConverter {
     UserTokenRepositoryConverter CONVERTER = Mappers.getMapper(UserTokenRepositoryConverter.class);
 
-    TUserTokenVo build(UserTokenVo vo);
+    TUserTokenVo buildVo(UserTokenVo vo);
 
     UserTokenDto buildDto(TUserTokenDto tUserTokenDto);
 
@@ -26,4 +26,7 @@ public interface UserTokenRepositoryConverter {
     List<UserTokenDto> buildDto(List<TUserTokenDto> tUserTokenDto);
 
     IPageData<UserTokenDto> buildDto(IPageData<TUserTokenDto> dtos);
+
+    List<TUserTokenVo> buildVo(List<UserTokenVo> vo);
+
 }

@@ -1,6 +1,5 @@
 package org.example.spring.repositories.clients.auth.mssql.converter;
 
-
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
@@ -23,7 +22,7 @@ import java.util.List;
 public interface UserRepositoryConverter {
     UserRepositoryConverter CONVERTER = Mappers.getMapper(UserRepositoryConverter.class);
 
-    TUserVo build(UserVo vo);
+    TUserVo buildVo(UserVo vo);
 
     UserVo convert(TUserVo build);
 
@@ -44,6 +43,8 @@ public interface UserRepositoryConverter {
 
 
     List<RoleDTO> buildRole(List<TRoleDTO> roles);
+
+    List<TUserVo> buildVo(List<UserVo> vo);
 
 //    List<Tree<Long>> buildResources(List<Tree<Long>> resources);
 }

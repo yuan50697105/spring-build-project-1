@@ -1,6 +1,5 @@
 package org.example.spring.repositories.clients.auth.mssql.converter;
 
-
 import cn.hutool.core.lang.tree.Tree;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
@@ -20,7 +19,7 @@ import java.util.stream.Stream;
 public interface ResourceRepositoryConverter {
     ResourceRepositoryConverter CONVERTER = Mappers.getMapper(ResourceRepositoryConverter.class);
 
-    TResourceVo build(ResourceVo vo);
+    TResourceVo buildVo(ResourceVo vo);
 
     ResourceDTO build(TResourceDTO tResourceDTO);
 
@@ -33,4 +32,6 @@ public interface ResourceRepositoryConverter {
     Stream<ResourceDTO> build(Stream<TResourceDTO> queryStream);
 
     Tree<Long> copyToTree(TResourceDTO tResourceDTO);
+
+    List<TResourceVo> buildVo(List<ResourceVo> asList);
 }

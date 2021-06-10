@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.repositories.clients.auth.mssql.AuthRepositoryConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.repositories.clients.auth.mysql.AuthRepositoryConfiguration

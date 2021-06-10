@@ -12,6 +12,7 @@ import org.example.spring.repositories.commons.entity.auth.vo.ResourceVo;
 import org.example.spring.repositories.oracle.auth.repository.TResourceRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -24,12 +25,57 @@ public  class ResourceRepositoryImpl implements ResourceRepository {
 
     @Override
     public void save(ResourceVo vo) {
-        repository.save(converter.build(vo));
+        repository.save(converter.buildVo(vo));
+    }
+
+    @Override
+    public void save(ResourceVo... vo) {
+        repository.save(converter.buildVo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void save(List<ResourceVo> vo) {
+        repository.save(converter.buildVo(vo));
     }
 
     @Override
     public void update(ResourceVo vo) {
-        repository.update(converter.build(vo));
+        repository.update(converter.buildVo(vo));
+    }
+
+    @Override
+    public void update(ResourceVo... vo) {
+        repository.update(converter.buildVo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void update(List<ResourceVo> vo) {
+        repository.update(converter.buildVo(vo));
+    }
+
+    @Override
+    public void update(ResourceVo vo, ResourceQuery query) {
+        repository.update(converter.buildVo(vo), converter.build(query));
+    }
+
+    @Override
+    public void updateNull(ResourceVo vo) {
+        repository.updateNull(converter.buildVo(vo));
+    }
+
+    @Override
+    public void updateNull(ResourceVo vo, ResourceQuery query) {
+        repository.updateNull(converter.buildVo(vo),converter.build(query));
+    }
+
+    @Override
+    public void updateNull(ResourceVo... vo) {
+        repository.updateNull(converter.buildVo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void updateNull(List<ResourceVo> vo) {
+        repository.updateNull(converter.buildVo(vo));
     }
 
     @Override
@@ -55,6 +101,26 @@ public  class ResourceRepositoryImpl implements ResourceRepository {
     @Override
     public Optional<ResourceDTO> getOpt(Long id) {
         return Optional.ofNullable(get(id));
+    }
+
+    @Override
+    public List<ResourceDTO> listByIds(Long... ids) {
+        return converter.build(repository.listByIds(ids));
+    }
+
+    @Override
+    public List<ResourceDTO> listByIds(List<Long> ids) {
+        return converter.build(repository.listByIds(ids));
+    }
+
+    @Override
+    public Stream<ResourceDTO> streamByIds(Long... ids) {
+        return listByIds(ids).stream();
+    }
+
+    @Override
+    public Stream<ResourceDTO> streamByIds(List<Long> ids) {
+        return listByIds(ids).stream();
     }
 
     @Override

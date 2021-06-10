@@ -8,6 +8,8 @@ import java.util.List;
 public interface IBaseConverter<T, DTO extends T, VO extends T, Q extends IBaseQuery> {
     T buildPo(VO vo);
 
+    List<T> buildPo(List<VO> vo);
+
     DTO buildDTO(T byId);
 
     List<DTO> buildDTOS(List<T> queryList);

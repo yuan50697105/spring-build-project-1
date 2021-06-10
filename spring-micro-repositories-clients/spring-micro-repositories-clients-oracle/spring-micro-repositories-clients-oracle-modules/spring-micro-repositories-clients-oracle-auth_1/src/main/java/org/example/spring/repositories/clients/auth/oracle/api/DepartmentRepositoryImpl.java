@@ -1,6 +1,7 @@
 package org.example.spring.repositories.clients.auth.oracle.api;
 
 
+import lombok.AllArgsConstructor;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.DepartmentRepository;
 import org.example.spring.repositories.clients.auth.oracle.converter.DepartmentRepositoryConverter;
@@ -10,29 +11,70 @@ import org.example.spring.repositories.commons.entity.auth.vo.DepartmentVo;
 import org.example.spring.repositories.oracle.auth.repository.TDepartmentRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-
+@AllArgsConstructor
 @Repository
 public  class DepartmentRepositoryImpl implements DepartmentRepository {
     private final DepartmentRepositoryConverter converter;
     private final TDepartmentRepository repository;
 
-    public DepartmentRepositoryImpl(DepartmentRepositoryConverter converter, TDepartmentRepository repository) {
-        this.converter = converter;
-        this.repository = repository;
+    @Override
+    public void save(DepartmentVo vo) {
+        repository.save(converter.buildVo(vo));
     }
 
     @Override
-    public void save(DepartmentVo vo) {
-        repository.save(converter.build(vo));
+    public void save(DepartmentVo... vo) {
+        repository.save(converter.buildVo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void save(List<DepartmentVo> vo) {
+        repository.save(converter.buildVo(vo));
     }
 
     @Override
     public void update(DepartmentVo vo) {
-        repository.update(converter.build(vo));
+        repository.update(converter.buildVo(vo));
+    }
+
+    @Override
+    public void update(DepartmentVo... vo) {
+        repository.update(converter.buildVo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void update(List<DepartmentVo> vo) {
+        repository.update(converter.buildVo(vo));
+    }
+
+    @Override
+    public void update(DepartmentVo vo, DepartmentQuery departmentQuery) {
+        repository.update(converter.buildVo(vo), converter.build(departmentQuery));
+    }
+
+    @Override
+    public void updateNull(DepartmentVo vo) {
+        repository.updateNull(converter.buildVo(vo));
+    }
+
+    @Override
+    public void updateNull(DepartmentVo vo, DepartmentQuery departmentQuery) {
+        repository.updateNull(converter.buildVo(vo), converter.build(departmentQuery));
+    }
+
+    @Override
+    public void updateNull(DepartmentVo... vo) {
+        repository.updateNull(converter.buildVo(Arrays.asList(vo)));
+    }
+
+    @Override
+    public void updateNull(List<DepartmentVo> vo) {
+        repository.updateNull(converter.buildVo(vo));
     }
 
     @Override
@@ -58,6 +100,26 @@ public  class DepartmentRepositoryImpl implements DepartmentRepository {
     @Override
     public Optional<DepartmentDTO> getOpt(Long id) {
         return Optional.ofNullable(get(id));
+    }
+
+    @Override
+    public List<DepartmentDTO> listByIds(Long... ids) {
+        return converter.build(repository.listByIds(ids));
+    }
+
+    @Override
+    public List<DepartmentDTO> listByIds(List<Long> ids) {
+        return converter.build(repository.listByIds(ids));
+    }
+
+    @Override
+    public Stream<DepartmentDTO> streamByIds(Long... ids) {
+        return listByIds(ids).stream();
+    }
+
+    @Override
+    public Stream<DepartmentDTO> streamByIds(List<Long> ids) {
+        return listByIds(ids).stream();
     }
 
     @Override

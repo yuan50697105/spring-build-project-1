@@ -12,15 +12,57 @@ public interface IBaseRepository<T extends IBaseEntity, DTO extends T, VO extend
 
     void save(VO vo);
 
+    void save(VO... vo);
+
+    void save(List<VO> vo);
+
+    void saveSelective(VO vo);
+
+    void saveSelective(VO... vo);
+
+    void saveSelective(List<VO> vo);
+
+    void saveSetColumns(VO vo);
+
+    void saveSetColumns(VO... vo);
+
+    void saveSetColumns(List<VO> vo);
+
     void insert(VO vo);
+
+    void insert(VO... vo);
+
+    void insert(List<VO> vo);
+
+    void insertSelective(VO vo);
+
+    void insertSelective(VO... vo);
+
+    void insertSelective(List<VO> vo);
 
     void update(VO vo);
 
+    void update(VO... vo);
+
+    void update(List<VO> vo);
+
     void updateNull(VO vo);
+
+    void updateNull(VO... vo);
+
+    void updateNull(List<VO> vo);
 
     void modify(VO vo);
 
+    void modify(VO... vo);
+
+    void modify(List<VO> vo);
+
     void modifyNull(VO vo);
+
+    void modifyNull(VO... vo);
+
+    void modifyNull(List<VO> vo);
 
     void update(VO vo, Q q);
 
@@ -43,6 +85,13 @@ public interface IBaseRepository<T extends IBaseEntity, DTO extends T, VO extend
     void remove(List<Long> ids);
 
     DTO get(Long id);
+
+    Optional<DTO> getOpt(Long id);
+
+    List<DTO> listByIds(Long... ids);
+
+    List<DTO> listByIds(List<Long> ids);
+
 
     DTO queryOne(Q q);
 

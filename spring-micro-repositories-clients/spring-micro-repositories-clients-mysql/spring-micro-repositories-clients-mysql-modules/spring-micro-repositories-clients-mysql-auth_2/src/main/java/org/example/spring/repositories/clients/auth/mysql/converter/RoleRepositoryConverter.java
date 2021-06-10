@@ -17,7 +17,7 @@ import java.util.List;
 public interface RoleRepositoryConverter {
     RoleRepositoryConverter CONVERTER = Mappers.getMapper(RoleRepositoryConverter.class);
 
-    TRoleVo build(RoleVo vo);
+    TRoleVo buildVo(RoleVo vo);
 
     RoleDTO build(TRoleDTO tRoleDTO);
 
@@ -26,4 +26,6 @@ public interface RoleRepositoryConverter {
     List<RoleDTO> build(List<TRoleDTO> queryList);
 
     IPageData<RoleDTO> build(IPageData<TRoleDTO> queryPage);
+
+    List<TRoleVo> buildVo(List<RoleVo> asList);
 }

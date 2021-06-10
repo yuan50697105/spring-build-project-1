@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 public interface ResourceRepositoryConverter {
     ResourceRepositoryConverter CONVERTER = Mappers.getMapper(ResourceRepositoryConverter.class);
 
-    TResourceVo build(ResourceVo vo);
+    TResourceVo buildVo(ResourceVo vo);
 
     ResourceDTO build(TResourceDTO tResourceDTO);
 
@@ -33,4 +33,6 @@ public interface ResourceRepositoryConverter {
     Stream<ResourceDTO> build(Stream<TResourceDTO> queryStream);
 
     Tree<Long> copyToTree(TResourceDTO tResourceDTO);
+
+    List<TResourceVo> buildVo(List<ResourceVo> asList);
 }
