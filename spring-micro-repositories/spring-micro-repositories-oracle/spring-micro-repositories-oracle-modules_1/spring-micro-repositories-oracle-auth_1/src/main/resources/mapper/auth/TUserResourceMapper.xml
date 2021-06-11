@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="org.example.spring.repositories.oracle.auth.mapper.TUserResourceMapper">
-    <resultMap id="base" type="org.example.spring.repositories.oracle.auth.table.po.TResource"
-               extends="org.example.spring.repositories.oracle.auth.mapper.TResourceMapper.BaseResultMap"/>
+<mapper namespace="org.example.spring.repositories.mysql.auth.mapper.TUserResourceMapper">
+    <resultMap id="base" type="org.example.spring.repositories.mysql.auth.table.po.TResource"
+               extends="org.example.spring.repositories.mysql.auth.mapper.TResourceMapper.BaseResultMap"/>
 
     <select id="listPermissionByUserId" resultMap="base">
         select
-        <include refid="org.example.spring.repositories.oracle.auth.mapper.TResourceMapper.Base_Column_List">
+        <include refid="org.example.spring.repositories.mysql.auth.mapper.TResourceMapper.Base_Column_List">
         </include>
         from t_resource
         where id in (
