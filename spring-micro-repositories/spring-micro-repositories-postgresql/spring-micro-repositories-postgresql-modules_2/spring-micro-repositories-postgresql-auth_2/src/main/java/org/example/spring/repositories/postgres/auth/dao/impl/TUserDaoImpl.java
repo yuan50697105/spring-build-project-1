@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 @AllArgsConstructor
@@ -30,6 +31,8 @@ public class TUserDaoImpl extends TkBaseDaoImpl<TUser, TUserQuery, TUserMapper> 
 
     @Override
     public boolean updateStatusByIds(String status, List<Long> ids) {
-        return SqlHelper.retBool(baseMapper.updateStatusByIds(status, ids));
+        List<TUser> list = baseMapper.selectBatchByIdsForUpdate(ids);
+        list = list.stream().peek(tUser -> tUser.setStatus(status)).collect(Collectors.toList());
+        return SqlHelper.retBool(baseMapper.updateBatchById(list));
     }
 }
