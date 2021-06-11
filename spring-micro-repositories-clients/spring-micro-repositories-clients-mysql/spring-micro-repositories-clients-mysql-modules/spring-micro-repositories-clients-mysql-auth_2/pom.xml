@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-clients-mysql-modules</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37</version>
+        <version>0.0.38-M1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,7 +12,7 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-clients-commons</artifactId>
-            <version>0.0.37</version>
+            <version>0.0.38-M1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>

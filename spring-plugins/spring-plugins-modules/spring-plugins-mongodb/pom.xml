@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-plugins-modules</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37</version>
+        <version>0.0.38-M1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
