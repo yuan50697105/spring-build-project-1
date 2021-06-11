@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="org.example.spring.repositories.mysql.auth.mapper.TResourceQueryMapper">
-    <resultMap id="resource" type="org.example.spring.repositories.mysql.auth.table.po.TResource">
+<mapper namespace="org.example.spring.repositories.postgres.auth.mapper.TResourceQueryMapper">
+    <resultMap id="resource" type="org.example.spring.repositories.postgres.auth.table.po.TResource">
         <id column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="type" property="type"/>
