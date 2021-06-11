@@ -366,29 +366,29 @@
         <mybatis-plus.version>3.4.3</mybatis-plus.version>
         <jsqlparser.version>4.0</jsqlparser.version>
         <mybatis-plus-batch-spring-boot-starter.version>1.2</mybatis-plus-batch-spring-boot-starter.version>
-        <hutool-all.version>5.6.6</hutool-all.version>
-        <cos_api.version>5.6.44</cos_api.version>
+        <hutool-all.version>5.6.7</hutool-all.version>
+        <cos_api.version>5.6.45</cos_api.version>
         <minio-spring-boot-starter.version>1.0.1.RELEASE</minio-spring-boot-starter.version>
         <qcloudcos-spring-boot-starter.version>1.0.1</qcloudcos-spring-boot-starter.version>
         <rocketmq-spring-boot-starter.version>2.2.0</rocketmq-spring-boot-starter.version>
-        <dynamic-datasource-spring-boot-starter.version>3.3.6</dynamic-datasource-spring-boot-starter.version>
+        <dynamic-datasource-spring-boot-starter.version>3.4.0</dynamic-datasource-spring-boot-starter.version>
         <knife4j-dependencies.version>3.0.2</knife4j-dependencies.version>
-        <clickhouse-jdbc.version>0.3.1</clickhouse-jdbc.version>
+        <clickhouse-jdbc.version>0.3.1-patch</clickhouse-jdbc.version>
         <p6spy-spring-boot-starter.version>1.7.1</p6spy-spring-boot-starter.version>
         <wx-java.version>4.1.0</wx-java.version>
-        <payment-spring-boot-starter.version>1.0.10.RELEASE</payment-spring-boot-starter.version>
+        <payment-spring-boot-starter.version>1.0.11.RELEASE</payment-spring-boot-starter.version>
         <druid-datasource>1.2.6</druid-datasource>
         <beecp-spring-boot-starter.version>1.5.8</beecp-spring-boot-starter.version>
         <IJPay-All.version>2.7.4</IJPay-All.version>
         <nacos-spring.version>0.2.7</nacos-spring.version>
         <apollo-client.version>1.8.0</apollo-client.version>
-        <redisson-spring-boot-starter.version>3.15.5</redisson-spring-boot-starter.version>
+        <redisson-spring-boot-starter.version>3.15.6</redisson-spring-boot-starter.version>
         <core.version>3.4.1</core.version>
         <SnowFlake-spring-boot-starter.version>2.0.1</SnowFlake-spring-boot-starter.version>
         <fastjson.version>1.2.76</fastjson.version>
         <sharding-jdbc.version>4.1.1</sharding-jdbc.version>
         <seata.version>1.4.2</seata.version>
-        <sagacity-sqltoy-starter.version>4.18.22</sagacity-sqltoy-starter.version>
+        <sagacity-sqltoy-starter.version>4.18.24</sagacity-sqltoy-starter.version>
         <easyjdbc-spring-boot-starter.version>2.0.4</easyjdbc-spring-boot-starter.version>
         <dubbo-spring-boot-starter.version>2.7.11</dubbo-spring-boot-starter.version>
         <rxjava.version>3.0.13</rxjava.version>
