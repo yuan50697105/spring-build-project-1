@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-applications-postgres</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M14</version>
+        <version>0.0.37-M15-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,7 +12,7 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-applications-commons</artifactId>
-            <version>0.0.37-M14</version>
+            <version>0.0.37-M15-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
