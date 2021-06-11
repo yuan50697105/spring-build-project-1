@@ -291,7 +291,7 @@ public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBas
 
     @Override
     public boolean update(T t) {
-        return SqlHelper.retBool(baseMapper.updateByPrimaryKey(t));
+        return SqlHelper.retBool(baseMapper.updateByPrimaryKeySelective(t));
     }
 
     @Override
