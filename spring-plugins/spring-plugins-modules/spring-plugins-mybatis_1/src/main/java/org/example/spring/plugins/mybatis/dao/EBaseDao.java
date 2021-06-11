@@ -9,7 +9,5 @@ import java.util.List;
  */
 public interface EBaseDao<T, Q extends EBaseQuery<E>, E> extends IBaseDao<T,Q> {
 
-    boolean insertSelective(List<T> t);
 
-    boolean insert(List<T> t);
 }

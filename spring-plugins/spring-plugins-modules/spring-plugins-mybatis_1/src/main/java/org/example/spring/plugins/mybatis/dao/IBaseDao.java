@@ -162,4 +162,8 @@ public interface IBaseDao<T, Q extends IBaseQuery> extends IService<T> {
     boolean saveSelective(T t);
 
     boolean saveSelective(List<T> list);
+
+    boolean insertSelective(List<T> t);
+
+    boolean insert(List<T> t);
 }
