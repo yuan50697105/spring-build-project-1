@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-domains-services-clients-postgresql-modules_2</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M14-SNAPSHOT</version>
+        <version>0.0.37-M14</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

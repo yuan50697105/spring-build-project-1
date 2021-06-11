@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-domains-services</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.37-M14-SNAPSHOT</version>
+        <version>0.0.37-M14</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,92 +14,92 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-commons</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-mysql-auth_1</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-mysql-auth_2</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-mysql-customer_1</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-mysql-customer_2</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-mysql-patient_1</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-mysql-patient_2</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-mysql_1</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-mysql_2</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-postgresql_1</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-postgresql_2</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-postgresql-auth_1</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-postgresql-auth_2</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-postgresql-customer_1</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-postgresql-customer_2</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-postgresql-patient_1</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-postgresql-patient_2</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-aggregation-dependencies</artifactId>
-                <version>0.0.37-M14-SNAPSHOT</version>
+                <version>0.0.37-M14</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
