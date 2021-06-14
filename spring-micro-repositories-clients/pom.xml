@@ -16,7 +16,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.38-M1</version>
+        <version>0.0.38-M2-SNAPSHOT</version>
     </parent>
     <artifactId>spring-micro-repositories-clients</artifactId>
     <packaging>pom</packaging>
@@ -25,14 +25,14 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.38-M1</version>
+                <version>0.0.38-M2-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-dependencies</artifactId>
-                <version>0.0.38-M1</version>
+                <version>0.0.38-M2-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
