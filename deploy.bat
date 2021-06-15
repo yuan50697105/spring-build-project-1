@@ -1,1 +1,1 @@
-call mvn clean deploy -fae -P source
+call mvn clean deploy -fae -P source -T 1C
