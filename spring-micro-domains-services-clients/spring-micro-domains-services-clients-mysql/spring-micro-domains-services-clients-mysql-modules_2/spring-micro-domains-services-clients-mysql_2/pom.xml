@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-domains-services-clients-mysql-modules_2</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.38</version>
+        <version>0.0.39-M1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
