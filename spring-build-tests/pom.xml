@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring-build-tests-1</module>
+        <module>spring-build-tests-2</module>
     </modules>
 
     <dependencyManagement>
@@ -21,6 +22,20 @@
                 <version>0.0.39-M1-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-micro-dependencies</artifactId>
+                <version>0.0.39-M1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-cloud-build-dependencies</artifactId>
+                <version>0.0.39-M1-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
