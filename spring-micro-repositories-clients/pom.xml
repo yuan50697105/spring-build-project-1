@@ -12,6 +12,7 @@
         <module>spring-micro-repositories-clients-oracle</module>
         <module>spring-micro-repositories-clients-aggregation</module>
         <module>spring-micro-repositories-clients-feign-api</module>
+        <module>spring-micro-repositories-clients-dubbo-api</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
@@ -36,9 +37,18 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-build-commons</artifactId>
+                <version>0.0.39-M1-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-commons</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-plugins-commons</artifactId>

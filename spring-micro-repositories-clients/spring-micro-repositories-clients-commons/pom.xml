@@ -8,5 +8,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-micro-repositories-clients-commons</artifactId>
-
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-dependencies</artifactId>
+                <version>0.0.39-M1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

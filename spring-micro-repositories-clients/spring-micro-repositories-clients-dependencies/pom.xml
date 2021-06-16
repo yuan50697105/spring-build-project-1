@@ -28,6 +28,11 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-dubbo-api</artifactId>
+                <version>0.0.39-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-clients-mysql-dependencies</artifactId>
                 <version>0.0.39-M1-SNAPSHOT</version>
                 <type>pom</type>
