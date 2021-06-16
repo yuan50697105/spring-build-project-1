@@ -4,7 +4,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-M1</version>
+        <version>0.0.39-M2-SNAPSHOT</version>
     </parent>
     <artifactId>spring-cloud-micro-domains-services-launchers</artifactId>
     <packaging>pom</packaging>
