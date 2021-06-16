@@ -1,13 +1,13 @@
-package org.example.spring.repositories.clients.bill.mysql.converter;
+package org.example.spring.repositories.clients.customer.oracle.converter;
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.customer.dto.SalesRecordDTO;
 import org.example.spring.repositories.commons.entity.customer.query.SalesRecordQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.SalesRecordVo;
-import org.example.spring.repositories.mysql.customer.table.dto.TSalesRecordDTO;
-import org.example.spring.repositories.mysql.customer.table.query.TSalesRecordQuery;
-import org.example.spring.repositories.mysql.customer.table.vo.TSalesRecordVo;
+import org.example.spring.repositories.oracle.customer.table.dto.TSalesRecordDTO;
+import org.example.spring.repositories.oracle.customer.table.query.TSalesRecordQuery;
+import org.example.spring.repositories.oracle.customer.table.vo.TSalesRecordVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

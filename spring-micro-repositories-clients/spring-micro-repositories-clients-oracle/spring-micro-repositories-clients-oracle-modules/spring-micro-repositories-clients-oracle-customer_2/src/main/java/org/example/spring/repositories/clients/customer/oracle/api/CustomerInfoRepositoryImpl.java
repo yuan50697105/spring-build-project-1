@@ -1,12 +1,12 @@
-package org.example.spring.repositories.clients.bill.mysql.api;
+package org.example.spring.repositories.clients.customer.oracle.api;
 
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.clients.bill.mysql.converter.CustomerInfoRepositoryConverter;
+import org.example.spring.repositories.clients.customer.oracle.converter.CustomerInfoRepositoryConverter;
 import org.example.spring.repositories.clients.customer.api.CustomerInfoRepository;
 import org.example.spring.repositories.commons.entity.customer.dto.CustomerInfoDTO;
 import org.example.spring.repositories.commons.entity.customer.query.CustomerInfoQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.CustomerInfoVo;
-import org.example.spring.repositories.mysql.customer.repository.TCustomerInfoRepository;
+import org.example.spring.repositories.oracle.customer.repository.TCustomerInfoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
