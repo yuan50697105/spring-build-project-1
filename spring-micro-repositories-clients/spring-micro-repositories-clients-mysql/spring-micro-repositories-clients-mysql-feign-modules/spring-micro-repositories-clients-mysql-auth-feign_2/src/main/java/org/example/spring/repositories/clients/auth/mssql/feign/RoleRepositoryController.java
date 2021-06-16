@@ -1,4 +1,4 @@
-package org.example.spring.repositories.clients.auth.mysql.feign;
+package org.example.spring.repositories.clients.auth.mssql.feign;
 
 
 import org.example.spring.repositories.clients.auth.api.RoleRepository;
