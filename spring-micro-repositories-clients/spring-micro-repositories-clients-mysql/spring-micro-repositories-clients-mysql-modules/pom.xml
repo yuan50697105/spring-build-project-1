@@ -16,6 +16,8 @@
         <module>spring-micro-repositories-clients-mysql-auth_2</module>
         <module>spring-micro-repositories-clients-mysql-bill_1</module>
         <module>spring-micro-repositories-clients-mysql-bill_2</module>
+        <module>spring-micro-repositories-clients-mysql-customer_1</module>
+        <module>spring-micro-repositories-clients-mysql-customer_2</module>
     </modules>
 
     <dependencyManagement>

@@ -16,6 +16,8 @@
         <module>spring-micro-repositories-clients-mysql-auth-dubbo_2</module>
         <module>spring-micro-repositories-clients-mysql-bill-dubbo_1</module>
         <module>spring-micro-repositories-clients-mysql-bill-dubbo_2</module>
+        <module>spring-micro-repositories-clients-mysql-customer-dubbo_1</module>
+        <module>spring-micro-repositories-clients-mysql-customer-dubbo_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

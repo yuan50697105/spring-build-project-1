@@ -12,15 +12,15 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-clients-mysql_2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-clients-mysql-auth-feign_2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-clients-mysql-bill-feign_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-clients-mysql-customer-feign_2</artifactId>
         </dependency>
     </dependencies>
 

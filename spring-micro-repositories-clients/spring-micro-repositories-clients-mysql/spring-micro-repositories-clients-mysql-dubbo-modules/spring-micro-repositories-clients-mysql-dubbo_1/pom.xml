@@ -12,7 +12,15 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-clients-mysql_1</artifactId>
+            <artifactId>spring-micro-repositories-clients-mysql-auth-dubbo_1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-clients-mysql-bill-dubbo_1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-clients-mysql-customer-dubbo_1</artifactId>
         </dependency>
     </dependencies>
 
