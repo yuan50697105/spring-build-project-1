@@ -1,4 +1,4 @@
-package org.example.spring.repositories.clients.customer.mysql.feign;
+package org.example.spring.repositories.clients.customer.mssql.feign;
 
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.repositories.clients.customer.api.CustomerInfoRepository;
