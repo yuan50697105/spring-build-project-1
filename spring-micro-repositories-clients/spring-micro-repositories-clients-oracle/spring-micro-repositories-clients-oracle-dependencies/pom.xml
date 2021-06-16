@@ -72,6 +72,36 @@
                 <artifactId>spring-micro-repositories-clients-oracle-auth-dubbo_2</artifactId>
                 <version>0.0.39-M1-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-oracle-bill_1</artifactId>
+                <version>0.0.39-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-oracle-bill_2</artifactId>
+                <version>0.0.39-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-oracle-bill-feign_1</artifactId>
+                <version>0.0.39-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-oracle-bill-feign_2</artifactId>
+                <version>0.0.39-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-oracle-bill-dubbo_1</artifactId>
+                <version>0.0.39-M1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-oracle-bill-dubbo_2</artifactId>
+                <version>0.0.39-M1-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
