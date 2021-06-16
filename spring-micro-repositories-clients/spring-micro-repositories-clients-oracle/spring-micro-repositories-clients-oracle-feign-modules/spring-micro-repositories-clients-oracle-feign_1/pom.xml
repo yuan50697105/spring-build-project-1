@@ -12,7 +12,11 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-clients-oracle_1</artifactId>
+            <artifactId>spring-micro-repositories-clients-oracle-auth-feign_1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-clients-oracle-bill-feign_1</artifactId>
         </dependency>
     </dependencies>
 
