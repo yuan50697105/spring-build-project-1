@@ -16,6 +16,8 @@
         <module>spring-micro-repositories-clients-oracle-auth_2</module>
         <module>spring-micro-repositories-clients-oracle-bill_1</module>
         <module>spring-micro-repositories-clients-oracle-bill_2</module>
+        <module>spring-micro-repositories-clients-oracle-customer_1</module>
+        <module>spring-micro-repositories-clients-oracle-customer_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

@@ -16,6 +16,8 @@
         <module>spring-micro-repositories-clients-oracle-auth-dubbo_2</module>
         <module>spring-micro-repositories-clients-oracle-bill-dubbo_1</module>
         <module>spring-micro-repositories-clients-oracle-bill-dubbo_2</module>
+        <module>spring-micro-repositories-clients-oracle-customer-dubbo_1</module>
+        <module>spring-micro-repositories-clients-oracle-customer-dubbo_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
