@@ -1,16 +1,19 @@
 package org.example.spring.repositories.clients.auth.mysql.dubbo;
 
 import org.apache.dubbo.config.annotation.DubboService;
-import org.example.spring.repositories.clients.bill.mysql.api.BillItemsInfoRepositoryImpl;
-import org.example.spring.repositories.clients.bill.mysql.converter.BillItemsInfoRepositoryConverter;
+import org.example.spring.repositories.clients.bill.api.BillItemsInfoRepository;
 import org.example.spring.repositories.clients.dubbo.bill.api.BillItemsInfoDubboRepository;
-import org.example.spring.repositories.mysql.bill.repository.TBillItemsInfoRepository;
+import org.example.spring.repositories.clients.dubbo.commons.CommonsDubboRepositoryImpl;
+import org.example.spring.repositories.commons.entity.bill.dto.BillItemsInfoDTO;
+import org.example.spring.repositories.commons.entity.bill.po.BillItemsInfo;
+import org.example.spring.repositories.commons.entity.bill.query.BillItemsInfoQuery;
+import org.example.spring.repositories.commons.entity.bill.vo.BillItemsInfoVo;
 import org.springframework.stereotype.Component;
 
 @Component
 @DubboService
-public class BillItemsInfoDubboRepositoryImpl extends BillItemsInfoRepositoryImpl implements BillItemsInfoDubboRepository {
-    public BillItemsInfoDubboRepositoryImpl(TBillItemsInfoRepository repository, BillItemsInfoRepositoryConverter converter) {
-        super(repository, converter);
+public class BillItemsInfoDubboRepositoryImpl extends CommonsDubboRepositoryImpl<BillItemsInfo, BillItemsInfoVo, BillItemsInfoDTO, BillItemsInfoQuery, BillItemsInfoRepository> implements BillItemsInfoDubboRepository {
+    protected BillItemsInfoDubboRepositoryImpl(BillItemsInfoRepository repository) {
+        super(repository);
     }
 }

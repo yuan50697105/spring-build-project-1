@@ -1,16 +1,19 @@
 package org.example.spring.repositories.clients.auth.mysql.dubbo;
 
 import org.apache.dubbo.config.annotation.DubboService;
-import org.example.spring.repositories.clients.bill.mysql.api.BillLogRepositoryImpl;
-import org.example.spring.repositories.clients.bill.mysql.converter.BillLogRepositoryConverter;
+import org.example.spring.repositories.clients.bill.api.BillLogRepository;
 import org.example.spring.repositories.clients.dubbo.bill.api.BillLogDubboRepository;
-import org.example.spring.repositories.mysql.bill.repository.TBillLogRepository;
+import org.example.spring.repositories.clients.dubbo.commons.CommonsDubboRepositoryImpl;
+import org.example.spring.repositories.commons.entity.bill.dto.BillLogDTO;
+import org.example.spring.repositories.commons.entity.bill.po.BillLog;
+import org.example.spring.repositories.commons.entity.bill.query.BillLogQuery;
+import org.example.spring.repositories.commons.entity.bill.vo.BillLogVo;
 import org.springframework.stereotype.Component;
 
 @Component
 @DubboService
-public class BillLogDubboRepositoryImpl extends BillLogRepositoryImpl implements BillLogDubboRepository {
-    public BillLogDubboRepositoryImpl(TBillLogRepository repository, BillLogRepositoryConverter converter) {
-        super(repository, converter);
+public class BillLogDubboRepositoryImpl extends CommonsDubboRepositoryImpl<BillLog, BillLogVo, BillLogDTO, BillLogQuery, BillLogRepository> implements BillLogDubboRepository {
+    protected BillLogDubboRepositoryImpl(BillLogRepository repository) {
+        super(repository);
     }
 }
