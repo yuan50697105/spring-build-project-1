@@ -1,1 +1,1 @@
-call mvn clean install -fae -P source
+call mvn clean install -fae -P source -T 1C
