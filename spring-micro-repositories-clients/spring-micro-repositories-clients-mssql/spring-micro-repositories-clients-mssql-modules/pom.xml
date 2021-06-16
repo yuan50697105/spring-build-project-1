@@ -16,6 +16,8 @@
         <module>spring-micro-repositories-clients-mssql-auth_2</module>
         <module>spring-micro-repositories-clients-mssql-bill_1</module>
         <module>spring-micro-repositories-clients-mssql-bill_2</module>
+        <module>spring-micro-repositories-clients-mssql-customer_1</module>
+        <module>spring-micro-repositories-clients-mssql-customer_2</module>
     </modules>
 
     <dependencyManagement>

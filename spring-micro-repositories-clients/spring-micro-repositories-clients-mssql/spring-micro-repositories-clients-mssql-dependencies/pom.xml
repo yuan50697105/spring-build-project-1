@@ -101,6 +101,36 @@
                 <artifactId>spring-micro-repositories-clients-mssql-bill-dubbo_2</artifactId>
                 <version>0.0.39-M2-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mssql-customer_1</artifactId>
+                <version>0.0.39-M2-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mssql-customer_2</artifactId>
+                <version>0.0.39-M2-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mssql-customer-dubbo_1</artifactId>
+                <version>0.0.39-M2-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mssql-customer-dubbo_2</artifactId>
+                <version>0.0.39-M2-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mssql-customer-feign_1</artifactId>
+                <version>0.0.39-M2-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mssql-customer-feign_2</artifactId>
+                <version>0.0.39-M2-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
