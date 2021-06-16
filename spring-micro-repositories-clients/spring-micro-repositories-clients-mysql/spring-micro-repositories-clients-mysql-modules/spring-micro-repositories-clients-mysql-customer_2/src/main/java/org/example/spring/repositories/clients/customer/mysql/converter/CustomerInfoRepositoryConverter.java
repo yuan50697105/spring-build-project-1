@@ -1,4 +1,4 @@
-package org.example.spring.repositories.clients.bill.mysql.converter;
+package org.example.spring.repositories.clients.customer.mysql.converter;
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;

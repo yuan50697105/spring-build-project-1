@@ -1,7 +1,7 @@
-package org.example.spring.repositories.clients.bill.mysql.api;
+package org.example.spring.repositories.clients.customer.mysql.api;
 
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.clients.bill.mysql.converter.PotentialCustomersRepositoryConverter;
+import org.example.spring.repositories.clients.customer.mysql.converter.PotentialCustomersRepositoryConverter;
 import org.example.spring.repositories.clients.customer.api.PotentialCustomersRepository;
 import org.example.spring.repositories.commons.entity.customer.dto.PotentialCustomersDTO;
 import org.example.spring.repositories.commons.entity.customer.query.PotentialCustomersQuery;

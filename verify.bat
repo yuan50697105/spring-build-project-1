@@ -1,1 +1,1 @@
-call mvn clean verify -fae
+call mvn clean verify -fae -T 1C
