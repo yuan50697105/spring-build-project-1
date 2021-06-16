@@ -12,11 +12,11 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-clients-mssql_2</artifactId>
+            <artifactId>spring-micro-repositories-clients-mssql-auth-dubbo_2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-clients-mssql-auth-dubbo_2</artifactId>
+            <artifactId>spring-micro-repositories-clients-mssql-bill-dubbo_2</artifactId>
         </dependency>
     </dependencies>
 

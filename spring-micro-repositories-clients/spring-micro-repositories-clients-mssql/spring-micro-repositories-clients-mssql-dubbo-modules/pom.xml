@@ -14,6 +14,8 @@
         <module>spring-micro-repositories-clients-mssql-dubbo_2</module>
         <module>spring-micro-repositories-clients-mssql-auth-dubbo_1</module>
         <module>spring-micro-repositories-clients-mssql-auth-dubbo_2</module>
+        <module>spring-micro-repositories-clients-mssql-bill-dubbo_1</module>
+        <module>spring-micro-repositories-clients-mssql-bill-dubbo_2</module>
     </modules>
 
     <dependencyManagement>

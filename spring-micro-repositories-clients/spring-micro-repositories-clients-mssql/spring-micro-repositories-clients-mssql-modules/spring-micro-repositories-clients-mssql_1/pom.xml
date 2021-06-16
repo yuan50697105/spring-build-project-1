@@ -13,6 +13,10 @@
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-clients-mssql-auth_1</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-clients-mssql-bill_1</artifactId>
+        </dependency>
     </dependencies>
 
 
