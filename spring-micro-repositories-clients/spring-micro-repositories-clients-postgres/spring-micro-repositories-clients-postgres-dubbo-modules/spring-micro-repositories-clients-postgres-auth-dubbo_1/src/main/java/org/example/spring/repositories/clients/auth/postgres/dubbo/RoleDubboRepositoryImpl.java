@@ -1,4 +1,4 @@
-package org.example.spring.repositories.clients.auth.mysql.dubbo;
+package org.example.spring.repositories.clients.auth.postgres.dubbo;
 
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.repositories.clients.auth.api.RoleRepository;
