@@ -11,10 +11,12 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>spring-micro-repositories-clients-postgres-auth_1</module>
-        <module>spring-micro-repositories-clients-postgres-auth_2</module>
         <module>spring-micro-repositories-clients-postgres_1</module>
         <module>spring-micro-repositories-clients-postgres_2</module>
+        <module>spring-micro-repositories-clients-postgres-auth_1</module>
+        <module>spring-micro-repositories-clients-postgres-auth_2</module>
+        <module>spring-micro-repositories-clients-postgres-bill_1</module>
+        <module>spring-micro-repositories-clients-postgres-bill_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
