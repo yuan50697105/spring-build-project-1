@@ -1,6 +1,7 @@
-package org.example.spring.repositories.clients.auth.mssql.feign;
+package org.example.spring.repositories.clients.auth.mysql.feign;
 
 
+import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.repositories.clients.auth.api.DepartmentRepository;
 import org.example.spring.repositories.commons.entity.auth.dto.DepartmentDTO;
 import org.example.spring.repositories.commons.entity.auth.po.Department;
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Primary
+@DubboService
 public class DepartmentRepositoryController extends CommonsFeignClientImpl<Department, DepartmentVo, DepartmentDTO, DepartmentQuery,DepartmentRepository> implements DepartmentRepositoryClient {
     private final DepartmentRepository repository;
 

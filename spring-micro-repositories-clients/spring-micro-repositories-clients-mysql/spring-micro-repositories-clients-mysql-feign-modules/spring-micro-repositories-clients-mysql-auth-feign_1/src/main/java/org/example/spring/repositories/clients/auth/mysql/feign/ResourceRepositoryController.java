@@ -1,6 +1,7 @@
 package org.example.spring.repositories.clients.auth.mysql.feign;
 
 
+import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.repositories.clients.auth.api.ResourceRepository;
 import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.po.Resource;
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Primary
+@DubboService
 public class ResourceRepositoryController extends CommonsFeignClientImpl<Resource, ResourceVo, ResourceDTO, ResourceQuery, ResourceRepository> implements ResourceRepositoryClient {
     public ResourceRepositoryController(ResourceRepository repository) {
         super(repository);

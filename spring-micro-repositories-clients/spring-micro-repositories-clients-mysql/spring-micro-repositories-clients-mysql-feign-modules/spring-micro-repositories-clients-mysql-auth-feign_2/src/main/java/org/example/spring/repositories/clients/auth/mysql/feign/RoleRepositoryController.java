@@ -1,6 +1,7 @@
-package org.example.spring.repositories.clients.auth.mssql.feign;
+package org.example.spring.repositories.clients.auth.mysql.feign;
 
 
+import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.repositories.clients.auth.api.RoleRepository;
 import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
 import org.example.spring.repositories.commons.entity.auth.po.Role;
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Primary
+@DubboService
 public class RoleRepositoryController extends CommonsFeignClientImpl<Role, RoleVo, RoleDTO, RoleQuery,RoleRepository> implements RoleRepositoryClient {
     public RoleRepositoryController(RoleRepository repository) {
         super(repository);

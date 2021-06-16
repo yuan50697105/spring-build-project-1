@@ -14,6 +14,8 @@
         <module>spring-micro-repositories-clients-mysql-auth-feign_2</module>
         <module>spring-micro-repositories-clients-mysql-feign_1</module>
         <module>spring-micro-repositories-clients-mysql-feign_2</module>
+        <module>spring-micro-repositories-clients-mysql-bill-feign_1</module>
+        <module>spring-micro-repositories-clients-mysql-bill-feign_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -32,6 +34,10 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-dubbo</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
