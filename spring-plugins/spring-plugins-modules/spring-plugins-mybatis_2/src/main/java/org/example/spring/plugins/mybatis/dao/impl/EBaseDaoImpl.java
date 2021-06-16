@@ -28,13 +28,13 @@ import java.util.stream.Stream;
 @SuppressWarnings("unchecked")
 public abstract class EBaseDaoImpl<T, Q extends EBaseQuery<E>, E, M extends IBaseMapper<T>> extends IBaseDaoImpl<T, Q, M> implements EBaseDao<T, Q, E> {
     @Override
-    protected Class<T> currentMapperClass() {
-        return (Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), 3);
+    protected Class<M> currentMapperClass() {
+        return (Class<M>) ReflectionKit.getSuperClassGenericType(getClass(),EBaseDaoImpl.class, 3);
     }
 
     @Override
     protected Class<T> currentModelClass() {
-        return (Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), 0);
+        return (Class<T>) ReflectionKit.getSuperClassGenericType(getClass(),EBaseDaoImpl.class, 0);
     }
 
     @Override

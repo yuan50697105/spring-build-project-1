@@ -13,8 +13,8 @@ public abstract class TkBaseDaoImpl<T, Q extends TkBaseQuery<T>, M extends IBase
 
     @SuppressWarnings("unchecked")
     @Override
-    protected Class<T> currentMapperClass() {
-        return (Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), 2);
+    protected Class<M> currentMapperClass() {
+        return (Class<M>) ReflectionKit.getSuperClassGenericType(getClass(),TkBaseDaoImpl.class,2);
     }
 
     protected Example.Builder exampleBuilder(){

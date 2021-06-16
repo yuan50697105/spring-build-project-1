@@ -16,8 +16,9 @@ import tk.mybatis.mapper.entity.Example;
 public abstract class TkExtQuery<T> extends TkBaseQuery<T> implements MybatisExampleForTk<T, Example> {
     public abstract Wrapper<T> wrapper();
 
+    @SuppressWarnings("unchecked")
     public LambdaQueryWrapper<T> lambdaQueryWrapper() {
-        return Wrappers.lambdaQuery((Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), 0));
+        return Wrappers.lambdaQuery((Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), TkExtQuery.class, 0));
     }
 
     public QueryWrapper<T> queryWrapper() {
