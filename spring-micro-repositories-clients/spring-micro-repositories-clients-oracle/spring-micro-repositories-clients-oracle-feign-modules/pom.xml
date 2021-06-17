@@ -18,6 +18,8 @@
         <module>spring-micro-repositories-clients-oracle-bill-feign_2</module>
         <module>spring-micro-repositories-clients-oracle-customer-feign_1</module>
         <module>spring-micro-repositories-clients-oracle-customer-feign_2</module>
+        <module>spring-micro-repositories-clients-oracle-patient-feign_1</module>
+        <module>spring-micro-repositories-clients-oracle-patient-feign_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

@@ -9,9 +9,6 @@
 
     <artifactId>spring-micro-repositories-clients-oracle-customer-dubbo_1</artifactId>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+
 
 </project>

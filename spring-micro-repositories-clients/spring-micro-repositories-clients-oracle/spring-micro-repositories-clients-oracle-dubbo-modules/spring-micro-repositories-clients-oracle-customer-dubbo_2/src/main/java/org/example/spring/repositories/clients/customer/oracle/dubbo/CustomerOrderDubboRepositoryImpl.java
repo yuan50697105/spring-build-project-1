@@ -1,4 +1,4 @@
-package org.example.spring.repositories.clients.customer.mysql.dubbo;
+package org.example.spring.repositories.clients.customer.oracle.dubbo;
 
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.repositories.clients.customer.api.CustomerOrderRepository;

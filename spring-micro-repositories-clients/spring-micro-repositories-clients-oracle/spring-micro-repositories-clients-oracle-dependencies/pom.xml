@@ -132,6 +132,16 @@
                 <artifactId>spring-micro-repositories-clients-oracle-customer-feign_2</artifactId>
                 <version>0.0.39-M3-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-oracle-patient_1</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-oracle-patient_2</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
