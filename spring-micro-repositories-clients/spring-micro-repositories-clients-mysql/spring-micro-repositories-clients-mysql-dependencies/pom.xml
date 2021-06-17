@@ -141,6 +141,16 @@
                 <artifactId>spring-micro-repositories-clients-mysql-patient_2</artifactId>
                 <version>0.0.39-M3-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mysql-patient-dubbo_1</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mysql-patient-dubbo_2</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
