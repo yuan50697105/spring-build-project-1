@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-domains-services-aggregation</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-M2</version>
+        <version>0.0.39-M3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,12 +15,12 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services_1</artifactId>
-                <version>0.0.39-M2</version>
+                <version>0.0.39-M3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services</artifactId>
-                <version>0.0.39-M2</version>
+                <version>0.0.39-M3-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

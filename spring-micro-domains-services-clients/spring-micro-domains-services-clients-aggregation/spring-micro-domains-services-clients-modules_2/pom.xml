@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-domains-services-clients-aggregation</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-M2</version>
+        <version>0.0.39-M3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
