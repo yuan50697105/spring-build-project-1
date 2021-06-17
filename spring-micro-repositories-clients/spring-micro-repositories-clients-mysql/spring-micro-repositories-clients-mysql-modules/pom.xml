@@ -18,6 +18,8 @@
         <module>spring-micro-repositories-clients-mysql-bill_2</module>
         <module>spring-micro-repositories-clients-mysql-customer_1</module>
         <module>spring-micro-repositories-clients-mysql-customer_2</module>
+        <module>spring-micro-repositories-clients-mysql-patient_1</module>
+        <module>spring-micro-repositories-clients-mysql-patient_2</module>
     </modules>
 
     <dependencyManagement>

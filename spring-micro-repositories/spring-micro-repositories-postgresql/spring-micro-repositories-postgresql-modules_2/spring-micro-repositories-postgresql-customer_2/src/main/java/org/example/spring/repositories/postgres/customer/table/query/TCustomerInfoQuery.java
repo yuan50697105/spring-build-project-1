@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * t_customer_info
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-customer-table-po-TCustomerInfo")
+@ApiModel(value = "org-example-spring-infrastructures-postgres-customer-table-po-TCustomerInfo")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

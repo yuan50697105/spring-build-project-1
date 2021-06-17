@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * t_patient_fee_item
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-patient-table-po-TPatientFeeItem")
+@ApiModel(value = "org-example-spring-infrastructures-postgres-patient-table-po-TPatientFeeItem")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

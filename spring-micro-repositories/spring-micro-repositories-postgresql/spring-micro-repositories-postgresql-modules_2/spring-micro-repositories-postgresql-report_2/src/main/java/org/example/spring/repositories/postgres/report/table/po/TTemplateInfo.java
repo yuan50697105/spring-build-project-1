@@ -13,7 +13,7 @@ import java.io.Serializable;
 /**
  * t_template_info
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-report-table-po-TTemplateInfo")
+@ApiModel(value = "org-example-spring-infrastructures-postgres-report-table-po-TTemplateInfo")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
