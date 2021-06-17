@@ -6,5 +6,5 @@ import org.example.spring.repositories.commons.entity.patient.po.PatientTeamMeal
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PatientTeamMealImpl extends PatientTeamMeal {
+public class PatientTeamMealDTO extends PatientTeamMeal {
 }
