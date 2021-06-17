@@ -131,6 +131,36 @@
                 <artifactId>spring-micro-repositories-clients-mssql-customer-feign_2</artifactId>
                 <version>0.0.39-M3-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mssql-patient_1</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mssql-patient_2</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mssql-patient-dubbo_1</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mssql-patient-dubbo_2</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mssql-patient-feign_1</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-mssql-patient-feign_2</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

@@ -18,6 +18,8 @@
         <module>spring-micro-repositories-clients-mssql-bill_2</module>
         <module>spring-micro-repositories-clients-mssql-customer_1</module>
         <module>spring-micro-repositories-clients-mssql-customer_2</module>
+        <module>spring-micro-repositories-clients-mssql-patient_1</module>
+        <module>spring-micro-repositories-clients-mssql-patient_2</module>
     </modules>
 
     <dependencyManagement>

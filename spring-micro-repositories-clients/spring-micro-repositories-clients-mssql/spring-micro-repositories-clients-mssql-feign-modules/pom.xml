@@ -18,6 +18,8 @@
         <module>spring-micro-repositories-clients-mssql-bill-feign_2</module>
         <module>spring-micro-repositories-clients-mssql-customer-feign_1</module>
         <module>spring-micro-repositories-clients-mssql-customer-feign_2</module>
+        <module>spring-micro-repositories-clients-mssql-patient-feign_1</module>
+        <module>spring-micro-repositories-clients-mssql-patient-feign_2</module>
     </modules>
 
     <dependencyManagement>

@@ -21,6 +21,10 @@
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-clients-mssql-customer_1</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-clients-mssql-patient_1</artifactId>
+        </dependency>
     </dependencies>
 
 
