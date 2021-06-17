@@ -18,6 +18,8 @@
         <module>spring-micro-repositories-clients-postgres-bill-dubbo_2</module>
         <module>spring-micro-repositories-clients-postgres-customer-dubbo_1</module>
         <module>spring-micro-repositories-clients-postgres-customer-dubbo_2</module>
+        <module>spring-micro-repositories-clients-postgres-patient-dubbo_1</module>
+        <module>spring-micro-repositories-clients-postgres-patient-dubbo_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

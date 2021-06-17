@@ -131,6 +131,26 @@
                 <artifactId>spring-micro-repositories-clients-postgres-customer-feign_2</artifactId>
                 <version>0.0.39-M3-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-patient_1</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-patient_2</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-patient-dubbo_1</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-clients-postgres-patient-dubbo_2</artifactId>
+                <version>0.0.39-M3-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

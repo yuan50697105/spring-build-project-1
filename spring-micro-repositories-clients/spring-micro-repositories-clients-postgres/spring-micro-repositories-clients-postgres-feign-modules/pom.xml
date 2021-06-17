@@ -18,6 +18,8 @@
         <module>spring-micro-repositories-clients-postgres-bill-feign_2</module>
         <module>spring-micro-repositories-clients-postgres-customer-feign_1</module>
         <module>spring-micro-repositories-clients-postgres-customer-feign_2</module>
+        <module>spring-micro-repositories-clients-postgres-patient-feign_1</module>
+        <module>spring-micro-repositories-clients-postgres-patient-feign_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

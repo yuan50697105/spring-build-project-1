@@ -19,6 +19,8 @@
         <module>spring-micro-repositories-clients-postgres-bill_2</module>
         <module>spring-micro-repositories-clients-postgres-customer_1</module>
         <module>spring-micro-repositories-clients-postgres-customer_2</module>
+        <module>spring-micro-repositories-clients-postgres-patient_1</module>
+        <module>spring-micro-repositories-clients-postgres-patient_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
