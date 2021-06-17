@@ -2,18 +2,12 @@ package org.example.spring.repositories.clients.patient.mysql.dubbo;
 
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.repositories.clients.dubbo.commons.CommonsDubboRepositoryImpl;
-import org.example.spring.repositories.clients.dubbo.patient.api.PatientTeamDubboRepository;
 import org.example.spring.repositories.clients.dubbo.patient.api.PatientTeamMealDubboRepository;
 import org.example.spring.repositories.clients.patient.api.PatientTeamMealRepository;
-import org.example.spring.repositories.clients.patient.api.PatientTeamRepository;
-import org.example.spring.repositories.commons.entity.patient.dto.PatientTeamDTO;
 import org.example.spring.repositories.commons.entity.patient.dto.PatientTeamMealDTO;
-import org.example.spring.repositories.commons.entity.patient.po.PatientTeam;
 import org.example.spring.repositories.commons.entity.patient.po.PatientTeamMeal;
 import org.example.spring.repositories.commons.entity.patient.query.PatientTeamMealQuery;
-import org.example.spring.repositories.commons.entity.patient.query.PatientTeamQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientTeamMealVo;
-import org.example.spring.repositories.commons.entity.patient.vo.PatientTeamVo;
 import org.springframework.stereotype.Component;
 
 @Component

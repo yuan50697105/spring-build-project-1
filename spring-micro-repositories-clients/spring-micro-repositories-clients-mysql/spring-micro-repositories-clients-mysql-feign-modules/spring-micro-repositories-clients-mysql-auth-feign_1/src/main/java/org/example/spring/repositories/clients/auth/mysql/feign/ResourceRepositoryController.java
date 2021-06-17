@@ -9,7 +9,6 @@ import org.example.spring.repositories.commons.entity.auth.query.ResourceQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.ResourceVo;
 import org.example.spring.repositories.feign.auth.clients.ResourceRepositoryClient;
 import org.example.spring.repositories.feign.commons.clients.impl.CommonsFeignClientImpl;
-import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 
 @AllArgsConstructor
 @Repository
-public  class DepartmentRepositoryImpl implements DepartmentRepository {
+public class DepartmentRepositoryImpl implements DepartmentRepository {
     private final DepartmentRepositoryConverter converter;
     private final TDepartmentRepository repository;
 

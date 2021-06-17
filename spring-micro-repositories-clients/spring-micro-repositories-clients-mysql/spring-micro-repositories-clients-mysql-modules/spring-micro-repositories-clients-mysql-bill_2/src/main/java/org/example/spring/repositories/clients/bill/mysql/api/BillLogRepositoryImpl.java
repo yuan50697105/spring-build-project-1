@@ -17,6 +17,7 @@ import java.util.stream.Stream;
 public class BillLogRepositoryImpl implements BillLogRepository {
     private final TBillLogRepository repository;
     private final BillLogRepositoryConverter converter;
+
     public BillLogRepositoryImpl(TBillLogRepository repository, BillLogRepositoryConverter converter) {
         this.repository = repository;
         this.converter = converter;
@@ -64,7 +65,7 @@ public class BillLogRepositoryImpl implements BillLogRepository {
 
     @Override
     public void updateNull(BillLogVo vo, BillLogQuery billLogQuery) {
-        repository.updateNull(converter.convertVo(vo),converter.convertQuery(billLogQuery));
+        repository.updateNull(converter.convertVo(vo), converter.convertQuery(billLogQuery));
     }
 
     @Override

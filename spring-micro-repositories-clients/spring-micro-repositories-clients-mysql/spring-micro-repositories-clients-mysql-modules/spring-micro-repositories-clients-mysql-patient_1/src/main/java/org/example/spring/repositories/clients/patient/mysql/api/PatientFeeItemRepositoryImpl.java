@@ -3,12 +3,10 @@ package org.example.spring.repositories.clients.patient.mysql.api;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.patient.api.PatientFeeItemRepository;
 import org.example.spring.repositories.clients.patient.mysql.converter.PatientFeeItemRepositoryConverter;
-import org.example.spring.repositories.clients.patient.mysql.converter.PatientRepositoryConverter;
 import org.example.spring.repositories.commons.entity.patient.dto.PatientFeeItemDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientFeeItemQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientFeeItemVo;
 import org.example.spring.repositories.mysql.patient.repository.TPatientFeeItemRepository;
-import org.example.spring.repositories.mysql.patient.repository.TPatientRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

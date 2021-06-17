@@ -9,12 +9,11 @@ import org.example.spring.repositories.commons.entity.auth.query.DepartmentQuery
 import org.example.spring.repositories.commons.entity.auth.vo.DepartmentVo;
 import org.example.spring.repositories.feign.auth.clients.DepartmentRepositoryClient;
 import org.example.spring.repositories.feign.commons.clients.impl.CommonsFeignClientImpl;
-import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @DubboService
-public class DepartmentRepositoryController extends CommonsFeignClientImpl<Department, DepartmentVo, DepartmentDTO, DepartmentQuery,DepartmentRepository> implements DepartmentRepositoryClient {
+public class DepartmentRepositoryController extends CommonsFeignClientImpl<Department, DepartmentVo, DepartmentDTO, DepartmentQuery, DepartmentRepository> implements DepartmentRepositoryClient {
     private final DepartmentRepository repository;
 
     public DepartmentRepositoryController(DepartmentRepository repository) {
