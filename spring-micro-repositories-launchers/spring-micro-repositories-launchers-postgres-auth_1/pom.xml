@@ -12,10 +12,6 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-provider-postgres-auth-feign_1</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-provider-postgres-auth-dubbo_1</artifactId>
         </dependency>
     </dependencies>

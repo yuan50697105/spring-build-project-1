@@ -6,6 +6,7 @@
         <module>spring-micro-repositories-launchers-mysql_2</module>
         <module>spring-micro-repositories-launchers-mysql-auth_1</module>
         <module>spring-micro-repositories-launchers-mysql-auth_2</module>
+        <module>spring-micro-repositories-launchers-mysql-bill_1</module>
         <module>spring-micro-repositories-launchers-postgres_1</module>
         <module>spring-micro-repositories-launchers-postgres_2</module>
         <module>spring-micro-repositories-launchers-postgres-auth_1</module>
@@ -18,6 +19,11 @@
         <module>spring-micro-repositories-launchers-oracle_2</module>
         <module>spring-micro-repositories-launchers-oracle-auth_1</module>
         <module>spring-micro-repositories-launchers-oracle-auth_2</module>
+        <module>spring-micro-repositories-launchers-mysql-bill_2</module>
+        <module>spring-micro-repositories-launchers-mysql-customer_1</module>
+        <module>spring-micro-repositories-launchers-mysql-customer_2</module>
+        <module>spring-micro-repositories-launchers-mysql-patient_1</module>
+        <module>spring-micro-repositories-launchers-mysql-patient_2</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
@@ -77,6 +83,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
