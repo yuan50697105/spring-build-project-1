@@ -6,6 +6,10 @@
         <module>spring-micro-repositories-aggregation-auth_1</module>
         <module>spring-micro-repositories-aggregation-bill_1</module>
         <module>spring-micro-repositories-aggregation-items_1</module>
+        <module>spring-micro-repositories-aggregation-customer_1</module>
+        <module>spring-micro-repositories-aggregation-department_1</module>
+        <module>spring-micro-repositories-aggregation-patient_1</module>
+        <module>spring-micro-repositories-aggregation-report_1</module>
     </modules>
 
     <parent>

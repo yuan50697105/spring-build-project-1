@@ -14,6 +14,10 @@
         <module>spring-micro-repositories-aggregation-auth_2</module>
         <module>spring-micro-repositories-aggregation-bill_2</module>
         <module>spring-micro-repositories-aggregation-items_2</module>
+        <module>spring-micro-repositories-aggregation-customer_2</module>
+        <module>spring-micro-repositories-aggregation-department_2</module>
+        <module>spring-micro-repositories-aggregation-patient_2</module>
+        <module>spring-micro-repositories-aggregation-report_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

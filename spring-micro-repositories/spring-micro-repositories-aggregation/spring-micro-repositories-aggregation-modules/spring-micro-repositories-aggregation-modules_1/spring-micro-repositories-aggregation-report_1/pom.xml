@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-micro-repositories-aggregation-modules_1</artifactId>
+        <groupId>org.example.spring</groupId>
+        <version>0.0.39-M4-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-micro-repositories-aggregation-report_1</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-plugins-mybatis-rws_1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-mysql-report_1</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.example.spring</groupId>
+                    <artifactId>spring-plugins-mybatis_1</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-postgresql-report_1</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.example.spring</groupId>
+                    <artifactId>spring-plugins-mybatis_1</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-mssql-report_1</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.example.spring</groupId>
+                    <artifactId>spring-plugins-mybatis_1</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-oracle-report_1</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.example.spring</groupId>
+                    <artifactId>spring-plugins-mybatis_1</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+</project>
