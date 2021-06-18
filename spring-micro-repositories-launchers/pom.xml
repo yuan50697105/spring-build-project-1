@@ -104,6 +104,16 @@
             <artifactId>nacos-config-spring-boot-actuator</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-registry-nacos</artifactId>
+            <version>2.7.12</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.weicoder</groupId>-->
+<!--            <artifactId>zookeeper</artifactId>-->
+<!--            <version>3.4.6</version>-->
+<!--        </dependency>-->
     </dependencies>
     <build>
         <plugins>
