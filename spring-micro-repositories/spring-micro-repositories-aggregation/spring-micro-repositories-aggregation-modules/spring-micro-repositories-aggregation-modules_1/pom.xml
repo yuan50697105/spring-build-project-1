@@ -4,6 +4,8 @@
     <modules>
         <module>spring-micro-repositories-aggregation_1</module>
         <module>spring-micro-repositories-aggregation-auth_1</module>
+        <module>spring-micro-repositories-aggregation-bill_1</module>
+        <module>spring-micro-repositories-aggregation-items_1</module>
     </modules>
 
     <parent>

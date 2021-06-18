@@ -73,12 +73,12 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-postgresql-item_1</artifactId>
+                <artifactId>spring-micro-repositories-postgresql-items_1</artifactId>
                 <version>0.0.39-M4-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-postgresql-item_2</artifactId>
+                <artifactId>spring-micro-repositories-postgresql-items_2</artifactId>
                 <version>0.0.39-M4-SNAPSHOT</version>
             </dependency>
             <dependency>

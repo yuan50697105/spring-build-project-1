@@ -15,7 +15,7 @@
         <module>spring-micro-repositories-postgresql-bill_2</module>
         <module>spring-micro-repositories-postgresql-customer_2</module>
         <module>spring-micro-repositories-postgresql-department_2</module>
-        <module>spring-micro-repositories-postgresql-item_2</module>
+        <module>spring-micro-repositories-postgresql-items_2</module>
         <module>spring-micro-repositories-postgresql-patient_2</module>
         <module>spring-micro-repositories-postgresql-report_2</module>
     </modules>

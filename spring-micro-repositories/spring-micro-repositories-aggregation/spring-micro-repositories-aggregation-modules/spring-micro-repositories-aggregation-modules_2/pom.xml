@@ -12,6 +12,8 @@
     <modules>
         <module>spring-micro-repositories-aggregation_2</module>
         <module>spring-micro-repositories-aggregation-auth_2</module>
+        <module>spring-micro-repositories-aggregation-bill_2</module>
+        <module>spring-micro-repositories-aggregation-items_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
