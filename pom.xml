@@ -37,16 +37,16 @@
         <module>spring-cloud-services-provider</module>
         <module>spring-cloud-services-launchers</module>
         <module>spring-cloud-domains-services</module>
-        <module>spring-cloud-domains-services-clients</module>
+        <module>spring-cloud-domains-services-provider</module>
         <module>spring-cloud-domains-services-launchers</module>
         <module>spring-cloud-micro-repositories</module>
-        <module>spring-cloud-micro-repositories-clients</module>
+        <module>spring-cloud-micro-repositories-provider</module>
         <module>spring-cloud-micro-repositories-launchers</module>
         <module>spring-cloud-micro-services</module>
         <module>spring-cloud-micro-services-clients</module>
         <module>spring-cloud-micro-services-launchers</module>
         <module>spring-cloud-micro-domains-services</module>
-        <module>spring-cloud-micro-domains-services-clients</module>
+        <module>spring-cloud-micro-domains-services-provider</module>
         <module>spring-cloud-micro-domains-services-launchers</module>
         <module>spring-cloud-micro-applications</module>
         <module>spring-cloud-micro-applications-launchers</module>
