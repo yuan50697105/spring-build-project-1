@@ -25,7 +25,7 @@
         <module>spring-micro-services-provider</module>
         <module>spring-micro-services-launchers</module>
         <module>spring-micro-domains-services</module>
-        <module>spring-micro-domains-services-clients</module>
+        <module>spring-micro-domains-services-provider</module>
         <module>spring-micro-domains-services-launchers</module>
         <module>spring-micro-applications</module>
         <module>spring-micro-applications-launchers</module>
