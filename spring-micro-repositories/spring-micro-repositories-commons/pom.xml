@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-M3</version>
+        <version>0.0.39-M4-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -24,14 +24,14 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-dependencies</artifactId>
-                <version>0.0.39-M3</version>
+                <version>0.0.39-M4-SNAPSHOT</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-build-commons</artifactId>
-                <version>0.0.39-M3</version>
+                <version>0.0.39-M4-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
