@@ -142,6 +142,26 @@
                 <artifactId>spring-micro-repositories-provider-oracle-patient_2</artifactId>
                 <version>0.0.39-M4-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-provider-oracle-patient-dubbo_1</artifactId>
+                <version>0.0.39-M4-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-provider-oracle-patient-dubbo_2</artifactId>
+                <version>0.0.39-M4-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-provider-oracle-patient-feign_1</artifactId>
+                <version>0.0.39-M4-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-repositories-provider-oracle-patient-feign_2</artifactId>
+                <version>0.0.39-M4-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

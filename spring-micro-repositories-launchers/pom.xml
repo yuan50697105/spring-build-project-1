@@ -7,23 +7,41 @@
         <module>spring-micro-repositories-launchers-mysql-auth_1</module>
         <module>spring-micro-repositories-launchers-mysql-auth_2</module>
         <module>spring-micro-repositories-launchers-mysql-bill_1</module>
-        <module>spring-micro-repositories-launchers-postgres_1</module>
-        <module>spring-micro-repositories-launchers-postgres_2</module>
-        <module>spring-micro-repositories-launchers-postgres-auth_1</module>
-        <module>spring-micro-repositories-launchers-postgres-auth_2</module>
-        <module>spring-micro-repositories-launchers-mssql_1</module>
-        <module>spring-micro-repositories-launchers-mssql_2</module>
-        <module>spring-micro-repositories-launchers-mssql-auth_1</module>
-        <module>spring-micro-repositories-launchers-mssql-auth_2</module>
-        <module>spring-micro-repositories-launchers-oracle_1</module>
-        <module>spring-micro-repositories-launchers-oracle_2</module>
-        <module>spring-micro-repositories-launchers-oracle-auth_1</module>
-        <module>spring-micro-repositories-launchers-oracle-auth_2</module>
         <module>spring-micro-repositories-launchers-mysql-bill_2</module>
         <module>spring-micro-repositories-launchers-mysql-customer_1</module>
         <module>spring-micro-repositories-launchers-mysql-customer_2</module>
         <module>spring-micro-repositories-launchers-mysql-patient_1</module>
         <module>spring-micro-repositories-launchers-mysql-patient_2</module>
+        <module>spring-micro-repositories-launchers-postgres_1</module>
+        <module>spring-micro-repositories-launchers-postgres_2</module>
+        <module>spring-micro-repositories-launchers-postgres-auth_1</module>
+        <module>spring-micro-repositories-launchers-postgres-auth_2</module>
+        <module>spring-micro-repositories-launchers-postgres-bill_1</module>
+        <module>spring-micro-repositories-launchers-postgres-bill_2</module>
+        <module>spring-micro-repositories-launchers-postgres-customer_1</module>
+        <module>spring-micro-repositories-launchers-postgres-customer_2</module>
+        <module>spring-micro-repositories-launchers-postgres-patient_1</module>
+        <module>spring-micro-repositories-launchers-postgres-patient_2</module>
+        <module>spring-micro-repositories-launchers-mssql_1</module>
+        <module>spring-micro-repositories-launchers-mssql_2</module>
+        <module>spring-micro-repositories-launchers-mssql-auth_1</module>
+        <module>spring-micro-repositories-launchers-mssql-auth_2</module>
+        <module>spring-micro-repositories-launchers-mssql-bill_1</module>
+        <module>spring-micro-repositories-launchers-mssql-bill_2</module>
+        <module>spring-micro-repositories-launchers-mssql-customer_1</module>
+        <module>spring-micro-repositories-launchers-mssql-customer_2</module>
+        <module>spring-micro-repositories-launchers-mssql-patient_1</module>
+        <module>spring-micro-repositories-launchers-mssql-patient_2</module>
+        <module>spring-micro-repositories-launchers-oracle_1</module>
+        <module>spring-micro-repositories-launchers-oracle_2</module>
+        <module>spring-micro-repositories-launchers-oracle-auth_1</module>
+        <module>spring-micro-repositories-launchers-oracle-auth_2</module>
+        <module>spring-micro-repositories-launchers-oracle-bill_1</module>
+        <module>spring-micro-repositories-launchers-oracle-bill_2</module>
+        <module>spring-micro-repositories-launchers-oracle-customer_1</module>
+        <module>spring-micro-repositories-launchers-oracle-customer_2</module>
+        <module>spring-micro-repositories-launchers-oracle-patient_1</module>
+        <module>spring-micro-repositories-launchers-oracle-patient_2</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
