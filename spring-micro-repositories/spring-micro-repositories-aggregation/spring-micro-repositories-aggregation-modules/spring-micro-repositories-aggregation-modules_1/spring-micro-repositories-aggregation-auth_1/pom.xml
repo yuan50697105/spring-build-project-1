@@ -12,23 +12,47 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-plugins-mybatis_1</artifactId>
+            <artifactId>spring-plugins-mybatis-rws_1</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-mysql-auth_1</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.example.spring</groupId>
+                    <artifactId>spring-plugins-mybatis_1</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-postgresql-auth_1</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.example.spring</groupId>
+                    <artifactId>spring-plugins-mybatis_1</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-mssql-auth_1</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.example.spring</groupId>
+                    <artifactId>spring-plugins-mybatis_1</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-oracle-auth_1</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.example.spring</groupId>
+                    <artifactId>spring-plugins-mybatis_1</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

@@ -9,5 +9,10 @@
 
     <artifactId>spring-micro-repositories-aggregation_1</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-aggregation-auth_1</artifactId>
+        </dependency>
+    </dependencies>
 </project>
