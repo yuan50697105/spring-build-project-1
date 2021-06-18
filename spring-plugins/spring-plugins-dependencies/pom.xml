@@ -58,6 +58,16 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-plugins-mybatis-rws_1</artifactId>
+                <version>0.0.39-M4-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-plugins-mybatis-rws_2</artifactId>
+                <version>0.0.39-M4-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-oss-aliyun</artifactId>
                 <version>0.0.39-M4-SNAPSHOT</version>
             </dependency>

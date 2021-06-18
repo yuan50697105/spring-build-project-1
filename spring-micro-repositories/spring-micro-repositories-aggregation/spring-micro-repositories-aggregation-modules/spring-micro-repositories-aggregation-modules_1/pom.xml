@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <modules>
-        <module>spring-micro-repositories_1</module>
-        <module>spring-micro-repositories-auth_1</module>
+        <module>spring-micro-repositories-aggregation_1</module>
+        <module>spring-micro-repositories-aggregation-auth_1</module>
     </modules>
 
     <parent>

@@ -7,8 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-micro-repositories-auth_1</artifactId>
-
+    <artifactId>spring-micro-repositories-aggregation_1</artifactId>
 
 
 </project>

@@ -10,8 +10,8 @@
     <artifactId>spring-micro-repositories-aggregation-modules_2</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-micro-repositories_2</module>
-        <module>spring-micro-repositories-auth_2</module>
+        <module>spring-micro-repositories-aggregation_2</module>
+        <module>spring-micro-repositories-aggregation-auth_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
