@@ -30,7 +30,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-repositories-clients-dependencies</artifactId>
+                <artifactId>spring-micro-repositories-provider-dependencies</artifactId>
                 <version>0.0.39-M3-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
