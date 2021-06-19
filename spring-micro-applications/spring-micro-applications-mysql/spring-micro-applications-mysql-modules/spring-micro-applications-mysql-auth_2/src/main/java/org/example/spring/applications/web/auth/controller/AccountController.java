@@ -105,7 +105,7 @@ public class AccountController {
     }
 
     @PostMapping("register/{type}")
-    public Result<?> register(UserVo userVo, String type) {
+    public Result<?> register(@RequestBody UserVo userVo,@PathVariable String type) {
         return accountService.register(new RegisterVo(userVo, RegisterVo.RegisterType.get(type)));
     }
 
