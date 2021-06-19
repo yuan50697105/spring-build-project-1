@@ -1,13 +1,13 @@
 package org.example.spring.domains.services.mysql.auth.vo;
 
-import lombok.Data;
+import lombok.Value;
 import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
 
-@Data
+@Value
 public class RegisterVo {
     public static final String BACKGROUND_USER_HANDLER = "backgroundUserHandler";
-    private RegisterType type;
-    private UserVo user;
+    RegisterType type;
+    UserVo user;
 
     public enum RegisterType {
         BACKGROUND_USER(BACKGROUND_USER_HANDLER),

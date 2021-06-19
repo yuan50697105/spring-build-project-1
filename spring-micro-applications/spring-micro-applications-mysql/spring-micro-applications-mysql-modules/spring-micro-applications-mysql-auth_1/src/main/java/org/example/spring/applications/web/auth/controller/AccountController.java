@@ -5,6 +5,7 @@ import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.services.mysql.auth.service.DAccountService;
+import org.example.spring.domains.services.mysql.auth.vo.RegisterVo;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.entity.auth.query.UserQuery;
@@ -103,4 +104,8 @@ public class AccountController {
         return R.success();
     }
 
+    @PostMapping("register/{type}")
+    public Result<?> register(UserVo userVo, String type) {
+        return accountService.register(new RegisterVo());
+    }
 }
