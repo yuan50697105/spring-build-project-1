@@ -1,6 +1,9 @@
 package org.example.spring.domains.services.mysql.auth.service;
 
+import ai.yue.library.base.view.Result;
 import org.example.spring.domains.services.DService;
+import org.example.spring.domains.services.mysql.auth.dto.RegisterResult;
+import org.example.spring.domains.services.mysql.auth.vo.RegisterVo;
 import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.UserRoleDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.UserRoleResourceDTO;
@@ -21,4 +24,6 @@ public interface DAccountService extends DService<User, UserVo, UserDTO, UserQue
     void updateStatus(UserStatus status, Long... ids);
 
     void updateStatus(UserStatus status, Long id);
+
+    Result<RegisterResult> register(RegisterVo registerVo);
 }

@@ -10,13 +10,17 @@
     <artifactId>spring-micro-domains-services-mysql-auth_1</artifactId>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.example.spring</groupId>-->
-<!--            <artifactId>spring-micro-repositories-mysql-auth_1</artifactId>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-repositories-provider-mysql-auth_1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ai.ylyue</groupId>
+            <artifactId>yue-library-base</artifactId>
         </dependency>
     </dependencies>
 

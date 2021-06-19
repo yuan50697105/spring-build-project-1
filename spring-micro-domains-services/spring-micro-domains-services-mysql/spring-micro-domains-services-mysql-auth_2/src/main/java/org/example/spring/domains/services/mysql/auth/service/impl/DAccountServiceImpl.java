@@ -1,9 +1,14 @@
 package org.example.spring.domains.services.mysql.auth.service.impl;
 
 
+import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.services.impl.DServiceImpl;
+import org.example.spring.domains.services.mysql.auth.dto.RegisterResult;
+import org.example.spring.domains.services.mysql.auth.handler.UserRegisterHandler;
+import org.example.spring.domains.services.mysql.auth.handler.UserRegisterHandlerFactory;
 import org.example.spring.domains.services.mysql.auth.service.DAccountService;
+import org.example.spring.domains.services.mysql.auth.vo.RegisterVo;
 import org.example.spring.repositories.clients.auth.api.UserRepository;
 import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.UserRoleDTO;
@@ -21,7 +26,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class DAccountServiceImpl extends DServiceImpl<User, UserVo, UserDTO, UserQuery, UserRepository> implements DAccountService {
-
+    private final UserRegisterHandlerFactory userRegisterHandlerFactory;
     @Override
     public UserRoleDTO getWithRole(Long id) {
         return repository.getWithRole(id);
@@ -50,5 +55,10 @@ public class DAccountServiceImpl extends DServiceImpl<User, UserVo, UserDTO, Use
     @Override
     public void updateStatus(UserStatus status, Long id) {
         updateStatus(status, Collections.singletonList(id));
+    }
+
+    @Override
+    public Result<RegisterResult> register(RegisterVo registerVo) {
+        return userRegisterHandlerFactory.register(registerVo);
     }
 }
