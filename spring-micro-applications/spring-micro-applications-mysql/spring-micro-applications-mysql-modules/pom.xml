@@ -31,6 +31,8 @@
         <module>spring-micro-applications-mysql-auth_2</module>
         <module>spring-micro-applications-mysql_1</module>
         <module>spring-micro-applications-mysql_2</module>
+        <module>spring-micro-applications-mysql-bill_1</module>
+        <module>spring-micro-applications-mysql-bill_2</module>
     </modules>
 
 </project>
