@@ -1,5 +1,6 @@
 package org.example.spring.domains.services.mysql.auth.vo;
 
+import cn.hutool.core.util.EnumUtil;
 import lombok.Value;
 import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
 
@@ -20,6 +21,10 @@ public class RegisterVo {
 
         public String getType() {
             return type;
+        }
+
+        public static RegisterType get(String value) {
+            return EnumUtil.likeValueOf(RegisterType.class, value);
         }
     }
 }
