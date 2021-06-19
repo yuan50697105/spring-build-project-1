@@ -7,6 +7,7 @@ import org.example.spring.domains.services.mysql.auth.handler.UserRegisterHandle
 import org.example.spring.domains.services.mysql.auth.vo.RegisterVo;
 import org.springframework.stereotype.Component;
 
+import javax.validation.ValidationException;
 import java.util.Map;
 
 @Component(UserRegisterHandlerFactoryImpl.USER_REGISTER_HANDLER_FACTORY)
@@ -21,5 +22,10 @@ public class UserRegisterHandlerFactoryImpl implements UserRegisterHandlerFactor
     @Override
     public Result<RegisterResult> register(RegisterVo registerVo) {
         return factory.get(registerVo.getType().getType()).register(registerVo);
+    }
+
+    @Override
+    public void verifyAccount(RegisterVo registerVo) throws ValidationException {
+
     }
 }
