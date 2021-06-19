@@ -6,6 +6,7 @@ import org.example.spring.repositories.mysql.items.table.query.TFeeItemQuery;
 
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public interface TFeeItemDao extends TkBaseDao<TFeeItem, TFeeItemQuery> {
     List<TFeeItem> queryListByMealId(Long id);
 }

@@ -9,6 +9,7 @@ import java.util.Date;
 /**
  * 用户Token处理
  */
+@SuppressWarnings("ALL")
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class TUserToken extends IBaseEntity {

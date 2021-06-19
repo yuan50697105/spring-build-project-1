@@ -6,6 +6,7 @@ import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 
 import java.util.List;
 
+@SuppressWarnings("UnusedReturnValue")
 public interface TUserDao extends TkBaseDao<TUser, TUserQuery> {
     boolean existByUsername(String username);
 

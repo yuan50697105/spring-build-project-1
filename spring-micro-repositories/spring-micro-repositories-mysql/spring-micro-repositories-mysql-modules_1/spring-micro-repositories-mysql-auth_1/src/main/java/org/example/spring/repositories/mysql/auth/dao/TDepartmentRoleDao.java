@@ -7,6 +7,7 @@ import org.example.spring.repositories.mysql.auth.table.query.TDepartmentRoleQue
 
 import java.util.List;
 
+@SuppressWarnings("UnusedReturnValue")
 public interface TDepartmentRoleDao extends TkBaseDao<TDepartmentRole, TDepartmentRoleQuery> {
     boolean removeByDepartmentId(Long id);
 

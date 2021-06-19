@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.repositories.commons.enumerate.FeeItemType;
 import org.example.spring.repositories.mysql.patient.table.po.TPatientFeeItem;
-import org.springframework.boot.configurationprocessor.metadata.ItemMetadata;
 
 import java.io.Serializable;
 

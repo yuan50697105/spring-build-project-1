@@ -50,9 +50,6 @@ public class TSellerInfoQuery extends TkBaseQuery<TSellerInfo> implements Serial
     private Integer ageEnd;
 
     /**
-     * address
-     */
-    /**
      * phone
      */
     @ApiModelProperty(value = "phone")

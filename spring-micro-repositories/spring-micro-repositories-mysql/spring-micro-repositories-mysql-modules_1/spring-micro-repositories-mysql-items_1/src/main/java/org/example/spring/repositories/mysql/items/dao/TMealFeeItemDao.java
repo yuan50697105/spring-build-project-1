@@ -6,6 +6,7 @@ import org.example.spring.repositories.mysql.items.table.query.TMealFeeItemQuery
 
 import java.util.List;
 
+@SuppressWarnings("UnusedReturnValue")
 public interface TMealFeeItemDao extends TkBaseDao<TMealFeeItem, TMealFeeItemQuery> {
     boolean deleteByMealId(Long id);
 

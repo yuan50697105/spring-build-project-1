@@ -13,6 +13,7 @@ import tk.mybatis.mapper.entity.Example;
 /**
  * 用户Token处理
  */
+@SuppressWarnings("ALL")
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class TUserTokenQuery extends TkExtQuery<TUserToken> implements MybatisExampleForTk<TUserToken, Example> {

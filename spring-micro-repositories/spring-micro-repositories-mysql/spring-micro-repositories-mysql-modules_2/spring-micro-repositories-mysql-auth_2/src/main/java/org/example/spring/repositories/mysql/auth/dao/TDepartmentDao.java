@@ -6,6 +6,7 @@ import org.example.spring.repositories.mysql.auth.table.query.TDepartmentQuery;
 
 import java.util.List;
 
+@SuppressWarnings("UnusedReturnValue")
 public interface TDepartmentDao extends TkBaseDao<TDepartment, TDepartmentQuery> {
     boolean existChildByPIds(List<Long> ids);
 
