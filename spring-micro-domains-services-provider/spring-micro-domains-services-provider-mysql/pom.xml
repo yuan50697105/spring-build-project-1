@@ -18,6 +18,13 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-plugins-dependencies</artifactId>
+                <version>0.0.39-M4-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-provider-commons</artifactId>
                 <version>0.0.39-M4-SNAPSHOT</version>
             </dependency>
@@ -27,6 +34,14 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-micro-domains-services-provider-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
 
