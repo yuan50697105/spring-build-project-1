@@ -98,10 +98,8 @@ public interface IBaseDao<T, Q extends BaseQuery> extends IService<T> {
 
     boolean modifyById(T t);
 
-    @Deprecated
     boolean update(T t);
 
-    @Deprecated
     boolean modify(T t);
 
     boolean updateNull(T t);
