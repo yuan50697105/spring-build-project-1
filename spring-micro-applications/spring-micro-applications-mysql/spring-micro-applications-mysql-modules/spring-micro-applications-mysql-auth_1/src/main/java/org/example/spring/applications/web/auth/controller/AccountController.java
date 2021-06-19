@@ -106,6 +106,6 @@ public class AccountController {
 
     @PostMapping("register/{type}")
     public Result<?> register(UserVo userVo, String type) {
-        return accountService.register(new RegisterVo(userVo, RegisterVo.RegisterType.));
+        return accountService.register(new RegisterVo(RegisterVo.RegisterType.get(type), userVo));
     }
 }
