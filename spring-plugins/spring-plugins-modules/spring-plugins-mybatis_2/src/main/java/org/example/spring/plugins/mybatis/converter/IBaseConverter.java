@@ -1,11 +1,12 @@
 package org.example.spring.plugins.mybatis.converter;
 
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.plugins.commons.entity.query.BaseQuery;
 import org.example.spring.plugins.mybatis.entity.query.IBaseQuery;
 
 import java.util.List;
 
-public interface IBaseConverter<T, DTO extends T, VO extends T, Q extends IBaseQuery> {
+public interface IBaseConverter<T, DTO extends T, VO extends T, Q extends BaseQuery> {
     T buildPo(VO vo);
 
     List<T> buildPo(List<VO> vo);

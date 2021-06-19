@@ -2,6 +2,7 @@ package org.example.spring.plugins.mybatis.dao;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.plugins.commons.entity.query.BaseQuery;
 import org.example.spring.plugins.mybatis.entity.query.IBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 
@@ -12,7 +13,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public interface IBaseDao<T, Q extends IBaseQuery> extends IService<T> {
+public interface IBaseDao<T, Q extends BaseQuery> extends IService<T> {
     Optional<T> getByIdOpt(Long id);
 
     List<T> listByIds(Long... ids);
