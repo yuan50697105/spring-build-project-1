@@ -4,12 +4,12 @@ package org.example.spring.applications.web.auth.controller;
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
-import org.example.spring.applications.web.auth.entity.PhoneMessageDTO;
-import org.example.spring.applications.web.auth.service.AAccountService;
+import org.example.spring.domains.services.mysql.auth.service.DAccountService;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.entity.auth.query.UserQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,29 +21,29 @@ import java.util.List;
 @RequestMapping(value = "account", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 @AllArgsConstructor
 public class AccountController {
-    private final AAccountService accountService;
+    private final DAccountService accountService;
 
     @GetMapping
     public Result<IPageData<UserDTO>> queryPage(UserQuery query) {
-        IPageData<UserDTO> data = accountService.queryPage(query);
+        IPageData<UserDTO> data = accountService.data(query);
         return R.success(data.getTotalRowNum(), data);
     }
 
     @GetMapping("list/{size}")
     public Result<List<UserDTO>> queryList(UserQuery query, @PathVariable int size) {
-        List<UserDTO> data = accountService.queryList((UserQuery) query.withSize(size));
+        List<UserDTO> data = accountService.top((UserQuery) query.withSize(size));
         return R.success((long) data.size(), data);
     }
 
     @GetMapping("list")
     public Result<List<UserDTO>> queryList(UserQuery query) {
-        List<UserDTO> data = accountService.queryList(query);
+        List<UserDTO> data = accountService.list(query);
         return R.success((long) data.size(), data);
     }
 
     @GetMapping("one")
     public Result<UserDTO> queryOne(UserQuery query) {
-        UserDTO data = accountService.queryOne(query);
+        UserDTO data = accountService.one(query);
         return R.success(data);
     }
 
@@ -87,25 +87,19 @@ public class AccountController {
 
     @PutMapping("status/{status}/{id}")
     public Result<?> updateStatus(@PathVariable String status, @PathVariable Long id) {
-        accountService.updateStatus(status, Collections.singletonList(id));
+        accountService.updateStatus(UserStatus.get(status), Collections.singletonList(id));
         return R.success();
     }
 
     @PutMapping(value = "status/{status}", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public Result<?> updateStatus1(@PathVariable String status,@RequestParam List<Long> ids) {
-        accountService.updateStatus(status, ids);
+        accountService.updateStatus(UserStatus.get(status), ids);
         return R.success();
     }
 
     @PutMapping(value = "status/{status}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Result<?> updateStatus2(@PathVariable String status,@RequestBody List<Long> ids) {
-        accountService.updateStatus(status, ids);
-        return R.success();
-    }
-
-    @PostMapping("message/send")
-    public Result<?> sendMessage(@RequestBody PhoneMessageDTO phoneMessageDTO) {
-        accountService.sendMessage(phoneMessageDTO);
+        accountService.updateStatus(UserStatus.get(status), ids);
         return R.success();
     }
 

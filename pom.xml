@@ -376,6 +376,9 @@
     <profiles>
         <profile>
             <id>doc</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <build>
                 <plugins>
                     <!--配置生成Javadoc包-->
@@ -406,6 +409,9 @@
         </profile>
         <profile>
             <id>source</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <build>
                 <plugins>
                     <!--配置生成源码包-->
