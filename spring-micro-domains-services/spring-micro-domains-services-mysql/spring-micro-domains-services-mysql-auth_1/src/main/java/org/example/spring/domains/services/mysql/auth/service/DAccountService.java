@@ -26,4 +26,7 @@ public interface DAccountService extends DService<User, UserVo, UserDTO, UserQue
     void updateStatus(UserStatus status, Long id);
 
     Result<RegisterResult> register(RegisterVo registerVo);
+
+    Result<?> verifyAccountExists(RegisterVo registerVo);
+
 }

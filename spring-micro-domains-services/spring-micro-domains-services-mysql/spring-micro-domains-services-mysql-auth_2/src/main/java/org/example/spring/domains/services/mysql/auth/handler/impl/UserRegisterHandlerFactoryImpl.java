@@ -1,5 +1,7 @@
 package org.example.spring.domains.services.mysql.auth.handler.impl;
 
+import ai.yue.library.base.exception.ResultException;
+import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import org.example.spring.domains.services.mysql.auth.dto.RegisterResult;
 import org.example.spring.domains.services.mysql.auth.handler.UserRegisterHandler;
@@ -7,7 +9,6 @@ import org.example.spring.domains.services.mysql.auth.handler.UserRegisterHandle
 import org.example.spring.domains.services.mysql.auth.vo.RegisterVo;
 import org.springframework.stereotype.Component;
 
-import javax.validation.ValidationException;
 import java.util.Map;
 
 @Component(UserRegisterHandlerFactoryImpl.USER_REGISTER_HANDLER_FACTORY)
@@ -25,7 +26,7 @@ public class UserRegisterHandlerFactoryImpl implements UserRegisterHandlerFactor
     }
 
     @Override
-    public void verifyAccount(RegisterVo registerVo) throws ValidationException {
-
+    public Result<?> verifyAccount(RegisterVo registerVo) throws ResultException {
+        throw new ResultException(R.errorPrompt("not implemented interface"));
     }
 }

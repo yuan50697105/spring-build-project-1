@@ -1,11 +1,11 @@
 package org.example.spring.domains.services.mysql.auth.service.impl;
 
 
+import ai.yue.library.base.exception.ResultException;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
 import org.example.spring.domains.services.impl.DServiceImpl;
 import org.example.spring.domains.services.mysql.auth.dto.RegisterResult;
-import org.example.spring.domains.services.mysql.auth.handler.UserRegisterHandler;
 import org.example.spring.domains.services.mysql.auth.handler.UserRegisterHandlerFactory;
 import org.example.spring.domains.services.mysql.auth.service.DAccountService;
 import org.example.spring.domains.services.mysql.auth.vo.RegisterVo;
@@ -60,5 +60,10 @@ public class DAccountServiceImpl extends DServiceImpl<User, UserVo, UserDTO, Use
     @Override
     public Result<RegisterResult> register(RegisterVo registerVo) {
         return userRegisterHandlerFactory.register(registerVo);
+    }
+
+    @Override
+    public Result<?> verifyAccountExists(RegisterVo registerVo) throws ResultException {
+        return userRegisterHandlerFactory.verifyAccount(registerVo);
     }
 }

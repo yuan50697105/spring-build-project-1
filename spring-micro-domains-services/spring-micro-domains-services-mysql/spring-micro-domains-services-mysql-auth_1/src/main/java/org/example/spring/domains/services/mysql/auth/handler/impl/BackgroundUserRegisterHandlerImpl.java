@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.ValidationException;
 
-@Component(RegisterVo.BACKGROUND_USER_HANDLER)
+@Component(RegisterVo.RegisterType.Constants.BACKGROUND_USER_HANDLER)
 @Transactional
 public class BackgroundUserRegisterHandlerImpl implements UserRegisterHandler {
     private final UserRepository userRepository;
