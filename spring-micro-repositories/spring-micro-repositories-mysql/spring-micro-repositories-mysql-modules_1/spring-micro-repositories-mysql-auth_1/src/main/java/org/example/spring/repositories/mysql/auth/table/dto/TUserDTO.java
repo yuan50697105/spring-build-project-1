@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Deprecated
 public class TUserDTO extends TUser implements Serializable {
 
     public TUserDTO() {

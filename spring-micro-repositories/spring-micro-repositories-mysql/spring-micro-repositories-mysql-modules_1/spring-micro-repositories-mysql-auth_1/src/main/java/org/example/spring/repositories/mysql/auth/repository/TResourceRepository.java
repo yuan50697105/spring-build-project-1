@@ -9,6 +9,7 @@ import org.example.spring.repositories.mysql.auth.table.vo.TResourceVo;
 
 import java.util.List;
 
+@Deprecated
 public interface TResourceRepository extends IBaseRepository<TResource, TResourceDTO, TResourceVo, TResourceQuery> {
     List<TResourceDTO> queryListByRoleId(Long id);
 

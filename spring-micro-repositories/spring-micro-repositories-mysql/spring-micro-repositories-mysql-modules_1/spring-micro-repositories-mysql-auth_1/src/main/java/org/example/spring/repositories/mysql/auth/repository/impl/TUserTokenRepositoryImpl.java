@@ -13,5 +13,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @AllArgsConstructor
+@Deprecated
 public class TUserTokenRepositoryImpl extends IBaseRepositoryImpl<TUserToken, TUserTokenDto, TUserTokenVo, TUserTokenQuery, TUserTokenConverter, TUserTokenDao> implements TUserTokenRepository {
 }

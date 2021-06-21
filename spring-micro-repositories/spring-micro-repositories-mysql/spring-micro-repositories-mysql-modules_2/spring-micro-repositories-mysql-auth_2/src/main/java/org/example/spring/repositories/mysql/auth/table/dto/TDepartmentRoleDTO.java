@@ -8,6 +8,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Deprecated
 public class TDepartmentRoleDTO extends org.example.spring.repositories.mysql.auth.table.dto.TDepartmentDTO implements Serializable {
     private List<TRoleDTO> roles;
 }

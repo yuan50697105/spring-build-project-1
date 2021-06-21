@@ -21,6 +21,7 @@ import java.util.Map;
 
 @Repository
 @Transactional
+@Deprecated
 public class TResourceRepositoryImpl extends IBaseRepositoryImpl<TResource, TResourceDTO, TResourceVo, TResourceQuery, TResourceConverter, TResourceDao> implements TResourceRepository {
     @Override
     public List<TResourceDTO> queryListByRoleId(Long roleId) {

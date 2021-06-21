@@ -22,6 +22,7 @@ import java.util.Optional;
 
 @Repository
 @Transactional
+@Deprecated
 public class TDepartmentRepositoryImpl extends IBaseRepositoryImpl<TDepartment, TDepartmentDTO, TDepartmentVo, TDepartmentQuery, TDepartmentConverter, TDepartmentDao> implements TDepartmentRepository {
     private final TDepartmentDao departmentDao;
     private final TDepartmentRoleDao departmentRoleDao;

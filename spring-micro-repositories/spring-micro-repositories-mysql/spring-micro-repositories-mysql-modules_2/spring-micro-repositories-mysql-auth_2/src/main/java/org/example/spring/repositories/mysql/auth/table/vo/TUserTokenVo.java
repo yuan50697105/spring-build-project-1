@@ -7,6 +7,7 @@ import org.example.spring.repositories.mysql.auth.table.po.TUserToken;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Deprecated
 public class TUserTokenVo extends TUserToken {
     @Override
     public void setStatus(String status) {

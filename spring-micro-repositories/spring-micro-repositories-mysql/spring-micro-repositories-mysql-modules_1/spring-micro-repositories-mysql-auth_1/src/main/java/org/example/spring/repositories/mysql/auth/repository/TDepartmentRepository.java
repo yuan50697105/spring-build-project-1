@@ -7,6 +7,7 @@ import org.example.spring.repositories.mysql.auth.table.po.TDepartment;
 import org.example.spring.repositories.mysql.auth.table.query.TDepartmentQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TDepartmentVo;
 
+@Deprecated
 public interface TDepartmentRepository extends IBaseRepository<TDepartment, TDepartmentDTO, TDepartmentVo, TDepartmentQuery> {
     TDepartmentRoleDTO getDetails(Long id);
 }

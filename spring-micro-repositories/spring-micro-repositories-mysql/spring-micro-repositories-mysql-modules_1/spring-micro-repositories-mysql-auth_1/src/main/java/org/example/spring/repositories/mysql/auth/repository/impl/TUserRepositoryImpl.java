@@ -22,6 +22,7 @@ import java.util.List;
 
 @Repository
 @Transactional
+@Deprecated
 public class TUserRepositoryImpl extends IBaseRepositoryImpl<TUser, TUserDTO, TUserVo, TUserQuery, TUserConverter, TUserDao> implements TUserRepository {
     private final TRoleRepository roleRepository;
     private final TResourceRepository resourceRepository;

@@ -13,6 +13,7 @@ import org.mapstruct.factory.Mappers;
 import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
+@Deprecated
 public interface TRoleConverter extends IBaseConverter<TRole, TRoleDTO, TRoleVo, org.example.spring.repositories.mysql.auth.table.query.TRoleQuery> {
     TRoleConverter instance = Mappers.getMapper(TRoleConverter.class);
 

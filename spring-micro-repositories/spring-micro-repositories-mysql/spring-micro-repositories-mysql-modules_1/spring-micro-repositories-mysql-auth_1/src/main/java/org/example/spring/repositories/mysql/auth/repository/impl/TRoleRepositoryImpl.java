@@ -17,6 +17,7 @@ import java.util.List;
 
 @Repository
 @Transactional
+@Deprecated
 public class TRoleRepositoryImpl extends IBaseRepositoryImpl<TRole, TRoleDTO, TRoleVo, TRoleQuery, TRoleConverter, TRoleDao> implements TRoleRepository {
     private final TResourceRepository resourceRepository;
 

@@ -10,6 +10,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(config = BaseBuilder.class)
+@Deprecated
 public interface TResourceConverter extends IBaseConverter<TResource, TResourceDTO, TResourceVo, TResourceQuery> {
     TResourceConverter instance = Mappers.getMapper(TResourceConverter.class);
 }

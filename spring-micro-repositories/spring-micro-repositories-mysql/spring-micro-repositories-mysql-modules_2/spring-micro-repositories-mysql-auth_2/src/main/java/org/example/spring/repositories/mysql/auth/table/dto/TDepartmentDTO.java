@@ -8,5 +8,6 @@ import java.io.Serializable;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Deprecated
 public class TDepartmentDTO extends TDepartment implements Serializable {
 }

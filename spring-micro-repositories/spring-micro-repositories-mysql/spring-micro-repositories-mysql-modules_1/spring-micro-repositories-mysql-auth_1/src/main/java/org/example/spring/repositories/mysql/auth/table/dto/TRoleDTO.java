@@ -8,5 +8,6 @@ import java.io.Serializable;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Deprecated
 public class TRoleDTO extends TRole implements Serializable {
 }

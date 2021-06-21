@@ -11,6 +11,7 @@ import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
 
 import java.util.List;
 
+@Deprecated
 public interface TUserRepository extends IBaseRepository<TUser, TUserDTO, TUserVo, TUserQuery> {
     TUserRoleResourceDTO getWithRoleAndResource(Long id);
 

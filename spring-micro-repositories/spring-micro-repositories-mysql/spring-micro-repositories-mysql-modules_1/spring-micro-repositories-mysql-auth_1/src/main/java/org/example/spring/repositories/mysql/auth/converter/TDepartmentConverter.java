@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Mapper(config = BaseBuilder.class)
+@Deprecated
 public interface TDepartmentConverter extends IBaseConverter<TDepartment, TDepartmentDTO, TDepartmentVo, TDepartmentQuery> {
     TDepartmentConverter instance = Mappers.getMapper(TDepartmentConverter.class);
 

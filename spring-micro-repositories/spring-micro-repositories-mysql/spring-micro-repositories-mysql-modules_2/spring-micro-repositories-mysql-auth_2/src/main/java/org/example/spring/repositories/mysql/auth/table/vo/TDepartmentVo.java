@@ -9,6 +9,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Deprecated
 public class TDepartmentVo extends TDepartment implements Serializable {
     private List<Long> roleIds;
 

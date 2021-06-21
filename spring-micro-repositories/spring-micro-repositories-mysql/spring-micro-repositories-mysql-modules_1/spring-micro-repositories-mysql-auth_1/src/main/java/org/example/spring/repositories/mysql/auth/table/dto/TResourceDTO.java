@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Deprecated
 public class TResourceDTO extends TResource implements Serializable {
     @Override
     public String getType() {

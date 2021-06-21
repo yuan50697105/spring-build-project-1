@@ -10,6 +10,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(config = BaseBuilder.class)
+@Deprecated
 public interface TUserTokenConverter extends IBaseConverter<TUserToken, TUserTokenDto, TUserTokenVo, TUserTokenQuery> {
     TUserTokenConverter CONVERTER = Mappers.getMapper(TUserTokenConverter.class);
 }

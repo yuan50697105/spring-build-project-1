@@ -9,6 +9,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Deprecated
 public class TRoleVo extends TRole implements Serializable {
     private List<Long> resourceIds;
 

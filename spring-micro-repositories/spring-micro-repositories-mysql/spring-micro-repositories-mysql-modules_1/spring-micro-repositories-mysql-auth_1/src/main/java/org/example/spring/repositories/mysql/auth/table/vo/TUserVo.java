@@ -10,6 +10,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Deprecated
 public class TUserVo extends TUser implements Serializable {
     private List<Long> roleIds;
 

@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Deprecated
 public class TResourceVo extends TResource implements Serializable {
     public TResourceVo() {
         setPid(0L);
