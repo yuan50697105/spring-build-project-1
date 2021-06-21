@@ -5,6 +5,8 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 import org.example.spring.plugins.mybatis.converter.ICommonsConverter;
 import org.example.spring.plugins.mybatis.dao.IBaseDao;
+import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
+import org.example.spring.plugins.mybatis.entity.query.IBaseQuery;
 import org.example.spring.plugins.mybatis.repository.ICommonsRepository;
 
 import java.util.Arrays;
@@ -13,7 +15,14 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO extends T, VO extends T, Q extends BaseQuery, C extends ICommonsConverter<T, DTO, VO, Q>, D extends IBaseDao<T, Q>> implements ICommonsRepository<T, DTO, VO, Q> {
+public abstract class ICommonsRepositoryImpl<
+        T extends ICommonsEntity,
+        T2 extends IBaseEntity,
+        Q extends BaseQuery,
+        Q2 extends IBaseQuery,
+        VO extends T,
+        DTO extends T,
+        C extends ICommonsConverter<T, T2, Q, Q2, VO, DTO>, D extends IBaseDao<T2, Q2>> implements ICommonsRepository<T, DTO, VO, Q> {
     private final C converter;
     private final D dao;
 
@@ -29,7 +38,7 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public void save(VO... vo) {
-        dao.saveBatch(converter.buildPo(Arrays.asList(vo)));
+        dao.saveBatch(converter.buildPo(vo));
     }
 
     @Override
@@ -39,7 +48,8 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public void saveSelective(VO vo) {
-        dao.saveSelective(converter.buildPo(vo));
+        T2 t2 = converter.buildPo(vo);
+        dao.saveSelective(t2);
     }
 
     @Override
@@ -160,12 +170,12 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public void update(VO vo, Q q) {
-        dao.updateSelective(converter.buildPo(vo), q);
+        dao.updateSelective(converter.buildPo(vo), converter.buildQuery(q));
     }
 
     @Override
     public void updateNull(VO vo, Q q) {
-        dao.update(converter.buildPo(vo), q);
+        dao.update(converter.buildPo(vo), converter.buildQuery(q));
     }
 
     @Override
@@ -210,7 +220,7 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public DTO get(Long id) {
-        T dao = this.dao.getById(id);
+        T2 dao = this.dao.getById(id);
         return converter.buildDTO(dao);
     }
 
@@ -231,7 +241,7 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public DTO queryOne(Q q) {
-        T one = dao.queryOne(q);
+        T2 one = dao.queryOne(converter.buildQuery(q));
         return converter.buildDTO(one);
     }
 
@@ -242,7 +252,7 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public DTO queryFirst(Q q) {
-        T first = dao.queryFirst(q);
+        T2 first = dao.queryFirst(converter.buildQuery(q));
         return converter.buildDTO(first);
     }
 
@@ -253,7 +263,7 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public List<DTO> queryList(Q q) {
-        List<T> queryList = dao.queryList(q);
+        List<T2> queryList = dao.queryList(converter.buildQuery(q));
         return converter.buildDTOS(queryList);
     }
 
@@ -264,7 +274,7 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public List<DTO> queryTop(Q q) {
-        List<T> queryList = dao.queryTop(q);
+        List<T2> queryList = dao.queryTop(converter.buildQuery(q));
         return converter.buildDTOS(queryList);
     }
 
@@ -275,13 +285,13 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public IPageData<DTO> queryPage(Q q) {
-        IPageData<T> queryPage = dao.queryPage(q);
+        IPageData<T2> queryPage = dao.queryPage(converter.buildQuery(q));
         return converter.buildDTOS(queryPage);
     }
 
     @Override
     public DTO selectOne(Q q) {
-        T one = dao.selectOne(q);
+        T2 one = dao.selectOne(converter.buildQuery(q));
         return converter.buildDTO(one);
     }
 
@@ -292,7 +302,7 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public DTO selectFirst(Q q) {
-        T first = dao.selectFirst(q);
+        T2 first = dao.selectFirst(converter.buildQuery(q));
         return converter.buildDTO(first);
     }
 
@@ -303,7 +313,7 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public List<DTO> selectList(Q q) {
-        List<T> selectList = dao.selectList(q);
+        List<T2> selectList = dao.selectList(converter.buildQuery(q));
         return converter.buildDTOS(selectList);
     }
 
@@ -314,7 +324,7 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public List<DTO> selectTop(Q q) {
-        List<T> selectList = dao.selectTop(q);
+        List<T2> selectList = dao.selectTop(converter.buildQuery(q));
         return converter.buildDTOS(selectList);
     }
 
@@ -325,7 +335,7 @@ public abstract class ICommonsRepositoryImpl<T extends ICommonsEntity, DTO exten
 
     @Override
     public IPageData<DTO> selectPage(Q q) {
-        IPageData<T> selectPage = dao.selectPage(q);
+        IPageData<T2> selectPage = dao.selectPage(converter.buildQuery(q));
         return converter.buildDTOS(selectPage);
     }
 

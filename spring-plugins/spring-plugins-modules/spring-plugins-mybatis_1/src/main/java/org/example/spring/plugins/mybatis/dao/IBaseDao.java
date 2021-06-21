@@ -166,5 +166,4 @@ public interface IBaseDao<T, Q extends BaseQuery> extends IService<T> {
 
     boolean insert(List<T> t);
 
-    void save(T buildPo);
 }
