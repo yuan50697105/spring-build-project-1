@@ -6,9 +6,10 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.DepartmentRepository;
 import org.example.spring.repositories.clients.auth.oracle.converter.DepartmentRepositoryConverter;
 import org.example.spring.repositories.commons.entity.auth.dto.DepartmentDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.DepartmentRoleDTO;
 import org.example.spring.repositories.commons.entity.auth.query.DepartmentQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.DepartmentVo;
-import org.example.spring.repositories.oracle.auth.repository.TDepartmentRepository;
+import org.example.spring.repositories.mysql.auth.repository.TDepartmentRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
@@ -18,7 +19,7 @@ import java.util.stream.Stream;
 
 @AllArgsConstructor
 @Repository
-public  class DepartmentRepositoryImpl implements DepartmentRepository {
+public class DepartmentRepositoryImpl implements DepartmentRepository {
     private final DepartmentRepositoryConverter converter;
     private final TDepartmentRepository repository;
 
@@ -165,5 +166,15 @@ public  class DepartmentRepositoryImpl implements DepartmentRepository {
     @Override
     public IPageData<DepartmentDTO> data(DepartmentQuery query) {
         return converter.build(repository.queryPage(converter.build(query)));
+    }
+
+    @Override
+    public DepartmentRoleDTO getDepartmentRole(Long id) {
+        return converter.build2(repository.getDetails(id));
+    }
+
+    @Override
+    public Optional<DepartmentRoleDTO> getDepartmentRoleOpt(Long id) {
+        return Optional.ofNullable(getDepartmentRole(id));
     }
 }

@@ -8,9 +8,9 @@ import org.example.spring.repositories.clients.auth.oracle.converter.UserTokenRe
 import org.example.spring.repositories.commons.entity.auth.dto.UserTokenDto;
 import org.example.spring.repositories.commons.entity.auth.query.UserTokenQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.UserTokenVo;
-import org.example.spring.repositories.oracle.auth.repository.TUserTokenRepository;
-import org.example.spring.repositories.oracle.auth.table.dto.TUserTokenDto;
-import org.example.spring.repositories.oracle.auth.table.query.TUserTokenQuery;
+import org.example.spring.repositories.mysql.auth.repository.TUserTokenRepository;
+import org.example.spring.repositories.mysql.auth.table.dto.TUserTokenDto;
+import org.example.spring.repositories.mysql.auth.table.query.TUserTokenQuery;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;

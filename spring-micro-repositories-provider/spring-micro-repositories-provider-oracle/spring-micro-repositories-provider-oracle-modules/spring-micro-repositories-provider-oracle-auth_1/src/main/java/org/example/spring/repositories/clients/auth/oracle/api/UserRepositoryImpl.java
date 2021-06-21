@@ -1,17 +1,17 @@
 package org.example.spring.repositories.clients.auth.oracle.api;
 
+import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.UserRepository;
 import org.example.spring.repositories.clients.auth.oracle.converter.UserRepositoryConverter;
-import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.UserRoleDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.UserRoleResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.UserQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
-import org.example.spring.repositories.oracle.auth.repository.TUserRepository;
-import org.example.spring.repositories.oracle.auth.table.dto.TUserDTO;
-import org.example.spring.repositories.oracle.auth.table.dto.TUserRoleDTO;
-import org.example.spring.repositories.oracle.auth.table.query.TUserQuery;
+import org.example.spring.repositories.mysql.auth.repository.TUserRepository;
+import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
+import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleDTO;
+import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
@@ -21,7 +21,7 @@ import java.util.stream.Stream;
 
 
 @Repository
-public  class UserRepositoryImpl implements UserRepository {
+public class UserRepositoryImpl implements UserRepository {
 
     private final TUserRepository repository;
     private final UserRepositoryConverter converter;
@@ -43,7 +43,8 @@ public  class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void save(List<UserVo> vo) {
-        repository.save(converter.buildVo(vo));;
+        repository.save(converter.buildVo(vo));
+        ;
     }
 
     @Override
@@ -63,7 +64,7 @@ public  class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void update(UserVo vo, UserQuery userQuery) {
-        repository.update(converter.buildVo(vo),converter.build(userQuery));
+        repository.update(converter.buildVo(vo), converter.build(userQuery));
     }
 
     @Override
@@ -73,7 +74,7 @@ public  class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void updateNull(UserVo vo, UserQuery userQuery) {
-        repository.updateNull(converter.buildVo(vo),converter.build(userQuery));
+        repository.updateNull(converter.buildVo(vo), converter.build(userQuery));
     }
 
     @Override

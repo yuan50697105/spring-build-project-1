@@ -9,7 +9,7 @@ import org.example.spring.repositories.clients.auth.oracle.converter.ResourceRep
 import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.ResourceQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.ResourceVo;
-import org.example.spring.repositories.oracle.auth.repository.TResourceRepository;
+import org.example.spring.repositories.mysql.auth.repository.TResourceRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 
 @AllArgsConstructor
 @Repository
-public  class ResourceRepositoryImpl implements ResourceRepository {
+public class ResourceRepositoryImpl implements ResourceRepository {
     private final ResourceRepositoryConverter converter;
     private final TResourceRepository repository;
 
@@ -65,7 +65,7 @@ public  class ResourceRepositoryImpl implements ResourceRepository {
 
     @Override
     public void updateNull(ResourceVo vo, ResourceQuery query) {
-        repository.updateNull(converter.buildVo(vo),converter.build(query));
+        repository.updateNull(converter.buildVo(vo), converter.build(query));
     }
 
     @Override

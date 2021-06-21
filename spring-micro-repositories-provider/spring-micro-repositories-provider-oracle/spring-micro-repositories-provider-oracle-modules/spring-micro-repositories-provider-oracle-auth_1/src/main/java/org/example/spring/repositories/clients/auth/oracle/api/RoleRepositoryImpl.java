@@ -5,9 +5,10 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.RoleRepository;
 import org.example.spring.repositories.clients.auth.oracle.converter.RoleRepositoryConverter;
 import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.RoleResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.RoleQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.RoleVo;
-import org.example.spring.repositories.oracle.auth.repository.TRoleRepository;
+import org.example.spring.repositories.mysql.auth.repository.TRoleRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
@@ -165,5 +166,15 @@ public class RoleRepositoryImpl implements RoleRepository {
     @Override
     public IPageData<RoleDTO> data(RoleQuery query) {
         return converter.build(repository.queryPage(converter.build(query)));
+    }
+
+    @Override
+    public RoleResourceDTO getRoleResource(Long id) {
+        return converter.build2(repository.getDetails(id));
+    }
+
+    @Override
+    public Optional<RoleResourceDTO> getRoleResourceOpt(Long id) {
+        return Optional.empty();
     }
 }
