@@ -23,6 +23,12 @@ public interface CommonsFeignClient<T extends ICommonsEntity, V extends T, D ext
     @PutMapping("update/batch")
     void update(@RequestBody List<V> vo);
 
+    @PutMapping("update/null")
+    void updateNull(@RequestBody V vo);
+
+    @PutMapping("update/null/list")
+    void updateNull(@RequestBody List<V> vo);
+
     @DeleteMapping("delete/{id}")
     void delete(@PathVariable Long id);
 

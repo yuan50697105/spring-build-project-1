@@ -38,6 +38,16 @@ public abstract class CommonsFeignClientImpl<T extends ICommonsEntity, V extends
     }
 
     @Override
+    public void updateNull(V vo) {
+        repository.updateNull(vo);
+    }
+
+    @Override
+    public void updateNull(List<V> vo) {
+        repository.updateNull(vo);
+    }
+
+    @Override
     public void delete(Long id) {
         repository.delete(id);
     }
