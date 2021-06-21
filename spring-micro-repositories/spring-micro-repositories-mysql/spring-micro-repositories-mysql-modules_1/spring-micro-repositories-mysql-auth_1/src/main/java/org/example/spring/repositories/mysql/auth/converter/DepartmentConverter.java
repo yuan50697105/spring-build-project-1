@@ -11,6 +11,7 @@ import org.example.spring.repositories.mysql.auth.table.po.TDepartment;
 import org.example.spring.repositories.mysql.auth.table.query.TDepartmentQuery;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(config = BaseBuilder.class)
@@ -18,5 +19,5 @@ public interface DepartmentConverter extends ICommonsConverter<Department, TDepa
     DepartmentConverter CONVERTER = Mappers.getMapper(DepartmentConverter.class);
 
     @Mapping(target = "roles", ignore = true)
-    DepartmentRoleDTO buildDepartmentRoleDTO(TDepartment byId);
+    void copyDepartmentRoleDTO(TDepartment byId, @MappingTarget DepartmentRoleDTO dto);
 }

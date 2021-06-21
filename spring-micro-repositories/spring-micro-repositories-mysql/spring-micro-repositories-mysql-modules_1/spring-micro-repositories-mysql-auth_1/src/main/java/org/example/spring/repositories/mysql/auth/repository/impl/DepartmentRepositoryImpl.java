@@ -31,7 +31,8 @@ public class DepartmentRepositoryImpl extends ICommonsRepositoryImpl<Department,
 
     @Override
     public DepartmentRoleDTO getDetails(Long id) {
-        DepartmentRoleDTO dto = converter.buildDepartmentRoleDTO(dao.getById(id));
+        DepartmentRoleDTO dto = new DepartmentRoleDTO();
+        converter.copyDepartmentRoleDTO(dao.getById(id),dto);
         dto.setRoles(roleRepository.queryListByDepartmentId(id));
         return dto;
     }
