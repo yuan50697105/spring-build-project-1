@@ -15,6 +15,10 @@
             <artifactId>spring-micro-repositories-provider-mysql-auth_1</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-micro-repositories-provider-mysql-customer_1</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
