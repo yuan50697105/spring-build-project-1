@@ -165,5 +165,5 @@ public interface IBaseDao<T, Q extends BaseQuery> extends IService<T> {
     boolean insertSelective(List<T> t);
 
     boolean insert(List<T> t);
-    
+
 }
