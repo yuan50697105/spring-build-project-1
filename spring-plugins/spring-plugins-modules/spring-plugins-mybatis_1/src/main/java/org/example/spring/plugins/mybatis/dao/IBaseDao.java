@@ -1,6 +1,7 @@
 package org.example.spring.plugins.mybatis.dao;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.example.spring.plugins.commons.entity.ICommonsEntity;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 import tk.mybatis.mapper.entity.Example;
@@ -164,4 +165,6 @@ public interface IBaseDao<T, Q extends BaseQuery> extends IService<T> {
     boolean insertSelective(List<T> t);
 
     boolean insert(List<T> t);
+
+    void save(T buildPo);
 }
