@@ -11,9 +11,11 @@ import org.example.spring.repositories.mysql.auth.table.po.TRole;
 import org.example.spring.repositories.mysql.auth.table.query.TRoleQuery;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 @Mapper(config = BaseBuilder.class)
 public interface RoleConverter extends ICommonsConverter<Role, TRole, RoleQuery, TRoleQuery, RoleVo, RoleDTO> {
+
     @Mapping(target = "resources", ignore = true)
-    RoleResourceDTO buildRoleResourceDTO(TRole byId);
+    void copyRoleResourceDTO(TRole byId, @MappingTarget RoleResourceDTO roleResourceDTO);
 }

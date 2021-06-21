@@ -38,7 +38,8 @@ public class RoleRepositoryImpl extends ICommonsRepositoryImpl<Role, TRole, Role
 
     @Override
     public RoleResourceDTO getDetails(Long id) {
-        RoleResourceDTO roleResourceDTO = converter.buildRoleResourceDTO(dao.getById(id));
+        RoleResourceDTO roleResourceDTO = new RoleResourceDTO();
+        converter.copyRoleResourceDTO(dao.getById(id), roleResourceDTO);
         roleResourceDTO.setResources(resourceRepository.queryListByRoleId(id));
         return roleResourceDTO;
     }
