@@ -107,6 +107,16 @@
                 <version>${mapper-spring-boot-starter.version}</version>
             </dependency>
             <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-core</artifactId>
+                <version>${mapper-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper-spring-boot-starter.version}</version>
@@ -411,5 +421,6 @@
         <kylin-jdbc.version>4.0.0-beta</kylin-jdbc.version>
         <mybatis-redis-cache.version>1.2.7</mybatis-redis-cache.version>
         <ceph.version>0.80.5</ceph.version>
+        <mapper-core.version>1.1.5</mapper-core.version>
     </properties>
 </project>

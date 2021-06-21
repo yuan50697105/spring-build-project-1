@@ -2,7 +2,6 @@ package org.example.spring.plugins.mybatis.converter;
 
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
-import org.example.spring.plugins.mybatis.entity.query.IBaseQuery;
 
 import java.util.List;
 

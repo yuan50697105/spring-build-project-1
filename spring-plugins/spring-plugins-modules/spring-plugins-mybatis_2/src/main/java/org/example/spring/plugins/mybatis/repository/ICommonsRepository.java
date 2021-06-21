@@ -3,7 +3,6 @@ package org.example.spring.plugins.mybatis.repository;
 import org.example.spring.plugins.commons.entity.ICommonsEntity;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
-import org.example.spring.plugins.commons.entity.query.ICommonsQuery;
 
 import java.util.List;
 import java.util.Optional;

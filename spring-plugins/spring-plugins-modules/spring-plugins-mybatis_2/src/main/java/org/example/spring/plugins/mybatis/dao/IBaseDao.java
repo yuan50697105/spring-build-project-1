@@ -3,7 +3,6 @@ package org.example.spring.plugins.mybatis.dao;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
-import org.example.spring.plugins.mybatis.entity.query.IBaseQuery;
 import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;
