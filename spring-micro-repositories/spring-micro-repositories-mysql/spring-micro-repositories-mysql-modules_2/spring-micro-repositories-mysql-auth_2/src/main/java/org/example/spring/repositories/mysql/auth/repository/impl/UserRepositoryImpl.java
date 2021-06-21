@@ -41,7 +41,8 @@ public class UserRepositoryImpl extends ICommonsRepositoryImpl<User, TUser, User
 
     @Override
     public UserRoleResourceDTO getWithRoleAndResource(Long id) {
-        UserRoleResourceDTO dto = converter.buildUserRoleResourceDTO(dao.getById(id));
+        UserRoleResourceDTO dto = new UserRoleResourceDTO();
+        converter.copyUserRoleResourceDTO(dao.getById(id), dto);
         dto.setRoles(roleRepository.queryListByUserId(id));
         dto.setResources(resourceRepository.queryTreeByUserId(id));
         return dto;
@@ -49,7 +50,8 @@ public class UserRepositoryImpl extends ICommonsRepositoryImpl<User, TUser, User
 
     @Override
     public UserRoleDTO getWithRole(Long id) {
-        UserRoleDTO dto = converter.buildUserRoleDTO(dao.getById(id));
+        UserRoleDTO dto = new UserRoleDTO();
+        converter.copyUserRoleDTO(dao.getById(id), dto);
         dto.setRoles(roleRepository.queryListByUserId(id));
         return dto;
     }

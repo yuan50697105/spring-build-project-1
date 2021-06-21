@@ -12,6 +12,7 @@ import org.example.spring.repositories.mysql.auth.table.po.TUser;
 import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(config = BaseBuilder.class)
@@ -19,9 +20,9 @@ public interface UserConverter extends ICommonsConverter<User, TUser, UserQuery,
     UserConverter CONVERTER = Mappers.getMapper(UserConverter.class);
 
     @Mapping(target = "roles", ignore = true)
-    @Mapping(target = "resources", ignore = true)
-    UserRoleResourceDTO buildUserRoleResourceDTO(TUser userDTO);
+    @Mapping(target = "resources", source = "")
+    void copyUserRoleResourceDTO(TUser byId, @MappingTarget UserRoleResourceDTO dto);
 
     @Mapping(target = "roles", ignore = true)
-    UserRoleDTO buildUserRoleDTO(TUser byId);
+    void copyUserRoleDTO(TUser byId, @MappingTarget UserRoleDTO dto);
 }
