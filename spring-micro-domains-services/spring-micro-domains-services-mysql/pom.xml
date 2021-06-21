@@ -18,6 +18,8 @@
         <module>spring-micro-domains-services-mysql-patient_2</module>
         <module>spring-micro-domains-services-mysql_1</module>
         <module>spring-micro-domains-services-mysql_2</module>
+        <module>spring-micro-domains-services-mysql-bill_1</module>
+        <module>spring-micro-domains-services-mysql-bill_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>

@@ -24,16 +24,8 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-mysql_1</artifactId>
+            <artifactId>spring-micro-domains-services-mysql-bill_1</artifactId>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.example.spring</groupId>-->
-        <!--            <artifactId>spring-plugins-wx</artifactId>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.alibaba.cloud</groupId>-->
-        <!--            <artifactId>aliyun-sms-spring-boot-starter</artifactId>-->
-        <!--        </dependency>-->
     </dependencies>
 
 </project>

@@ -48,6 +48,16 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-domains-services-mysql-bill_1</artifactId>
+                <version>0.0.39-M5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-domains-services-mysql-bill_2</artifactId>
+                <version>0.0.39-M5-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-mysql_1</artifactId>
                 <version>0.0.39-M5-SNAPSHOT</version>
             </dependency>
