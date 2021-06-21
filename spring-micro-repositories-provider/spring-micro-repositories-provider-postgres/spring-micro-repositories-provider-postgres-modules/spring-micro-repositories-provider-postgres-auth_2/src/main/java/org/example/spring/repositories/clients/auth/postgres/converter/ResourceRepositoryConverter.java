@@ -1,6 +1,5 @@
 package org.example.spring.repositories.clients.auth.postgres.converter;
 
-
 import cn.hutool.core.lang.tree.Tree;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;

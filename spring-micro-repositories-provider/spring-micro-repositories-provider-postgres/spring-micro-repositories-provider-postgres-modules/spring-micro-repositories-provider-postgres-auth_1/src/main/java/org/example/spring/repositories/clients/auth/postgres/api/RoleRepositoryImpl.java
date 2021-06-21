@@ -1,11 +1,11 @@
 package org.example.spring.repositories.clients.auth.postgres.api;
 
-
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.RoleRepository;
 import org.example.spring.repositories.clients.auth.postgres.converter.RoleRepositoryConverter;
 import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.RoleResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.RoleQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.RoleVo;
 import org.example.spring.repositories.postgres.auth.repository.TRoleRepository;
@@ -15,6 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
+
 
 @AllArgsConstructor
 @Repository
@@ -165,5 +166,15 @@ public class RoleRepositoryImpl implements RoleRepository {
     @Override
     public IPageData<RoleDTO> data(RoleQuery query) {
         return converter.build(repository.queryPage(converter.build(query)));
+    }
+
+    @Override
+    public RoleResourceDTO getRoleResource(Long id) {
+        return converter.build2(repository.getDetails(id));
+    }
+
+    @Override
+    public Optional<RoleResourceDTO> getRoleResourceOpt(Long id) {
+        return Optional.empty();
     }
 }

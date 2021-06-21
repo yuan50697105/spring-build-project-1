@@ -1,6 +1,5 @@
 package org.example.spring.repositories.clients.auth.postgres.api;
 
-
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.UserRepository;
 import org.example.spring.repositories.clients.auth.postgres.converter.UserRepositoryConverter;
@@ -20,8 +19,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+
 @Repository
-public  class UserRepositoryImpl implements UserRepository {
+public class UserRepositoryImpl implements UserRepository {
 
     private final TUserRepository repository;
     private final UserRepositoryConverter converter;
@@ -43,7 +43,8 @@ public  class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void save(List<UserVo> vo) {
-        repository.save(converter.buildVo(vo));;
+        repository.save(converter.buildVo(vo));
+        ;
     }
 
     @Override
@@ -63,7 +64,7 @@ public  class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void update(UserVo vo, UserQuery userQuery) {
-        repository.update(converter.buildVo(vo),converter.build(userQuery));
+        repository.update(converter.buildVo(vo), converter.build(userQuery));
     }
 
     @Override
@@ -73,7 +74,7 @@ public  class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void updateNull(UserVo vo, UserQuery userQuery) {
-        repository.updateNull(converter.buildVo(vo),converter.build(userQuery));
+        repository.updateNull(converter.buildVo(vo), converter.build(userQuery));
     }
 
     @Override

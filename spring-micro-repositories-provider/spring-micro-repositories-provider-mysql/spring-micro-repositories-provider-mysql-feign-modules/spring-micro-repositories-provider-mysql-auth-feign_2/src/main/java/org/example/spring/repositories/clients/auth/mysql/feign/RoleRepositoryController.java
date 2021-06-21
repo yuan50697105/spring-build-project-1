@@ -12,6 +12,8 @@ import org.example.spring.repositories.feign.auth.clients.RoleRepositoryClient;
 import org.example.spring.repositories.feign.commons.clients.impl.CommonsFeignClientImpl;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 @RestController
 @DubboService
 public class RoleRepositoryController extends CommonsFeignClientImpl<Role, RoleVo, RoleDTO, RoleQuery, RoleRepository> implements RoleRepositoryClient {
@@ -25,5 +27,10 @@ public class RoleRepositoryController extends CommonsFeignClientImpl<Role, RoleV
     @Override
     public RoleResourceDTO getRoleResource(Long id) {
         return repository.getRoleResource(id);
+    }
+
+    @Override
+    public Optional<RoleResourceDTO> getRoleResourceOpt(Long id) {
+        return repository.getRoleResourceOpt(id);
     }
 }

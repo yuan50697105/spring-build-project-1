@@ -1,6 +1,5 @@
 package org.example.spring.repositories.clients.auth.postgres.dubbo;
 
-
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.repositories.clients.auth.api.UserTokenRepository;
 import org.example.spring.repositories.clients.dubbo.auth.api.UserTokenDubboRepository;

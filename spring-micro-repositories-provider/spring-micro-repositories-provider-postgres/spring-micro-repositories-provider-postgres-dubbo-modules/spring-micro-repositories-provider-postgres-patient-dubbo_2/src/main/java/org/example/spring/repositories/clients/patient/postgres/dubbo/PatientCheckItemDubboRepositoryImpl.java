@@ -1,4 +1,4 @@
-package org.example.spring.repositories.clients.patient.mysql.dubbo;
+package org.example.spring.repositories.clients.patient.postgres.dubbo;
 
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.repositories.clients.dubbo.commons.CommonsDubboRepositoryImpl;
