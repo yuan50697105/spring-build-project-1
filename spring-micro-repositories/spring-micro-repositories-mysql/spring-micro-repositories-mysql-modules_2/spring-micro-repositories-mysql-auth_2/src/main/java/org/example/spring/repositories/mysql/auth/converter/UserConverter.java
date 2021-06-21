@@ -20,7 +20,7 @@ public interface UserConverter extends ICommonsConverter<User, TUser, UserQuery,
     UserConverter CONVERTER = Mappers.getMapper(UserConverter.class);
 
     @Mapping(target = "roles", ignore = true)
-    @Mapping(target = "resources", source = "")
+    @Mapping(target = "resources", ignore = true)
     void copyUserRoleResourceDTO(TUser byId, @MappingTarget UserRoleResourceDTO dto);
 
     @Mapping(target = "roles", ignore = true)
