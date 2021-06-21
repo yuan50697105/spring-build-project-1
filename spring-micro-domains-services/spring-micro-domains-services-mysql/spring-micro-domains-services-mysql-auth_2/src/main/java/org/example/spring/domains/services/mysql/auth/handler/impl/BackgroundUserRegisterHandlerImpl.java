@@ -9,11 +9,9 @@ import org.example.spring.repositories.clients.auth.api.UserRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.validation.ValidationException;
-
 @Component(RegisterVo.RegisterType.Constants.BACKGROUND_USER_HANDLER)
 @Transactional
-public class BackgroundUserRegisterHandlerImpl implements UserRegisterHandler {
+public class BackgroundUserRegisterHandlerImpl extends AbstractUserRegisterHandlerImpl implements UserRegisterHandler {
     private final UserRepository userRepository;
 
     public BackgroundUserRegisterHandlerImpl(UserRepository userRepository) {
@@ -26,9 +24,5 @@ public class BackgroundUserRegisterHandlerImpl implements UserRegisterHandler {
         return R.success(new RegisterResult(registerVo.getUser().getUsername(), ""));
     }
 
-    @Override
-    public void verifyAccount(RegisterVo registerVo) throws ValidationException {
-
-    }
 
 }
