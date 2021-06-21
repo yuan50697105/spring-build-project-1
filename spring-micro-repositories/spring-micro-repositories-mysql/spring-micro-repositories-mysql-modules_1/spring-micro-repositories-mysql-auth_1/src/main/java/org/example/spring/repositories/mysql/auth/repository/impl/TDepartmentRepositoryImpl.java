@@ -80,7 +80,8 @@ public class TDepartmentRepositoryImpl extends IBaseRepositoryImpl<TDepartment, 
 
     @Override
     public TDepartmentRoleDTO getDetails(Long id) {
-        TDepartmentRoleDTO dto = converter.buildDepartmentRoleDTO(dao.getById(id));
+        TDepartmentRoleDTO dto = new TDepartmentRoleDTO();
+        converter.copyDepartmentRoleDTO(dao.getById(id),dto);
         dto.setRoles(roleRepository.queryListByDepartmentId(id));
         return dto;
     }

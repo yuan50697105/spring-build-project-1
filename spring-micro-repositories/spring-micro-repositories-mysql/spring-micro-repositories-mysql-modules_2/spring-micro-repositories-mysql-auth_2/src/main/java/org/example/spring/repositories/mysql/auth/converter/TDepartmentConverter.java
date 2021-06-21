@@ -42,5 +42,5 @@ public interface TDepartmentConverter extends IBaseConverter<TDepartment, TDepar
     void departmentCopy(TDepartmentVo tDepartmentVo, @MappingTarget TDepartment tDepartment);
 
     @Mapping(target = "roles", ignore = true)
-    TDepartmentRoleDTO buildDepartmentRoleDTO(TDepartment byId);
+    void copyDepartmentRoleDTO(TDepartment byId, @MappingTarget TDepartmentRoleDTO dto);
 }
