@@ -8,10 +8,10 @@ import org.example.spring.repositories.commons.entity.auth.dto.UserRoleDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.UserRoleResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.UserQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
-import org.example.spring.repositories.mysql.auth.repository.TUserRepository;
-import org.example.spring.repositories.mysql.auth.table.dto.TUserDTO;
-import org.example.spring.repositories.mysql.auth.table.dto.TUserRoleDTO;
-import org.example.spring.repositories.mysql.auth.table.query.TUserQuery;
+import org.example.spring.repositories.oracle.auth.repository.TUserRepository;
+import org.example.spring.repositories.oracle.auth.table.dto.TUserDTO;
+import org.example.spring.repositories.oracle.auth.table.dto.TUserRoleDTO;
+import org.example.spring.repositories.oracle.auth.table.query.TUserQuery;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;

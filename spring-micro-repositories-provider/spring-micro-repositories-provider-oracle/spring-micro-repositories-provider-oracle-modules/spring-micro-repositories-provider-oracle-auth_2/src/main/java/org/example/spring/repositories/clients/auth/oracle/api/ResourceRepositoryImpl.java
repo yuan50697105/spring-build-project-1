@@ -9,7 +9,7 @@ import org.example.spring.repositories.clients.auth.oracle.converter.ResourceRep
 import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.ResourceQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.ResourceVo;
-import org.example.spring.repositories.mysql.auth.repository.TResourceRepository;
+import org.example.spring.repositories.oracle.auth.repository.TResourceRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
