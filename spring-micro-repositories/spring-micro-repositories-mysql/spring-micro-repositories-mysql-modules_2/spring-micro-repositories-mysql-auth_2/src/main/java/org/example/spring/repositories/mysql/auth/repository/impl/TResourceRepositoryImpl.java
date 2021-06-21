@@ -12,6 +12,7 @@ import org.example.spring.repositories.mysql.auth.table.dto.TResourceDTO;
 import org.example.spring.repositories.mysql.auth.table.po.TResource;
 import org.example.spring.repositories.mysql.auth.table.query.TResourceQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TResourceVo;
+import org.example.spring.repositories.mysql.auth.utils.ResourceUtils;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,32 +31,19 @@ public class TResourceRepositoryImpl extends IBaseRepositoryImpl<TResource, TRes
     public List<Tree<Long>> queryTreeByRoleId(Long roleId) {
         List<TResource> tResources = dao.queryListByRoleId(roleId);
         List<TResourceDTO> resourceDTOS = converter.buildDTOS(tResources);
-        return TreeUtil.build(resourceDTOS, 0L, resourceToTreeParser());
+        return TreeUtil.build(resourceDTOS, 0L, ResourceUtils.tResourceToTreeParser());
     }
 
     @Override
     public List<Tree<Long>> queryTreeByUserId(Long id) {
         List<TResource> tResources = dao.queryListByUserId(id);
         List<TResourceDTO> resourceDTOS = converter.buildDTOS(tResources);
-        return TreeUtil.build(resourceDTOS, 0L, resourceToTreeParser());
+        return TreeUtil.build(resourceDTOS, 0L, ResourceUtils.tResourceToTreeParser());
     }
 
     @Override
     public List<Tree<Long>> queryTree(TResourceQuery query) {
-        return TreeUtil.build(queryList(query), 0L, resourceToTreeParser());
-    }
-
-    private NodeParser<TResourceDTO, Long> resourceToTreeParser() {
-        return (resource, tree) -> {
-            tree.setParentId(resource.getPid());
-            tree.setName(resource.getName());
-            tree.setId(resource.getId());
-            tree.setWeight(resource.getWeight());
-            Map<String, Object> map = BeanUtil.beanToMap(resource);
-            for (Map.Entry<String, Object> entry : map.entrySet()) {
-                tree.putExtra(entry.getKey(), entry.getValue());
-            }
-        };
+        return TreeUtil.build(queryList(query), 0L, ResourceUtils.tResourceToTreeParser());
     }
 
 }
