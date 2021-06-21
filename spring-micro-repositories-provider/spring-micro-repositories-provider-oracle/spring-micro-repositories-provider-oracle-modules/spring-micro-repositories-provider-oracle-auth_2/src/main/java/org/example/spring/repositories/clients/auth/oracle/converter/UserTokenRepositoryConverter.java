@@ -5,9 +5,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.auth.dto.UserTokenDto;
 import org.example.spring.repositories.commons.entity.auth.query.UserTokenQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.UserTokenVo;
-import org.example.spring.repositories.mysql.auth.table.dto.TUserTokenDto;
-import org.example.spring.repositories.mysql.auth.table.query.TUserTokenQuery;
-import org.example.spring.repositories.mysql.auth.table.vo.TUserTokenVo;
+import org.example.spring.repositories.oracle.auth.table.dto.TUserTokenDto;
+import org.example.spring.repositories.oracle.auth.table.query.TUserTokenQuery;
+import org.example.spring.repositories.oracle.auth.table.vo.TUserTokenVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
