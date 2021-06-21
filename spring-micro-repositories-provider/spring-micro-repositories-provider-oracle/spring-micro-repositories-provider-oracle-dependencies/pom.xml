@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-provider-oracle</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-M5-SNAPSHOT</version>
+        <version>0.0.39-M5</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,152 +15,152 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-feign_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-feign_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-dubbo_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-auth_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-dubbo_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-auth_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-auth-feign_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-auth-feign_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-auth-dubbo_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-auth-dubbo_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-bill_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-bill_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-bill-feign_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-bill-feign_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-bill-dubbo_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-bill-dubbo_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-customer_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-customer_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-customer-dubbo_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-customer-dubbo_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-customer-feign_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-customer-feign_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-patient_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-patient_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-patient-dubbo_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-patient-dubbo_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-patient-feign_1</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-provider-oracle-patient-feign_2</artifactId>
-                <version>0.0.39-M5-SNAPSHOT</version>
+                <version>0.0.39-M5</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
