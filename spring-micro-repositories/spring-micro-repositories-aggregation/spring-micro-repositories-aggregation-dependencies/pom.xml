@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-micro-repositories-aggregation</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-M5</version>
+        <version>0.0.39-M6-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -24,72 +24,72 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-auth_1</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-auth_2</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-bill_1</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-bill_2</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-customer_1</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-customer_2</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-department_1</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-department_2</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-items_1</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-items_2</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-patient_1</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-patient_2</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-report_1</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-repositories-aggregation-report_2</artifactId>
-                <version>0.0.39-M5</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
