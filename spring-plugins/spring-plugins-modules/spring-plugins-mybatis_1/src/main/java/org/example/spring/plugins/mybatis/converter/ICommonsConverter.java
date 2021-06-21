@@ -9,17 +9,17 @@ import java.util.List;
 
 public interface ICommonsConverter<T, T2 extends IBaseEntity, Q extends BaseQuery,
         Q2 extends IBaseQuery, VO extends T, DTO extends T> {
-    <T2 extends IBaseEntity> T2 buildPo(VO vo);
+    T2 buildPo(VO vo);
 
-    <T2 extends IBaseEntity> List<T2> buildPo(VO[] vo);
+    List<T2> buildPo(VO[] vo);
 
-    <T2 extends IBaseEntity, VO extends T> List<T2> buildPo(List<VO> vo);
+    List<T2> buildPo(List<VO> vo);
 
-    <Q2 extends IBaseQuery> Q2 buildQuery(Q q);
+    Q2 buildQuery(Q q);
 
-    <DTO extends T> DTO buildDTO(T2 dao);
+    DTO buildDTO(T2 dao);
 
-    <DTO extends T, T2 extends IBaseEntity> List<DTO> buildDTOS(List<T2> listByIds);
+    List<DTO> buildDTOS(List<T2> listByIds);
 
-    <DTO extends T, T2 extends IBaseEntity> IPageData<DTO> buildDTOS(IPageData<T2> listByIds);
+    IPageData<DTO> buildDTOS(IPageData<T2> listByIds);
 }
