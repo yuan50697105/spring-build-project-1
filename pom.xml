@@ -43,7 +43,7 @@
         <module>spring-cloud-micro-repositories-provider</module>
         <module>spring-cloud-micro-repositories-launchers</module>
         <module>spring-cloud-micro-services</module>
-        <module>spring-cloud-micro-services-clients</module>
+        <module>spring-cloud-micro-services-provider</module>
         <module>spring-cloud-micro-services-launchers</module>
         <module>spring-cloud-micro-domains-services</module>
         <module>spring-cloud-micro-domains-services-provider</module>
