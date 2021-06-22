@@ -11,53 +11,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jta-atomikos</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-plugins-mybatis-rws_1</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-mysql-bill_1</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.example.spring</groupId>
-                    <artifactId>spring-plugins-mybatis_1</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-postgresql-bill_1</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.example.spring</groupId>
-                    <artifactId>spring-plugins-mybatis_1</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-mssql-bill_1</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.example.spring</groupId>
-                    <artifactId>spring-plugins-mybatis_1</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-oracle-bill_1</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.example.spring</groupId>
-                    <artifactId>spring-plugins-mybatis_1</artifactId>
-                </exclusion>
-            </exclusions>
+            <artifactId>spring-plugins-mybatis_1</artifactId>
         </dependency>
     </dependencies>
-
 </project>

@@ -11,52 +11,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jta-atomikos</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-plugins-mybatis-rws_2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-mysql-report_2</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.example.spring</groupId>
-                    <artifactId>spring-plugins-mybatis_2</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-postgresql-report_2</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.example.spring</groupId>
-                    <artifactId>spring-plugins-mybatis_2</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-mssql-report_2</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.example.spring</groupId>
-                    <artifactId>spring-plugins-mybatis_2</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-oracle-report_2</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.example.spring</groupId>
-                    <artifactId>spring-plugins-mybatis_2</artifactId>
-                </exclusion>
-            </exclusions>
+            <artifactId>spring-plugins-mybatis_2</artifactId>
         </dependency>
     </dependencies>
 
