@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.example.spring.repositories.aggregation.auth.mapper.TRoleQueryMapper">
+    <resultMap id="role" type="org.example.spring.repositories.aggregation.auth.table.po.TRole"
+               extends="org.example.spring.repositories.aggregation.auth.mapper.TRoleMapper.BaseResultMap"/>
+
+    <sql id="role">
+        <include refid="org.example.spring.repositories.aggregation.auth.mapper.TRoleMapper.Base_Column_List">
+        </include>
+    </sql>
+    <select id="queryListByUserId" resultMap="role">
+        select
+        <include refid="role">
+        </include>
+        from t_role where id in (select role_id from t_user_role where user_id = #{userId,jdbcType=BIGINT})
+    </select>
+    <select id="queryListByDepartmentId" resultMap="role">
+        select id,
+        create_id,
+        update_id,
+        create_user,
+        update_user,
+        create_date,
+        update_date,
+        name
+        from t_role
+        where id in (select role_id from t_department_role where department_id = #{departmentId,jdbcType=BIGINT})
+    </select>
+</mapper>
