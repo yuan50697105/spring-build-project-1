@@ -22,7 +22,6 @@ import java.util.stream.Stream;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository {
-
     private final TUserRepository repository;
     private final UserRepositoryConverter converter;
 
@@ -171,14 +170,9 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public UserRoleResourceDTO getWithRoleResource(Long id) {
-//        TUserRoleResourceDTO tUserRoleResourceDTO = userRepository.getWithRoleAndResource(id);
-//        UserRoleResourceDTO userRoleResourceDTO = userRepositoryConverter.buildWithRoleResource(tUserRoleResourceDTO);
-//        userRoleResourceDTO.setRoles(userRepositoryConverter.buildRole(tUserRoleResourceDTO.getRoles()));
-//        if (ObjectUtil.isNotEmpty(tUserRoleResourceDTO.getResources())) {
-//            userRoleResourceDTO.setResources(userRepositoryConverter.buildResources(tUserRoleResourceDTO.getResources()));
-//        }
-//        return userRoleResourceDTO;
-        return null;
+        UserRoleResourceDTO userRoleResourceDTO = new UserRoleResourceDTO();
+        converter.copy(repository.getWithRoleAndResource(id), userRoleResourceDTO);
+        return userRoleResourceDTO;
     }
 
     @Override
