@@ -13,7 +13,6 @@
         <module>spring-micro-repositories-kylin</module>
         <module>spring-micro-repositories-mongodb</module>
         <module>spring-micro-repositories-elasticsearch</module>
-        <module>spring-micro-repositories-aggregation</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
