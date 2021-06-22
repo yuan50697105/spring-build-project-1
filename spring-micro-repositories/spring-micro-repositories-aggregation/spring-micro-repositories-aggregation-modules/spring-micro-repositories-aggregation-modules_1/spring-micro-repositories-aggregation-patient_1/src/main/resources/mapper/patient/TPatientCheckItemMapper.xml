@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.example.spring.repositories.aggregation.patient.mapper.TPatientCheckItemMapper">
-    <resultMap id="BaseResultMap" type="org.example.spring.repositories.aggregation.patient.table.po.TPatientCheckItem">
+<mapper namespace="org.example.spring.repositories.patient.mapper.TPatientCheckItemMapper">
+    <resultMap id="BaseResultMap" type="org.example.spring.repositories.patient.table.po.TPatientCheckItem">
         <!--@mbg.generated-->
         <!--@Table t_patient_check_item-->
         <id column="id" jdbcType="BIGINT" property="id"/>

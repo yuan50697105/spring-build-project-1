@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="org.example.spring.repositories.aggregation.bill.mapper.TBillItemsInfoQueryMapper">
-    <resultMap id="item" type="org.example.spring.repositories.aggregation.bill.table.po.TBillItemsInfo">
+<mapper namespace="org.example.spring.repositories.bill.mapper.TBillItemsInfoQueryMapper">
+    <resultMap id="item" type="org.example.spring.repositories.bill.table.po.TBillItemsInfo">
         <id column="id" property="id"/>
         <result column="bill_id" property="billId"/>
         <result column="order_no" property="orderNo"/>

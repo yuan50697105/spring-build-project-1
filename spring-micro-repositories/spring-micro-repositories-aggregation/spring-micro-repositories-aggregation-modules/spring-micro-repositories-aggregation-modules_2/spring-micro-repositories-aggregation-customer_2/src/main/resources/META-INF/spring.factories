@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.repositories.aggregation.customer.CustomerConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.repositories.customer.CustomerConfiguration

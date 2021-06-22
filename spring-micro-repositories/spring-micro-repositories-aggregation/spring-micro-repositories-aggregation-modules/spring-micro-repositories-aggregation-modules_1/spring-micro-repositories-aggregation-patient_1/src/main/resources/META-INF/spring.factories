@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.repositories.aggregation.patient.PatientConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.repositories.patient.PatientConfiguration

@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.repositories.aggregation.report.ReportConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.repositories.report.ReportConfiguration

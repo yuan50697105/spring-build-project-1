@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.repositories.aggregation.auth.AuthConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.example.spring.repositories.auth.AuthConfiguration
