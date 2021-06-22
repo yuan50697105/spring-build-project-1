@@ -1,6 +1,5 @@
 package org.example.spring.plugins.mybatis.repository.impl;
 
-import org.example.spring.plugins.commons.entity.ICommonsEntity;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 import org.example.spring.plugins.mybatis.converter.ICommonsConverter;
@@ -16,7 +15,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 public abstract class ICommonsRepositoryImpl<
-        T extends ICommonsEntity,
+        T,
         T2 extends IBaseEntity,
         Q extends BaseQuery,
         Q2 extends IBaseQuery,

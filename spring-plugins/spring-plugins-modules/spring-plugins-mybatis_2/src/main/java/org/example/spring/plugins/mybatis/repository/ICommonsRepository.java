@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public interface ICommonsRepository<T extends ICommonsEntity, DTO extends T, VO extends T, Q extends BaseQuery> {
+public interface ICommonsRepository<T, DTO extends T, VO extends T, Q extends BaseQuery> {
     void save(VO vo);
 
     void save(VO... vo);
