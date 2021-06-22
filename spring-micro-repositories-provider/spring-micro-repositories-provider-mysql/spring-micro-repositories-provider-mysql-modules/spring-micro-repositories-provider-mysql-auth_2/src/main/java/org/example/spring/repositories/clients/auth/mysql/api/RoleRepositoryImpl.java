@@ -3,15 +3,12 @@ package org.example.spring.repositories.clients.auth.mysql.api;
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.RoleRepository;
-import org.example.spring.repositories.clients.auth.mysql.converter.RoleRepositoryConverter;
 import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.RoleResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.RoleQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.RoleVo;
-import org.example.spring.repositories.mysql.auth.repository.TRoleRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -20,7 +17,6 @@ import java.util.stream.Stream;
 @AllArgsConstructor
 @Repository
 public class RoleRepositoryImpl implements RoleRepository {
-    private final RoleRepositoryConverter converter;
     private final org.example.spring.repositories.mysql.auth.repository.RoleRepository repository;
 
     @Override
@@ -30,7 +26,7 @@ public class RoleRepositoryImpl implements RoleRepository {
 
     @Override
     public void save(RoleVo... vo) {
-        repository.save(vo);;
+        repository.save(vo);
     }
 
     @Override
@@ -45,7 +41,7 @@ public class RoleRepositoryImpl implements RoleRepository {
 
     @Override
     public void update(RoleVo... vo) {
-        repository.update(vo);;
+        repository.update(vo);
     }
 
     @Override
@@ -75,7 +71,7 @@ public class RoleRepositoryImpl implements RoleRepository {
 
     @Override
     public void updateNull(List<RoleVo> vo) {
-        repository.updateNull(vo);;
+        repository.updateNull(vo);
     }
 
     @Override

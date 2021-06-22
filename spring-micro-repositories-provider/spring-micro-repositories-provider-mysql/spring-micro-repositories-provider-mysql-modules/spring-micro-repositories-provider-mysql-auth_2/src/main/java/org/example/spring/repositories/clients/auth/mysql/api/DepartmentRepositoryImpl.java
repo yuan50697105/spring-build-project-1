@@ -19,7 +19,6 @@ import java.util.stream.Stream;
 @AllArgsConstructor
 @Repository
 public class DepartmentRepositoryImpl implements DepartmentRepository {
-    private final DepartmentRepositoryConverter converter;
     private final org.example.spring.repositories.mysql.auth.repository.DepartmentRepository repository;
 
     @Override

@@ -2,7 +2,6 @@ package org.example.spring.repositories.clients.auth.mysql.api;
 
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.UserRepository;
-import org.example.spring.repositories.clients.auth.mysql.converter.UserRepositoryConverter;
 import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.UserRoleDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.UserRoleResourceDTO;
@@ -19,7 +18,7 @@ import java.util.stream.Stream;
 public class UserRepositoryImpl implements UserRepository {
 private final org.example.spring.repositories.mysql.auth.repository.UserRepository repository;
 
-    public UserRepositoryImpl(org.example.spring.repositories.mysql.auth.repository.UserRepository repository, UserRepositoryConverter converter) {
+    public UserRepositoryImpl(org.example.spring.repositories.mysql.auth.repository.UserRepository repository) {
         this.repository = repository;
     }
 
@@ -37,7 +36,6 @@ private final org.example.spring.repositories.mysql.auth.repository.UserReposito
     @Override
     public void save(List<UserVo> vo) {
         repository.save(vo);
-        ;
     }
 
     @Override
@@ -48,7 +46,6 @@ private final org.example.spring.repositories.mysql.auth.repository.UserReposito
     @Override
     public void update(UserVo... vo) {
         repository.update(vo);
-        ;
     }
 
     @Override
@@ -74,7 +71,6 @@ private final org.example.spring.repositories.mysql.auth.repository.UserReposito
     @Override
     public void updateNull(UserVo... vo) {
         repository.updateNull(vo);
-        ;
     }
 
     @Override

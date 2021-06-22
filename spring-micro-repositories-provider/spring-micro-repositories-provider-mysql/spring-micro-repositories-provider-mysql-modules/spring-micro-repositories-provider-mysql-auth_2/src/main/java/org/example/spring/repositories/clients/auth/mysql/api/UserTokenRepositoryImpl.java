@@ -4,7 +4,6 @@ package org.example.spring.repositories.clients.auth.mysql.api;
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.UserTokenRepository;
-import org.example.spring.repositories.clients.auth.mysql.converter.UserTokenRepositoryConverter;
 import org.example.spring.repositories.commons.entity.auth.dto.UserTokenDto;
 import org.example.spring.repositories.commons.entity.auth.query.UserTokenQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.UserTokenVo;
@@ -17,7 +16,6 @@ import java.util.stream.Stream;
 @AllArgsConstructor
 @Repository
 public class UserTokenRepositoryImpl implements UserTokenRepository {
-    private final UserTokenRepositoryConverter converter;
     private final org.example.spring.repositories.mysql.auth.repository.UserTokenRepository repository;
 
     @Override
