@@ -9,7 +9,6 @@ import org.example.spring.repositories.commons.entity.auth.dto.DepartmentDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.DepartmentRoleDTO;
 import org.example.spring.repositories.commons.entity.auth.query.DepartmentQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.DepartmentVo;
-import org.example.spring.repositories.mysql.auth.repository.TDepartmentRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
@@ -21,61 +20,61 @@ import java.util.stream.Stream;
 @Repository
 public class DepartmentRepositoryImpl implements DepartmentRepository {
     private final DepartmentRepositoryConverter converter;
-    private final TDepartmentRepository repository;
+    private final org.example.spring.repositories.mysql.auth.repository.DepartmentRepository repository;
 
     @Override
     public void save(DepartmentVo vo) {
-        repository.save(converter.buildVo(vo));
+        repository.save(vo);
     }
 
     @Override
     public void save(DepartmentVo... vo) {
-        repository.save(converter.buildVo(Arrays.asList(vo)));
+        repository.save(Arrays.asList(vo));
     }
 
     @Override
     public void save(List<DepartmentVo> vo) {
-        repository.save(converter.buildVo(vo));
+        repository.save(vo);
     }
 
     @Override
     public void update(DepartmentVo vo) {
-        repository.update(converter.buildVo(vo));
+        repository.update(vo);
     }
 
     @Override
     public void update(DepartmentVo... vo) {
-        repository.update(converter.buildVo(Arrays.asList(vo)));
+        repository.update(Arrays.asList(vo));
     }
 
     @Override
     public void update(List<DepartmentVo> vo) {
-        repository.update(converter.buildVo(vo));
+        repository.update(vo);
     }
 
     @Override
     public void update(DepartmentVo vo, DepartmentQuery departmentQuery) {
-        repository.update(converter.buildVo(vo), converter.build(departmentQuery));
+        repository.update(vo, departmentQuery);
     }
 
     @Override
     public void updateNull(DepartmentVo vo) {
-        repository.updateNull(converter.buildVo(vo));
+        repository.updateNull(vo);
     }
 
     @Override
     public void updateNull(DepartmentVo vo, DepartmentQuery departmentQuery) {
-        repository.updateNull(converter.buildVo(vo), converter.build(departmentQuery));
+        repository.updateNull(vo, departmentQuery);
     }
 
     @Override
     public void updateNull(DepartmentVo... vo) {
-        repository.updateNull(converter.buildVo(Arrays.asList(vo)));
+        repository.updateNull(Arrays.asList(vo));
     }
 
     @Override
     public void updateNull(List<DepartmentVo> vo) {
-        repository.updateNull(converter.buildVo(vo));
+        repository.updateNull(vo);
     }
 
     @Override
@@ -95,7 +94,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository {
 
     @Override
     public DepartmentDTO get(Long id) {
-        return converter.build(repository.get(id));
+        return repository.get(id);
     }
 
     @Override
@@ -105,12 +104,12 @@ public class DepartmentRepositoryImpl implements DepartmentRepository {
 
     @Override
     public List<DepartmentDTO> listByIds(Long... ids) {
-        return converter.build(repository.listByIds(ids));
+        return repository.listByIds(ids);
     }
 
     @Override
     public List<DepartmentDTO> listByIds(List<Long> ids) {
-        return converter.build(repository.listByIds(ids));
+        return repository.listByIds(ids);
     }
 
     @Override
@@ -125,7 +124,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository {
 
     @Override
     public DepartmentDTO one(DepartmentQuery query) {
-        return converter.build(repository.queryOne(converter.build(query)));
+        return repository.queryOne(query);
     }
 
     @Override
@@ -135,7 +134,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository {
 
     @Override
     public DepartmentDTO first(DepartmentQuery query) {
-        return converter.build(repository.queryFirst(converter.build(query)));
+        return repository.queryFirst(query);
     }
 
     @Override
@@ -145,32 +144,32 @@ public class DepartmentRepositoryImpl implements DepartmentRepository {
 
     @Override
     public List<DepartmentDTO> list(DepartmentQuery query) {
-        return converter.build(repository.queryList(converter.build(query)));
+        return repository.queryList(query);
     }
 
     @Override
     public Stream<DepartmentDTO> listStream(DepartmentQuery query) {
-        return converter.build(repository.queryStream(converter.build(query)));
+        return repository.queryStream(query);
     }
 
     @Override
     public List<DepartmentDTO> top(DepartmentQuery query) {
-        return converter.build(repository.queryTop(converter.build(query)));
+        return repository.queryTop(query);
     }
 
     @Override
     public Stream<DepartmentDTO> topStream(DepartmentQuery query) {
-        return converter.build(repository.queryTopStream(converter.build(query)));
+        return repository.queryTopStream(query);
     }
 
     @Override
     public IPageData<DepartmentDTO> data(DepartmentQuery query) {
-        return converter.build(repository.queryPage(converter.build(query)));
+        return repository.queryPage(query);
     }
 
     @Override
     public DepartmentRoleDTO getDepartmentRole(Long id) {
-        return converter.build2(repository.getDetails(id));
+        return repository.getDetails(id);
     }
 
     @Override
