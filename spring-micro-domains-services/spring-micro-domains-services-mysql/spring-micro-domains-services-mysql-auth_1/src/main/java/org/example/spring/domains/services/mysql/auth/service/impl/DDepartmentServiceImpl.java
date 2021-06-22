@@ -17,6 +17,6 @@ import org.springframework.stereotype.Service;
 public class DDepartmentServiceImpl extends DServiceImpl<Department, DepartmentVo, DepartmentDTO, DepartmentQuery, DepartmentRepository> implements DDepartmentService {
     @Override
     public DepartmentRoleDTO getWithRole(Long id) {
-        return null;
+        return repository.getDepartmentRole(id);
     }
 }
