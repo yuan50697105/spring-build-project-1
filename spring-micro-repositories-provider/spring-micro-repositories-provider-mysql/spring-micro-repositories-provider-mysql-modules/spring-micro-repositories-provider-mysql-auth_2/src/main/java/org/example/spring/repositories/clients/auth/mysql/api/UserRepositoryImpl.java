@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository {
-private final org.example.spring.repositories.mysql.auth.repository.UserRepository repository;
+    private final org.example.spring.repositories.mysql.auth.repository.UserRepository repository;
 
     public UserRepositoryImpl(org.example.spring.repositories.mysql.auth.repository.UserRepository repository) {
         this.repository = repository;

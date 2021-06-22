@@ -4,7 +4,6 @@ package org.example.spring.repositories.clients.auth.mysql.api;
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.auth.api.DepartmentRepository;
-import org.example.spring.repositories.clients.auth.mysql.converter.DepartmentRepositoryConverter;
 import org.example.spring.repositories.commons.entity.auth.dto.DepartmentDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.DepartmentRoleDTO;
 import org.example.spring.repositories.commons.entity.auth.query.DepartmentQuery;
