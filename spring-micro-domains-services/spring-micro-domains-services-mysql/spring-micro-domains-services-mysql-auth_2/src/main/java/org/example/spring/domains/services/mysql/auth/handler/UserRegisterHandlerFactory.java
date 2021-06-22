@@ -5,8 +5,8 @@ import ai.yue.library.base.view.Result;
 import org.example.spring.domains.services.mysql.auth.dto.RegisterResult;
 import org.example.spring.domains.services.mysql.auth.vo.RegisterVo;
 
-public interface UserRegisterHandlerFactory {
+public interface UserRegisterHandlerFactory  extends UserRegisterHandler{
     Result<RegisterResult> register(RegisterVo registerVo);
 
-    Result<?> verifyAccount(RegisterVo registerVo) throws ResultException;
+    void verifyAccount(RegisterVo registerVo) throws ResultException;
 }

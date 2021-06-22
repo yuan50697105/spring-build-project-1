@@ -7,12 +7,14 @@ import org.example.spring.domains.services.mysql.auth.dto.RegisterResult;
 import org.example.spring.domains.services.mysql.auth.handler.UserRegisterHandler;
 import org.example.spring.domains.services.mysql.auth.handler.UserRegisterHandlerFactory;
 import org.example.spring.domains.services.mysql.auth.vo.RegisterVo;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
 @Component(UserRegisterHandlerFactoryImpl.USER_REGISTER_HANDLER_FACTORY)
-public class UserRegisterHandlerFactoryImpl implements UserRegisterHandlerFactory {
+@Primary
+public class UserRegisterHandlerFactoryImpl extends AbstractUserRegisterHandlerImpl implements UserRegisterHandlerFactory {
     public static final String USER_REGISTER_HANDLER_FACTORY = "userRegisterHandlerFactory";
     private final Map<String, UserRegisterHandler> factory;
 
@@ -26,7 +28,7 @@ public class UserRegisterHandlerFactoryImpl implements UserRegisterHandlerFactor
     }
 
     @Override
-    public Result<?> verifyAccount(RegisterVo registerVo) throws ResultException {
+    public void verifyAccount(RegisterVo registerVo) throws ResultException {
         throw new ResultException(R.errorPrompt("not implemented interface"));
     }
 }
