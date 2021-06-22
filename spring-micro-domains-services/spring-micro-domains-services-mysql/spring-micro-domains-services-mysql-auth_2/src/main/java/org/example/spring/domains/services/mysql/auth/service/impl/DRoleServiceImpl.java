@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class DRoleServiceImpl extends DServiceImpl<Role, RoleVo, RoleDTO, RoleQuery, RoleRepository> implements DRoleService {
     @Override
     public RoleResourceDTO getWithResource(Long id) {
-        return null;
+        return repository.getRoleResource(id);
     }
 
 }
