@@ -22,6 +22,10 @@
         <module>spring-micro-domains-services-mysql-bill_2</module>
         <module>spring-micro-domains-services-mysql-doctor_1</module>
         <module>spring-micro-domains-services-mysql-doctor_2</module>
+        <module>spring-micro-domains-services-mysql-admin_1</module>
+        <module>spring-micro-domains-services-mysql-admin_2</module>
+        <module>spring-micro-domains-services-mysql-queue_1</module>
+        <module>spring-micro-domains-services-mysql-queue_2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
