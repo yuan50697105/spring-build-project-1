@@ -109,6 +109,16 @@ public class AccountController {
         return accountService.register(new RegisterVo(userVo, RegisterVo.RegisterType.get(type)));
     }
 
+    @PostMapping("register/admin")
+    public Result<?> registerAdmin(@RequestBody UserVo userVo) {
+        return accountService.register(new RegisterVo(userVo, RegisterVo.RegisterType.ADMIN_USER));
+    }
+
+    @PostMapping("register/sell")
+    public Result<?> registerSell(@RequestBody UserVo userVo) {
+        return accountService.register(new RegisterVo(userVo, RegisterVo.RegisterType.ADMIN_USER));
+    }
+
     @GetMapping("verify/account/exist")
     public Result<?> verifyAccountExist(UserVo userVo) {
         return accountService.verifyAccountExists(new RegisterVo(userVo));
