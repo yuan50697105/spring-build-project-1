@@ -21,8 +21,8 @@ public class RegisterVo {
 
     public enum RegisterType {
         NONE(Constants.NONE1, "-1","none"),
-        ADMIN_USER(Constants.ADMIN_USER_REGISTER_HANDLER, "1", "background"),
-        SELL_USER(Constants.ADMIN_USER_REGISTER_HANDLER, "1", "background"),
+        ADMIN_USER(Constants.ADMIN_USER_REGISTER_HANDLER, "1", "admin"),
+        SELL_USER(Constants.ADMIN_USER_REGISTER_HANDLER, "1", "sell"),
         ;
         private final String type;
         private final String code;
