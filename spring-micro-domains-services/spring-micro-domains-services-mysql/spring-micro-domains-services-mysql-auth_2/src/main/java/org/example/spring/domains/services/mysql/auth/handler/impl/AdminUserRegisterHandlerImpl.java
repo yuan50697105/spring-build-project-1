@@ -9,12 +9,12 @@ import org.example.spring.repositories.clients.auth.api.UserRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-@Component(RegisterVo.RegisterType.Constants.BACKGROUND_USER_HANDLER)
+@Component(RegisterVo.RegisterType.Constants.ADMIN_USER_REGISTER_HANDLER)
 @Transactional
-public class BackgroundUserRegisterHandlerImpl extends AbstractUserRegisterHandlerImpl implements UserRegisterHandler {
+public class AdminUserRegisterHandlerImpl extends AbstractUserRegisterHandlerImpl implements UserRegisterHandler {
     private final UserRepository userRepository;
 
-    public BackgroundUserRegisterHandlerImpl(UserRepository userRepository) {
+    public AdminUserRegisterHandlerImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

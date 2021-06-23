@@ -21,7 +21,8 @@ public class RegisterVo {
 
     public enum RegisterType {
         NONE(Constants.NONE1, "-1","none"),
-        BACKGROUND_USER(Constants.BACKGROUND_USER_HANDLER, "1", "background"),
+        ADMIN_USER(Constants.ADMIN_USER_REGISTER_HANDLER, "1", "background"),
+        SELL_USER(Constants.ADMIN_USER_REGISTER_HANDLER, "1", "background"),
         ;
         private final String type;
         private final String code;
@@ -51,7 +52,8 @@ public class RegisterVo {
 
         public static class Constants {
             public static final String NONE1 = "NONE";
-            public static final String BACKGROUND_USER_HANDLER = "backgroundUserHandler";
+            public static final String ADMIN_USER_REGISTER_HANDLER = "adminUserRegisterHandler";
+            public static final String SELL_USER_REGISTER_HANDLER = "sellUserRegisterHandler";
         }
     }
 }
