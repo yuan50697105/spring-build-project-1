@@ -6,7 +6,6 @@
         <module>spring-micro-domains-services-provider-dependencies</module>
         <module>spring-micro-domains-services-provider-mysql</module>
         <module>spring-micro-domains-services-provider-postgresql</module>
-        <module>spring-micro-domains-services-provider-aggregation</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>

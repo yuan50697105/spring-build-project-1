@@ -6,7 +6,6 @@
         <module>spring-micro-domains-services-commons</module>
         <module>spring-micro-domains-services-mysql</module>
         <module>spring-micro-domains-services-postgresql</module>
-        <module>spring-micro-domains-services-aggregation</module>
         <module>spring-micro-domains-services-mssql</module>
         <module>spring-micro-domains-services-oracle</module>
     </modules>

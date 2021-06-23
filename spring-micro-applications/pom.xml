@@ -8,7 +8,6 @@
         <module>spring-micro-applications-commons</module>
         <module>spring-micro-applications-mssql</module>
         <module>spring-micro-applications-oracle</module>
-        <module>spring-micro-applications-aggregation</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
