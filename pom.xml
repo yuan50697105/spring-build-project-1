@@ -291,7 +291,7 @@
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useEditMode>false</useEditMode>
-                        <arguments>-P source,doc -fn -T 2</arguments>
+                        <arguments>-P source,doc -fn</arguments>
                         <commitByProject>false</commitByProject>
                         <autoResolveSnapshots>all</autoResolveSnapshots>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
@@ -427,6 +427,26 @@
                                 </goals>
                             </execution>
                         </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <configuration>
+                            <autoVersionSubmodules>true</autoVersionSubmodules>
+                            <useEditMode>false</useEditMode>
+                            <arguments>-P source,doc -fn -T 1C</arguments>
+                            <commitByProject>false</commitByProject>
+                            <autoResolveSnapshots>all</autoResolveSnapshots>
+                            <tagNameFormat>v@{project.version}</tagNameFormat>
+                            <!-- <preparationGoals>clean validate</preparationGoals> -->
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
