@@ -5,7 +5,7 @@ import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.services.mysql.auth.service.DResourceService;
+import org.example.spring.domains.services.auth.mysql.service.DResourceService;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.ResourceQuery;

@@ -4,7 +4,7 @@ package org.example.spring.applications.web.auth.controller;
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.services.mysql.auth.service.DRoleService;
+import org.example.spring.domains.services.auth.mysql.service.DRoleService;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
 import org.example.spring.repositories.commons.entity.auth.query.RoleQuery;
