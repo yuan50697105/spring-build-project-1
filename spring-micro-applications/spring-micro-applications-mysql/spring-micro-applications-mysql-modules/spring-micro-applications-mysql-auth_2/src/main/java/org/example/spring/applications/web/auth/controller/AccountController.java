@@ -116,7 +116,7 @@ public class AccountController {
 
     @PostMapping("register/sell")
     public Result<?> registerSell(@RequestBody UserVo userVo) {
-        return accountService.register(new RegisterVo(userVo, RegisterVo.RegisterType.ADMIN_USER));
+        return accountService.register(new RegisterVo(userVo, RegisterVo.RegisterType.SELL_USER));
     }
 
     @GetMapping("verify/account/exist")
