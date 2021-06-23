@@ -1,10 +1,11 @@
 package org.example.spring.domains.services.auth.mysql.vo;
 
 import cn.hutool.core.util.EnumUtil;
+import lombok.Data;
 import lombok.Value;
 import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
 
-@Value
+@Data
 public class RegisterVo {
     RegisterType type;
     UserVo user;
