@@ -31,13 +31,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-domains-services-provider-aggregation-dependencies</artifactId>
-                <version>0.0.39-M6-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 

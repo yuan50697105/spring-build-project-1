@@ -10,7 +10,6 @@
         <module>spring-micro-repositories-provider-dubbo</module>
         <module>spring-micro-repositories-provider-mssql</module>
         <module>spring-micro-repositories-provider-oracle</module>
-        <module>spring-micro-repositories-provider-aggregation</module>
         <module>spring-micro-repositories-provider-feign-api</module>
         <module>spring-micro-repositories-provider-dubbo-api</module>
     </modules>
