@@ -57,6 +57,36 @@
                 <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
+                <artifactId>spring-micro-domains-services-mysql-admin_1</artifactId>
+                <groupId>org.example.spring</groupId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <artifactId>spring-micro-domains-services-mysql-admin_2</artifactId>
+                <groupId>org.example.spring</groupId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <artifactId>spring-micro-domains-services-mysql-doctor_1</artifactId>
+                <groupId>org.example.spring</groupId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <artifactId>spring-micro-domains-services-mysql-doctor_2</artifactId>
+                <groupId>org.example.spring</groupId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-domains-services-mysql-queue_1</artifactId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-micro-domains-services-mysql-queue_2</artifactId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-micro-domains-services-mysql_1</artifactId>
                 <version>0.0.39-M6-SNAPSHOT</version>
