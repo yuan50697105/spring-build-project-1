@@ -7,10 +7,10 @@ import org.example.spring.repositories.commons.entity.auth.dto.DepartmentDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.DepartmentRoleDTO;
 import org.example.spring.repositories.commons.entity.auth.query.DepartmentQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.DepartmentVo;
-import org.example.spring.repositories.postgres.auth.table.dto.TDepartmentDTO;
-import org.example.spring.repositories.postgres.auth.table.dto.TDepartmentRoleDTO;
-import org.example.spring.repositories.postgres.auth.table.query.TDepartmentQuery;
-import org.example.spring.repositories.postgres.auth.table.vo.TDepartmentVo;
+import org.example.spring.repositories.auth.postgres.table.dto.TDepartmentDTO;
+import org.example.spring.repositories.auth.postgres.table.dto.TDepartmentRoleDTO;
+import org.example.spring.repositories.auth.postgres.table.query.TDepartmentQuery;
+import org.example.spring.repositories.auth.postgres.table.vo.TDepartmentVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

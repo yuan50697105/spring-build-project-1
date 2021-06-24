@@ -9,7 +9,7 @@ import org.example.spring.repositories.clients.auth.postgres.converter.ResourceR
 import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.ResourceQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.ResourceVo;
-import org.example.spring.repositories.postgres.auth.repository.TResourceRepository;
+import org.example.spring.repositories.auth.postgres.repository.TResourceRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;

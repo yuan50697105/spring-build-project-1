@@ -6,9 +6,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.ResourceQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.ResourceVo;
-import org.example.spring.repositories.postgres.auth.table.dto.TResourceDTO;
-import org.example.spring.repositories.postgres.auth.table.query.TResourceQuery;
-import org.example.spring.repositories.postgres.auth.table.vo.TResourceVo;
+import org.example.spring.repositories.auth.postgres.table.dto.TResourceDTO;
+import org.example.spring.repositories.auth.postgres.table.query.TResourceQuery;
+import org.example.spring.repositories.auth.postgres.table.vo.TResourceVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

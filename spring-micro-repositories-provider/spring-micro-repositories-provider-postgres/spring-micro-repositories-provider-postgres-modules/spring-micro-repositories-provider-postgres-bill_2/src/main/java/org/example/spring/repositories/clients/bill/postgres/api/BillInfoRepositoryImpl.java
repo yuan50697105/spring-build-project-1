@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.bill.postgres.converter.BillInfoR
 import org.example.spring.repositories.commons.entity.bill.dto.BillInfoDTO;
 import org.example.spring.repositories.commons.entity.bill.query.BillInfoQuery;
 import org.example.spring.repositories.commons.entity.bill.vo.BillInfoVo;
-import org.example.spring.repositories.postgres.bill.repository.TBillInfoRepository;
+import org.example.spring.repositories.bill.postgres.repository.TBillInfoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
