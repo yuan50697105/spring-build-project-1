@@ -1,26 +1,28 @@
 package org.example.spring.services.mysql.account.service.impl;
 
+import org.example.spring.repositories.clients.auth.api.UserRepository;
+import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
 import org.example.spring.repositories.commons.enumerate.UserStatus;
-import org.example.spring.repositories.mysql.auth.repository.TUserRepository;
-import org.example.spring.repositories.mysql.auth.table.vo.TUserVo;
 import org.example.spring.services.mysql.account.service.AccountService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
 public class AccountServiceImpl implements AccountService {
-    private TUserRepository userRepository;
+    private UserRepository userRepository;
 
     @Override
-    public void save(TUserVo vo) {
+    public void save(UserVo vo) {
         userRepository.save(vo);
     }
 
     @Override
-    public void update(TUserVo vo) {
+    public void update(UserVo vo) {
         userRepository.update(vo);
     }
 
@@ -41,16 +43,21 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void updateStatus(UserStatus status, Long id) {
-        userRepository.updateStatus(status, id);
+        UserVo userVo = new UserVo();
+        userVo.setId(id);
+        userVo.setStatus(status.getValue());
+        userRepository.update(userVo);
     }
 
     @Override
     public void updateStatus(UserStatus status, Long... ids) {
-        userRepository.updateStatus(status, ids);
+        updateStatus(status,Arrays.asList(ids));
     }
 
     @Override
-    public void updateStaus(UserStatus status, List<Long> ids) {
-        userRepository.updateStatus(status, ids);
+    public void updateStatus(UserStatus status, List<Long> ids) {
+        for (Long id : ids) {
+            updateStatus(status, id);
+        }
     }
 }
