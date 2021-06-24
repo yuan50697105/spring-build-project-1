@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.customer.mysql.converter.Customer
 import org.example.spring.repositories.commons.entity.customer.dto.CustomerOrderDTO;
 import org.example.spring.repositories.commons.entity.customer.query.CustomerOrderQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.CustomerOrderVo;
-import org.example.spring.repositories.mysql.customer.repository.TCustomerOrderRepository;
+import org.example.spring.repositories.customer.mysql.repository.TCustomerOrderRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

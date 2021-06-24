@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.customer.mysql.converter.SellerIn
 import org.example.spring.repositories.commons.entity.customer.dto.SellerInfoDTO;
 import org.example.spring.repositories.commons.entity.customer.query.SellerInfoQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.SellerInfoVo;
-import org.example.spring.repositories.mysql.customer.repository.TSellerInfoRepository;
+import org.example.spring.repositories.customer.mysql.repository.TSellerInfoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

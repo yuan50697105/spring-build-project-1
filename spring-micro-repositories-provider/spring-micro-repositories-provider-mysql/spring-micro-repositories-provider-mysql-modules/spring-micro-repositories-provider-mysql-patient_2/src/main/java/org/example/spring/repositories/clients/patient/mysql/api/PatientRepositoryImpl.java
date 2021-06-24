@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.patient.mysql.converter.PatientRe
 import org.example.spring.repositories.commons.entity.patient.dto.PatientDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientVo;
-import org.example.spring.repositories.mysql.patient.repository.TPatientRepository;
+import org.example.spring.repositories.patient.mysql.repository.TPatientRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

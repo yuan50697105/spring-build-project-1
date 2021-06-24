@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 @AllArgsConstructor
 @Repository
 public class DepartmentRepositoryImpl implements DepartmentRepository {
-    private final org.example.spring.repositories.mysql.auth.repository.DepartmentRepository repository;
+    private final org.example.spring.repositories.auth.mysql.repository.DepartmentRepository repository;
 
     @Override
     public void save(DepartmentVo vo) {

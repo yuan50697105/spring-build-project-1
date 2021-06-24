@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 @AllArgsConstructor
 @Repository
 public class RoleRepositoryImpl implements RoleRepository {
-    private final org.example.spring.repositories.mysql.auth.repository.RoleRepository repository;
+    private final org.example.spring.repositories.auth.mysql.repository.RoleRepository repository;
 
     @Override
     public void save(RoleVo vo) {

@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.patient.mysql.converter.PatientFe
 import org.example.spring.repositories.commons.entity.patient.dto.PatientFeeItemDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientFeeItemQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientFeeItemVo;
-import org.example.spring.repositories.mysql.patient.repository.TPatientFeeItemRepository;
+import org.example.spring.repositories.patient.mysql.repository.TPatientFeeItemRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

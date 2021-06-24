@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 @AllArgsConstructor
 @Repository
 public class UserTokenRepositoryImpl implements UserTokenRepository {
-    private final org.example.spring.repositories.mysql.auth.repository.UserTokenRepository repository;
+    private final org.example.spring.repositories.auth.mysql.repository.UserTokenRepository repository;
 
     @Override
     public void save(UserTokenVo vo) {

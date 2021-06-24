@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.bill.mysql.converter.BillItemsInf
 import org.example.spring.repositories.commons.entity.bill.dto.BillItemsInfoDTO;
 import org.example.spring.repositories.commons.entity.bill.query.BillItemsInfoQuery;
 import org.example.spring.repositories.commons.entity.bill.vo.BillItemsInfoVo;
-import org.example.spring.repositories.mysql.bill.repository.TBillItemsInfoRepository;
+import org.example.spring.repositories.bill.mysql.repository.TBillItemsInfoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

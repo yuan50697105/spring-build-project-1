@@ -5,9 +5,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.customer.dto.SellerInfoDTO;
 import org.example.spring.repositories.commons.entity.customer.query.SellerInfoQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.SellerInfoVo;
-import org.example.spring.repositories.mysql.customer.table.dto.TSellerInfoDTO;
-import org.example.spring.repositories.mysql.customer.table.query.TSellerInfoQuery;
-import org.example.spring.repositories.mysql.customer.table.vo.TSellerInfoVo;
+import org.example.spring.repositories.customer.mysql.table.dto.TSellerInfoDTO;
+import org.example.spring.repositories.customer.mysql.table.query.TSellerInfoQuery;
+import org.example.spring.repositories.customer.mysql.table.vo.TSellerInfoVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

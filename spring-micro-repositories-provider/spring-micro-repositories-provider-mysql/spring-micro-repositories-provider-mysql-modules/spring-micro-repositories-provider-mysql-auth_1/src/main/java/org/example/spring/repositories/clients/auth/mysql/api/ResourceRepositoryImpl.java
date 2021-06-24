@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 @AllArgsConstructor
 @Repository
 public class ResourceRepositoryImpl implements ResourceRepository {
-    private final org.example.spring.repositories.mysql.auth.repository.ResourceRepository repository;
+    private final org.example.spring.repositories.auth.mysql.repository.ResourceRepository repository;
 
     @Override
     public void save(ResourceVo vo) {

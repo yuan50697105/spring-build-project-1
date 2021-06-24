@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.patient.mysql.converter.PatientTe
 import org.example.spring.repositories.commons.entity.patient.dto.PatientTeamMealCheckItemDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientTeamMealCheckItemQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientTeamMealCheckItemVo;
-import org.example.spring.repositories.mysql.patient.repository.TPatientTeamMealCheckItemRepository;
+import org.example.spring.repositories.patient.mysql.repository.TPatientTeamMealCheckItemRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

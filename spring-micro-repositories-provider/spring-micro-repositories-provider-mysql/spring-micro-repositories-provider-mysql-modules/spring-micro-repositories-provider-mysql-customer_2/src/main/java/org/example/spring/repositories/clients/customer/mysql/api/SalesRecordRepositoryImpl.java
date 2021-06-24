@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.customer.mysql.converter.SalesRec
 import org.example.spring.repositories.commons.entity.customer.dto.SalesRecordDTO;
 import org.example.spring.repositories.commons.entity.customer.query.SalesRecordQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.SalesRecordVo;
-import org.example.spring.repositories.mysql.customer.repository.TSalesRecordRepository;
+import org.example.spring.repositories.customer.mysql.repository.TSalesRecordRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
