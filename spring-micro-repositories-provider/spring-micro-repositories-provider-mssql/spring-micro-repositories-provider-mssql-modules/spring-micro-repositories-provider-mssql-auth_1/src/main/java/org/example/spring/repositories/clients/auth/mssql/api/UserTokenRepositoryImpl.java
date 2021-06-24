@@ -8,9 +8,9 @@ import org.example.spring.repositories.clients.auth.mssql.converter.UserTokenRep
 import org.example.spring.repositories.commons.entity.auth.dto.UserTokenDto;
 import org.example.spring.repositories.commons.entity.auth.query.UserTokenQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.UserTokenVo;
-import org.example.spring.repositories.mssql.auth.repository.TUserTokenRepository;
-import org.example.spring.repositories.mssql.auth.table.dto.TUserTokenDto;
-import org.example.spring.repositories.mssql.auth.table.query.TUserTokenQuery;
+import org.example.spring.repositories.auth.mssql.repository.TUserTokenRepository;
+import org.example.spring.repositories.auth.mssql.table.dto.TUserTokenDto;
+import org.example.spring.repositories.auth.mssql.table.query.TUserTokenQuery;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;

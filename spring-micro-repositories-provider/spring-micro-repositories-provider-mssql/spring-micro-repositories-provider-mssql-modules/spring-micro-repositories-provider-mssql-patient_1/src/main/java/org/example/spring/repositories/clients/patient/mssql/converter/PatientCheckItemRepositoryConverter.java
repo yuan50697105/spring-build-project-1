@@ -5,9 +5,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.patient.dto.PatientCheckItemDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientCheckItemQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientCheckItemVo;
-import org.example.spring.repositories.mssql.patient.table.dto.TPatientCheckItemDTO;
-import org.example.spring.repositories.mssql.patient.table.query.TPatientCheckItemQuery;
-import org.example.spring.repositories.mssql.patient.table.vo.TPatientCheckItemVo;
+import org.example.spring.repositories.patient.mssql.table.dto.TPatientCheckItemDTO;
+import org.example.spring.repositories.patient.mssql.table.query.TPatientCheckItemQuery;
+import org.example.spring.repositories.patient.mssql.table.vo.TPatientCheckItemVo;
 import org.mapstruct.Mapper;
 
 import java.util.List;

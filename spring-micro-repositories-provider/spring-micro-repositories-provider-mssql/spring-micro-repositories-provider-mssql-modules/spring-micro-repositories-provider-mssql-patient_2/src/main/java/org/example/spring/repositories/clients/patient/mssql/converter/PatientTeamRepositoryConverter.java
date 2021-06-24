@@ -5,9 +5,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.patient.dto.PatientTeamDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientTeamQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientTeamVo;
-import org.example.spring.repositories.mssql.patient.table.dto.TPatientTeamDTO;
-import org.example.spring.repositories.mssql.patient.table.query.TPatientTeamQuery;
-import org.example.spring.repositories.mssql.patient.table.vo.TPatientTeamVo;
+import org.example.spring.repositories.patient.mssql.table.dto.TPatientTeamDTO;
+import org.example.spring.repositories.patient.mssql.table.query.TPatientTeamQuery;
+import org.example.spring.repositories.patient.mssql.table.vo.TPatientTeamVo;
 import org.mapstruct.Mapper;
 
 import java.util.List;

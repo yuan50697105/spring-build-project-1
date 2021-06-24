@@ -5,9 +5,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.bill.dto.BillItemsInfoDTO;
 import org.example.spring.repositories.commons.entity.bill.query.BillItemsInfoQuery;
 import org.example.spring.repositories.commons.entity.bill.vo.BillItemsInfoVo;
-import org.example.spring.repositories.mssql.bill.table.dto.TBillItemsInfoDTO;
-import org.example.spring.repositories.mssql.bill.table.query.TBillItemsInfoQuery;
-import org.example.spring.repositories.mssql.bill.table.vo.TBillItemsInfoVo;
+import org.example.spring.repositories.bill.mssql.table.dto.TBillItemsInfoDTO;
+import org.example.spring.repositories.bill.mssql.table.query.TBillItemsInfoQuery;
+import org.example.spring.repositories.bill.mssql.table.vo.TBillItemsInfoVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

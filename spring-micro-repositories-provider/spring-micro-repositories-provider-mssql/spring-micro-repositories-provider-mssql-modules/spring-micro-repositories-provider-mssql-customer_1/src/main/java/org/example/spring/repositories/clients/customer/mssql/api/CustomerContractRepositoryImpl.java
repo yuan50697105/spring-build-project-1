@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.customer.api.CustomerContractRepo
 import org.example.spring.repositories.commons.entity.customer.dto.CustomerContractDTO;
 import org.example.spring.repositories.commons.entity.customer.query.CustomerContractQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.CustomerContractVo;
-import org.example.spring.repositories.mssql.customer.repository.TCustomerContractRepository;
+import org.example.spring.repositories.customer.mssql.repository.TCustomerContractRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

@@ -5,9 +5,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.customer.dto.CustomerOrderDTO;
 import org.example.spring.repositories.commons.entity.customer.query.CustomerOrderQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.CustomerOrderVo;
-import org.example.spring.repositories.mssql.customer.table.dto.TCustomerOrderDTO;
-import org.example.spring.repositories.mssql.customer.table.query.TCustomerOrderQuery;
-import org.example.spring.repositories.mssql.customer.table.vo.TCustomerOrderVo;
+import org.example.spring.repositories.customer.mssql.table.dto.TCustomerOrderDTO;
+import org.example.spring.repositories.customer.mssql.table.query.TCustomerOrderQuery;
+import org.example.spring.repositories.customer.mssql.table.vo.TCustomerOrderVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

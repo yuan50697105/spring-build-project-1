@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.bill.mssql.converter.BillSubInfoR
 import org.example.spring.repositories.commons.entity.bill.dto.BillSubInfoDTO;
 import org.example.spring.repositories.commons.entity.bill.query.BillSubInfoQuery;
 import org.example.spring.repositories.commons.entity.bill.vo.BillSubInfoVo;
-import org.example.spring.repositories.mssql.bill.repository.TBillSubInfoRepository;
+import org.example.spring.repositories.bill.mssql.repository.TBillSubInfoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

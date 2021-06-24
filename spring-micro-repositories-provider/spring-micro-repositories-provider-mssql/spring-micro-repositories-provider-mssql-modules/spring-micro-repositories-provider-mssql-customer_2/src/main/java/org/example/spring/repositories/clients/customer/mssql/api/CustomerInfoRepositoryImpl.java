@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.customer.api.CustomerInfoReposito
 import org.example.spring.repositories.commons.entity.customer.dto.CustomerInfoDTO;
 import org.example.spring.repositories.commons.entity.customer.query.CustomerInfoQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.CustomerInfoVo;
-import org.example.spring.repositories.mssql.customer.repository.TCustomerInfoRepository;
+import org.example.spring.repositories.customer.mssql.repository.TCustomerInfoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

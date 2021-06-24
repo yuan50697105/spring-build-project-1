@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.patient.mssql.converter.PatientMe
 import org.example.spring.repositories.commons.entity.patient.dto.PatientMealDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientMealQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientMealVo;
-import org.example.spring.repositories.mssql.patient.repository.TPatientMealRepository;
+import org.example.spring.repositories.patient.mssql.repository.TPatientMealRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

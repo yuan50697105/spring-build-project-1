@@ -5,9 +5,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.customer.dto.CustomerContractDTO;
 import org.example.spring.repositories.commons.entity.customer.query.CustomerContractQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.CustomerContractVo;
-import org.example.spring.repositories.mssql.customer.table.dto.TCustomerContractDTO;
-import org.example.spring.repositories.mssql.customer.table.query.TCustomerContractQuery;
-import org.example.spring.repositories.mssql.customer.table.vo.TCustomerContractVo;
+import org.example.spring.repositories.customer.mssql.table.dto.TCustomerContractDTO;
+import org.example.spring.repositories.customer.mssql.table.query.TCustomerContractQuery;
+import org.example.spring.repositories.customer.mssql.table.vo.TCustomerContractVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

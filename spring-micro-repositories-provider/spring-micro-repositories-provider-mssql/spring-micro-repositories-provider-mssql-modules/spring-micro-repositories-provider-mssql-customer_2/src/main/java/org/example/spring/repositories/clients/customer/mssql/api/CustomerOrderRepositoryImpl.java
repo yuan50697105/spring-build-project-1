@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.customer.api.CustomerOrderReposit
 import org.example.spring.repositories.commons.entity.customer.dto.CustomerOrderDTO;
 import org.example.spring.repositories.commons.entity.customer.query.CustomerOrderQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.CustomerOrderVo;
-import org.example.spring.repositories.mssql.customer.repository.TCustomerOrderRepository;
+import org.example.spring.repositories.customer.mssql.repository.TCustomerOrderRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

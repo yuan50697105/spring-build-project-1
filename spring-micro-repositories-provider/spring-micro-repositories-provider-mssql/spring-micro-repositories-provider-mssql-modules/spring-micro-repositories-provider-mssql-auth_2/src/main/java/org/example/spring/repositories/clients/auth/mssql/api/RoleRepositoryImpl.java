@@ -8,7 +8,7 @@ import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.RoleResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.RoleQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.RoleVo;
-import org.example.spring.repositories.mssql.auth.repository.TRoleRepository;
+import org.example.spring.repositories.auth.mssql.repository.TRoleRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
