@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.example.spring.repositories.mssql.items.mapper.TFeeItemMapper">
-    <resultMap id="BaseResultMap" type="org.example.spring.repositories.mssql.items.table.po.TFeeItem">
+<mapper namespace="org.example.spring.repositories.items.mssql.mapper.TFeeItemMapper">
+    <resultMap id="BaseResultMap" type="org.example.spring.repositories.items.mssql.table.po.TFeeItem">
         <!--@mbg.generated-->
         <!--@Table t_fee_item-->
         <id column="id" jdbcType="BIGINT" property="id"/>
