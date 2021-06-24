@@ -5,9 +5,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.customer.dto.PotentialCustomersDTO;
 import org.example.spring.repositories.commons.entity.customer.query.PotentialCustomersQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.PotentialCustomersVo;
-import org.example.spring.repositories.postgres.customer.table.dto.TPotentialCustomersDTO;
-import org.example.spring.repositories.postgres.customer.table.query.TPotentialCustomersQuery;
-import org.example.spring.repositories.postgres.customer.table.vo.TPotentialCustomersVo;
+import org.example.spring.repositories.customer.postgres.table.dto.TPotentialCustomersDTO;
+import org.example.spring.repositories.customer.postgres.table.query.TPotentialCustomersQuery;
+import org.example.spring.repositories.customer.postgres.table.vo.TPotentialCustomersVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

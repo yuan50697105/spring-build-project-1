@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.customer.postgres.converter.Custo
 import org.example.spring.repositories.commons.entity.customer.dto.CustomerContractDTO;
 import org.example.spring.repositories.commons.entity.customer.query.CustomerContractQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.CustomerContractVo;
-import org.example.spring.repositories.postgres.customer.repository.TCustomerContractRepository;
+import org.example.spring.repositories.customer.postgres.repository.TCustomerContractRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

@@ -5,9 +5,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.customer.dto.CustomerInfoDTO;
 import org.example.spring.repositories.commons.entity.customer.query.CustomerInfoQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.CustomerInfoVo;
-import org.example.spring.repositories.postgres.customer.table.dto.TCustomerInfoDTO;
-import org.example.spring.repositories.postgres.customer.table.query.TCustomerInfoQuery;
-import org.example.spring.repositories.postgres.customer.table.vo.TCustomerInfoVo;
+import org.example.spring.repositories.customer.postgres.table.dto.TCustomerInfoDTO;
+import org.example.spring.repositories.customer.postgres.table.query.TCustomerInfoQuery;
+import org.example.spring.repositories.customer.postgres.table.vo.TCustomerInfoVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

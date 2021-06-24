@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.customer.api.PotentialCustomersRe
 import org.example.spring.repositories.commons.entity.customer.dto.PotentialCustomersDTO;
 import org.example.spring.repositories.commons.entity.customer.query.PotentialCustomersQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.PotentialCustomersVo;
-import org.example.spring.repositories.postgres.customer.repository.TPotentialCustomersRepository;
+import org.example.spring.repositories.customer.postgres.repository.TPotentialCustomersRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

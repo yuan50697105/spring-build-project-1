@@ -5,9 +5,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.customer.dto.CustomerContractDTO;
 import org.example.spring.repositories.commons.entity.customer.query.CustomerContractQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.CustomerContractVo;
-import org.example.spring.repositories.postgres.customer.table.dto.TCustomerContractDTO;
-import org.example.spring.repositories.postgres.customer.table.query.TCustomerContractQuery;
-import org.example.spring.repositories.postgres.customer.table.vo.TCustomerContractVo;
+import org.example.spring.repositories.customer.postgres.table.dto.TCustomerContractDTO;
+import org.example.spring.repositories.customer.postgres.table.query.TCustomerContractQuery;
+import org.example.spring.repositories.customer.postgres.table.vo.TCustomerContractVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
