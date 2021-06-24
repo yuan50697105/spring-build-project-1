@@ -3,14 +3,12 @@ package org.example.spring.repositories.clients.auth.postgres.dubbo;
 
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.repositories.clients.bill.api.BillSubInfoRepository;
-import org.example.spring.repositories.clients.bill.postgres.converter.BillSubInfoRepositoryConverter;
 import org.example.spring.repositories.clients.dubbo.bill.api.BillSubInfoDubboRepository;
 import org.example.spring.repositories.clients.dubbo.commons.CommonsDubboRepositoryImpl;
 import org.example.spring.repositories.commons.entity.bill.dto.BillSubInfoDTO;
 import org.example.spring.repositories.commons.entity.bill.po.BillSubInfo;
 import org.example.spring.repositories.commons.entity.bill.query.BillSubInfoQuery;
 import org.example.spring.repositories.commons.entity.bill.vo.BillSubInfoVo;
-import org.example.spring.repositories.postgres.bill.repository.TBillSubInfoRepository;
 import org.springframework.stereotype.Component;
 
 @Component
