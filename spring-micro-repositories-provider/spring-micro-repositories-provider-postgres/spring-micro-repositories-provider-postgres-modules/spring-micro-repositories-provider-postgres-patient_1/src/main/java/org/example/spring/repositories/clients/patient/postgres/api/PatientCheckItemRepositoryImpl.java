@@ -1,12 +1,13 @@
 package org.example.spring.repositories.clients.patient.postgres.api;
 
+
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.patient.api.PatientCheckItemRepository;
 import org.example.spring.repositories.clients.patient.postgres.converter.PatientCheckItemRepositoryConverter;
 import org.example.spring.repositories.commons.entity.patient.dto.PatientCheckItemDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientCheckItemQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientCheckItemVo;
-import org.example.spring.repositories.postgres.patient.repository.TPatientCheckItemRepository;
+import org.example.spring.repositories.patient.postgres.repository.TPatientCheckItemRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

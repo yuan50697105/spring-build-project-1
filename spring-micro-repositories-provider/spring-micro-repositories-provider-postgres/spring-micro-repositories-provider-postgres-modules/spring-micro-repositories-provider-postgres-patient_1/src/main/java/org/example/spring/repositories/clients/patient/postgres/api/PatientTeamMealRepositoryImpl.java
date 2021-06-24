@@ -1,12 +1,13 @@
 package org.example.spring.repositories.clients.patient.postgres.api;
 
+
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.clients.patient.api.PatientTeamMealRepository;
 import org.example.spring.repositories.clients.patient.postgres.converter.PatientTeamMealRepositoryConverter;
 import org.example.spring.repositories.commons.entity.patient.dto.PatientTeamMealDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientTeamMealQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientTeamMealVo;
-import org.example.spring.repositories.postgres.patient.repository.TPatientTeamMealRepository;
+import org.example.spring.repositories.patient.postgres.repository.TPatientTeamMealRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

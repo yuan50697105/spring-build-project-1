@@ -1,13 +1,14 @@
 package org.example.spring.repositories.clients.patient.postgres.converter;
 
+
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.patient.dto.PatientTeamDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientTeamQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientTeamVo;
-import org.example.spring.repositories.postgres.patient.table.dto.TPatientTeamDTO;
-import org.example.spring.repositories.postgres.patient.table.query.TPatientTeamQuery;
-import org.example.spring.repositories.postgres.patient.table.vo.TPatientTeamVo;
+import org.example.spring.repositories.patient.postgres.table.dto.TPatientTeamDTO;
+import org.example.spring.repositories.patient.postgres.table.query.TPatientTeamQuery;
+import org.example.spring.repositories.patient.postgres.table.vo.TPatientTeamVo;
 import org.mapstruct.Mapper;
 
 import java.util.List;
