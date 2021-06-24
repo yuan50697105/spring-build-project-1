@@ -2,9 +2,9 @@ package org.example.spring.repositories.oracle.customer.builder;
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.oracle.customer.table.dto.TCustomerContractDTO;
-import org.example.spring.repositories.oracle.customer.table.po.TCustomerContract;
-import org.example.spring.repositories.oracle.customer.table.vo.TCustomerContractVo;
+import org.example.spring.repositories.customer.oracle.table.dto.TCustomerContractDTO;
+import org.example.spring.repositories.customer.oracle.table.po.TCustomerContract;
+import org.example.spring.repositories.customer.oracle.table.vo.TCustomerContractVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
