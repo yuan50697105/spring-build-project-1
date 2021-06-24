@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.plugins.commons.entity.ICommonsEntity;
 
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 /**
@@ -11,6 +12,7 @@ import java.io.Serializable;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@MappedSuperclass
 public abstract class IBaseEntity extends ICommonsEntity implements Serializable {
     private static final long serialVersionUID = 236773490325517697L;
 //    @Id

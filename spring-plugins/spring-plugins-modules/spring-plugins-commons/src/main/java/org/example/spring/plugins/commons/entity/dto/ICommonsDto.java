@@ -6,6 +6,7 @@ import org.example.spring.plugins.commons.entity.ICommonsEntity;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Deprecated
 public class ICommonsDto extends ICommonsEntity {
 
 }

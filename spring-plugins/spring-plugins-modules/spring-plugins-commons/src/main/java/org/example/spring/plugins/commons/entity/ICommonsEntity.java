@@ -12,10 +12,12 @@ import org.example.spring.plugins.mybatis.audit.annotation.CreateTime;
 import org.example.spring.plugins.mybatis.audit.annotation.Id;
 import org.example.spring.plugins.mybatis.audit.annotation.UpdateTime;
 
+import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@MappedSuperclass
 public abstract class ICommonsEntity extends BaseEntity {
     @JsonSerialize(using = StringSerializer.class)
     @Id
