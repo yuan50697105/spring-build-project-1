@@ -468,13 +468,4 @@
             </build>
         </profile>
     </profiles>
-    <distributionManagement>
-        <repository>
-            <id>rdc-snapshot</id>
-            <name>spring-build-project-1</name>
-            <url>
-                https://packages.aliyun.com/maven/repository/2011015-snapshot-22Y2DW/
-            </url>
-        </repository>
-    </distributionManagement>
 </project>

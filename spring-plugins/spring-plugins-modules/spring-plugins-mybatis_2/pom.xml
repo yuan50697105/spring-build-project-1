@@ -75,6 +75,7 @@
             <artifactId>clickhouse-jdbc</artifactId>
             <scope>runtime</scope>
         </dependency>
+
     </dependencies>
 
 

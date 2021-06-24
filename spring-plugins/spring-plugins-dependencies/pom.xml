@@ -13,6 +13,11 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-plugins-beeltsql</artifactId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-elasticsearch</artifactId>
                 <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
@@ -378,6 +383,11 @@
                 <artifactId>libcephfs</artifactId>
                 <version>${ceph.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.ibeetl</groupId>
+                <artifactId>sql-springboot-starter</artifactId>
+                <version>${sql-springboot-starter.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <properties>
@@ -422,5 +432,6 @@
         <mybatis-redis-cache.version>1.2.7</mybatis-redis-cache.version>
         <ceph.version>0.80.5</ceph.version>
         <mapper-core.version>1.1.5</mapper-core.version>
+        <sql-springboot-starter.version>3.4.1-RELEASE</sql-springboot-starter.version>
     </properties>
 </project>
