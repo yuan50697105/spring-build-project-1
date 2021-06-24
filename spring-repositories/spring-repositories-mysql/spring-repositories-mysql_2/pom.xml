@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-repositories-mysql</artifactId>
+        <groupId>org.example.spring</groupId>
+        <version>0.0.39-M6-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-repositories-mysql_2</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mysql-auth_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mysql-bill_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mysql-customer_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mysql-department_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mysql-items_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mysql-patient_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mysql-report_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>

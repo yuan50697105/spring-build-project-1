@@ -14,6 +14,12 @@
         <module>spring-repositories-commons</module>
         <module>spring-repositories-modules</module>
         <module>spring-repositories-dependencies</module>
+        <module>spring-repositories-mysql</module>
+        <module>spring-repositories-mssql</module>
+        <module>spring-repositories-postgresql</module>
+        <module>spring-repositories-oracle</module>
+        <module>spring-repositories-clickhouse</module>
+        <module>spring-repositories-doris</module>
     </modules>
     <dependencyManagement>
         <dependencies>

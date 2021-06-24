@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-repositories</artifactId>
+        <groupId>org.example.spring</groupId>
+        <version>0.0.39-M6-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-repositories-mysql</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-repositories-mysql-auth_1</module>
+        <module>spring-repositories-mysql-auth_2</module>
+        <module>spring-repositories-mysql_1</module>
+        <module>spring-repositories-mysql_2</module>
+        <module>spring-repositories-mysql-bill_1</module>
+        <module>spring-repositories-mysql-bill_2</module>
+        <module>spring-repositories-mysql-customer_1</module>
+        <module>spring-repositories-mysql-customer_2</module>
+        <module>spring-repositories-mysql-department_1</module>
+        <module>spring-repositories-mysql-department_2</module>
+        <module>spring-repositories-mysql-items_1</module>
+        <module>spring-repositories-mysql-items_2</module>
+        <module>spring-repositories-mysql-patient_1</module>
+        <module>spring-repositories-mysql-patient_2</module>
+        <module>spring-repositories-mysql-report_1</module>
+        <module>spring-repositories-mysql-report_2</module>
+        <module>spring-repositories-mysql-dependencies</module>
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-commons</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>
