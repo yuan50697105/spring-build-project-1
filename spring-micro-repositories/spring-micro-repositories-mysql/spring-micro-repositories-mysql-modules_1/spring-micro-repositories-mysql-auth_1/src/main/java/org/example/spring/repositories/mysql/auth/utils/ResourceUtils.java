@@ -20,6 +20,7 @@ public class ResourceUtils {
             }
         };
     }
+
     public static NodeParser<TResourceDTO, Long> tResourceToTreeParser() {
         return (resource, tree) -> {
             tree.setParentId(resource.getPid());

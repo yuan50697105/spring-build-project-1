@@ -8,6 +8,7 @@ import org.example.spring.repositories.mysql.auth.table.query.TRoleQuery;
 import org.example.spring.repositories.mysql.auth.table.vo.TRoleVo;
 
 import java.util.List;
+
 @Deprecated
 public interface TRoleRepository extends IBaseRepository<TRole, TRoleDTO, TRoleVo, TRoleQuery> {
     List<TRoleDTO> queryListByDepartmentId(Long departmentId);

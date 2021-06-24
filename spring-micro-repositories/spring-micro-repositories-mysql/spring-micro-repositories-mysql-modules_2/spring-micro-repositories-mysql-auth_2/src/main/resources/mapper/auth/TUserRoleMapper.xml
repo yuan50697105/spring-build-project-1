@@ -29,7 +29,8 @@
         where id in (select role_id from t_user_role where user_id = #{userId,jdbcType=BIGINT})
     </select>
 
-    <select id="listRolesByUserId" resultMap="org.example.spring.repositories.mysql.auth.mapper.TRoleMapper.BaseResultMap">
+    <select id="listRolesByUserId"
+            resultMap="org.example.spring.repositories.mysql.auth.mapper.TRoleMapper.BaseResultMap">
         select *
         from t_role
         where id in (select role_id from t_user_role where user_id = #{userId,jdbcType=BIGINT})

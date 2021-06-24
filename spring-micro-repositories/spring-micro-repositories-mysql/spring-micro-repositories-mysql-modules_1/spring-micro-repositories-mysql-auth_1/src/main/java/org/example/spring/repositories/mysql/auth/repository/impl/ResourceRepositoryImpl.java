@@ -1,9 +1,7 @@
 package org.example.spring.repositories.mysql.auth.repository.impl;
 
-import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.lang.tree.TreeUtil;
-import cn.hutool.core.lang.tree.parser.NodeParser;
 import org.example.spring.plugins.mybatis.repository.impl.ICommonsRepositoryImpl;
 import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.po.Resource;
@@ -19,7 +17,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Map;
 
 @Repository
 @Transactional
