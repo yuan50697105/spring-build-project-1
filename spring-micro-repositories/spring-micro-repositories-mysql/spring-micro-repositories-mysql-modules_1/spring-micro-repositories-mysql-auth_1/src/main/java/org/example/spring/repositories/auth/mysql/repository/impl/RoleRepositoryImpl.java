@@ -1,17 +1,17 @@
 package org.example.spring.repositories.auth.mysql.repository.impl;
 
 import org.example.spring.plugins.mybatis.repository.impl.ICommonsRepositoryImpl;
-import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
-import org.example.spring.repositories.commons.entity.auth.dto.RoleResourceDTO;
-import org.example.spring.repositories.commons.entity.auth.po.Role;
-import org.example.spring.repositories.commons.entity.auth.query.RoleQuery;
-import org.example.spring.repositories.commons.entity.auth.vo.RoleVo;
 import org.example.spring.repositories.auth.mysql.converter.RoleConverter;
 import org.example.spring.repositories.auth.mysql.dao.TRoleDao;
 import org.example.spring.repositories.auth.mysql.repository.ResourceRepository;
 import org.example.spring.repositories.auth.mysql.repository.RoleRepository;
 import org.example.spring.repositories.auth.mysql.table.po.TRole;
 import org.example.spring.repositories.auth.mysql.table.query.TRoleQuery;
+import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.RoleResourceDTO;
+import org.example.spring.repositories.commons.entity.auth.po.Role;
+import org.example.spring.repositories.commons.entity.auth.query.RoleQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.RoleVo;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

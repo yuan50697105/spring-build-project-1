@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class RegisterResult implements Serializable {
     private final String username;
     private final String id;
+
     public RegisterResult(String username, String id) {
         this.username = username;
         this.id = id;

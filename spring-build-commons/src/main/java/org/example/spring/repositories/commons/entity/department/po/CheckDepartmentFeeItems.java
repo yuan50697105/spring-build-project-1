@@ -25,6 +25,7 @@ public class CheckDepartmentFeeItems extends ICommonsEntity {
     private String feeItemName;
     /**
      * 类型
+     *
      * @see FeeItemType
      */
     private String type;

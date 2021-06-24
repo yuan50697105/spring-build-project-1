@@ -1,10 +1,6 @@
 package org.example.spring.repositories.feign.patient.clients;
 
 
-import org.example.spring.repositories.commons.entity.customer.dto.CustomerContractDTO;
-import org.example.spring.repositories.commons.entity.customer.po.CustomerContract;
-import org.example.spring.repositories.commons.entity.customer.query.CustomerContractQuery;
-import org.example.spring.repositories.commons.entity.customer.vo.CustomerContractVo;
 import org.example.spring.repositories.commons.entity.patient.dto.PatientDTO;
 import org.example.spring.repositories.commons.entity.patient.po.Patient;
 import org.example.spring.repositories.commons.entity.patient.query.PatientQuery;

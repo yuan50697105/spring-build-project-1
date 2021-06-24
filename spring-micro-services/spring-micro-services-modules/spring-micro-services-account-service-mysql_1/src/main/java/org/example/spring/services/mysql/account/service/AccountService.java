@@ -1,6 +1,5 @@
 package org.example.spring.services.mysql.account.service;
 
-import org.example.spring.repositories.auth.mysql.table.vo.TUserVo;
 import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
 import org.example.spring.repositories.commons.enumerate.UserStatus;
 

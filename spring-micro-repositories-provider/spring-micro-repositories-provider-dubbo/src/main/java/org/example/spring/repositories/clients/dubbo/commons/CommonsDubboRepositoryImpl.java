@@ -49,7 +49,7 @@ public abstract class CommonsDubboRepositoryImpl<T extends ICommonsEntity, V ext
 
     @Override
     public void update(V vo, Q q) {
-        repository.update(vo,q);
+        repository.update(vo, q);
     }
 
     @Override
@@ -59,7 +59,7 @@ public abstract class CommonsDubboRepositoryImpl<T extends ICommonsEntity, V ext
 
     @Override
     public void updateNull(V vo, Q q) {
-        repository.updateNull(vo,q);
+        repository.updateNull(vo, q);
     }
 
     @Override

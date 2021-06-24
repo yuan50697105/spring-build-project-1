@@ -3,7 +3,8 @@
     <property name="LOG_LEVEL" value="INFO"/>
     <property name="LOG_DIR" value="/tmp/logs"/>
     <property name="LOG_FILE" value="/tmp/logs/hello.log"/>
-    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%marker] %logger{10} %msg [${PID:- }] [%thread]%n"/>
+    <property name="LOG_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%marker] %logger{10} %msg [${PID:- }] [%thread]%n"/>
     <property name="MAX_LOG_FILE_NUM" value="3"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">

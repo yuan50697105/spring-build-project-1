@@ -1,8 +1,8 @@
 package org.example.spring.repositories.clients.customer.mssql.api;
 
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.clients.customer.mssql.converter.SellerInfoRepositoryConverter;
 import org.example.spring.repositories.clients.customer.api.SellerInfoRepository;
+import org.example.spring.repositories.clients.customer.mssql.converter.SellerInfoRepositoryConverter;
 import org.example.spring.repositories.commons.entity.customer.dto.SellerInfoDTO;
 import org.example.spring.repositories.commons.entity.customer.query.SellerInfoQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.SellerInfoVo;

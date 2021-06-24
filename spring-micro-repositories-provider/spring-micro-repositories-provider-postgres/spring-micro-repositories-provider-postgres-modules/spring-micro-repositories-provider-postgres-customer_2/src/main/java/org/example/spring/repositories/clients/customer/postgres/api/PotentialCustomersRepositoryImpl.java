@@ -1,8 +1,8 @@
 package org.example.spring.repositories.clients.customer.postgres.api;
 
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.clients.customer.postgres.converter.PotentialCustomersRepositoryConverter;
 import org.example.spring.repositories.clients.customer.api.PotentialCustomersRepository;
+import org.example.spring.repositories.clients.customer.postgres.converter.PotentialCustomersRepositoryConverter;
 import org.example.spring.repositories.commons.entity.customer.dto.PotentialCustomersDTO;
 import org.example.spring.repositories.commons.entity.customer.query.PotentialCustomersQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.PotentialCustomersVo;

@@ -2,8 +2,8 @@ package org.example.spring.repositories.auth.mysql.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.auth.mysql.table.po.TUser;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 
 import java.io.Serializable;
 

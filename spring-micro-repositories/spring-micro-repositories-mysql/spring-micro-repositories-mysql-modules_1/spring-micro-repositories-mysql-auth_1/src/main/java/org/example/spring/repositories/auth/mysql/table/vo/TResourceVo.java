@@ -2,8 +2,8 @@ package org.example.spring.repositories.auth.mysql.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.ResourceType;
 import org.example.spring.repositories.auth.mysql.table.po.TResource;
+import org.example.spring.repositories.commons.enumerate.ResourceType;
 
 import java.io.Serializable;
 

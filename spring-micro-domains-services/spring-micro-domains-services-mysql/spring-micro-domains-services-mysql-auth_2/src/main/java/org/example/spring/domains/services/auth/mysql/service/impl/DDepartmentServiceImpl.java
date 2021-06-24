@@ -2,8 +2,8 @@ package org.example.spring.domains.services.auth.mysql.service.impl;
 
 
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.services.impl.DServiceImpl;
 import org.example.spring.domains.services.auth.mysql.service.DDepartmentService;
+import org.example.spring.domains.services.impl.DServiceImpl;
 import org.example.spring.repositories.clients.auth.api.DepartmentRepository;
 import org.example.spring.repositories.commons.entity.auth.dto.DepartmentDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.DepartmentRoleDTO;

@@ -2,8 +2,8 @@ package org.example.spring.repositories.commons.entity.patient.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.MealType;
 import org.example.spring.repositories.commons.entity.patient.po.PatientMeal;
+import org.example.spring.repositories.commons.enumerate.MealType;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

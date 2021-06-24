@@ -6,8 +6,8 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
-import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.auth.mysql.table.po.TUser;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;

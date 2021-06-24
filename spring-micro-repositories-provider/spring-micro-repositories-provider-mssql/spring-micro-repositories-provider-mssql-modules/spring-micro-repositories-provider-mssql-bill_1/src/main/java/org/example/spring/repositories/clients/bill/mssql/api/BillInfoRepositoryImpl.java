@@ -1,12 +1,12 @@
 package org.example.spring.repositories.clients.bill.mssql.api;
 
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.bill.mssql.repository.TBillInfoRepository;
 import org.example.spring.repositories.clients.bill.api.BillInfoRepository;
 import org.example.spring.repositories.clients.bill.mssql.converter.BillInfoRepositoryConverter;
 import org.example.spring.repositories.commons.entity.bill.dto.BillInfoDTO;
 import org.example.spring.repositories.commons.entity.bill.query.BillInfoQuery;
 import org.example.spring.repositories.commons.entity.bill.vo.BillInfoVo;
-import org.example.spring.repositories.bill.mssql.repository.TBillInfoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

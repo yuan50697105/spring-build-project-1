@@ -80,7 +80,7 @@ services:
     expose:
       - 8080
     ports:
-    - 8481:8080
+      - 8481:8080
   mysql2:
     build:
       context: ./mysql2

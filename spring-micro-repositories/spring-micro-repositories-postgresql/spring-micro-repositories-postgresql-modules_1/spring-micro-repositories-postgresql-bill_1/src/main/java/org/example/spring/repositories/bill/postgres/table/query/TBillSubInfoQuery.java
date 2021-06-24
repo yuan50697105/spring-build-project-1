@@ -7,8 +7,8 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.plugins.mybatis.entity.query.TkExtQuery;
-import org.example.spring.repositories.commons.enumerate.BillSubInfoStatus;
 import org.example.spring.repositories.bill.postgres.table.po.TBillSubInfo;
+import org.example.spring.repositories.commons.enumerate.BillSubInfoStatus;
 import tk.mybatis.mapper.entity.Example;
 
 @EqualsAndHashCode(callSuper = true)

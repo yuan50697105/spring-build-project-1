@@ -2,8 +2,8 @@ package org.example.spring.repositories.commons.entity.auth.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.ResourceType;
 import org.example.spring.repositories.commons.entity.auth.po.Resource;
+import org.example.spring.repositories.commons.enumerate.ResourceType;
 
 import java.io.Serializable;
 

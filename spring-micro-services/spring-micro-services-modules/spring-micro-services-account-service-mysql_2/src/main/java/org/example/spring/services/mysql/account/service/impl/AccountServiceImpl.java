@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -51,7 +50,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void updateStatus(UserStatus status, Long... ids) {
-        updateStatus(status,Arrays.asList(ids));
+        updateStatus(status, Arrays.asList(ids));
     }
 
     @Override

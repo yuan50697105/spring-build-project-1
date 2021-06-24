@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @RequestMapping("resource/repository/client")
-public interface ResourceRepositoryClient extends CommonsFeignClient<Resource, ResourceVo, ResourceDTO, ResourceQuery>{
+public interface ResourceRepositoryClient extends CommonsFeignClient<Resource, ResourceVo, ResourceDTO, ResourceQuery> {
     @GetMapping("query/tree/by/user/id/{id}")
     List<Tree<Long>> queryTreeByUserId(@PathVariable Long id);
 

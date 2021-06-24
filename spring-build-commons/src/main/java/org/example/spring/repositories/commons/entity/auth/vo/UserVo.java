@@ -2,8 +2,8 @@ package org.example.spring.repositories.commons.entity.auth.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.commons.entity.auth.po.User;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 
 import java.io.Serializable;
 import java.util.List;

@@ -2,8 +2,8 @@ package org.example.spring.repositories.auth.oracle.utils;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.lang.tree.parser.NodeParser;
-import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
 import org.example.spring.repositories.auth.oracle.table.dto.TResourceDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
 
 import java.util.Map;
 

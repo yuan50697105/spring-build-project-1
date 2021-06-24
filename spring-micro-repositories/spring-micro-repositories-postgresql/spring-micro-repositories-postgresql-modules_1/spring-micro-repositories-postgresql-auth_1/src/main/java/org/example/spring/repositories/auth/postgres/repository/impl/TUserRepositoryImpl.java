@@ -1,7 +1,6 @@
 package org.example.spring.repositories.auth.postgres.repository.impl;
 
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
-import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.auth.postgres.converter.TUserConverter;
 import org.example.spring.repositories.auth.postgres.dao.TUserDao;
 import org.example.spring.repositories.auth.postgres.repository.TResourceRepository;
@@ -13,6 +12,7 @@ import org.example.spring.repositories.auth.postgres.table.dto.TUserRoleResource
 import org.example.spring.repositories.auth.postgres.table.po.TUser;
 import org.example.spring.repositories.auth.postgres.table.query.TUserQuery;
 import org.example.spring.repositories.auth.postgres.table.vo.TUserVo;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

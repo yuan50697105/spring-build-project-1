@@ -2,14 +2,14 @@ package org.example.spring.repositories.auth.mysql.converter;
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.mybatis.converter.ICommonsConverter;
+import org.example.spring.repositories.auth.mysql.table.po.TUser;
+import org.example.spring.repositories.auth.mysql.table.query.TUserQuery;
 import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.UserRoleDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.UserRoleResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.po.User;
 import org.example.spring.repositories.commons.entity.auth.query.UserQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
-import org.example.spring.repositories.auth.mysql.table.po.TUser;
-import org.example.spring.repositories.auth.mysql.table.query.TUserQuery;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

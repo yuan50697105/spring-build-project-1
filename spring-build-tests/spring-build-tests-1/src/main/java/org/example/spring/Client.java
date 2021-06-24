@@ -23,11 +23,12 @@ public class Client {
             private List<TestService> testService;
             @Autowired
             private Map<String, TestService> testServiceMap;
+
             @Override
             public void run(String... args) throws Exception {
 
                 testService.stream().peek(testService1 -> System.out.println("testService1 = " + testService1)).forEach(TestService::test);
-                testServiceMap.entrySet().stream().peek(entry-> System.out.println("entry = " + entry)).map(Map.Entry::getValue).forEach(TestService::test);
+                testServiceMap.entrySet().stream().peek(entry -> System.out.println("entry = " + entry)).map(Map.Entry::getValue).forEach(TestService::test);
             }
         };
     }

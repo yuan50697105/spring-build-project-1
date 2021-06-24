@@ -2,14 +2,14 @@ package org.example.spring.repositories.clients.auth.mssql.converter;
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
-import org.example.spring.repositories.commons.entity.auth.dto.RoleResourceDTO;
-import org.example.spring.repositories.commons.entity.auth.query.RoleQuery;
-import org.example.spring.repositories.commons.entity.auth.vo.RoleVo;
 import org.example.spring.repositories.auth.mssql.table.dto.TRoleDTO;
 import org.example.spring.repositories.auth.mssql.table.dto.TRoleResourceDTO;
 import org.example.spring.repositories.auth.mssql.table.query.TRoleQuery;
 import org.example.spring.repositories.auth.mssql.table.vo.TRoleVo;
+import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.RoleResourceDTO;
+import org.example.spring.repositories.commons.entity.auth.query.RoleQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.RoleVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

@@ -1,6 +1,5 @@
 package org.example.spring.plugins.mybatis.repository;
 
-import org.example.spring.plugins.commons.entity.ICommonsEntity;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.plugins.commons.entity.query.BaseQuery;
 

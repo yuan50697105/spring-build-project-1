@@ -20,20 +20,21 @@
 -- Table structure for t_bill_info
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_bill_info";
-CREATE TABLE "public"."t_bill_info" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "order_no" varchar(50) COLLATE "pg_catalog"."default",
-  "patient_code" varchar(50) COLLATE "pg_catalog"."default",
-  "patient_id" varchar(50) COLLATE "pg_catalog"."default",
-  "patient_name" varchar(50) COLLATE "pg_catalog"."default",
-  "patient_id_card_no" varchar(50) COLLATE "pg_catalog"."default",
-  "total_price" numeric(13,4)
+CREATE TABLE "public"."t_bill_info"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"        varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"        varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"        timestamp(6),
+    "update_date"        timestamp(6),
+    "order_no"           varchar(50) COLLATE "pg_catalog"."default",
+    "patient_code"       varchar(50) COLLATE "pg_catalog"."default",
+    "patient_id"         varchar(50) COLLATE "pg_catalog"."default",
+    "patient_name"       varchar(50) COLLATE "pg_catalog"."default",
+    "patient_id_card_no" varchar(50) COLLATE "pg_catalog"."default",
+    "total_price"        numeric(13, 4)
 )
 ;
 COMMENT ON COLUMN "public"."t_bill_info"."id" IS 'id';
@@ -55,23 +56,24 @@ COMMENT ON TABLE "public"."t_bill_info" IS 't_bill_info';
 -- Table structure for t_bill_items_info
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_bill_items_info";
-CREATE TABLE "public"."t_bill_items_info" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "bill_id" varchar(50) COLLATE "pg_catalog"."default",
-  "order_no" varchar(50) COLLATE "pg_catalog"."default",
-  "sub_bill_id" int8,
-  "sub_order_no" varchar(50) COLLATE "pg_catalog"."default",
-  "item_id" int8,
-  "item_name" varchar(50) COLLATE "pg_catalog"."default",
-  "item_price" numeric(13,4),
-  "num" numeric(13,4),
-  "total_price" numeric(13,4)
+CREATE TABLE "public"."t_bill_items_info"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"  timestamp(6),
+    "update_date"  timestamp(6),
+    "bill_id"      varchar(50) COLLATE "pg_catalog"."default",
+    "order_no"     varchar(50) COLLATE "pg_catalog"."default",
+    "sub_bill_id" int8,
+    "sub_order_no" varchar(50) COLLATE "pg_catalog"."default",
+    "item_id" int8,
+    "item_name"    varchar(50) COLLATE "pg_catalog"."default",
+    "item_price"   numeric(13, 4),
+    "num"          numeric(13, 4),
+    "total_price"  numeric(13, 4)
 )
 ;
 COMMENT ON COLUMN "public"."t_bill_items_info"."id" IS 'id';
@@ -96,21 +98,22 @@ COMMENT ON TABLE "public"."t_bill_items_info" IS 't_bill_items_info';
 -- Table structure for t_bill_log
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_bill_log";
-CREATE TABLE "public"."t_bill_log" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "order_no" varchar(50) COLLATE "pg_catalog"."default",
-  "patient_code" varchar(50) COLLATE "pg_catalog"."default",
-  "patient_id" varchar(50) COLLATE "pg_catalog"."default",
-  "current_total_price" numeric(13,4),
-  "previous_total_price" numeric(13,4),
-  "previous_id" int8,
-  "type" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_bill_log"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"          varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"          varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"          timestamp(6),
+    "update_date"          timestamp(6),
+    "order_no"             varchar(50) COLLATE "pg_catalog"."default",
+    "patient_code"         varchar(50) COLLATE "pg_catalog"."default",
+    "patient_id"           varchar(50) COLLATE "pg_catalog"."default",
+    "current_total_price"  numeric(13, 4),
+    "previous_total_price" numeric(13, 4),
+    "previous_id" int8,
+    "type"                 varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_bill_log"."id" IS 'id';
@@ -135,19 +138,20 @@ COMMENT ON TABLE "public"."t_bill_log" IS 't_bill_log';
 -- Table structure for t_bill_sub_info
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_bill_sub_info";
-CREATE TABLE "public"."t_bill_sub_info" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "sub_order_no" varchar(50) COLLATE "pg_catalog"."default",
-  "bill_id" varchar(50) COLLATE "pg_catalog"."default",
-  "order_no" varchar(50) COLLATE "pg_catalog"."default",
-  "total_price" numeric(13,4),
-  "status" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_bill_sub_info"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"  timestamp(6),
+    "update_date"  timestamp(6),
+    "sub_order_no" varchar(50) COLLATE "pg_catalog"."default",
+    "bill_id"      varchar(50) COLLATE "pg_catalog"."default",
+    "order_no"     varchar(50) COLLATE "pg_catalog"."default",
+    "total_price"  numeric(13, 4),
+    "status"       varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_bill_sub_info"."id" IS 'id';
@@ -169,18 +173,19 @@ COMMENT ON TABLE "public"."t_bill_sub_info" IS 't_bill_sub_info';
 -- Table structure for t_check_department
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_check_department";
-CREATE TABLE "public"."t_check_department" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "type" varchar(50) COLLATE "pg_catalog"."default",
-  "location" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_check_department"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "code"        varchar(50) COLLATE "pg_catalog"."default",
+    "name"        varchar(50) COLLATE "pg_catalog"."default",
+    "type"        varchar(50) COLLATE "pg_catalog"."default",
+    "location"    varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_check_department"."id" IS 'id';
@@ -200,17 +205,18 @@ COMMENT ON TABLE "public"."t_check_department" IS 't_check_department';
 -- Table structure for t_check_department_items
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_check_department_items";
-CREATE TABLE "public"."t_check_department_items" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "check_item_id" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_check_department_items"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"   timestamp(6),
+    "update_date"   timestamp(6),
+    "code"          varchar(50) COLLATE "pg_catalog"."default",
+    "name"          varchar(50) COLLATE "pg_catalog"."default",
+    "check_item_id" varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_check_department_items"."id" IS 'id';
@@ -229,21 +235,22 @@ COMMENT ON TABLE "public"."t_check_department_items" IS 't_check_department_item
 -- Table structure for t_check_item
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_check_item";
-CREATE TABLE "public"."t_check_item" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "fee_item_id" int8,
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "lowest_value" numeric(13,4),
-  "highest_value" numeric(13,4),
-  "yin_yang" varchar(50) COLLATE "pg_catalog"."default",
-  "lis_code" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_check_item"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"   timestamp(6),
+    "update_date"   timestamp(6),
+    "fee_item_id" int8,
+    "code"          varchar(50) COLLATE "pg_catalog"."default",
+    "name"          varchar(50) COLLATE "pg_catalog"."default",
+    "lowest_value"  numeric(13, 4),
+    "highest_value" numeric(13, 4),
+    "yin_yang"      varchar(50) COLLATE "pg_catalog"."default",
+    "lis_code"      varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_check_item"."id" IS 'id';
@@ -266,21 +273,22 @@ COMMENT ON TABLE "public"."t_check_item" IS 't_check_item';
 -- Table structure for t_customer_contract
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_customer_contract";
-CREATE TABLE "public"."t_customer_contract" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "customer_id" int8,
-  "signing_time" timestamp(6),
-  "status" varchar(50) COLLATE "pg_catalog"."default",
-  "file_name" varchar(50) COLLATE "pg_catalog"."default",
-  "bukect_name" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_customer_contract"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"  timestamp(6),
+    "update_date"  timestamp(6),
+    "code"         varchar(50) COLLATE "pg_catalog"."default",
+    "name"         varchar(50) COLLATE "pg_catalog"."default",
+    "customer_id" int8,
+    "signing_time" timestamp(6),
+    "status"       varchar(50) COLLATE "pg_catalog"."default",
+    "file_name"    varchar(50) COLLATE "pg_catalog"."default",
+    "bukect_name"  varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_customer_contract"."id" IS 'id';
@@ -303,17 +311,18 @@ COMMENT ON TABLE "public"."t_customer_contract" IS 't_customer_contract';
 -- Table structure for t_customer_info
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_customer_info";
-CREATE TABLE "public"."t_customer_info" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "type" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_customer_info"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "code"        varchar(50) COLLATE "pg_catalog"."default",
+    "name"        varchar(50) COLLATE "pg_catalog"."default",
+    "type"        varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_customer_info"."id" IS 'id';
@@ -332,20 +341,21 @@ COMMENT ON TABLE "public"."t_customer_info" IS 't_customer_info';
 -- Table structure for t_customer_order
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_customer_order";
-CREATE TABLE "public"."t_customer_order" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "order_no" varchar(50) COLLATE "pg_catalog"."default",
-  "customer_id" varchar(50) COLLATE "pg_catalog"."default",
-  "customer_code" varchar(50) COLLATE "pg_catalog"."default",
-  "customer_name" varchar(50) COLLATE "pg_catalog"."default",
-  "total_amount" numeric(13,4),
-  "status" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_customer_order"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"   timestamp(6),
+    "update_date"   timestamp(6),
+    "order_no"      varchar(50) COLLATE "pg_catalog"."default",
+    "customer_id"   varchar(50) COLLATE "pg_catalog"."default",
+    "customer_code" varchar(50) COLLATE "pg_catalog"."default",
+    "customer_name" varchar(50) COLLATE "pg_catalog"."default",
+    "total_amount"  numeric(13, 4),
+    "status"        varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_customer_order"."id" IS 'id';
@@ -367,17 +377,18 @@ COMMENT ON TABLE "public"."t_customer_order" IS 't_customer_order';
 -- Table structure for t_department
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_department";
-CREATE TABLE "public"."t_department" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "pid" int8
+CREATE TABLE "public"."t_department"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "name"        varchar(50) COLLATE "pg_catalog"."default",
+    "code"        varchar(50) COLLATE "pg_catalog"."default",
+    "pid" int8
 )
 ;
 COMMENT ON COLUMN "public"."t_department"."id" IS 'id';
@@ -396,16 +407,17 @@ COMMENT ON TABLE "public"."t_department" IS 't_department';
 -- Table structure for t_department_role
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_department_role";
-CREATE TABLE "public"."t_department_role" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "department_id" int8,
-  "role_id" int8
+CREATE TABLE "public"."t_department_role"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "department_id" int8,
+    "role_id" int8
 )
 ;
 COMMENT ON COLUMN "public"."t_department_role"."id" IS 'id';
@@ -423,23 +435,24 @@ COMMENT ON TABLE "public"."t_department_role" IS 't_department_role';
 -- Table structure for t_fee_item
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_fee_item";
-CREATE TABLE "public"."t_fee_item" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "price" numeric(13,4),
-  "dis_price" numeric(13,4),
-  "market_price" numeric(13,4),
-  "type" varchar(50) COLLATE "pg_catalog"."default",
-  "sex" varchar(50) COLLATE "pg_catalog"."default",
-  "age_start" int4,
-  "age_end" int4
+CREATE TABLE "public"."t_fee_item"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"  timestamp(6),
+    "update_date"  timestamp(6),
+    "code"         varchar(50) COLLATE "pg_catalog"."default",
+    "name"         varchar(50) COLLATE "pg_catalog"."default",
+    "price"        numeric(13, 4),
+    "dis_price"    numeric(13, 4),
+    "market_price" numeric(13, 4),
+    "type"         varchar(50) COLLATE "pg_catalog"."default",
+    "sex"          varchar(50) COLLATE "pg_catalog"."default",
+    "age_start" int4,
+    "age_end" int4
 )
 ;
 COMMENT ON COLUMN "public"."t_fee_item"."id" IS 'id';
@@ -464,20 +477,21 @@ COMMENT ON TABLE "public"."t_fee_item" IS 't_fee_item';
 -- Table structure for t_meal
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_meal";
-CREATE TABLE "public"."t_meal" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "type" varchar(50) COLLATE "pg_catalog"."default",
-  "price" numeric(13,4),
-  "dis_price" numeric(13,4),
-  "market_price" numeric(13,4)
+CREATE TABLE "public"."t_meal"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"  timestamp(6),
+    "update_date"  timestamp(6),
+    "code"         varchar(50) COLLATE "pg_catalog"."default",
+    "name"         varchar(50) COLLATE "pg_catalog"."default",
+    "type"         varchar(50) COLLATE "pg_catalog"."default",
+    "price"        numeric(13, 4),
+    "dis_price"    numeric(13, 4),
+    "market_price" numeric(13, 4)
 )
 ;
 COMMENT ON COLUMN "public"."t_meal"."id" IS 'id';
@@ -499,16 +513,17 @@ COMMENT ON TABLE "public"."t_meal" IS 't_meal';
 -- Table structure for t_meal_fee_item
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_meal_fee_item";
-CREATE TABLE "public"."t_meal_fee_item" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "meal_id" int8,
-  "fee_item_id" int8
+CREATE TABLE "public"."t_meal_fee_item"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "meal_id" int8,
+    "fee_item_id" int8
 )
 ;
 COMMENT ON COLUMN "public"."t_meal_fee_item"."id" IS 'id';
@@ -526,30 +541,31 @@ COMMENT ON TABLE "public"."t_meal_fee_item" IS 't_meal_fee_item';
 -- Table structure for t_patient
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_patient";
-CREATE TABLE "public"."t_patient" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "team_id" int8,
-  "team_code" varchar(50) COLLATE "pg_catalog"."default",
-  "team_name" varchar(50) COLLATE "pg_catalog"."default",
-  "group_id" int8,
-  "group_code" varchar(50) COLLATE "pg_catalog"."default",
-  "group_name" varchar(50) COLLATE "pg_catalog"."default",
-  "type" varchar(50) COLLATE "pg_catalog"."default",
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "customer_id" int8,
-  "customer_type" varchar(50) COLLATE "pg_catalog"."default",
-  "customer_name" varchar(50) COLLATE "pg_catalog"."default",
-  "age" int4,
-  "sex" varchar(50) COLLATE "pg_catalog"."default",
-  "marriage" varchar(50) COLLATE "pg_catalog"."default",
-  "bear" varchar(50) COLLATE "pg_catalog"."default",
-  "phone" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_patient"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"   timestamp(6),
+    "update_date"   timestamp(6),
+    "team_id" int8,
+    "team_code"     varchar(50) COLLATE "pg_catalog"."default",
+    "team_name"     varchar(50) COLLATE "pg_catalog"."default",
+    "group_id" int8,
+    "group_code"    varchar(50) COLLATE "pg_catalog"."default",
+    "group_name"    varchar(50) COLLATE "pg_catalog"."default",
+    "type"          varchar(50) COLLATE "pg_catalog"."default",
+    "code"          varchar(50) COLLATE "pg_catalog"."default",
+    "customer_id" int8,
+    "customer_type" varchar(50) COLLATE "pg_catalog"."default",
+    "customer_name" varchar(50) COLLATE "pg_catalog"."default",
+    "age" int4,
+    "sex"           varchar(50) COLLATE "pg_catalog"."default",
+    "marriage"      varchar(50) COLLATE "pg_catalog"."default",
+    "bear"          varchar(50) COLLATE "pg_catalog"."default",
+    "phone"         varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_patient"."id" IS 'id';
@@ -581,21 +597,22 @@ COMMENT ON TABLE "public"."t_patient" IS 't_patient';
 -- Table structure for t_patient_check_item
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_patient_check_item";
-CREATE TABLE "public"."t_patient_check_item" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "patient_id" int8,
-  "fee_item_id" int8,
-  "check_item_id" varchar(50) COLLATE "pg_catalog"."default",
-  "check_item_code" varchar(50) COLLATE "pg_catalog"."default",
-  "check_item_name" varchar(50) COLLATE "pg_catalog"."default",
-  "meal_id" int8,
-  "source" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_patient_check_item"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"     varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"     varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"     timestamp(6),
+    "update_date"     timestamp(6),
+    "patient_id" int8,
+    "fee_item_id" int8,
+    "check_item_id"   varchar(50) COLLATE "pg_catalog"."default",
+    "check_item_code" varchar(50) COLLATE "pg_catalog"."default",
+    "check_item_name" varchar(50) COLLATE "pg_catalog"."default",
+    "meal_id" int8,
+    "source"          varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_patient_check_item"."id" IS 'id';
@@ -618,25 +635,26 @@ COMMENT ON TABLE "public"."t_patient_check_item" IS 't_patient_check_item';
 -- Table structure for t_patient_fee_item
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_patient_fee_item";
-CREATE TABLE "public"."t_patient_fee_item" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "patient_id" int8,
-  "fee_item_id" int8,
-  "fee_item_code" varchar(50) COLLATE "pg_catalog"."default",
-  "fee_item_name" varchar(50) COLLATE "pg_catalog"."default",
-  "meal_id" int8,
-  "patient_meal_id" int8,
-  "price" numeric(13,4),
-  "dis_price" numeric(13,4),
-  "market_price" numeric(13,4),
-  "source" varchar(50) COLLATE "pg_catalog"."default",
-  "type" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_patient_fee_item"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"   timestamp(6),
+    "update_date"   timestamp(6),
+    "patient_id" int8,
+    "fee_item_id" int8,
+    "fee_item_code" varchar(50) COLLATE "pg_catalog"."default",
+    "fee_item_name" varchar(50) COLLATE "pg_catalog"."default",
+    "meal_id" int8,
+    "patient_meal_id" int8,
+    "price"         numeric(13, 4),
+    "dis_price"     numeric(13, 4),
+    "market_price"  numeric(13, 4),
+    "source"        varchar(50) COLLATE "pg_catalog"."default",
+    "type"          varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_patient_fee_item"."id" IS 'id';
@@ -663,22 +681,23 @@ COMMENT ON TABLE "public"."t_patient_fee_item" IS 't_patient_fee_item';
 -- Table structure for t_patient_group
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_patient_group";
-CREATE TABLE "public"."t_patient_group" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "customer_id" int8,
-  "team_id" int8,
-  "team_meal_id" int8,
-  "meal_id" int8,
-  "meal_name" varchar(50) COLLATE "pg_catalog"."default",
-  "person_num" int4
+CREATE TABLE "public"."t_patient_group"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "code"        varchar(50) COLLATE "pg_catalog"."default",
+    "name"        varchar(50) COLLATE "pg_catalog"."default",
+    "customer_id" int8,
+    "team_id" int8,
+    "team_meal_id" int8,
+    "meal_id" int8,
+    "meal_name"   varchar(50) COLLATE "pg_catalog"."default",
+    "person_num" int4
 )
 ;
 COMMENT ON COLUMN "public"."t_patient_group"."id" IS 'id';
@@ -702,25 +721,26 @@ COMMENT ON TABLE "public"."t_patient_group" IS 't_patient_group';
 -- Table structure for t_patient_meal
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_patient_meal";
-CREATE TABLE "public"."t_patient_meal" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "team_id" int8,
-  "group_id" int8,
-  "meal_type" varchar(50) COLLATE "pg_catalog"."default",
-  "meal_source" varchar(50) COLLATE "pg_catalog"."default",
-  "meal_id" int8,
-  "team_meal_id" int8,
-  "meal_code" varchar(50) COLLATE "pg_catalog"."default",
-  "meal_name" varchar(50) COLLATE "pg_catalog"."default",
-  "price" numeric(13,4),
-  "dis_price" numeric(13,4),
-  "market_price" numeric(13,4)
+CREATE TABLE "public"."t_patient_meal"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"  timestamp(6),
+    "update_date"  timestamp(6),
+    "team_id" int8,
+    "group_id" int8,
+    "meal_type"    varchar(50) COLLATE "pg_catalog"."default",
+    "meal_source"  varchar(50) COLLATE "pg_catalog"."default",
+    "meal_id" int8,
+    "team_meal_id" int8,
+    "meal_code"    varchar(50) COLLATE "pg_catalog"."default",
+    "meal_name"    varchar(50) COLLATE "pg_catalog"."default",
+    "price"        numeric(13, 4),
+    "dis_price"    numeric(13, 4),
+    "market_price" numeric(13, 4)
 )
 ;
 COMMENT ON COLUMN "public"."t_patient_meal"."id" IS 'id';
@@ -747,22 +767,23 @@ COMMENT ON TABLE "public"."t_patient_meal" IS 't_patient_meal';
 -- Table structure for t_patient_team
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_patient_team";
-CREATE TABLE "public"."t_patient_team" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "customer_id" int8,
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "age_start" int4,
-  "age_end" int4,
-  "sex" varchar(50) COLLATE "pg_catalog"."default",
-  "marriage" varchar(50) COLLATE "pg_catalog"."default",
-  "bear" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_patient_team"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "customer_id" int8,
+    "code"        varchar(50) COLLATE "pg_catalog"."default",
+    "name"        varchar(50) COLLATE "pg_catalog"."default",
+    "age_start" int4,
+    "age_end" int4,
+    "sex"         varchar(50) COLLATE "pg_catalog"."default",
+    "marriage"    varchar(50) COLLATE "pg_catalog"."default",
+    "bear"        varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_patient_team"."id" IS 'id';
@@ -786,25 +807,26 @@ COMMENT ON TABLE "public"."t_patient_team" IS 't_patient_team';
 -- Table structure for t_patient_team_meal
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_patient_team_meal";
-CREATE TABLE "public"."t_patient_team_meal" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "patient_id" int8,
-  "team_id" int8,
-  "team_code" varchar(50) COLLATE "pg_catalog"."default",
-  "team_name" varchar(50) COLLATE "pg_catalog"."default",
-  "meal_type" varchar(50) COLLATE "pg_catalog"."default",
-  "meal_id" int8,
-  "meal_code" varchar(50) COLLATE "pg_catalog"."default",
-  "meal_name" varchar(50) COLLATE "pg_catalog"."default",
-  "price" numeric(13,4),
-  "dis_price" numeric(13,4),
-  "market_price" numeric(13,4)
+CREATE TABLE "public"."t_patient_team_meal"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"  timestamp(6),
+    "update_date"  timestamp(6),
+    "patient_id" int8,
+    "team_id" int8,
+    "team_code"    varchar(50) COLLATE "pg_catalog"."default",
+    "team_name"    varchar(50) COLLATE "pg_catalog"."default",
+    "meal_type"    varchar(50) COLLATE "pg_catalog"."default",
+    "meal_id" int8,
+    "meal_code"    varchar(50) COLLATE "pg_catalog"."default",
+    "meal_name"    varchar(50) COLLATE "pg_catalog"."default",
+    "price"        numeric(13, 4),
+    "dis_price"    numeric(13, 4),
+    "market_price" numeric(13, 4)
 )
 ;
 COMMENT ON COLUMN "public"."t_patient_team_meal"."id" IS 'id';
@@ -831,23 +853,24 @@ COMMENT ON TABLE "public"."t_patient_team_meal" IS 't_patient_team_meal';
 -- Table structure for t_patient_team_meal_check_item
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_patient_team_meal_check_item";
-CREATE TABLE "public"."t_patient_team_meal_check_item" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "team_id" int8,
-  "meal_id" int8,
-  "team_meal_id" int8,
-  "fee_item_id" int8,
-  "team_fee_item_id" int8,
-  "check_item_id" varchar(50) COLLATE "pg_catalog"."default",
-  "check_item_code" varchar(50) COLLATE "pg_catalog"."default",
-  "check_item_name" varchar(50) COLLATE "pg_catalog"."default",
-  "source" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_patient_team_meal_check_item"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"     varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"     varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"     timestamp(6),
+    "update_date"     timestamp(6),
+    "team_id" int8,
+    "meal_id" int8,
+    "team_meal_id" int8,
+    "fee_item_id" int8,
+    "team_fee_item_id" int8,
+    "check_item_id"   varchar(50) COLLATE "pg_catalog"."default",
+    "check_item_code" varchar(50) COLLATE "pg_catalog"."default",
+    "check_item_name" varchar(50) COLLATE "pg_catalog"."default",
+    "source"          varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_patient_team_meal_check_item"."id" IS 'id';
@@ -872,25 +895,26 @@ COMMENT ON TABLE "public"."t_patient_team_meal_check_item" IS 't_patient_team_me
 -- Table structure for t_patient_team_meal_fee_item
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_patient_team_meal_fee_item";
-CREATE TABLE "public"."t_patient_team_meal_fee_item" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "team_id" int8,
-  "team_meal_id" int8,
-  "meal_id" int8,
-  "fee_item_id" int8,
-  "fee_item_code" varchar(50) COLLATE "pg_catalog"."default",
-  "fee_item_name" varchar(50) COLLATE "pg_catalog"."default",
-  "price" numeric(13,4),
-  "dis_price" numeric(13,4),
-  "market_price" numeric(13,4),
-  "source" varchar(50) COLLATE "pg_catalog"."default",
-  "type" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_patient_team_meal_fee_item"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"   timestamp(6),
+    "update_date"   timestamp(6),
+    "team_id" int8,
+    "team_meal_id" int8,
+    "meal_id" int8,
+    "fee_item_id" int8,
+    "fee_item_code" varchar(50) COLLATE "pg_catalog"."default",
+    "fee_item_name" varchar(50) COLLATE "pg_catalog"."default",
+    "price"         numeric(13, 4),
+    "dis_price"     numeric(13, 4),
+    "market_price"  numeric(13, 4),
+    "source"        varchar(50) COLLATE "pg_catalog"."default",
+    "type"          varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_patient_team_meal_fee_item"."id" IS 'id';
@@ -917,23 +941,24 @@ COMMENT ON TABLE "public"."t_patient_team_meal_fee_item" IS 't_patient_team_meal
 -- Table structure for t_personal_report_check_items
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_personal_report_check_items";
-CREATE TABLE "public"."t_personal_report_check_items" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "patient_id" int8,
-  "fee_item_id" int8,
-  "check_item_id" int8,
-  "check_item_name" varchar(50) COLLATE "pg_catalog"."default",
-  "result_type" varchar(50) COLLATE "pg_catalog"."default",
-  "lower_limit" varchar(50) COLLATE "pg_catalog"."default",
-  "upper_limit" varchar(50) COLLATE "pg_catalog"."default",
-  "detection_value" varchar(50) COLLATE "pg_catalog"."default",
-  "conclusion" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_personal_report_check_items"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"     varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"     varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"     timestamp(6),
+    "update_date"     timestamp(6),
+    "patient_id" int8,
+    "fee_item_id" int8,
+    "check_item_id" int8,
+    "check_item_name" varchar(50) COLLATE "pg_catalog"."default",
+    "result_type"     varchar(50) COLLATE "pg_catalog"."default",
+    "lower_limit"     varchar(50) COLLATE "pg_catalog"."default",
+    "upper_limit"     varchar(50) COLLATE "pg_catalog"."default",
+    "detection_value" varchar(50) COLLATE "pg_catalog"."default",
+    "conclusion"      varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_personal_report_check_items"."id" IS 'id';
@@ -958,18 +983,19 @@ COMMENT ON TABLE "public"."t_personal_report_check_items" IS 't_personal_report_
 -- Table structure for t_personal_report_fee_items
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_personal_report_fee_items";
-CREATE TABLE "public"."t_personal_report_fee_items" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "patient_id" int8,
-  "fee_item_id" int8,
-  "fee_item_name" varchar(50) COLLATE "pg_catalog"."default",
-  "conclusion" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_personal_report_fee_items"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"   timestamp(6),
+    "update_date"   timestamp(6),
+    "patient_id" int8,
+    "fee_item_id" int8,
+    "fee_item_name" varchar(50) COLLATE "pg_catalog"."default",
+    "conclusion"    varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_personal_report_fee_items"."id" IS 'id';
@@ -989,21 +1015,22 @@ COMMENT ON TABLE "public"."t_personal_report_fee_items" IS 't_personal_report_fe
 -- Table structure for t_personal_report_info
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_personal_report_info";
-CREATE TABLE "public"."t_personal_report_info" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "patient_id" int8,
-  "patient_name" varchar(50) COLLATE "pg_catalog"."default",
-  "patient_id_number" varchar(50) COLLATE "pg_catalog"."default",
-  "patient_phone" varchar(50) COLLATE "pg_catalog"."default",
-  "file_name" varchar(50) COLLATE "pg_catalog"."default",
-  "bucket_name" varchar(50) COLLATE "pg_catalog"."default",
-  "template_id" int8
+CREATE TABLE "public"."t_personal_report_info"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"       varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"       varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"       timestamp(6),
+    "update_date"       timestamp(6),
+    "patient_id" int8,
+    "patient_name"      varchar(50) COLLATE "pg_catalog"."default",
+    "patient_id_number" varchar(50) COLLATE "pg_catalog"."default",
+    "patient_phone"     varchar(50) COLLATE "pg_catalog"."default",
+    "file_name"         varchar(50) COLLATE "pg_catalog"."default",
+    "bucket_name"       varchar(50) COLLATE "pg_catalog"."default",
+    "template_id" int8
 )
 ;
 COMMENT ON COLUMN "public"."t_personal_report_info"."id" IS 'id';
@@ -1026,16 +1053,17 @@ COMMENT ON TABLE "public"."t_personal_report_info" IS 't_personal_report_info';
 -- Table structure for t_personal_report_summary
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_personal_report_summary";
-CREATE TABLE "public"."t_personal_report_summary" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "patient_id" int8,
-  "conclusion" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_personal_report_summary"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "patient_id" int8,
+    "conclusion"  varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_personal_report_summary"."id" IS 'id';
@@ -1053,18 +1081,19 @@ COMMENT ON TABLE "public"."t_personal_report_summary" IS 't_personal_report_summ
 -- Table structure for t_potential_customers
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_potential_customers";
-CREATE TABLE "public"."t_potential_customers" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "phone" varchar(50) COLLATE "pg_catalog"."default",
-  "level" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_potential_customers"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "code"        varchar(50) COLLATE "pg_catalog"."default",
+    "name"        varchar(50) COLLATE "pg_catalog"."default",
+    "phone"       varchar(50) COLLATE "pg_catalog"."default",
+    "level"       varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_potential_customers"."id" IS 'id';
@@ -1084,21 +1113,22 @@ COMMENT ON TABLE "public"."t_potential_customers" IS 't_potential_customers';
 -- Table structure for t_report_info
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_report_info";
-CREATE TABLE "public"."t_report_info" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "patient_id" int8,
-  "patient_code" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "bucket_name" varchar(50) COLLATE "pg_catalog"."default",
-  "file_name" varchar(50) COLLATE "pg_catalog"."default",
-  "versions" int4
+CREATE TABLE "public"."t_report_info"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"  varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"  timestamp(6),
+    "update_date"  timestamp(6),
+    "code"         varchar(50) COLLATE "pg_catalog"."default",
+    "patient_id" int8,
+    "patient_code" varchar(50) COLLATE "pg_catalog"."default",
+    "name"         varchar(50) COLLATE "pg_catalog"."default",
+    "bucket_name"  varchar(50) COLLATE "pg_catalog"."default",
+    "file_name"    varchar(50) COLLATE "pg_catalog"."default",
+    "versions" int4
 )
 ;
 COMMENT ON COLUMN "public"."t_report_info"."id" IS 'id';
@@ -1121,19 +1151,20 @@ COMMENT ON TABLE "public"."t_report_info" IS 't_report_info';
 -- Table structure for t_resource
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_resource";
-CREATE TABLE "public"."t_resource" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "type" varchar(50) COLLATE "pg_catalog"."default",
-  "url" varchar(50) COLLATE "pg_catalog"."default",
-  "pid" int8,
-  "weight" int4
+CREATE TABLE "public"."t_resource"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "name"        varchar(50) COLLATE "pg_catalog"."default",
+    "type"        varchar(50) COLLATE "pg_catalog"."default",
+    "url"         varchar(50) COLLATE "pg_catalog"."default",
+    "pid" int8,
+    "weight" int4
 )
 ;
 COMMENT ON COLUMN "public"."t_resource"."id" IS 'id';
@@ -1154,15 +1185,16 @@ COMMENT ON TABLE "public"."t_resource" IS 't_resource';
 -- Table structure for t_role
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_role";
-CREATE TABLE "public"."t_role" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "name" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_role"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "name"        varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_role"."id" IS 'id';
@@ -1179,16 +1211,17 @@ COMMENT ON TABLE "public"."t_role" IS 't_role';
 -- Table structure for t_role_resource
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_role_resource";
-CREATE TABLE "public"."t_role_resource" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "role_id" int8,
-  "resource_id" int8
+CREATE TABLE "public"."t_role_resource"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "role_id" int8,
+    "resource_id" int8
 )
 ;
 COMMENT ON COLUMN "public"."t_role_resource"."id" IS 'id';
@@ -1206,20 +1239,21 @@ COMMENT ON TABLE "public"."t_role_resource" IS 't_role_resource';
 -- Table structure for t_sales_record
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_sales_record";
-CREATE TABLE "public"."t_sales_record" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "seller_id" int8,
-  "seller_code" varchar(50) COLLATE "pg_catalog"."default",
-  "customer_id" int8,
-  "customer_code" varchar(50) COLLATE "pg_catalog"."default",
-  "customer_name" varchar(50) COLLATE "pg_catalog"."default",
-  "amount" numeric(13,4)
+CREATE TABLE "public"."t_sales_record"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "update_user"   varchar(50) COLLATE "pg_catalog"."default",
+    "create_date"   timestamp(6),
+    "update_date"   timestamp(6),
+    "seller_id" int8,
+    "seller_code"   varchar(50) COLLATE "pg_catalog"."default",
+    "customer_id" int8,
+    "customer_code" varchar(50) COLLATE "pg_catalog"."default",
+    "customer_name" varchar(50) COLLATE "pg_catalog"."default",
+    "amount"        numeric(13, 4)
 )
 ;
 COMMENT ON COLUMN "public"."t_sales_record"."id" IS 'id';
@@ -1241,20 +1275,21 @@ COMMENT ON TABLE "public"."t_sales_record" IS 't_sales_record';
 -- Table structure for t_seller_info
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_seller_info";
-CREATE TABLE "public"."t_seller_info" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "code" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "age" int4,
-  "phone" varchar(50) COLLATE "pg_catalog"."default",
-  "address" varchar(50) COLLATE "pg_catalog"."default",
-  "status" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_seller_info"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "code"        varchar(50) COLLATE "pg_catalog"."default",
+    "name"        varchar(50) COLLATE "pg_catalog"."default",
+    "age" int4,
+    "phone"       varchar(50) COLLATE "pg_catalog"."default",
+    "address"     varchar(50) COLLATE "pg_catalog"."default",
+    "status"      varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_seller_info"."id" IS 'id';
@@ -1276,19 +1311,20 @@ COMMENT ON TABLE "public"."t_seller_info" IS 't_seller_info';
 -- Table structure for t_template_info
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_template_info";
-CREATE TABLE "public"."t_template_info" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "type" varchar(50) COLLATE "pg_catalog"."default",
-  "code" int8,
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "bucket_name" varchar(50) COLLATE "pg_catalog"."default",
-  "file_name" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_template_info"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "type"        varchar(50) COLLATE "pg_catalog"."default",
+    "code" int8,
+    "name"        varchar(50) COLLATE "pg_catalog"."default",
+    "bucket_name" varchar(50) COLLATE "pg_catalog"."default",
+    "file_name"   varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_template_info"."id" IS 'id';
@@ -1309,18 +1345,19 @@ COMMENT ON TABLE "public"."t_template_info" IS 't_template_info';
 -- Table structure for t_user
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_user";
-CREATE TABLE "public"."t_user" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "username" varchar(50) COLLATE "pg_catalog"."default",
-  "name" varchar(50) COLLATE "pg_catalog"."default",
-  "password" varchar(50) COLLATE "pg_catalog"."default",
-  "status" varchar(50) COLLATE "pg_catalog"."default"
+CREATE TABLE "public"."t_user"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "username"    varchar(50) COLLATE "pg_catalog"."default",
+    "name"        varchar(50) COLLATE "pg_catalog"."default",
+    "password"    varchar(50) COLLATE "pg_catalog"."default",
+    "status"      varchar(50) COLLATE "pg_catalog"."default"
 )
 ;
 COMMENT ON COLUMN "public"."t_user"."id" IS 'id';
@@ -1342,16 +1379,17 @@ COMMENT ON TABLE "public"."t_user" IS 't_user';
 -- Table structure for t_user_role
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."t_user_role";
-CREATE TABLE "public"."t_user_role" (
-  "id" int8 NOT NULL,
-  "create_id" int8,
-  "update_id" int8,
-  "create_user" varchar(50) COLLATE "pg_catalog"."default",
-  "update_user" varchar(50) COLLATE "pg_catalog"."default",
-  "create_date" timestamp(6),
-  "update_date" timestamp(6),
-  "user_id" int8,
-  "role_id" int8
+CREATE TABLE "public"."t_user_role"
+(
+    "id" int8 NOT NULL,
+    "create_id" int8,
+    "update_id" int8,
+    "create_user" varchar(50) COLLATE "pg_catalog"."default",
+    "update_user" varchar(50) COLLATE "pg_catalog"."default",
+    "create_date" timestamp(6),
+    "update_date" timestamp(6),
+    "user_id" int8,
+    "role_id" int8
 )
 ;
 COMMENT ON COLUMN "public"."t_user_role"."id" IS 'id';
@@ -1368,189 +1406,227 @@ COMMENT ON TABLE "public"."t_user_role" IS 't_user_role';
 -- ----------------------------
 -- Primary Key structure for table t_bill_info
 -- ----------------------------
-ALTER TABLE "public"."t_bill_info" ADD CONSTRAINT "t_bill_info_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_bill_info"
+    ADD CONSTRAINT "t_bill_info_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_bill_items_info
 -- ----------------------------
-ALTER TABLE "public"."t_bill_items_info" ADD CONSTRAINT "t_bill_items_info_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_bill_items_info"
+    ADD CONSTRAINT "t_bill_items_info_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_bill_log
 -- ----------------------------
-ALTER TABLE "public"."t_bill_log" ADD CONSTRAINT "t_bill_log_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_bill_log"
+    ADD CONSTRAINT "t_bill_log_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_bill_sub_info
 -- ----------------------------
-ALTER TABLE "public"."t_bill_sub_info" ADD CONSTRAINT "t_bill_sub_info_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_bill_sub_info"
+    ADD CONSTRAINT "t_bill_sub_info_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_check_department
 -- ----------------------------
-ALTER TABLE "public"."t_check_department" ADD CONSTRAINT "t_check_department_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_check_department"
+    ADD CONSTRAINT "t_check_department_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_check_department_items
 -- ----------------------------
-ALTER TABLE "public"."t_check_department_items" ADD CONSTRAINT "t_check_department_items_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_check_department_items"
+    ADD CONSTRAINT "t_check_department_items_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_check_item
 -- ----------------------------
-ALTER TABLE "public"."t_check_item" ADD CONSTRAINT "t_check_item_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_check_item"
+    ADD CONSTRAINT "t_check_item_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_customer_contract
 -- ----------------------------
-ALTER TABLE "public"."t_customer_contract" ADD CONSTRAINT "t_customer_contract_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_customer_contract"
+    ADD CONSTRAINT "t_customer_contract_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_customer_info
 -- ----------------------------
-ALTER TABLE "public"."t_customer_info" ADD CONSTRAINT "t_customer_info_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_customer_info"
+    ADD CONSTRAINT "t_customer_info_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_customer_order
 -- ----------------------------
-ALTER TABLE "public"."t_customer_order" ADD CONSTRAINT "t_customer_order_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_customer_order"
+    ADD CONSTRAINT "t_customer_order_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_department
 -- ----------------------------
-ALTER TABLE "public"."t_department" ADD CONSTRAINT "t_department_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_department"
+    ADD CONSTRAINT "t_department_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_department_role
 -- ----------------------------
-ALTER TABLE "public"."t_department_role" ADD CONSTRAINT "t_department_role_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_department_role"
+    ADD CONSTRAINT "t_department_role_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_fee_item
 -- ----------------------------
-ALTER TABLE "public"."t_fee_item" ADD CONSTRAINT "t_fee_item_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_fee_item"
+    ADD CONSTRAINT "t_fee_item_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_meal
 -- ----------------------------
-ALTER TABLE "public"."t_meal" ADD CONSTRAINT "t_meal_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_meal"
+    ADD CONSTRAINT "t_meal_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_meal_fee_item
 -- ----------------------------
-ALTER TABLE "public"."t_meal_fee_item" ADD CONSTRAINT "t_meal_fee_item_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_meal_fee_item"
+    ADD CONSTRAINT "t_meal_fee_item_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_patient
 -- ----------------------------
-ALTER TABLE "public"."t_patient" ADD CONSTRAINT "t_patient_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_patient"
+    ADD CONSTRAINT "t_patient_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_patient_check_item
 -- ----------------------------
-ALTER TABLE "public"."t_patient_check_item" ADD CONSTRAINT "t_patient_check_item_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_patient_check_item"
+    ADD CONSTRAINT "t_patient_check_item_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_patient_fee_item
 -- ----------------------------
-ALTER TABLE "public"."t_patient_fee_item" ADD CONSTRAINT "t_patient_fee_item_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_patient_fee_item"
+    ADD CONSTRAINT "t_patient_fee_item_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_patient_group
 -- ----------------------------
-ALTER TABLE "public"."t_patient_group" ADD CONSTRAINT "t_patient_group_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_patient_group"
+    ADD CONSTRAINT "t_patient_group_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_patient_meal
 -- ----------------------------
-ALTER TABLE "public"."t_patient_meal" ADD CONSTRAINT "t_patient_meal_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_patient_meal"
+    ADD CONSTRAINT "t_patient_meal_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_patient_team
 -- ----------------------------
-ALTER TABLE "public"."t_patient_team" ADD CONSTRAINT "t_patient_team_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_patient_team"
+    ADD CONSTRAINT "t_patient_team_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_patient_team_meal
 -- ----------------------------
-ALTER TABLE "public"."t_patient_team_meal" ADD CONSTRAINT "t_patient_team_meal_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_patient_team_meal"
+    ADD CONSTRAINT "t_patient_team_meal_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_patient_team_meal_check_item
 -- ----------------------------
-ALTER TABLE "public"."t_patient_team_meal_check_item" ADD CONSTRAINT "t_patient_team_meal_check_item_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_patient_team_meal_check_item"
+    ADD CONSTRAINT "t_patient_team_meal_check_item_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_patient_team_meal_fee_item
 -- ----------------------------
-ALTER TABLE "public"."t_patient_team_meal_fee_item" ADD CONSTRAINT "t_patient_team_meal_fee_item_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_patient_team_meal_fee_item"
+    ADD CONSTRAINT "t_patient_team_meal_fee_item_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_personal_report_check_items
 -- ----------------------------
-ALTER TABLE "public"."t_personal_report_check_items" ADD CONSTRAINT "t_personal_report_check_items_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_personal_report_check_items"
+    ADD CONSTRAINT "t_personal_report_check_items_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_personal_report_fee_items
 -- ----------------------------
-ALTER TABLE "public"."t_personal_report_fee_items" ADD CONSTRAINT "t_personal_report_fee_items_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_personal_report_fee_items"
+    ADD CONSTRAINT "t_personal_report_fee_items_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_personal_report_info
 -- ----------------------------
-ALTER TABLE "public"."t_personal_report_info" ADD CONSTRAINT "t_personal_report_info_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_personal_report_info"
+    ADD CONSTRAINT "t_personal_report_info_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_personal_report_summary
 -- ----------------------------
-ALTER TABLE "public"."t_personal_report_summary" ADD CONSTRAINT "t_personal_report_summary_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_personal_report_summary"
+    ADD CONSTRAINT "t_personal_report_summary_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_potential_customers
 -- ----------------------------
-ALTER TABLE "public"."t_potential_customers" ADD CONSTRAINT "t_potential_customers_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_potential_customers"
+    ADD CONSTRAINT "t_potential_customers_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_report_info
 -- ----------------------------
-ALTER TABLE "public"."t_report_info" ADD CONSTRAINT "t_report_info_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_report_info"
+    ADD CONSTRAINT "t_report_info_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_resource
 -- ----------------------------
-ALTER TABLE "public"."t_resource" ADD CONSTRAINT "t_resource_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_resource"
+    ADD CONSTRAINT "t_resource_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_role
 -- ----------------------------
-ALTER TABLE "public"."t_role" ADD CONSTRAINT "t_role_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_role"
+    ADD CONSTRAINT "t_role_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_role_resource
 -- ----------------------------
-ALTER TABLE "public"."t_role_resource" ADD CONSTRAINT "t_role_resource_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_role_resource"
+    ADD CONSTRAINT "t_role_resource_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_sales_record
 -- ----------------------------
-ALTER TABLE "public"."t_sales_record" ADD CONSTRAINT "t_sales_record_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_sales_record"
+    ADD CONSTRAINT "t_sales_record_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_seller_info
 -- ----------------------------
-ALTER TABLE "public"."t_seller_info" ADD CONSTRAINT "t_seller_info_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_seller_info"
+    ADD CONSTRAINT "t_seller_info_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_template_info
 -- ----------------------------
-ALTER TABLE "public"."t_template_info" ADD CONSTRAINT "t_template_info_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_template_info"
+    ADD CONSTRAINT "t_template_info_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_user
 -- ----------------------------
-ALTER TABLE "public"."t_user" ADD CONSTRAINT "t_user_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_user"
+    ADD CONSTRAINT "t_user_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table t_user_role
 -- ----------------------------
-ALTER TABLE "public"."t_user_role" ADD CONSTRAINT "t_user_role_pkey" PRIMARY KEY ("id");
+ALTER TABLE "public"."t_user_role"
+    ADD CONSTRAINT "t_user_role_pkey" PRIMARY KEY ("id");

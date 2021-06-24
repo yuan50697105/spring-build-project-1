@@ -33,7 +33,7 @@ public class DAccountServiceImpl extends DServiceImpl<User, UserVo, UserDTO, Use
 
     @Override
     public void updateStatus(UserStatus status, List<Long> ids) {
-        ids.stream().map(id->{
+        ids.stream().map(id -> {
             UserVo userVo = new UserVo();
             userVo.setId(id);
             userVo.setStatus(status.getValue());
@@ -43,7 +43,7 @@ public class DAccountServiceImpl extends DServiceImpl<User, UserVo, UserDTO, Use
 
     @Override
     public void updateStatus(UserStatus status, Long... ids) {
-        updateStatus(status,Arrays.asList(ids));
+        updateStatus(status, Arrays.asList(ids));
     }
 
     @Override

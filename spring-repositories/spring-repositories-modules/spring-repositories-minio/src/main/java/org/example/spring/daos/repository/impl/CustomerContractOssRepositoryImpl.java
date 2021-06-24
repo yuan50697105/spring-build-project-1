@@ -1,9 +1,9 @@
 package org.example.spring.repositories.repository.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.spring.repositories.repository.CustomerContractOssRepository;
 import org.example.spring.plugins.commons.entity.OssResponse;
 import org.example.spring.plugins.oss.minio.MinioOssService;
+import org.example.spring.repositories.repository.CustomerContractOssRepository;
 import org.springframework.stereotype.Repository;
 
 import java.io.InputStream;

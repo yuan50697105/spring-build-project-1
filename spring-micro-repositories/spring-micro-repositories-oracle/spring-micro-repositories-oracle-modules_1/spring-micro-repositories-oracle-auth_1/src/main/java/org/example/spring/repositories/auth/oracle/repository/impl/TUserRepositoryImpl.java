@@ -1,7 +1,6 @@
 package org.example.spring.repositories.auth.oracle.repository.impl;
 
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
-import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.auth.oracle.converter.TUserConverter;
 import org.example.spring.repositories.auth.oracle.dao.TUserDao;
 import org.example.spring.repositories.auth.oracle.repository.TResourceRepository;
@@ -13,6 +12,7 @@ import org.example.spring.repositories.auth.oracle.table.dto.TUserRoleResourceDT
 import org.example.spring.repositories.auth.oracle.table.po.TUser;
 import org.example.spring.repositories.auth.oracle.table.query.TUserQuery;
 import org.example.spring.repositories.auth.oracle.table.vo.TUserVo;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

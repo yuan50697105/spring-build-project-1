@@ -2,7 +2,6 @@ package org.example.spring.domains.services.auth.mysql.vo;
 
 import cn.hutool.core.util.EnumUtil;
 import lombok.Data;
-import lombok.Value;
 import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
 
 @Data
@@ -36,6 +35,10 @@ public class RegisterVo {
             this.name = name;
         }
 
+        public static RegisterType get(String value) {
+            return EnumUtil.likeValueOf(RegisterType.class, value);
+        }
+
         public String getType() {
             return type;
         }
@@ -46,10 +49,6 @@ public class RegisterVo {
 
         public String getName() {
             return name;
-        }
-
-        public static RegisterType get(String value) {
-            return EnumUtil.likeValueOf(RegisterType.class, value);
         }
 
         public static class Constants {

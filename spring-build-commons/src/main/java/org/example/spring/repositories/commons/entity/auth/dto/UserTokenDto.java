@@ -2,8 +2,8 @@ package org.example.spring.repositories.commons.entity.auth.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.UserTokenStatus;
 import org.example.spring.repositories.commons.entity.auth.po.UserToken;
+import org.example.spring.repositories.commons.enumerate.UserTokenStatus;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

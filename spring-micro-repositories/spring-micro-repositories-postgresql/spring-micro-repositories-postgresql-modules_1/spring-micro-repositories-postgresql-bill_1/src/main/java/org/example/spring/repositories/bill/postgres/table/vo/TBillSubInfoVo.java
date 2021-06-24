@@ -2,8 +2,8 @@ package org.example.spring.repositories.bill.postgres.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.BillSubInfoStatus;
 import org.example.spring.repositories.bill.postgres.table.po.TBillSubInfo;
+import org.example.spring.repositories.commons.enumerate.BillSubInfoStatus;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

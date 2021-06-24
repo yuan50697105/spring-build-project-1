@@ -171,12 +171,12 @@ public abstract class IBaseRepositoryImpl<T extends IBaseEntity, DTO extends T, 
 
     @Override
     public void modify(VO vo, Q q) {
-        update(vo,q);
+        update(vo, q);
     }
 
     @Override
     public void modifyNull(VO vo, Q q) {
-        updateNull(vo,q);
+        updateNull(vo, q);
     }
 
     @Override

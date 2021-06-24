@@ -2,9 +2,9 @@ package org.example.spring.repositories.commons.entity.items.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.example.spring.repositories.commons.entity.items.po.FeeItem;
 import org.example.spring.repositories.commons.enumerate.FeeItemType;
 import org.example.spring.repositories.commons.enumerate.Sex;
-import org.example.spring.repositories.commons.entity.items.po.FeeItem;
 
 import java.io.Serializable;
 

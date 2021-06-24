@@ -31,7 +31,7 @@ public class RSAAESUtils {
         return dataDTO;
     }
 
-    public static  <T> T decrypt(DataDTO dataDTO, Class<T> type) {
+    public static <T> T decrypt(DataDTO dataDTO, Class<T> type) {
         String data = "";
         RSA rsa = SecureUtil.rsa(dataDTO.getPrivateKey(), dataDTO.getPublicKey());
         byte[] decode = Base64.decode(dataDTO.getEncrptData());

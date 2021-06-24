@@ -4,12 +4,12 @@ package org.example.spring.repositories.clients.auth.postgres.api;
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.auth.postgres.repository.TResourceRepository;
 import org.example.spring.repositories.clients.auth.api.ResourceRepository;
 import org.example.spring.repositories.clients.auth.postgres.converter.ResourceRepositoryConverter;
 import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.ResourceQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.ResourceVo;
-import org.example.spring.repositories.auth.postgres.repository.TResourceRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;

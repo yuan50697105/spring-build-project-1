@@ -5,11 +5,11 @@ import ai.yue.library.base.exception.ResultException;
 import ai.yue.library.base.view.R;
 import ai.yue.library.base.view.Result;
 import lombok.AllArgsConstructor;
-import org.example.spring.domains.services.impl.DServiceImpl;
 import org.example.spring.domains.services.auth.mysql.dto.RegisterResult;
 import org.example.spring.domains.services.auth.mysql.handler.UserRegisterHandler;
 import org.example.spring.domains.services.auth.mysql.service.DAccountService;
 import org.example.spring.domains.services.auth.mysql.vo.RegisterVo;
+import org.example.spring.domains.services.impl.DServiceImpl;
 import org.example.spring.repositories.clients.auth.api.UserRepository;
 import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.UserRoleDTO;
@@ -28,6 +28,7 @@ import java.util.List;
 @AllArgsConstructor
 public class DAccountServiceImpl extends DServiceImpl<User, UserVo, UserDTO, UserQuery, UserRepository> implements DAccountService {
     private final UserRegisterHandler userRegisterHandler;
+
     @Override
     public UserRoleDTO getWithRole(Long id) {
         return repository.getWithRole(id);
@@ -40,7 +41,7 @@ public class DAccountServiceImpl extends DServiceImpl<User, UserVo, UserDTO, Use
 
     @Override
     public void updateStatus(UserStatus status, List<Long> ids) {
-        ids.stream().map(id->{
+        ids.stream().map(id -> {
             UserVo userVo = new UserVo();
             userVo.setId(id);
             userVo.setStatus(status.getValue());
@@ -65,7 +66,7 @@ public class DAccountServiceImpl extends DServiceImpl<User, UserVo, UserDTO, Use
 
     @Override
     public Result<?> verifyAccountExists(RegisterVo registerVo) throws ResultException {
-         userRegisterHandler.verifyAccount(registerVo);
-         return R.success();
+        userRegisterHandler.verifyAccount(registerVo);
+        return R.success();
     }
 }

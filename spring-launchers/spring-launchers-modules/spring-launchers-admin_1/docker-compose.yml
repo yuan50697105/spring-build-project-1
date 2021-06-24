@@ -8,6 +8,6 @@ services:
     container_name: admin-1
     hostname: admin-1
     ports:
-    - 8380:8080
+      - 8380:8080
     expose:
       - 8080

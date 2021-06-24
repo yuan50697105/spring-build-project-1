@@ -2,8 +2,8 @@ package org.example.spring.repositories.bill.mssql.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.commons.enumerate.BillLogType;
 import org.example.spring.repositories.bill.mssql.table.po.TBillLog;
+import org.example.spring.repositories.commons.enumerate.BillLogType;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

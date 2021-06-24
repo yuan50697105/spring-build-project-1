@@ -34,12 +34,13 @@ public class CustomInterceptor implements Interceptor {
     private static final String CREATE_DATE = "createDate";
     private static final String UPDATE_DATE = "updateDate";
     private final Generator generator;
+
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
         MappedStatement statement = ((MappedStatement) invocation.getArgs()[0]);
         SqlCommandType sqlCommandType = statement.getSqlCommandType();
         Object parameter = invocation.getArgs()[1];
-        if (sqlCommandType.equals(SqlCommandType.INSERT)||sqlCommandType.equals(SqlCommandType.UPDATE)) {
+        if (sqlCommandType.equals(SqlCommandType.INSERT) || sqlCommandType.equals(SqlCommandType.UPDATE)) {
             if (parameter instanceof MapperMethod.ParamMap) {
                 parameter = ((MapperMethod.ParamMap<?>) parameter).get("et");
             }

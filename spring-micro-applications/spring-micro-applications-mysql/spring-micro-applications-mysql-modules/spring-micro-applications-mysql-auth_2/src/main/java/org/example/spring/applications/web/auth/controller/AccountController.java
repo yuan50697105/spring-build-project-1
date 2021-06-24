@@ -93,19 +93,19 @@ public class AccountController {
     }
 
     @PutMapping(value = "status/{status}", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public Result<?> updateStatus1(@PathVariable String status,@RequestParam List<Long> ids) {
+    public Result<?> updateStatus1(@PathVariable String status, @RequestParam List<Long> ids) {
         accountService.updateStatus(UserStatus.get(status), ids);
         return R.success();
     }
 
     @PutMapping(value = "status/{status}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Result<?> updateStatus2(@PathVariable String status,@RequestBody List<Long> ids) {
+    public Result<?> updateStatus2(@PathVariable String status, @RequestBody List<Long> ids) {
         accountService.updateStatus(UserStatus.get(status), ids);
         return R.success();
     }
 
     @PostMapping("register/{type}")
-    public Result<?> register(@RequestBody UserVo userVo,@PathVariable String type) {
+    public Result<?> register(@RequestBody UserVo userVo, @PathVariable String type) {
         return accountService.register(new RegisterVo(userVo, RegisterVo.RegisterType.get(type)));
     }
 

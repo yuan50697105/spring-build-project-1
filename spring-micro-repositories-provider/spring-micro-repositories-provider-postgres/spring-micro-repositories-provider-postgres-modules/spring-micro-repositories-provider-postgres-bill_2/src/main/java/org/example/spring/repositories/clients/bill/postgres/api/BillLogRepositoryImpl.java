@@ -1,12 +1,12 @@
 package org.example.spring.repositories.clients.bill.postgres.api;
 
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.bill.postgres.repository.TBillLogRepository;
 import org.example.spring.repositories.clients.bill.api.BillLogRepository;
 import org.example.spring.repositories.clients.bill.postgres.converter.BillLogRepositoryConverter;
 import org.example.spring.repositories.commons.entity.bill.dto.BillLogDTO;
 import org.example.spring.repositories.commons.entity.bill.query.BillLogQuery;
 import org.example.spring.repositories.commons.entity.bill.vo.BillLogVo;
-import org.example.spring.repositories.bill.postgres.repository.TBillLogRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,6 +17,7 @@ import java.util.stream.Stream;
 public class BillLogRepositoryImpl implements BillLogRepository {
     private final TBillLogRepository repository;
     private final BillLogRepositoryConverter converter;
+
     public BillLogRepositoryImpl(TBillLogRepository repository, BillLogRepositoryConverter converter) {
         this.repository = repository;
         this.converter = converter;
@@ -64,7 +65,7 @@ public class BillLogRepositoryImpl implements BillLogRepository {
 
     @Override
     public void updateNull(BillLogVo vo, BillLogQuery billLogQuery) {
-        repository.updateNull(converter.convertVo(vo),converter.convertQuery(billLogQuery));
+        repository.updateNull(converter.convertVo(vo), converter.convertQuery(billLogQuery));
     }
 
     @Override

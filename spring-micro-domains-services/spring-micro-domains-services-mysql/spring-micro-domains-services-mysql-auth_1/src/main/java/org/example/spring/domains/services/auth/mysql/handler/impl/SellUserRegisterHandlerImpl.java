@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class SellUserRegisterHandlerImpl extends AbstractUserRegisterHandlerImpl implements UserRegisterHandler {
     private final UserRepository userRepository;
     private final ApplicationContext applicationContext;
+
     public SellUserRegisterHandlerImpl(UserRepository userRepository, ApplicationContext applicationContext) {
         this.userRepository = userRepository;
         this.applicationContext = applicationContext;

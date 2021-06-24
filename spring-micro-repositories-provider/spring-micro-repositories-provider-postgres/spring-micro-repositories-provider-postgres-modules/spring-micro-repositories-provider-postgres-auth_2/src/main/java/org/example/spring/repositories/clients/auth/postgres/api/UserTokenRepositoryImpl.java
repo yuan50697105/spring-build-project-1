@@ -3,14 +3,14 @@ package org.example.spring.repositories.clients.auth.postgres.api;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.auth.postgres.repository.TUserTokenRepository;
+import org.example.spring.repositories.auth.postgres.table.dto.TUserTokenDto;
+import org.example.spring.repositories.auth.postgres.table.query.TUserTokenQuery;
 import org.example.spring.repositories.clients.auth.api.UserTokenRepository;
 import org.example.spring.repositories.clients.auth.postgres.converter.UserTokenRepositoryConverter;
 import org.example.spring.repositories.commons.entity.auth.dto.UserTokenDto;
 import org.example.spring.repositories.commons.entity.auth.query.UserTokenQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.UserTokenVo;
-import org.example.spring.repositories.auth.postgres.repository.TUserTokenRepository;
-import org.example.spring.repositories.auth.postgres.table.dto.TUserTokenDto;
-import org.example.spring.repositories.auth.postgres.table.query.TUserTokenQuery;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;

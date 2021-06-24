@@ -1,12 +1,12 @@
 package org.example.spring.repositories.clients.bill.postgres.api;
 
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.bill.postgres.repository.TBillItemsInfoRepository;
 import org.example.spring.repositories.clients.bill.api.BillItemsInfoRepository;
 import org.example.spring.repositories.clients.bill.postgres.converter.BillItemsInfoRepositoryConverter;
 import org.example.spring.repositories.commons.entity.bill.dto.BillItemsInfoDTO;
 import org.example.spring.repositories.commons.entity.bill.query.BillItemsInfoQuery;
 import org.example.spring.repositories.commons.entity.bill.vo.BillItemsInfoVo;
-import org.example.spring.repositories.bill.postgres.repository.TBillItemsInfoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

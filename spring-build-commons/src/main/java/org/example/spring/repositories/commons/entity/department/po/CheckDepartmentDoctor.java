@@ -33,6 +33,7 @@ public class CheckDepartmentDoctor extends ICommonsEntity {
     private String selfDescription;
     /**
      * 隶属科室
+     *
      * @see CheckDepartmentType
      */
     private String checkDepartmentType;

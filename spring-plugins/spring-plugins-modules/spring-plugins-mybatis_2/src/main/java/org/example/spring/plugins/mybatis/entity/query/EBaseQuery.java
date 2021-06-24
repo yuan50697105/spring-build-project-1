@@ -6,5 +6,5 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public abstract class EBaseQuery<E> extends IBaseQuery implements MybatisExample<E>{
+public abstract class EBaseQuery<E> extends IBaseQuery implements MybatisExample<E> {
 }

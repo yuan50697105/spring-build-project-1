@@ -12,4 +12,4 @@ services:
     container_name: admin-server
     hostname: admin-server
     ports:
-    - 9080:8081
+      - 9080:8081

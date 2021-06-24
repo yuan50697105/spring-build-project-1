@@ -1,13 +1,6 @@
 package org.example.spring.repositories.auth.postgres.repository.impl;
 
 import org.example.spring.plugins.mybatis.repository.impl.ICommonsRepositoryImpl;
-import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
-import org.example.spring.repositories.commons.entity.auth.dto.UserRoleDTO;
-import org.example.spring.repositories.commons.entity.auth.dto.UserRoleResourceDTO;
-import org.example.spring.repositories.commons.entity.auth.po.User;
-import org.example.spring.repositories.commons.entity.auth.query.UserQuery;
-import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
-import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.auth.postgres.converter.UserConverter;
 import org.example.spring.repositories.auth.postgres.dao.TUserDao;
 import org.example.spring.repositories.auth.postgres.repository.ResourceRepository;
@@ -15,6 +8,13 @@ import org.example.spring.repositories.auth.postgres.repository.RoleRepository;
 import org.example.spring.repositories.auth.postgres.repository.UserRepository;
 import org.example.spring.repositories.auth.postgres.table.po.TUser;
 import org.example.spring.repositories.auth.postgres.table.query.TUserQuery;
+import org.example.spring.repositories.commons.entity.auth.dto.UserDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.UserRoleDTO;
+import org.example.spring.repositories.commons.entity.auth.dto.UserRoleResourceDTO;
+import org.example.spring.repositories.commons.entity.auth.po.User;
+import org.example.spring.repositories.commons.entity.auth.query.UserQuery;
+import org.example.spring.repositories.commons.entity.auth.vo.UserVo;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

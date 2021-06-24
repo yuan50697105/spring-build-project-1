@@ -1,13 +1,13 @@
 package org.example.spring.repositories.auth.oracle.repository;
 
 import org.example.spring.plugins.mybatis.repository.IBaseRepository;
-import org.example.spring.repositories.commons.enumerate.UserStatus;
 import org.example.spring.repositories.auth.oracle.table.dto.TUserDTO;
 import org.example.spring.repositories.auth.oracle.table.dto.TUserRoleDTO;
 import org.example.spring.repositories.auth.oracle.table.dto.TUserRoleResourceDTO;
 import org.example.spring.repositories.auth.oracle.table.po.TUser;
 import org.example.spring.repositories.auth.oracle.table.query.TUserQuery;
 import org.example.spring.repositories.auth.oracle.table.vo.TUserVo;
+import org.example.spring.repositories.commons.enumerate.UserStatus;
 
 import java.util.List;
 

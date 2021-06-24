@@ -9,7 +9,6 @@ import org.example.spring.repositories.commons.entity.customer.po.CustomerInfo;
 import org.example.spring.repositories.commons.entity.customer.query.CustomerInfoQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.CustomerInfoVo;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 @Component
 @DubboService
