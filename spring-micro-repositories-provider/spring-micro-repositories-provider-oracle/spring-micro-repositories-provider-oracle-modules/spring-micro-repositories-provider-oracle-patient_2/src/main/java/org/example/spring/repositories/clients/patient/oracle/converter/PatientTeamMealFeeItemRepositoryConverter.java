@@ -5,9 +5,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.patient.dto.PatientTeamMealFeeItemDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientTeamMealFeeItemQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientTeamMealFeeItemVo;
-import org.example.spring.repositories.oracle.patient.table.dto.TPatientTeamMealFeeItemDTO;
-import org.example.spring.repositories.oracle.patient.table.query.TPatientTeamMealFeeItemQuery;
-import org.example.spring.repositories.oracle.patient.table.vo.TPatientTeamMealFeeItemVo;
+import org.example.spring.repositories.patient.oracle.table.dto.TPatientTeamMealFeeItemDTO;
+import org.example.spring.repositories.patient.oracle.table.query.TPatientTeamMealFeeItemQuery;
+import org.example.spring.repositories.patient.oracle.table.vo.TPatientTeamMealFeeItemVo;
 import org.mapstruct.Mapper;
 
 import java.util.List;

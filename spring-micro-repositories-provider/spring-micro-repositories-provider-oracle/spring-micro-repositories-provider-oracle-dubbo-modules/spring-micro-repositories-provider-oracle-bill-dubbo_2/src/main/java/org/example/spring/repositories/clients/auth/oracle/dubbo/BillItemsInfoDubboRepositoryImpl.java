@@ -2,15 +2,12 @@ package org.example.spring.repositories.clients.auth.oracle.dubbo;
 
 import org.apache.dubbo.config.annotation.DubboService;
 import org.example.spring.repositories.clients.bill.api.BillItemsInfoRepository;
-import org.example.spring.repositories.clients.bill.oracle.api.BillItemsInfoRepositoryImpl;
-import org.example.spring.repositories.clients.bill.oracle.converter.BillItemsInfoRepositoryConverter;
 import org.example.spring.repositories.clients.dubbo.bill.api.BillItemsInfoDubboRepository;
 import org.example.spring.repositories.clients.dubbo.commons.CommonsDubboRepositoryImpl;
 import org.example.spring.repositories.commons.entity.bill.dto.BillItemsInfoDTO;
 import org.example.spring.repositories.commons.entity.bill.po.BillItemsInfo;
 import org.example.spring.repositories.commons.entity.bill.query.BillItemsInfoQuery;
 import org.example.spring.repositories.commons.entity.bill.vo.BillItemsInfoVo;
-import org.example.spring.repositories.oracle.bill.repository.TBillItemsInfoRepository;
 import org.springframework.stereotype.Component;
 
 @Component

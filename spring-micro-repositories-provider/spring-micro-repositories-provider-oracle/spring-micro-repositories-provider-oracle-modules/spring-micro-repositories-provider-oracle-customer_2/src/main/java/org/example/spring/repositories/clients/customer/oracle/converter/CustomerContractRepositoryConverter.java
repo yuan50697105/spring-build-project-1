@@ -5,9 +5,9 @@ import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.customer.dto.CustomerContractDTO;
 import org.example.spring.repositories.commons.entity.customer.query.CustomerContractQuery;
 import org.example.spring.repositories.commons.entity.customer.vo.CustomerContractVo;
-import org.example.spring.repositories.oracle.customer.table.dto.TCustomerContractDTO;
-import org.example.spring.repositories.oracle.customer.table.query.TCustomerContractQuery;
-import org.example.spring.repositories.oracle.customer.table.vo.TCustomerContractVo;
+import org.example.spring.repositories.customer.oracle.table.dto.TCustomerContractDTO;
+import org.example.spring.repositories.customer.oracle.table.query.TCustomerContractQuery;
+import org.example.spring.repositories.customer.oracle.table.vo.TCustomerContractVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

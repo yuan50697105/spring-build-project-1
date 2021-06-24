@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.patient.oracle.converter.PatientC
 import org.example.spring.repositories.commons.entity.patient.dto.PatientCheckItemDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientCheckItemQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientCheckItemVo;
-import org.example.spring.repositories.oracle.patient.repository.TPatientCheckItemRepository;
+import org.example.spring.repositories.patient.oracle.repository.TPatientCheckItemRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

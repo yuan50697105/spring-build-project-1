@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.patient.oracle.converter.PatientT
 import org.example.spring.repositories.commons.entity.patient.dto.PatientTeamDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientTeamQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientTeamVo;
-import org.example.spring.repositories.oracle.patient.repository.TPatientTeamRepository;
+import org.example.spring.repositories.patient.oracle.repository.TPatientTeamRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

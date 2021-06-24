@@ -3,14 +3,14 @@ package org.example.spring.repositories.clients.auth.oracle.api;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.auth.oracle.repository.TUserTokenRepository;
+import org.example.spring.repositories.auth.oracle.table.dto.TUserTokenDto;
+import org.example.spring.repositories.auth.oracle.table.query.TUserTokenQuery;
 import org.example.spring.repositories.clients.auth.api.UserTokenRepository;
 import org.example.spring.repositories.clients.auth.oracle.converter.UserTokenRepositoryConverter;
 import org.example.spring.repositories.commons.entity.auth.dto.UserTokenDto;
 import org.example.spring.repositories.commons.entity.auth.query.UserTokenQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.UserTokenVo;
-import org.example.spring.repositories.oracle.auth.repository.TUserTokenRepository;
-import org.example.spring.repositories.oracle.auth.table.dto.TUserTokenDto;
-import org.example.spring.repositories.oracle.auth.table.query.TUserTokenQuery;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;

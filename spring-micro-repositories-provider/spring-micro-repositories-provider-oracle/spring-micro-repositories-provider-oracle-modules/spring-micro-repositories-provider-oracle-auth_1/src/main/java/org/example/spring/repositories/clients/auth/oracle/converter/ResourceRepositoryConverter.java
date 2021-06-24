@@ -3,12 +3,12 @@ package org.example.spring.repositories.clients.auth.oracle.converter;
 import cn.hutool.core.lang.tree.Tree;
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.auth.oracle.table.dto.TResourceDTO;
+import org.example.spring.repositories.auth.oracle.table.query.TResourceQuery;
+import org.example.spring.repositories.auth.oracle.table.vo.TResourceVo;
 import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.ResourceQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.ResourceVo;
-import org.example.spring.repositories.oracle.auth.table.dto.TResourceDTO;
-import org.example.spring.repositories.oracle.auth.table.query.TResourceQuery;
-import org.example.spring.repositories.oracle.auth.table.vo.TResourceVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

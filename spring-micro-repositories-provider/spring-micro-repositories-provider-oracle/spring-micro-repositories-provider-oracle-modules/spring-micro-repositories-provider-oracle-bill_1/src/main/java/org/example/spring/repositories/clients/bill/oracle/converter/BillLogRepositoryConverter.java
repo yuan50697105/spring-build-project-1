@@ -2,12 +2,12 @@ package org.example.spring.repositories.clients.bill.oracle.converter;
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.bill.oracle.table.dto.TBillLogDTO;
+import org.example.spring.repositories.bill.oracle.table.query.TBillLogQuery;
+import org.example.spring.repositories.bill.oracle.table.vo.TBillLogVo;
 import org.example.spring.repositories.commons.entity.bill.dto.BillLogDTO;
 import org.example.spring.repositories.commons.entity.bill.query.BillLogQuery;
 import org.example.spring.repositories.commons.entity.bill.vo.BillLogVo;
-import org.example.spring.repositories.oracle.bill.table.dto.TBillLogDTO;
-import org.example.spring.repositories.oracle.bill.table.query.TBillLogQuery;
-import org.example.spring.repositories.oracle.bill.table.vo.TBillLogVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

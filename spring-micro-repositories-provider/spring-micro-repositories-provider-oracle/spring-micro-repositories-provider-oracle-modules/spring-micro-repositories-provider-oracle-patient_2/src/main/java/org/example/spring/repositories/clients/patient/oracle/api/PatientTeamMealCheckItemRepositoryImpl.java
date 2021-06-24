@@ -6,7 +6,7 @@ import org.example.spring.repositories.clients.patient.oracle.converter.PatientT
 import org.example.spring.repositories.commons.entity.patient.dto.PatientTeamMealCheckItemDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientTeamMealCheckItemQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientTeamMealCheckItemVo;
-import org.example.spring.repositories.oracle.patient.repository.TPatientTeamMealCheckItemRepository;
+import org.example.spring.repositories.patient.oracle.repository.TPatientTeamMealCheckItemRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,7 +14,8 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 @Repository
-public class PatientTeamMealCheckItemRepositoryImpl implements PatientTeamMealCheckItemRepository {
+public class
+PatientTeamMealCheckItemRepositoryImpl implements PatientTeamMealCheckItemRepository {
     private final PatientTeamMealCheckItemRepositoryConverter converter;
     private final TPatientTeamMealCheckItemRepository repository;
 

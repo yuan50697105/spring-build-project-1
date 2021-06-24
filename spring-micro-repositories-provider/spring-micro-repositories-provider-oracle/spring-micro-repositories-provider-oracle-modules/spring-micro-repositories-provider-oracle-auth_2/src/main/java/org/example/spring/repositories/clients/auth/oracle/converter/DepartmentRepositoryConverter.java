@@ -3,14 +3,14 @@ package org.example.spring.repositories.clients.auth.oracle.converter;
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
+import org.example.spring.repositories.auth.oracle.table.dto.TDepartmentDTO;
+import org.example.spring.repositories.auth.oracle.table.dto.TDepartmentRoleDTO;
+import org.example.spring.repositories.auth.oracle.table.query.TDepartmentQuery;
+import org.example.spring.repositories.auth.oracle.table.vo.TDepartmentVo;
 import org.example.spring.repositories.commons.entity.auth.dto.DepartmentDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.DepartmentRoleDTO;
 import org.example.spring.repositories.commons.entity.auth.query.DepartmentQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.DepartmentVo;
-import org.example.spring.repositories.oracle.auth.table.dto.TDepartmentDTO;
-import org.example.spring.repositories.oracle.auth.table.dto.TDepartmentRoleDTO;
-import org.example.spring.repositories.oracle.auth.table.query.TDepartmentQuery;
-import org.example.spring.repositories.oracle.auth.table.vo.TDepartmentVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
