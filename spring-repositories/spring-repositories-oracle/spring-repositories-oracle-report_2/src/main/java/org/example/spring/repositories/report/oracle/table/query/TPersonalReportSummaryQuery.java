@@ -1,11 +1,11 @@
-package org.example.spring.repositories.report.mysql.table.query;
+package org.example.spring.repositories.report.oracle.table.query;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
-import org.example.spring.repositories.report.mysql.table.po.TPersonalReportSummary;
+import org.example.spring.repositories.report.oracle.table.po.TPersonalReportSummary;
 import tk.mybatis.mapper.entity.Example;
 
 @EqualsAndHashCode(callSuper = true)

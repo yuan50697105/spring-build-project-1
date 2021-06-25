@@ -1,14 +1,14 @@
-package org.example.spring.repositories.patient.mysql.repository.impl;
+package org.example.spring.repositories.patient.oracle.repository.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
-import org.example.spring.repositories.patient.mysql.converter.TPatientTeamMealCheckItemConverter;
-import org.example.spring.repositories.patient.mysql.dao.TPatientTeamMealCheckItemDao;
-import org.example.spring.repositories.patient.mysql.repository.TPatientTeamMealCheckItemRepository;
-import org.example.spring.repositories.patient.mysql.table.dto.TPatientTeamMealCheckItemDTO;
-import org.example.spring.repositories.patient.mysql.table.po.TPatientTeamMealCheckItem;
-import org.example.spring.repositories.patient.mysql.table.query.TPatientTeamMealCheckItemQuery;
-import org.example.spring.repositories.patient.mysql.table.vo.TPatientTeamMealCheckItemVo;
+import org.example.spring.repositories.patient.oracle.converter.TPatientTeamMealCheckItemConverter;
+import org.example.spring.repositories.patient.oracle.dao.TPatientTeamMealCheckItemDao;
+import org.example.spring.repositories.patient.oracle.repository.TPatientTeamMealCheckItemRepository;
+import org.example.spring.repositories.patient.oracle.table.dto.TPatientTeamMealCheckItemDTO;
+import org.example.spring.repositories.patient.oracle.table.po.TPatientTeamMealCheckItem;
+import org.example.spring.repositories.patient.oracle.table.query.TPatientTeamMealCheckItemQuery;
+import org.example.spring.repositories.patient.oracle.table.vo.TPatientTeamMealCheckItemVo;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

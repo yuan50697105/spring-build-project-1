@@ -1,4 +1,4 @@
-package org.example.spring.repositories.patient.mysql.table.query;
+package org.example.spring.repositories.patient.oracle.table.query;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
@@ -12,7 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.example.spring.plugins.mybatis.entity.query.TkBaseQuery;
-import org.example.spring.repositories.patient.mysql.table.po.TPatientTeam;
+import org.example.spring.repositories.patient.oracle.table.po.TPatientTeam;
 import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;
@@ -20,7 +20,7 @@ import java.io.Serializable;
 /**
  * t_patient_group
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-patient-table-po-TPatientGroup")
+@ApiModel(value = "org-example-spring-infrastructures-oracle-patient-table-po-TPatientGroup")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

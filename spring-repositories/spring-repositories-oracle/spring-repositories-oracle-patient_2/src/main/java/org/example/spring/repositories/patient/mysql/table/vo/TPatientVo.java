@@ -1,10 +1,10 @@
-package org.example.spring.repositories.patient.mysql.table.vo;
+package org.example.spring.repositories.patient.oracle.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.repositories.commons.enumerate.Bear;
 import org.example.spring.repositories.commons.enumerate.Marriage;
-import org.example.spring.repositories.patient.mysql.table.po.TPatient;
+import org.example.spring.repositories.patient.oracle.table.po.TPatient;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

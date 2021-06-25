@@ -1,9 +1,9 @@
-package org.example.spring.repositories.patient.mysql;
+package org.example.spring.repositories.patient.oracle;
 
 import org.springframework.context.annotation.Configuration;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @Configuration
-@MapperScan(basePackages = "org.example.spring.repositories.patient.mysql.mapper")
+@MapperScan(basePackages = "org.example.spring.repositories.patient.oracle.mapper")
 public class PatientConfiguration {
 }

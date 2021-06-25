@@ -1,4 +1,4 @@
-package org.example.spring.repositories.report.mysql;
+package org.example.spring.repositories.report.oracle;
 
 
 import org.springframework.context.annotation.ComponentScan;

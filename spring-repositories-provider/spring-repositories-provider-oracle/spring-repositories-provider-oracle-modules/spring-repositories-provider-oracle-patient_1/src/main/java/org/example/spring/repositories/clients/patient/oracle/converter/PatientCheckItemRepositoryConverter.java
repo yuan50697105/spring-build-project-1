@@ -1,13 +1,14 @@
 package org.example.spring.repositories.clients.patient.oracle.converter;
 
+
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.commons.entity.IPageData;
 import org.example.spring.repositories.commons.entity.patient.dto.PatientCheckItemDTO;
 import org.example.spring.repositories.commons.entity.patient.query.PatientCheckItemQuery;
 import org.example.spring.repositories.commons.entity.patient.vo.PatientCheckItemVo;
-import org.example.spring.repositories.patient.oracle.table.dto.TPatientCheckItemDTO;
-import org.example.spring.repositories.patient.oracle.table.query.TPatientCheckItemQuery;
-import org.example.spring.repositories.patient.oracle.table.vo.TPatientCheckItemVo;
+import org.example.spring.repositories.patient.mysql.table.dto.TPatientCheckItemDTO;
+import org.example.spring.repositories.patient.mysql.table.query.TPatientCheckItemQuery;
+import org.example.spring.repositories.patient.mysql.table.vo.TPatientCheckItemVo;
 import org.mapstruct.Mapper;
 
 import java.util.List;

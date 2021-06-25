@@ -1,8 +1,8 @@
-package org.example.spring.repositories.patient.mysql.table.vo;
+package org.example.spring.repositories.patient.oracle.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.patient.mysql.table.po.TPatientGroup;
+import org.example.spring.repositories.patient.oracle.table.po.TPatientGroup;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

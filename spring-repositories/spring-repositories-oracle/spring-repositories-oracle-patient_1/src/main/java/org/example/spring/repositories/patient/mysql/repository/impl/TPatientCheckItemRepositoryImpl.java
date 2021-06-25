@@ -1,14 +1,14 @@
-package org.example.spring.repositories.patient.mysql.repository.impl;
+package org.example.spring.repositories.patient.oracle.repository.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
-import org.example.spring.repositories.patient.mysql.converter.TPatientCheckItemConverter;
-import org.example.spring.repositories.patient.mysql.dao.TPatientCheckItemDao;
-import org.example.spring.repositories.patient.mysql.repository.TPatientCheckItemRepository;
-import org.example.spring.repositories.patient.mysql.table.dto.TPatientCheckItemDTO;
-import org.example.spring.repositories.patient.mysql.table.po.TPatientCheckItem;
-import org.example.spring.repositories.patient.mysql.table.query.TPatientCheckItemQuery;
-import org.example.spring.repositories.patient.mysql.table.vo.TPatientCheckItemVo;
+import org.example.spring.repositories.patient.oracle.converter.TPatientCheckItemConverter;
+import org.example.spring.repositories.patient.oracle.dao.TPatientCheckItemDao;
+import org.example.spring.repositories.patient.oracle.repository.TPatientCheckItemRepository;
+import org.example.spring.repositories.patient.oracle.table.dto.TPatientCheckItemDTO;
+import org.example.spring.repositories.patient.oracle.table.po.TPatientCheckItem;
+import org.example.spring.repositories.patient.oracle.table.query.TPatientCheckItemQuery;
+import org.example.spring.repositories.patient.oracle.table.vo.TPatientCheckItemVo;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

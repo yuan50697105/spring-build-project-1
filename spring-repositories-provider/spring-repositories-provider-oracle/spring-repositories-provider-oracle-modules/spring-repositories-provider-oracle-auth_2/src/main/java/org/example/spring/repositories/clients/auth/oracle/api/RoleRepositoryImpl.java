@@ -2,16 +2,13 @@ package org.example.spring.repositories.clients.auth.oracle.api;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.auth.oracle.repository.TRoleRepository;
 import org.example.spring.repositories.clients.auth.api.RoleRepository;
-import org.example.spring.repositories.clients.auth.oracle.converter.RoleRepositoryConverter;
 import org.example.spring.repositories.commons.entity.auth.dto.RoleDTO;
 import org.example.spring.repositories.commons.entity.auth.dto.RoleResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.RoleQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.RoleVo;
 import org.springframework.stereotype.Repository;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -20,62 +17,61 @@ import java.util.stream.Stream;
 @AllArgsConstructor
 @Repository
 public class RoleRepositoryImpl implements RoleRepository {
-    private final RoleRepositoryConverter converter;
-    private final TRoleRepository repository;
+    private final org.example.spring.repositories.auth.oracle.repository.RoleRepository repository;
 
     @Override
     public void save(RoleVo vo) {
-        repository.save(converter.buildVo(vo));
+        repository.save(vo);
     }
 
     @Override
     public void save(RoleVo... vo) {
-        repository.save(converter.buildVo(Arrays.asList(vo)));
+        repository.save(vo);
     }
 
     @Override
     public void save(List<RoleVo> vo) {
-        repository.save(converter.buildVo(vo));
+        repository.save(vo);
     }
 
     @Override
     public void update(RoleVo vo) {
-        repository.update(converter.buildVo(vo));
+        repository.update(vo);
     }
 
     @Override
     public void update(RoleVo... vo) {
-        repository.update(converter.buildVo(Arrays.asList(vo)));
+        repository.update(vo);
     }
 
     @Override
     public void update(List<RoleVo> vo) {
-        repository.update(converter.buildVo(vo));
+        repository.update(vo);
     }
 
     @Override
     public void update(RoleVo vo, RoleQuery roleQuery) {
-        repository.update(converter.buildVo(vo), converter.build(roleQuery));
+        repository.update(vo, roleQuery);
     }
 
     @Override
     public void updateNull(RoleVo vo) {
-        repository.updateNull(converter.buildVo(vo));
+        repository.updateNull(vo);
     }
 
     @Override
     public void updateNull(RoleVo vo, RoleQuery roleQuery) {
-        repository.updateNull(converter.buildVo(vo));
+        repository.updateNull(vo);
     }
 
     @Override
     public void updateNull(RoleVo... vo) {
-        repository.updateNull(converter.buildVo(Arrays.asList(vo)));
+        repository.updateNull(vo);
     }
 
     @Override
     public void updateNull(List<RoleVo> vo) {
-        repository.updateNull(converter.buildVo(vo));
+        repository.updateNull(vo);
     }
 
     @Override
@@ -95,7 +91,7 @@ public class RoleRepositoryImpl implements RoleRepository {
 
     @Override
     public RoleDTO get(Long id) {
-        return converter.build(repository.get(id));
+        return repository.get(id);
     }
 
     @Override
@@ -105,12 +101,12 @@ public class RoleRepositoryImpl implements RoleRepository {
 
     @Override
     public List<RoleDTO> listByIds(Long... ids) {
-        return converter.build(repository.listByIds(ids));
+        return repository.listByIds(ids);
     }
 
     @Override
     public List<RoleDTO> listByIds(List<Long> ids) {
-        return converter.build(repository.listByIds(ids));
+        return repository.listByIds(ids);
     }
 
     @Override
@@ -125,7 +121,7 @@ public class RoleRepositoryImpl implements RoleRepository {
 
     @Override
     public RoleDTO one(RoleQuery query) {
-        return converter.build(repository.queryOne(converter.build(query)));
+        return repository.queryOne(query);
     }
 
     @Override
@@ -135,7 +131,7 @@ public class RoleRepositoryImpl implements RoleRepository {
 
     @Override
     public RoleDTO first(RoleQuery query) {
-        return converter.build(repository.queryFirst(converter.build(query)));
+        return repository.queryFirst(query);
     }
 
     @Override
@@ -145,7 +141,7 @@ public class RoleRepositoryImpl implements RoleRepository {
 
     @Override
     public List<RoleDTO> list(RoleQuery query) {
-        return converter.build(repository.queryList(converter.build(query)));
+        return repository.queryList(query);
     }
 
     @Override
@@ -155,7 +151,7 @@ public class RoleRepositoryImpl implements RoleRepository {
 
     @Override
     public List<RoleDTO> top(RoleQuery query) {
-        return converter.build(repository.queryTop(converter.build(query)));
+        return repository.queryTop(query);
     }
 
     @Override
@@ -165,16 +161,16 @@ public class RoleRepositoryImpl implements RoleRepository {
 
     @Override
     public IPageData<RoleDTO> data(RoleQuery query) {
-        return converter.build(repository.queryPage(converter.build(query)));
+        return repository.queryPage(query);
     }
 
     @Override
     public RoleResourceDTO getRoleResource(Long id) {
-        return converter.build2(repository.getDetails(id));
+        return repository.getDetails(id);
     }
 
     @Override
     public Optional<RoleResourceDTO> getRoleResourceOpt(Long id) {
-        return Optional.empty();
+        return Optional.ofNullable(getRoleResource(id));
     }
 }

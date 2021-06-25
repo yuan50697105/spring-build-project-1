@@ -1,9 +1,9 @@
-package org.example.spring.repositories.patient.mysql.table.vo;
+package org.example.spring.repositories.patient.oracle.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.repositories.commons.enumerate.MealType;
-import org.example.spring.repositories.patient.mysql.table.po.TPatientTeamMeal;
+import org.example.spring.repositories.patient.oracle.table.po.TPatientTeamMeal;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

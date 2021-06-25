@@ -1,4 +1,4 @@
-package org.example.spring.repositories.patient.mysql.table.po;
+package org.example.spring.repositories.patient.oracle.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * t_patient_meal
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-patient-table-po-TPatientMeal")
+@ApiModel(value = "org-example-spring-infrastructures-oracle-patient-table-po-TPatientMeal")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

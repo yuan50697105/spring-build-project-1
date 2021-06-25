@@ -1,8 +1,8 @@
-package org.example.spring.repositories.patient.mysql.table.dto;
+package org.example.spring.repositories.patient.oracle.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.patient.mysql.table.po.TPatientGroup;
+import org.example.spring.repositories.patient.oracle.table.po.TPatientGroup;
 
 import java.io.Serializable;
 

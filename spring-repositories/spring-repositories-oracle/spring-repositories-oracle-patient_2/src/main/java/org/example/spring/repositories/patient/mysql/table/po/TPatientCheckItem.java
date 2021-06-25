@@ -1,4 +1,4 @@
-package org.example.spring.repositories.patient.mysql.table.po;
+package org.example.spring.repositories.patient.oracle.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -13,7 +13,7 @@ import java.io.Serializable;
 /**
  * t_patient_check_item
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-patient-table-po-TPatientCheckItem")
+@ApiModel(value = "org-example-spring-infrastructures-oracle-patient-table-po-TPatientCheckItem")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

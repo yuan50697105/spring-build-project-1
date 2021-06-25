@@ -1,14 +1,14 @@
-package org.example.spring.repositories.patient.mysql.repository.impl;
+package org.example.spring.repositories.patient.oracle.repository.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.mybatis.repository.impl.IBaseRepositoryImpl;
-import org.example.spring.repositories.patient.mysql.converter.TPatientGroupConverter;
-import org.example.spring.repositories.patient.mysql.dao.TPatientGroupDao;
-import org.example.spring.repositories.patient.mysql.repository.TPatientGroupRepository;
-import org.example.spring.repositories.patient.mysql.table.dto.TPatientGroupDTO;
-import org.example.spring.repositories.patient.mysql.table.po.TPatientGroup;
-import org.example.spring.repositories.patient.mysql.table.query.TPatientGroupQuery;
-import org.example.spring.repositories.patient.mysql.table.vo.TPatientGroupVo;
+import org.example.spring.repositories.patient.oracle.converter.TPatientGroupConverter;
+import org.example.spring.repositories.patient.oracle.dao.TPatientGroupDao;
+import org.example.spring.repositories.patient.oracle.repository.TPatientGroupRepository;
+import org.example.spring.repositories.patient.oracle.table.dto.TPatientGroupDTO;
+import org.example.spring.repositories.patient.oracle.table.po.TPatientGroup;
+import org.example.spring.repositories.patient.oracle.table.query.TPatientGroupQuery;
+import org.example.spring.repositories.patient.oracle.table.vo.TPatientGroupVo;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

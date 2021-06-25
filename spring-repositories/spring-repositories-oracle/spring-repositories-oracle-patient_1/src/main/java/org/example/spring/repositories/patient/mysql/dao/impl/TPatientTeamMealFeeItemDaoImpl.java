@@ -1,13 +1,13 @@
-package org.example.spring.repositories.patient.mysql.dao.impl;
+package org.example.spring.repositories.patient.oracle.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.mybatis.dao.impl.TkBaseDaoImpl;
 import org.example.spring.plugins.mybatis.entity.po.IBaseEntity;
-import org.example.spring.repositories.patient.mysql.dao.TPatientTeamMealFeeItemDao;
-import org.example.spring.repositories.patient.mysql.mapper.TPatientTeamMealFeeItemMapper;
-import org.example.spring.repositories.patient.mysql.table.po.TPatientTeamMealFeeItem;
-import org.example.spring.repositories.patient.mysql.table.query.TPatientTeamMealFeeItemQuery;
+import org.example.spring.repositories.patient.oracle.dao.TPatientTeamMealFeeItemDao;
+import org.example.spring.repositories.patient.oracle.mapper.TPatientTeamMealFeeItemMapper;
+import org.example.spring.repositories.patient.oracle.table.po.TPatientTeamMealFeeItem;
+import org.example.spring.repositories.patient.oracle.table.query.TPatientTeamMealFeeItemQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

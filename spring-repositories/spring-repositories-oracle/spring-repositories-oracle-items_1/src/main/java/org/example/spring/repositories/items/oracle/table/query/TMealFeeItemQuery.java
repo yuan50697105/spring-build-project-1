@@ -17,7 +17,7 @@ import java.io.Serializable;
 /**
  * t_meal_fee_item
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-items-table-po-TMealFeeItem")
+@ApiModel(value = "org-example-spring-infrastructures-oracle-items-table-po-TMealFeeItem")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

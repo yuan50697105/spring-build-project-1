@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * t_permission
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-org.example.spring.repositories.mysql.auth-table-po-TPermission")
+@ApiModel(value = "org-example-spring-infrastructures-oracle-org.example.spring.repositories.oracle.auth-table-po-TPermission")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

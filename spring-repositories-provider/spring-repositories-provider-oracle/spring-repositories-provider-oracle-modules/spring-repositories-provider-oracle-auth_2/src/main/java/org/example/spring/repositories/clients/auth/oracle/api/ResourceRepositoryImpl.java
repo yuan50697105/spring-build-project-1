@@ -4,9 +4,7 @@ package org.example.spring.repositories.clients.auth.oracle.api;
 import cn.hutool.core.lang.tree.Tree;
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.commons.entity.IPageData;
-import org.example.spring.repositories.auth.oracle.repository.TResourceRepository;
 import org.example.spring.repositories.clients.auth.api.ResourceRepository;
-import org.example.spring.repositories.clients.auth.oracle.converter.ResourceRepositoryConverter;
 import org.example.spring.repositories.commons.entity.auth.dto.ResourceDTO;
 import org.example.spring.repositories.commons.entity.auth.query.ResourceQuery;
 import org.example.spring.repositories.commons.entity.auth.vo.ResourceVo;
@@ -20,62 +18,61 @@ import java.util.stream.Stream;
 @AllArgsConstructor
 @Repository
 public class ResourceRepositoryImpl implements ResourceRepository {
-    private final ResourceRepositoryConverter converter;
-    private final TResourceRepository repository;
+    private final org.example.spring.repositories.auth.oracle.repository.ResourceRepository repository;
 
     @Override
     public void save(ResourceVo vo) {
-        repository.save(converter.buildVo(vo));
+        repository.save(vo);
     }
 
     @Override
     public void save(ResourceVo... vo) {
-        repository.save(converter.buildVo(Arrays.asList(vo)));
+        repository.save(Arrays.asList(vo));
     }
 
     @Override
     public void save(List<ResourceVo> vo) {
-        repository.save(converter.buildVo(vo));
+        repository.save(vo);
     }
 
     @Override
     public void update(ResourceVo vo) {
-        repository.update(converter.buildVo(vo));
+        repository.update(vo);
     }
 
     @Override
     public void update(ResourceVo... vo) {
-        repository.update(converter.buildVo(Arrays.asList(vo)));
+        repository.update(Arrays.asList(vo));
     }
 
     @Override
     public void update(List<ResourceVo> vo) {
-        repository.update(converter.buildVo(vo));
+        repository.update(vo);
     }
 
     @Override
     public void update(ResourceVo vo, ResourceQuery query) {
-        repository.update(converter.buildVo(vo), converter.build(query));
+        repository.update(vo, query);
     }
 
     @Override
     public void updateNull(ResourceVo vo) {
-        repository.updateNull(converter.buildVo(vo));
+        repository.updateNull(vo);
     }
 
     @Override
     public void updateNull(ResourceVo vo, ResourceQuery query) {
-        repository.updateNull(converter.buildVo(vo), converter.build(query));
+        repository.updateNull(vo, query);
     }
 
     @Override
     public void updateNull(ResourceVo... vo) {
-        repository.updateNull(converter.buildVo(Arrays.asList(vo)));
+        repository.updateNull(Arrays.asList(vo));
     }
 
     @Override
     public void updateNull(List<ResourceVo> vo) {
-        repository.updateNull(converter.buildVo(vo));
+        repository.updateNull(vo);
     }
 
     @Override
@@ -95,7 +92,7 @@ public class ResourceRepositoryImpl implements ResourceRepository {
 
     @Override
     public ResourceDTO get(Long id) {
-        return converter.build(repository.get(id));
+        return repository.get(id);
     }
 
     @Override
@@ -105,12 +102,12 @@ public class ResourceRepositoryImpl implements ResourceRepository {
 
     @Override
     public List<ResourceDTO> listByIds(Long... ids) {
-        return converter.build(repository.listByIds(ids));
+        return repository.listByIds(ids);
     }
 
     @Override
     public List<ResourceDTO> listByIds(List<Long> ids) {
-        return converter.build(repository.listByIds(ids));
+        return repository.listByIds(ids);
     }
 
     @Override
@@ -125,7 +122,7 @@ public class ResourceRepositoryImpl implements ResourceRepository {
 
     @Override
     public ResourceDTO one(ResourceQuery query) {
-        return converter.build(repository.queryOne(converter.build(query)));
+        return repository.queryOne(query);
     }
 
     @Override
@@ -135,7 +132,7 @@ public class ResourceRepositoryImpl implements ResourceRepository {
 
     @Override
     public ResourceDTO first(ResourceQuery query) {
-        return converter.build(repository.queryFirst(converter.build(query)));
+        return repository.queryFirst(query);
     }
 
     @Override
@@ -145,27 +142,27 @@ public class ResourceRepositoryImpl implements ResourceRepository {
 
     @Override
     public List<ResourceDTO> list(ResourceQuery query) {
-        return converter.build(repository.queryList(converter.build(query)));
+        return repository.queryList(query);
     }
 
     @Override
     public Stream<ResourceDTO> listStream(ResourceQuery query) {
-        return converter.build(repository.queryStream(converter.build(query)));
+        return repository.queryStream(query);
     }
 
     @Override
     public List<ResourceDTO> top(ResourceQuery query) {
-        return converter.build(repository.queryTop(converter.build(query)));
+        return repository.queryTop(query);
     }
 
     @Override
     public Stream<ResourceDTO> topStream(ResourceQuery query) {
-        return converter.build(repository.queryTopStream(converter.build(query)));
+        return repository.queryTopStream(query);
     }
 
     @Override
     public IPageData<ResourceDTO> data(ResourceQuery query) {
-        return converter.build(repository.queryPage(converter.build(query)));
+        return repository.queryPage(query);
     }
 
     @Override
@@ -175,7 +172,7 @@ public class ResourceRepositoryImpl implements ResourceRepository {
 
     @Override
     public List<Tree<Long>> queryTreeList(ResourceQuery query) {
-        return repository.queryTree(converter.build(query));
+        return repository.queryTree(query);
     }
 
 }

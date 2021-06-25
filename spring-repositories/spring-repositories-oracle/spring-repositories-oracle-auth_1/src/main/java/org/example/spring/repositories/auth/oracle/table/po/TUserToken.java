@@ -36,7 +36,7 @@ public class TUserToken extends IBaseEntity {
     /**
      * 秘钥状态
      *
-     * @see org.example.spring.repositories.mysql.table.enumerate.TUserTokenStatus
+     * @see org.example.spring.repositories.oracle.table.enumerate.TUserTokenStatus
      */
     private String status;
 }

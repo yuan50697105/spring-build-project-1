@@ -13,7 +13,7 @@ import java.io.Serializable;
 /**
  * t_personal_report_fee_items
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-report-table-po-TPersonalReportFeeItems")
+@ApiModel(value = "org-example-spring-infrastructures-oracle-report-table-po-TPersonalReportFeeItems")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

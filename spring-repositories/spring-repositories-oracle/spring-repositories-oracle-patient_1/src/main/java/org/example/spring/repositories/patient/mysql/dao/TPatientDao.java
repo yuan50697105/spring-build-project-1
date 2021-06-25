@@ -1,8 +1,8 @@
-package org.example.spring.repositories.patient.mysql.dao;
+package org.example.spring.repositories.patient.oracle.dao;
 
 import org.example.spring.plugins.mybatis.dao.TkBaseDao;
-import org.example.spring.repositories.patient.mysql.table.po.TPatient;
-import org.example.spring.repositories.patient.mysql.table.query.TPatientQuery;
+import org.example.spring.repositories.patient.oracle.table.po.TPatient;
+import org.example.spring.repositories.patient.oracle.table.query.TPatientQuery;
 
 import java.util.List;
 

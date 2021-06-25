@@ -1,9 +1,9 @@
-package org.example.spring.repositories.patient.mysql.table.dto;
+package org.example.spring.repositories.patient.oracle.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.repositories.commons.enumerate.ItemSource;
-import org.example.spring.repositories.patient.mysql.table.po.TPatientCheckItem;
+import org.example.spring.repositories.patient.oracle.table.po.TPatientCheckItem;
 
 import java.io.Serializable;
 

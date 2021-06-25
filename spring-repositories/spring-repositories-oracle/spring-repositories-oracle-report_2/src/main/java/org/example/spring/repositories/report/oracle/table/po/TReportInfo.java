@@ -1,4 +1,4 @@
-package org.example.spring.repositories.report.mysql.table.po;
+package org.example.spring.repositories.report.oracle.table.po;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -13,7 +13,7 @@ import java.io.Serializable;
 /**
  * t_report_info
  */
-@ApiModel(value = "org-example-spring-infrastructures-mysql-report-table-po-TReportInfo")
+@ApiModel(value = "org-example-spring-infrastructures-oracle-report-table-po-TReportInfo")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
