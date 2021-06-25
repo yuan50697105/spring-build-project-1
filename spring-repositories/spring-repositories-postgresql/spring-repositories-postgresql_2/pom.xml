@@ -13,15 +13,38 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-plugins-mybatis_2</artifactId>
+            <artifactId>spring-repositories-postgresql-auth_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.github.liuanxin</groupId>
-            <artifactId>mybatis-redis-cache</artifactId>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-postgresql-bill_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-postgresql-customer_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-postgresql-department_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-postgresql-items_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-postgresql-patient_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-postgresql-report_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
