@@ -19,6 +19,16 @@
         <module>spring-domains-services-mysql-commons_2</module>
         <module>spring-domains-services-mysql-auth_1</module>
         <module>spring-domains-services-mysql-auth_2</module>
+        <module>spring-domains-services-mysql-bill_1</module>
+        <module>spring-domains-services-mysql-bill_2</module>
+        <module>spring-domains-services-mysql-customer_1</module>
+        <module>spring-domains-services-mysql-customer_2</module>
+        <module>spring-domains-services-mysql-doctor_1</module>
+        <module>spring-domains-services-mysql-doctor_2</module>
+        <module>spring-domains-services-mysql-patient_1</module>
+        <module>spring-domains-services-mysql-patient_2</module>
+        <module>spring-domains-services-mysql-queue_1</module>
+        <module>spring-domains-services-mysql-queue_2</module>
     </modules>
 
 

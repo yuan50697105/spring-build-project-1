@@ -13,8 +13,6 @@
     <modules>
         <module>spring-domains-services_1</module>
         <module>spring-domains-services_2</module>
-        <module>spring-domains-services-mysql_1</module>
-        <module>spring-domains-services-mysql_2</module>
         <module>spring-domains-services-postgresql_1</module>
         <module>spring-domains-services-postgresql_2</module>
     </modules>

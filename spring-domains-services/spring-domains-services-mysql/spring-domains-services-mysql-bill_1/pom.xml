@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-domains-services-mysql-auth_1</artifactId>
+    <artifactId>spring-domains-services-mysql-bill_1</artifactId>
 
     <dependencies>
         <dependency>
@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-repositories-mysql-auth_1</artifactId>
+            <artifactId>spring-repositories-mysql-bill_1</artifactId>
         </dependency>
         <dependency>
             <groupId>ai.ylyue</groupId>

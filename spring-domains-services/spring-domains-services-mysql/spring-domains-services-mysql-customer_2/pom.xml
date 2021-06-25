@@ -9,17 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-domains-services-mysql-auth_1</artifactId>
+    <artifactId>spring-domains-services-mysql-customer_2</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-domains-services-mysql-commons_1</artifactId>
+            <artifactId>spring-domains-services-mysql-commons_2</artifactId>
             <version>0.0.39-M6-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-repositories-mysql-auth_1</artifactId>
+            <artifactId>spring-repositories-mysql-customer_2</artifactId>
         </dependency>
         <dependency>
             <groupId>ai.ylyue</groupId>
