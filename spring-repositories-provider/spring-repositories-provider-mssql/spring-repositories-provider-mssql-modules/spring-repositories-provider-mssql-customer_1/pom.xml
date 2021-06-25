@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>springrepositories-mssql-customer_1</artifactId>
+            <artifactId>spring-repositories-mssql-customer_1</artifactId>
         </dependency>
     </dependencies>
 
