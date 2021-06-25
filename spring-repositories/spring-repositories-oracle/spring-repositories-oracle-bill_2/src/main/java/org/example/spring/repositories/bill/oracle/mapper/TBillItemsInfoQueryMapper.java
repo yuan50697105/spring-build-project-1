@@ -1,10 +1,10 @@
-package org.example.spring.repositories.bill.mysql.mapper;
+package org.example.spring.repositories.bill.oracle.mapper;
 
 import com.github.liuanxin.caches.MybatisRedisCache;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.example.spring.repositories.bill.mysql.table.po.TBillItemsInfo;
+import org.example.spring.repositories.bill.oracle.table.po.TBillItemsInfo;
 
 import java.util.List;
 

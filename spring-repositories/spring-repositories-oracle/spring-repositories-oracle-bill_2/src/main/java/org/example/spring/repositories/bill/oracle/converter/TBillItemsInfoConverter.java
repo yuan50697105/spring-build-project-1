@@ -1,11 +1,11 @@
-package org.example.spring.repositories.bill.mysql.converter;
+package org.example.spring.repositories.bill.oracle.converter;
 
 import org.example.spring.plugins.commons.builder.BaseBuilder;
 import org.example.spring.plugins.mybatis.converter.IBaseConverter;
-import org.example.spring.repositories.bill.mysql.table.dto.TBillItemsInfoDTO;
-import org.example.spring.repositories.bill.mysql.table.po.TBillItemsInfo;
-import org.example.spring.repositories.bill.mysql.table.query.TBillItemsInfoQuery;
-import org.example.spring.repositories.bill.mysql.table.vo.TBillItemsInfoVo;
+import org.example.spring.repositories.bill.oracle.table.dto.TBillItemsInfoDTO;
+import org.example.spring.repositories.bill.oracle.table.po.TBillItemsInfo;
+import org.example.spring.repositories.bill.oracle.table.query.TBillItemsInfoQuery;
+import org.example.spring.repositories.bill.oracle.table.vo.TBillItemsInfoVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

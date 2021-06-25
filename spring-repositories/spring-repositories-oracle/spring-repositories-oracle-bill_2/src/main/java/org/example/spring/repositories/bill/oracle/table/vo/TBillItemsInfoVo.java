@@ -1,8 +1,8 @@
-package org.example.spring.repositories.bill.mysql.table.vo;
+package org.example.spring.repositories.bill.oracle.table.vo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.bill.mysql.table.po.TBillItemsInfo;
+import org.example.spring.repositories.bill.oracle.table.po.TBillItemsInfo;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

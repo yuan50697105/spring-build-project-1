@@ -1,4 +1,4 @@
-package org.example.spring.repositories.bill.mysql.table.dto;
+package org.example.spring.repositories.bill.oracle.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,4 +1,4 @@
-package org.example.spring.repositories.bill.mysql.table.po;
+package org.example.spring.repositories.bill.oracle.table.po;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

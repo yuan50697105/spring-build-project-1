@@ -1,4 +1,4 @@
-package org.example.spring.repositories.bill.mysql.table.query;
+package org.example.spring.repositories.bill.oracle.table.query;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -8,7 +8,7 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.example.spring.plugins.mybatis.entity.query.TkExtQuery;
-import org.example.spring.repositories.bill.mysql.table.po.TBillInfo;
+import org.example.spring.repositories.bill.oracle.table.po.TBillInfo;
 import tk.mybatis.mapper.entity.Example;
 
 @EqualsAndHashCode(callSuper = true)

@@ -1,8 +1,8 @@
-package org.example.spring.repositories.bill.mysql.dao;
+package org.example.spring.repositories.bill.oracle.dao;
 
 import org.example.spring.plugins.mybatis.dao.TkExtDao;
-import org.example.spring.repositories.bill.mysql.table.po.TBillItemsInfo;
-import org.example.spring.repositories.bill.mysql.table.query.TBillItemsInfoQuery;
+import org.example.spring.repositories.bill.oracle.table.po.TBillItemsInfo;
+import org.example.spring.repositories.bill.oracle.table.query.TBillItemsInfoQuery;
 
 import java.util.List;
 

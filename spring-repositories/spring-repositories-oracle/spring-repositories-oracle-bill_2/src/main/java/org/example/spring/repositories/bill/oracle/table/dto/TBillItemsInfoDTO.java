@@ -1,9 +1,9 @@
-package org.example.spring.repositories.bill.mysql.table.dto;
+package org.example.spring.repositories.bill.oracle.table.dto;
 
 import cn.hutool.core.bean.BeanUtil;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.bill.mysql.table.po.TBillItemsInfo;
+import org.example.spring.repositories.bill.oracle.table.po.TBillItemsInfo;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

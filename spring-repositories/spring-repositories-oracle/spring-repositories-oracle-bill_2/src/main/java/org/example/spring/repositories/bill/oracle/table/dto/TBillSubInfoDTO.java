@@ -1,8 +1,8 @@
-package org.example.spring.repositories.bill.mysql.table.dto;
+package org.example.spring.repositories.bill.oracle.table.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.spring.repositories.bill.mysql.table.po.TBillSubInfo;
+import org.example.spring.repositories.bill.oracle.table.po.TBillSubInfo;
 import org.example.spring.repositories.commons.enumerate.BillSubInfoStatus;
 
 import java.io.Serializable;

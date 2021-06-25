@@ -1,12 +1,12 @@
-package org.example.spring.repositories.bill.mysql.dao.impl;
+package org.example.spring.repositories.bill.oracle.dao.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.spring.plugins.mybatis.dao.impl.TkExtDaoImpl;
-import org.example.spring.repositories.bill.mysql.dao.TBillSubInfoDao;
-import org.example.spring.repositories.bill.mysql.mapper.TBillSubInfoMapper;
-import org.example.spring.repositories.bill.mysql.mapper.TBillSubInfoQueryMapper;
-import org.example.spring.repositories.bill.mysql.table.po.TBillSubInfo;
-import org.example.spring.repositories.bill.mysql.table.query.TBillSubInfoQuery;
+import org.example.spring.repositories.bill.oracle.dao.TBillSubInfoDao;
+import org.example.spring.repositories.bill.oracle.mapper.TBillSubInfoMapper;
+import org.example.spring.repositories.bill.oracle.mapper.TBillSubInfoQueryMapper;
+import org.example.spring.repositories.bill.oracle.table.po.TBillSubInfo;
+import org.example.spring.repositories.bill.oracle.table.query.TBillSubInfoQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
