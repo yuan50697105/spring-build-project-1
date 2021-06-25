@@ -16,10 +16,6 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-commons</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-provider-commons</artifactId>
         </dependency>
         <dependency>

@@ -9,10 +9,4 @@
     </parent>
     <artifactId>spring-micro-services-commons</artifactId>
     <version>0.0.39-M6-SNAPSHOT</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-commons</artifactId>
-        </dependency>
-    </dependencies>
 </project>
