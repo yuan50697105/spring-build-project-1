@@ -13,7 +13,8 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-mssql_2</artifactId>
+            <artifactId>spring-repositories-mssql-auth_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
