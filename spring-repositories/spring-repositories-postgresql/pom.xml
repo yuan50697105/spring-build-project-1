@@ -14,6 +14,23 @@
     <modules>
         <module>spring-repositories-postgresql_1</module>
         <module>spring-repositories-postgresql_2</module>
+        <module>spring-repositories-postgresql-auth_1</module>
+        <module>spring-repositories-postgresql-auth_2</module>
+        <module>spring-repositories-postgresql-bill_1</module>
+        <module>spring-repositories-postgresql-bill_2</module>
+        <module>spring-repositories-postgresql-customer_1</module>
+        <module>spring-repositories-postgresql-customer_2</module>
+        <module>spring-repositories-postgresql-department_1</module>
+        <module>spring-repositories-postgresql-department_2</module>
+        <module>spring-repositories-postgresql-items_1</module>
+        <module>spring-repositories-postgresql-items_2</module>
+        <module>spring-repositories-postgresql-patient_1</module>
+        <module>spring-repositories-postgresql-patient_2</module>
+        <module>spring-repositories-postgresql-report_1</module>
+        <module>spring-repositories-postgresql-report_2</module>
+        <module>spring-repositories-postgresql-dependencies</module>
+        <module>spring-repositories-postgresql-commons_1</module>
+        <module>spring-repositories-postgresql-commons_2</module>
     </modules>
     <dependencies>
         <dependency>
