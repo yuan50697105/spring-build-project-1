@@ -15,6 +15,7 @@
         <module>spring-build-admin-server</module>
         <module>spring-plugins</module>
         <module>spring-repositories</module>
+        <module>spring-repositories-provider</module>
         <module>spring-services</module>
         <module>spring-domains-services</module>
         <module>spring-applications</module>
@@ -55,7 +56,6 @@
         <module>spring-build-dependencies</module>
         <module>spring-cloud-build-dependencies</module>
         <module>spring-build-commons</module>
-        <module>spring-repositories-provider</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
