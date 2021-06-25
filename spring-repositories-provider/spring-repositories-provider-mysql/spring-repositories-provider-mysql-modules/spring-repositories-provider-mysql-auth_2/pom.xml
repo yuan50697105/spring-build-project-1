@@ -12,12 +12,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-repositories-provider-commons</artifactId>
-            <version>0.0.39-M6-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
-            <artifactId>spring-repositories-provider-mysql-auth_2</artifactId>
+            <artifactId>spring-repositories-mysql-auth_2</artifactId>
         </dependency>
     </dependencies>
 

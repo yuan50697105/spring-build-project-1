@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>sprin-repositories-postgresql-auth_1</artifactId>
+            <artifactId>spring-repositories-postgresql-auth_1</artifactId>
         </dependency>
     </dependencies>
 

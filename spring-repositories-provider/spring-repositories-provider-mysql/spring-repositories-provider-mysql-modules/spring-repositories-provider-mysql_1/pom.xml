@@ -12,10 +12,6 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-repositories-provider-mysql_1</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-provider-mysql-auth_1</artifactId>
         </dependency>
         <dependency>
