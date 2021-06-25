@@ -20,7 +20,7 @@
         <module>spring-domains-services</module>
         <module>spring-applications</module>
         <module>spring-launchers</module>
-        <module>spring-micro-repositories-launchers</module>
+        <module>spring-repositories-launchers</module>
         <module>spring-micro-services</module>
         <module>spring-micro-services-provider</module>
         <module>spring-micro-services-launchers</module>
