@@ -20,10 +20,21 @@
         <dependencies>
             <dependency>
                 <groupId>org.example.spring</groupId>
+                <artifactId>spring-repositories-provider-commons</artifactId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-provider-dubbo</artifactId>
                 <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-provider-commons</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.example.spring.repositories.bill.oracle.mapper.TBillItemsInfoQueryMapper">
+    <resultMap id="item" type="org.example.spring.repositories.bill.oracle.table.po.TBillItemsInfo">
+        <id column="id" property="id"/>
+        <result column="bill_id" property="billId"/>
+        <result column="order_no" property="orderNo"/>
+        <result column="sub_bill_id" property="subBillId"/>
+        <result column="sub_order_no" property="subOrderNo"/>
+        <result column="item_id" property="itemId"/>
+        <result column="item_name" property="itemName"/>
+        <result column="item_price" property="itemPrice"/>
+        <result column="num" property="num"/>
+        <result column="total_price" property="totalPrice"/>
+        <result column="create_id" property="createId"/>
+        <result column="update_id" property="updateId"/>
+        <result column="create_user" property="createUser"/>
+        <result column="update_user" property="updateUser"/>
+        <result column="create_date" property="createDate"/>
+        <result column="update_date" property="updateDate"/>
+    </resultMap>
+    <sql id="col">
+        id,
+        create_id,
+        update_id,
+        create_user,
+        update_user,
+        create_date,
+        update_date,
+        bill_id,
+        order_no,
+        sub_bill_id,
+        sub_order_no,
+        item_id,
+        item_name,
+        item_price,
+        num,
+        total_price
+    </sql>
+    <select id="queryListBySubId" resultMap="item">
+        select
+        <include refid="col">
+        </include>
+        from t_bill_items_info
+        where sub_bill_id = #{subId,jdbcType=BIGINT}
+    </select>
+
+    <select id="queryListByBillId" resultMap="item">
+        select
+        <include refid="col">
+        </include>
+        from t_bill_items_info
+        where bill_id = #{billId,jdbcType=BIGINT}
+    </select>
+</mapper>

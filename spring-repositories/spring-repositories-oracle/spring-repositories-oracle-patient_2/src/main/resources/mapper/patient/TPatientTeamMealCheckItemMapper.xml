@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.spring.repositories.patient.mysql.mapper.TPatientTeamMealCheckItemMapper">
+    <resultMap id="BaseResultMap"
+               type="org.example.spring.repositories.patient.mysql.table.po.TPatientTeamMealCheckItem">
+        <!--@mbg.generated-->
+        <!--@Table t_patient_team_meal_check_item-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="create_id" jdbcType="BIGINT" property="createId"/>
+        <result column="update_id" jdbcType="BIGINT" property="updateId"/>
+        <result column="create_user" jdbcType="VARCHAR" property="createUser"/>
+        <result column="update_user" jdbcType="VARCHAR" property="updateUser"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="team_id" jdbcType="BIGINT" property="teamId"/>
+        <result column="meal_id" jdbcType="BIGINT" property="mealId"/>
+        <result column="team_meal_id" jdbcType="BIGINT" property="teamMealId"/>
+        <result column="fee_item_id" jdbcType="BIGINT" property="feeItemId"/>
+        <result column="team_fee_item_id" jdbcType="BIGINT" property="teamFeeItemId"/>
+        <result column="check_item_id" jdbcType="VARCHAR" property="checkItemId"/>
+        <result column="check_item_code" jdbcType="VARCHAR" property="checkItemCode"/>
+        <result column="check_item_name" jdbcType="VARCHAR" property="checkItemName"/>
+        <result column="source" jdbcType="VARCHAR" property="source"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, create_id, update_id, create_user, update_user, create_date, update_date, team_id,
+        meal_id, team_meal_id, fee_item_id, team_fee_item_id, check_item_id, check_item_code,
+        check_item_name, `source`
+    </sql>
+</mapper>
