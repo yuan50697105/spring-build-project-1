@@ -19,7 +19,6 @@
         <module>spring-domains-services</module>
         <module>spring-applications</module>
         <module>spring-launchers</module>
-        <module>spring-micro-repositories</module>
         <module>spring-repositories-provider</module>
         <module>spring-micro-repositories-launchers</module>
         <module>spring-micro-services</module>
