@@ -16,6 +16,36 @@
             <artifactId>spring-repositories-mssql-auth_1</artifactId>
             <version>0.0.39-M6-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mssql-bill_1</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mssql-customer_1</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mssql-department_1</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mssql-items_1</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mssql-patient_1</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-mssql-report_1</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>
