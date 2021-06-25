@@ -20,7 +20,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-provider-commons</artifactId>
+            <artifactId>spring-repositories-provider-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>

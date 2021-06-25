@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-provider-mssql-dubbo_2</artifactId>
+            <artifactId>spring-repositories-provider-mssql-dubbo_2</artifactId>
         </dependency>
     </dependencies>
 

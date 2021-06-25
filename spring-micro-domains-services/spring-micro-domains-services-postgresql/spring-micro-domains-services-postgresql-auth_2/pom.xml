@@ -17,7 +17,7 @@
         <!--        </dependency>-->
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-provider-postgres-auth_2</artifactId>
+            <artifactId>spring-repositories-provider-postgres-auth_2</artifactId>
         </dependency>
     </dependencies>
 

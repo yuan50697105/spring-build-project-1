@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-repositories-provider-postgres</artifactId>
+        <groupId>org.example.spring</groupId>
+        <version>0.0.39-M6-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-repositories-provider-postgres-feign-modules</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-repositories-provider-postgres-feign_1</module>
+        <module>spring-repositories-provider-postgres-feign_2</module>
+        <module>spring-repositories-provider-postgres-auth-feign_1</module>
+        <module>spring-repositories-provider-postgres-auth-feign_2</module>
+        <module>spring-repositories-provider-postgres-bill-feign_1</module>
+        <module>spring-repositories-provider-postgres-bill-feign_2</module>
+        <module>spring-repositories-provider-postgres-customer-feign_1</module>
+        <module>spring-repositories-provider-postgres-customer-feign_2</module>
+        <module>spring-repositories-provider-postgres-patient-feign_1</module>
+        <module>spring-repositories-provider-postgres-patient-feign_2</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-repositories-provider-postgres-dependencies</artifactId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-repositories-provider-feign</artifactId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-dubbo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.openfeign.form</groupId>
+            <artifactId>feign-form-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-provider-feign</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

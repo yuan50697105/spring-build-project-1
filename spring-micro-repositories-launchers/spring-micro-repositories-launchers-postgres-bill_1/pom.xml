@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-provider-postgres-bill-dubbo_1</artifactId>
+            <artifactId>spring-repositories-provider-postgres-bill-dubbo_1</artifactId>
         </dependency>
     </dependencies>
 
