@@ -15,11 +15,11 @@
         <module>spring-build-admin-server</module>
         <module>spring-plugins</module>
         <module>spring-repositories</module>
+        <module>spring-repositories-provider</module>
         <module>spring-services</module>
         <module>spring-domains-services</module>
         <module>spring-applications</module>
         <module>spring-launchers</module>
-        <module>spring-repositories-provider</module>
         <module>spring-micro-repositories-launchers</module>
         <module>spring-micro-services</module>
         <module>spring-micro-services-provider</module>
