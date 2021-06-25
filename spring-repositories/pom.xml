@@ -12,7 +12,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring-repositories-commons</module>
-        <module>spring-repositories-modules</module>
         <module>spring-repositories-dependencies</module>
         <module>spring-repositories-mysql</module>
         <module>spring-repositories-mssql</module>
