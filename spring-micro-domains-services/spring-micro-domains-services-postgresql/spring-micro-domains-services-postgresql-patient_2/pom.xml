@@ -12,7 +12,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>sprin-repositories-postgresql-patient_2</artifactId>
+            <artifactId>spring-repositories-postgresql-patient_2</artifactId>
         </dependency>
     </dependencies>
 
