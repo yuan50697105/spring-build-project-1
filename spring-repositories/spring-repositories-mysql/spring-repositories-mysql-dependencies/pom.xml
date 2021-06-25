@@ -20,7 +20,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
-                <artifactId>spring-repositories-mysql-customer_2</artifactId>
+                <artifactId>spring-repositories-mysql-commons_2</artifactId>
                 <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
