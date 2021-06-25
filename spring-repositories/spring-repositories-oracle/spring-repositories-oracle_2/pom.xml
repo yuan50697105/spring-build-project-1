@@ -13,7 +13,38 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-oracle_2</artifactId>
+            <artifactId>spring-repositories-oracle-auth_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-oracle-bill_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-oracle-customer_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-oracle-department_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-oracle-items_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-oracle-patient_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-oracle-report_2</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
