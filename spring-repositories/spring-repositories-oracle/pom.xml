@@ -32,6 +32,12 @@
         <module>spring-repositories-oracle-report_1</module>
         <module>spring-repositories-oracle-report_2</module>
     </modules>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-commons</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

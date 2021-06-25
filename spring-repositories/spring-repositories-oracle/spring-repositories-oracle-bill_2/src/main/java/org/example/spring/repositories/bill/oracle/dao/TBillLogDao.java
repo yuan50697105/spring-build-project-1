@@ -1,4 +1,4 @@
-package org.example.spring.repositories.bill.mysql.dao;
+package org.example.spring.repositories.bill.oracle.dao;
 
 import org.example.spring.plugins.mybatis.dao.TkExtDao;
 import org.example.spring.repositories.bill.mysql.table.po.TBillLog;
