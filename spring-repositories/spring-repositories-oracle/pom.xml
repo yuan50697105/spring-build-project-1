@@ -14,6 +14,23 @@
     <modules>
         <module>spring-repositories-oracle_1</module>
         <module>spring-repositories-oracle_2</module>
+        <module>spring-repositories-oracle-dependencies</module>
+        <module>spring-repositories-oracle-commons_1</module>
+        <module>spring-repositories-oracle-commons_2</module>
+        <module>spring-repositories-oracle-auth_1</module>
+        <module>spring-repositories-oracle-auth_2</module>
+        <module>spring-repositories-oracle-bill_1</module>
+        <module>spring-repositories-oracle-bill_2</module>
+        <module>spring-repositories-oracle-customer_1</module>
+        <module>spring-repositories-oracle-customer_2</module>
+        <module>spring-repositories-oracle-department_1</module>
+        <module>spring-repositories-oracle-department_2</module>
+        <module>spring-repositories-oracle-items_1</module>
+        <module>spring-repositories-oracle-items_2</module>
+        <module>spring-repositories-oracle-patient_1</module>
+        <module>spring-repositories-oracle-patient_2</module>
+        <module>spring-repositories-oracle-report_1</module>
+        <module>spring-repositories-oracle-report_2</module>
     </modules>
 
 
