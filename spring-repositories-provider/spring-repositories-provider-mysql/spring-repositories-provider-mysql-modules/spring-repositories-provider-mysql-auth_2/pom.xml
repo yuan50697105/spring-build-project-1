@@ -17,7 +17,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-mysql-auth_2</artifactId>
+            <artifactId>spring-repositories-provider-mysql-auth_2</artifactId>
         </dependency>
     </dependencies>
 

@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-oracle-bill_2</artifactId>
+            <artifactId>spring-repositories-oracle-bill_2</artifactId>
         </dependency>
     </dependencies>
 </project>

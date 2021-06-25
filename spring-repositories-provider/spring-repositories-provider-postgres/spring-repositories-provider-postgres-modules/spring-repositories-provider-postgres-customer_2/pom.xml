@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-micro-repositories-postgresql-customer_2</artifactId>
+            <artifactId>sprin-repositories-postgresql-customer_2</artifactId>
         </dependency>
     </dependencies>
 
