@@ -11,6 +11,15 @@
 
     <artifactId>spring-domains-services-mysql</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>spring-domains-services-mysql-dependencies</module>
+        <module>spring-domains-services-mysql_1</module>
+        <module>spring-domains-services-mysql_2</module>
+        <module>spring-domains-services-mysql-commons_1</module>
+        <module>spring-domains-services-mysql-commons_2</module>
+        <module>spring-domains-services-mysql-auth_1</module>
+        <module>spring-domains-services-mysql-auth_2</module>
+    </modules>
 
 
 </project>

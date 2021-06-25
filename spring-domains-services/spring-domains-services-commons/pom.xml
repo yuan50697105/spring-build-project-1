@@ -14,6 +14,19 @@
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-commons</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-build-commons</artifactId>
+            <version>0.0.39-M6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-repositories-provider-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-plugins-commons</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
