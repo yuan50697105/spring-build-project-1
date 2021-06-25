@@ -108,6 +108,15 @@
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-mysql-dependencies</artifactId>
                 <version>0.0.39-M6-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-repositories-postgresql-dependencies</artifactId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
