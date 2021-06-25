@@ -9,12 +9,20 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-repositories-mysql-bill_2</artifactId>
+    <artifactId>spring-repositories-mysql-commons_2</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-repositories-mysql-commons_2</artifactId>
-            <version>0.0.39-M6-SNAPSHOT</version>
+            <artifactId>spring-plugins-mybatis_2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.liuanxin</groupId>
+            <artifactId>mybatis-redis-cache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
     </dependencies>
 

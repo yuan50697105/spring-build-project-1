@@ -29,6 +29,8 @@
         <module>spring-repositories-mysql-report_1</module>
         <module>spring-repositories-mysql-report_2</module>
         <module>spring-repositories-mysql-dependencies</module>
+        <module>spring-repositories-mysql-commons_1</module>
+        <module>spring-repositories-mysql-commons_2</module>
     </modules>
     <dependencies>
         <dependency>
