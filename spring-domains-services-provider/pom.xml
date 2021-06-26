@@ -5,7 +5,6 @@
     <modules>
         <module>spring-domains-services-provider-commons</module>
         <module>spring-domains-services-provider-dependencies</module>
-        <module>spring-domains-services-provider-mysql</module>
     </modules>
     <parent>
         <artifactId>spring-build-project</artifactId>
