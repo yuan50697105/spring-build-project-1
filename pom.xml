@@ -238,19 +238,6 @@
                                 <version>0.2.0</version>
                             </path>
                         </annotationProcessorPaths>
-                        <!-- due to problem in maven-compiler-plugin, for verbose mode add showWarnings -->
-                        <!-- <showWarnings>true</showWarnings> -->
-                        <!-- <compilerArgs>
-                            <arg>
-                                -Amapstruct.suppressGeneratorTimestamp=true
-                            </arg>
-                            <arg>
-                                -Amapstruct.suppressGeneratorVersionInfoComment=true
-                            </arg>
-                            <arg>
-                                -Amapstruct.verbose=true
-                            </arg>
-                        </compilerArgs> -->
                     </configuration>
                 </plugin>
                 <plugin>
@@ -305,16 +292,6 @@
                         <skip>true</skip>
                     </configuration>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
-                    <configuration>
-                        <source>${maven.compiler.source}</source>
-                        <target>${maven.compiler.target}</target>
-                        <encoding>${maven.compiler.encoding}</encoding>
-                    </configuration>
-                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -325,7 +302,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -370,7 +346,7 @@
         <profile>
             <id>doc</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
                 <plugins>
