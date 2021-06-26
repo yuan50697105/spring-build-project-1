@@ -2,23 +2,20 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <modules>
+        <module>spring-domains-services-provider-commons</module>
+        <module>spring-domains-services-provider-dependencies</module>
+        <module>spring-domains-services-provider-mysql</module>
+    </modules>
     <parent>
-        <groupId>org.example.spring</groupId>
         <artifactId>spring-build-project</artifactId>
+        <groupId>org.example.spring</groupId>
         <version>0.0.39-M6-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-build-micro-dependencies</artifactId>
+    <artifactId>spring-domains-services-provider</artifactId>
     <packaging>pom</packaging>
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-services-dependencies</artifactId>
-                <version>0.0.39-M6-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-dependencies</artifactId>
@@ -26,13 +23,12 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-micro-applications-dependencies</artifactId>
-                <version>0.0.39-M6-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.example.spring</groupId>
+            <artifactId>spring-domains-services-commons</artifactId>
+        </dependency>
+    </dependencies>
 </project>

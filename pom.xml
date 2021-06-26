@@ -5,52 +5,28 @@
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
-        <version>2.5.1</version>
+        <version>2.5.2</version>
     </parent>
     <groupId>org.example.spring</groupId>
     <artifactId>spring-build-project</artifactId>
     <version>0.0.39-M6-SNAPSHOT</version>
     <modules>
-        <module>spring-build-tests</module>
         <module>spring-build-admin-server</module>
         <module>spring-plugins</module>
         <module>spring-repositories</module>
         <module>spring-repositories-provider</module>
-        <module>spring-services</module>
         <module>spring-domains-services</module>
+        <module>spring-domains-services-provider</module>
+        <module>spring-domains-services-launchers</module>
+        <module>spring-services</module>
         <module>spring-applications</module>
-        <module>spring-launchers</module>
         <module>spring-repositories-launchers</module>
-        <module>spring-micro-services</module>
-        <module>spring-micro-services-provider</module>
-        <module>spring-micro-services-launchers</module>
-        <module>spring-micro-domains-services</module>
-        <module>spring-micro-domains-services-provider</module>
-        <module>spring-micro-domains-services-launchers</module>
-        <module>spring-micro-applications</module>
-        <module>spring-micro-applications-launchers</module>
-        <module>spring-cloud-applications-launchers</module>
         <module>spring-cloud-repositories</module>
         <module>spring-cloud-repositories-provider</module>
         <module>spring-cloud-repositories-launchers</module>
-        <module>spring-cloud-services</module>
-        <module>spring-cloud-services-provider</module>
-        <module>spring-cloud-services-launchers</module>
         <module>spring-cloud-domains-services</module>
         <module>spring-cloud-domains-services-provider</module>
         <module>spring-cloud-domains-services-launchers</module>
-        <module>spring-cloud-micro-repositories</module>
-        <module>spring-cloud-micro-repositories-provider</module>
-        <module>spring-cloud-micro-repositories-launchers</module>
-        <module>spring-cloud-micro-services</module>
-        <module>spring-cloud-micro-services-provider</module>
-        <module>spring-cloud-micro-services-launchers</module>
-        <module>spring-cloud-micro-domains-services</module>
-        <module>spring-cloud-micro-domains-services-provider</module>
-        <module>spring-cloud-micro-domains-services-launchers</module>
-        <module>spring-cloud-micro-applications</module>
-        <module>spring-cloud-micro-applications-launchers</module>
-        <module>spring-build-micro-dependencies</module>
         <module>spring-build-dependencies</module>
         <module>spring-cloud-build-dependencies</module>
         <module>spring-build-commons</module>
@@ -60,7 +36,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-        <spring-boot.version>2.5.1</spring-boot.version>
+        <spring-boot.version>2.5.2</spring-boot.version>
         <spring-cloud.version>2020.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
         <spring-cloud-huawei.version>1.5.9-Hoxton</spring-cloud-huawei.version>
