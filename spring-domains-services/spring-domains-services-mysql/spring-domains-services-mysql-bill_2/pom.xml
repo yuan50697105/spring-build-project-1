@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
-            <artifactId>spring-repositories-mysql-bill_2</artifactId>
+            <artifactId>spring-repositories-provider-mysql-bill_1</artifactId>
         </dependency>
         <dependency>
             <groupId>ai.ylyue</groupId>
