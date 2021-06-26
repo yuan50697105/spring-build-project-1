@@ -17,36 +17,7 @@
                 <artifactId>spring-domains-services-commons</artifactId>
                 <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-services_1</artifactId>
-                <version>0.0.39-M6-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-services_2</artifactId>
-                <version>0.0.39-M6-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-services-mysql_1</artifactId>
-                <version>0.0.39-M6-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-services-mysql_2</artifactId>
-                <version>0.0.39-M6-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-services-postgresql_1</artifactId>
-                <version>0.0.39-M6-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.example.spring</groupId>
-                <artifactId>spring-domains-services-postgresql_2</artifactId>
-                <version>0.0.39-M6-SNAPSHOT</version>
-            </dependency>
+           
 
 
         </dependencies>

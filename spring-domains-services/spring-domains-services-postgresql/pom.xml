@@ -11,6 +11,35 @@
 
     <artifactId>spring-domains-services-postgresql</artifactId>
     <packaging>pom</packaging>
-
+    <modules>
+        <module>spring-domains-services-postgresql-dependencies</module>
+        <module>spring-domains-services-postgresql-commons_1</module>
+        <module>spring-domains-services-postgresql-commons_2</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-plugins-dependencies</artifactId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-repositories-dependencies</artifactId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.example.spring</groupId>
+                <artifactId>spring-repositories-provider-dependencies</artifactId>
+                <version>0.0.39-M6-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
