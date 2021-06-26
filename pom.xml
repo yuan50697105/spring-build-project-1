@@ -20,6 +20,7 @@
         <module>spring-domains-services-launchers</module>
         <module>spring-services</module>
         <module>spring-applications</module>
+        <module>spring-launchers</module>
         <module>spring-repositories-launchers</module>
         <module>spring-cloud-repositories</module>
         <module>spring-cloud-repositories-provider</module>
