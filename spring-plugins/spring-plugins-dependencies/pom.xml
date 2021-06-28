@@ -395,7 +395,7 @@
         <mybatis-plus-boot-starter.version>3.4.3.1</mybatis-plus-boot-starter.version>
         <mapper-spring-boot-starter.version>2.1.5</mapper-spring-boot-starter.version>
         <pagehelper-spring-boot-starter.version>1.3.1</pagehelper-spring-boot-starter.version>
-        <sqlhelper.version>3.5.1</sqlhelper.version>
+        <sqlhelper.version>3.5.2</sqlhelper.version>
         <mybatis-example-ext.version>1.0.2</mybatis-example-ext.version>
         <mybatis.version>3.5.7</mybatis.version>
         <mybatis-spring.version>2.0.6</mybatis-spring.version>
@@ -414,7 +414,7 @@
         <wx-java.version>4.1.0</wx-java.version>
         <payment-spring-boot-starter.version>1.0.11.RELEASE</payment-spring-boot-starter.version>
         <druid-datasource>1.2.6</druid-datasource>
-        <beecp-spring-boot-starter.version>1.5.8</beecp-spring-boot-starter.version>
+        <beecp-spring-boot-starter.version>1.5.9</beecp-spring-boot-starter.version>
         <IJPay-All.version>2.7.5</IJPay-All.version>
         <nacos-spring.version>0.2.8</nacos-spring.version>
         <apollo-client.version>1.8.0</apollo-client.version>
@@ -424,15 +424,15 @@
         <fastjson.version>1.2.76</fastjson.version>
         <sharding-jdbc.version>4.1.1</sharding-jdbc.version>
         <seata.version>1.4.2</seata.version>
-        <sagacity-sqltoy-starter.version>5.0.0.RC2</sagacity-sqltoy-starter.version>
+        <sagacity-sqltoy-starter.version>5.0.0.RC8</sagacity-sqltoy-starter.version>
         <easyjdbc-spring-boot-starter.version>2.0.4</easyjdbc-spring-boot-starter.version>
-        <dubbo-spring-boot.version>2.7.12</dubbo-spring-boot.version>
+        <dubbo-spring-boot.version>3.0.0</dubbo-spring-boot.version>
         <rxjava.version>3.0.13</rxjava.version>
         <mybatis-spring-boot-starter.version>2.2.0</mybatis-spring-boot-starter.version>
         <kylin-jdbc.version>4.0.0-beta</kylin-jdbc.version>
         <mybatis-redis-cache.version>1.2.7</mybatis-redis-cache.version>
         <ceph.version>0.80.5</ceph.version>
         <mapper-core.version>1.1.5</mapper-core.version>
-        <sql-springboot-starter.version>3.4.1-RELEASE</sql-springboot-starter.version>
+        <sql-springboot-starter.version>3.5.0-RELEASE</sql-springboot-starter.version>
     </properties>
 </project>

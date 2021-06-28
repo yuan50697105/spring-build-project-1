@@ -45,7 +45,7 @@
         <yue-library.version>j8.2.4.0</yue-library.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <aliyun-spring-boot-dependencies.version>1.0.0</aliyun-spring-boot-dependencies.version>
-        <spring-boot-admin-dependencies.version>2.4.1</spring-boot-admin-dependencies.version>
+        <spring-boot-admin-dependencies.version>2.4.2</spring-boot-admin-dependencies.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -346,7 +346,9 @@
         <profile>
             <id>doc</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>false
+                    
+                </activeByDefault>
             </activation>
             <build>
                 <plugins>
