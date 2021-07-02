@@ -346,9 +346,7 @@
         <profile>
             <id>doc</id>
             <activation>
-                <activeByDefault>false
-                    
-                </activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
                 <plugins>
@@ -412,7 +410,7 @@
                         <configuration>
                             <autoVersionSubmodules>true</autoVersionSubmodules>
                             <useEditMode>false</useEditMode>
-                            <arguments>-P source,doc -fn -T 1C</arguments>
+                            <arguments>-P source,doc -fn</arguments>
                             <commitByProject>false</commitByProject>
                             <autoResolveSnapshots>all</autoResolveSnapshots>
                             <tagNameFormat>v@{project.version}</tagNameFormat>
