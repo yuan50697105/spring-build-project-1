@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-repositories</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-M6</version>
+        <version>0.0.39-M7-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,14 +14,14 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-commons</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
@@ -36,52 +36,52 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-mysql_1</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-mysql_2</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-postgresql_1</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-postgresql_2</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-mssql_2</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-mssql_1</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle_1</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle_2</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-clickhouse_1</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-clickhouse_2</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
@@ -91,12 +91,12 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-doris_1</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-doris_2</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
@@ -106,28 +106,28 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-mysql-dependencies</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-postgresql-dependencies</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-mssql-dependencies</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-dependencies</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

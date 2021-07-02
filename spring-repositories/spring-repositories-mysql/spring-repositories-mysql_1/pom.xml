@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-repositories-mysql</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-M6</version>
+        <version>0.0.39-M7-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,37 +13,37 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mysql-auth_1</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-M7-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mysql-bill_1</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-M7-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mysql-customer_1</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-M7-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mysql-department_1</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-M7-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mysql-items_1</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-M7-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mysql-patient_1</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-M7-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mysql-report_1</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-M7-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

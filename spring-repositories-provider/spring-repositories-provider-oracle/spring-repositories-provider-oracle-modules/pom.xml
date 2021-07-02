@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-repositories-provider-oracle</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-M6</version>
+        <version>0.0.39-M7-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -26,7 +26,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-provider-oracle-dependencies</artifactId>
-                <version>0.0.39-M6</version>
+                <version>0.0.39-M7-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
