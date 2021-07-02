@@ -46,7 +46,7 @@
     <parent>
         <artifactId>spring-build-project</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-M7-SNAPSHOT</version>
+        <version>0.0.39-M6-SNAPSHOT</version>
     </parent>
     <artifactId>spring-repositories-launchers</artifactId>
     <packaging>pom</packaging>
@@ -55,14 +55,14 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-plugins-dependencies</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-provider-dependencies</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

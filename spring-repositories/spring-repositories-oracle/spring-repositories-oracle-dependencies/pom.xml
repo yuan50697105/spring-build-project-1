@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-repositories-oracle</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-M7-SNAPSHOT</version>
+        <version>0.0.39-M6-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,82 +15,82 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-commons_1</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-commons_2</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle_1</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle_2</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-auth_1</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-auth_2</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-bill_1</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-bill_2</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-customer_1</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-customer_2</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-items_1</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-items_2</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-patient_1</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-patient_2</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-report_1</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-repositories-oracle-report_2</artifactId>
-                <version>0.0.39-M7-SNAPSHOT</version>
+                <version>0.0.39-M6-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
