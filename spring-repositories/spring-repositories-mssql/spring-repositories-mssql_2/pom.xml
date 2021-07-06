@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-repositories-mssql</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-M6</version>
+        <version>0.0.39-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,37 +13,37 @@
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mssql-auth_2</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mssql-bill_2</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mssql-customer_2</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mssql-department_2</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mssql-items_2</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mssql-patient_2</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example.spring</groupId>
             <artifactId>spring-repositories-mssql-report_2</artifactId>
-            <version>0.0.39-M6</version>
+            <version>0.0.39-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
