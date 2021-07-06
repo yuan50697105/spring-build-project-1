@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-repositories-provider-oracle-dubbo-modules</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39</version>
+        <version>0.0.40-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
