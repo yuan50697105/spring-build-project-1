@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-services</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-SNAPSHOT</version>
+        <version>0.0.39</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,7 +14,7 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-services-dependencies</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>

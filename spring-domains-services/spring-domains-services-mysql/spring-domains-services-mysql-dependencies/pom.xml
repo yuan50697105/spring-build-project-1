@@ -3,7 +3,7 @@
     <parent>
         <artifactId>spring-domains-services-mysql</artifactId>
         <groupId>org.example.spring</groupId>
-        <version>0.0.39-SNAPSHOT</version>
+        <version>0.0.39</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,82 +14,82 @@
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-commons_1</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-commons_2</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql_1</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql_2</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-auth_1</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-auth_2</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-bill_1</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-bill_2</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-customer_1</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-customer_2</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-doctor_1</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-doctor_2</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-patient_1</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-patient_2</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-queue_1</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
             <dependency>
                 <groupId>org.example.spring</groupId>
                 <artifactId>spring-domains-services-mysql-queue_2</artifactId>
-                <version>0.0.39-SNAPSHOT</version>
+                <version>0.0.39</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
